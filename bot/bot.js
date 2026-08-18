@@ -9,6 +9,7 @@ import {
   PermissionFlagsBits
 } from 'discord.js';
 import { createNewsWatcher } from './news-watcher.js';
+import { createMetaWatcher } from './meta-watcher.js';
 
 const TOKEN = String(process.env.DISCORD_TOKEN || '').trim();
 const CLIENT_ID = String(process.env.DISCORD_CLIENT_ID || '').trim();
@@ -84,10 +85,11 @@ const commands = [
 
   new SlashCommandBuilder()
     .setName('notify')
-    .setDescription('Quản lý hệ thống tự động thông báo Riot News')
+    .setDescription('Quản lý hệ thống tự động thông báo LoL')
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
-    .addSubcommand(s => s.setName('status').setDescription('Xem trạng thái auto notification'))
+    .addSubcommand(s => s.setName('status').setDescription('Xem trạng thái các watcher'))
     .addSubcommand(s => s.setName('check').setDescription('Quét Riot News ngay bây giờ'))
+    .addSubcommand(s => s.setName('meta').setDescription('Quét balance + biến động meta Global ngay'))
     .addSubcommand(s => s.setName('latest').setDescription('Gửi tin Riot thật mới nhất đang có')
       .addStringOption(o => o.setName('type').setDescription('Loại tin muốn lấy').setRequired(true).addChoices(...notifyTypeChoices)))
     .addSubcommand(s => s.setName('test').setDescription('Gửi một thông báo thử')
@@ -95,7 +97,7 @@ const commands = [
 
   new SlashCommandBuilder()
     .setName('status')
-    .setDescription('Kiểm tra trạng thái Rift Meta VN')
+    .setDescription('Kiểm tra trạng thái WebLienMinh')
 ].map(x => x.toJSON());
 
 async function api(path) {
@@ -104,7 +106,7 @@ async function api(path) {
   try {
     const response = await fetch(`${WEB_API_URL}${path}`, {
       signal: controller.signal,
-      headers: { 'User-Agent': 'RiftMetaVN-DiscordBot/3.2' }
+      headers: { 'User-Agent': 'WebLienMinh-DiscordBot/5.0' }
     });
     const text = await response.text();
     let body;
@@ -133,16 +135,14 @@ function baseEmbed(title) {
   return new EmbedBuilder()
     .setColor(0xC99B3D)
     .setTitle(title)
-    .setFooter({ text: 'Rift Meta VN • Dữ liệu tự động, sample nhỏ có thể dao động' })
+    .setFooter({ text: 'WebLienMinh • Global LoL Analytics' })
     .setTimestamp();
 }
 
 async function resolveChampion(query) {
   const data = await api('/api/champions');
   const q = String(query).trim().toLowerCase();
-  const champion = data.champions.find(c =>
-    c.id.toLowerCase() === q || c.name.toLowerCase() === q
-  );
+  const champion = data.champions.find(c => c.id.toLowerCase() === q || c.name.toLowerCase() === q);
   if (!champion) throw new Error(`Không tìm thấy tướng “${query}”.`);
   return champion;
 }
@@ -160,20 +160,21 @@ async function registerCommands() {
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const newsWatcher = createNewsWatcher(client, { webApiUrl: WEB_API_URL });
+const metaWatcher = createMetaWatcher(client, { webApiUrl: WEB_API_URL });
 
 client.once('ready', async () => {
   console.log(`Nô lệ đã tỉnh dậy và làm việc — ${client.user.tag}`);
   client.user.setActivity('Global LoL meta • /meta');
-  try {
-    await newsWatcher.start();
-  } catch (error) {
-    console.error('Không khởi động được Riot News Watcher:', error);
-  }
+
+  try { await newsWatcher.start(); }
+  catch (error) { console.error('Không khởi động được Riot News Watcher:', error); }
+
+  try { await metaWatcher.start(); }
+  catch (error) { console.error('Không khởi động được Meta Watcher:', error); }
 });
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
-
   await interaction.deferReply();
 
   try {
@@ -181,17 +182,20 @@ client.on('interactionCreate', async interaction => {
       const sub = interaction.options.getSubcommand();
 
       if (sub === 'status') {
-        const s = newsWatcher.status();
-        const embed = baseEmbed('📢 Riot News Auto Notification')
+        const news = newsWatcher.status();
+        const meta = metaWatcher.status();
+        const embed = baseEmbed('📡 Hệ thống Auto Notification')
           .addFields(
-            { name: 'Watcher', value: s.enabled ? '✅ ON' : '⚠️ OFF', inline: true },
-            { name: 'Chu kỳ', value: `${s.intervalMinutes} phút`, inline: true },
-            { name: 'Channel', value: s.channelId ? `<#${s.channelId}>` : 'Chưa cấu hình', inline: true },
-            { name: 'Đã ghi nhận gửi', value: String(s.notifiedCount || 0), inline: true },
-            { name: 'Theo dõi', value: s.types.join(', ') || '—', inline: false },
-            { name: 'Lần quét cuối', value: s.lastCheckAt || 'Chưa quét', inline: false },
-            { name: 'Lần gửi cuối', value: s.lastSentAt || 'Chưa gửi', inline: false },
-            { name: 'Lỗi gần nhất', value: trim(s.lastError || 'Không có'), inline: false }
+            { name: '📰 Riot News', value: news.enabled ? `✅ ON • ${news.intervalMinutes} phút` : '⚠️ OFF', inline: true },
+            { name: '📊 Meta Watcher', value: meta.enabled ? `✅ ON • ${meta.intervalMinutes} phút` : '⚠️ OFF', inline: true },
+            { name: '📢 Channel', value: news.channelId ? `<#${news.channelId}>` : (meta.channelId ? `<#${meta.channelId}>` : 'Chưa cấu hình'), inline: true },
+            { name: '⚖️ Balance patch gần nhất', value: String(meta.lastBalancePatch || 'Chưa có'), inline: true },
+            { name: '🌍 Meta patch hiện tại', value: String(meta.currentPatch || 'Chưa có'), inline: true },
+            { name: '🔔 Ngưỡng Meta', value: `Score ±${meta.scoreThreshold} • WR ±${meta.winRateThreshold}đ% • min ${meta.minGames} trận`, inline: false },
+            { name: '📰 Tin đã ghi nhận gửi', value: String(news.notifiedCount || 0), inline: true },
+            { name: '📈 Biến động lần gần nhất', value: String(meta.lastMovementCount || 0), inline: true },
+            { name: 'Lỗi Riot News', value: trim(news.lastError || 'Không có'), inline: false },
+            { name: 'Lỗi Meta Watcher', value: trim(meta.lastError || 'Không có'), inline: false }
           );
         return interaction.editReply({ embeds: [embed] });
       }
@@ -202,12 +206,22 @@ client.on('interactionCreate', async interaction => {
         return interaction.editReply(`✅ Đã quét Riot News. ${result.fresh || 0} tin mới, ${result.sent || 0} thông báo đã gửi${result.duplicates ? `, ${result.duplicates} tin trùng đã bỏ qua` : ''}.`);
       }
 
+      if (sub === 'meta') {
+        const result = await metaWatcher.check({ forceBalance: true });
+        if (result.error) throw new Error(result.error);
+        const balance = result.balance || {};
+        const balanceText = balance.sent
+          ? `Balance Alert patch ${balance.patch}: ${balance.buffs || 0} buff, ${balance.nerfs || 0} nerf, ${balance.adjusts || 0} điều chỉnh.`
+          : balance.duplicate
+            ? `Balance patch ${balance.patch} đã thông báo trước đó.`
+            : `Balance: không có bản tin mới.`;
+        return interaction.editReply(`✅ Đã quét Balance + Global Meta. ${balanceText}\n📊 Phát hiện **${result.changes || 0}** biến động meta đáng kể; gửi **${result.movementSent || 0}** bản tin mới.`);
+      }
+
       if (sub === 'latest') {
         const type = interaction.options.getString('type', true);
         const result = await newsWatcher.sendLatest(type);
-        if (result.duplicate) {
-          return interaction.editReply(`ℹ️ Tin **${result.title}** đã được bot thông báo trước đó nên không gửi lại.`);
-        }
+        if (result.duplicate) return interaction.editReply(`ℹ️ Tin **${result.title}** đã được bot thông báo trước đó nên không gửi lại.`);
         return interaction.editReply(`✅ Đã gửi tin Riot thật mới nhất loại **${type}**:\n**${result.title}**`);
       }
 
@@ -220,7 +234,7 @@ client.on('interactionCreate', async interaction => {
 
     if (interaction.commandName === 'status') {
       const s = await api('/api/status');
-      const embed = baseEmbed('Rift Meta VN — Status')
+      const embed = baseEmbed('WebLienMinh — Status')
         .addFields(
           { name: 'Patch', value: String(s.metaPatch || '—'), inline: true },
           { name: 'Data Dragon', value: String(s.ddragon || '—'), inline: true },
@@ -249,12 +263,10 @@ client.on('interactionCreate', async interaction => {
       const qs = new URLSearchParams({ role, tier: 'ALL', search: '' });
       const d = await api(`/api/meta?${qs}`);
       const rows = (d.champions || []).slice(0, limit);
-
-      const embed = baseEmbed(`Meta ${role === 'ALL' ? 'tổng' : ROLE_LABEL[role]} • Patch ${d.patch}`)
+      const embed = baseEmbed(`Meta ${role === 'ALL' ? 'Global' : ROLE_LABEL[role]} • Patch ${d.patch}`)
         .setDescription(rows.length ? rows.map((x, i) =>
           `**${i + 1}. ${x.name}** — ${x.tier} • Score ${num(x.tierScore)} • WR ${pct(x.winRate)} • PR ${pct(x.pickRate)} • BR ${pct(x.banRate)} • ${x.games} games`
         ).join('\n') : 'Chưa có dữ liệu phù hợp.');
-
       return interaction.editReply({ embeds: [embed] });
     }
 
@@ -264,7 +276,6 @@ client.on('interactionCreate', async interaction => {
       const roleValue = interaction.options.getString('role');
       const role = roleValue ? ROLE_MAP[roleValue] : '';
       const d = await api(`/api/counter/${encodeURIComponent(champ.id)}${role ? `?role=${encodeURIComponent(role)}` : ''}`);
-
       const list = (d.counters || []).slice(0, 5).map((x, i) => {
         const m = x.matchup || {};
         const wr = Number.isFinite(Number(m.winRate)) ? ` • matchup WR ${pct(m.winRate)}` : '';
@@ -273,9 +284,7 @@ client.on('interactionCreate', async interaction => {
         const conf = m.confidence ? ` • ${String(m.confidence).toUpperCase()}` : '';
         return `**${i + 1}. ${x.name}**${wr}${edge}${games}${conf}`;
       }).join('\n') || 'Chưa đủ sample matchup.';
-
       const good = (d.goodAgainst || []).slice(0, 3).map(x => `• ${x.name}`).join('\n') || 'Chưa đủ sample.';
-
       const embed = baseEmbed(`Counter ${d.champion.name} • ${ROLE_LABEL[d.champion.role] || d.champion.role}`)
         .setThumbnail(champ.image)
         .addFields(
@@ -284,7 +293,6 @@ client.on('interactionCreate', async interaction => {
           { name: 'Patch', value: String(d.patch), inline: true },
           { name: 'Tier Score', value: num(d.champion.tierScore), inline: true }
         );
-
       return interaction.editReply({ embeds: [embed] });
     }
 
@@ -294,7 +302,6 @@ client.on('interactionCreate', async interaction => {
       const d = await api(`/api/champion/${encodeURIComponent(champ.id)}`);
       const m = d.meta;
       if (!m) throw new Error(`${champ.name} chưa có đủ dữ liệu meta trong sample hiện tại.`);
-
       const core = (m.coreBuilds?.[0]?.items || []).map(x => x.name).join(' → ') ||
         (m.items || []).slice(0, 5).map(x => x.name).join(' → ') || 'Chưa đủ sample';
       const rune = m.runes?.[0];
@@ -302,7 +309,6 @@ client.on('interactionCreate', async interaction => {
         ? `${rune.primary?.name || '—'} + ${rune.secondary?.name || '—'}\n${(rune.perks || []).slice(0, 6).map(x => x.name).join(' • ')}`
         : 'Chưa đủ sample';
       const spell = m.spells?.[0]?.spells?.map(x => x.name).join(' + ') || 'Chưa đủ sample';
-
       const embed = baseEmbed(`${champ.name} • ${ROLE_LABEL[m.role] || m.role} • ${m.tier} Tier`)
         .setThumbnail(champ.image)
         .addFields(
@@ -313,7 +319,6 @@ client.on('interactionCreate', async interaction => {
           { name: '🔷 Rune', value: trim(runeText), inline: false },
           { name: '✨ Summoner Spell', value: spell, inline: false }
         );
-
       return interaction.editReply({ embeds: [embed] });
     }
 
@@ -323,13 +328,11 @@ client.on('interactionCreate', async interaction => {
       const p = (d.players || []).find(x => String(x.name || '').toLowerCase() === query);
       if (!p) throw new Error(`Không có “${interaction.options.getString('player')}” trong Featured Pros.`);
       if (!p.available) throw new Error(`${p.name}: ${p.note || 'chưa có scoreboard gần đây.'}`);
-
       const champs = (p.championPool || []).slice(0, 5).map(x => `${x.displayName || x.name} ${pct(x.rate)}`).join(' • ') || '—';
       const build = p.commonBuilds?.[0]?.name || '—';
       const rune = p.commonRunes?.[0]?.name || '—';
       const spells = p.commonSpells?.[0]?.name || '—';
       const bans = (p.teamBanPriorities || []).slice(0, 5).map(x => `${x.name} ${pct(x.rate)}`).join(' • ') || '—';
-
       const embed = baseEmbed(`${p.name} • ${p.team || 'Pro'} • ${ROLE_LABEL[p.role] || p.role}`)
         .addFields(
           { name: 'Games', value: String(p.games || 0), inline: true },
@@ -342,16 +345,13 @@ client.on('interactionCreate', async interaction => {
           { name: 'Ban priority của đội', value: trim(bans), inline: false },
           { name: 'Xu hướng lối chơi', value: trim(p.styleSummary), inline: false }
         );
-
       return interaction.editReply({ embeds: [embed] });
     }
 
     return interaction.editReply('Lệnh chưa được hỗ trợ.');
   } catch (error) {
     console.error(`[/${interaction.commandName}]`, error);
-    const message = error?.name === 'AbortError'
-      ? 'Website API phản hồi quá lâu.'
-      : error?.message || 'Có lỗi khi xử lý lệnh.';
+    const message = error?.name === 'AbortError' ? 'Website API phản hồi quá lâu.' : error?.message || 'Có lỗi khi xử lý lệnh.';
     return interaction.editReply(`❌ ${message}`);
   }
 });
@@ -360,10 +360,12 @@ client.on('error', error => console.error('Discord client error:', error));
 
 process.once('SIGTERM', () => {
   newsWatcher.stop();
+  metaWatcher.stop();
   client.destroy();
 });
 process.once('SIGINT', () => {
   newsWatcher.stop();
+  metaWatcher.stop();
   client.destroy();
 });
 
