@@ -15,6 +15,7 @@ const TYPE_META = {
 };
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const articleImageCache = new Map();
 
 function envBool(name, fallback = false) {
   const raw = process.env[name];
@@ -70,6 +71,49 @@ function extractImage(inner) {
     if (url?.startsWith('http')) return url;
   }
   return null;
+}
+
+function extractMeta(html, names) {
+  const accepted = new Set(names.map(x => x.toLowerCase()));
+  const tags = String(html).match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const key = tag.match(/\b(?:property|name)=["']([^"']+)["']/i)?.[1]?.toLowerCase();
+    if (!key || !accepted.has(key)) continue;
+    const value = tag.match(/\bcontent=["']([^"']+)["']/i)?.[1];
+    if (!value) continue;
+    return decodeHtml(value).trim();
+  }
+  return null;
+}
+
+async function enrichArticleImage(article) {
+  if (article.image?.startsWith('http')) return article;
+  if (!article.url?.startsWith('http')) return article;
+
+  if (articleImageCache.has(article.url)) {
+    const cached = articleImageCache.get(article.url);
+    return cached ? { ...article, image: cached } : article;
+  }
+
+  try {
+    const response = await fetch(article.url, {
+      headers: {
+        'User-Agent': 'WebLienMinh-DiscordBot/3.1 rich-news-preview',
+        'Accept-Language': 'en-US,en;q=0.9'
+      },
+      signal: AbortSignal.timeout(15_000)
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const html = await response.text();
+    const rawImage = extractMeta(html, ['og:image', 'twitter:image', 'twitter:image:src']);
+    const image = rawImage ? absoluteUrl(rawImage) : null;
+    articleImageCache.set(article.url, image);
+    return image?.startsWith('http') ? { ...article, image } : article;
+  } catch (error) {
+    articleImageCache.set(article.url, null);
+    console.log(`[news-image] Không lấy được ảnh ${article.url}: ${error.message}`);
+    return article;
+  }
 }
 
 function extractDate(text, inner) {
@@ -180,7 +224,7 @@ function parseOfficialNews(html) {
 async function fetchOfficialNews() {
   const response = await fetch(RIOT_NEWS_URL, {
     headers: {
-      'User-Agent': 'WebLienMinh-DiscordBot/3.0 Riot-news-watcher',
+      'User-Agent': 'WebLienMinh-DiscordBot/3.1 Riot-news-watcher',
       'Accept-Language': 'en-US,en;q=0.9'
     },
     signal: AbortSignal.timeout(20_000)
@@ -215,7 +259,7 @@ async function extractUpcomingSkins(article) {
   if (article.type !== 'patch') return [];
   try {
     const response = await fetch(article.url, {
-      headers: { 'User-Agent': 'WebLienMinh-DiscordBot/3.0 patch-skin-parser' },
+      headers: { 'User-Agent': 'WebLienMinh-DiscordBot/3.1 patch-skin-parser' },
       signal: AbortSignal.timeout(15_000)
     });
     if (!response.ok) return [];
@@ -351,10 +395,11 @@ export function createNewsWatcher(client, { webApiUrl }) {
   }
 
   async function sendArticle(channel, article) {
-    const roleId = roleForType(article.type);
+    const richArticle = await enrichArticleImage(article);
+    const roleId = roleForType(richArticle.type);
     const mention = mentionForRole(roleId);
-    const skins = await extractUpcomingSkins(article);
-    const embed = buildEmbed(article, skins);
+    const skins = await extractUpcomingSkins(richArticle);
+    const embed = buildEmbed(richArticle, skins);
     await channel.send({
       content: mention || undefined,
       embeds: [embed],
@@ -362,7 +407,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
     });
     sentCount++;
     state.lastSentAt = new Date().toISOString();
-    lastArticle = article;
+    lastArticle = richArticle;
   }
 
   async function check({ forceLatest = false } = {}) {
@@ -396,7 +441,6 @@ export function createNewsWatcher(client, { webApiUrl }) {
         fresh = latest ? [latest] : [];
       }
 
-      // Riot page is newest-first. Send oldest -> newest when multiple articles arrived between checks.
       fresh = fresh.slice(0, 8).reverse();
       if (channel) {
         for (const article of fresh) {
@@ -431,7 +475,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
       description: 'Nếu bạn thấy tin nhắn này, hệ thống tự động tag + thông báo Riot News đã hoạt động.',
       category: 'System Test',
       url: webApiUrl,
-      image: null,
+      image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg',
       publishedAt: new Date().toISOString()
     };
     await channel.send({
@@ -486,7 +530,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
       lastCheckAt: state.lastCheckAt,
       lastSentAt: state.lastSentAt,
       lastError,
-      lastArticle: lastArticle ? { title: lastArticle.title, type: lastArticle.type, url: lastArticle.url } : null,
+      lastArticle: lastArticle ? { title: lastArticle.title, type: lastArticle.type, url: lastArticle.url, image: lastArticle.image || null } : null,
       sentCount
     };
   }
