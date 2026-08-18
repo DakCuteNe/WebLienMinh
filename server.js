@@ -9,6 +9,7 @@ dotenv.config();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
+const APP_VERSION = '2.5.1';
 const RIOT_DIR = path.join(__dirname, 'data', 'riot');
 const LEAGUEPEDIA_API = 'https://lol.fandom.com/api.php';
 const DDRAGON_VERSIONS = 'https://ddragon.leagueoflegends.com/api/versions.json';
@@ -151,7 +152,7 @@ function escapeCargo(value) {
 async function leaguepediaCargo(params) {
   const query = new URLSearchParams({ action: 'cargoquery', format: 'json', ...params });
   const response = await fetch(`${LEAGUEPEDIA_API}?${query}`, {
-    headers: { 'User-Agent': 'WebLienMinh/2.0 player-achievements (educational project)' }
+    headers: { 'User-Agent': `WebLienMinh/${APP_VERSION} achievements-on-demand` }
   });
   if (!response.ok) throw new Error(`Leaguepedia ${response.status}`);
   const body = await response.json();
@@ -159,25 +160,29 @@ async function leaguepediaCargo(params) {
   return (body.cargoquery || []).map(x => x.title || x);
 }
 
+// Current player/media routes are installed before the rest of the API. Achievements are
+// intentionally loaded only through the dedicated on-demand endpoint in this module.
 installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, leaguepediaCargo, escapeCargo });
 
 app.get('/api/status', async (_req, res) => {
   try {
     const [meta, esports] = await Promise.all([readMeta(), readEsportsDirectory()]);
+    const isGlobal = String(meta.mode || '').toLowerCase().includes('global') || String(meta.scope || '').toUpperCase() === 'GLOBAL';
     res.json({
       ok: true,
-      version: '2.0.0',
+      version: APP_VERSION,
       ddragon: await getLatestVersion(),
       metaPatch: meta.patch,
       metaMode: meta.mode,
+      metaScope: isGlobal ? 'GLOBAL' : (meta.scope || null),
       sampleGames: meta.sampleGames || 0,
       generatedAt: meta.generatedAt || null,
       esportsPlayers: esports.playerCount || esports.players?.length || 0,
       esportsTeams: esports.teamCount || esports.teams?.length || 0,
       esportsGeneratedAt: esports.generatedAt || null,
       riotApiConfigured: Boolean(process.env.RIOT_API_KEY),
-      platform: process.env.RIOT_PLATFORM || 'vn2',
-      region: process.env.RIOT_REGION || 'sea'
+      platform: isGlobal ? 'GLOBAL' : (process.env.RIOT_PLATFORM || 'vn2'),
+      region: isGlobal ? 'GLOBAL' : (process.env.RIOT_REGION || 'sea')
     });
   } catch (error) {
     res.status(500).json({ ok: false, error: error.message });
@@ -347,16 +352,17 @@ app.get('/api/esports', async (req, res) => {
     const page = Math.max(1, Number(req.query.page || 1));
     const limit = Math.max(1, Math.min(60, Number(req.query.limit || 36)));
     let players = [...(directory.players || [])];
-    if (search) players = players.filter(p => `${p.id} ${p.name} ${p.team?.name || ''} ${p.country || ''}`.toLowerCase().includes(search));
+    if (search) players = players.filter(p => `${p.id} ${p.name} ${p.currentTeamName || ''} ${p.team?.name || ''} ${p.country || ''}`.toLowerCase().includes(search));
     if (role !== 'ALL') players = players.filter(p => p.role === role);
     if (region !== 'ALL') players = players.filter(p => (p.team?.region || p.residency) === region);
     if (team !== 'ALL') players = players.filter(p => p.team?.id === team);
     if (country !== 'ALL') players = players.filter(p => (p.country || p.nationality) === country);
-    players.sort((a,b) => Number(b.featured) - Number(a.featured) || (a.team?.name || '').localeCompare(b.team?.name || '') || a.id.localeCompare(b.id));
+    players.sort((a,b) => Number(b.featured) - Number(a.featured) || (a.currentTeamName || a.team?.name || '').localeCompare(b.currentTeamName || b.team?.name || '') || a.id.localeCompare(b.id));
     const total = players.length;
     const start = (page - 1) * limit;
     res.json({
       generatedAt: directory.generatedAt,
+      mediaEnrichedAt: directory.mediaEnrichedAt || null,
       source: directory.source,
       coverage: directory.coverage,
       total,
@@ -374,6 +380,7 @@ app.get('/api/esports/filters', async (_req, res) => {
     const directory = await readEsportsDirectory();
     res.json({
       generatedAt: directory.generatedAt,
+      mediaEnrichedAt: directory.mediaEnrichedAt || null,
       regions: directory.regions || [],
       countries: directory.countries || [],
       teams: (directory.teams || []).map(t => ({ id: t.id, name: t.name, short: t.short, region: t.region, logo: t.logo }))
@@ -386,47 +393,10 @@ app.get('/api/esports/filters', async (_req, res) => {
   }
 });
 
-app.get('/api/esports/player/:id', async (req, res) => {
-  try {
-    const directory = await readEsportsDirectory();
-    const player = (directory.players || []).find(p => p.id.toLowerCase() === req.params.id.toLowerCase() || p.overviewPage.toLowerCase() === req.params.id.toLowerCase());
-    if (!player) return res.status(404).json({ error: 'Không tìm thấy tuyển thủ trong directory hiện tại.' });
-
-    let achievements = [];
-    let achievementWarning = null;
-    try {
-      achievements = await leaguepediaCargo({
-        tables: 'TournamentPlayers=TP,TournamentResults=TR',
-        fields: 'TR.Event=event,TR.Tier=tier,TR.Date=date,TR.Place=place,TR.Place_Number=placeNumber,TR.Team=team,TR.Prize_USD=prizeUSD,TR.Phase=phase',
-        join_on: 'TP.PageAndTeam=TR.PageAndTeam',
-        where: `TP.Player='${escapeCargo(player.overviewPage)}' AND TR.IsAchievement=1`,
-        order_by: 'TR.Date DESC,TR.Place_Number ASC',
-        limit: '100'
-      });
-    } catch (error) {
-      achievementWarning = error.message;
-    }
-
-    const pros = await readPros();
-    const featuredStats = (pros.players || []).find(p => String(p.name).toLowerCase() === String(player.id).toLowerCase()) || null;
-    const titles = achievements.filter(a => Number(a.placeNumber || 999) === 1);
-    res.json({
-      player,
-      achievements,
-      titles,
-      titleCount: titles.length,
-      featuredStats,
-      achievementWarning,
-      sourceNote: 'Thông tin hồ sơ và thành tích lấy từ Leaguepedia. Trường thiếu được để trống; hệ thống không tự suy đoán sở thích cá nhân.'
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
 app.get('/api/patches', async (_req, res) => {
+  let liveWarning = null;
   try {
-    const response = await fetch(PATCH_INDEX, { headers: { 'user-agent': 'RiftMetaVN/2.0' } });
+    const response = await fetch(PATCH_INDEX, { headers: { 'user-agent': `RiftMetaGlobal/${APP_VERSION}` } });
     if (!response.ok) throw new Error(`Riot patch page: ${response.status}`);
     const html = await response.text();
     const re = /href="([^"]*league-of-legends-patch-([0-9-]+)-notes[^"]*)"[^>]*>[\s\S]{0,800}?League of Legends Patch\s+([0-9.]+)/gi;
@@ -440,10 +410,17 @@ app.get('/api/patches', async (_req, res) => {
       const href = match[1].startsWith('http') ? match[1] : `https://www.leagueoflegends.com${match[1]}`;
       patches.push({ patch, title: `League of Legends Patch ${patch} Notes`, url: href });
     }
-    res.json({ source: 'Riot Games', patches });
+    if (patches.length) return res.json({ source: 'Riot Games', sourceMode: 'live', patches });
+    liveWarning = 'Riot live parser không tìm thấy Patch Notes.';
   } catch (error) {
-    res.json({ source: 'Riot Games', warning: error.message, patches: [] });
+    liveWarning = error.message;
   }
+
+  const cached = await readJson(path.join(__dirname, 'public', 'data', 'patches.json'), { patches: [] });
+  if (cached?.patches?.length) {
+    return res.json({ ...cached, source: cached.source || 'Riot Games', sourceMode: 'cache', warning: liveWarning });
+  }
+  return res.json({ source: 'Riot Games', sourceMode: 'unavailable', warning: liveWarning || 'Chưa đọc được Patch Notes.', patches: [] });
 });
 
 app.get('/api/riot/account', async (req, res) => {
@@ -462,4 +439,4 @@ app.get('/api/riot/account', async (req, res) => {
 app.use('/api', (_req, res) => res.status(404).json({ error: 'API endpoint không tồn tại' }));
 app.use((_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
-app.listen(PORT, () => console.log(`Rift Meta VN 2.0: http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Rift Meta Global ${APP_VERSION}: http://localhost:${PORT}`));
