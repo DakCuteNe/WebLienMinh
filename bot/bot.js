@@ -88,6 +88,8 @@ const commands = [
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
     .addSubcommand(s => s.setName('status').setDescription('Xem trạng thái auto notification'))
     .addSubcommand(s => s.setName('check').setDescription('Quét Riot News ngay bây giờ'))
+    .addSubcommand(s => s.setName('latest').setDescription('Gửi tin Riot thật mới nhất đang có')
+      .addStringOption(o => o.setName('type').setDescription('Loại tin muốn lấy').setRequired(true).addChoices(...notifyTypeChoices)))
     .addSubcommand(s => s.setName('test').setDescription('Gửi một thông báo thử')
       .addStringOption(o => o.setName('type').setDescription('Loại thông báo để test').addChoices(...notifyTypeChoices))),
 
@@ -197,6 +199,12 @@ client.on('interactionCreate', async interaction => {
         const result = await newsWatcher.check();
         if (result.error) throw new Error(result.error);
         return interaction.editReply(`✅ Đã quét Riot News. ${result.fresh || 0} tin mới, ${result.sent || 0} thông báo đã gửi.`);
+      }
+
+      if (sub === 'latest') {
+        const type = interaction.options.getString('type', true);
+        const result = await newsWatcher.sendLatest(type);
+        return interaction.editReply(`✅ Đã gửi tin Riot thật mới nhất loại **${type}**:\n**${result.title}**`);
       }
 
       if (sub === 'test') {
