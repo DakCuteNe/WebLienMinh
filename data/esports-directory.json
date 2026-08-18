@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T20:01:49.928Z",
+  "generatedAt": "2026-08-18T20:11:52.917Z",
   "source": "Oracle's Elixir professional match data",
   "sourceType": "mirror of Oracle's Elixir dataset",
   "licenseNote": "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
@@ -41,7 +41,100 @@
     "TCL",
     "VCS"
   ],
-  "countries": [],
+  "countries": [
+    "Albania",
+    "Algeria",
+    "Argentina",
+    "Australia",
+    "Austria",
+    "Belgium",
+    "Bosnia and Herzegovina",
+    "Brasil",
+    "Brazil",
+    "Bulgaria",
+    "Cambodia",
+    "Canada",
+    "Chile",
+    "China",
+    "Colombia",
+    "Costa Rica",
+    "Croatia",
+    "Czech Republic",
+    "Czech republic",
+    "Denmark",
+    "Dominican Republic",
+    "Egypt",
+    "El Salvador",
+    "Estonia",
+    "Finland",
+    "France",
+    "Georgia",
+    "Germany",
+    "Greece",
+    "Guatemala",
+    "Honduras",
+    "Hong Kong",
+    "Hungary",
+    "Hungary,Slovakia",
+    "ITALY",
+    "India",
+    "Iraq",
+    "Italian",
+    "Italy",
+    "JP",
+    "Japan",
+    "Japanese",
+    "Jordan",
+    "Korea",
+    "Latvia",
+    "Lebanon",
+    "Lithuania",
+    "Malaysia",
+    "Mexico",
+    "Moldova",
+    "Mongolia",
+    "Montenegro",
+    "Morocco",
+    "Netherlands",
+    "North Macedonia",
+    "Norway",
+    "Peru",
+    "Poland",
+    "Polish",
+    "Portugal",
+    "Republic of Ireland",
+    "Romania",
+    "Russia",
+    "Saudi Arabia",
+    "Saudi Arabian",
+    "Serbia",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "South Korea",
+    "South korea",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",
+    "Tunisia",
+    "Turkey",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States",
+    "United States of America",
+    "Uruguay",
+    "Venezuela",
+    "Vietnam",
+    "fr",
+    "germany",
+    "norway",
+    "se",
+    "turkey",
+    "vn"
+  ],
   "teams": [
     {
       "id": "oe:team:f2094ae60f9b1f3b6a17ad88ad75fc1",
@@ -172249,7 +172342,7 @@
       "bioSource": "Leaguepedia player infobox"
     }
   ],
-  "mediaEnrichedAt": "2026-08-18T20:04:13.849Z",
+  "mediaEnrichedAt": "2026-08-18T20:14:14.781Z",
   "mediaSource": "Leaguepedia / League of Legends Esports Wiki infobox + MediaWiki images",
   "mediaStatus": {
     "players": {
@@ -172267,5 +172360,60 @@
       "totalTitles": 300
     },
     "partial": false
+  },
+  "profileAuditAt": "2026-08-18T20:14:14.918Z",
+  "profileCoverage": {
+    "image": {
+      "count": 972,
+      "pct": 56.3
+    },
+    "realName": {
+      "count": 0,
+      "pct": 0
+    },
+    "country": {
+      "count": 1330,
+      "pct": 77.1
+    },
+    "birthdate": {
+      "count": 0,
+      "pct": 0
+    },
+    "age": {
+      "count": 0,
+      "pct": 0
+    },
+    "contract": {
+      "count": 0,
+      "pct": 0
+    },
+    "social": {
+      "count": 1172,
+      "pct": 67.9
+    },
+    "teamLogo": {
+      "count": 1537,
+      "pct": 89
+    },
+    "stats": {
+      "count": 1726,
+      "pct": 100
+    },
+    "championPool": {
+      "count": 1726,
+      "pct": 100
+    },
+    "soloqueueIds": {
+      "count": 629,
+      "pct": 36.4
+    },
+    "bioEnriched": {
+      "count": 1335,
+      "pct": 77.3
+    },
+    "completeCore": {
+      "count": 0,
+      "pct": 0
+    }
   }
 }
