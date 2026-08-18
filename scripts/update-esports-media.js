@@ -26,12 +26,11 @@ function cleanWiki(value = '') {
   text = text
     .replace(/<!--[^]*?-->/g, ' ')
     .replace(/<br\s*\/?\s*>/gi, ', ')
-    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
-    .replace(/\[\[([^\]]+)\]\]/g, '$1')
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]/g, '$2')
+    .replace(/\[\[([^\]]+)\]/g, '$1')
     .replace(/\[(https?:\/\/\S+)\s+([^\]]+)\]/g, '$2')
     .replace(/'''?/g, '');
 
-  // Các field country/team thường dùng template đơn giản {{flag|Denmark}}, {{team|G2 Esports}}.
   for (let i = 0; i < 4; i++) {
     const next = text.replace(/\{\{[^{}|]+\|([^{}]+)\}\}/g, (_m, inner) => {
       const parts = String(inner).split('|').map(x => x.trim()).filter(Boolean);
@@ -69,13 +68,16 @@ function param(params, ...names) {
 }
 
 function normalizeDate(value) {
-  const text = cleanWiki(value);
+  const raw = String(value || '').trim();
+  if (!raw) return null;
+  const template = raw.match(/\{\{\s*(?:birth\s*date(?:\s*and\s*age)?|date|dts)\s*\|\s*((?:19|20)\d{2})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})/i);
+  if (template) return `${template[1]}-${String(template[2]).padStart(2, '0')}-${String(template[3]).padStart(2, '0')}`;
+  const pipeDate = raw.match(/\b((?:19|20)\d{2})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})\b/);
+  if (pipeDate) return `${pipeDate[1]}-${String(pipeDate[2]).padStart(2, '0')}-${String(pipeDate[3]).padStart(2, '0')}`;
+  const text = cleanWiki(raw);
   if (!text) return null;
-  const iso = text.match(/\b(19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b/)?.[0];
-  if (iso) {
-    const [y, m, d] = iso.replaceAll('/', '-').split('-').map(Number);
-    return `${String(y).padStart(4, '0')}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-  }
+  const iso = text.match(/\b((?:19|20)\d{2})[-/](\d{1,2})[-/](\d{1,2})\b/);
+  if (iso) return `${iso[1]}-${String(iso[2]).padStart(2, '0')}-${String(iso[3]).padStart(2, '0')}`;
   const parsed = Date.parse(text);
   return Number.isNaN(parsed) ? null : new Date(parsed).toISOString().slice(0, 10);
 }
@@ -104,7 +106,7 @@ async function apiQuery(params, label = 'Leaguepedia MediaWiki') {
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const response = await fetch(`${API}?${query}`, {
-        headers: { 'User-Agent': 'WebLienMinh/2.4 esports-profile-enrichment' },
+        headers: { 'User-Agent': 'WebLienMinh/2.5 esports-profile-enrichment' },
         signal: AbortSignal.timeout(35_000)
       });
       if ([429, 502, 503, 504].includes(response.status)) {
@@ -175,7 +177,7 @@ async function queryProfiles(titles) {
     const revision = page.revisions?.[0];
     const wikitext = revision?.slots?.main?.['*'] ?? revision?.slots?.main?.content ?? revision?.['*'] ?? '';
     const params = parseParams(wikitext);
-    const explicitImage = fileName(param(params, 'image', 'playerimage', 'photo'));
+    const explicitImage = fileName(param(params, 'image', 'playerimage', 'photo', 'logo'));
     if (explicitImage) explicitImages.push(explicitImage);
     records.set(key(title), {
       pageTitle: page.title || current,
@@ -213,19 +215,22 @@ function enrichPlayer(player, profile) {
   const country = cleanWiki(param(p, 'country', 'countryofbirth'));
   const nationality = cleanWiki(param(p, 'nationality', 'nationalityprimary'));
   const birthdate = normalizeDate(param(p, 'birthdate', 'birthday', 'dob'));
-  const contract = normalizeDate(param(p, 'contract', 'contractexpires', 'contractexpiry')) || cleanWiki(param(p, 'contract', 'contractexpires', 'contractexpiry'));
+  const contractRaw = param(p, 'contract', 'contractexpires', 'contractexpiry', 'contractend', 'contractdate');
+  const contract = normalizeDate(contractRaw) || cleanWiki(contractRaw);
   const residency = cleanWiki(param(p, 'residency'));
+  const currentTeamName = cleanWiki(param(p, 'team', 'currentteam', 'teamname'));
   const soloqueueIds = cleanWiki(param(p, 'ids', 'soloquequeueids', 'soloqueueids'));
 
   set('name', realName && key(realName) !== key(player.id) ? realName : null);
   set('nativeName', nativeName);
   set('country', country);
   set('nationality', nationality || country);
-  set('birthdate', birthdate);
-  set('birthYear', birthdate ? Number(birthdate.slice(0, 4)) : null);
-  set('age', ageFromBirthdate(birthdate));
-  set('contract', contract);
+  set('birthdate', birthdate, true);
+  set('birthYear', birthdate ? Number(birthdate.slice(0, 4)) : null, true);
+  set('age', ageFromBirthdate(birthdate), true);
+  set('contract', contract, true);
   set('residency', residency);
+  set('currentTeamName', currentTeamName, true);
   set('soloqueueIds', soloqueueIds);
   set('image', profile.image, true);
   set('sourcePage', profile.sourcePage, true);
@@ -241,7 +246,7 @@ function enrichPlayer(player, profile) {
     if (value && socials[name] !== value) { socials[name] = value; changed = true; }
   }
   player.socials = socials;
-  player.bioEnriched = Boolean(realName || country || birthdate || nativeName || contract || Object.values(socialValues).some(Boolean));
+  player.bioEnriched = Boolean(realName || country || birthdate || nativeName || contract || currentTeamName || Object.values(socialValues).some(Boolean));
   player.bioSource = player.bioEnriched ? 'Leaguepedia player infobox' : player.bioSource || null;
   return changed;
 }
@@ -298,12 +303,14 @@ for (const player of players) {
 }
 
 directory.mediaEnrichedAt = new Date().toISOString();
-directory.mediaSource = 'Leaguepedia / League of Legends Esports Wiki infobox + MediaWiki images';
+directory.mediaSource = 'Leaguepedia / League of Legends Esports Wiki current infobox + MediaWiki images';
 directory.mediaStatus = {
   players: playerResult,
   teams: teamResult,
   partial: playerResult.failedBatches > 0 || teamResult.failedBatches > 0
 };
+
+directory.countries = [...new Set(players.map(p => p.country || p.nationality).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
 await fs.writeFile(file, JSON.stringify(directory, null, 2));
 console.log(`Profile enrichment xong: player changed=${playerResult.enriched}/${playerResult.totalTitles}, image=${playerResult.withImage}, bio=${playerResult.withBio}; team changed=${teamResult.enriched}/${teamResult.totalTitles}.`);
