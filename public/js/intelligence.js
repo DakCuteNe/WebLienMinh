@@ -75,15 +75,19 @@ export async function initIntelligence() {
   const coverage = parseCoverage(meta.methodology?.coverage);
   const age = relativeAge(meta.generatedAt);
 
-  if ($('#coverageLive')) $('#coverageLive').textContent = coverage.servers;
-  if ($('#regionsLive')) $('#regionsLive').textContent = coverage.regions;
+  for (const id of ['coverageLive', 'coverageLiveMirror']) if ($( `#${id}` )) $( `#${id}` ).textContent = coverage.servers;
+  for (const id of ['regionsLive', 'regionsLiveMirror']) if ($( `#${id}` )) $( `#${id}` ).textContent = coverage.regions;
   if ($('#coverageText')) $('#coverageText').textContent = coverage.text;
+  if ($('#metaCoverageChip')) $('#metaCoverageChip').textContent = coverage.text;
   if ($('#datasetTime')) $('#datasetTime').textContent = dateText(meta.generatedAt);
   if ($('#datasetAge')) {
     $('#datasetAge').textContent = age.text;
-    $('#datasetAge').className = `freshness ${age.state}`;
+    $('#datasetAge').dataset.state = age.state;
   }
-  if ($('#datasetMode')) $('#datasetMode').textContent = meta.mode || 'Global High-Elo';
+  if ($('#datasetMode')) {
+    $('#datasetMode').textContent = meta.mode || 'Global High-Elo';
+    $('#datasetMode').className = `freshness ${age.state}`;
+  }
   if ($('#scopeText')) $('#scopeText').textContent = meta.methodology?.scope || 'Ranked High-Elo toàn cầu';
 
   renderMovers(meta);
