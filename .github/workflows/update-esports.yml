@@ -10,9 +10,11 @@ on:
     paths:
       - '.github/workflows/update-esports.yml'
       - 'scripts/update-esports-directory.js'
+      - 'scripts/update-esports-identities.js'
       - 'scripts/update-esports-media.js'
       - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
+      - 'package.json'
 
 permissions:
   contents: write
@@ -46,7 +48,16 @@ jobs:
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
-      - name: Enrich player photos and team logos
+      - name: Resolve canonical player identities and real names
+        if: steps.build.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          npm run update:esports-identities 2>&1 | tee esports-identities.log
+          echo "identity_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          exit 0
+
+      - name: Enrich player bios, photos and team logos
         if: steps.build.outputs.exit_code == '0'
         shell: bash
         run: |
@@ -72,25 +83,27 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs/promises';
-          let log = '';
-          let mediaLog = '';
-          let auditLog = '';
+          let log = '', identityLog = '', mediaLog = '', auditLog = '';
           try { log = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
+          try { identityLog = await fs.readFile('esports-identities.log', 'utf8'); } catch {}
           try { mediaLog = await fs.readFile('esports-media.log', 'utf8'); } catch {}
           try { auditLog = await fs.readFile('esports-audit.log', 'utf8'); } catch {}
           const code = Number(process.env.EXIT_CODE ?? -1);
+          const identityCode = Number(process.env.identity_exit_code ?? process.env.IDENTITY_EXIT_CODE ?? -1);
           const mediaCode = Number(process.env.media_exit_code ?? process.env.MEDIA_EXIT_CODE ?? -1);
           const auditCode = Number(process.env.audit_exit_code ?? process.env.AUDIT_EXIT_CODE ?? -1);
           const directoryCreated = await fs.access('data/esports-directory.json').then(() => true).catch(() => false);
+          const degraded = identityCode > 0 || mediaCode > 0 || auditCode > 0;
           const status = {
             checkedAt: new Date().toISOString(),
-            health: code === 0 ? ((mediaCode > 0 || auditCode > 0) ? 'degraded' : 'ok') : (directoryCreated ? 'degraded' : 'waiting'),
+            health: code === 0 ? (degraded ? 'degraded' : 'ok') : (directoryCreated ? 'degraded' : 'waiting'),
             exitCode: code,
+            identityExitCode: identityCode,
             mediaExitCode: mediaCode,
             auditExitCode: auditCode,
             directoryCreated,
             preservedPreviousData: code !== 0 && directoryCreated,
-            message: [log, mediaLog, auditLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-65).join('\n').slice(0, 12000)
+            message: [log, identityLog, mediaLog, auditLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-85).join('\n').slice(0, 15000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
