@@ -1,0 +1,81 @@
+name: Update Featured Pros
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 4 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/update-pros.yml'
+      - 'scripts/update-pros.js'
+      - 'data/pro-watchlist.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lol-featured-pros
+  cancel-in-progress: true
+
+jobs:
+  update-pros:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: npm install --no-audit --no-fund
+
+      - name: Update featured pro analytics
+        id: build
+        shell: bash
+        run: |
+          set +e
+          npm run update:pros 2>&1 | tee pros.log
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Write featured-pro status
+        if: always()
+        shell: bash
+        env:
+          EXIT_CODE: ${{ steps.build.outputs.exit_code }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          let log = '';
+          try { log = await fs.readFile('pros.log', 'utf8'); } catch {}
+          const code = Number(process.env.EXIT_CODE ?? -1);
+          const status = {
+            checkedAt: new Date().toISOString(),
+            health: code === 0 ? 'ok' : 'degraded',
+            exitCode: code,
+            preservedPreviousData: code !== 0,
+            message: log.trim().split(/\r?\n/).filter(Boolean).slice(-20).join('\n').slice(0, 5000),
+            dataAvailable: await fs.access('data/pros.json').then(() => true).catch(() => false)
+          };
+          await fs.mkdir('data', { recursive: true });
+          await fs.writeFile('data/pros-status.json', JSON.stringify(status, null, 2));
+          NODE
+
+      - name: Commit featured pro data/status
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "WebLienMinh Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/pros-status.json
+          if [ -f data/pros.json ]; then git add data/pros.json; fi
+          if git diff --cached --quiet; then
+            echo "No featured-pro changes."
+            exit 0
+          fi
+          git commit -m "Update featured pro analytics"
+          git push
