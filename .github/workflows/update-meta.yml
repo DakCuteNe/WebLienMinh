@@ -39,6 +39,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -166,6 +168,7 @@ jobs:
         if: always()
         shell: bash
         run: |
+          set -e
           git config user.name "WebLienMinh Bot"
           git config user.email "actions@users.noreply.github.com"
 
@@ -181,4 +184,16 @@ jobs:
 
           PATCH=$(node -e "try{console.log(require('./data/riot/patch.json').patch||'live')}catch{console.log('live')}")
           git commit -m "Auto update Global LoL meta ${PATCH}"
-          git push
+
+          for ATTEMPT in 1 2 3 4 5; do
+            echo "Push attempt ${ATTEMPT}/5"
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((ATTEMPT * 2))
+          done
+
+          echo "Push failed after 5 attempts."
+          exit 1
