@@ -50,26 +50,64 @@ jobs:
 
       - name: Collect Challenger VN2 matches
         id: collect
-        continue-on-error: true
         shell: bash
         run: |
+          set +e
           if [ -z "$RIOT_API_KEY" ]; then
-            echo "::warning::RIOT_API_KEY secret is missing. Skipping Match-V5 collector."
+            echo "RIOT_API_KEY secret is missing." | tee collector.log
+            echo "exit_code=98" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          npm run collect:high-elo
+
+          npm run collect:high-elo 2>&1 | tee collector.log
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
 
       - name: Aggregate current patch meta
+        id: aggregate
         if: always()
         shell: bash
         run: |
+          set +e
           shopt -s nullglob
           matches=(data/matches/*.json)
           if (( ${#matches[@]} > 0 )); then
             npm run aggregate
+            CODE=$?
+            echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           else
-            echo "::warning::No current-patch matches were collected; keeping the previous meta.json."
+            echo "No current-patch matches were collected; keeping the previous meta.json."
+            echo "exit_code=97" >> "$GITHUB_OUTPUT"
           fi
+          exit 0
+
+      - name: Write automation status
+        if: always()
+        shell: bash
+        env:
+          COLLECT_EXIT_CODE: ${{ steps.collect.outputs.exit_code }}
+          AGGREGATE_EXIT_CODE: ${{ steps.aggregate.outputs.exit_code }}
+          PATCH: ${{ steps.riot.outputs.patch }}
+          DD_VERSION: ${{ steps.riot.outputs.version }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          let collectorLog = '';
+          try { collectorLog = await fs.readFile('collector.log', 'utf8'); } catch {}
+          const lines = collectorLog.trim().split(/\r?\n/).filter(Boolean);
+          const status = {
+            checkedAt: new Date().toISOString(),
+            patch: process.env.PATCH || null,
+            dataDragonVersion: process.env.DD_VERSION || null,
+            riotSecretConfigured: Boolean(process.env.RIOT_API_KEY),
+            collectorExitCode: Number(process.env.COLLECT_EXIT_CODE || -1),
+            aggregateExitCode: Number(process.env.AGGREGATE_EXIT_CODE || -1),
+            collectorMessage: lines.slice(-8).join('\n').slice(0, 2000)
+          };
+          await fs.mkdir('data', { recursive: true });
+          await fs.writeFile('data/automation-status.json', JSON.stringify(status, null, 2));
+          NODE
 
       - name: Commit updated Riot/meta data
         if: always()
@@ -78,7 +116,7 @@ jobs:
           git config user.name "WebLienMinh Bot"
           git config user.email "actions@users.noreply.github.com"
 
-          git add data/riot
+          git add data/riot data/automation-status.json
           if [ -f data/meta.json ]; then
             git add data/meta.json
           fi
