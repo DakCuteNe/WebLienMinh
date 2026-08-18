@@ -53,6 +53,14 @@ export function initials(name) {
 }
 
 export function img(url, alt = '', cls = '') {
-  if (!url) return `<span class="image-fallback ${cls}">${esc(initials(alt))}</span>`;
-  return `<img class="${cls}" src="${esc(url)}" alt="${esc(alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling?.classList.remove('hidden')"><span class="image-fallback ${cls} hidden">${esc(initials(alt))}</span>`;
+  const safeAlt = esc(alt);
+  const safeClass = esc(cls);
+  const fallback = `<span class="image-fallback ${safeClass}${url ? ' hidden' : ''}">${esc(initials(alt))}</span>`;
+  if (!url) {
+    const isEsportsPhoto = /(?:^|\s)(?:player-image|profile-player-image)(?:\s|$)/.test(String(cls || ''));
+    if (!isEsportsPhoto) return fallback;
+    const transparent = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+    return `<img class="${safeClass}" src="${transparent}" alt="${safeAlt}" loading="lazy" referrerpolicy="no-referrer" data-media-placeholder="1" style="display:none">${fallback}`;
+  }
+  return `<img class="${safeClass}" src="${esc(url)}" alt="${safeAlt}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling?.classList.remove('hidden')">${fallback}`;
 }
