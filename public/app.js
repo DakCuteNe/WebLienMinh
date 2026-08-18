@@ -40,20 +40,31 @@ async function loadStatus() {
 
 async function getPatchData() {
   let live = null;
-  try {
-    live = await api('/api/patches');
-    if ((live.patches || []).length) return live;
-  } catch {}
+  let cached = null;
 
-  try {
-    const cached = await api(`/data/patches.json?v=${Date.now()}`);
-    if ((cached.patches || []).length) return { ...cached, sourceMode: 'cache', liveWarning: live?.warning || null };
-  } catch (error) {
-    if (live) return live;
-    throw error;
+  try { live = await api('/api/patches'); } catch {}
+  try { cached = await api(`/data/patches.json?v=${Date.now()}`); } catch {}
+
+  if ((live?.patches || []).length) {
+    const cachedByPatch = new Map((cached?.patches || []).map(row => [String(row.patch), row]));
+    const patches = live.patches.map(row => {
+      const fallback = cachedByPatch.get(String(row.patch)) || {};
+      return {
+        ...fallback,
+        ...row,
+        image: row.image || fallback.image || null,
+        description: row.description || fallback.description || '',
+        publishedAt: row.publishedAt || fallback.publishedAt || null
+      };
+    });
+    return { ...(cached || {}), ...live, patches, sourceMode: live.sourceMode || 'live' };
   }
 
-  return live || { patches: [], warning: 'Chưa đọc được Patch Notes.' };
+  if ((cached?.patches || []).length) {
+    return { ...cached, sourceMode: 'cache', liveWarning: live?.warning || null };
+  }
+
+  return live || cached || { patches: [], warning: 'Chưa đọc được Patch Notes.' };
 }
 
 async function loadPatches() {
