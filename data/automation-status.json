@@ -1,14 +1,12 @@
 {
-  "checkedAt": "2026-08-18T18:00:10.784Z",
+  "checkedAt": "2026-08-18T18:02:22.306Z",
   "patch": "16.16",
   "dataDragonVersion": "16.16.1",
   "riotSecretConfigured": true,
   "collectorExitCode": 1,
   "aggregateExitCode": 97,
   "prosExitCode": 1,
-  "esportsExitCode": 1,
   "collectorMessage": "file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:61\n    throw new Error(`${response.status} ${response.statusText}: ${body.slice(0, 300)}`);\n          ^\nError: 503 Service Unavailable: {\"status\":{\"message\":\"Service Unavailable\",\"status_code\":503}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:61:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:67:16\nNode.js v22.23.2",
   "aggregateMessage": "No current-patch matches were collected; keeping the previous meta.json.",
-  "prosMessage": "> node scripts/update-pros.js\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:43\nif (payload?.error) throw new Error(`Leaguepedia Cargo: ${payload.error.info || payload.error.code}`);\n                          ^\nError: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\n    at file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:43:27\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\nNode.js v22.23.2",
-  "esportsMessage": "  if (payload?.error) throw new Error(`Leaguepedia Cargo: ${payload.error.info || payload.error.code}`);\n                            ^\nError: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\n    at cargoQuery (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-esports-directory.js:24:29)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async cargoPaged (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-esports-directory.js:31:18)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-esports-directory.js:56:18\nNode.js v22.23.2"
+  "prosMessage": "> node scripts/update-pros.js\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:43\nif (payload?.error) throw new Error(`Leaguepedia Cargo: ${payload.error.info || payload.error.code}`);\n                          ^\nError: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\n    at file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:43:27\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\nNode.js v22.23.2"
 }
