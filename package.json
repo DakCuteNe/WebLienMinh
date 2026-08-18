@@ -1,0 +1,16 @@
+{
+  "name": "rift-meta-vn",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "collect": "node scripts/collect.js",
+    "aggregate": "node scripts/aggregate.js"
+  },
+  "dependencies": {
+    "dotenv": "latest",
+    "express": "latest"
+  }
+}
