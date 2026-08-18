@@ -1,0 +1,17 @@
+{
+  "source": "Leaguepedia scoreboard data",
+  "note": "Danh sách tuyển thủ nổi bật để theo dõi, không phải bảng xếp hạng sức mạnh tuyệt đối. Có thể thêm/bớt tên tại file này.",
+  "players": [
+    { "name": "Faker", "role": "MID" },
+    { "name": "Chovy", "role": "MID" },
+    { "name": "Ruler", "role": "BOTTOM" },
+    { "name": "Canyon", "role": "JUNGLE" },
+    { "name": "Keria", "role": "UTILITY" },
+    { "name": "Zeus", "role": "TOP" },
+    { "name": "Viper", "role": "BOTTOM" },
+    { "name": "Oner", "role": "JUNGLE" },
+    { "name": "Knight", "role": "MID" },
+    { "name": "Bin", "role": "TOP" },
+    { "name": "Caps", "role": "MID" }
+  ]
+}
