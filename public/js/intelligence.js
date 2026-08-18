@@ -70,13 +70,21 @@ function renderMovers(meta) {
     <div class="mover-column"><div class="intel-label red">📉 ĐANG GIẢM</div>${down.length ? down.map(moverHtml).join('') : '<span class="intel-muted">Không có tướng vượt ngưỡng.</span>'}</div>`;
 }
 
+async function getPatches() {
+  try {
+    const live = await api('/api/patches');
+    if ((live.patches || []).length) return { ...live, sourceMode: 'live' };
+  } catch {}
+  return { ...(await api(`/data/patches.json?v=${Date.now()}`)), sourceMode: 'cache' };
+}
+
 export async function initIntelligence() {
   const meta = await api('/api/meta?role=ALL&tier=ALL&search=');
   const coverage = parseCoverage(meta.methodology?.coverage);
   const age = relativeAge(meta.generatedAt);
 
-  for (const id of ['coverageLive', 'coverageLiveMirror']) if ($( `#${id}` )) $( `#${id}` ).textContent = coverage.servers;
-  for (const id of ['regionsLive', 'regionsLiveMirror']) if ($( `#${id}` )) $( `#${id}` ).textContent = coverage.regions;
+  for (const id of ['coverageLive', 'coverageLiveMirror']) if ($(`#${id}`)) $(`#${id}`).textContent = coverage.servers;
+  for (const id of ['regionsLive', 'regionsLiveMirror']) if ($(`#${id}`)) $(`#${id}`).textContent = coverage.regions;
   if ($('#coverageText')) $('#coverageText').textContent = coverage.text;
   if ($('#metaCoverageChip')) $('#metaCoverageChip').textContent = coverage.text;
   if ($('#datasetTime')) $('#datasetTime').textContent = dateText(meta.generatedAt);
@@ -93,11 +101,11 @@ export async function initIntelligence() {
   renderMovers(meta);
 
   try {
-    const patches = await api('/api/patches');
+    const patches = await getPatches();
     const latest = patches.patches?.[0];
     const box = $('#latestPatchLive');
     if (box && latest) {
-      box.innerHTML = `<div><span class="intel-label">RIOT PATCH NOTES</span><strong>Patch ${esc(latest.patch)}</strong><p>${esc(latest.title || 'Patch Notes chính thức từ Riot Games')}</p></div><a href="${esc(latest.url)}" target="_blank" rel="noreferrer">Đọc Patch Notes ↗</a>`;
+      box.innerHTML = `<div><span class="intel-label">RIOT PATCH NOTES${patches.sourceMode === 'cache' ? ' • CACHE' : ''}</span><strong>Patch ${esc(latest.patch)}</strong><p>${esc(latest.title || 'Patch Notes chính thức từ Riot Games')}</p></div><a href="${esc(latest.url)}" target="_blank" rel="noreferrer">Đọc Patch Notes ↗</a>`;
     }
   } catch (error) {
     if ($('#latestPatchLive')) $('#latestPatchLive').innerHTML = `<span class="intel-muted">Chưa đọc được Patch Notes: ${esc(error.message)}</span>`;
