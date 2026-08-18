@@ -2,6 +2,7 @@ import { $, $$, api, esc, initModal } from './js/shared.js';
 import { initMeta } from './js/meta.js';
 import { initAssets, ensureAssets } from './js/assets.js';
 import { initEsports, ensureEsports } from './js/esports.js';
+import { initIntelligence } from './js/intelligence.js';
 
 let patchesLoaded = false;
 
@@ -23,7 +24,8 @@ async function loadStatus() {
   $('#sampleGames').textContent = Number(status.sampleGames || 0).toLocaleString('vi-VN');
   $('#globalPlayers').textContent = Number(status.esportsPlayers || 0).toLocaleString('vi-VN');
   $('#globalTeams').textContent = Number(status.esportsTeams || 0).toLocaleString('vi-VN');
-  $('#statusBadge').innerHTML = `<span></span> Patch ${esc(status.metaPatch)} • ${status.riotApiConfigured ? 'RIOT API ON' : 'STATIC DATA'}`;
+  const scope = String(status.metaMode || '').toLowerCase().includes('global') ? 'GLOBAL' : (status.platform || 'DATA').toUpperCase();
+  $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(status.metaPatch)} • ${Number(status.sampleGames || 0).toLocaleString('vi-VN')} games`;
 }
 
 async function loadPatches() {
@@ -46,7 +48,7 @@ async function boot() {
 
   const hash = location.hash.replace('#', '');
   try {
-    await Promise.all([loadStatus(), initMeta()]);
+    await Promise.all([loadStatus(), initMeta(), initIntelligence()]);
     if (hash && document.getElementById(hash)) switchSection(hash);
   } catch (error) {
     console.error(error);
