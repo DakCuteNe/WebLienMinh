@@ -1,4 +1,4 @@
-import { $, $$, api, esc, initModal } from './js/shared.js';
+import { $, $$, api, esc, initModal, publicMetaPatch } from './js/shared.js';
 import { initMeta } from './js/meta.js';
 import { initAssets, ensureAssets } from './js/assets.js';
 import { initEsports, ensureEsports } from './js/esports.js';
@@ -20,12 +20,13 @@ document.addEventListener('rift:navigate', event => switchSection(event.detail))
 
 async function loadStatus() {
   const status = await api('/api/status');
-  $('#patchLive').textContent = status.metaPatch === 'live-data' ? 'LIVE' : status.metaPatch;
+  const publicPatch = publicMetaPatch(status.metaPatch);
+  $('#patchLive').textContent = status.metaPatch === 'live-data' ? 'LIVE' : publicPatch;
   $('#sampleGames').textContent = Number(status.sampleGames || 0).toLocaleString('vi-VN');
   $('#globalPlayers').textContent = Number(status.esportsPlayers || 0).toLocaleString('vi-VN');
   $('#globalTeams').textContent = Number(status.esportsTeams || 0).toLocaleString('vi-VN');
   const scope = String(status.metaMode || '').toLowerCase().includes('global') ? 'GLOBAL' : (status.platform || 'DATA').toUpperCase();
-  $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(status.metaPatch)} • ${Number(status.sampleGames || 0).toLocaleString('vi-VN')} games`;
+  $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(publicPatch)} • ${Number(status.sampleGames || 0).toLocaleString('vi-VN')} games`;
 }
 
 async function getPatchData() {
