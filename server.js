@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { installEsportsLiveRoutes } from './server/esports-live.js';
 
 dotenv.config();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -157,6 +158,8 @@ async function leaguepediaCargo(params) {
   if (body?.error) throw new Error(body.error.info || body.error.code);
   return (body.cargoquery || []).map(x => x.title || x);
 }
+
+installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, leaguepediaCargo, escapeCargo });
 
 app.get('/api/status', async (_req, res) => {
   try {
