@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-18T19:32:14.386Z",
+  "checkedAt": "2026-08-18T19:59:28.618Z",
   "health": "ok",
   "scope": "GLOBAL",
   "patch": "16.16",
@@ -37,7 +37,7 @@
       "SEA": 48
     }
   },
-  "riotStaticMessage": "> rift-meta-vn@2.1.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.16.1 (patch 16.16)\nChưa có version Data Dragon mới. Đang ở 16.16.1.",
+  "riotStaticMessage": "> rift-meta-vn@2.3.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.16.1 (patch 16.16)\nChưa có version Data Dragon mới. Đang ở 16.16.1.",
   "collectorMessage": "[127] OC1 • OC1_708292841 • 16.16.804.9184\n[128] OC1 • OC1_708226367 • 16.16.804.9184\n[129] OC1 • OC1_708220877 • 16.16.804.9184\n[130] OC1 • OC1_708151185 • 16.16.804.9184\n[131] OC1 • OC1_708147710 • 16.16.804.9184\n[132] OC1 • OC1_708099313 • 16.16.804.9184\n[133] OC1 • OC1_708323791 • 16.16.804.9184\n[134] OC1 • OC1_708318896 • 16.16.804.9184\n[135] OC1 • OC1_708314799 • 16.16.804.9184\n[136] OC1 • OC1_708288105 • 16.16.804.9184\n[137] OC1 • OC1_708284477 • 16.16.804.9184\n[138] OC1 • OC1_708282582 • 16.16.804.9184\nGLOBAL DATASET OK: 138 trận • 13/16 platforms • 4/4 macro regions.\nTheo platform: {\"na1\":6,\"br1\":10,\"la1\":10,\"la2\":12,\"euw1\":11,\"eun1\":6,\"tr1\":12,\"ru\":12,\"jp1\":11,\"vn2\":12,\"sg2\":12,\"tw2\":12,\"oc1\":12}",
-  "aggregateMessage": "> rift-meta-vn@2.1.0 aggregate\n> node scripts/aggregate.js\nĐã tạo /home/runner/work/WebLienMinh/WebLienMinh/data/meta.json: patch 16.16, 138 trận, 299 champion-role.\n> rift-meta-vn@2.1.0 finalize:global\n> node scripts/finalize-global-meta.js\nĐã finalize meta toàn cầu: 138 trận • 13/16 server Riot • 4/4 cụm khu vực."
+  "aggregateMessage": "> rift-meta-vn@2.3.0 aggregate\n> node scripts/aggregate.js\nĐã tạo /home/runner/work/WebLienMinh/WebLienMinh/data/meta.json: patch 16.16, 138 trận, 303 champion-role.\n> rift-meta-vn@2.3.0 finalize:global\n> node scripts/finalize-global-meta.js\nĐã finalize meta toàn cầu: 138 trận • 13/16 server Riot • 4/4 cụm khu vực."
 }
