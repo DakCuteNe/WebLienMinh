@@ -1,4 +1,3 @@
-# Manual validation trigger: Riot secret refreshed
 name: Auto Update LoL Meta
 
 on:
@@ -11,6 +10,7 @@ on:
     paths:
       - '.github/workflows/update-meta.yml'
       - 'scripts/**'
+      - 'data/pro-watchlist.json'
       - 'package.json'
 
 permissions:
@@ -23,14 +23,14 @@ concurrency:
 jobs:
   update-meta:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
       RIOT_PLATFORM: vn2
       RIOT_REGION: sea
       DDRAGON_LOCALE: vi_VN
-      HIGH_ELO_PLAYERS: 5
-      MATCHES_PER_PLAYER: 10
+      HIGH_ELO_PLAYERS: 10
+      MATCHES_PER_PLAYER: 20
       RIOT_REQUEST_DELAY_MS: 1300
 
     steps:
@@ -59,7 +59,6 @@ jobs:
             echo "exit_code=98" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-
           npm run collect:high-elo 2>&1 | tee collector.log
           CODE=${PIPESTATUS[0]}
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
@@ -74,13 +73,24 @@ jobs:
           shopt -s nullglob
           matches=(data/matches/*.json)
           if (( ${#matches[@]} > 0 )); then
-            npm run aggregate
-            CODE=$?
+            npm run aggregate 2>&1 | tee aggregate.log
+            CODE=${PIPESTATUS[0]}
             echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           else
-            echo "No current-patch matches were collected; keeping the previous meta.json."
+            echo "No current-patch matches were collected; keeping the previous meta.json." | tee aggregate.log
             echo "exit_code=97" >> "$GITHUB_OUTPUT"
           fi
+          exit 0
+
+      - name: Update featured pro analytics
+        id: pros
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          npm run update:pros 2>&1 | tee pros.log
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
       - name: Write automation status
@@ -89,14 +99,18 @@ jobs:
         env:
           COLLECT_EXIT_CODE: ${{ steps.collect.outputs.exit_code }}
           AGGREGATE_EXIT_CODE: ${{ steps.aggregate.outputs.exit_code }}
+          PROS_EXIT_CODE: ${{ steps.pros.outputs.exit_code }}
           PATCH: ${{ steps.riot.outputs.patch }}
           DD_VERSION: ${{ steps.riot.outputs.version }}
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs/promises';
-          let collectorLog = '';
-          try { collectorLog = await fs.readFile('collector.log', 'utf8'); } catch {}
-          const lines = collectorLog.trim().split(/\r?\n/).filter(Boolean);
+          async function tail(file) {
+            try {
+              const text = await fs.readFile(file, 'utf8');
+              return text.trim().split(/\r?\n/).filter(Boolean).slice(-8).join('\n').slice(0, 2000);
+            } catch { return ''; }
+          }
           const status = {
             checkedAt: new Date().toISOString(),
             patch: process.env.PATCH || null,
@@ -104,13 +118,16 @@ jobs:
             riotSecretConfigured: Boolean(process.env.RIOT_API_KEY),
             collectorExitCode: Number(process.env.COLLECT_EXIT_CODE || -1),
             aggregateExitCode: Number(process.env.AGGREGATE_EXIT_CODE || -1),
-            collectorMessage: lines.slice(-8).join('\n').slice(0, 2000)
+            prosExitCode: Number(process.env.PROS_EXIT_CODE || -1),
+            collectorMessage: await tail('collector.log'),
+            aggregateMessage: await tail('aggregate.log'),
+            prosMessage: await tail('pros.log')
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/automation-status.json', JSON.stringify(status, null, 2));
           NODE
 
-      - name: Commit updated Riot/meta data
+      - name: Commit updated analytics data
         if: always()
         shell: bash
         run: |
@@ -118,9 +135,8 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
 
           git add data/riot data/automation-status.json
-          if [ -f data/meta.json ]; then
-            git add data/meta.json
-          fi
+          if [ -f data/meta.json ]; then git add data/meta.json; fi
+          if [ -f data/pros.json ]; then git add data/pros.json; fi
 
           if git diff --cached --quiet; then
             echo "No data changes to commit."
@@ -129,5 +145,5 @@ jobs:
 
           PATCH="${{ steps.riot.outputs.patch }}"
           VERSION="${{ steps.riot.outputs.version }}"
-          git commit -m "Auto update LoL meta ${PATCH:-live} (${VERSION:-Riot})"
+          git commit -m "Auto update LoL analytics ${PATCH:-live} (${VERSION:-Riot})"
           git push
