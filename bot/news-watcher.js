@@ -49,6 +49,17 @@ function absoluteUrl(href) {
   catch { return null; }
 }
 
+function normalizeUrl(url = '') {
+  try {
+    const parsed = new URL(url);
+    parsed.hash = '';
+    parsed.search = '';
+    return parsed.toString().replace(/\/$/, '').toLowerCase();
+  } catch {
+    return String(url || '').replace(/[?#].*$/, '').replace(/\/$/, '').toLowerCase();
+  }
+}
+
 function titleFromSlug(url) {
   try {
     const slug = new URL(url).pathname.split('/').filter(Boolean).pop() || 'league-news';
@@ -98,7 +109,7 @@ async function enrichArticleImage(article) {
   try {
     const response = await fetch(article.url, {
       headers: {
-        'User-Agent': 'WebLienMinh-DiscordBot/3.1 rich-news-preview',
+        'User-Agent': 'WebLienMinh-DiscordBot/3.2 rich-news-preview',
         'Accept-Language': 'en-US,en;q=0.9'
       },
       signal: AbortSignal.timeout(15_000)
@@ -178,7 +189,7 @@ function articleKey(article) {
     const patch = extractPatchVersion(article.title, article.url);
     if (patch) return `patch:${patch}`;
   }
-  return article.url.replace(/[?#].*$/, '').replace(/\/$/, '').toLowerCase();
+  return normalizeUrl(article.url);
 }
 
 function parseOfficialNews(html) {
@@ -224,7 +235,7 @@ function parseOfficialNews(html) {
 async function fetchOfficialNews() {
   const response = await fetch(RIOT_NEWS_URL, {
     headers: {
-      'User-Agent': 'WebLienMinh-DiscordBot/3.1 Riot-news-watcher',
+      'User-Agent': 'WebLienMinh-DiscordBot/3.2 Riot-news-watcher',
       'Accept-Language': 'en-US,en;q=0.9'
     },
     signal: AbortSignal.timeout(20_000)
@@ -259,7 +270,7 @@ async function extractUpcomingSkins(article) {
   if (article.type !== 'patch') return [];
   try {
     const response = await fetch(article.url, {
-      headers: { 'User-Agent': 'WebLienMinh-DiscordBot/3.1 patch-skin-parser' },
+      headers: { 'User-Agent': 'WebLienMinh-DiscordBot/3.2 patch-skin-parser' },
       signal: AbortSignal.timeout(15_000)
     });
     if (!response.ok) return [];
@@ -312,17 +323,22 @@ async function readState(file) {
     return {
       initialized: Boolean(parsed.initialized),
       seen: Array.isArray(parsed.seen) ? parsed.seen : [],
+      notified: Array.isArray(parsed.notified) ? parsed.notified : [],
       lastCheckAt: parsed.lastCheckAt || null,
       lastSentAt: parsed.lastSentAt || null
     };
   } catch {
-    return { initialized: false, seen: [], lastCheckAt: null, lastSentAt: null };
+    return { initialized: false, seen: [], notified: [], lastCheckAt: null, lastSentAt: null };
   }
 }
 
 async function writeState(file, state) {
   await fs.mkdir(path.dirname(file), { recursive: true });
-  const trimmed = { ...state, seen: [...new Set(state.seen)].slice(-600) };
+  const trimmed = {
+    ...state,
+    seen: [...new Set(state.seen || [])].slice(-600),
+    notified: [...new Set(state.notified || [])].slice(-600)
+  };
   await fs.writeFile(file, JSON.stringify(trimmed, null, 2));
 }
 
@@ -360,7 +376,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
 
   let timer = null;
   let running = false;
-  let state = { initialized: false, seen: [], lastCheckAt: null, lastSentAt: null };
+  let state = { initialized: false, seen: [], notified: [], lastCheckAt: null, lastSentAt: null };
   let lastError = null;
   let lastArticle = null;
   let sentCount = 0;
@@ -394,7 +410,42 @@ export function createNewsWatcher(client, { webApiUrl }) {
     return [...byKey.values()];
   }
 
+  async function wasAlreadyAnnounced(channel, article) {
+    const key = article.key || articleKey(article);
+    if ((state.notified || []).includes(key)) return true;
+
+    if (!channel?.messages?.fetch || !client.user?.id) return false;
+    try {
+      const recent = await channel.messages.fetch({ limit: 50 });
+      const targetUrl = normalizeUrl(article.url);
+      const duplicate = recent.some(message => {
+        if (message.author?.id !== client.user.id) return false;
+        return message.embeds?.some(embed => {
+          const embedUrl = normalizeUrl(embed.url || '');
+          if (targetUrl && embedUrl && targetUrl === embedUrl) return true;
+          if (article.type === 'patch') {
+            const patch = extractPatchVersion(article.title, article.url);
+            return Boolean(patch && String(embed.title || '').includes(patch));
+          }
+          return false;
+        });
+      });
+
+      if (duplicate && !state.notified.includes(key)) state.notified.push(key);
+      return duplicate;
+    } catch (error) {
+      console.log(`[news-dedupe] Không đọc được lịch sử channel: ${error.message}`);
+      return false;
+    }
+  }
+
   async function sendArticle(channel, article) {
+    const key = article.key || articleKey(article);
+    if (await wasAlreadyAnnounced(channel, article)) {
+      console.log(`[news-dedupe] Bỏ qua tin đã gửi: ${article.title}`);
+      return { sent: false, duplicate: true, key };
+    }
+
     const richArticle = await enrichArticleImage(article);
     const roleId = roleForType(richArticle.type);
     const mention = mentionForRole(roleId);
@@ -405,9 +456,12 @@ export function createNewsWatcher(client, { webApiUrl }) {
       embeds: [embed],
       allowedMentions: roleId ? { roles: [roleId] } : { parse: [] }
     });
+
+    if (!state.notified.includes(key)) state.notified.push(key);
     sentCount++;
     state.lastSentAt = new Date().toISOString();
     lastArticle = richArticle;
+    return { sent: true, duplicate: false, key };
   }
 
   async function check({ forceLatest = false } = {}) {
@@ -424,14 +478,19 @@ export function createNewsWatcher(client, { webApiUrl }) {
         state.initialized = true;
         state.seen = currentKeys;
         state.lastCheckAt = now;
-        await writeState(stateFile, state);
-        lastError = null;
+        let startupSent = 0;
 
         if (notifyOnStartup && channel) {
           const latest = feed.find(x => types.has(x.type));
-          if (latest) await sendArticle(channel, latest);
+          if (latest) {
+            const result = await sendArticle(channel, latest);
+            startupSent = result.sent ? 1 : 0;
+          }
         }
-        return { initialized: true, articles: feed.length, sent: notifyOnStartup ? 1 : 0 };
+
+        await writeState(stateFile, state);
+        lastError = null;
+        return { initialized: true, articles: feed.length, sent: startupSent };
       }
 
       const seen = new Set(state.seen);
@@ -442,9 +501,13 @@ export function createNewsWatcher(client, { webApiUrl }) {
       }
 
       fresh = fresh.slice(0, 8).reverse();
+      let actuallySent = 0;
+      let duplicates = 0;
       if (channel) {
         for (const article of fresh) {
-          await sendArticle(channel, article);
+          const result = await sendArticle(channel, article);
+          if (result.sent) actuallySent++;
+          if (result.duplicate) duplicates++;
           await sleep(800);
         }
       }
@@ -453,7 +516,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
       state.lastCheckAt = now;
       await writeState(stateFile, state);
       lastError = null;
-      return { articles: feed.length, fresh: fresh.length, sent: channel ? fresh.length : 0 };
+      return { articles: feed.length, fresh: fresh.length, sent: actuallySent, duplicates };
     } catch (error) {
       lastError = error.message || String(error);
       console.error('[news-watcher]', error);
@@ -501,11 +564,12 @@ export function createNewsWatcher(client, { webApiUrl }) {
         throw new Error(`Chưa tìm thấy tin Riot hiện có thuộc loại ${TYPE_META[safeType].label}.`);
       }
 
-      await sendArticle(channel, latest);
+      const result = await sendArticle(channel, latest);
       await writeState(stateFile, state);
       lastError = null;
       return {
-        sent: 1,
+        sent: result.sent ? 1 : 0,
+        duplicate: Boolean(result.duplicate),
         type: safeType,
         title: latest.title,
         url: latest.url,
@@ -527,6 +591,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
       intervalMinutes,
       types: [...types],
       stateFile,
+      notifiedCount: state.notified?.length || 0,
       lastCheckAt: state.lastCheckAt,
       lastSentAt: state.lastSentAt,
       lastError,
