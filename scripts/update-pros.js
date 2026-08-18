@@ -7,6 +7,7 @@ const root = path.join(__dirname, '..');
 const watchFile = path.join(root, 'data', 'pro-watchlist.json');
 const output = path.join(root, 'data', 'pros.json');
 const API = 'https://lol.fandom.com/api.php';
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const watch = JSON.parse(await fs.readFile(watchFile, 'utf8'));
 const featured = watch.players || [];
@@ -19,6 +20,7 @@ const namesWhere = featured.map(x => `SP.Link='${escapeCargo(x.name)}'`).join(' 
 const params = new URLSearchParams({
   action: 'cargoquery',
   format: 'json',
+  maxlag: '5',
   tables: 'ScoreboardPlayers=SP,ScoreboardGames=SG',
   fields: [
     'SP.Link=player','SP.Team=team','SP.TeamVs=opponent','SP.Champion=champion',
@@ -35,12 +37,39 @@ const params = new URLSearchParams({
   limit: '500'
 });
 
-const response = await fetch(`${API}?${params}`, {
-  headers: { 'User-Agent': 'WebLienMinh/1.2 featured-pro-analytics (educational project)' }
-});
-if (!response.ok) throw new Error(`Leaguepedia HTTP ${response.status}: ${await response.text()}`);
-const payload = await response.json();
-if (payload?.error) throw new Error(`Leaguepedia Cargo: ${payload.error.info || payload.error.code}`);
+async function fetchCargo() {
+  const url = `${API}?${params}`;
+  for (let attempt = 0; attempt < 7; attempt++) {
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'WebLienMinh/2.0 featured-pro-analytics (educational project; GitHub DakCuteNe/WebLienMinh)' }
+    });
+
+    if (response.status === 429 || [502,503,504].includes(response.status)) {
+      const retryAfter = Number(response.headers.get('retry-after') || 0);
+      const wait = retryAfter ? retryAfter * 1000 : Math.min(45_000, 5_000 * (attempt + 1));
+      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s...`);
+      await sleep(wait);
+      continue;
+    }
+
+    if (!response.ok) throw new Error(`Leaguepedia HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
+    const payload = await response.json();
+    if (payload?.error) {
+      const info = String(payload.error.info || payload.error.code || 'Cargo error');
+      if (/rate limit|too many|maxlag|lagged|temporar/i.test(info) && attempt < 6) {
+        const wait = Math.min(60_000, 7_000 * (attempt + 1));
+        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ ${Math.ceil(wait / 1000)}s...`);
+        await sleep(wait);
+        continue;
+      }
+      throw new Error(`Leaguepedia Cargo: ${info}`);
+    }
+    return payload;
+  }
+  throw new Error('Leaguepedia vẫn giới hạn request featured pros sau nhiều lần retry.');
+}
+
+const payload = await fetchCargo();
 const rows = (payload.cargoquery || []).map(x => x.title || x);
 
 const asNum = value => Number(value || 0) || 0;
@@ -94,24 +123,13 @@ for (const target of featured) {
   const wins = recent.filter(x => isWin(x.win)).length;
   const championPool = countBy(recent, x => x.champion).slice(0, 10).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
   const spells = countBy(recent, x => splitList(x.spells, ',').sort().join(' + ')).slice(0, 5).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
-  const runePages = countBy(recent, x => {
-    const parts = [x.keystone, x.primaryTree, x.secondaryTree].filter(Boolean);
-    return parts.join(' • ');
-  }).slice(0, 5).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
-
-  const builds = countBy(recent, x => {
-    const items = splitList(x.items, ';').filter(name => !/warding totem|oracle lens|farsight alteration/i.test(name));
-    return items.slice(0, 6).join(' → ');
-  }).filter(x => x.name).slice(0, 5).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
-
+  const runePages = countBy(recent, x => [x.keystone, x.primaryTree, x.secondaryTree].filter(Boolean).join(' • ')).slice(0, 5).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
+  const builds = countBy(recent, x => splitList(x.items, ';').filter(name => !/warding totem|oracle lens|farsight alteration/i.test(name)).slice(0, 6).join(' → '))
+    .filter(x => x.name).slice(0, 5).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
   const itemPool = countBy(recent, x => splitList(x.items, ';').filter(name => !/warding totem|oracle lens|farsight alteration/i.test(name)))
     .slice(0, 10).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
-
-  const bans = countBy(recent, x => {
-    const side = Number(x.side);
-    const raw = side === 2 ? x.team2Bans : x.team1Bans;
-    return splitList(raw, ',');
-  }).slice(0, 10).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
+  const bans = countBy(recent, x => splitList(Number(x.side) === 2 ? x.team2Bans : x.team1Bans, ','))
+    .slice(0, 10).map(x => ({ ...x, rate: pct(x.count, recent.length) }));
 
   const role = normalizeRole(recent.find(x => x.role)?.role || target.role);
   const deaths = recent.reduce((s, x) => s + asNum(x.deaths), 0);
