@@ -23,10 +23,16 @@ async function loadMeta() {
   const qs = new URLSearchParams({ role: $('#role').value, tier: $('#tier').value, search: $('#search').value });
   try {
     const data = await api('/api/meta?' + qs);
-    $('#metaSubtitle').textContent = `Patch ${data.patch} • ${Number(data.sampleGames || 0).toLocaleString('vi-VN')} trận • ${data.mode}`;
-    if (data.notice) {
+    const coverage = data.methodology?.coverage || '';
+    const scope = data.methodology?.scope || '';
+    const isGlobal = String(data.mode || '').toLowerCase().includes('global') || /toàn thế giới|toàn cầu/i.test(scope);
+    $('#metaSubtitle').textContent = `Patch ${data.patch} • ${Number(data.sampleGames || 0).toLocaleString('vi-VN')} trận • ${coverage || data.mode}`;
+
+    if (isGlobal || scope || data.notice) {
       $('#dataWarning').classList.remove('hidden');
-      $('#dataWarning').textContent = 'ⓘ ' + data.notice;
+      $('#dataWarning').textContent = isGlobal
+        ? `🌍 GLOBAL HIGH-ELO • ${coverage || 'nhiều server Riot'}. ${scope || 'Ranked Solo/Duo High-Elo từ nhiều platform Riot trên toàn thế giới.'}`
+        : `ⓘ ${data.notice || scope}`;
     } else $('#dataWarning').classList.add('hidden');
 
     const rows = data.champions || [];
