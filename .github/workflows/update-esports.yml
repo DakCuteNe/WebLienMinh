@@ -93,17 +93,18 @@ jobs:
           const mediaCode = Number(process.env.media_exit_code ?? process.env.MEDIA_EXIT_CODE ?? -1);
           const auditCode = Number(process.env.audit_exit_code ?? process.env.AUDIT_EXIT_CODE ?? -1);
           const directoryCreated = await fs.access('data/esports-directory.json').then(() => true).catch(() => false);
-          const degraded = identityCode > 0 || mediaCode > 0 || auditCode > 0;
+          const complete = code === 0 && identityCode === 0 && mediaCode === 0 && auditCode === 0;
           const status = {
             checkedAt: new Date().toISOString(),
-            health: code === 0 ? (degraded ? 'degraded' : 'ok') : (directoryCreated ? 'degraded' : 'waiting'),
+            health: complete ? 'ok' : (directoryCreated ? 'degraded' : 'waiting'),
             exitCode: code,
             identityExitCode: identityCode,
             mediaExitCode: mediaCode,
             auditExitCode: auditCode,
             directoryCreated,
-            preservedPreviousData: code !== 0 && directoryCreated,
-            message: [log, identityLog, mediaLog, auditLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-85).join('\n').slice(0, 15000)
+            publishReady: complete,
+            preservedPreviousData: !complete && directoryCreated,
+            message: [log, identityLog, mediaLog, auditLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-90).join('\n').slice(0, 16000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
@@ -112,16 +113,33 @@ jobs:
       - name: Commit directory, audit and status
         if: always()
         shell: bash
+        env:
+          BUILD_CODE: ${{ steps.build.outputs.exit_code }}
         run: |
           set -e
           git config user.name "WebLienMinh Bot"
           git config user.email "actions@users.noreply.github.com"
+
+          COMPLETE=0
+          if [ "${BUILD_CODE:--1}" = "0" ] && \
+             [ "${identity_exit_code:--1}" = "0" ] && \
+             [ "${media_exit_code:--1}" = "0" ] && \
+             [ "${audit_exit_code:--1}" = "0" ]; then
+            COMPLETE=1
+          fi
+
+          if [ "$COMPLETE" = "1" ]; then
+            echo "All esports stages completed; publishing new directory."
+            git add data/esports-directory.json data/esports-audit.json
+          else
+            echo "Esports run incomplete/cancelled; preserving last committed directory and audit."
+            git restore --worktree --staged data/esports-directory.json 2>/dev/null || true
+            git restore --worktree --staged data/esports-audit.json 2>/dev/null || true
+          fi
           git add data/esports-directory-status.json
-          if [ -f data/esports-directory.json ]; then git add data/esports-directory.json; fi
-          if [ -f data/esports-audit.json ]; then git add data/esports-audit.json; fi
 
           if git diff --cached --quiet; then
-            echo "No esports directory changes."
+            echo "No esports changes."
             exit 0
           fi
 
