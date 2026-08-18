@@ -1,9 +1,12 @@
 {
-  "checkedAt": "2026-08-18T17:02:19.914Z",
+  "checkedAt": "2026-08-18T17:24:20.813Z",
   "patch": "16.16",
   "dataDragonVersion": "16.16.1",
   "riotSecretConfigured": true,
   "collectorExitCode": 0,
   "aggregateExitCode": 0,
-  "collectorMessage": "[40] VN2_1545613749 | 16.16.804.9184\n[41] VN2_1545584131 | 16.16.804.9184\n[42] VN2_1545540443 | 16.16.804.9184\n[43] VN2_1545516132 | 16.16.804.9184\n[44] VN2_1545317972 | 16.16.804.9184\n[45] VN2_1545281129 | 16.16.804.9184\n[46] VN2_1543752894 | 16.16.804.9184\nHoàn tất: lưu 46 trận patch 16.16; bỏ qua 3 trận patch cũ."
+  "prosExitCode": 0,
+  "collectorMessage": "[107] VN2_1540189870 | 16.16.804.9184\n[108] VN2_1540162047 | 16.16.804.9184\n[109] VN2_1540118217 | 16.16.804.9184\n[110] VN2_1540069911 | 16.16.804.9184\n[111] VN2_1540025673 | 16.16.804.9184\n[112] VN2_1540006812 | 16.16.804.9184\n[113] VN2_1539964872 | 16.16.804.9184\nHoàn tất: lưu 113 trận patch 16.16; bỏ qua 74 trận patch cũ.",
+  "aggregateMessage": "> rift-meta-vn@1.2.0 aggregate\n> node scripts/aggregate.js\nĐã tạo /home/runner/work/WebLienMinh/WebLienMinh/data/meta.json: patch 16.16, 113 trận, 237 champion-role.",
+  "prosMessage": "> rift-meta-vn@1.2.0 update:pros\n> node scripts/update-pros.js\nĐã cập nhật 8/11 featured pros từ 500 scoreboard rows."
 }
