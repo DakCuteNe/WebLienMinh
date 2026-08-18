@@ -4,16 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#070b12" />
-  <meta name="description" content="Rift Meta VN 2.1 — phân tích meta toàn cầu, counter, build, rune, asset và tuyển thủ Liên Minh Huyền Thoại." />
-  <title>Rift Meta VN 2.1 — Global LoL Analytics & Esports</title>
+  <meta name="description" content="Rift Meta Global 2.2 — phân tích meta High-Elo toàn cầu, counter, build, rune, asset, esports và Riot updates." />
+  <title>Rift Meta Global 2.2 — Global LoL Analytics & Esports</title>
   <link rel="preconnect" href="https://ddragon.leagueoflegends.com" />
   <link rel="preconnect" href="https://lol.fandom.com" />
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/v2.css" data-rift-v2="true" />
+  <link rel="stylesheet" href="/v3.css" />
 </head>
 <body>
   <div class="noise"></div>
   <header class="topbar">
-    <a class="brand" href="#dashboard"><span class="brand-gem">R</span><span><b>RIFT</b> META VN</span><small>2.1</small></a>
+    <a class="brand" href="#dashboard"><span class="brand-gem">R</span><span><b>RIFT</b> META GLOBAL</span><small class="new-version">2.2</small></a>
     <nav id="nav">
       <button class="nav-btn active" data-section="dashboard">Tổng quan</button>
       <button class="nav-btn" data-section="meta">Meta</button>
@@ -30,24 +32,66 @@
       <div class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <div class="eyebrow">GLOBAL LEAGUE OF LEGENDS • ANALYTICS • ESPORTS</div>
+          <div class="global-ribbon">GLOBAL HIGH-ELO • LIVE DATA</div>
+          <div class="eyebrow">LEAGUE OF LEGENDS • GLOBAL ANALYTICS • ESPORTS</div>
           <h1>Đọc meta.<br><span>Hiểu trận đấu.</span></h1>
-          <p>Meta High‑Elo trên nhiều server Riot toàn thế giới, counter theo lane, build/ngọc/phép phổ biến và hồ sơ tuyển thủ chuyên nghiệp toàn cầu trong cùng một hệ thống.</p>
+          <p>Meta High‑Elo trên nhiều server Riot toàn thế giới, counter theo lane, build/ngọc/phép phổ biến, biến động sức mạnh và hồ sơ tuyển thủ chuyên nghiệp trong cùng một hệ thống.</p>
           <div class="hero-actions">
             <button class="primary" data-go="meta">Xem Tier List</button>
+            <button class="secondary" data-go="patch">Xem Riot Update</button>
             <button class="secondary" data-go="esports">Khám phá tuyển thủ</button>
           </div>
         </div>
-        <div class="hero-stats">
+        <div class="hero-stats hero-stats-six">
           <div><span>PATCH</span><strong id="patchLive">—</strong><small>Riot / Data Dragon</small></div>
           <div><span>DATASET</span><strong id="sampleGames">—</strong><small>Global High‑Elo Ranked</small></div>
+          <div><span>RIOT SERVERS</span><strong id="coverageLive">—</strong><small>Platform đóng góp</small></div>
+          <div><span>MACRO REGIONS</span><strong id="regionsLive">—</strong><small>AMERICAS / EUROPE / ASIA / SEA</small></div>
           <div><span>PRO PLAYERS</span><strong id="globalPlayers">—</strong><small>Worldwide directory</small></div>
           <div><span>TEAMS</span><strong id="globalTeams">—</strong><small>Logo + roster profile</small></div>
         </div>
       </div>
 
       <div class="section-intro compact">
-        <div><div class="eyebrow">LIVE INTELLIGENCE</div><h2>Một dashboard, nhiều lớp dữ liệu toàn cầu</h2></div>
+        <div><div class="eyebrow">LIVE INTELLIGENCE 2.2</div><h2>Dữ liệu Global đang chạy thật</h2></div>
+        <p id="scopeText">Đang xác nhận phạm vi dataset toàn cầu...</p>
+      </div>
+
+      <div class="live-intelligence">
+        <article class="intel-card coverage-card">
+          <div>
+            <div class="intel-label">GLOBAL COVERAGE</div>
+            <h3 id="coverageText">Đang tải coverage...</h3>
+            <p>Dataset chỉ được chấp nhận khi đủ độ phủ nhiều server và đủ các cụm Riot chính.</p>
+          </div>
+          <div class="coverage-numbers">
+            <div><span>SERVER</span><strong id="coverageLiveMirror">13/16</strong><small class="intel-muted">Riot platforms</small></div>
+            <div><span>REGION</span><strong id="regionsLiveMirror">4/4</strong><small class="intel-muted">macro regions</small></div>
+          </div>
+        </article>
+
+        <article class="intel-card patch-live-card" id="latestPatchLive">
+          <span class="intel-muted">Đang đọc Patch Notes mới nhất...</span>
+        </article>
+
+        <article class="intel-card">
+          <div class="intel-label">DATA FRESHNESS</div>
+          <h3 id="datasetAge">Đang kiểm tra...</h3>
+          <p>Cập nhật dataset gần nhất: <b id="datasetTime">—</b></p>
+          <span id="datasetMode" class="freshness ok">Global High-Elo</span>
+        </article>
+
+        <article class="intel-card movers-panel">
+          <div class="movers-panel-head">
+            <div><div class="intel-label">META MOVEMENT</div><h3>Tướng tăng / giảm sức mạnh trong dữ liệu Global</h3></div>
+            <p>So sánh Tier Score với snapshot aggregate trước; đây là xu hướng thống kê, không đồng nghĩa buff/nerf chính thức.</p>
+          </div>
+          <div id="liveMovers" class="live-movers"><span class="intel-muted">Đang phân tích biến động...</span></div>
+        </article>
+      </div>
+
+      <div class="section-intro compact">
+        <div><div class="eyebrow">TOOLS</div><h2>Một dashboard, nhiều lớp dữ liệu toàn cầu</h2></div>
         <p>Game assets từ Riot Data Dragon; global meta từ Match‑V5 trên nhiều platform; hồ sơ esports từ Leaguepedia với nguồn được ghi rõ.</p>
       </div>
       <div class="feature-grid">
@@ -66,6 +110,11 @@
           <select id="role"><option value="ALL">Tất cả vị trí</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
           <select id="tier"><option value="ALL">Tất cả tier</option><option>S</option><option>A</option><option>B</option><option>C</option><option>D</option></select>
         </div>
+      </div>
+      <div class="meta-scope-bar">
+        <span class="meta-scope-chip">🌍 Scope <b>GLOBAL HIGH-ELO</b></span>
+        <span class="meta-scope-chip">🗺️ Coverage <b id="metaCoverageChip">nhiều server Riot</b></span>
+        <span class="meta-scope-chip">🔄 Update <b>mỗi 6 giờ</b></span>
       </div>
       <div id="dataWarning" class="notice hidden"></div>
       <div class="table-wrap">
@@ -111,7 +160,7 @@
     </section>
 
     <section id="patch" class="page-section">
-      <div class="section-intro"><div><div class="eyebrow">OFFICIAL RIOT UPDATES</div><h2>Patch Notes</h2><p>Liên kết cập nhật chính thức từ Riot Games.</p></div></div>
+      <div class="section-intro"><div><div class="eyebrow">OFFICIAL RIOT UPDATES</div><h2>Patch Notes</h2><p>Liên kết cập nhật chính thức từ Riot Games. Discord bot cũng tự gửi Patch / Skin / Hall of Legends / Event khi có tin mới.</p></div></div>
       <div id="patchGrid" class="patch-grid"><div class="loading-card">Đang đọc Riot Patch Notes...</div></div>
     </section>
   </main>
@@ -119,7 +168,7 @@
   <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
 
   <footer>
-    <div><b>Rift Meta VN 2.1</b><span>Global LoL analytics & esports intelligence.</span></div>
+    <div><b>Rift Meta Global 2.2</b><span>Global LoL analytics & esports intelligence.</span></div>
     <p>Game assets: Riot Data Dragon. Esports profiles: Leaguepedia / League of Legends Esports Wiki. Leaguepedia content CC BY-SA 3.0 unless otherwise noted. Không được Riot Games tài trợ hay xác nhận.</p>
   </footer>
   <script type="module" src="/app.js"></script>
