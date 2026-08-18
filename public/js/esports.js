@@ -4,6 +4,7 @@ let filtersLoaded = false;
 let page = 1;
 let pages = 1;
 let timer;
+const liveBioCache = new Map();
 
 export function initEsports() {
   $('#playerRole').onchange = () => { page = 1; loadPlayers(); };
@@ -97,11 +98,109 @@ function performanceBlock(p, featured) {
   </div><h4>Champion pool gần đây</h4><div class="chips">${statChips(pool, 8)}</div>${featured?.available && featured.styleSummary ? `<p>${esc(featured.styleSummary)}</p>` : ''}`;
 }
 
+function cleanLiveValue(value) {
+  return String(value || '').replace(/\s+/g, ' ').replace(/\[[^\]]*\]/g, '').trim();
+}
+
+function normalizeLiveDate(value) {
+  const raw = cleanLiveValue(value).replace(/\(age\s+\d+\)/i, '').trim();
+  if (!raw) return null;
+  const iso = raw.match(/\b(19|20)\d{2}-\d{2}-\d{2}\b/)?.[0];
+  if (iso) return iso;
+  const parsed = Date.parse(raw);
+  return Number.isNaN(parsed) ? null : new Date(parsed).toISOString().slice(0, 10);
+}
+
+function ageFromDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ''))) return null;
+  const [y, m, d] = value.split('-').map(Number);
+  const now = new Date();
+  let age = now.getUTCFullYear() - y;
+  if (now.getUTCMonth() + 1 < m || (now.getUTCMonth() + 1 === m && now.getUTCDate() < d)) age--;
+  return age > 0 && age < 80 ? age : null;
+}
+
+function pickBetween(text, start, ends) {
+  const escaped = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const end = ends.map(escaped).join('|');
+  const re = new RegExp(`${escaped(start)}\\s+([\\s\\S]{1,240}?)(?=\\s+(?:${end})\\s+)`, 'i');
+  return cleanLiveValue(text.match(re)?.[1]);
+}
+
+function externalSocials(doc) {
+  const links = [...doc.querySelectorAll('a[href]')].map(a => a.href).filter(Boolean);
+  const first = re => links.find(href => re.test(href)) || null;
+  return {
+    twitter: first(/(?:twitter\.com|x\.com)\//i),
+    instagram: first(/instagram\.com\//i),
+    stream: first(/twitch\.tv\//i),
+    youtube: first(/youtube\.com\//i)
+  };
+}
+
+async function liveLeaguepediaBio(player) {
+  const pageName = player.overviewPage || player.identityId || player.id;
+  if (!pageName) return null;
+  const key = String(pageName).toLowerCase();
+  if (liveBioCache.has(key)) return liveBioCache.get(key);
+
+  const promise = (async () => {
+    try {
+      const params = new URLSearchParams({ action: 'parse', page: pageName, prop: 'text|displaytitle', format: 'json', origin: '*' });
+      const response = await fetch(`https://lol.fandom.com/api.php?${params}`, { cache: 'force-cache', signal: AbortSignal.timeout(6500) });
+      if (!response.ok) return null;
+      const body = await response.json();
+      const html = body.parse?.text?.['*'];
+      if (!html) return null;
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const text = cleanLiveValue(doc.body?.innerText || doc.body?.textContent || '');
+      const name = pickBetween(text, 'Name', ['Country of Birth', 'Country', 'Birthday', 'Residency']);
+      const country = pickBetween(text, 'Country of Birth', ['Birthday', 'Nationality', 'Residency', 'Prev Residencies']);
+      const birthdayText = pickBetween(text, 'Birthday', ['Residency', 'Prev Residencies', 'Competitive', 'Team']);
+      const contractText = pickBetween(text, 'Contract Expires', ['Role', 'Previous Role', 'Favorite Champs', 'Competitive IDs']);
+      const birthdate = normalizeLiveDate(birthdayText);
+      const contract = normalizeLiveDate(contractText) || cleanLiveValue(contractText) || null;
+      const socials = externalSocials(doc);
+      const result = {
+        name: name && name.toLowerCase() !== String(player.id || '').toLowerCase() ? name : null,
+        country: country || null,
+        nationality: country || null,
+        birthdate,
+        birthYear: birthdate ? Number(birthdate.slice(0, 4)) : null,
+        age: ageFromDate(birthdate),
+        contract,
+        socials,
+        liveBioSource: `https://lol.fandom.com/wiki/${encodeURIComponent(pageName).replace(/%20/g, '_')}`
+      };
+      return Object.values(result).some(Boolean) ? result : null;
+    } catch {
+      return null;
+    }
+  })();
+
+  liveBioCache.set(key, promise);
+  return promise;
+}
+
+function mergeLiveBio(player, live) {
+  if (!live) return player;
+  const merged = { ...player, socials: { ...(player.socials || {}) } };
+  for (const field of ['name','country','nationality','birthdate','birthYear','age','contract']) {
+    if ((!merged[field] || (field === 'name' && merged[field] === merged.id)) && live[field]) merged[field] = live[field];
+  }
+  for (const [key, value] of Object.entries(live.socials || {})) if (!merged.socials[key] && value) merged.socials[key] = value;
+  if (live.liveBioSource) merged.liveBioSource = live.liveBioSource;
+  return merged;
+}
+
 async function openPlayer(id) {
   openModal('<div class="loading-card">Đang tải hồ sơ tuyển thủ...</div>');
   try {
     const d = await api('/api/esports/player/' + encodeURIComponent(id));
-    const p = d.player;
+    const live = (!d.player?.name || d.player.name === d.player.id || !d.player?.birthdate || !d.player?.contract)
+      ? await liveLeaguepediaBio(d.player)
+      : null;
+    const p = mergeLiveBio(d.player, live);
     const f = d.featuredStats;
     const achievements = d.achievements || [];
     const titles = d.titles || [];
@@ -123,7 +222,7 @@ async function openPlayer(id) {
         ${f?.available ? `<div class="profile-card wide"><h3>Build / ngọc / spell nổi bật</h3><h4>Build phổ biến</h4><div class="chips">${statChips(f.commonBuilds, 5)}</div><h4>Ngọc</h4><div class="chips">${statChips(f.commonRunes, 4)}</div><h4>Spell</h4><div class="chips">${statChips(f.commonSpells, 4)}</div></div>` : ''}
         <div class="profile-card wide"><div class="profile-title-row"><h3>Danh hiệu & thành tích</h3><span>${achievements.length} thành tích được đánh dấu</span></div>${achievements.length ? `<div class="achievement-list">${achievements.slice(0, 30).map(a => `<div class="achievement"><b class="place place-${Number(a.placeNumber || 99) <= 3 ? Number(a.placeNumber) : 'other'}">${esc(a.place || '—')}</b><div><strong>${esc(a.event || '')}</strong><span>${esc(a.team || '')} • ${esc(a.tier || '')} • ${esc(a.date || '')}</span></div></div>`).join('')}</div>` : `<p class="muted">${esc(d.achievementWarning || 'Nguồn thành tích chi tiết hiện chưa phản hồi; thống kê thi đấu phía trên vẫn dùng dữ liệu Oracle.')}</p>`}</div>
       </div>
-      <div class="profile-source"><span>Identity: ${esc(p.identityStatus || (p.bioEnriched ? 'Leaguepedia' : 'chưa xác định'))}. Trường thiếu không được suy đoán.</span>${p.sourcePage ? `<a href="${esc(p.sourcePage)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ ↗</a>` : ''}</div>`;
+      <div class="profile-source"><span>${live ? 'Hồ sơ vừa được bổ sung từ bản render Leaguepedia. ' : ''}Identity: ${esc(p.identityStatus || (p.bioEnriched ? 'Leaguepedia' : 'chưa xác định'))}. Trường thiếu không được suy đoán.</span>${p.sourcePage || p.liveBioSource ? `<a href="${esc(p.sourcePage || p.liveBioSource)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ ↗</a>` : ''}</div>`;
   } catch (error) {
     $('#modalContent').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
