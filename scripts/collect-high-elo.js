@@ -18,8 +18,9 @@ const key = rawKey.replace(/^RIOT_API_KEY\s*=\s*/i, '').replace(/^['"]|['"]$/g, 
 const requestDelayMs = Math.max(1250, Number(process.env.RIOT_REQUEST_DELAY_MS || 1350));
 const playersPerPlatform = Math.max(1, Math.min(4, Number(process.env.GLOBAL_PLAYERS_PER_PLATFORM || 2)));
 const matchesPerPlayer = Math.max(2, Math.min(10, Number(process.env.GLOBAL_MATCHES_PER_PLAYER || 6)));
-const minGlobalPlatforms = Math.max(2, Number(process.env.MIN_GLOBAL_PLATFORMS || 6));
-const minGlobalMatches = Math.max(10, Number(process.env.MIN_GLOBAL_MATCHES || 40));
+const minGlobalPlatforms = Math.max(4, Number(process.env.MIN_GLOBAL_PLATFORMS || 10));
+const minGlobalMatches = Math.max(20, Number(process.env.MIN_GLOBAL_MATCHES || 80));
+const minGlobalMacroRegions = Math.max(1, Math.min(4, Number(process.env.MIN_GLOBAL_MACRO_REGIONS || 4)));
 
 if (!key) throw new Error('Thiếu RIOT_API_KEY. Hãy thêm secret RIOT_API_KEY trên GitHub.');
 if (!key.startsWith('RGAPI-')) console.warn('RIOT_API_KEY không bắt đầu bằng RGAPI-.');
@@ -281,16 +282,16 @@ const coverage = {
   matchesDiscovered: matchSources.size,
   skippedOldPatch: skippedPatch,
   failedMatches,
-  settings: { playersPerPlatform, matchesPerPlayer, minGlobalPlatforms, minGlobalMatches },
+  settings: { playersPerPlatform, matchesPerPlayer, minGlobalPlatforms, minGlobalMatches, minGlobalMacroRegions },
   matchesByPlatform: Object.fromEntries([...savedByPlatform.entries()].sort()),
   matchesByMacroRegion: Object.fromEntries([...savedByMacro.entries()].sort()),
   platforms: platformStatus
 };
 
-if (saved < minGlobalMatches || successfulPlatforms.length < minGlobalPlatforms) {
+if (saved < minGlobalMatches || successfulPlatforms.length < minGlobalPlatforms || successfulMacros.length < minGlobalMacroRegions) {
   await fs.writeFile(coverageFile, JSON.stringify({ ...coverage, accepted: false }, null, 2));
   await fs.rm(tempDir, { recursive: true, force: true });
-  throw new Error(`Global dataset chưa đủ độ phủ: ${saved}/${minGlobalMatches} trận, ${successfulPlatforms.length}/${minGlobalPlatforms} platforms. Giữ nguyên meta cũ.`);
+  throw new Error(`Global dataset chưa đủ độ phủ: ${saved}/${minGlobalMatches} trận, ${successfulPlatforms.length}/${minGlobalPlatforms} platforms, ${successfulMacros.length}/${minGlobalMacroRegions} macro regions. Giữ nguyên meta cũ.`);
 }
 
 await fs.rm(outDir, { recursive: true, force: true });
