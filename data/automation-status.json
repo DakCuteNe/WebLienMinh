@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-08-18T16:51:09.718Z",
+  "patch": "16.16",
+  "dataDragonVersion": "16.16.1",
+  "riotSecretConfigured": true,
+  "collectorExitCode": 1,
+  "aggregateExitCode": 97,
+  "collectorMessage": "file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:54\n    throw new Error(`${response.status} ${response.statusText}: ${body.slice(0, 300)}`);\n          ^\nError: 401 Unauthorized: {\"status\":{\"message\":\"Forbidden\",\"status_code\":401}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:54:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:60:16\nNode.js v22.23.2"
+}
