@@ -10,7 +10,11 @@ const root = path.join(__dirname, '..');
 const outDir = path.join(root, 'data', 'matches');
 const patchFile = path.join(root, 'data', 'riot', 'patch.json');
 
-const key = process.env.RIOT_API_KEY;
+const rawKey = String(process.env.RIOT_API_KEY || '').trim();
+const key = rawKey
+  .replace(/^RIOT_API_KEY\s*=\s*/i, '')
+  .replace(/^['"]|['"]$/g, '')
+  .trim();
 const platform = String(process.env.RIOT_PLATFORM || 'vn2').toLowerCase();
 const region = String(process.env.RIOT_REGION || 'sea').toLowerCase();
 const playerLimit = Math.max(1, Math.min(10, Number(process.env.HIGH_ELO_PLAYERS || 5)));
@@ -18,6 +22,9 @@ const matchesPerPlayer = Math.max(1, Math.min(20, Number(process.env.MATCHES_PER
 const requestDelayMs = Math.max(1200, Number(process.env.RIOT_REQUEST_DELAY_MS || 1300));
 
 if (!key) throw new Error('Thiếu RIOT_API_KEY. Hãy thêm secret RIOT_API_KEY trên GitHub.');
+if (!key.startsWith('RGAPI-')) {
+  console.warn('RIOT_API_KEY không bắt đầu bằng RGAPI-. Hãy kiểm tra lại giá trị secret nếu Riot trả 401/403.');
+}
 
 let patchState = null;
 try {
