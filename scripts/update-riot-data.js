@@ -33,6 +33,7 @@ if (!Array.isArray(versions) || !versions.length) {
 const dataDragonVersion = versions[0];
 const patch = dataDragonVersion.split('.').slice(0, 2).join('.');
 const base = `https://ddragon.leagueoflegends.com/cdn/${dataDragonVersion}/data/${locale}`;
+const changed = previous?.dataDragonVersion !== dataDragonVersion;
 
 console.log(`Data Dragon mới nhất: ${dataDragonVersion} (patch ${patch})`);
 
@@ -50,14 +51,11 @@ await Promise.all([
   fs.writeFile(path.join(outDir, 'summoner-spells.json'), JSON.stringify(summonerSpells, null, 2))
 ]);
 
-const changed = previous?.dataDragonVersion !== dataDragonVersion;
 const state = {
   patch,
   dataDragonVersion,
   locale,
-  changed,
-  previousVersion: previous?.dataDragonVersion || null,
-  updatedAt: new Date().toISOString(),
+  updatedAt: changed ? new Date().toISOString() : (previous?.updatedAt || new Date().toISOString()),
   source: 'Riot Data Dragon'
 };
 
