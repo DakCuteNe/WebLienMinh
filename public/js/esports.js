@@ -118,7 +118,7 @@ async function openPlayer(id) {
     const profileKey = playerKey(p);
     const teamName = p.currentTeamName || p.team?.name || 'Không rõ đội';
     const teamMediaKey = p.currentTeamName || teamKey(p.team);
-    const teamLogo = img(esportsMediaUrl('team', teamMediaKey), teamName, 'profile-team-logo');
+    const teamLogo = img(esportsMediaUrl('team', teamMediaKey, true), teamName, 'profile-team-logo');
     const favorite = (p.championPool || p.favoriteChampions || []).length ? statChips(p.championPool?.length ? p.championPool : p.favoriteChampions, 8) : '<span class="muted">Chưa có dữ liệu.</span>';
     const socials = [socialLink('X / Twitter', p.socials?.twitter, 'twitter'), socialLink('Instagram', p.socials?.instagram, 'instagram'), socialLink('Stream', p.socials?.stream, 'stream'), socialLink('YouTube', p.socials?.youtube, 'youtube')].filter(Boolean).join('');
     const missing = 'Chưa có dữ liệu công khai';
@@ -126,7 +126,7 @@ async function openPlayer(id) {
 
     $('#modalContent').innerHTML = `
       <div class="player-profile-hero rich-pro-hero">
-        <div class="profile-photo">${img(esportsMediaUrl('player', profileKey), p.id, 'profile-player-image')}</div>
+        <div class="profile-photo">${img(esportsMediaUrl('player', profileKey, true), p.id, 'profile-player-image')}</div>
         <div class="profile-main"><div class="eyebrow">${esc(roleName[p.role] || p.role || 'PRO PLAYER')} • ${esc(p.team?.region || p.residency || '')}</div><h2>${esc(p.id)}</h2><p>${p.name && p.name !== p.id ? esc(p.name) : 'Tuyển thủ chuyên nghiệp'}${p.nativeName ? ` • ${esc(p.nativeName)}` : ''}</p><div class="profile-team">${teamLogo}<div><b>${esc(teamName)}</b><span>${esc(p.team?.short || '')}</span></div></div></div>
         <div class="profile-badges"><span>${titles.length} danh hiệu hạng nhất</span>${p.featured ? '<span>Featured</span>' : ''}${p.latestPatch ? `<span>Patch ${esc(p.latestPatch)}</span>` : ''}</div>
       </div>
