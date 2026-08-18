@@ -1,4 +1,4 @@
-name: Auto Update LoL Meta
+name: Auto Update LoL Analytics
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ concurrency:
 jobs:
   update-meta:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     env:
       RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
       RIOT_PLATFORM: vn2
@@ -93,6 +93,17 @@ jobs:
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
+      - name: Update worldwide esports directory
+        id: esports
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          npm run update:esports 2>&1 | tee esports.log
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
       - name: Write automation status
         if: always()
         shell: bash
@@ -100,6 +111,7 @@ jobs:
           COLLECT_EXIT_CODE: ${{ steps.collect.outputs.exit_code }}
           AGGREGATE_EXIT_CODE: ${{ steps.aggregate.outputs.exit_code }}
           PROS_EXIT_CODE: ${{ steps.pros.outputs.exit_code }}
+          ESPORTS_EXIT_CODE: ${{ steps.esports.outputs.exit_code }}
           PATCH: ${{ steps.riot.outputs.patch }}
           DD_VERSION: ${{ steps.riot.outputs.version }}
         run: |
@@ -119,9 +131,11 @@ jobs:
             collectorExitCode: Number(process.env.COLLECT_EXIT_CODE || -1),
             aggregateExitCode: Number(process.env.AGGREGATE_EXIT_CODE || -1),
             prosExitCode: Number(process.env.PROS_EXIT_CODE || -1),
+            esportsExitCode: Number(process.env.ESPORTS_EXIT_CODE || -1),
             collectorMessage: await tail('collector.log'),
             aggregateMessage: await tail('aggregate.log'),
-            prosMessage: await tail('pros.log')
+            prosMessage: await tail('pros.log'),
+            esportsMessage: await tail('esports.log')
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/automation-status.json', JSON.stringify(status, null, 2));
@@ -137,6 +151,7 @@ jobs:
           git add data/riot data/automation-status.json
           if [ -f data/meta.json ]; then git add data/meta.json; fi
           if [ -f data/pros.json ]; then git add data/pros.json; fi
+          if [ -f data/esports-directory.json ]; then git add data/esports-directory.json; fi
 
           if git diff --cached --quiet; then
             echo "No data changes to commit."
