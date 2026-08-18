@@ -34,14 +34,7 @@ async function loadFilters() {
 
 async function loadPlayers() {
   $('#playerGrid').innerHTML = '<div class="loading-card">Đang tải tuyển thủ...</div>';
-  const qs = new URLSearchParams({
-    page: String(page),
-    limit: '36',
-    search: $('#playerSearch').value,
-    role: $('#playerRole').value,
-    region: $('#playerRegion').value,
-    team: $('#playerTeam').value
-  });
+  const qs = new URLSearchParams({ page: String(page), limit: '36', search: $('#playerSearch').value, role: $('#playerRole').value, region: $('#playerRegion').value, team: $('#playerTeam').value });
   try {
     const d = await api('/api/esports?' + qs);
     pages = d.pages || 1;
@@ -52,7 +45,7 @@ async function loadPlayers() {
     $('#esportsCoverage').textContent = `${d.coverage || ''} • ${Number(d.total || 0).toLocaleString('vi-VN')} kết quả`;
     const rows = d.players || [];
     $('#playerGrid').innerHTML = rows.length ? rows.map(playerCard).join('') : '<div class="empty-state">Không tìm thấy tuyển thủ phù hợp.</div>';
-    document.querySelectorAll('.player-card').forEach(card => card.onclick = () => openPlayer(card.dataset.id));
+    document.querySelectorAll('.player-card').forEach(card => card.onclick = () => openPlayer(card.dataset.profile));
   } catch (error) {
     $('#playerGrid').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
@@ -63,13 +56,11 @@ function metric(label, value, suffix = '') {
 }
 
 function playerCard(p) {
-  const teamLogo = p.team?.logo
-    ? `<img class="team-logo" src="${esc(p.team.logo)}" alt="${esc(p.team.name)}" loading="lazy">`
-    : `<span class="team-logo fallback">${esc((p.team?.name || '?').slice(0, 2).toUpperCase())}</span>`;
+  const teamLogo = p.team?.logo ? `<img class="team-logo" src="${esc(p.team.logo)}" alt="${esc(p.team.name)}" loading="lazy" referrerpolicy="no-referrer">` : `<span class="team-logo fallback">${esc((p.team?.name || '?').slice(0, 2).toUpperCase())}</span>`;
   const champs = (p.championPool || []).slice(0, 3).map(x => `<span>${esc(x.name)} <b>${x.rate != null ? `${score(x.rate)}%` : ''}</b></span>`).join('');
   const hasStats = Number(p.games || 0) > 0;
-
-  return `<article class="player-card pro-card-23" data-id="${esc(p.id)}">
+  const profileKey = p.overviewPage || p.identityId || p.uid || p.id;
+  return `<article class="player-card pro-card-23" data-profile="${esc(profileKey)}">
     <div class="player-photo">${img(p.image, p.id, 'player-image')}</div>
     <div class="player-card-info">
       <div class="player-team-row">${teamLogo}<span>${esc(p.team?.short || p.team?.name || 'Free Agent')}</span>${p.featured ? '<b class="featured-badge">FEATURED</b>' : ''}</div>
@@ -101,16 +92,9 @@ function performanceBlock(p, featured) {
   if (!Number(s?.games || 0)) return '<p class="muted">Chưa có thống kê thi đấu gần đây.</p>';
   const pool = featured?.available ? featured.championPool : p.championPool;
   return `<div class="pro-metrics pro-metrics-rich">
-    <span>Games <b>${Number(s.games || 0).toLocaleString('vi-VN')}</b></span>
-    <span>WR <b>${fmt(s.winRate)}</b></span>
-    <span>KDA <b>${score(s.kda)}</b></span>
-    <span>K/D/A <b>${score(s.avgKills)} / ${score(s.avgDeaths)} / ${score(s.avgAssists)}</b></span>
-    ${s.avgCS != null ? `<span>CS <b>${score(s.avgCS)}</b></span>` : ''}
-    ${s.avgDPM != null ? `<span>DPM <b>${score(s.avgDPM)}</b></span>` : ''}
-    <span>Patch <b>${esc(s.latestPatch || '—')}</b></span>
-  </div>
-  <h4>Champion pool gần đây</h4><div class="chips">${statChips(pool, 8)}</div>
-  ${featured?.available && featured.styleSummary ? `<p>${esc(featured.styleSummary)}</p>` : ''}`;
+    <span>Games <b>${Number(s.games || 0).toLocaleString('vi-VN')}</b></span><span>WR <b>${fmt(s.winRate)}</b></span><span>KDA <b>${score(s.kda)}</b></span><span>K/D/A <b>${score(s.avgKills)} / ${score(s.avgDeaths)} / ${score(s.avgAssists)}</b></span>
+    ${s.avgCS != null ? `<span>CS <b>${score(s.avgCS)}</b></span>` : ''}${s.avgDPM != null ? `<span>DPM <b>${score(s.avgDPM)}</b></span>` : ''}<span>Patch <b>${esc(s.latestPatch || '—')}</b></span>
+  </div><h4>Champion pool gần đây</h4><div class="chips">${statChips(pool, 8)}</div>${featured?.available && featured.styleSummary ? `<p>${esc(featured.styleSummary)}</p>` : ''}`;
 }
 
 async function openPlayer(id) {
@@ -121,16 +105,10 @@ async function openPlayer(id) {
     const f = d.featuredStats;
     const achievements = d.achievements || [];
     const titles = d.titles || [];
-    const teamLogo = p.team?.logo ? `<img class="profile-team-logo" src="${esc(p.team.logo)}">` : '';
-    const favorite = (p.championPool || p.favoriteChampions || []).length
-      ? statChips(p.championPool?.length ? p.championPool : p.favoriteChampions, 8)
-      : '<span class="muted">Chưa có dữ liệu.</span>';
-    const socials = [
-      socialLink('X / Twitter', p.socials?.twitter, 'twitter'),
-      socialLink('Instagram', p.socials?.instagram, 'instagram'),
-      socialLink('Stream', p.socials?.stream, 'stream'),
-      socialLink('YouTube', p.socials?.youtube, 'youtube')
-    ].filter(Boolean).join('');
+    const teamLogo = p.team?.logo ? `<img class="profile-team-logo" src="${esc(p.team.logo)}" referrerpolicy="no-referrer">` : '';
+    const favorite = (p.championPool || p.favoriteChampions || []).length ? statChips(p.championPool?.length ? p.championPool : p.favoriteChampions, 8) : '<span class="muted">Chưa có dữ liệu.</span>';
+    const socials = [socialLink('X / Twitter', p.socials?.twitter, 'twitter'), socialLink('Instagram', p.socials?.instagram, 'instagram'), socialLink('Stream', p.socials?.stream, 'stream'), socialLink('YouTube', p.socials?.youtube, 'youtube')].filter(Boolean).join('');
+    const missing = 'Chưa có dữ liệu công khai';
 
     $('#modalContent').innerHTML = `
       <div class="player-profile-hero rich-pro-hero">
@@ -139,13 +117,13 @@ async function openPlayer(id) {
         <div class="profile-badges"><span>${titles.length} danh hiệu hạng nhất</span>${p.featured ? '<span>Featured</span>' : ''}${p.latestPatch ? `<span>Patch ${esc(p.latestPatch)}</span>` : ''}</div>
       </div>
       <div class="profile-grid">
-        <div class="profile-card"><h3>Hồ sơ công khai</h3><dl><dt>IGN</dt><dd>${esc(p.id)}</dd><dt>Tên thật</dt><dd>${esc(p.name && p.name !== p.id ? p.name : 'Chưa enrich')}</dd><dt>Ngày sinh</dt><dd>${esc(p.birthdate || 'Chưa enrich')}</dd><dt>Tuổi</dt><dd>${esc(p.age || '—')}</dd><dt>Quốc gia</dt><dd>${esc(p.country || p.nationality || 'Chưa enrich')}</dd><dt>Giải / khu vực</dt><dd>${esc(p.team?.region || p.residency || '—')}</dd><dt>Vị trí</dt><dd>${esc(roleName[p.role] || p.role || '—')}</dd><dt>Đội hiện tại</dt><dd>${esc(p.team?.name || '—')}</dd><dt>Trận gần nhất</dt><dd>${esc(p.latestGameAt || '—')}</dd><dt>Hợp đồng</dt><dd>${esc(p.contract || 'Chưa enrich')}</dd></dl></div>
-        <div class="profile-card"><h3>Champion pool</h3><div class="chips">${favorite}</div><p class="source-note">${esc(p.interestsNote || '')}</p><h3>Liên kết công khai</h3><div class="socials">${socials || '<span class="muted">Chưa enrich social.</span>'}</div></div>
+        <div class="profile-card"><h3>Hồ sơ công khai</h3><dl><dt>IGN</dt><dd>${esc(p.id)}</dd><dt>Tên thật</dt><dd>${esc(p.name && p.name !== p.id ? p.name : missing)}</dd><dt>Ngày sinh</dt><dd>${esc(p.birthdate || missing)}</dd><dt>Tuổi</dt><dd>${esc(p.age || '—')}</dd><dt>Quốc gia</dt><dd>${esc(p.country || p.nationality || missing)}</dd><dt>Giải / khu vực</dt><dd>${esc(p.team?.region || p.residency || '—')}</dd><dt>Vị trí</dt><dd>${esc(roleName[p.role] || p.role || '—')}</dd><dt>Đội hiện tại</dt><dd>${esc(p.team?.name || '—')}</dd><dt>Trận gần nhất</dt><dd>${esc(p.latestGameAt || '—')}</dd><dt>Hợp đồng</dt><dd>${esc(p.contract || missing)}</dd></dl></div>
+        <div class="profile-card"><h3>Champion pool</h3><div class="chips">${favorite}</div><p class="source-note">${esc(p.interestsNote || '')}</p><h3>Liên kết công khai</h3><div class="socials">${socials || '<span class="muted">Chưa có social công khai trong nguồn tự động.</span>'}</div></div>
         <div class="profile-card wide"><h3>Phong độ chuyên nghiệp</h3>${performanceBlock(p, f)}</div>
         ${f?.available ? `<div class="profile-card wide"><h3>Build / ngọc / spell nổi bật</h3><h4>Build phổ biến</h4><div class="chips">${statChips(f.commonBuilds, 5)}</div><h4>Ngọc</h4><div class="chips">${statChips(f.commonRunes, 4)}</div><h4>Spell</h4><div class="chips">${statChips(f.commonSpells, 4)}</div></div>` : ''}
         <div class="profile-card wide"><div class="profile-title-row"><h3>Danh hiệu & thành tích</h3><span>${achievements.length} thành tích được đánh dấu</span></div>${achievements.length ? `<div class="achievement-list">${achievements.slice(0, 30).map(a => `<div class="achievement"><b class="place place-${Number(a.placeNumber || 99) <= 3 ? Number(a.placeNumber) : 'other'}">${esc(a.place || '—')}</b><div><strong>${esc(a.event || '')}</strong><span>${esc(a.team || '')} • ${esc(a.tier || '')} • ${esc(a.date || '')}</span></div></div>`).join('')}</div>` : `<p class="muted">${esc(d.achievementWarning || 'Nguồn thành tích chi tiết hiện chưa phản hồi; thống kê thi đấu phía trên vẫn dùng dữ liệu Oracle.')}</p>`}</div>
       </div>
-      <div class="profile-source"><span>Ảnh/hồ sơ chỉ hiển thị khi có nguồn công khai; trường thiếu được để trống, không suy đoán.</span>${p.sourcePage ? `<a href="${esc(p.sourcePage)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ ↗</a>` : ''}</div>`;
+      <div class="profile-source"><span>Identity: ${esc(p.identityStatus || (p.bioEnriched ? 'Leaguepedia' : 'chưa xác định'))}. Trường thiếu không được suy đoán.</span>${p.sourcePage ? `<a href="${esc(p.sourcePage)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ ↗</a>` : ''}</div>`;
   } catch (error) {
     $('#modalContent').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
