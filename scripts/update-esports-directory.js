@@ -15,23 +15,53 @@ const fileUrl = file => file ? `https://lol.fandom.com/wiki/Special:Redirect/fil
 const pageUrl = page => page ? `https://lol.fandom.com/wiki/${encodeURIComponent(page).replace(/%2F/g, '/')}` : null;
 
 async function cargoQuery(params) {
-  const query = new URLSearchParams({ action: 'cargoquery', format: 'json', ...params });
-  const response = await fetch(`${API}?${query}`, {
-    headers: { 'User-Agent': 'WebLienMinh/2.0 global-esports-directory (educational project)' }
-  });
-  if (!response.ok) throw new Error(`Leaguepedia HTTP ${response.status}: ${await response.text()}`);
-  const payload = await response.json();
-  if (payload?.error) throw new Error(`Leaguepedia Cargo: ${payload.error.info || payload.error.code}`);
-  return (payload.cargoquery || []).map(x => x.title || x);
+  const query = new URLSearchParams({ action: 'cargoquery', format: 'json', maxlag: '5', ...params });
+  const url = `${API}?${query}`;
+
+  for (let attempt = 0; attempt < 7; attempt++) {
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'WebLienMinh/2.0 global-esports-directory (educational project; contact via GitHub DakCuteNe/WebLienMinh)'
+      }
+    });
+
+    if (response.status === 429 || response.status === 502 || response.status === 503 || response.status === 504) {
+      const retryAfter = Number(response.headers.get('retry-after') || 0);
+      const wait = retryAfter > 0 ? retryAfter * 1000 : Math.min(45_000, 4_000 * (attempt + 1));
+      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s rồi thử lại (${attempt + 1}/7)...`);
+      await sleep(wait);
+      continue;
+    }
+
+    if (!response.ok) throw new Error(`Leaguepedia HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
+
+    const payload = await response.json();
+    if (payload?.error) {
+      const info = String(payload.error.info || payload.error.code || 'Unknown Cargo error');
+      const retryable = /rate limit|too many|maxlag|lagged|temporar/i.test(info);
+      if (retryable && attempt < 6) {
+        const wait = Math.min(60_000, 6_000 * (attempt + 1));
+        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ ${Math.ceil(wait / 1000)}s...`);
+        await sleep(wait);
+        continue;
+      }
+      throw new Error(`Leaguepedia Cargo: ${info}`);
+    }
+
+    return (payload.cargoquery || []).map(x => x.title || x);
+  }
+
+  throw new Error('Leaguepedia vẫn giới hạn request sau nhiều lần retry.');
 }
 
 async function cargoPaged(base, maxRows = 3000) {
   const rows = [];
   for (let offset = 0; offset < maxRows; offset += 500) {
+    console.log(`Cargo page offset=${offset}...`);
     const page = await cargoQuery({ ...base, limit: '500', offset: String(offset) });
     rows.push(...page);
     if (page.length < 500) break;
-    await sleep(350);
+    await sleep(1800);
   }
   return rows;
 }
@@ -52,7 +82,7 @@ try {
   featured = new Set((watch.players || []).map(x => String(x.name).toLowerCase()));
 } catch {}
 
-console.log('Đang tải danh sách đội tuyển toàn cầu...');
+console.log('Đang tải danh sách đội tuyển đang hoạt động trên toàn cầu...');
 const teamRows = await cargoPaged({
   tables: 'Teams=T',
   fields: [
@@ -60,8 +90,9 @@ const teamRows = await cargoPaged({
     'T.Location=location','T.TeamLocation=teamLocation','T.Image=image',
     'T.Website=website','T.Twitter=twitter','T.Instagram=instagram','T.IsDisbanded=isDisbanded'
   ].join(','),
+  where: 'T.IsDisbanded=0',
   order_by: 'T.Region ASC,T.Name ASC'
-}, 2500);
+}, 2000);
 
 const teams = new Map();
 for (const row of teamRows) {
@@ -82,7 +113,8 @@ for (const row of teamRows) {
   });
 }
 
-console.log('Đang tải tuyển thủ chuyên nghiệp đang hoạt động...');
+await sleep(2500);
+console.log('Đang tải tuyển thủ chuyên nghiệp đang hoạt động trên toàn cầu...');
 const playerRows = await cargoPaged({
   tables: 'Players=P',
   fields: [
@@ -128,7 +160,9 @@ const players = playerRows
       team,
       currentTeams: split(row.currentTeams),
       favoriteChampions: split(row.favChamps),
-      interestsNote: row.favChamps ? 'Tướng yêu thích được nhập thủ công trên Leaguepedia; không suy diễn thành sở thích cá nhân ngoài game.' : 'Chưa có dữ liệu sở thích công khai được chuẩn hóa.',
+      interestsNote: row.favChamps
+        ? 'Tướng yêu thích được nhập thủ công trên Leaguepedia; không suy diễn thành sở thích cá nhân ngoài game.'
+        : 'Chưa có dữ liệu sở thích công khai được chuẩn hóa.',
       soloqueueIds: row.soloqueueIds || null,
       substitute: bool(row.isSubstitute),
       trainee: bool(row.isTrainee),
@@ -143,16 +177,17 @@ const players = playerRows
     };
   });
 
+const activeTeamIds = new Set(players.map(p => p.team?.id).filter(Boolean));
 const regions = [...new Set(players.map(x => x.team?.region || x.residency).filter(Boolean))].sort();
 const countries = [...new Set(players.map(x => x.country || x.nationality).filter(Boolean))].sort();
-const teamList = [...teams.values()].filter(t => players.some(p => p.team?.id === t.id));
+const teamList = [...teams.values()].filter(team => activeTeamIds.has(team.id));
 
 const result = {
   generatedAt: new Date().toISOString(),
   source: 'Leaguepedia / League of Legends Esports Wiki Cargo',
   sourceType: 'community-maintained, not Riot official',
   licenseNote: 'Leaguepedia content is available under CC BY-SA 3.0 unless otherwise noted. Images/logos remain subject to their respective rights holders.',
-  coverage: 'Active players with a current team available in the Leaguepedia Players table.',
+  coverage: 'Active professional players with a current team available in the Leaguepedia Players table across all indexed regions.',
   playerCount: players.length,
   teamCount: teamList.length,
   regions,
