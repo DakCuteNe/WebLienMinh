@@ -1,6 +1,7 @@
 const LEAGUEPEDIA_API = 'https://lol.fandom.com/api.php';
 const MEDIA_TTL_MS = 60 * 60 * 1000;
 const PROFILE_TTL_MS = 6 * 60 * 60 * 1000;
+const PROFILE_FRESH_TTL_MS = 5 * 60 * 1000;
 const ACHIEVEMENT_TTL_MS = 24 * 60 * 60 * 1000;
 const ERROR_TTL_MS = 15 * 60 * 1000;
 
@@ -112,12 +113,13 @@ async function resolveFileUrl(name) {
   return info?.thumburl || info?.url || null;
 }
 
-async function currentProfile(title, kind = 'player') {
+async function currentProfile(title, kind = 'player', fresh = false) {
   const pageTitle = cleanTitle(title);
   if (!pageTitle) return null;
   const cacheKey = `${kind}:${norm(pageTitle)}`;
   const hit = profileCache.get(cacheKey);
-  if (hit && Date.now() - hit.at < PROFILE_TTL_MS) return hit.value;
+  const ttl = fresh ? PROFILE_FRESH_TTL_MS : PROFILE_TTL_MS;
+  if (hit && Date.now() - hit.at < ttl) return hit.value;
 
   try {
     const body = await wikiQuery({
@@ -243,6 +245,7 @@ export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, 
     try {
       const kind = String(req.query.kind || 'player').toLowerCase() === 'team' ? 'team' : 'player';
       const rawKey = String(req.query.key || '').trim();
+      const fresh = String(req.query.fresh || '') === '1';
       if (!rawKey || rawKey.length > 220) return res.status(400).send('Invalid media key');
       const directory = await readEsportsDirectory();
 
@@ -262,27 +265,34 @@ export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, 
         }
       }
 
-      // Directory media is refreshed by the esports workflow. Proxy it first so browsers never
-      // hotlink Fandom directly. If the stored URL is gone, resolve the current infobox/page image.
-      let image = await fetchImageBuffer(storedUrl);
-      let source = 'directory-current-sync';
-      if (!image) {
-        const live = await currentProfile(title, kind).catch(() => null);
+      let image = null;
+      let source = null;
+      if (fresh) {
+        const live = await currentProfile(title, kind, true).catch(() => null);
         image = await fetchImageBuffer(live?.image);
-        source = 'leaguepedia-live';
+        source = image ? 'leaguepedia-live' : null;
+      }
+      if (!image) {
+        image = await fetchImageBuffer(storedUrl);
+        source = image ? 'directory-current-sync' : source;
+      }
+      if (!image && !fresh) {
+        const live = await currentProfile(title, kind, false).catch(() => null);
+        image = await fetchImageBuffer(live?.image);
+        source = image ? 'leaguepedia-live' : source;
       }
       if (!image) return res.status(404).send('Current image unavailable');
 
+      const ttl = fresh ? PROFILE_FRESH_TTL_MS : MEDIA_TTL_MS;
       res.setHeader('Content-Type', image.type);
-      res.setHeader('Cache-Control', `public, max-age=${Math.floor(MEDIA_TTL_MS / 1000)}, s-maxage=${Math.floor(MEDIA_TTL_MS / 1000)}, stale-while-revalidate=86400`);
-      res.setHeader('X-Esports-Media-Source', source);
+      res.setHeader('Cache-Control', `public, max-age=${Math.floor(ttl / 1000)}, s-maxage=${Math.floor(ttl / 1000)}, stale-while-revalidate=86400`);
+      res.setHeader('X-Esports-Media-Source', source || 'unknown');
       return res.send(image.buffer);
     } catch (error) {
       return res.status(502).send(`Esports media unavailable: ${error.message}`);
     }
   });
 
-  // Registered before the legacy route in server.js, so this is the canonical player profile API.
   app.get('/api/esports/player/:id', async (req, res) => {
     try {
       const directory = await readEsportsDirectory();
@@ -297,7 +307,7 @@ export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, 
       const title = player.overviewPage || player.identityId || player.id;
       let liveWarning = null;
       let live = null;
-      try { live = await currentProfile(title, 'player'); } catch (error) { liveWarning = error.message; }
+      try { live = await currentProfile(title, 'player', true); } catch (error) { liveWarning = error.message; }
 
       if (live) {
         const fields = ['name', 'nativeName', 'country', 'nationality', 'birthdate', 'age', 'contract', 'residency'];
