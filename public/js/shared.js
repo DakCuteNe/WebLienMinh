@@ -15,7 +15,12 @@ export const score = n => Number(n || 0).toFixed(1);
 export const number = n => Number(n || 0).toLocaleString('vi-VN');
 
 export async function api(url) {
-  const response = await fetch(url);
+  const sep = url.includes('?') ? '&' : '?';
+  const freshUrl = `${url}${sep}_=${Date.now()}`;
+  const response = await fetch(freshUrl, {
+    cache: 'no-store',
+    headers: { 'Cache-Control': 'no-cache' }
+  });
   const body = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
   return body;
@@ -47,5 +52,5 @@ export function initials(name) {
 
 export function img(url, alt = '', cls = '') {
   if (!url) return `<span class="image-fallback ${cls}">${esc(initials(alt))}</span>`;
-  return `<img class="${cls}" src="${esc(url)}" alt="${esc(alt)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling?.classList.remove('hidden')"><span class="image-fallback ${cls} hidden">${esc(initials(alt))}</span>`;
+  return `<img class="${cls}" src="${esc(url)}" alt="${esc(alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling?.classList.remove('hidden')"><span class="image-fallback ${cls} hidden">${esc(initials(alt))}</span>`;
 }
