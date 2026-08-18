@@ -1,6 +1,6 @@
 {
   "name": "rift-meta-vn",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,7 +15,7 @@
     "update:pros": "node scripts/update-pros.js",
     "update:esports": "node scripts/update-esports-directory.js",
     "update:esports-identities": "node scripts/update-esports-identities.js",
-    "update:esports-media": "node scripts/update-esports-media.js",
+    "update:esports-media": "node scripts/update-esports-media-safe.js",
     "update:riot-content": "node scripts/update-riot-content.js"
   },
   "dependencies": {
