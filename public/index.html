@@ -3,44 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Phân tích meta Liên Minh Huyền Thoại, tier score, counter theo lane, build, rune, spell và dữ liệu tuyển thủ nổi bật." />
-  <title>Rift Meta VN — LoL Meta Analyzer</title>
-  <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
+  <meta name="theme-color" content="#070b12" />
+  <meta name="description" content="Rift Meta VN 2.0 — phân tích meta, counter, build, rune, asset và tuyển thủ Liên Minh Huyền Thoại toàn cầu." />
+  <title>Rift Meta VN 2.0 — LoL Analytics & Esports</title>
+  <link rel="preconnect" href="https://ddragon.leagueoflegends.com" />
+  <link rel="preconnect" href="https://lol.fandom.com" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+  <div class="noise"></div>
   <header class="topbar">
-    <a class="brand" href="#"><span class="brand-mark">RM</span><span>RIFT META <b>VN</b></span></a>
-    <nav>
-      <button class="nav-btn active" data-section="meta">Meta</button>
-      <button class="nav-btn" data-section="counter">Counter Pick</button>
-      <button class="nav-btn" data-section="pros">Tuyển thủ</button>
-      <button class="nav-btn" data-section="patch">Patch Riot</button>
+    <a class="brand" href="#dashboard"><span class="brand-gem">R</span><span><b>RIFT</b> META VN</span><small>2.0</small></a>
+    <nav id="nav">
+      <button class="nav-btn active" data-section="dashboard">Tổng quan</button>
+      <button class="nav-btn" data-section="meta">Meta</button>
+      <button class="nav-btn" data-section="counter">Counter</button>
+      <button class="nav-btn" data-section="assets">Kho dữ liệu</button>
+      <button class="nav-btn" data-section="esports">Tuyển thủ</button>
+      <button class="nav-btn" data-section="patch">Patch</button>
     </nav>
-    <div id="statusBadge" class="status-badge">Đang đồng bộ…</div>
+    <div id="statusBadge" class="status-pill"><span></span> Đang đồng bộ</div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">META ANALYTICS • VIETNAM</div>
-        <h1>Đọc meta sâu hơn.<br><span>Chọn theo dữ liệu.</span></h1>
-        <p>Tier Score có hiệu chỉnh sample, ban rate thật, counter cùng lane, build cuối trận, ngọc, phép bổ trợ, xu hướng qua từng lần cập nhật và dữ liệu tuyển thủ chuyên nghiệp nổi bật.</p>
-        <div class="hero-actions">
-          <button class="primary" onclick="document.querySelector('#metaBoard').scrollIntoView({behavior:'smooth'})">Xem Tier List</button>
-          <button class="secondary" id="openCounter">Tìm Counter</button>
+    <section id="dashboard" class="page-section active-section">
+      <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="eyebrow">LEAGUE OF LEGENDS • ANALYTICS • ESPORTS</div>
+          <h1>Đọc meta.<br><span>Hiểu trận đấu.</span></h1>
+          <p>Meta theo patch Riot, counter theo lane, build/ngọc/phép phổ biến và hồ sơ tuyển thủ chuyên nghiệp toàn cầu trong cùng một hệ thống.</p>
+          <div class="hero-actions">
+            <button class="primary" data-go="meta">Xem Tier List</button>
+            <button class="secondary" data-go="esports">Khám phá tuyển thủ</button>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div><span>PATCH</span><strong id="patchLive">—</strong><small>Riot / Data Dragon</small></div>
+          <div><span>DATASET</span><strong id="sampleGames">—</strong><small>Ranked Challenger VN2</small></div>
+          <div><span>PRO PLAYERS</span><strong id="globalPlayers">—</strong><small>Worldwide directory</small></div>
+          <div><span>TEAMS</span><strong id="globalTeams">—</strong><small>Logo + roster profile</small></div>
         </div>
       </div>
-      <div class="hero-panel">
-        <div class="metric"><span>PATCH DATA</span><strong id="patchLive">—</strong><small>Nguồn Riot Games</small></div>
-        <div class="metric"><span>DATA DRAGON</span><strong id="ddVersion">—</strong><small>Champion / Item / Rune</small></div>
-        <div class="metric"><span>SAMPLE</span><strong id="sampleGames">—</strong><small id="datasetNote">Đang đọc dữ liệu</small></div>
+
+      <div class="section-intro compact">
+        <div><div class="eyebrow">LIVE INTELLIGENCE</div><h2>Một dashboard, nhiều lớp dữ liệu</h2></div>
+        <p>Game assets từ Riot Data Dragon; meta từ Match-V5; hồ sơ esports từ Leaguepedia với nguồn được ghi rõ.</p>
+      </div>
+      <div class="feature-grid">
+        <button class="feature-card" data-go="meta"><b>01</b><h3>Meta Engine</h3><p>Tier Score, WR hiệu chỉnh, pick/ban rate, trend và confidence.</p><span>Mở Meta →</span></button>
+        <button class="feature-card" data-go="counter"><b>02</b><h3>Matchup Lab</h3><p>Counter theo lane dựa trên sample và độ tin cậy thay vì kết luận từ vài trận.</p><span>Mở Counter →</span></button>
+        <button class="feature-card" data-go="assets"><b>03</b><h3>Asset Vault</h3><p>Ảnh tướng, trang bị, ngọc và dữ liệu mô tả từ Data Dragon theo patch.</p><span>Mở Kho dữ liệu →</span></button>
+        <button class="feature-card" data-go="esports"><b>04</b><h3>Global Esports</h3><p>Profile, đội, logo, ngày sinh, role, hợp đồng, tướng yêu thích và danh hiệu.</p><span>Mở Tuyển thủ →</span></button>
       </div>
     </section>
 
-    <section id="meta" class="page-section active-section">
-      <div class="section-head" id="metaBoard">
-        <div><div class="eyebrow">TIER LIST V2</div><h2>Meta Challenger VN2</h2><p>Tier Score không dùng win rate thô một mình: có Bayesian WR, presence, matchup edge và sample confidence.</p></div>
+    <section id="meta" class="page-section">
+      <div class="section-intro">
+        <div><div class="eyebrow">RANKED ANALYTICS</div><h2>Tier List hiện tại</h2><p id="metaSubtitle">Đang tải dữ liệu...</p></div>
         <div class="filters">
           <input id="search" placeholder="Tìm tướng..." />
           <select id="role"><option value="ALL">Tất cả vị trí</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
@@ -50,37 +70,58 @@
       <div id="dataWarning" class="notice hidden"></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>#</th><th>Tướng</th><th>Vị trí</th><th>Tier</th><th>Tier Score</th><th>Win rate</th><th>Pick rate</th><th>Ban rate</th><th>Trend</th><th>Đánh giá</th><th></th></tr></thead>
-          <tbody id="metaRows"><tr><td colspan="11" class="loading">Đang tải meta…</td></tr></tbody>
+          <thead><tr><th>#</th><th>Tướng</th><th>Lane</th><th>Tier</th><th>Score</th><th>Win</th><th>Pick</th><th>Ban</th><th>Trend</th><th>Sample</th><th></th></tr></thead>
+          <tbody id="metaRows"><tr><td colspan="11" class="loading">Đang tải meta...</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section id="counter" class="page-section">
-      <div class="section-head"><div><div class="eyebrow">MATCHUP LAB</div><h2>Counter theo lane</h2><p>Counter được tính trên đối đầu cùng vị trí, làm mượt Bayesian và gắn độ tin cậy theo sample thay vì chỉ nhìn WR matchup thô.</p></div></div>
-      <div class="counter-search">
-        <input id="counterInput" list="championList" placeholder="Ví dụ: Gwen, Jinx, Ahri…" />
+      <div class="section-intro"><div><div class="eyebrow">MATCHUP LAB</div><h2>Counter theo lane</h2><p>Chọn tướng + vị trí để xem matchup đáng tin cậy hơn.</p></div></div>
+      <div class="counter-search panel">
+        <input id="counterInput" list="championList" placeholder="Ví dụ: Gwen, Ahri, Jinx..." />
         <datalist id="championList"></datalist>
-        <select id="counterRole"><option value="">Tự chọn lane nhiều sample nhất</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
+        <select id="counterRole"><option value="">Tự nhận lane</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
         <button class="primary" id="counterBtn">Phân tích</button>
       </div>
-      <div id="counterResult" class="counter-result empty-state">Chọn một tướng để bắt đầu phân tích matchup.</div>
+      <div id="counterResult" class="counter-result empty-state">Chọn một tướng để bắt đầu.</div>
     </section>
 
-    <section id="pros" class="page-section">
-      <div class="section-head"><div><div class="eyebrow">FEATURED PROS</div><h2>Tuyển thủ nổi bật</h2><p>Champion pool, end-game build, ngọc, spell, KDA, xu hướng lối chơi và ban priority trong các trận chuyên nghiệp gần đây.</p></div></div>
-      <div id="proNotice" class="notice subtle">Đây là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Dữ liệu pro dùng scoreboard cộng đồng và được ghi rõ nguồn.</div>
-      <div id="proGrid" class="pro-grid"><div class="loading-card">Đang tải dữ liệu tuyển thủ…</div></div>
+    <section id="assets" class="page-section">
+      <div class="section-intro">
+        <div><div class="eyebrow">RIOT DATA DRAGON</div><h2>Kho dữ liệu game</h2><p>Tướng, trang bị và ngọc với hình ảnh theo dữ liệu Riot.</p></div>
+        <div class="asset-controls"><button class="asset-tab active" data-asset="champions">Tướng</button><button class="asset-tab" data-asset="items">Trang bị</button><button class="asset-tab" data-asset="runes">Ngọc</button><input id="assetSearch" placeholder="Tìm trong kho..." /></div>
+      </div>
+      <div id="assetGrid" class="asset-grid"><div class="loading-card">Đang tải asset...</div></div>
+    </section>
+
+    <section id="esports" class="page-section">
+      <div class="section-intro">
+        <div><div class="eyebrow">GLOBAL ESPORTS DIRECTORY</div><h2>Tuyển thủ chuyên nghiệp toàn cầu</h2><p id="esportsCoverage">Đang đọc directory...</p></div>
+        <div class="directory-stats"><span><b id="dirPlayers">0</b> tuyển thủ</span><span><b id="dirTeams">0</b> đội</span></div>
+      </div>
+      <div class="filters esports-filters">
+        <input id="playerSearch" placeholder="Tìm Faker, Chovy, đội tuyển..." />
+        <select id="playerRole"><option value="ALL">Mọi vị trí</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
+        <select id="playerRegion"><option value="ALL">Mọi khu vực</option></select>
+        <select id="playerTeam"><option value="ALL">Mọi đội tuyển</option></select>
+      </div>
+      <div id="playerGrid" class="player-grid"><div class="loading-card">Đang tải tuyển thủ...</div></div>
+      <div class="pager"><button id="prevPlayers" class="secondary">← Trước</button><span id="playerPage">1 / 1</span><button id="nextPlayers" class="secondary">Sau →</button></div>
     </section>
 
     <section id="patch" class="page-section">
-      <div class="section-head"><div><div class="eyebrow">OFFICIAL RIOT UPDATES</div><h2>Patch Notes mới</h2><p>Liên kết trực tiếp đến cập nhật chính thức từ Riot Games.</p></div></div>
-      <div id="patchGrid" class="patch-grid"><div class="loading-card">Đang đọc Riot Patch Notes…</div></div>
+      <div class="section-intro"><div><div class="eyebrow">OFFICIAL RIOT UPDATES</div><h2>Patch Notes</h2><p>Liên kết cập nhật chính thức từ Riot Games.</p></div></div>
+      <div id="patchGrid" class="patch-grid"><div class="loading-card">Đang đọc Riot Patch Notes...</div></div>
     </section>
   </main>
 
   <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
-  <footer><span>Rift Meta VN</span><span>Dữ liệu Riot API/Data Dragon + nguồn pro được ghi riêng. Đây là công cụ phân tích tham khảo, không phải sản phẩm được Riot Games tài trợ hay xác nhận.</span></footer>
+
+  <footer>
+    <div><b>Rift Meta VN 2.0</b><span>LoL analytics & esports intelligence.</span></div>
+    <p>Game assets: Riot Data Dragon. Esports profiles: Leaguepedia / League of Legends Esports Wiki. Leaguepedia content CC BY-SA 3.0 unless otherwise noted. Không được Riot Games tài trợ hay xác nhận.</p>
+  </footer>
   <script src="/app.js"></script>
 </body>
 </html>
