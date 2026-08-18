@@ -1,6 +1,6 @@
 {
   "name": "rift-meta-vn",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "collect": "node scripts/collect.js",
     "collect:high-elo": "node scripts/collect-high-elo.js",
     "aggregate": "node scripts/aggregate.js",
+    "finalize:global": "node scripts/finalize-global-meta.js",
     "update:riot": "node scripts/update-riot-data.js",
     "update:pros": "node scripts/update-pros.js",
     "update:esports": "node scripts/update-esports-directory.js"
