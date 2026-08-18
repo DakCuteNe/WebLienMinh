@@ -442,6 +442,40 @@ export function createNewsWatcher(client, { webApiUrl }) {
     return true;
   }
 
+  async function sendLatest(type = 'event') {
+    if (running) throw new Error('Riot News Watcher đang quét. Hãy thử lại sau vài giây.');
+    const safeType = TYPE_META[type] && type !== 'news' ? type : 'event';
+    running = true;
+    try {
+      state = await readState(stateFile);
+      const channel = await getChannel();
+      if (!channel) throw new Error('Chưa cấu hình DISCORD_NEWS_CHANNEL_ID.');
+
+      const feed = await loadFeed();
+      const latest = feed.find(article => article.type === safeType);
+      if (!latest) {
+        throw new Error(`Chưa tìm thấy tin Riot hiện có thuộc loại ${TYPE_META[safeType].label}.`);
+      }
+
+      await sendArticle(channel, latest);
+      await writeState(stateFile, state);
+      lastError = null;
+      return {
+        sent: 1,
+        type: safeType,
+        title: latest.title,
+        url: latest.url,
+        publishedAt: latest.publishedAt || null
+      };
+    } catch (error) {
+      lastError = error.message || String(error);
+      console.error('[news-watcher latest]', error);
+      throw error;
+    } finally {
+      running = false;
+    }
+  }
+
   function status() {
     return {
       enabled: Boolean(channelId),
@@ -475,5 +509,5 @@ export function createNewsWatcher(client, { webApiUrl }) {
     timer = null;
   }
 
-  return { start, stop, check, sendTest, status };
+  return { start, stop, check, sendTest, sendLatest, status };
 }
