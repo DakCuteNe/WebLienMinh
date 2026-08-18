@@ -13,22 +13,36 @@ const bool = v => ['1','true','yes'].includes(String(v ?? '').toLowerCase());
 const split = (v, sep = ',') => String(v || '').split(sep).map(x => x.trim()).filter(Boolean);
 const fileUrl = file => file ? `https://lol.fandom.com/wiki/Special:Redirect/file/${encodeURIComponent(file)}` : null;
 const pageUrl = page => page ? `https://lol.fandom.com/wiki/${encodeURIComponent(page).replace(/%2F/g, '/')}` : null;
+const MIN_CARGO_INTERVAL_MS = Math.max(65_000, Number(process.env.LEAGUEPEDIA_INTERVAL_MS || 65_000));
+let lastCargoAt = 0;
+
+async function throttleCargo() {
+  const elapsed = Date.now() - lastCargoAt;
+  if (lastCargoAt && elapsed < MIN_CARGO_INTERVAL_MS) {
+    const wait = MIN_CARGO_INTERVAL_MS - elapsed;
+    console.log(`Tôn trọng Leaguepedia rate limit, chờ ${Math.ceil(wait / 1000)}s...`);
+    await sleep(wait);
+  }
+  lastCargoAt = Date.now();
+}
 
 async function cargoQuery(params) {
   const query = new URLSearchParams({ action: 'cargoquery', format: 'json', maxlag: '5', ...params });
   const url = `${API}?${query}`;
 
-  for (let attempt = 0; attempt < 7; attempt++) {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await throttleCargo();
     const response = await fetch(url, {
       headers: {
         'User-Agent': 'WebLienMinh/2.0 global-esports-directory (educational project; contact via GitHub DakCuteNe/WebLienMinh)'
       }
     });
 
-    if (response.status === 429 || response.status === 502 || response.status === 503 || response.status === 504) {
+    if ([429, 502, 503, 504].includes(response.status)) {
       const retryAfter = Number(response.headers.get('retry-after') || 0);
-      const wait = retryAfter > 0 ? retryAfter * 1000 : Math.min(45_000, 4_000 * (attempt + 1));
-      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s rồi thử lại (${attempt + 1}/7)...`);
+      const wait = Math.max(MIN_CARGO_INTERVAL_MS, retryAfter * 1000 || 0);
+      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s rồi thử lại (${attempt + 1}/5)...`);
+      lastCargoAt = Date.now();
       await sleep(wait);
       continue;
     }
@@ -39,10 +53,10 @@ async function cargoQuery(params) {
     if (payload?.error) {
       const info = String(payload.error.info || payload.error.code || 'Unknown Cargo error');
       const retryable = /rate limit|too many|maxlag|lagged|temporar/i.test(info);
-      if (retryable && attempt < 6) {
-        const wait = Math.min(60_000, 6_000 * (attempt + 1));
-        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ ${Math.ceil(wait / 1000)}s...`);
-        await sleep(wait);
+      if (retryable && attempt < 4) {
+        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ ${Math.ceil(MIN_CARGO_INTERVAL_MS / 1000)}s...`);
+        lastCargoAt = Date.now();
+        await sleep(MIN_CARGO_INTERVAL_MS);
         continue;
       }
       throw new Error(`Leaguepedia Cargo: ${info}`);
@@ -51,17 +65,16 @@ async function cargoQuery(params) {
     return (payload.cargoquery || []).map(x => x.title || x);
   }
 
-  throw new Error('Leaguepedia vẫn giới hạn request sau nhiều lần retry.');
+  throw new Error('Leaguepedia vẫn giới hạn request sau nhiều lần retry theo nhịp 1 request/phút.');
 }
 
-async function cargoPaged(base, maxRows = 3000) {
+async function cargoPaged(base, maxRows = 2000) {
   const rows = [];
   for (let offset = 0; offset < maxRows; offset += 500) {
     console.log(`Cargo page offset=${offset}...`);
     const page = await cargoQuery({ ...base, limit: '500', offset: String(offset) });
     rows.push(...page);
     if (page.length < 500) break;
-    await sleep(1800);
   }
   return rows;
 }
@@ -92,7 +105,7 @@ const teamRows = await cargoPaged({
   ].join(','),
   where: 'T.IsDisbanded=0',
   order_by: 'T.Region ASC,T.Name ASC'
-}, 2000);
+}, 1500);
 
 const teams = new Map();
 for (const row of teamRows) {
@@ -113,7 +126,6 @@ for (const row of teamRows) {
   });
 }
 
-await sleep(2500);
 console.log('Đang tải tuyển thủ chuyên nghiệp đang hoạt động trên toàn cầu...');
 const playerRows = await cargoPaged({
   tables: 'Players=P',
@@ -127,7 +139,7 @@ const playerRows = await cargoPaged({
   ].join(','),
   where: "P.Team != '' AND P.IsRetired=0 AND P.IsPersonality=0",
   order_by: 'P.Team ASC,P.Role ASC,P.ID ASC'
-}, 3000);
+}, 2000);
 
 const players = playerRows
   .filter(row => row.id && row.team && !bool(row.isRetired) && !bool(row.isPersonality))
