@@ -30,14 +30,46 @@ jobs:
         with:
           node-version: '22'
       - run: npm install --no-audit --no-fund
+
       - name: Build worldwide player/team directory
-        run: npm run update:esports
-      - name: Commit directory
+        id: build
+        shell: bash
+        run: |
+          set +e
+          npm run update:esports 2>&1 | tee esports-directory.log
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Write directory status
+        if: always()
+        shell: bash
+        env:
+          EXIT_CODE: ${{ steps.build.outputs.exit_code }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          let log = '';
+          try { log = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
+          const lines = log.trim().split(/\r?\n/).filter(Boolean);
+          const status = {
+            checkedAt: new Date().toISOString(),
+            exitCode: Number(process.env.EXIT_CODE || -1),
+            message: lines.slice(-20).join('\n').slice(0, 5000),
+            directoryCreated: await fs.access('data/esports-directory.json').then(() => true).catch(() => false)
+          };
+          await fs.mkdir('data', { recursive: true });
+          await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
+          NODE
+
+      - name: Commit directory and status
+        if: always()
         shell: bash
         run: |
           git config user.name "WebLienMinh Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/esports-directory.json
+          git add data/esports-directory-status.json
+          if [ -f data/esports-directory.json ]; then git add data/esports-directory.json; fi
           if git diff --cached --quiet; then
             echo "No esports directory changes."
             exit 0
