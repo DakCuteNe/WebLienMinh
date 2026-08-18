@@ -39,15 +39,15 @@ const params = new URLSearchParams({
 
 async function fetchCargo() {
   const url = `${API}?${params}`;
-  for (let attempt = 0; attempt < 7; attempt++) {
+  for (let attempt = 0; attempt < 8; attempt++) {
     const response = await fetch(url, {
-      headers: { 'User-Agent': 'WebLienMinh/2.0 featured-pro-analytics (educational project; GitHub DakCuteNe/WebLienMinh)' }
+      headers: { 'User-Agent': 'WebLienMinh/2.1 featured-pro-analytics (educational project; GitHub DakCuteNe/WebLienMinh)' }
     });
 
     if (response.status === 429 || [502,503,504].includes(response.status)) {
       const retryAfter = Number(response.headers.get('retry-after') || 0);
-      const wait = retryAfter ? retryAfter * 1000 : Math.min(45_000, 5_000 * (attempt + 1));
-      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s...`);
+      const wait = retryAfter > 0 ? Math.max(65_000, retryAfter * 1000) : 65_000;
+      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s (${attempt + 1}/8)...`);
       await sleep(wait);
       continue;
     }
@@ -56,17 +56,16 @@ async function fetchCargo() {
     const payload = await response.json();
     if (payload?.error) {
       const info = String(payload.error.info || payload.error.code || 'Cargo error');
-      if (/rate limit|too many|maxlag|lagged|temporar/i.test(info) && attempt < 6) {
-        const wait = Math.min(60_000, 7_000 * (attempt + 1));
-        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ ${Math.ceil(wait / 1000)}s...`);
-        await sleep(wait);
+      if (/rate limit|too many|maxlag|lagged|temporar/i.test(info) && attempt < 7) {
+        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ 65s (${attempt + 1}/8)...`);
+        await sleep(65_000);
         continue;
       }
       throw new Error(`Leaguepedia Cargo: ${info}`);
     }
     return payload;
   }
-  throw new Error('Leaguepedia vẫn giới hạn request featured pros sau nhiều lần retry.');
+  throw new Error('Leaguepedia vẫn giới hạn request featured pros sau 8 lần chờ 65 giây. Giữ dữ liệu cũ.');
 }
 
 const payload = await fetchCargo();
@@ -184,7 +183,7 @@ const result = {
   sourceType: 'community-maintained, not Riot official',
   rangeDays: 120,
   perPlayerGames: 30,
-  note: 'Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng tuyệt đối. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.',
+  note: 'Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.',
   players
 };
 
