@@ -10,7 +10,7 @@ on:
     paths:
       - '.github/workflows/update-esports.yml'
       - 'scripts/update-esports-directory.js'
-      - 'scripts/update-esports-identities.js'
+      - 'scripts/update-esports-identities.py'
       - 'scripts/update-esports-media.js'
       - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
@@ -36,6 +36,10 @@ jobs:
         with:
           node-version: '22'
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - run: npm install --no-audit --no-fund
 
       - name: Build worldwide player/team directory
@@ -54,7 +58,14 @@ jobs:
         shell: bash
         run: |
           set +e
-          npm run update:esports-identities 2>&1 | tee esports-identities.log
+          python -m pip install --quiet pyarrow
+          PIP_CODE=$?
+          if [ "$PIP_CODE" != "0" ]; then
+            echo "PyArrow install failed with code $PIP_CODE" | tee esports-identities.log
+            echo "exit_code=$PIP_CODE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python scripts/update-esports-identities.py 2>&1 | tee esports-identities.log
           CODE=${PIPESTATUS[0]}
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
