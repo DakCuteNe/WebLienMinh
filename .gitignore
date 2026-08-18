@@ -1,5 +1,7 @@
 node_modules/
 .env
 data/matches/
+data/matches-global-tmp/
+data/meta.previous.json
 npm-debug.log*
 .DS_Store
