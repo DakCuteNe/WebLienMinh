@@ -1,0 +1,341 @@
+const LEAGUEPEDIA_API = 'https://lol.fandom.com/api.php';
+const MEDIA_TTL_MS = 60 * 60 * 1000;
+const PROFILE_TTL_MS = 6 * 60 * 60 * 1000;
+const ACHIEVEMENT_TTL_MS = 24 * 60 * 60 * 1000;
+const ERROR_TTL_MS = 15 * 60 * 1000;
+
+const profileCache = new Map();
+const achievementCache = new Map();
+
+const norm = value => String(value || '').trim().replaceAll('_', ' ').toLowerCase();
+
+function cleanTitle(value) {
+  let title = String(value || '').trim();
+  if (!title) return null;
+  try {
+    const url = new URL(title);
+    const marker = '/wiki/';
+    const at = url.pathname.indexOf(marker);
+    if (at >= 0) title = decodeURIComponent(url.pathname.slice(at + marker.length));
+  } catch {}
+  return title.replaceAll('_', ' ').trim() || null;
+}
+
+function cleanWiki(value = '') {
+  let text = String(value || '').trim();
+  if (!text) return null;
+  text = text
+    .replace(/<!--[^]*?-->/g, ' ')
+    .replace(/<br\s*\/?\s*>/gi, ', ')
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+    .replace(/\[\[([^\]]+)\]\]/g, '$1')
+    .replace(/\[(https?:\/\/\S+)\s+([^\]]+)\]/g, '$2')
+    .replace(/'''?/g, '');
+  for (let i = 0; i < 5; i++) {
+    const next = text.replace(/\{\{[^{}|]+\|([^{}]+)\}\}/g, (_m, inner) => {
+      const parts = String(inner).split('|').map(x => x.trim()).filter(Boolean);
+      return parts.at(-1) || '';
+    });
+    if (next === text) break;
+    text = next;
+  }
+  return text.replace(/\{\{[^{}]*\}\}/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() || null;
+}
+
+function parseParams(wikitext = '') {
+  const params = new Map();
+  for (const line of String(wikitext).split(/\r?\n/)) {
+    const match = line.match(/^\s*\|\s*([^=|]+?)\s*=\s*(.*?)\s*$/);
+    if (!match) continue;
+    const name = norm(match[1]).replaceAll(' ', '');
+    if (!params.has(name) || !params.get(name)) params.set(name, match[2]);
+  }
+  return params;
+}
+
+function param(params, ...names) {
+  for (const name of names) {
+    const raw = params.get(norm(name).replaceAll(' ', ''));
+    if (raw != null && String(raw).trim()) return raw;
+  }
+  return null;
+}
+
+function normalizeDate(rawValue) {
+  const raw = String(rawValue || '').trim();
+  if (!raw) return null;
+  const template = raw.match(/\{\{\s*(?:birth\s*date(?:\s*and\s*age)?|date|dts)\s*\|\s*((?:19|20)\d{2})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})/i);
+  if (template) return `${template[1]}-${String(template[2]).padStart(2, '0')}-${String(template[3]).padStart(2, '0')}`;
+  const pipeDate = raw.match(/\b((?:19|20)\d{2})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})\b/);
+  if (pipeDate) return `${pipeDate[1]}-${String(pipeDate[2]).padStart(2, '0')}-${String(pipeDate[3]).padStart(2, '0')}`;
+  const text = cleanWiki(raw);
+  if (!text) return null;
+  const iso = text.match(/\b((?:19|20)\d{2})[-/](\d{1,2})[-/](\d{1,2})\b/);
+  if (iso) return `${iso[1]}-${String(iso[2]).padStart(2, '0')}-${String(iso[3]).padStart(2, '0')}`;
+  const parsed = Date.parse(text);
+  return Number.isNaN(parsed) ? null : new Date(parsed).toISOString().slice(0, 10);
+}
+
+function ageFromDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ''))) return null;
+  const [y, m, d] = value.split('-').map(Number);
+  const now = new Date();
+  let age = now.getUTCFullYear() - y;
+  if (now.getUTCMonth() + 1 < m || (now.getUTCMonth() + 1 === m && now.getUTCDate() < d)) age--;
+  return age >= 10 && age <= 80 ? age : null;
+}
+
+function fileName(value) {
+  let text = String(value || '').trim();
+  if (!text) return null;
+  text = text.replace(/^\[\[(?:File|Image):/i, '').replace(/\]\]$/, '').split('|')[0].trim();
+  return text.replace(/^(?:File|Image):/i, '').trim() || null;
+}
+
+async function wikiQuery(params, timeoutMs = 12_000) {
+  const query = new URLSearchParams({ action: 'query', format: 'json', redirects: '1', ...params });
+  const response = await fetch(`${LEAGUEPEDIA_API}?${query}`, {
+    headers: { 'User-Agent': 'WebLienMinh/2.5 current-esports-profile' },
+    signal: AbortSignal.timeout(timeoutMs)
+  });
+  if (!response.ok) throw new Error(`Leaguepedia ${response.status}`);
+  const body = await response.json();
+  if (body?.error) throw new Error(body.error.info || body.error.code || 'Leaguepedia API error');
+  return body;
+}
+
+async function resolveFileUrl(name) {
+  if (!name) return null;
+  const body = await wikiQuery({ prop: 'imageinfo', iiprop: 'url', iiurlwidth: '900', titles: `File:${name}` });
+  const page = Object.values(body.query?.pages || {}).find(item => !item.missing);
+  const info = page?.imageinfo?.[0];
+  return info?.thumburl || info?.url || null;
+}
+
+async function currentProfile(title, kind = 'player') {
+  const pageTitle = cleanTitle(title);
+  if (!pageTitle) return null;
+  const cacheKey = `${kind}:${norm(pageTitle)}`;
+  const hit = profileCache.get(cacheKey);
+  if (hit && Date.now() - hit.at < PROFILE_TTL_MS) return hit.value;
+
+  try {
+    const body = await wikiQuery({
+      prop: 'pageimages|info|revisions',
+      piprop: 'thumbnail|original|name',
+      pithumbsize: '900',
+      inprop: 'url',
+      rvprop: 'content',
+      rvslots: 'main',
+      titles: pageTitle
+    });
+    const page = Object.values(body.query?.pages || {}).find(item => !item.missing);
+    if (!page) {
+      profileCache.set(cacheKey, { at: Date.now(), value: null });
+      return null;
+    }
+
+    const revision = page.revisions?.[0];
+    const wikitext = revision?.slots?.main?.['*'] ?? revision?.slots?.main?.content ?? revision?.['*'] ?? '';
+    const params = parseParams(wikitext);
+    const explicitImage = fileName(kind === 'team'
+      ? param(params, 'logo', 'image', 'photo')
+      : param(params, 'image', 'playerimage', 'photo'));
+    let image = null;
+    if (explicitImage) image = await resolveFileUrl(explicitImage).catch(() => null);
+    image ||= page.thumbnail?.source || page.original?.source || null;
+
+    const result = {
+      pageTitle: page.title || pageTitle,
+      sourcePage: page.fullurl || `https://lol.fandom.com/wiki/${encodeURIComponent(page.title || pageTitle).replace(/%20/g, '_')}`,
+      image,
+      fetchedAt: new Date().toISOString()
+    };
+
+    if (kind === 'player') {
+      const birthdate = normalizeDate(param(params, 'birthdate', 'birthday', 'dob'));
+      const contractRaw = param(params, 'contract', 'contractexpires', 'contractexpiry', 'contractend', 'contractdate');
+      const contract = normalizeDate(contractRaw) || cleanWiki(contractRaw);
+      result.name = cleanWiki(param(params, 'name', 'namefull', 'realname'));
+      result.nativeName = cleanWiki(param(params, 'nativename'));
+      result.country = cleanWiki(param(params, 'country', 'countryofbirth'));
+      result.nationality = cleanWiki(param(params, 'nationality', 'nationalityprimary')) || result.country;
+      result.birthdate = birthdate;
+      result.age = ageFromDate(birthdate);
+      result.contract = contract;
+      result.currentTeamName = cleanWiki(param(params, 'team', 'currentteam', 'teamname'));
+      result.residency = cleanWiki(param(params, 'residency'));
+      result.socials = {
+        twitter: cleanWiki(param(params, 'twitter')),
+        instagram: cleanWiki(param(params, 'instagram')),
+        stream: cleanWiki(param(params, 'stream', 'twitch')),
+        youtube: cleanWiki(param(params, 'youtube'))
+      };
+    }
+
+    profileCache.set(cacheKey, { at: Date.now(), value: result });
+    return result;
+  } catch (error) {
+    const stale = profileCache.get(cacheKey);
+    if (stale?.value) return stale.value;
+    profileCache.set(cacheKey, { at: Date.now() - PROFILE_TTL_MS + ERROR_TTL_MS, value: null });
+    throw error;
+  }
+}
+
+function matchPlayer(players, rawKey) {
+  const wanted = norm(cleanTitle(rawKey) || rawKey);
+  return (players || []).find(player => [player.uid, player.id, player.identityId, player.overviewPage]
+    .filter(Boolean).some(value => norm(cleanTitle(value) || value) === wanted));
+}
+
+function matchTeam(teams, rawKey) {
+  const wanted = norm(cleanTitle(rawKey) || rawKey);
+  return (teams || []).find(team => [team.id, team.name, team.short, team.sourcePage]
+    .filter(Boolean).some(value => norm(cleanTitle(value) || value) === wanted));
+}
+
+async function fetchImageBuffer(url) {
+  if (!url) return null;
+  const parsed = new URL(url);
+  if (!/(^|\.)wikia\.nocookie\.net$/i.test(parsed.hostname)) return null;
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'WebLienMinh/2.5 esports-media-proxy',
+      'Referer': 'https://lol.fandom.com/'
+    },
+    signal: AbortSignal.timeout(15_000)
+  });
+  if (!response.ok) return null;
+  const type = response.headers.get('content-type') || 'image/jpeg';
+  if (!type.startsWith('image/')) return null;
+  return { type, buffer: Buffer.from(await response.arrayBuffer()) };
+}
+
+async function getAchievements(player, leaguepediaCargo, escapeCargo) {
+  const title = player.overviewPage || player.identityId || player.id;
+  const key = norm(title);
+  const hit = achievementCache.get(key);
+  if (hit && Date.now() - hit.at < ACHIEVEMENT_TTL_MS) return hit;
+
+  try {
+    const value = await leaguepediaCargo({
+      tables: 'TournamentPlayers=TP,TournamentResults=TR',
+      fields: 'TR.Event=event,TR.Tier=tier,TR.Date=date,TR.Place=place,TR.Place_Number=placeNumber,TR.Team=team,TR.Prize_USD=prizeUSD,TR.Phase=phase',
+      join_on: 'TP.PageAndTeam=TR.PageAndTeam',
+      where: `TP.Player='${escapeCargo(title)}' AND TR.IsAchievement=1`,
+      order_by: 'TR.Date DESC,TR.Place_Number ASC',
+      limit: '100'
+    });
+    const row = { at: Date.now(), value, warning: null };
+    achievementCache.set(key, row);
+    return row;
+  } catch (error) {
+    if (hit?.value?.length) return { ...hit, warning: `Nguồn thành tích đang giới hạn truy cập; đang dùng cache trước đó. ${error.message}` };
+    const row = { at: Date.now() - ACHIEVEMENT_TTL_MS + ERROR_TTL_MS, value: [], warning: `Nguồn thành tích đang giới hạn truy cập; thử lại sau. ${error.message}` };
+    achievementCache.set(key, row);
+    return row;
+  }
+}
+
+export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, leaguepediaCargo, escapeCargo }) {
+  app.get('/api/esports/media', async (req, res) => {
+    try {
+      const kind = String(req.query.kind || 'player').toLowerCase() === 'team' ? 'team' : 'player';
+      const rawKey = String(req.query.key || '').trim();
+      if (!rawKey || rawKey.length > 220) return res.status(400).send('Invalid media key');
+      const directory = await readEsportsDirectory();
+
+      let storedUrl = null;
+      let title = cleanTitle(rawKey) || rawKey;
+      if (kind === 'player') {
+        const player = matchPlayer(directory.players, rawKey);
+        if (player) {
+          storedUrl = player.image || null;
+          title = player.overviewPage || player.identityId || player.id || title;
+        }
+      } else {
+        const team = matchTeam(directory.teams, rawKey);
+        if (team) {
+          storedUrl = team.logo || null;
+          title = cleanTitle(team.sourcePage) || team.name || title;
+        }
+      }
+
+      // Directory media is refreshed by the esports workflow. Proxy it first so browsers never
+      // hotlink Fandom directly. If the stored URL is gone, resolve the current infobox/page image.
+      let image = await fetchImageBuffer(storedUrl);
+      let source = 'directory-current-sync';
+      if (!image) {
+        const live = await currentProfile(title, kind).catch(() => null);
+        image = await fetchImageBuffer(live?.image);
+        source = 'leaguepedia-live';
+      }
+      if (!image) return res.status(404).send('Current image unavailable');
+
+      res.setHeader('Content-Type', image.type);
+      res.setHeader('Cache-Control', `public, max-age=${Math.floor(MEDIA_TTL_MS / 1000)}, s-maxage=${Math.floor(MEDIA_TTL_MS / 1000)}, stale-while-revalidate=86400`);
+      res.setHeader('X-Esports-Media-Source', source);
+      return res.send(image.buffer);
+    } catch (error) {
+      return res.status(502).send(`Esports media unavailable: ${error.message}`);
+    }
+  });
+
+  // Registered before the legacy route in server.js, so this is the canonical player profile API.
+  app.get('/api/esports/player/:id', async (req, res) => {
+    try {
+      const directory = await readEsportsDirectory();
+      const base = matchPlayer(directory.players, req.params.id);
+      if (!base) return res.status(404).json({ error: 'Không tìm thấy tuyển thủ trong directory hiện tại.' });
+
+      const player = {
+        ...base,
+        team: base.team ? { ...base.team } : null,
+        socials: { ...(base.socials || {}) }
+      };
+      const title = player.overviewPage || player.identityId || player.id;
+      let liveWarning = null;
+      let live = null;
+      try { live = await currentProfile(title, 'player'); } catch (error) { liveWarning = error.message; }
+
+      if (live) {
+        const fields = ['name', 'nativeName', 'country', 'nationality', 'birthdate', 'age', 'contract', 'residency'];
+        for (const field of fields) {
+          if (live[field] != null && live[field] !== '') player[field] = live[field];
+        }
+        for (const [name, value] of Object.entries(live.socials || {})) if (value) player.socials[name] = value;
+        player.currentProfileFetchedAt = live.fetchedAt;
+        player.currentProfileSource = live.sourcePage;
+
+        if (live.currentTeamName) {
+          const currentTeam = matchTeam(directory.teams, live.currentTeamName);
+          player.currentTeamName = live.currentTeamName;
+          player.team = currentTeam
+            ? { ...currentTeam }
+            : { ...(player.team || {}), name: live.currentTeamName, logo: null, sourcePage: `https://lol.fandom.com/wiki/${encodeURIComponent(live.currentTeamName).replace(/%20/g, '_')}` };
+        }
+      }
+
+      const pros = await readPros();
+      const featuredStats = (pros.players || []).find(p => norm(p.name) === norm(player.id)) || null;
+      const achievementState = await getAchievements(player, leaguepediaCargo, escapeCargo);
+      const achievements = achievementState.value || [];
+      const titles = achievements.filter(a => Number(a.placeNumber || 999) === 1);
+
+      res.setHeader('Cache-Control', 'no-store');
+      res.json({
+        player,
+        achievements,
+        titles,
+        titleCount: titles.length,
+        featuredStats,
+        achievementWarning: achievementState.warning,
+        liveProfileWarning: liveWarning,
+        sourceNote: 'Hồ sơ/ảnh hiện tại ưu tiên Leaguepedia hiện tại; thống kê thi đấu dùng Oracle’s Elixir. Trường thiếu không được suy đoán.'
+      });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+}
