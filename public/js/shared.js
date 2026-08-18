@@ -14,6 +14,15 @@ export const fmt = n => Number(n || 0).toFixed(1) + '%';
 export const score = n => Number(n || 0).toFixed(1);
 export const number = n => Number(n || 0).toLocaleString('vi-VN');
 
+// Riot's 2026 public patch label is 26.x while Data Dragon / Match-V5 build data uses 16.x.
+// Keep the internal value untouched and convert only where the UI presents Meta data to users.
+export function publicMetaPatch(value) {
+  const raw = String(value ?? '').trim();
+  const match = raw.match(/^(1[5-9])\.(\d{1,2})(.*)$/);
+  if (!match) return raw;
+  return `${Number(match[1]) + 10}.${Number(match[2])}${match[3] || ''}`;
+}
+
 export async function api(url) {
   const sep = url.includes('?') ? '&' : '?';
   const freshUrl = `${url}${sep}_=${Date.now()}`;
