@@ -37,6 +37,11 @@ function absoluteUrl(href) {
   catch { return null; }
 }
 
+function validHttpImage(value) {
+  const url = absoluteUrl(value || '');
+  return /^https?:\/\//i.test(url || '') ? url : null;
+}
+
 function categoryFromUrl(url) {
   try {
     const p = new URL(url).pathname.toLowerCase();
@@ -59,8 +64,31 @@ function titleFromSlug(url) {
 }
 
 function extractImage(inner) {
-  const raw = inner.match(/<img\b[^>]*(?:src|data-src)=["']([^"']+)["']/i)?.[1];
-  return raw ? absoluteUrl(raw) : null;
+  const tags = String(inner).match(/<img\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const candidates = [
+      tag.match(/\bdata-src=["']([^"']+)["']/i)?.[1],
+      tag.match(/\bsrc=["']([^"']+)["']/i)?.[1],
+      tag.match(/\bsrcset=["']([^"']+)["']/i)?.[1]?.split(',')?.pop()?.trim()?.split(/\s+/)?.[0]
+    ];
+    for (const candidate of candidates) {
+      const image = validHttpImage(candidate);
+      if (image) return image;
+    }
+  }
+  return null;
+}
+
+function extractMeta(html, names) {
+  const wanted = new Set(names.map(x => x.toLowerCase()));
+  const tags = String(html).match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const name = tag.match(/\b(?:property|name)=["']([^"']+)["']/i)?.[1]?.toLowerCase();
+    if (!name || !wanted.has(name)) continue;
+    const content = tag.match(/\bcontent=["']([^"']+)["']/i)?.[1];
+    if (content) return decodeHtml(content).trim();
+  }
+  return null;
 }
 
 function extractDate(text) {
@@ -95,7 +123,7 @@ function parseArticles(html) {
 
   while ((match = anchorRe.exec(html))) {
     const href = decodeHtml(match[2]);
-    if (!/\/en-us\/news\//i.test(href)) continue;
+    if (!/\/en-us\/news\//i.test(href) && !/^https?:\/\/(?:www\.)?lolesports\.com\/en-us\/news\//i.test(href)) continue;
     if (/\/en-us\/news\/?(?:[?#].*)?$/i.test(href)) continue;
     const url = absoluteUrl(href);
     if (!url || seen.has(url)) continue;
@@ -120,7 +148,6 @@ function parseArticles(html) {
     out.push(article);
   }
 
-  // Some Riot builds serialize article URLs in JSON instead of normal anchor markup.
   const rawUrlRe = /(?:https?:\\?\/\\?\/www\.leagueoflegends\.com)?(\\?\/en-us\\?\/news\\?\/game-updates\\?\/league-of-legends-patch-(\d+)-(\d+)-notes\\?\/?)/gi;
   while ((match = rawUrlRe.exec(html))) {
     const href = match[1].replaceAll('\\/', '/');
@@ -160,6 +187,26 @@ async function fetchPage(url) {
   return response.text();
 }
 
+async function enrichArticle(article) {
+  try {
+    const html = await fetchPage(article.url);
+    const title = extractMeta(html, ['og:title', 'twitter:title']);
+    const description = extractMeta(html, ['og:description', 'description', 'twitter:description']);
+    const image = validHttpImage(extractMeta(html, ['og:image', 'twitter:image', 'twitter:image:src']));
+    const published = extractMeta(html, ['article:published_time', 'date', 'datepublished']);
+    return {
+      ...article,
+      title: title ? stripTags(title).replace(/\s*[-|]\s*League of Legends\s*$/i, '').trim() : article.title,
+      description: description ? stripTags(description).slice(0, 700) : article.description,
+      image: image || validHttpImage(article.image),
+      publishedAt: published && !Number.isNaN(Date.parse(published)) ? new Date(published).toISOString() : article.publishedAt
+    };
+  } catch (error) {
+    console.log(`[riot-content] enrich fail ${article.url}: ${error.message}`);
+    return { ...article, image: validHttpImage(article.image) };
+  }
+}
+
 const all = [];
 const seen = new Set();
 const errors = [];
@@ -178,13 +225,13 @@ for (const url of NEWS_URLS) {
 
 if (!all.length) throw new Error(`Không parse được Riot News. ${errors.join(' | ')}`);
 
-const patches = all
+const patchCandidates = all
   .filter(a => a.type === 'patch')
   .map(a => ({
     patch: patchVersion(a.title, a.url),
     title: a.title,
     url: a.url,
-    image: a.image,
+    image: validHttpImage(a.image),
     publishedAt: a.publishedAt,
     description: a.description
   }))
@@ -193,9 +240,20 @@ const patches = all
   .filter((item, index, arr) => arr.findIndex(x => x.patch === item.patch) === index)
   .slice(0, 12);
 
-if (!patches.length) throw new Error('Riot News có article nhưng không tìm được Patch Notes.');
+if (!patchCandidates.length) throw new Error('Riot News có article nhưng không tìm được Patch Notes.');
 
-all.sort((a, b) => String(b.publishedAt || '').localeCompare(String(a.publishedAt || '')));
+const patches = [];
+for (const patch of patchCandidates) {
+  patches.push(await enrichArticle(patch));
+}
+
+const importantUrls = new Set(all.filter(a => ['hall', 'skin', 'event', 'esports', 'champion'].includes(a.type)).slice(0, 18).map(a => a.url));
+const enrichedAll = [];
+for (const article of all) {
+  enrichedAll.push(importantUrls.has(article.url) ? await enrichArticle(article) : { ...article, image: validHttpImage(article.image) });
+}
+enrichedAll.sort((a, b) => String(b.publishedAt || '').localeCompare(String(a.publishedAt || '')));
+
 await fs.mkdir(outDir, { recursive: true });
 await fs.writeFile(path.join(outDir, 'patches.json'), JSON.stringify({
   generatedAt: new Date().toISOString(),
@@ -206,8 +264,8 @@ await fs.writeFile(path.join(outDir, 'patches.json'), JSON.stringify({
 await fs.writeFile(path.join(outDir, 'riot-news.json'), JSON.stringify({
   generatedAt: new Date().toISOString(),
   source: 'Riot Games / League of Legends official News',
-  articles: all.slice(0, 80)
+  articles: enrichedAll.slice(0, 80)
 }, null, 2));
 
-console.log(`Riot content cache: ${patches.length} patch notes • ${all.length} articles.`);
-console.log(`Latest patch parsed: ${patches[0].patch} • ${patches[0].title}`);
+console.log(`Riot content cache: ${patches.length} patch notes • ${enrichedAll.length} articles.`);
+console.log(`Latest patch parsed: ${patches[0].patch} • ${patches[0].title} • image=${patches[0].image ? 'yes' : 'no'}`);
