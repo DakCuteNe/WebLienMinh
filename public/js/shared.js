@@ -1,4 +1,5 @@
 import './esports-images.js';
+import './esports-image-placeholder-guard.js';
 
 if (!document.querySelector('link[data-rift-v2]')) {
   const theme = document.createElement('link');
