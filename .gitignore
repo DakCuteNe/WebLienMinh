@@ -3,5 +3,6 @@ node_modules/
 data/matches/
 data/matches-global-tmp/
 data/meta.previous.json
+.bot-news-state.json
 npm-debug.log*
 .DS_Store
