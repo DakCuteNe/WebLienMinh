@@ -12,6 +12,7 @@ on:
       - 'scripts/update-esports-directory.js'
       - 'scripts/update-esports-identities.py'
       - 'scripts/update-esports-media.js'
+      - 'scripts/update-esports-media-safe.js'
       - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
       - 'package.json'
