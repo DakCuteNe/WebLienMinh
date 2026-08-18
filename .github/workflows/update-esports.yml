@@ -11,6 +11,7 @@ on:
       - '.github/workflows/update-esports.yml'
       - 'scripts/update-esports-directory.js'
       - 'scripts/update-esports-media.js'
+      - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
 
 permissions:
@@ -54,6 +55,15 @@ jobs:
           echo "media_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
           exit 0
 
+      - name: Audit every esports profile
+        if: steps.build.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          node scripts/audit-esports-directory.js 2>&1 | tee esports-audit.log
+          echo "audit_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          exit 0
+
       - name: Write directory status
         if: always()
         shell: bash
@@ -64,25 +74,29 @@ jobs:
           import fs from 'node:fs/promises';
           let log = '';
           let mediaLog = '';
+          let auditLog = '';
           try { log = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
           try { mediaLog = await fs.readFile('esports-media.log', 'utf8'); } catch {}
+          try { auditLog = await fs.readFile('esports-audit.log', 'utf8'); } catch {}
           const code = Number(process.env.EXIT_CODE ?? -1);
           const mediaCode = Number(process.env.media_exit_code ?? process.env.MEDIA_EXIT_CODE ?? -1);
+          const auditCode = Number(process.env.audit_exit_code ?? process.env.AUDIT_EXIT_CODE ?? -1);
           const directoryCreated = await fs.access('data/esports-directory.json').then(() => true).catch(() => false);
           const status = {
             checkedAt: new Date().toISOString(),
-            health: code === 0 ? (mediaCode > 0 ? 'degraded' : 'ok') : (directoryCreated ? 'degraded' : 'waiting'),
+            health: code === 0 ? ((mediaCode > 0 || auditCode > 0) ? 'degraded' : 'ok') : (directoryCreated ? 'degraded' : 'waiting'),
             exitCode: code,
             mediaExitCode: mediaCode,
+            auditExitCode: auditCode,
             directoryCreated,
             preservedPreviousData: code !== 0 && directoryCreated,
-            message: [log, mediaLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-45).join('\n').slice(0, 9000)
+            message: [log, mediaLog, auditLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-65).join('\n').slice(0, 12000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
           NODE
 
-      - name: Commit directory and status
+      - name: Commit directory, audit and status
         if: always()
         shell: bash
         run: |
@@ -91,6 +105,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/esports-directory-status.json
           if [ -f data/esports-directory.json ]; then git add data/esports-directory.json; fi
+          if [ -f data/esports-audit.json ]; then git add data/esports-audit.json; fi
 
           if git diff --cached --quiet; then
             echo "No esports directory changes."
