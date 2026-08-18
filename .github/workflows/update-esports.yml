@@ -49,62 +49,74 @@ jobs:
           exit 0
 
       - name: Resolve canonical player identities and real names
+        id: identity
         if: steps.build.outputs.exit_code == '0'
         shell: bash
         run: |
           set +e
           npm run update:esports-identities 2>&1 | tee esports-identities.log
-          echo "identity_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
       - name: Enrich player bios, photos and team logos
-        if: steps.build.outputs.exit_code == '0'
+        id: media
+        if: steps.build.outputs.exit_code == '0' && steps.identity.outputs.exit_code == '0'
         shell: bash
         run: |
           set +e
           npm run update:esports-media 2>&1 | tee esports-media.log
-          echo "media_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
       - name: Audit every esports profile
-        if: steps.build.outputs.exit_code == '0'
+        id: audit
+        if: steps.build.outputs.exit_code == '0' && steps.identity.outputs.exit_code == '0' && steps.media.outputs.exit_code == '0'
         shell: bash
         run: |
           set +e
           node scripts/audit-esports-directory.js 2>&1 | tee esports-audit.log
-          echo "audit_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
       - name: Write directory status
         if: always()
         shell: bash
         env:
-          EXIT_CODE: ${{ steps.build.outputs.exit_code }}
+          BUILD_CODE: ${{ steps.build.outputs.exit_code }}
+          IDENTITY_CODE: ${{ steps.identity.outputs.exit_code }}
+          MEDIA_CODE: ${{ steps.media.outputs.exit_code }}
+          AUDIT_CODE: ${{ steps.audit.outputs.exit_code }}
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs/promises';
-          let log = '', identityLog = '', mediaLog = '', auditLog = '';
-          try { log = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
+          let buildLog = '', identityLog = '', mediaLog = '', auditLog = '';
+          try { buildLog = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
           try { identityLog = await fs.readFile('esports-identities.log', 'utf8'); } catch {}
           try { mediaLog = await fs.readFile('esports-media.log', 'utf8'); } catch {}
           try { auditLog = await fs.readFile('esports-audit.log', 'utf8'); } catch {}
-          const code = Number(process.env.EXIT_CODE ?? -1);
-          const identityCode = Number(process.env.identity_exit_code ?? process.env.IDENTITY_EXIT_CODE ?? -1);
-          const mediaCode = Number(process.env.media_exit_code ?? process.env.MEDIA_EXIT_CODE ?? -1);
-          const auditCode = Number(process.env.audit_exit_code ?? process.env.AUDIT_EXIT_CODE ?? -1);
+          const toCode = value => value === '' || value == null ? -1 : Number(value);
+          const buildCode = toCode(process.env.BUILD_CODE);
+          const identityCode = toCode(process.env.IDENTITY_CODE);
+          const mediaCode = toCode(process.env.MEDIA_CODE);
+          const auditCode = toCode(process.env.AUDIT_CODE);
           const directoryCreated = await fs.access('data/esports-directory.json').then(() => true).catch(() => false);
-          const complete = code === 0 && identityCode === 0 && mediaCode === 0 && auditCode === 0;
+          const complete = buildCode === 0 && identityCode === 0 && mediaCode === 0 && auditCode === 0;
+          const tail = (value, count = 35) => value.trim().split(/\r?\n/).filter(Boolean).slice(-count).join('\n');
           const status = {
             checkedAt: new Date().toISOString(),
             health: complete ? 'ok' : (directoryCreated ? 'degraded' : 'waiting'),
-            exitCode: code,
+            exitCode: buildCode,
             identityExitCode: identityCode,
             mediaExitCode: mediaCode,
             auditExitCode: auditCode,
             directoryCreated,
             publishReady: complete,
             preservedPreviousData: !complete && directoryCreated,
-            message: [log, identityLog, mediaLog, auditLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-90).join('\n').slice(0, 16000)
+            identityMessage: tail(identityLog, 45),
+            message: [tail(buildLog, 15), tail(mediaLog, 25), tail(auditLog, 25)].filter(Boolean).join('\n').slice(0, 14000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
@@ -115,6 +127,9 @@ jobs:
         shell: bash
         env:
           BUILD_CODE: ${{ steps.build.outputs.exit_code }}
+          IDENTITY_CODE: ${{ steps.identity.outputs.exit_code }}
+          MEDIA_CODE: ${{ steps.media.outputs.exit_code }}
+          AUDIT_CODE: ${{ steps.audit.outputs.exit_code }}
         run: |
           set -e
           git config user.name "WebLienMinh Bot"
@@ -122,9 +137,9 @@ jobs:
 
           COMPLETE=0
           if [ "${BUILD_CODE:--1}" = "0" ] && \
-             [ "${identity_exit_code:--1}" = "0" ] && \
-             [ "${media_exit_code:--1}" = "0" ] && \
-             [ "${audit_exit_code:--1}" = "0" ]; then
+             [ "${IDENTITY_CODE:--1}" = "0" ] && \
+             [ "${MEDIA_CODE:--1}" = "0" ] && \
+             [ "${AUDIT_CODE:--1}" = "0" ]; then
             COMPLETE=1
           fi
 
