@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Phân tích meta Liên Minh Huyền Thoại, tier list, counter pick và cập nhật Riot." />
+  <title>Rift Meta VN — LoL Meta Analyzer</title>
+  <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">RM</span><span>RIFT META <b>VN</b></span></a>
+    <nav>
+      <button class="nav-btn active" data-section="meta">Meta</button>
+      <button class="nav-btn" data-section="counter">Counter Pick</button>
+      <button class="nav-btn" data-section="patch">Patch Riot</button>
+    </nav>
+    <div id="statusBadge" class="status-badge">Đang đồng bộ…</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">META ANALYTICS • VIETNAM</div>
+        <h1>Pick thông minh hơn.<br><span>Leo rank nhanh hơn.</span></h1>
+        <p>Phân tích sức mạnh tướng theo patch, phát hiện lựa chọn đang tăng/giảm, xem counter và đọc tác động của thay đổi từ Riot.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="document.querySelector('#metaBoard').scrollIntoView({behavior:'smooth'})">Xem Tier List</button>
+          <button class="secondary" id="openCounter">Tìm Counter</button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="metric"><span>PATCH LIVE</span><strong id="patchLive">—</strong><small>Nguồn Riot Games</small></div>
+        <div class="metric"><span>DATA DRAGON</span><strong id="ddVersion">—</strong><small>Champion assets</small></div>
+        <div class="metric"><span>DATASET</span><strong id="datasetMode">—</strong><small id="datasetNote">Đang đọc dữ liệu</small></div>
+      </div>
+    </section>
+
+    <section id="meta" class="page-section active-section">
+      <div class="section-head" id="metaBoard">
+        <div><div class="eyebrow">TIER LIST</div><h2>Meta hiện tại</h2></div>
+        <div class="filters">
+          <input id="search" placeholder="Tìm tướng..." />
+          <select id="role"><option value="ALL">Tất cả vị trí</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
+          <select id="tier"><option value="ALL">Tất cả tier</option><option>S</option><option>A</option><option>B</option><option>C</option></select>
+        </div>
+      </div>
+      <div id="dataWarning" class="notice hidden"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Tướng</th><th>Vị trí</th><th>Tier</th><th>Win rate</th><th>Pick rate</th><th>Xu hướng</th><th>Đánh giá</th><th></th></tr></thead>
+          <tbody id="metaRows"><tr><td colspan="9" class="loading">Đang tải meta…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="counter" class="page-section">
+      <div class="section-head"><div><div class="eyebrow">MATCHUP LAB</div><h2>Counter Pick</h2><p>Nhập tướng đối thủ vừa pick để tìm lựa chọn đáp trả.</p></div></div>
+      <div class="counter-search">
+        <input id="counterInput" list="championList" placeholder="Ví dụ: Gwen, Jinx, Ahri…" />
+        <datalist id="championList"></datalist>
+        <button class="primary" id="counterBtn">Phân tích</button>
+      </div>
+      <div id="counterResult" class="counter-result empty-state">Chọn một tướng để bắt đầu phân tích matchup.</div>
+    </section>
+
+    <section id="patch" class="page-section">
+      <div class="section-head"><div><div class="eyebrow">OFFICIAL RIOT UPDATES</div><h2>Patch Notes mới</h2><p>Liên kết trực tiếp đến cập nhật chính thức từ Riot Games.</p></div></div>
+      <div id="patchGrid" class="patch-grid"><div class="loading-card">Đang đọc Riot Patch Notes…</div></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+  <footer><span>Rift Meta VN</span><span>Không được Riot Games tài trợ hay xác nhận. League of Legends và Riot Games là nhãn hiệu của Riot Games, Inc.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
