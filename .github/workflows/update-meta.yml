@@ -20,7 +20,7 @@ permissions:
 
 concurrency:
   group: lol-meta-auto-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-meta:
