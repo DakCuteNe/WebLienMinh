@@ -10,6 +10,7 @@ on:
     paths:
       - '.github/workflows/update-esports.yml'
       - 'scripts/update-esports-directory.js'
+      - 'scripts/update-esports-media.js'
       - 'data/pro-watchlist.json'
 
 permissions:
@@ -44,6 +45,15 @@ jobs:
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
+      - name: Enrich player photos and team logos
+        if: steps.build.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          npm run update:esports-media 2>&1 | tee esports-media.log
+          echo "media_exit_code=${PIPESTATUS[0]}" >> "$GITHUB_ENV"
+          exit 0
+
       - name: Write directory status
         if: always()
         shell: bash
@@ -53,16 +63,20 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs/promises';
           let log = '';
+          let mediaLog = '';
           try { log = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
+          try { mediaLog = await fs.readFile('esports-media.log', 'utf8'); } catch {}
           const code = Number(process.env.EXIT_CODE ?? -1);
+          const mediaCode = Number(process.env.media_exit_code ?? process.env.MEDIA_EXIT_CODE ?? -1);
           const directoryCreated = await fs.access('data/esports-directory.json').then(() => true).catch(() => false);
           const status = {
             checkedAt: new Date().toISOString(),
-            health: code === 0 ? 'ok' : (directoryCreated ? 'degraded' : 'waiting'),
+            health: code === 0 ? (mediaCode > 0 ? 'degraded' : 'ok') : (directoryCreated ? 'degraded' : 'waiting'),
             exitCode: code,
+            mediaExitCode: mediaCode,
             directoryCreated,
             preservedPreviousData: code !== 0 && directoryCreated,
-            message: log.trim().split(/\r?\n/).filter(Boolean).slice(-30).join('\n').slice(0, 7000)
+            message: [log, mediaLog].join('\n').trim().split(/\r?\n/).filter(Boolean).slice(-45).join('\n').slice(0, 9000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
