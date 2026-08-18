@@ -1,0 +1,60 @@
+name: Update Riot News Cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '12 */2 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/update-riot-content.yml'
+      - 'scripts/update-riot-content.js'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: riot-content-cache
+  cancel-in-progress: true
+
+jobs:
+  update-riot-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Refresh Riot News and Patch Notes cache
+        run: node scripts/update-riot-content.js
+
+      - name: Commit cache
+        shell: bash
+        run: |
+          set -e
+          git config user.name "WebLienMinh Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data/patches.json public/data/riot-news.json
+          if git diff --cached --quiet; then
+            echo "No Riot content changes."
+            exit 0
+          fi
+          git commit -m "Update Riot news and patch cache"
+
+          for ATTEMPT in 1 2 3 4 5; do
+            echo "Push attempt ${ATTEMPT}/5"
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((ATTEMPT * 2))
+          done
+          echo "Push failed after 5 attempts."
+          exit 1
