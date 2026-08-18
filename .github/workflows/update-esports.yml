@@ -1,0 +1,45 @@
+name: Update Worldwide Esports Directory
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '42 */12 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/update-esports-directory.js'
+      - 'data/pro-watchlist.json'
+      - 'package.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lol-esports-directory
+  cancel-in-progress: false
+
+jobs:
+  update-esports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Build worldwide player/team directory
+        run: npm run update:esports
+      - name: Commit directory
+        shell: bash
+        run: |
+          git config user.name "WebLienMinh Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/esports-directory.json
+          if git diff --cached --quiet; then
+            echo "No esports directory changes."
+            exit 0
+          fi
+          git commit -m "Update worldwide esports directory"
+          git push
