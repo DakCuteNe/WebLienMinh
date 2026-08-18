@@ -4,7 +4,16 @@ import { initAssets, ensureAssets } from './js/assets.js';
 import { initEsports, ensureEsports } from './js/esports.js';
 import { initIntelligence } from './js/intelligence.js';
 
+const APP_VERSION = '2.5.1';
 let patchesLoaded = false;
+
+function applyVersionBranding() {
+  document.title = `Rift Meta Global ${APP_VERSION} — Global LoL Analytics & Esports`;
+  const badge = document.querySelector('.new-version');
+  if (badge) badge.textContent = APP_VERSION;
+  const intelLabel = $$('.eyebrow').find(node => /LIVE INTELLIGENCE/i.test(node.textContent || ''));
+  if (intelLabel) intelLabel.textContent = `LIVE INTELLIGENCE ${APP_VERSION}`;
+}
 
 function switchSection(id) {
   $$('.page-section').forEach(section => section.classList.toggle('active-section', section.id === id));
@@ -25,7 +34,7 @@ async function loadStatus() {
   $('#sampleGames').textContent = Number(status.sampleGames || 0).toLocaleString('vi-VN');
   $('#globalPlayers').textContent = Number(status.esportsPlayers || 0).toLocaleString('vi-VN');
   $('#globalTeams').textContent = Number(status.esportsTeams || 0).toLocaleString('vi-VN');
-  const scope = String(status.metaMode || '').toLowerCase().includes('global') ? 'GLOBAL' : (status.platform || 'DATA').toUpperCase();
+  const scope = status.metaScope === 'GLOBAL' || String(status.metaMode || '').toLowerCase().includes('global') ? 'GLOBAL' : (status.platform || 'DATA').toUpperCase();
   $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(publicPatch)} • ${Number(status.sampleGames || 0).toLocaleString('vi-VN')} games`;
 }
 
@@ -33,7 +42,7 @@ async function getPatchData() {
   let live = null;
   try {
     live = await api('/api/patches');
-    if ((live.patches || []).length) return { ...live, sourceMode: 'live' };
+    if ((live.patches || []).length) return live;
   } catch {}
 
   try {
@@ -69,6 +78,7 @@ async function loadPatches() {
 }
 
 async function boot() {
+  applyVersionBranding();
   initModal();
   initAssets();
   initEsports();
