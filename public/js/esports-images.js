@@ -286,21 +286,27 @@ async function recoverBrokenImage(image) {
 
   const title = image.dataset.wikiTitle || titleForImage(image);
   if (!title) {
-    showFallback(image, image.alt);
     image.dataset.mediaRecovering = '0';
+    showFallback(image, image.alt);
     return;
   }
 
-  const explicit = await explicitCurrentImage(title);
-  if (explicit && image.src !== new URL(explicit, location.href).href && image.dataset.mediaSource !== 'leaguepedia-current-infobox') {
-    applyImage(image, explicit, 'leaguepedia-current-infobox');
-    return;
+  if (image.dataset.explicitTried !== '1') {
+    image.dataset.explicitTried = '1';
+    const explicit = await explicitCurrentImage(title);
+    if (explicit && image.src !== new URL(explicit, location.href).href) {
+      applyImage(image, explicit, 'leaguepedia-current-infobox');
+      return;
+    }
   }
 
   const original = image.dataset.originalSrc;
-  if (original && image.dataset.mediaSource !== 'stored-original') {
-    applyImage(image, original, 'stored-original');
-    return;
+  if (original && image.dataset.originalTried !== '1') {
+    image.dataset.originalTried = '1';
+    if (image.src !== new URL(original, location.href).href) {
+      applyImage(image, original, 'stored-original');
+      return;
+    }
   }
 
   image.dataset.mediaRecovering = '0';
@@ -316,6 +322,14 @@ document.addEventListener('error', event => {
     event.stopImmediatePropagation();
     recoverBrokenImage(image).catch(() => showFallback(image, titleForImage(image)));
   }
+}, true);
+
+document.addEventListener('load', event => {
+  const image = event.target;
+  if (!(image instanceof HTMLImageElement) || !image.matches(TARGET_SELECTOR)) return;
+  image.dataset.mediaRecovering = '0';
+  image.style.display = '';
+  hideExistingFallback(image);
 }, true);
 
 const observer = new MutationObserver(records => {
