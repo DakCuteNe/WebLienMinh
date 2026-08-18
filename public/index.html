@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Phân tích meta Liên Minh Huyền Thoại, tier list, counter pick và cập nhật Riot." />
+  <meta name="description" content="Phân tích meta Liên Minh Huyền Thoại, tier score, counter theo lane, build, rune, spell và dữ liệu tuyển thủ nổi bật." />
   <title>Rift Meta VN — LoL Meta Analyzer</title>
   <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
   <link rel="stylesheet" href="/style.css" />
@@ -14,6 +14,7 @@
     <nav>
       <button class="nav-btn active" data-section="meta">Meta</button>
       <button class="nav-btn" data-section="counter">Counter Pick</button>
+      <button class="nav-btn" data-section="pros">Tuyển thủ</button>
       <button class="nav-btn" data-section="patch">Patch Riot</button>
     </nav>
     <div id="statusBadge" class="status-badge">Đang đồng bộ…</div>
@@ -23,46 +24,53 @@
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">META ANALYTICS • VIETNAM</div>
-        <h1>Pick thông minh hơn.<br><span>Leo rank nhanh hơn.</span></h1>
-        <p>Phân tích sức mạnh tướng theo patch, phát hiện lựa chọn đang tăng/giảm, xem counter và đọc tác động của thay đổi từ Riot.</p>
+        <h1>Đọc meta sâu hơn.<br><span>Chọn theo dữ liệu.</span></h1>
+        <p>Tier Score có hiệu chỉnh sample, ban rate thật, counter cùng lane, build cuối trận, ngọc, phép bổ trợ, xu hướng qua từng lần cập nhật và dữ liệu tuyển thủ chuyên nghiệp nổi bật.</p>
         <div class="hero-actions">
           <button class="primary" onclick="document.querySelector('#metaBoard').scrollIntoView({behavior:'smooth'})">Xem Tier List</button>
           <button class="secondary" id="openCounter">Tìm Counter</button>
         </div>
       </div>
       <div class="hero-panel">
-        <div class="metric"><span>PATCH LIVE</span><strong id="patchLive">—</strong><small>Nguồn Riot Games</small></div>
-        <div class="metric"><span>DATA DRAGON</span><strong id="ddVersion">—</strong><small>Champion assets</small></div>
-        <div class="metric"><span>DATASET</span><strong id="datasetMode">—</strong><small id="datasetNote">Đang đọc dữ liệu</small></div>
+        <div class="metric"><span>PATCH DATA</span><strong id="patchLive">—</strong><small>Nguồn Riot Games</small></div>
+        <div class="metric"><span>DATA DRAGON</span><strong id="ddVersion">—</strong><small>Champion / Item / Rune</small></div>
+        <div class="metric"><span>SAMPLE</span><strong id="sampleGames">—</strong><small id="datasetNote">Đang đọc dữ liệu</small></div>
       </div>
     </section>
 
     <section id="meta" class="page-section active-section">
       <div class="section-head" id="metaBoard">
-        <div><div class="eyebrow">TIER LIST</div><h2>Meta hiện tại</h2></div>
+        <div><div class="eyebrow">TIER LIST V2</div><h2>Meta Challenger VN2</h2><p>Tier Score không dùng win rate thô một mình: có Bayesian WR, presence, matchup edge và sample confidence.</p></div>
         <div class="filters">
           <input id="search" placeholder="Tìm tướng..." />
           <select id="role"><option value="ALL">Tất cả vị trí</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
-          <select id="tier"><option value="ALL">Tất cả tier</option><option>S</option><option>A</option><option>B</option><option>C</option></select>
+          <select id="tier"><option value="ALL">Tất cả tier</option><option>S</option><option>A</option><option>B</option><option>C</option><option>D</option></select>
         </div>
       </div>
       <div id="dataWarning" class="notice hidden"></div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>#</th><th>Tướng</th><th>Vị trí</th><th>Tier</th><th>Win rate</th><th>Pick rate</th><th>Xu hướng</th><th>Đánh giá</th><th></th></tr></thead>
-          <tbody id="metaRows"><tr><td colspan="9" class="loading">Đang tải meta…</td></tr></tbody>
+          <thead><tr><th>#</th><th>Tướng</th><th>Vị trí</th><th>Tier</th><th>Tier Score</th><th>Win rate</th><th>Pick rate</th><th>Ban rate</th><th>Trend</th><th>Đánh giá</th><th></th></tr></thead>
+          <tbody id="metaRows"><tr><td colspan="11" class="loading">Đang tải meta…</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section id="counter" class="page-section">
-      <div class="section-head"><div><div class="eyebrow">MATCHUP LAB</div><h2>Counter Pick</h2><p>Nhập tướng đối thủ vừa pick để tìm lựa chọn đáp trả.</p></div></div>
+      <div class="section-head"><div><div class="eyebrow">MATCHUP LAB</div><h2>Counter theo lane</h2><p>Counter được tính trên đối đầu cùng vị trí, làm mượt Bayesian và gắn độ tin cậy theo sample thay vì chỉ nhìn WR matchup thô.</p></div></div>
       <div class="counter-search">
         <input id="counterInput" list="championList" placeholder="Ví dụ: Gwen, Jinx, Ahri…" />
         <datalist id="championList"></datalist>
+        <select id="counterRole"><option value="">Tự chọn lane nhiều sample nhất</option><option value="TOP">Top</option><option value="JUNGLE">Jungle</option><option value="MIDDLE">Mid</option><option value="BOTTOM">ADC</option><option value="UTILITY">Support</option></select>
         <button class="primary" id="counterBtn">Phân tích</button>
       </div>
       <div id="counterResult" class="counter-result empty-state">Chọn một tướng để bắt đầu phân tích matchup.</div>
+    </section>
+
+    <section id="pros" class="page-section">
+      <div class="section-head"><div><div class="eyebrow">FEATURED PROS</div><h2>Tuyển thủ nổi bật</h2><p>Champion pool, end-game build, ngọc, spell, KDA, xu hướng lối chơi và ban priority trong các trận chuyên nghiệp gần đây.</p></div></div>
+      <div id="proNotice" class="notice subtle">Đây là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Dữ liệu pro dùng scoreboard cộng đồng và được ghi rõ nguồn.</div>
+      <div id="proGrid" class="pro-grid"><div class="loading-card">Đang tải dữ liệu tuyển thủ…</div></div>
     </section>
 
     <section id="patch" class="page-section">
@@ -72,7 +80,7 @@
   </main>
 
   <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
-  <footer><span>Rift Meta VN</span><span>Không được Riot Games tài trợ hay xác nhận. League of Legends và Riot Games là nhãn hiệu của Riot Games, Inc.</span></footer>
+  <footer><span>Rift Meta VN</span><span>Dữ liệu Riot API/Data Dragon + nguồn pro được ghi riêng. Đây là công cụ phân tích tham khảo, không phải sản phẩm được Riot Games tài trợ hay xác nhận.</span></footer>
   <script src="/app.js"></script>
 </body>
 </html>
