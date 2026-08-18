@@ -26,8 +26,8 @@ function cleanWiki(value = '') {
   text = text
     .replace(/<!--[^]*?-->/g, ' ')
     .replace(/<br\s*\/?\s*>/gi, ', ')
-    .replace(/\[\[([^\]|]+)\|([^\]]+)\]/g, '$2')
-    .replace(/\[\[([^\]]+)\]/g, '$1')
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+    .replace(/\[\[([^\]]+)\]\]/g, '$1')
     .replace(/\[(https?:\/\/\S+)\s+([^\]]+)\]/g, '$2')
     .replace(/'''?/g, '');
 
@@ -74,7 +74,7 @@ function normalizeDate(value) {
   if (template) return `${template[1]}-${String(template[2]).padStart(2, '0')}-${String(template[3]).padStart(2, '0')}`;
   const pipeDate = raw.match(/\b((?:19|20)\d{2})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})\b/);
   if (pipeDate) return `${pipeDate[1]}-${String(pipeDate[2]).padStart(2, '0')}-${String(pipeDate[3]).padStart(2, '0')}`;
-  const text = cleanWiki(raw);
+  const text = cleanWiki(raw)?.replace(/\s*\(age\s+\d+\)\s*/i, ' ').trim();
   if (!text) return null;
   const iso = text.match(/\b((?:19|20)\d{2})[-/](\d{1,2})[-/](\d{1,2})\b/);
   if (iso) return `${iso[1]}-${String(iso[2]).padStart(2, '0')}-${String(iso[3]).padStart(2, '0')}`;
@@ -106,7 +106,7 @@ async function apiQuery(params, label = 'Leaguepedia MediaWiki') {
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const response = await fetch(`${API}?${query}`, {
-        headers: { 'User-Agent': 'WebLienMinh/2.5 esports-profile-enrichment' },
+        headers: { 'User-Agent': 'WebLienMinh/2.5.1 esports-profile-enrichment' },
         signal: AbortSignal.timeout(35_000)
       });
       if ([429, 502, 503, 504].includes(response.status)) {
