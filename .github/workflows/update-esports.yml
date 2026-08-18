@@ -8,6 +8,7 @@ on:
     branches:
       - main
     paths:
+      - '.github/workflows/update-esports.yml'
       - 'scripts/update-esports-directory.js'
       - 'data/pro-watchlist.json'
       - 'package.json'
@@ -17,7 +18,7 @@ permissions:
 
 concurrency:
   group: lol-esports-directory
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-esports:
