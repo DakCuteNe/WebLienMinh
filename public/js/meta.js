@@ -1,4 +1,4 @@
-import { $, $$, api, esc, fmt, score, roleName, trendHtml, openModal, closeModal } from './shared.js';
+import { $, $$, api, esc, fmt, score, roleName, trendHtml, openModal, closeModal, publicMetaPatch } from './shared.js';
 
 let championIndex = [];
 
@@ -26,7 +26,7 @@ async function loadMeta() {
     const coverage = data.methodology?.coverage || '';
     const scope = data.methodology?.scope || '';
     const isGlobal = String(data.mode || '').toLowerCase().includes('global') || /toàn thế giới|toàn cầu/i.test(scope);
-    $('#metaSubtitle').textContent = `Patch ${data.patch} • ${Number(data.sampleGames || 0).toLocaleString('vi-VN')} trận • ${coverage || data.mode}`;
+    $('#metaSubtitle').textContent = `Patch ${publicMetaPatch(data.patch)} • ${Number(data.sampleGames || 0).toLocaleString('vi-VN')} trận • ${coverage || data.mode}`;
 
     if (isGlobal || scope || data.notice) {
       $('#dataWarning').classList.remove('hidden');
@@ -114,7 +114,7 @@ export async function runCounter(forceId) {
     const role = $('#counterRole').value;
     const d = await api('/api/counter/' + encodeURIComponent(c.id) + (role ? '?role=' + encodeURIComponent(role) : ''));
     const list = arr => (arr || []).map((x, i) => `<div class="mini-champ"><img src="${esc(x.image || '')}"><div><b>${i + 1}. ${esc(x.name)}</b><br><span>${x.matchup?.games ? `${x.matchup.games} game • WR ${fmt(x.matchup.winRate)} • Δ ${x.matchup.delta >= 0 ? '+' : ''}${score(x.matchup.delta)} • ${esc(x.matchup.confidenceLabel || '')}` : (x.stats ? `${esc(x.stats.tier)} tier • Score ${score(x.stats.tierScore)}` : 'Chưa đủ sample')}</span></div></div>`).join('') || '<p>Chưa đủ sample matchup cùng lane.</p>';
-    $('#counterResult').innerHTML = `<div class="counter-hero"><img src="${esc(c.image)}"><div><div class="eyebrow">ĐỐI THỦ ĐÃ PICK</div><h2>${esc(c.name)}</h2><span>${esc(roleName[d.champion.role] || d.champion.role)} • Patch ${esc(d.patch)} • ${d.champion.games} game</span></div></div><div class="notice subtle">${esc(d.methodology || 'Counter cùng lane có hiệu chỉnh sample.')}</div><div class="counter-columns"><div class="matchup-box"><h3>🔥 Gây khó cho ${esc(c.name)}</h3>${list(d.counters)}</div><div class="matchup-box"><h3>⚠ ${esc(c.name)} có lợi thế</h3>${list(d.goodAgainst)}</div></div>`;
+    $('#counterResult').innerHTML = `<div class="counter-hero"><img src="${esc(c.image)}"><div><div class="eyebrow">ĐỐI THỦ ĐÃ PICK</div><h2>${esc(c.name)}</h2><span>${esc(roleName[d.champion.role] || d.champion.role)} • Patch ${esc(publicMetaPatch(d.patch))} • ${d.champion.games} game</span></div></div><div class="notice subtle">${esc(d.methodology || 'Counter cùng lane có hiệu chỉnh sample.')}</div><div class="counter-columns"><div class="matchup-box"><h3>🔥 Gây khó cho ${esc(c.name)}</h3>${list(d.counters)}</div><div class="matchup-box"><h3>⚠ ${esc(c.name)} có lợi thế</h3>${list(d.goodAgainst)}</div></div>`;
   } catch (error) {
     $('#counterResult').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
