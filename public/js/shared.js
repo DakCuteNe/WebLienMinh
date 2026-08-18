@@ -1,3 +1,11 @@
+if (!document.querySelector('link[data-rift-v2]')) {
+  const theme = document.createElement('link');
+  theme.rel = 'stylesheet';
+  theme.href = '/v2.css';
+  theme.dataset.riftV2 = 'true';
+  document.head.appendChild(theme);
+}
+
 export const $ = s => document.querySelector(s);
 export const $$ = s => [...document.querySelectorAll(s)];
 export const roleName = { TOP:'TOP', JUNGLE:'JUNGLE', MIDDLE:'MID', BOTTOM:'ADC', UTILITY:'SUPPORT' };
