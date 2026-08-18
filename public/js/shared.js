@@ -26,11 +26,12 @@ export async function api(url) {
   return body;
 }
 
-export function esportsMediaUrl(kind, key) {
+export function esportsMediaUrl(kind, key, fresh = false) {
   const params = new URLSearchParams({
     kind: kind === 'team' ? 'team' : 'player',
     key: String(key || '').trim()
   });
+  if (fresh) params.set('fresh', '1');
   return `/api/esports/media?${params}`;
 }
 
