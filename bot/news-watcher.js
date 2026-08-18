@@ -1,21 +1,26 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { EmbedBuilder } from 'discord.js';
+import {
+  EmbedBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle
+} from 'discord.js';
 
 const RIOT_NEWS_URL = 'https://www.leagueoflegends.com/en-us/news/';
 const DEFAULT_TYPES = ['patch', 'skin', 'hall', 'event', 'esports', 'champion'];
 const TYPE_META = {
-  patch: { icon: '🛠️', label: 'PATCH MỚI', roleEnv: 'DISCORD_PATCH_ROLE_ID' },
-  skin: { icon: '🎨', label: 'SKIN / COSMETIC MỚI', roleEnv: 'DISCORD_SKIN_ROLE_ID' },
-  hall: { icon: '🏛️', label: 'HALL OF LEGENDS', roleEnv: 'DISCORD_HALL_ROLE_ID' },
-  event: { icon: '📅', label: 'SỰ KIỆN SẮP TỚI', roleEnv: 'DISCORD_EVENT_ROLE_ID' },
-  esports: { icon: '🏆', label: 'ESPORTS', roleEnv: 'DISCORD_ESPORTS_ROLE_ID' },
-  champion: { icon: '⚔️', label: 'TƯỚNG / GAMEPLAY', roleEnv: 'DISCORD_CHAMPION_ROLE_ID' },
-  news: { icon: '📢', label: 'TIN MỚI', roleEnv: 'DISCORD_NEWS_ROLE_ID' }
+  patch: { icon: '🛠️', label: 'PATCH MỚI', roleEnv: 'DISCORD_PATCH_ROLE_ID', color: 0x4A90E2 },
+  skin: { icon: '🎨', label: 'SKIN / COSMETIC MỚI', roleEnv: 'DISCORD_SKIN_ROLE_ID', color: 0xD96FD8 },
+  hall: { icon: '🏛️', label: 'HALL OF LEGENDS', roleEnv: 'DISCORD_HALL_ROLE_ID', color: 0xE0B95B },
+  event: { icon: '📅', label: 'SỰ KIỆN SẮP TỚI', roleEnv: 'DISCORD_EVENT_ROLE_ID', color: 0x58B368 },
+  esports: { icon: '🏆', label: 'ESPORTS', roleEnv: 'DISCORD_ESPORTS_ROLE_ID', color: 0xE34C4C },
+  champion: { icon: '⚔️', label: 'TƯỚNG / GAMEPLAY', roleEnv: 'DISCORD_CHAMPION_ROLE_ID', color: 0x8E6AD8 },
+  news: { icon: '📢', label: 'TIN MỚI', roleEnv: 'DISCORD_NEWS_ROLE_ID', color: 0xC99B3D }
 };
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const articleImageCache = new Map();
+const articleCache = new Map();
 
 function envBool(name, fallback = false) {
   const raw = process.env[name];
@@ -69,6 +74,18 @@ function titleFromSlug(url) {
   }
 }
 
+function extractMeta(html, names) {
+  const accepted = new Set(names.map(x => x.toLowerCase()));
+  const tags = String(html).match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const key = tag.match(/\b(?:property|name)=["']([^"']+)["']/i)?.[1]?.toLowerCase();
+    if (!key || !accepted.has(key)) continue;
+    const value = tag.match(/\bcontent=["']([^"']+)["']/i)?.[1];
+    if (value) return decodeHtml(value).trim();
+  }
+  return null;
+}
+
 function extractImage(inner) {
   const candidates = [
     /<img\b[^>]*\bsrc=["']([^"']+)["']/i,
@@ -82,49 +99,6 @@ function extractImage(inner) {
     if (url?.startsWith('http')) return url;
   }
   return null;
-}
-
-function extractMeta(html, names) {
-  const accepted = new Set(names.map(x => x.toLowerCase()));
-  const tags = String(html).match(/<meta\b[^>]*>/gi) || [];
-  for (const tag of tags) {
-    const key = tag.match(/\b(?:property|name)=["']([^"']+)["']/i)?.[1]?.toLowerCase();
-    if (!key || !accepted.has(key)) continue;
-    const value = tag.match(/\bcontent=["']([^"']+)["']/i)?.[1];
-    if (!value) continue;
-    return decodeHtml(value).trim();
-  }
-  return null;
-}
-
-async function enrichArticleImage(article) {
-  if (article.image?.startsWith('http')) return article;
-  if (!article.url?.startsWith('http')) return article;
-
-  if (articleImageCache.has(article.url)) {
-    const cached = articleImageCache.get(article.url);
-    return cached ? { ...article, image: cached } : article;
-  }
-
-  try {
-    const response = await fetch(article.url, {
-      headers: {
-        'User-Agent': 'WebLienMinh-DiscordBot/3.2 rich-news-preview',
-        'Accept-Language': 'en-US,en;q=0.9'
-      },
-      signal: AbortSignal.timeout(15_000)
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const html = await response.text();
-    const rawImage = extractMeta(html, ['og:image', 'twitter:image', 'twitter:image:src']);
-    const image = rawImage ? absoluteUrl(rawImage) : null;
-    articleImageCache.set(article.url, image);
-    return image?.startsWith('http') ? { ...article, image } : article;
-  } catch (error) {
-    articleImageCache.set(article.url, null);
-    console.log(`[news-image] Không lấy được ảnh ${article.url}: ${error.message}`);
-    return article;
-  }
 }
 
 function extractDate(text, inner) {
@@ -141,35 +115,28 @@ function extractTitle(inner, attrs, url) {
     const value = stripTags(heading[1]);
     if (value.length >= 4) return value;
   }
-
   const aria = attrs.match(/(?:aria-label|title)=["']([^"']+)["']/i);
   if (aria) {
     const value = stripTags(aria[1]);
     if (value.length >= 4) return value;
   }
-
-  const strong = inner.match(/<(?:strong|b)\b[^>]*>([\s\S]*?)<\/(?:strong|b)>/i);
-  if (strong) {
-    const value = stripTags(strong[1]);
-    if (value.length >= 4) return value;
-  }
-
   return titleFromSlug(url);
 }
 
 function categoryFromUrl(url) {
-  const pathname = new URL(url).pathname.toLowerCase();
-  if (pathname.includes('/game-updates/')) return 'Game Updates';
-  if (pathname.includes('/esports/')) return 'Esports';
-  if (pathname.includes('/dev/')) return 'Dev';
-  if (pathname.includes('/media/')) return 'Media';
-  if (pathname.includes('/community/')) return 'Community';
+  try {
+    const pathname = new URL(url).pathname.toLowerCase();
+    if (pathname.includes('/game-updates/')) return 'Game Updates';
+    if (pathname.includes('/esports/')) return 'Esports';
+    if (pathname.includes('/dev/')) return 'Dev';
+    if (pathname.includes('/media/')) return 'Media';
+    if (pathname.includes('/community/')) return 'Community';
+  } catch {}
   return 'League News';
 }
 
 function classifyArticle(article) {
   const value = `${article.title} ${article.description} ${article.url} ${article.category}`.toLowerCase();
-
   if (/hall[ -]of[ -]legends|hall-of-legends|immortalized legend|rising legend|đại sảnh huyền thoại/.test(value)) return 'hall';
   if (/league of legends patch|patch\s+\d+[.]\d+|patch notes|patch-\d+-\d+-notes/.test(value)) return 'patch';
   if (/\bskins?\b|prestige|chroma|sanctum|cosmetic|mythic variant|skin trailer|skin reveal/.test(value)) return 'skin';
@@ -220,7 +187,7 @@ function parseOfficialNews(html) {
     const article = {
       url,
       title,
-      description: withoutTitle.slice(0, 420),
+      description: withoutTitle.slice(0, 500),
       category: categoryFromUrl(url),
       image: extractImage(inner),
       publishedAt: extractDate(text, inner)
@@ -235,7 +202,7 @@ function parseOfficialNews(html) {
 async function fetchOfficialNews() {
   const response = await fetch(RIOT_NEWS_URL, {
     headers: {
-      'User-Agent': 'WebLienMinh-DiscordBot/3.2 Riot-news-watcher',
+      'User-Agent': 'WebLienMinh-DiscordBot/4.0 Riot-news-watcher',
       'Accept-Language': 'en-US,en;q=0.9'
     },
     signal: AbortSignal.timeout(20_000)
@@ -266,30 +233,62 @@ async function fetchPatchFallback(webApiUrl) {
   }
 }
 
-async function extractUpcomingSkins(article) {
-  if (article.type !== 'patch') return [];
+function extractUpcomingSkinsFromHtml(html) {
+  const start = html.search(/Upcoming Skins(?:\s*&amp;|\s*&)?\s*Chromas/i);
+  if (start < 0) return [];
+  const section = html.slice(start, start + 30_000);
+  const names = [];
+  const headingRe = /<h4\b[^>]*>([\s\S]*?)<\/h4>/gi;
+  let match;
+  while ((match = headingRe.exec(section)) && names.length < 12) {
+    const name = stripTags(match[1]);
+    if (name && !/chroma/i.test(name) && !names.includes(name)) names.push(name);
+  }
+  return names;
+}
+
+async function enrichArticle(article) {
+  if (!article.url?.startsWith('http')) return { ...article, skins: [] };
+  const cacheKey = normalizeUrl(article.url);
+  if (articleCache.has(cacheKey)) return { ...article, ...articleCache.get(cacheKey) };
+
   try {
     const response = await fetch(article.url, {
-      headers: { 'User-Agent': 'WebLienMinh-DiscordBot/3.2 patch-skin-parser' },
-      signal: AbortSignal.timeout(15_000)
+      headers: {
+        'User-Agent': 'WebLienMinh-DiscordBot/4.0 rich-news-card',
+        'Accept-Language': 'en-US,en;q=0.9'
+      },
+      signal: AbortSignal.timeout(18_000)
     });
-    if (!response.ok) return [];
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const html = await response.text();
-    const start = html.search(/Upcoming Skins(?:\s*&amp;|\s*&)?\s*Chromas/i);
-    if (start < 0) return [];
-    const section = html.slice(start, start + 20_000);
-    const stopMatch = section.slice(100).search(/<h2\b|<h3\b[^>]*>[^<]*(?:Bugfix|Changes|Chromas)/i);
-    const target = stopMatch > 0 ? section.slice(0, stopMatch + 100) : section;
-    const names = [];
-    const headingRe = /<h4\b[^>]*>([\s\S]*?)<\/h4>/gi;
-    let match;
-    while ((match = headingRe.exec(target)) && names.length < 12) {
-      const name = stripTags(match[1]);
-      if (name && !/chroma/i.test(name) && !names.includes(name)) names.push(name);
-    }
-    return names;
-  } catch {
-    return [];
+
+    const rawImage = extractMeta(html, ['og:image', 'twitter:image', 'twitter:image:src']);
+    const rawTitle = extractMeta(html, ['og:title', 'twitter:title']);
+    const rawDescription = extractMeta(html, ['og:description', 'description', 'twitter:description']);
+    const rawPublished = extractMeta(html, ['article:published_time', 'date', 'datepublished']);
+    const siteName = extractMeta(html, ['og:site_name']) || 'League of Legends';
+    const image = rawImage ? absoluteUrl(rawImage) : article.image;
+    const publishedAt = rawPublished && !Number.isNaN(Date.parse(rawPublished))
+      ? new Date(rawPublished).toISOString()
+      : article.publishedAt;
+    const title = rawTitle ? stripTags(rawTitle).replace(/\s*[-|]\s*League of Legends\s*$/i, '').trim() : article.title;
+    const description = rawDescription ? stripTags(rawDescription) : article.description;
+    const skins = article.type === 'patch' ? extractUpcomingSkinsFromHtml(html) : [];
+
+    const rich = {
+      title: title || article.title,
+      description: (description || article.description || '').slice(0, 1800),
+      image: image?.startsWith('http') ? image : article.image,
+      publishedAt,
+      siteName,
+      skins
+    };
+    articleCache.set(cacheKey, rich);
+    return { ...article, ...rich };
+  } catch (error) {
+    console.log(`[news-rich] Không enrich được ${article.url}: ${error.message}`);
+    return { ...article, skins: [] };
   }
 }
 
@@ -307,14 +306,10 @@ function mentionForRole(roleId) {
   return roleId ? `<@&${roleId}>` : '';
 }
 
-function typeColor(type) {
-  if (type === 'patch') return 0x4A90E2;
-  if (type === 'skin') return 0xD96FD8;
-  if (type === 'hall') return 0xE0B95B;
-  if (type === 'event') return 0x58B368;
-  if (type === 'esports') return 0xE34C4C;
-  if (type === 'champion') return 0x8E6AD8;
-  return 0xC99B3D;
+function discordTime(value) {
+  if (!value || Number.isNaN(Date.parse(value))) return 'Chưa xác định';
+  const unix = Math.floor(new Date(value).getTime() / 1000);
+  return `<t:${unix}:F>\n<t:${unix}:R>`;
 }
 
 async function readState(file) {
@@ -342,28 +337,51 @@ async function writeState(file, state) {
   await fs.writeFile(file, JSON.stringify(trimmed, null, 2));
 }
 
-function buildEmbed(article, skins = []) {
+function buildRichMessage(article, webApiUrl) {
   const meta = TYPE_META[article.type] || TYPE_META.news;
-  const embed = new EmbedBuilder()
-    .setColor(typeColor(article.type))
-    .setAuthor({ name: `Riot Games • ${article.category || 'League of Legends'}` })
-    .setTitle(`${meta.icon} ${article.title}`)
-    .setURL(article.url)
-    .setDescription((article.description || 'Có thông tin mới từ League of Legends.').slice(0, 1500))
-    .addFields({ name: 'Loại thông báo', value: meta.label, inline: true })
-    .setFooter({ text: 'Nguồn chính thức: League of Legends / Riot Games • WebLienMinh Bot' })
-    .setTimestamp(article.publishedAt && !Number.isNaN(Date.parse(article.publishedAt)) ? new Date(article.publishedAt) : new Date());
+  const patch = extractPatchVersion(article.title, article.url);
+  const fields = [
+    { name: '📂 Chuyên mục', value: article.category || 'League News', inline: true },
+    { name: '🔔 Loại tin', value: `${meta.icon} ${meta.label}`, inline: true }
+  ];
 
-  if (skins.length) {
-    embed.addFields({
-      name: '🎨 Skin dự kiến trong patch',
-      value: skins.slice(0, 10).map(x => `• ${x}`).join('\n').slice(0, 1024),
+  if (patch) fields.push({ name: '🧩 Patch', value: `**${patch}**`, inline: true });
+  fields.push({ name: '🕒 Thời gian đăng', value: discordTime(article.publishedAt), inline: false });
+
+  if (article.skins?.length) {
+    fields.push({
+      name: '🎨 Skin / Chroma nổi bật trong patch',
+      value: article.skins.slice(0, 12).map(x => `• ${x}`).join('\n').slice(0, 1024),
       inline: false
     });
   }
 
+  const embed = new EmbedBuilder()
+    .setColor(meta.color)
+    .setAuthor({ name: `Riot Games • ${article.siteName || 'League of Legends'}` })
+    .setTitle(`${meta.icon} ${article.title}`.slice(0, 256))
+    .setURL(article.url)
+    .setDescription((article.description || 'Có thông tin mới từ League of Legends.').slice(0, 1900))
+    .addFields(fields)
+    .setFooter({ text: 'Nguồn chính thức: Riot Games / League of Legends • WebLienMinh Bot • Rich Card 4.0' })
+    .setTimestamp(article.publishedAt && !Number.isNaN(Date.parse(article.publishedAt)) ? new Date(article.publishedAt) : new Date());
+
   if (article.image?.startsWith('http')) embed.setImage(article.image);
-  return embed;
+
+  const row = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
+      .setLabel('Đọc bài Riot')
+      .setEmoji('🔗')
+      .setURL(article.url),
+    new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
+      .setLabel('Mở WebLienMinh')
+      .setEmoji('🌐')
+      .setURL(webApiUrl)
+  );
+
+  return { embed, components: [row] };
 }
 
 export function createNewsWatcher(client, { webApiUrl }) {
@@ -405,7 +423,6 @@ export function createNewsWatcher(client, { webApiUrl }) {
       const key = articleKey(article);
       if (!byKey.has(key)) byKey.set(key, { ...article, key });
     }
-
     if (!byKey.size && officialError) throw officialError;
     return [...byKey.values()];
   }
@@ -413,8 +430,8 @@ export function createNewsWatcher(client, { webApiUrl }) {
   async function wasAlreadyAnnounced(channel, article) {
     const key = article.key || articleKey(article);
     if ((state.notified || []).includes(key)) return true;
-
     if (!channel?.messages?.fetch || !client.user?.id) return false;
+
     try {
       const recent = await channel.messages.fetch({ limit: 50 });
       const targetUrl = normalizeUrl(article.url);
@@ -430,7 +447,6 @@ export function createNewsWatcher(client, { webApiUrl }) {
           return false;
         });
       });
-
       if (duplicate && !state.notified.includes(key)) state.notified.push(key);
       return duplicate;
     } catch (error) {
@@ -446,14 +462,15 @@ export function createNewsWatcher(client, { webApiUrl }) {
       return { sent: false, duplicate: true, key };
     }
 
-    const richArticle = await enrichArticleImage(article);
+    const richArticle = await enrichArticle(article);
     const roleId = roleForType(richArticle.type);
     const mention = mentionForRole(roleId);
-    const skins = await extractUpcomingSkins(richArticle);
-    const embed = buildEmbed(richArticle, skins);
+    const { embed, components } = buildRichMessage(richArticle, webApiUrl);
+
     await channel.send({
-      content: mention || undefined,
+      content: mention ? `${mention}  ${TYPE_META[richArticle.type]?.icon || '📢'} **${TYPE_META[richArticle.type]?.label || 'TIN MỚI'}**` : undefined,
       embeds: [embed],
+      components,
       allowedMentions: roleId ? { roles: [roleId] } : { parse: [] }
     });
 
@@ -479,7 +496,6 @@ export function createNewsWatcher(client, { webApiUrl }) {
         state.seen = currentKeys;
         state.lastCheckAt = now;
         let startupSent = 0;
-
         if (notifyOnStartup && channel) {
           const latest = feed.find(x => types.has(x.type));
           if (latest) {
@@ -487,7 +503,6 @@ export function createNewsWatcher(client, { webApiUrl }) {
             startupSent = result.sent ? 1 : 0;
           }
         }
-
         await writeState(stateFile, state);
         lastError = null;
         return { initialized: true, articles: feed.length, sent: startupSent };
@@ -534,16 +549,20 @@ export function createNewsWatcher(client, { webApiUrl }) {
     const mention = mentionForRole(roleId);
     const article = {
       type: safeType,
-      title: 'Thông báo thử nghiệm WebLienMinh Bot',
-      description: 'Nếu bạn thấy tin nhắn này, hệ thống tự động tag + thông báo Riot News đã hoạt động.',
+      title: 'Rich Notification Preview — WebLienMinh Bot',
+      description: 'Đây là bản xem trước Rich Card 4.0: banner lớn, thông tin bài viết, thời gian, loại tin, nút liên kết và role tag.',
       category: 'System Test',
       url: webApiUrl,
       image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg',
-      publishedAt: new Date().toISOString()
+      publishedAt: new Date().toISOString(),
+      siteName: 'League of Legends',
+      skins: safeType === 'patch' ? ['Skin Preview A', 'Prestige Preview B'] : []
     };
+    const { embed, components } = buildRichMessage(article, webApiUrl);
     await channel.send({
-      content: mention || undefined,
-      embeds: [buildEmbed(article)],
+      content: mention ? `${mention}  🧪 **THÔNG BÁO THỬ**` : '🧪 **THÔNG BÁO THỬ**',
+      embeds: [embed],
+      components,
       allowedMentions: roleId ? { roles: [roleId] } : { parse: [] }
     });
     return true;
@@ -557,12 +576,9 @@ export function createNewsWatcher(client, { webApiUrl }) {
       state = await readState(stateFile);
       const channel = await getChannel();
       if (!channel) throw new Error('Chưa cấu hình DISCORD_NEWS_CHANNEL_ID.');
-
       const feed = await loadFeed();
       const latest = feed.find(article => article.type === safeType);
-      if (!latest) {
-        throw new Error(`Chưa tìm thấy tin Riot hiện có thuộc loại ${TYPE_META[safeType].label}.`);
-      }
+      if (!latest) throw new Error(`Chưa tìm thấy tin Riot hiện có thuộc loại ${TYPE_META[safeType].label}.`);
 
       const result = await sendArticle(channel, latest);
       await writeState(stateFile, state);
@@ -587,6 +603,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
   function status() {
     return {
       enabled: Boolean(channelId),
+      version: '4.0',
       channelId: channelId || null,
       intervalMinutes,
       types: [...types],
@@ -595,7 +612,12 @@ export function createNewsWatcher(client, { webApiUrl }) {
       lastCheckAt: state.lastCheckAt,
       lastSentAt: state.lastSentAt,
       lastError,
-      lastArticle: lastArticle ? { title: lastArticle.title, type: lastArticle.type, url: lastArticle.url, image: lastArticle.image || null } : null,
+      lastArticle: lastArticle ? {
+        title: lastArticle.title,
+        type: lastArticle.type,
+        url: lastArticle.url,
+        image: lastArticle.image || null
+      } : null,
       sentCount
     };
   }
@@ -606,8 +628,7 @@ export function createNewsWatcher(client, { webApiUrl }) {
       console.log('Riot News Watcher: OFF — thiếu DISCORD_NEWS_CHANNEL_ID.');
       return;
     }
-
-    console.log(`Riot News Watcher: ON • channel=${channelId} • mỗi ${intervalMinutes} phút • types=${[...types].join(',')}`);
+    console.log(`Riot News Watcher 4.0: ON • channel=${channelId} • mỗi ${intervalMinutes} phút • types=${[...types].join(',')}`);
     await check();
     timer = setInterval(() => check(), intervalMs);
     timer.unref?.();
