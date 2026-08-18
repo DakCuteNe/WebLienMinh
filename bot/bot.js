@@ -5,8 +5,10 @@ import {
   REST,
   Routes,
   SlashCommandBuilder,
-  EmbedBuilder
+  EmbedBuilder,
+  PermissionFlagsBits
 } from 'discord.js';
+import { createNewsWatcher } from './news-watcher.js';
 
 const TOKEN = String(process.env.DISCORD_TOKEN || '').trim();
 const CLIENT_ID = String(process.env.DISCORD_CLIENT_ID || '').trim();
@@ -31,6 +33,15 @@ const ROLE_LABEL = {
   BOTTOM: 'ADC',
   UTILITY: 'Support'
 };
+
+const notifyTypeChoices = [
+  { name: 'Patch', value: 'patch' },
+  { name: 'Skin / Cosmetic', value: 'skin' },
+  { name: 'Hall of Legends', value: 'hall' },
+  { name: 'Sự kiện', value: 'event' },
+  { name: 'Esports', value: 'esports' },
+  { name: 'Tướng / Gameplay', value: 'champion' }
+];
 
 const commands = [
   new SlashCommandBuilder()
@@ -72,6 +83,15 @@ const commands = [
     .setDescription('Xem patch Riot mới nhất'),
 
   new SlashCommandBuilder()
+    .setName('notify')
+    .setDescription('Quản lý hệ thống tự động thông báo Riot News')
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
+    .addSubcommand(s => s.setName('status').setDescription('Xem trạng thái auto notification'))
+    .addSubcommand(s => s.setName('check').setDescription('Quét Riot News ngay bây giờ'))
+    .addSubcommand(s => s.setName('test').setDescription('Gửi một thông báo thử')
+      .addStringOption(o => o.setName('type').setDescription('Loại thông báo để test').addChoices(...notifyTypeChoices))),
+
+  new SlashCommandBuilder()
     .setName('status')
     .setDescription('Kiểm tra trạng thái Rift Meta VN')
 ].map(x => x.toJSON());
@@ -82,7 +102,7 @@ async function api(path) {
   try {
     const response = await fetch(`${WEB_API_URL}${path}`, {
       signal: controller.signal,
-      headers: { 'User-Agent': 'RiftMetaVN-DiscordBot/1.0' }
+      headers: { 'User-Agent': 'RiftMetaVN-DiscordBot/3.0' }
     });
     const text = await response.text();
     let body;
@@ -137,10 +157,16 @@ async function registerCommands() {
 }
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const newsWatcher = createNewsWatcher(client, { webApiUrl: WEB_API_URL });
 
-client.once('ready', () => {
+client.once('ready', async () => {
   console.log(`Nô lệ đã tỉnh dậy và làm việc — ${client.user.tag}`);
-  client.user.setActivity('meta Liên Minh • /meta');
+  client.user.setActivity('Global LoL meta • /meta');
+  try {
+    await newsWatcher.start();
+  } catch (error) {
+    console.error('Không khởi động được Riot News Watcher:', error);
+  }
 });
 
 client.on('interactionCreate', async interaction => {
@@ -149,6 +175,37 @@ client.on('interactionCreate', async interaction => {
   await interaction.deferReply();
 
   try {
+    if (interaction.commandName === 'notify') {
+      const sub = interaction.options.getSubcommand();
+
+      if (sub === 'status') {
+        const s = newsWatcher.status();
+        const embed = baseEmbed('📢 Riot News Auto Notification')
+          .addFields(
+            { name: 'Watcher', value: s.enabled ? '✅ ON' : '⚠️ OFF', inline: true },
+            { name: 'Chu kỳ', value: `${s.intervalMinutes} phút`, inline: true },
+            { name: 'Channel', value: s.channelId ? `<#${s.channelId}>` : 'Chưa cấu hình', inline: true },
+            { name: 'Theo dõi', value: s.types.join(', ') || '—', inline: false },
+            { name: 'Lần quét cuối', value: s.lastCheckAt || 'Chưa quét', inline: false },
+            { name: 'Lần gửi cuối', value: s.lastSentAt || 'Chưa gửi', inline: false },
+            { name: 'Lỗi gần nhất', value: trim(s.lastError || 'Không có'), inline: false }
+          );
+        return interaction.editReply({ embeds: [embed] });
+      }
+
+      if (sub === 'check') {
+        const result = await newsWatcher.check();
+        if (result.error) throw new Error(result.error);
+        return interaction.editReply(`✅ Đã quét Riot News. ${result.fresh || 0} tin mới, ${result.sent || 0} thông báo đã gửi.`);
+      }
+
+      if (sub === 'test') {
+        const type = interaction.options.getString('type') || 'event';
+        await newsWatcher.sendTest(type);
+        return interaction.editReply(`✅ Đã gửi thông báo test loại **${type}** vào channel đã cấu hình.`);
+      }
+    }
+
     if (interaction.commandName === 'status') {
       const s = await api('/api/status');
       const embed = baseEmbed('Rift Meta VN — Status')
@@ -157,7 +214,7 @@ client.on('interactionCreate', async interaction => {
           { name: 'Data Dragon', value: String(s.ddragon || '—'), inline: true },
           { name: 'Sample', value: `${Number(s.sampleGames || 0)} trận`, inline: true },
           { name: 'Riot API', value: s.riotApiConfigured ? '✅ ON' : '⚠️ OFF', inline: true },
-          { name: 'Platform', value: String(s.platform || 'vn2').toUpperCase(), inline: true },
+          { name: 'Scope', value: String(s.scope || 'GLOBAL').toUpperCase(), inline: true },
           { name: 'Website', value: WEB_API_URL, inline: false }
         );
       return interaction.editReply({ embeds: [embed] });
@@ -288,6 +345,15 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.on('error', error => console.error('Discord client error:', error));
+
+process.once('SIGTERM', () => {
+  newsWatcher.stop();
+  client.destroy();
+});
+process.once('SIGINT', () => {
+  newsWatcher.stop();
+  client.destroy();
+});
 
 await registerCommands();
 await client.login(TOKEN);
