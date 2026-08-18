@@ -12,6 +12,9 @@ const ORACLE_MIRRORS = [
   'https://raw.githubusercontent.com/chrisvu1007/league-of-legends-match-predictor/main/data/2026_LoL_esports_match_data_from_OraclesElixir.csv'
 ];
 
+const num = value => Number.isFinite(Number(value)) ? Number(value) : 0;
+const round = (value, digits = 1) => Number(num(value).toFixed(digits));
+
 function normalizeRole(value) {
   const role = String(value || '').toLowerCase();
   if (role === 'top' || role.includes('top')) return 'TOP';
@@ -31,6 +34,10 @@ function slug(value) {
     .replace(/^-+|-+$/g, '') || 'unknown';
 }
 
+function wikiUrl(value) {
+  return `https://lol.fandom.com/wiki/${encodeURIComponent(String(value || '').trim()).replace(/%20/g, '_')}`;
+}
+
 function parseCsvLine(line) {
   const out = [];
   let value = '';
@@ -41,15 +48,11 @@ function parseCsvLine(line) {
       if (quoted && line[i + 1] === '"') {
         value += '"';
         i++;
-      } else {
-        quoted = !quoted;
-      }
+      } else quoted = !quoted;
     } else if (ch === ',' && !quoted) {
       out.push(value);
       value = '';
-    } else {
-      value += ch;
-    }
+    } else value += ch;
   }
   out.push(value);
   return out;
@@ -71,7 +74,7 @@ async function loadFeatured() {
 async function downloadCsvUrl(url, label) {
   console.log(`Oracle's Elixir: thử ${label}...`);
   const response = await fetch(url, {
-    headers: { 'User-Agent': 'WebLienMinh/2.2 global-esports-directory' },
+    headers: { 'User-Agent': 'WebLienMinh/2.3 global-esports-directory' },
     signal: AbortSignal.timeout(120_000)
   });
   if (!response.ok) throw new Error(`${label}: HTTP ${response.status}`);
@@ -111,7 +114,6 @@ async function downloadOracleCsv() {
       console.log(error.message);
     }
   }
-
   throw lastError || new Error("Không tải được Oracle's Elixir data từ official snapshot hoặc mirror.");
 }
 
@@ -121,9 +123,15 @@ function buildDirectoryFromOracle(text, source) {
 
   const header = parseCsvLine(lines[0]).map(x => x.trim().toLowerCase());
   const index = new Map(header.map((name, i) => [name, i]));
-  const get = (row, name) => row[index.get(name)] ?? '';
-  const required = ['playername', 'teamname', 'position', 'champion', 'date'];
-  for (const col of required) {
+  const get = (row, name) => index.has(name) ? (row[index.get(name)] ?? '') : '';
+  const first = (row, names) => {
+    for (const name of names) {
+      const value = get(row, name);
+      if (value !== '' && value != null) return value;
+    }
+    return '';
+  };
+  for (const col of ['playername', 'teamname', 'position', 'champion', 'date']) {
     if (!index.has(col)) throw new Error(`Oracle CSV thiếu cột ${col}.`);
   }
 
@@ -152,6 +160,13 @@ function buildDirectoryFromOracle(text, source) {
     const champion = String(get(row, 'champion')).trim();
     const gameId = String(get(row, 'gameid')).trim();
     const patch = String(get(row, 'patch')).trim();
+    const result = num(get(row, 'result'));
+    const kills = num(get(row, 'kills'));
+    const deaths = num(get(row, 'deaths'));
+    const assists = num(get(row, 'assists'));
+    const cs = num(first(row, ['total cs', 'totalcs', 'cs']));
+    const dpm = num(first(row, ['dpm', 'damagetochampionsperminute']));
+    const visionScore = num(first(row, ['visionscore', 'vision score']));
 
     let p = players.get(playerKey);
     if (!p) {
@@ -167,6 +182,14 @@ function buildDirectoryFromOracle(text, source) {
         teams: new Set(),
         champions: new Map(),
         games: new Set(),
+        wins: 0,
+        kills: 0,
+        deaths: 0,
+        assists: 0,
+        cs: 0,
+        dpm: 0,
+        visionScore: 0,
+        statRows: 0,
         featured: featured.has(playerName.toLowerCase())
       };
       players.set(playerKey, p);
@@ -175,7 +198,17 @@ function buildDirectoryFromOracle(text, source) {
     p.role = role || p.role;
     p.teams.add(teamName);
     if (champion) p.champions.set(champion, (p.champions.get(champion) || 0) + 1);
-    if (gameId) p.games.add(gameId);
+    if (gameId && !p.games.has(gameId)) {
+      p.games.add(gameId);
+      if (result === 1) p.wins++;
+      p.kills += kills;
+      p.deaths += deaths;
+      p.assists += assists;
+      p.cs += cs;
+      p.dpm += dpm;
+      p.visionScore += visionScore;
+      p.statRows++;
+    }
 
     if (!p.latestAt || date > p.latestAt) {
       p.latestAt = date;
@@ -187,7 +220,7 @@ function buildDirectoryFromOracle(text, source) {
         region: league,
         location: null,
         logo: null,
-        sourcePage: 'https://lol.timsevenhuysen.com/',
+        sourcePage: wikiUrl(teamName),
         website: null,
         socials: {}
       };
@@ -202,7 +235,7 @@ function buildDirectoryFromOracle(text, source) {
         region: league,
         location: null,
         logo: null,
-        sourcePage: 'https://lol.timsevenhuysen.com/',
+        sourcePage: wikiUrl(teamName),
         website: null,
         socials: {},
         latestAt: date
@@ -216,7 +249,8 @@ function buildDirectoryFromOracle(text, source) {
       const championPool = [...p.champions.entries()]
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
         .slice(0, 8);
-      const total = [...p.champions.values()].reduce((a, b) => a + b, 0) || 1;
+      const championGames = [...p.champions.values()].reduce((a, b) => a + b, 0) || 1;
+      const games = p.games.size || 1;
       return {
         id: p.id,
         overviewPage: p.overviewPage,
@@ -234,8 +268,8 @@ function buildDirectoryFromOracle(text, source) {
         team: p.team,
         currentTeams: [...p.teams],
         favoriteChampions: championPool.map(([name]) => name),
-        championPool: championPool.map(([name, count]) => ({ name, count, rate: Number(((count / total) * 100).toFixed(1)) })),
-        interestsNote: `Các tướng hiển thị là champion pool từ dữ liệu thi đấu ${yearFromDate(p.latestAt)} của Oracle's Elixir, không phải sở thích cá nhân.`,
+        championPool: championPool.map(([name, count]) => ({ name, count, rate: round((count / championGames) * 100) })),
+        interestsNote: `Champion pool được tổng hợp từ dữ liệu thi đấu ${yearFromDate(p.latestAt)} của Oracle's Elixir; không suy diễn thành sở thích cá nhân.`,
         soloqueueIds: null,
         substitute: false,
         trainee: false,
@@ -243,11 +277,22 @@ function buildDirectoryFromOracle(text, source) {
         socials: { twitter: null, instagram: null, stream: null, youtube: null },
         latestGameAt: p.latestAt || null,
         latestPatch: p.latestPatch,
-        games: p.games.size,
-        sourcePage: 'https://lol.timsevenhuysen.com/'
+        games,
+        wins: p.wins,
+        losses: Math.max(0, games - p.wins),
+        winRate: round((p.wins / games) * 100),
+        kda: round((p.kills + p.assists) / Math.max(1, p.deaths), 2),
+        avgKills: round(p.kills / games, 2),
+        avgDeaths: round(p.deaths / games, 2),
+        avgAssists: round(p.assists / games, 2),
+        avgCS: p.cs ? round(p.cs / games, 1) : null,
+        avgDPM: p.dpm ? round(p.dpm / Math.max(1, p.statRows), 1) : null,
+        avgVision: p.visionScore ? round(p.visionScore / games, 1) : null,
+        sourcePage: wikiUrl(p.overviewPage),
+        matchDataSource: source.url
       };
     })
-    .sort((a, b) => Number(b.featured) - Number(a.featured) || (a.team?.region || '').localeCompare(b.team?.region || '') || a.id.localeCompare(b.id));
+    .sort((a, b) => Number(b.featured) - Number(a.featured) || String(b.latestGameAt || '').localeCompare(String(a.latestGameAt || '')) || (a.team?.region || '').localeCompare(b.team?.region || '') || a.id.localeCompare(b.id));
 
   const activeTeamIds = new Set(playerList.map(p => p.team?.id).filter(Boolean));
   const teamList = [...teams.values()]
