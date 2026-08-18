@@ -23,6 +23,7 @@ meta.mode = 'match-v5-global-high-elo-v3';
 meta.scope = 'GLOBAL';
 meta.scopeLabel = 'Global High-Elo';
 meta.coverage = coverage;
+meta.notice = `Tổng hợp tự động từ ${meta.sampleGames || coverage.matchesSaved || 0} trận Ranked Solo/Duo High-Elo toàn cầu patch ${meta.patch || coverage.patch || 'hiện tại'} • ${sourceLabel}. Counter và Tier Score được giảm độ tự tin khi sample thấp.`;
 meta.methodology = {
   ...(meta.methodology || {}),
   scope: 'Dữ liệu Ranked Solo/Duo high-elo được lấy từ nhiều platform Riot trên toàn thế giới và gộp theo cùng patch.',
