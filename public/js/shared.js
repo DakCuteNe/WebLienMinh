@@ -1,3 +1,5 @@
+import './esports-images.js';
+
 if (!document.querySelector('link[data-rift-v2]')) {
   const theme = document.createElement('link');
   theme.rel = 'stylesheet';
