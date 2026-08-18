@@ -1,0 +1,217 @@
+{
+  "generatedAt": "2026-08-18T18:43:38.333Z",
+  "patch": "16.16",
+  "scope": "GLOBAL",
+  "platforms": {
+    "na1": {
+      "label": "North America",
+      "macro": "AMERICAS",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "vi2GntnAcbSgTlJJRIX-nnWsCgGbKLfRBuNAsLrIj_8Kqt9W20y_1UHopYxq9ie2nKkKXwKSc8JzDA",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "2QpkPRuckmkbAhSAkj9kGip4dUofRNDuIpTTtpMhT-JmV5DiK35fp3oSHl5g5ji5FYU852JMgiLoOA",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "br1": {
+      "label": "Brazil",
+      "macro": "AMERICAS",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "x98WPEQ4YfBWra6irQU6CN-vkgspl1Up7QWWF5ipUF8c6h2U5KzOroCqS-XoN9xrnolZs4FdHMsRjg",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "gutFtpFiDElItqbv1bERtXef0UW_btsLLyxLG1EEwHO21uhgKZIglJMo9pwSudInN6_2HqMLwEh6CA",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "la1": {
+      "label": "Latin America North",
+      "macro": "AMERICAS",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "Rptw2M7zctrhHCa7x6Ub4BZHP-E1E0LTN0lN5iX8dEIa-qeYC3R6BKu2PwnUnPDPG-c-LPrOn2nnEw",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "1BS_2zPgeCNselxvlDiBTWLW-S2Fz1nY7aNV8FVPAJtMrFX2UYN-Q4FFNhR7OMZ4_XCXDwV1cbkdLQ",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "la2": {
+      "label": "Latin America South",
+      "macro": "AMERICAS",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "4C8T6iycpyLK5RhlRud5vdbm-Xbz1Ts5i_mt42-8exqyIQs2TjHtrCeFy2g0dak05vnGw3yZdZaTIQ",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "aE3jX0ySktYie5WF_rLRgiRVAVUlzxvpDdkaAG2tcjLJorvFxhi4fgSXTMy5j6EKDVjCpgjRlOUR3g",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "euw1": {
+      "label": "Europe West",
+      "macro": "EUROPE",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "tXH6ydqjGgkcUbzMLncjrRLPCltxUKPTaZwXpjaJb6Jyhl1duoFGD880s97D8RSkymzLhLQ0GubaHg",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "l2oLVz757zhTd2rlMWzFL_ajWk5Y17U4Z5AG5Q4cmXYyrVXHOn7SQb9MuZfV0gdJM79jU56yQwapgg",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "eun1": {
+      "label": "Europe Nordic & East",
+      "macro": "EUROPE",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "MdgwsDAw6EAZOatDSCjlNBu-ddZkNo3WhEhi5CoeF4UYPF6gmwQzygRlr9i_qT8VUeTmwR69I7KjpA",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "Q_WA1PvI1RGD39CUxRiPVu1m_4RRM9koQPDwYQd3X9-cGgKSAreeimUvSE0lkv5-OZOY_LCKtxVpLA",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "tr1": {
+      "label": "Türkiye",
+      "macro": "EUROPE",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "gDKRm8zisdaLL7GsPcVs1XJUznpoOrGcrlxIdcYluur4bS_S2-1zArP0nmKdKOj_B5PlMActy5pJIw",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "kY5mu4SmRIHJuvpJJJ-HgECLuX-4FDEFVkRl0FAkY1PNCeoGjStAwxkjGliRqpx2WRvKFGWaeld8bw",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "ru": {
+      "label": "Russia",
+      "macro": "EUROPE",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "VF_UFjY35zGyQkRlKRlEXhBmVGur8Q8FY1boWuKBEwpDPCZwK7Ng8QwXS0ZnbJJBx97kAJ0R1QjaMg",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "m1br9xbr7JBomOUa6_1UtQZzihjELdiQSrjSab9-Lh4gglX0v9wNly2Y6DFxNIRQmuUbjN-XKMQqww",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "kr": {
+      "label": "Korea",
+      "macro": "ASIA",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "oS6N9hrnMAgmKJrknlnHzXRCSZpR-78pkSZp4Y1fGAfLj7kIHkMZmA7zbMz_dLl44rkLwKdtjISm7w",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "X2rTmGvWLKAimOQ2XWNjx9CePtTh7UzsjgmK7JEo6QGrqF5PVo1aFnbALxh90GiL4ygngDN0lVdiXg",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "jp1": {
+      "label": "Japan",
+      "macro": "ASIA",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "cLb-6WW1uCDQKpoOW3EFPJMsOUIZCwlc2dl_sSdWebFpIUaUh2PqIrzYyyThRgnUp4-k3P1_YCzDiQ",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "hgkRr7SDjWvn2ngtLXQQaaBLAvzR0Ai7U9-Ia47V4fdeEhSSC-ZzMx-H_kAXH77Nf1L7qrUNDpgiHg",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "vn2": {
+      "label": "Vietnam",
+      "macro": "SEA",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "N8wXiOQ62ys4qiK3MxcZToRFoiG3SOHN_ncHjBAcfGaQDdcA7sraZSUn-6ObbwS1lIRwJxgf5HTkEw",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "Jr2f1fAPlGLJDmPqKQw-LxCcjdfeJYZ2BYa_8cgfejmldHlFBUFZorUlAwKmPhCvifq55QtBmKj8Ow",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "sg2": {
+      "label": "Singapore",
+      "macro": "SEA",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "y3spmX-QFX70CwRUHPpm8DCPO3oB1Xl3mGWG5IImU6ShE6oO6Gox0smxga_db7IO8G_FmqQ1-m8B5w",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "gJWIDmW4Q6znW5w8OKI5rHOywiZkRxdY57SFmsnyy4gxVhj9SHIwG0S7aC7e5a29zjSWjpXDkYft4Q",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "tw2": {
+      "label": "Taiwan",
+      "macro": "SEA",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "Z1sx_gS6pT8nHwSrKOQs4r3ZRgwI1hBdj_Y2c5h_XQOeBBJlWJeX51JqeLB4kb0B91rQyzRfqaNNuQ",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "h_Xmy0y9CJikmYT6N5uaQ87oq9k5MM4st0pzKj8kXbKUIvssxAs2N7EUj8TQPmcFqxprcgJtArxYQw",
+          "tier": "CHALLENGER"
+        }
+      ]
+    },
+    "oc1": {
+      "label": "Oceania",
+      "macro": "SEA",
+      "tier": "CHALLENGER",
+      "seeds": [
+        {
+          "puuid": "9F13-KhX8smz9advKCZ4ki9btatgIN3_yciL_rR2yv0KQtbCbtJzQWh4DO8p0Wj81xD9o0aFXGLWHQ",
+          "tier": "CHALLENGER"
+        },
+        {
+          "puuid": "PaCNaYJ8MJWVU2hOcy6NOYa7FG0JS-MLj0UBZ9eXEiHqQAAI29-ykQB1iuGIwDnbV3U3drKKuQcKqw",
+          "tier": "CHALLENGER"
+        }
+      ]
+    }
+  }
+}

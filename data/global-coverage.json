@@ -1,0 +1,239 @@
+{
+  "generatedAt": "2026-08-18T18:52:15.705Z",
+  "patch": "16.16",
+  "scope": "GLOBAL",
+  "mode": "global-high-elo-ranked-solo",
+  "queueId": 420,
+  "attemptedPlatforms": [
+    "na1",
+    "br1",
+    "la1",
+    "la2",
+    "euw1",
+    "eun1",
+    "tr1",
+    "ru",
+    "kr",
+    "jp1",
+    "vn2",
+    "ph2",
+    "sg2",
+    "th2",
+    "tw2",
+    "oc1"
+  ],
+  "successfulPlatforms": [
+    "na1",
+    "br1",
+    "la1",
+    "la2",
+    "euw1",
+    "eun1",
+    "tr1",
+    "ru",
+    "jp1",
+    "vn2",
+    "sg2",
+    "tw2",
+    "oc1"
+  ],
+  "platformCount": 13,
+  "macroRegions": [
+    "AMERICAS",
+    "EUROPE",
+    "ASIA",
+    "SEA"
+  ],
+  "macroRegionCount": 4,
+  "matchesSaved": 138,
+  "matchesDiscovered": 166,
+  "skippedOldPatch": 28,
+  "failedMatches": 0,
+  "settings": {
+    "playersPerPlatform": 2,
+    "matchesPerPlayer": 6,
+    "minGlobalPlatforms": 10,
+    "minGlobalMatches": 80,
+    "minGlobalMacroRegions": 4
+  },
+  "matchesByPlatform": {
+    "br1": 10,
+    "eun1": 6,
+    "euw1": 11,
+    "jp1": 11,
+    "la1": 10,
+    "la2": 12,
+    "na1": 6,
+    "oc1": 12,
+    "ru": 12,
+    "sg2": 12,
+    "tr1": 12,
+    "tw2": 12,
+    "vn2": 12
+  },
+  "matchesByMacroRegion": {
+    "AMERICAS": 38,
+    "ASIA": 11,
+    "EUROPE": 41,
+    "SEA": 48
+  },
+  "platforms": [
+    {
+      "platform": "na1",
+      "label": "North America",
+      "macro": "AMERICAS",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "br1",
+      "label": "Brazil",
+      "macro": "AMERICAS",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "la1",
+      "label": "Latin America North",
+      "macro": "AMERICAS",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "la2",
+      "label": "Latin America South",
+      "macro": "AMERICAS",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "euw1",
+      "label": "Europe West",
+      "macro": "EUROPE",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "eun1",
+      "label": "Europe Nordic & East",
+      "macro": "EUROPE",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "tr1",
+      "label": "Türkiye",
+      "macro": "EUROPE",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "ru",
+      "label": "Russia",
+      "macro": "EUROPE",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "kr",
+      "label": "Korea",
+      "macro": "ASIA",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "jp1",
+      "label": "Japan",
+      "macro": "ASIA",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "vn2",
+      "label": "Vietnam",
+      "macro": "SEA",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "ph2",
+      "label": "Philippines",
+      "macro": "SEA",
+      "ok": false,
+      "reason": "no-seeds",
+      "matchesDiscovered": 0
+    },
+    {
+      "platform": "sg2",
+      "label": "Singapore",
+      "macro": "SEA",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "th2",
+      "label": "Thailand",
+      "macro": "SEA",
+      "ok": false,
+      "reason": "no-seeds",
+      "matchesDiscovered": 0
+    },
+    {
+      "platform": "tw2",
+      "label": "Taiwan",
+      "macro": "SEA",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    },
+    {
+      "platform": "oc1",
+      "label": "Oceania",
+      "macro": "SEA",
+      "ok": true,
+      "seedTier": "CHALLENGER",
+      "fromCache": false,
+      "seeds": 2,
+      "matchesDiscovered": 12
+    }
+  ],
+  "accepted": true
+}
