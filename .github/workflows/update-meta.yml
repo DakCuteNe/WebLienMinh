@@ -12,8 +12,6 @@ on:
       - 'scripts/collect-high-elo.js'
       - 'scripts/aggregate.js'
       - 'scripts/update-riot-data.js'
-      - 'scripts/update-pros.js'
-      - 'data/pro-watchlist.json'
       - 'package.json'
 
 permissions:
@@ -26,7 +24,7 @@ concurrency:
 jobs:
   update-meta:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     env:
       RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
       RIOT_PLATFORM: vn2
@@ -34,7 +32,7 @@ jobs:
       DDRAGON_LOCALE: vi_VN
       HIGH_ELO_PLAYERS: 10
       MATCHES_PER_PLAYER: 20
-      RIOT_REQUEST_DELAY_MS: 1300
+      RIOT_REQUEST_DELAY_MS: 1350
 
     steps:
       - name: Checkout repository
@@ -50,10 +48,17 @@ jobs:
 
       - name: Update Riot static data
         id: riot
-        run: npm run update:riot
+        shell: bash
+        run: |
+          set +e
+          npm run update:riot 2>&1 | tee riot-static.log
+          CODE=${PIPESTATUS[0]}
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
 
-      - name: Collect Challenger VN2 matches
+      - name: Collect high-elo VN2 matches
         id: collect
+        if: always()
         shell: bash
         run: |
           set +e
@@ -80,57 +85,57 @@ jobs:
             CODE=${PIPESTATUS[0]}
             echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           else
-            echo "No current-patch matches were collected; keeping the previous meta.json." | tee aggregate.log
+            echo "No fresh current-patch matches. Keeping previous meta.json." | tee aggregate.log
             echo "exit_code=97" >> "$GITHUB_OUTPUT"
           fi
-          exit 0
-
-      - name: Update featured pro analytics
-        id: pros
-        if: always()
-        shell: bash
-        run: |
-          set +e
-          npm run update:pros 2>&1 | tee pros.log
-          CODE=${PIPESTATUS[0]}
-          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
       - name: Write automation status
         if: always()
         shell: bash
         env:
+          RIOT_STATIC_EXIT_CODE: ${{ steps.riot.outputs.exit_code }}
           COLLECT_EXIT_CODE: ${{ steps.collect.outputs.exit_code }}
           AGGREGATE_EXIT_CODE: ${{ steps.aggregate.outputs.exit_code }}
-          PROS_EXIT_CODE: ${{ steps.pros.outputs.exit_code }}
-          PATCH: ${{ steps.riot.outputs.patch }}
-          DD_VERSION: ${{ steps.riot.outputs.version }}
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs/promises';
           async function tail(file) {
             try {
               const text = await fs.readFile(file, 'utf8');
-              return text.trim().split(/\r?\n/).filter(Boolean).slice(-8).join('\n').slice(0, 2000);
+              return text.trim().split(/\r?\n/).filter(Boolean).slice(-10).join('\n').slice(0, 3000);
             } catch { return ''; }
           }
+          let patch = null;
+          let dataDragonVersion = null;
+          try {
+            const p = JSON.parse(await fs.readFile('data/riot/patch.json', 'utf8'));
+            patch = p.patch || null;
+            dataDragonVersion = p.version || p.dataDragonVersion || null;
+          } catch {}
+          const staticCode = Number(process.env.RIOT_STATIC_EXIT_CODE ?? -1);
+          const collectCode = Number(process.env.COLLECT_EXIT_CODE ?? -1);
+          const aggregateCode = Number(process.env.AGGREGATE_EXIT_CODE ?? -1);
+          const health = staticCode === 0 && collectCode === 0 && aggregateCode === 0 ? 'ok' : 'degraded';
           const status = {
             checkedAt: new Date().toISOString(),
-            patch: process.env.PATCH || null,
-            dataDragonVersion: process.env.DD_VERSION || null,
+            health,
+            patch,
+            dataDragonVersion,
             riotSecretConfigured: Boolean(process.env.RIOT_API_KEY),
-            collectorExitCode: Number(process.env.COLLECT_EXIT_CODE || -1),
-            aggregateExitCode: Number(process.env.AGGREGATE_EXIT_CODE || -1),
-            prosExitCode: Number(process.env.PROS_EXIT_CODE || -1),
+            riotStaticExitCode: staticCode,
+            collectorExitCode: collectCode,
+            aggregateExitCode: aggregateCode,
+            preservedPreviousMeta: aggregateCode !== 0,
+            riotStaticMessage: await tail('riot-static.log'),
             collectorMessage: await tail('collector.log'),
-            aggregateMessage: await tail('aggregate.log'),
-            prosMessage: await tail('pros.log')
+            aggregateMessage: await tail('aggregate.log')
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/automation-status.json', JSON.stringify(status, null, 2));
           NODE
 
-      - name: Commit updated analytics data
+      - name: Commit updated Riot/meta data
         if: always()
         shell: bash
         run: |
@@ -139,14 +144,13 @@ jobs:
 
           git add data/riot data/automation-status.json
           if [ -f data/meta.json ]; then git add data/meta.json; fi
-          if [ -f data/pros.json ]; then git add data/pros.json; fi
+          if [ -f data/high-elo-seeds.json ]; then git add data/high-elo-seeds.json; fi
 
           if git diff --cached --quiet; then
-            echo "No data changes to commit."
+            echo "No Riot/meta changes to commit."
             exit 0
           fi
 
-          PATCH="${{ steps.riot.outputs.patch }}"
-          VERSION="${{ steps.riot.outputs.version }}"
-          git commit -m "Auto update LoL analytics ${PATCH:-live} (${VERSION:-Riot})"
+          PATCH=$(node -e "try{console.log(require('./data/riot/patch.json').patch||'live')}catch{console.log('live')}")
+          git commit -m "Auto update LoL meta ${PATCH}"
           git push
