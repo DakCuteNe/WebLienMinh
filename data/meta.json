@@ -2,7 +2,7 @@
   "patch": "16.16",
   "dataDragonVersion": "16.16.1",
   "mode": "match-v5-global-high-elo-v3",
-  "generatedAt": "2026-08-18T19:09:24.412Z",
+  "generatedAt": "2026-08-18T19:32:14.057Z",
   "sampleGames": 138,
   "methodology": {
     "banRate": "Tỷ lệ số trận tướng xuất hiện trong bans / tổng trận mẫu.",
@@ -16,7 +16,7 @@
     "coverage": "13/16 server Riot • 4/4 cụm khu vực",
     "sampling": "Mỗi platform lấy một nhóm người chơi high-elo từ Challenger, fallback Grandmaster/Master/cache khi leaderboard tạm lỗi. Match được de-duplicate toàn cầu."
   },
-  "notice": "Tổng hợp tự động từ 138 trận Ranked Solo/Duo Challenger VN2 patch 16.16. Counter và Tier Score được giảm độ tự tin khi sample thấp.",
+  "notice": "Tổng hợp tự động từ 138 trận Ranked Solo/Duo High-Elo toàn cầu patch 16.16 • 13/16 server Riot • 4/4 cụm khu vực. Counter và Tier Score được giảm độ tự tin khi sample thấp.",
   "champions": [
     {
       "id": "Caitlyn",
@@ -232,7 +232,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -443,7 +443,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -656,13 +656,13 @@
         "sampleConfidence": 85
       },
       "tier": "S",
-      "trend": 10.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 10.1,
-        "winRate": 5.9,
+        "tierScore": 0,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -863,13 +863,13 @@
         "sampleConfidence": 60
       },
       "tier": "S",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1065,13 +1065,13 @@
         "sampleConfidence": 65
       },
       "tier": "S",
-      "trend": 0.7,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.7,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 2.2,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1265,13 +1265,13 @@
         "sampleConfidence": 65
       },
       "tier": "S",
-      "trend": 8,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 8,
-        "winRate": 2.6,
-        "pickRate": 0.7,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1455,13 +1455,13 @@
         "sampleConfidence": 55
       },
       "tier": "S",
-      "trend": -0.2,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.2,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1679,13 +1679,13 @@
         "sampleConfidence": 100
       },
       "tier": "S",
-      "trend": -0.4,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.4,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1871,13 +1871,13 @@
         "sampleConfidence": 55
       },
       "tier": "S",
-      "trend": 1.8,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 1.8,
-        "winRate": 6.1,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2070,13 +2070,13 @@
         "sampleConfidence": 45
       },
       "tier": "S",
-      "trend": 8.6,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 8.6,
-        "winRate": 3.2,
-        "pickRate": 1.4,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2290,7 +2290,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2486,7 +2486,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2695,7 +2695,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2872,13 +2872,13 @@
         "sampleConfidence": 45
       },
       "tier": "S",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3082,13 +3082,13 @@
         "sampleConfidence": 60
       },
       "tier": "S",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3359,13 +3359,13 @@
         "sampleConfidence": 100
       },
       "tier": "S",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3561,13 +3561,13 @@
         "sampleConfidence": 40
       },
       "tier": "S",
-      "trend": 0.2,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.2,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3812,13 +3812,13 @@
         "sampleConfidence": 100
       },
       "tier": "S",
-      "trend": -4,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -4,
-        "winRate": -2,
-        "pickRate": -0.7,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4001,13 +4001,13 @@
         "sampleConfidence": 40
       },
       "tier": "A",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4186,13 +4186,13 @@
         "sampleConfidence": 45
       },
       "tier": "A",
-      "trend": -5.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -5.1,
-        "winRate": -3.3,
-        "pickRate": -0.7,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4375,7 +4375,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4516,13 +4516,13 @@
         "sampleConfidence": 30
       },
       "tier": "A",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4712,7 +4712,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4905,13 +4905,13 @@
         "sampleConfidence": 35
       },
       "tier": "A",
-      "trend": -4.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -4.1,
-        "winRate": -3.6,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5096,7 +5096,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5272,7 +5272,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5472,7 +5472,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5659,7 +5659,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5867,7 +5867,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6040,7 +6040,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6247,13 +6247,13 @@
         "sampleConfidence": 65
       },
       "tier": "A",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6427,7 +6427,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6634,7 +6634,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6842,7 +6842,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7009,7 +7009,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7177,13 +7177,13 @@
         "sampleConfidence": 25
       },
       "tier": "A",
-      "trend": -0.9,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.9,
-        "winRate": -20,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7347,13 +7347,13 @@
         "sampleConfidence": 20
       },
       "tier": "A",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7531,7 +7531,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7705,13 +7705,13 @@
         "sampleConfidence": 20
       },
       "tier": "A",
-      "trend": -3.8,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -3.8,
-        "winRate": -5,
-        "pickRate": -0.7,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7893,7 +7893,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8084,13 +8084,13 @@
         "sampleConfidence": 30
       },
       "tier": "B",
-      "trend": 2.5,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 2.5,
-        "winRate": 9.5,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8300,7 +8300,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8465,7 +8465,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8630,7 +8630,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8827,7 +8827,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9026,7 +9026,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9192,7 +9192,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9336,7 +9336,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9497,13 +9497,13 @@
         "sampleConfidence": 20
       },
       "tier": "B",
-      "trend": 1.5,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 1.5,
-        "winRate": 15,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9693,7 +9693,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9867,7 +9867,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10067,13 +10067,13 @@
         "sampleConfidence": 75
       },
       "tier": "B",
-      "trend": -0.3,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.3,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10251,7 +10251,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10444,7 +10444,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10612,7 +10612,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10740,7 +10740,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10914,7 +10914,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11088,7 +11088,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11266,7 +11266,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11453,7 +11453,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11633,13 +11633,13 @@
         "sampleConfidence": 30
       },
       "tier": "B",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11747,7 +11747,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11843,7 +11843,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12014,13 +12014,13 @@
         "sampleConfidence": 25
       },
       "tier": "B",
-      "trend": -0.2,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.2,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12136,7 +12136,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12293,7 +12293,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12461,7 +12461,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12675,13 +12675,13 @@
         "sampleConfidence": 80
       },
       "tier": "B",
-      "trend": -4.7,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -4.7,
-        "winRate": -2.9,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12870,13 +12870,13 @@
         "sampleConfidence": 35
       },
       "tier": "B",
-      "trend": 2.7,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 2.7,
-        "winRate": 7.1,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13009,8 +13009,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13152,7 +13152,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13339,7 +13339,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13472,7 +13472,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13597,7 +13597,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13673,7 +13673,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13743,8 +13743,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13930,7 +13930,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14062,7 +14062,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14266,13 +14266,13 @@
         "sampleConfidence": 85
       },
       "tier": "B",
-      "trend": 6.5,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 6.5,
-        "winRate": 2.6,
-        "pickRate": -0.7,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14475,7 +14475,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14654,13 +14654,13 @@
         "sampleConfidence": 50
       },
       "tier": "B",
-      "trend": 4.3,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 4.3,
-        "winRate": 5.6,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14816,7 +14816,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14907,13 +14907,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": 1.6,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 1.6,
-        "winRate": 50,
-        "pickRate": -0.7,
-        "banRate": 2.2,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15073,7 +15073,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15168,8 +15168,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15249,8 +15249,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15428,7 +15428,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15588,7 +15588,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15750,13 +15750,13 @@
         "sampleConfidence": 15
       },
       "tier": "B",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15943,7 +15943,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16094,7 +16094,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16262,7 +16262,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16413,13 +16413,13 @@
         "sampleConfidence": 15
       },
       "tier": "B",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16545,7 +16545,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16630,8 +16630,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16758,13 +16758,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16865,7 +16865,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16962,7 +16962,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17059,7 +17059,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17156,7 +17156,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17256,8 +17256,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17422,7 +17422,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17513,13 +17513,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17627,7 +17627,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17788,13 +17788,13 @@
         "sampleConfidence": 15
       },
       "tier": "B",
-      "trend": -2.4,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -2.4,
-        "winRate": -8.3,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17953,7 +17953,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18108,7 +18108,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18210,8 +18210,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18308,7 +18308,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18405,7 +18405,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18502,7 +18502,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18602,8 +18602,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18700,7 +18700,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18808,7 +18808,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18904,7 +18904,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18995,7 +18995,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19097,7 +19097,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19205,7 +19205,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19302,7 +19302,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19398,7 +19398,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19494,7 +19494,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19591,7 +19591,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19662,7 +19662,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19752,13 +19752,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": -1.4,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -1.4,
+        "tierScore": 0,
         "winRate": 0,
-        "pickRate": -0.7,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19855,7 +19855,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20013,13 +20013,13 @@
         "sampleConfidence": 20
       },
       "tier": "B",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20095,7 +20095,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20186,7 +20186,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20277,7 +20277,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20379,7 +20379,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20454,13 +20454,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": 1.3,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 1.3,
-        "winRate": 50,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20562,7 +20562,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20757,7 +20757,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20908,7 +20908,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21009,7 +21009,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21145,7 +21145,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21275,13 +21275,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": -1.7,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -1.7,
-        "winRate": -16.7,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21455,7 +21455,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21552,13 +21552,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21684,7 +21684,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21834,7 +21834,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21990,7 +21990,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22100,7 +22100,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22210,13 +22210,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22313,7 +22313,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22414,7 +22414,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22540,7 +22540,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22674,7 +22674,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22801,7 +22801,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22938,7 +22938,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23054,7 +23054,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23155,7 +23155,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23251,7 +23251,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23426,7 +23426,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23538,7 +23538,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23660,7 +23660,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23783,7 +23783,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23925,7 +23925,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24071,7 +24071,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24215,7 +24215,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24306,13 +24306,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24475,7 +24475,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24621,7 +24621,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24733,7 +24733,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24869,7 +24869,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25032,13 +25032,13 @@
         "sampleConfidence": 20
       },
       "tier": "B",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25113,13 +25113,13 @@
         "sampleConfidence": 12
       },
       "tier": "B",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25293,7 +25293,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25389,7 +25389,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25479,8 +25479,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25648,13 +25648,13 @@
         "sampleConfidence": 35
       },
       "tier": "C",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25805,7 +25805,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25906,7 +25906,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26003,7 +26003,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26068,7 +26068,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26159,7 +26159,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26235,7 +26235,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26403,7 +26403,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26556,13 +26556,13 @@
         "sampleConfidence": 15
       },
       "tier": "C",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26722,7 +26722,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26825,7 +26825,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26921,7 +26921,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27023,7 +27023,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27125,7 +27125,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27227,7 +27227,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27413,13 +27413,13 @@
         "sampleConfidence": 50
       },
       "tier": "C",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27495,7 +27495,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27598,7 +27598,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27683,13 +27683,13 @@
         "sampleConfidence": 12
       },
       "tier": "C",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27764,13 +27764,13 @@
         "sampleConfidence": 12
       },
       "tier": "C",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27873,7 +27873,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28042,7 +28042,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28139,7 +28139,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28235,7 +28235,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28337,7 +28337,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28439,7 +28439,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28530,7 +28530,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28627,7 +28627,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28718,7 +28718,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28814,7 +28814,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28922,7 +28922,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29018,7 +29018,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29114,7 +29114,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29247,7 +29247,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29343,7 +29343,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29440,7 +29440,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29521,7 +29521,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29592,7 +29592,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29695,7 +29695,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29792,7 +29792,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29883,7 +29883,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29986,7 +29986,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30082,8 +30082,8 @@
         "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30179,7 +30179,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30282,7 +30282,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30378,7 +30378,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30454,7 +30454,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30545,7 +30545,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30709,7 +30709,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30870,7 +30870,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31041,13 +31041,13 @@
         "sampleConfidence": 15
       },
       "tier": "C",
-      "trend": 1.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 1.1,
-        "winRate": 33.3,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31123,7 +31123,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31199,7 +31199,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31296,7 +31296,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31372,7 +31372,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31480,7 +31480,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31577,7 +31577,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31728,7 +31728,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31878,7 +31878,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32042,7 +32042,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32212,13 +32212,13 @@
         "sampleConfidence": 25
       },
       "tier": "C",
-      "trend": 3.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 3.1,
-        "winRate": 6.7,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32397,7 +32397,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32581,13 +32581,13 @@
         "sampleConfidence": 25
       },
       "tier": "C",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32771,7 +32771,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32977,7 +32977,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33162,7 +33162,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33289,7 +33289,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33431,7 +33431,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33631,13 +33631,13 @@
         "sampleConfidence": 35
       },
       "tier": "C",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33822,13 +33822,13 @@
         "sampleConfidence": 35
       },
       "tier": "C",
-      "trend": 0.4,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.4,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 2.2,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33995,7 +33995,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34122,7 +34122,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34263,7 +34263,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34435,13 +34435,13 @@
         "sampleConfidence": 25
       },
       "tier": "C",
-      "trend": 1.6,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 1.6,
-        "winRate": 15,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34577,7 +34577,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34713,7 +34713,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34833,7 +34833,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34963,7 +34963,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35083,7 +35083,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35286,13 +35286,13 @@
         "sampleConfidence": 70
       },
       "tier": "C",
-      "trend": -0.3,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.3,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35469,7 +35469,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35624,7 +35624,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35823,7 +35823,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35990,7 +35990,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36126,7 +36126,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36291,7 +36291,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36436,7 +36436,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36628,7 +36628,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36807,7 +36807,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36967,13 +36967,13 @@
         "sampleConfidence": 15
       },
       "tier": "C",
-      "trend": -2.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -2.1,
+        "tierScore": 0,
         "winRate": 0,
-        "pickRate": 0.7,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37154,13 +37154,13 @@
         "sampleConfidence": 30
       },
       "tier": "C",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37346,7 +37346,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37476,7 +37476,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37618,7 +37618,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37784,7 +37784,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37914,13 +37914,13 @@
         "sampleConfidence": 15
       },
       "tier": "C",
-      "trend": -2.2,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -2.2,
+        "tierScore": 0,
         "winRate": 0,
-        "pickRate": 0.7,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38108,7 +38108,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38280,13 +38280,13 @@
         "sampleConfidence": 25
       },
       "tier": "C",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38474,7 +38474,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -38666,7 +38666,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -38850,7 +38850,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -39034,7 +39034,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -39220,7 +39220,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -39422,7 +39422,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -39598,7 +39598,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -39759,13 +39759,13 @@
         "sampleConfidence": 20
       },
       "tier": "D",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": 0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -39974,7 +39974,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -40120,13 +40120,13 @@
         "sampleConfidence": 20
       },
       "tier": "D",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -40329,13 +40329,13 @@
         "sampleConfidence": 45
       },
       "tier": "D",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -40540,13 +40540,13 @@
         "sampleConfidence": 60
       },
       "tier": "D",
-      "trend": -6.9,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -6.9,
-        "winRate": -3.8,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -40781,13 +40781,13 @@
         "sampleConfidence": 70
       },
       "tier": "D",
-      "trend": -4,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -4,
-        "winRate": -3.3,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -40974,13 +40974,13 @@
         "sampleConfidence": 40
       },
       "tier": "D",
-      "trend": -0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -41172,13 +41172,13 @@
         "sampleConfidence": 60
       },
       "tier": "D",
-      "trend": 4.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 4.1,
-        "winRate": 5.3,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -41399,7 +41399,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -41579,13 +41579,13 @@
         "sampleConfidence": 40
       },
       "tier": "D",
-      "trend": -0.2,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -0.2,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
-        "banRate": -0.7,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "banRate": 0,
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -41789,7 +41789,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -41964,7 +41964,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42143,13 +42143,13 @@
         "sampleConfidence": 30
       },
       "tier": "D",
-      "trend": 4.6,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 4.6,
-        "winRate": 2.4,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42320,13 +42320,13 @@
         "sampleConfidence": 30
       },
       "tier": "D",
-      "trend": -4.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -4.1,
-        "winRate": -3.3,
-        "pickRate": 0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42518,7 +42518,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42716,7 +42716,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42944,13 +42944,13 @@
         "sampleConfidence": 70
       },
       "tier": "D",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43148,7 +43148,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43351,13 +43351,13 @@
         "sampleConfidence": 55
       },
       "tier": "D",
-      "trend": -3.9,
+      "trend": 0,
       "trendStats": {
-        "tierScore": -3.9,
-        "winRate": -5.3,
-        "pickRate": -0.7,
+        "tierScore": 0,
+        "winRate": 0,
+        "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43540,13 +43540,13 @@
         "sampleConfidence": 40
       },
       "tier": "D",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43760,7 +43760,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43958,7 +43958,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44172,13 +44172,13 @@
         "sampleConfidence": 50
       },
       "tier": "D",
-      "trend": 0.1,
+      "trend": 0,
       "trendStats": {
-        "tierScore": 0.1,
+        "tierScore": 0,
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44386,7 +44386,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-18T18:52:16.101Z",
+        "comparedAt": "2026-08-18T19:09:24.412Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44396,7 +44396,7 @@
   "scope": "GLOBAL",
   "scopeLabel": "Global High-Elo",
   "coverage": {
-    "generatedAt": "2026-08-18T19:09:23.822Z",
+    "generatedAt": "2026-08-18T19:32:13.523Z",
     "patch": "16.16",
     "scope": "GLOBAL",
     "mode": "global-high-elo-ranked-solo",
