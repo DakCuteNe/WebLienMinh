@@ -3,7 +3,7 @@ name: Update Worldwide Esports Directory
 on:
   workflow_dispatch:
   schedule:
-    - cron: '42 */12 * * *'
+    - cron: '42 2 * * *'
   push:
     branches:
       - main
@@ -11,7 +11,6 @@ on:
       - '.github/workflows/update-esports.yml'
       - 'scripts/update-esports-directory.js'
       - 'data/pro-watchlist.json'
-      - 'package.json'
 
 permissions:
   contents: write
@@ -23,12 +22,14 @@ concurrency:
 jobs:
   update-esports:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+
       - run: npm install --no-audit --no-fund
 
       - name: Build worldwide player/team directory
@@ -51,12 +52,15 @@ jobs:
           import fs from 'node:fs/promises';
           let log = '';
           try { log = await fs.readFile('esports-directory.log', 'utf8'); } catch {}
-          const lines = log.trim().split(/\r?\n/).filter(Boolean);
+          const code = Number(process.env.EXIT_CODE ?? -1);
+          const directoryCreated = await fs.access('data/esports-directory.json').then(() => true).catch(() => false);
           const status = {
             checkedAt: new Date().toISOString(),
-            exitCode: Number(process.env.EXIT_CODE || -1),
-            message: lines.slice(-20).join('\n').slice(0, 5000),
-            directoryCreated: await fs.access('data/esports-directory.json').then(() => true).catch(() => false)
+            health: code === 0 ? 'ok' : (directoryCreated ? 'degraded' : 'waiting'),
+            exitCode: code,
+            directoryCreated,
+            preservedPreviousData: code !== 0 && directoryCreated,
+            message: log.trim().split(/\r?\n/).filter(Boolean).slice(-30).join('\n').slice(0, 7000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
