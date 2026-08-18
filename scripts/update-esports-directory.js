@@ -7,6 +7,10 @@ const root = path.join(__dirname, '..');
 const output = path.join(root, 'data', 'esports-directory.json');
 const watchFile = path.join(root, 'data', 'pro-watchlist.json');
 const ORACLE_BASE = 'https://oracleselixir-downloadable-match-data.s3-us-west-2.amazonaws.com';
+const ORACLE_MIRRORS = [
+  'https://raw.githubusercontent.com/twodotone/finalLOL/main/data/csv/2026_LoL_esports_match_data_from_OraclesElixir.csv',
+  'https://raw.githubusercontent.com/chrisvu1007/league-of-legends-match-predictor/main/data/2026_LoL_esports_match_data_from_OraclesElixir.csv'
+];
 
 function normalizeRole(value) {
   const role = String(value || '').toLowerCase();
@@ -64,40 +68,51 @@ async function loadFeatured() {
   }
 }
 
+async function downloadCsvUrl(url, label) {
+  console.log(`Oracle's Elixir: thử ${label}...`);
+  const response = await fetch(url, {
+    headers: { 'User-Agent': 'WebLienMinh/2.2 global-esports-directory' },
+    signal: AbortSignal.timeout(120_000)
+  });
+  if (!response.ok) throw new Error(`${label}: HTTP ${response.status}`);
+  const text = await response.text();
+  if (text.length < 100_000 || !/playername/i.test(text.slice(0, 5000))) {
+    throw new Error(`${label}: response không giống CSV esports hợp lệ.`);
+  }
+  console.log(`Đã tải ${label}: ${(text.length / 1024 / 1024).toFixed(1)} MB.`);
+  return text;
+}
+
 async function downloadOracleCsv() {
   const now = new Date();
   const year = now.getUTCFullYear();
   let lastError = null;
 
-  // Oracle's Elixir publishes dated snapshots. Try today then walk backwards.
   for (let daysAgo = 0; daysAgo <= 14; daysAgo++) {
     const d = new Date(now.getTime() - daysAgo * 86_400_000);
     const stamp = ymd(d);
     const url = `${ORACLE_BASE}/${year}_LoL_esports_match_data_from_OraclesElixir_${stamp}.csv`;
-    console.log(`Oracle's Elixir: thử snapshot ${stamp}...`);
     try {
-      const response = await fetch(url, {
-        headers: { 'User-Agent': 'WebLienMinh/2.2 global-esports-directory' },
-        signal: AbortSignal.timeout(90_000)
-      });
-      if (response.status === 404) continue;
-      if (!response.ok) {
-        lastError = new Error(`Oracle's Elixir HTTP ${response.status}`);
-        continue;
-      }
-      const text = await response.text();
-      if (text.length < 100_000 || !/playername/i.test(text.slice(0, 5000))) {
-        lastError = new Error(`Oracle snapshot ${stamp} không giống CSV esports hợp lệ.`);
-        continue;
-      }
-      console.log(`Đã tải Oracle's Elixir snapshot ${stamp}: ${(text.length / 1024 / 1024).toFixed(1)} MB.`);
-      return { text, stamp, url };
+      const text = await downloadCsvUrl(url, `official snapshot ${stamp}`);
+      return { text, stamp, url, sourceMode: 'official-s3' };
     } catch (error) {
       lastError = error;
+      if (!/HTTP 404/.test(error.message)) console.log(error.message);
     }
   }
 
-  throw lastError || new Error("Không tìm thấy Oracle's Elixir snapshot trong 14 ngày gần nhất.");
+  console.log("Official Oracle snapshot không khả dụng; chuyển sang mirror của dataset Oracle's Elixir...");
+  for (const url of ORACLE_MIRRORS) {
+    try {
+      const text = await downloadCsvUrl(url, new URL(url).hostname);
+      return { text, stamp: `mirror-${ymd(now)}`, url, sourceMode: 'oracle-mirror' };
+    } catch (error) {
+      lastError = error;
+      console.log(error.message);
+    }
+  }
+
+  throw lastError || new Error("Không tải được Oracle's Elixir data từ official snapshot hoặc mirror.");
 }
 
 function buildDirectoryFromOracle(text, source) {
@@ -129,7 +144,7 @@ function buildDirectoryFromOracle(text, source) {
     if (!['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'].includes(role)) continue;
 
     const playerIdRaw = String(get(row, 'playerid')).trim();
-    const playerKey = (playerIdRaw || playerName).toLowerCase();
+    const playerKey = (playerIdRaw || `${playerName}:${teamName}`).toLowerCase();
     const teamIdRaw = String(get(row, 'teamid')).trim();
     const teamId = teamIdRaw || slug(teamName);
     const league = String(get(row, 'league')).trim() || 'PRO';
@@ -145,24 +160,14 @@ function buildDirectoryFromOracle(text, source) {
         id: playerName,
         overviewPage: playerName,
         name: playerName,
-        nativeName: null,
-        image: null,
-        country: null,
-        nationality: null,
-        age: null,
-        birthdate: null,
-        birthYear: null,
-        residency: null,
         role,
-        contract: null,
         latestAt: '',
         latestPatch: null,
         team: null,
         teams: new Set(),
         champions: new Map(),
         games: new Set(),
-        featured: featured.has(playerName.toLowerCase()),
-        socials: { twitter: null, instagram: null, stream: null, youtube: null }
+        featured: featured.has(playerName.toLowerCase())
       };
       players.set(playerKey, p);
     }
@@ -229,17 +234,13 @@ function buildDirectoryFromOracle(text, source) {
         team: p.team,
         currentTeams: [...p.teams],
         favoriteChampions: championPool.map(([name]) => name),
-        championPool: championPool.map(([name, count]) => ({
-          name,
-          count,
-          rate: Number(((count / total) * 100).toFixed(1))
-        })),
-        interestsNote: `Các tướng hiển thị là champion pool từ dữ liệu thi đấu ${new Date().getUTCFullYear()} của Oracle's Elixir, không phải sở thích cá nhân.`,
+        championPool: championPool.map(([name, count]) => ({ name, count, rate: Number(((count / total) * 100).toFixed(1)) })),
+        interestsNote: `Các tướng hiển thị là champion pool từ dữ liệu thi đấu ${yearFromDate(p.latestAt)} của Oracle's Elixir, không phải sở thích cá nhân.`,
         soloqueueIds: null,
         substitute: false,
         trainee: false,
         featured: p.featured,
-        socials: p.socials,
+        socials: { twitter: null, instagram: null, stream: null, youtube: null },
         latestGameAt: p.latestAt || null,
         latestPatch: p.latestPatch,
         games: p.games.size,
@@ -257,12 +258,13 @@ function buildDirectoryFromOracle(text, source) {
 
   return {
     generatedAt: new Date().toISOString(),
-    source: "Oracle's Elixir 2026 professional match data",
-    sourceType: 'community analytics dataset, not Riot official',
-    licenseNote: "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir downloadable match data.",
-    coverage: `Tuyển thủ xuất hiện trong dữ liệu thi đấu chuyên nghiệp ${new Date().getUTCFullYear()} của Oracle's Elixir • snapshot ${source.stamp}.`,
+    source: "Oracle's Elixir professional match data",
+    sourceType: source.sourceMode === 'official-s3' ? 'Oracle official downloadable dataset' : "mirror of Oracle's Elixir dataset",
+    licenseNote: "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
+    coverage: `Tuyển thủ xuất hiện trong dataset Oracle's Elixir • ${playerList.length} tuyển thủ • ${teamList.length} đội.`,
     sourceSnapshot: source.stamp,
     sourceUrl: source.url,
+    sourceMode: source.sourceMode,
     playerCount: playerList.length,
     teamCount: teamList.length,
     regions,
@@ -270,6 +272,11 @@ function buildDirectoryFromOracle(text, source) {
     teams: teamList,
     players: playerList
   };
+}
+
+function yearFromDate(value) {
+  const match = String(value || '').match(/20\d{2}/);
+  return match?.[0] || new Date().getUTCFullYear();
 }
 
 const featured = await loadFeatured();
