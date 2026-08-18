@@ -28,12 +28,40 @@ async function loadStatus() {
   $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(status.metaPatch)} • ${Number(status.sampleGames || 0).toLocaleString('vi-VN')} games`;
 }
 
+async function getPatchData() {
+  let live = null;
+  try {
+    live = await api('/api/patches');
+    if ((live.patches || []).length) return { ...live, sourceMode: 'live' };
+  } catch {}
+
+  try {
+    const cached = await api(`/data/patches.json?v=${Date.now()}`);
+    if ((cached.patches || []).length) return { ...cached, sourceMode: 'cache', liveWarning: live?.warning || null };
+  } catch (error) {
+    if (live) return live;
+    throw error;
+  }
+
+  return live || { patches: [], warning: 'Chưa đọc được Patch Notes.' };
+}
+
 async function loadPatches() {
   if (patchesLoaded) return;
   patchesLoaded = true;
   try {
-    const data = await api('/api/patches');
-    $('#patchGrid').innerHTML = (data.patches || []).length ? data.patches.map((p, i) => `<a class="patch-card" href="${esc(p.url)}" target="_blank" rel="noreferrer"><div class="eyebrow">${i === 0 ? 'LATEST • RIOT GAMES' : 'RIOT GAMES'}</div><div class="patch-num">${esc(p.patch)}</div><p>${esc(p.title)}</p><b>Đọc patch notes ↗</b></a>`).join('') : `<div class="notice">${esc(data.warning || 'Chưa đọc được Patch Notes.')}</div>`;
+    const data = await getPatchData();
+    const rows = data.patches || [];
+    $('#patchGrid').innerHTML = rows.length ? rows.map((p, i) => `<a class="patch-card rich-patch-card" href="${esc(p.url)}" target="_blank" rel="noreferrer">
+      ${p.image ? `<img class="patch-banner" src="${esc(p.image)}" alt="${esc(p.title || `Patch ${p.patch}`)}" loading="lazy">` : ''}
+      <div class="patch-card-body">
+        <div class="eyebrow">${i === 0 ? 'LATEST • RIOT GAMES' : 'RIOT GAMES'}${data.sourceMode === 'cache' ? ' • CACHED' : ''}</div>
+        <div class="patch-num">${esc(p.patch)}</div>
+        <p>${esc(p.title)}</p>
+        ${p.description ? `<small>${esc(p.description)}</small>` : ''}
+        <b>Đọc Patch Notes chính thức ↗</b>
+      </div>
+    </a>`).join('') : `<div class="notice">${esc(data.warning || 'Chưa đọc được Patch Notes.')}</div>`;
   } catch (error) {
     $('#patchGrid').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
