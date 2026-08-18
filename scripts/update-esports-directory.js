@@ -6,207 +6,282 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const output = path.join(root, 'data', 'esports-directory.json');
 const watchFile = path.join(root, 'data', 'pro-watchlist.json');
-const API = 'https://lol.fandom.com/api.php';
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const bool = v => ['1','true','yes'].includes(String(v ?? '').toLowerCase());
-const split = (v, sep = ',') => String(v || '').split(sep).map(x => x.trim()).filter(Boolean);
-const fileUrl = file => file ? `https://lol.fandom.com/wiki/Special:Redirect/file/${encodeURIComponent(file)}` : null;
-const pageUrl = page => page ? `https://lol.fandom.com/wiki/${encodeURIComponent(page).replace(/%2F/g, '/')}` : null;
-const MIN_CARGO_INTERVAL_MS = Math.max(65_000, Number(process.env.LEAGUEPEDIA_INTERVAL_MS || 65_000));
-let lastCargoAt = 0;
-
-async function throttleCargo() {
-  const elapsed = Date.now() - lastCargoAt;
-  if (lastCargoAt && elapsed < MIN_CARGO_INTERVAL_MS) {
-    const wait = MIN_CARGO_INTERVAL_MS - elapsed;
-    console.log(`Tôn trọng Leaguepedia rate limit, chờ ${Math.ceil(wait / 1000)}s...`);
-    await sleep(wait);
-  }
-  lastCargoAt = Date.now();
-}
-
-async function cargoQuery(params) {
-  const query = new URLSearchParams({ action: 'cargoquery', format: 'json', maxlag: '5', ...params });
-  const url = `${API}?${query}`;
-
-  for (let attempt = 0; attempt < 5; attempt++) {
-    await throttleCargo();
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'WebLienMinh/2.0 global-esports-directory (educational project; contact via GitHub DakCuteNe/WebLienMinh)'
-      }
-    });
-
-    if ([429, 502, 503, 504].includes(response.status)) {
-      const retryAfter = Number(response.headers.get('retry-after') || 0);
-      const wait = Math.max(MIN_CARGO_INTERVAL_MS, retryAfter * 1000 || 0);
-      console.log(`Leaguepedia HTTP ${response.status}; chờ ${Math.ceil(wait / 1000)}s rồi thử lại (${attempt + 1}/5)...`);
-      lastCargoAt = Date.now();
-      await sleep(wait);
-      continue;
-    }
-
-    if (!response.ok) throw new Error(`Leaguepedia HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
-
-    const payload = await response.json();
-    if (payload?.error) {
-      const info = String(payload.error.info || payload.error.code || 'Unknown Cargo error');
-      const retryable = /rate limit|too many|maxlag|lagged|temporar/i.test(info);
-      if (retryable && attempt < 4) {
-        console.log(`Leaguepedia tạm giới hạn: ${info}. Chờ ${Math.ceil(MIN_CARGO_INTERVAL_MS / 1000)}s...`);
-        lastCargoAt = Date.now();
-        await sleep(MIN_CARGO_INTERVAL_MS);
-        continue;
-      }
-      throw new Error(`Leaguepedia Cargo: ${info}`);
-    }
-
-    return (payload.cargoquery || []).map(x => x.title || x);
-  }
-
-  throw new Error('Leaguepedia vẫn giới hạn request sau nhiều lần retry theo nhịp 1 request/phút.');
-}
-
-async function cargoPaged(base, maxRows = 2000) {
-  const rows = [];
-  for (let offset = 0; offset < maxRows; offset += 500) {
-    console.log(`Cargo page offset=${offset}...`);
-    const page = await cargoQuery({ ...base, limit: '500', offset: String(offset) });
-    rows.push(...page);
-    if (page.length < 500) break;
-  }
-  return rows;
-}
+const ORACLE_BASE = 'https://oracleselixir-downloadable-match-data.s3-us-west-2.amazonaws.com';
 
 function normalizeRole(value) {
   const role = String(value || '').toLowerCase();
-  if (role.includes('top')) return 'TOP';
-  if (role.includes('jung')) return 'JUNGLE';
-  if (role.includes('mid')) return 'MIDDLE';
-  if (role.includes('bot') || role.includes('adc')) return 'BOTTOM';
-  if (role.includes('sup')) return 'UTILITY';
+  if (role === 'top' || role.includes('top')) return 'TOP';
+  if (role === 'jng' || role.includes('jung')) return 'JUNGLE';
+  if (role === 'mid' || role.includes('mid')) return 'MIDDLE';
+  if (role === 'bot' || role.includes('adc') || role.includes('bottom')) return 'BOTTOM';
+  if (role === 'sup' || role.includes('support')) return 'UTILITY';
   return String(value || '').toUpperCase();
 }
 
-let featured = new Set();
-try {
-  const watch = JSON.parse(await fs.readFile(watchFile, 'utf8'));
-  featured = new Set((watch.players || []).map(x => String(x.name).toLowerCase()));
-} catch {}
-
-console.log('Đang tải danh sách đội tuyển đang hoạt động trên toàn cầu...');
-const teamRows = await cargoPaged({
-  tables: 'Teams=T',
-  fields: [
-    'T.OverviewPage=overviewPage','T.Name=name','T.Short=short','T.Region=region',
-    'T.Location=location','T.TeamLocation=teamLocation','T.Image=image',
-    'T.Website=website','T.Twitter=twitter','T.Instagram=instagram','T.IsDisbanded=isDisbanded'
-  ].join(','),
-  where: 'T.IsDisbanded=0',
-  order_by: 'T.Region ASC,T.Name ASC'
-}, 1500);
-
-const teams = new Map();
-for (const row of teamRows) {
-  if (!row.overviewPage || bool(row.isDisbanded)) continue;
-  teams.set(row.overviewPage, {
-    id: row.overviewPage,
-    name: row.name || row.overviewPage,
-    short: row.short || null,
-    region: row.region || null,
-    location: row.teamLocation || row.location || null,
-    logo: fileUrl(row.image),
-    sourcePage: pageUrl(row.overviewPage),
-    website: row.website || null,
-    socials: {
-      twitter: row.twitter || null,
-      instagram: row.instagram || null
-    }
-  });
+function slug(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'unknown';
 }
 
-console.log('Đang tải tuyển thủ chuyên nghiệp đang hoạt động trên toàn cầu...');
-const playerRows = await cargoPaged({
-  tables: 'Players=P',
-  fields: [
-    'P.ID=id','P.OverviewPage=overviewPage','P.Image=image','P.NameFull=nameFull','P.Name=name',
-    'P.NativeName=nativeName','P.Country=country','P.NationalityPrimary=nationality','P.Age=age',
-    'P.Birthdate=birthdate','P.Team=team','P.CurrentTeams=currentTeams','P.Residency=residency',
-    'P.Role=role','P.Contract=contract','P.FavChamps=favChamps','P.SoloqueueIds=soloqueueIds',
-    'P.Twitter=twitter','P.Instagram=instagram','P.Stream=stream','P.Youtube=youtube',
-    'P.IsSubstitute=isSubstitute','P.IsTrainee=isTrainee','P.IsRetired=isRetired','P.IsPersonality=isPersonality'
-  ].join(','),
-  where: "P.Team != '' AND P.IsRetired=0 AND P.IsPersonality=0",
-  order_by: 'P.Team ASC,P.Role ASC,P.ID ASC'
-}, 2000);
+function parseCsvLine(line) {
+  const out = [];
+  let value = '';
+  let quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (quoted && line[i + 1] === '"') {
+        value += '"';
+        i++;
+      } else {
+        quoted = !quoted;
+      }
+    } else if (ch === ',' && !quoted) {
+      out.push(value);
+      value = '';
+    } else {
+      value += ch;
+    }
+  }
+  out.push(value);
+  return out;
+}
 
-const players = playerRows
-  .filter(row => row.id && row.team && !bool(row.isRetired) && !bool(row.isPersonality))
-  .map(row => {
-    const team = teams.get(row.team) || {
-      id: row.team,
-      name: row.team,
-      short: null,
-      region: row.residency || null,
-      location: null,
-      logo: null,
-      sourcePage: pageUrl(row.team),
-      website: null,
-      socials: {}
-    };
-    return {
-      id: row.id,
-      overviewPage: row.overviewPage || row.id,
-      name: row.nameFull || row.name || row.id,
-      nativeName: row.nativeName || null,
-      image: fileUrl(row.image),
-      country: row.country || null,
-      nationality: row.nationality || null,
-      age: Number(row.age || 0) || null,
-      birthdate: row.birthdate || null,
-      birthYear: row.birthdate ? Number(String(row.birthdate).slice(0, 4)) || null : null,
-      residency: row.residency || null,
-      role: normalizeRole(row.role),
-      contract: row.contract || null,
-      team,
-      currentTeams: split(row.currentTeams),
-      favoriteChampions: split(row.favChamps),
-      interestsNote: row.favChamps
-        ? 'Tướng yêu thích được nhập thủ công trên Leaguepedia; không suy diễn thành sở thích cá nhân ngoài game.'
-        : 'Chưa có dữ liệu sở thích công khai được chuẩn hóa.',
-      soloqueueIds: row.soloqueueIds || null,
-      substitute: bool(row.isSubstitute),
-      trainee: bool(row.isTrainee),
-      featured: featured.has(String(row.id).toLowerCase()),
-      socials: {
-        twitter: row.twitter || null,
-        instagram: row.instagram || null,
-        stream: row.stream || null,
-        youtube: row.youtube || null
-      },
-      sourcePage: pageUrl(row.overviewPage || row.id)
-    };
-  });
+function ymd(date) {
+  return date.toISOString().slice(0, 10).replaceAll('-', '');
+}
 
-const activeTeamIds = new Set(players.map(p => p.team?.id).filter(Boolean));
-const regions = [...new Set(players.map(x => x.team?.region || x.residency).filter(Boolean))].sort();
-const countries = [...new Set(players.map(x => x.country || x.nationality).filter(Boolean))].sort();
-const teamList = [...teams.values()].filter(team => activeTeamIds.has(team.id));
+async function loadFeatured() {
+  try {
+    const watch = JSON.parse(await fs.readFile(watchFile, 'utf8'));
+    return new Set((watch.players || []).map(x => String(x.name || '').toLowerCase()).filter(Boolean));
+  } catch {
+    return new Set();
+  }
+}
 
-const result = {
-  generatedAt: new Date().toISOString(),
-  source: 'Leaguepedia / League of Legends Esports Wiki Cargo',
-  sourceType: 'community-maintained, not Riot official',
-  licenseNote: 'Leaguepedia content is available under CC BY-SA 3.0 unless otherwise noted. Images/logos remain subject to their respective rights holders.',
-  coverage: 'Active professional players with a current team available in the Leaguepedia Players table across all indexed regions.',
-  playerCount: players.length,
-  teamCount: teamList.length,
-  regions,
-  countries,
-  teams: teamList,
-  players
-};
+async function downloadOracleCsv() {
+  const now = new Date();
+  const year = now.getUTCFullYear();
+  let lastError = null;
 
+  // Oracle's Elixir publishes dated snapshots. Try today then walk backwards.
+  for (let daysAgo = 0; daysAgo <= 14; daysAgo++) {
+    const d = new Date(now.getTime() - daysAgo * 86_400_000);
+    const stamp = ymd(d);
+    const url = `${ORACLE_BASE}/${year}_LoL_esports_match_data_from_OraclesElixir_${stamp}.csv`;
+    console.log(`Oracle's Elixir: thử snapshot ${stamp}...`);
+    try {
+      const response = await fetch(url, {
+        headers: { 'User-Agent': 'WebLienMinh/2.2 global-esports-directory' },
+        signal: AbortSignal.timeout(90_000)
+      });
+      if (response.status === 404) continue;
+      if (!response.ok) {
+        lastError = new Error(`Oracle's Elixir HTTP ${response.status}`);
+        continue;
+      }
+      const text = await response.text();
+      if (text.length < 100_000 || !/playername/i.test(text.slice(0, 5000))) {
+        lastError = new Error(`Oracle snapshot ${stamp} không giống CSV esports hợp lệ.`);
+        continue;
+      }
+      console.log(`Đã tải Oracle's Elixir snapshot ${stamp}: ${(text.length / 1024 / 1024).toFixed(1)} MB.`);
+      return { text, stamp, url };
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error("Không tìm thấy Oracle's Elixir snapshot trong 14 ngày gần nhất.");
+}
+
+function buildDirectoryFromOracle(text, source) {
+  const lines = text.split(/\r?\n/).filter(Boolean);
+  if (lines.length < 2) throw new Error('Oracle CSV không có dữ liệu.');
+
+  const header = parseCsvLine(lines[0]).map(x => x.trim().toLowerCase());
+  const index = new Map(header.map((name, i) => [name, i]));
+  const get = (row, name) => row[index.get(name)] ?? '';
+  const required = ['playername', 'teamname', 'position', 'champion', 'date'];
+  for (const col of required) {
+    if (!index.has(col)) throw new Error(`Oracle CSV thiếu cột ${col}.`);
+  }
+
+  const featured = source.featured;
+  const players = new Map();
+  const teams = new Map();
+
+  for (let i = 1; i < lines.length; i++) {
+    const row = parseCsvLine(lines[i]);
+    const playerName = String(get(row, 'playername')).trim();
+    const teamName = String(get(row, 'teamname')).trim();
+    const position = String(get(row, 'position')).trim();
+    const participantId = Number(get(row, 'participantid'));
+    if (!playerName || !teamName || !position) continue;
+    if (Number.isFinite(participantId) && participantId > 10) continue;
+
+    const role = normalizeRole(position);
+    if (!['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'].includes(role)) continue;
+
+    const playerIdRaw = String(get(row, 'playerid')).trim();
+    const playerKey = (playerIdRaw || playerName).toLowerCase();
+    const teamIdRaw = String(get(row, 'teamid')).trim();
+    const teamId = teamIdRaw || slug(teamName);
+    const league = String(get(row, 'league')).trim() || 'PRO';
+    const date = String(get(row, 'date')).trim();
+    const champion = String(get(row, 'champion')).trim();
+    const gameId = String(get(row, 'gameid')).trim();
+    const patch = String(get(row, 'patch')).trim();
+
+    let p = players.get(playerKey);
+    if (!p) {
+      p = {
+        key: playerKey,
+        id: playerName,
+        overviewPage: playerName,
+        name: playerName,
+        nativeName: null,
+        image: null,
+        country: null,
+        nationality: null,
+        age: null,
+        birthdate: null,
+        birthYear: null,
+        residency: null,
+        role,
+        contract: null,
+        latestAt: '',
+        latestPatch: null,
+        team: null,
+        teams: new Set(),
+        champions: new Map(),
+        games: new Set(),
+        featured: featured.has(playerName.toLowerCase()),
+        socials: { twitter: null, instagram: null, stream: null, youtube: null }
+      };
+      players.set(playerKey, p);
+    }
+
+    p.role = role || p.role;
+    p.teams.add(teamName);
+    if (champion) p.champions.set(champion, (p.champions.get(champion) || 0) + 1);
+    if (gameId) p.games.add(gameId);
+
+    if (!p.latestAt || date > p.latestAt) {
+      p.latestAt = date;
+      p.latestPatch = patch || p.latestPatch;
+      p.team = {
+        id: teamId,
+        name: teamName,
+        short: null,
+        region: league,
+        location: null,
+        logo: null,
+        sourcePage: 'https://lol.timsevenhuysen.com/',
+        website: null,
+        socials: {}
+      };
+    }
+
+    const existingTeam = teams.get(teamId);
+    if (!existingTeam || date > existingTeam.latestAt) {
+      teams.set(teamId, {
+        id: teamId,
+        name: teamName,
+        short: null,
+        region: league,
+        location: null,
+        logo: null,
+        sourcePage: 'https://lol.timsevenhuysen.com/',
+        website: null,
+        socials: {},
+        latestAt: date
+      });
+    }
+  }
+
+  const playerList = [...players.values()]
+    .filter(p => p.team && p.games.size > 0)
+    .map(p => {
+      const championPool = [...p.champions.entries()]
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .slice(0, 8);
+      const total = [...p.champions.values()].reduce((a, b) => a + b, 0) || 1;
+      return {
+        id: p.id,
+        overviewPage: p.overviewPage,
+        name: p.name,
+        nativeName: null,
+        image: null,
+        country: null,
+        nationality: null,
+        age: null,
+        birthdate: null,
+        birthYear: null,
+        residency: p.team?.region || null,
+        role: p.role,
+        contract: null,
+        team: p.team,
+        currentTeams: [...p.teams],
+        favoriteChampions: championPool.map(([name]) => name),
+        championPool: championPool.map(([name, count]) => ({
+          name,
+          count,
+          rate: Number(((count / total) * 100).toFixed(1))
+        })),
+        interestsNote: `Các tướng hiển thị là champion pool từ dữ liệu thi đấu ${new Date().getUTCFullYear()} của Oracle's Elixir, không phải sở thích cá nhân.`,
+        soloqueueIds: null,
+        substitute: false,
+        trainee: false,
+        featured: p.featured,
+        socials: p.socials,
+        latestGameAt: p.latestAt || null,
+        latestPatch: p.latestPatch,
+        games: p.games.size,
+        sourcePage: 'https://lol.timsevenhuysen.com/'
+      };
+    })
+    .sort((a, b) => Number(b.featured) - Number(a.featured) || (a.team?.region || '').localeCompare(b.team?.region || '') || a.id.localeCompare(b.id));
+
+  const activeTeamIds = new Set(playerList.map(p => p.team?.id).filter(Boolean));
+  const teamList = [...teams.values()]
+    .filter(t => activeTeamIds.has(t.id))
+    .map(({ latestAt, ...team }) => team)
+    .sort((a, b) => (a.region || '').localeCompare(b.region || '') || a.name.localeCompare(b.name));
+  const regions = [...new Set(playerList.map(p => p.team?.region).filter(Boolean))].sort();
+
+  return {
+    generatedAt: new Date().toISOString(),
+    source: "Oracle's Elixir 2026 professional match data",
+    sourceType: 'community analytics dataset, not Riot official',
+    licenseNote: "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir downloadable match data.",
+    coverage: `Tuyển thủ xuất hiện trong dữ liệu thi đấu chuyên nghiệp ${new Date().getUTCFullYear()} của Oracle's Elixir • snapshot ${source.stamp}.`,
+    sourceSnapshot: source.stamp,
+    sourceUrl: source.url,
+    playerCount: playerList.length,
+    teamCount: teamList.length,
+    regions,
+    countries: [],
+    teams: teamList,
+    players: playerList
+  };
+}
+
+const featured = await loadFeatured();
+console.log("Đang xây dựng Worldwide Esports Directory từ Oracle's Elixir...");
+const source = await downloadOracleCsv();
+source.featured = featured;
+const result = buildDirectoryFromOracle(source.text, source);
+
+if (result.playerCount < 50 || result.teamCount < 10) {
+  throw new Error(`Directory quá nhỏ: ${result.playerCount} tuyển thủ / ${result.teamCount} đội. Không ghi đè dữ liệu cũ.`);
+}
+
+await fs.mkdir(path.dirname(output), { recursive: true });
 await fs.writeFile(output, JSON.stringify(result, null, 2));
-console.log(`Đã tạo ${output}: ${players.length} tuyển thủ, ${teamList.length} đội, ${regions.length} khu vực.`);
+console.log(`Đã tạo ${output}: ${result.playerCount} tuyển thủ, ${result.teamCount} đội, ${result.regions.length} league/khu vực.`);
