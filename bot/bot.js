@@ -104,7 +104,7 @@ async function api(path) {
   try {
     const response = await fetch(`${WEB_API_URL}${path}`, {
       signal: controller.signal,
-      headers: { 'User-Agent': 'RiftMetaVN-DiscordBot/3.0' }
+      headers: { 'User-Agent': 'RiftMetaVN-DiscordBot/3.2' }
     });
     const text = await response.text();
     let body;
@@ -187,6 +187,7 @@ client.on('interactionCreate', async interaction => {
             { name: 'Watcher', value: s.enabled ? '✅ ON' : '⚠️ OFF', inline: true },
             { name: 'Chu kỳ', value: `${s.intervalMinutes} phút`, inline: true },
             { name: 'Channel', value: s.channelId ? `<#${s.channelId}>` : 'Chưa cấu hình', inline: true },
+            { name: 'Đã ghi nhận gửi', value: String(s.notifiedCount || 0), inline: true },
             { name: 'Theo dõi', value: s.types.join(', ') || '—', inline: false },
             { name: 'Lần quét cuối', value: s.lastCheckAt || 'Chưa quét', inline: false },
             { name: 'Lần gửi cuối', value: s.lastSentAt || 'Chưa gửi', inline: false },
@@ -198,12 +199,15 @@ client.on('interactionCreate', async interaction => {
       if (sub === 'check') {
         const result = await newsWatcher.check();
         if (result.error) throw new Error(result.error);
-        return interaction.editReply(`✅ Đã quét Riot News. ${result.fresh || 0} tin mới, ${result.sent || 0} thông báo đã gửi.`);
+        return interaction.editReply(`✅ Đã quét Riot News. ${result.fresh || 0} tin mới, ${result.sent || 0} thông báo đã gửi${result.duplicates ? `, ${result.duplicates} tin trùng đã bỏ qua` : ''}.`);
       }
 
       if (sub === 'latest') {
         const type = interaction.options.getString('type', true);
         const result = await newsWatcher.sendLatest(type);
+        if (result.duplicate) {
+          return interaction.editReply(`ℹ️ Tin **${result.title}** đã được bot thông báo trước đó nên không gửi lại.`);
+        }
         return interaction.editReply(`✅ Đã gửi tin Riot thật mới nhất loại **${type}**:\n**${result.title}**`);
       }
 
