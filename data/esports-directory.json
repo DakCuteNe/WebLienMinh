@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T20:35:11.558Z",
+  "generatedAt": "2026-08-18T21:50:49.035Z",
   "source": "Oracle's Elixir professional match data",
   "sourceType": "mirror of Oracle's Elixir dataset",
   "licenseNote": "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
@@ -2322,7 +2322,7 @@
       "short": null,
       "region": "LPL",
       "location": null,
-      "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/94/All_Gamerslogo_profile.png/revision/latest/scale-to-width-down/359?cb=20260129211216",
+      "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/74/Anyone%27s_Legendlogo_profile.png/revision/latest/scale-to-width-down/520?cb=20260109094155",
       "sourcePage": "https://lol.fandom.com/wiki/Anyone%27s_Legend",
       "website": null,
       "socials": {}
@@ -33005,6 +33005,7 @@
       "displayName": "Erha",
       "canonicalName": "Shi Xu-Ye",
       "identityRegion": "China",
+      "currentTeamName": "WBG",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -49013,6 +49014,7 @@
       "displayName": "Legolas",
       "canonicalName": "Sergio Vicente Gispert",
       "identityRegion": "Spain",
+      "currentTeamName": "Movistar Riders Academy",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -63482,6 +63484,7 @@
       "displayName": "Agresivoo",
       "canonicalName": "Tobiasz Ciba",
       "identityRegion": "Poland",
+      "currentTeamName": "MSF",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -79487,7 +79490,7 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/94/All_Gamerslogo_profile.png/revision/latest/scale-to-width-down/359?cb=20260129211216",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/74/Anyone%27s_Legendlogo_profile.png/revision/latest/scale-to-width-down/520?cb=20260109094155",
         "sourcePage": "https://lol.fandom.com/wiki/Anyone%27s_Legend",
         "website": null,
         "socials": {}
@@ -79604,7 +79607,7 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/94/All_Gamerslogo_profile.png/revision/latest/scale-to-width-down/359?cb=20260129211216",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/74/Anyone%27s_Legendlogo_profile.png/revision/latest/scale-to-width-down/520?cb=20260109094155",
         "sourcePage": "https://lol.fandom.com/wiki/Anyone%27s_Legend",
         "website": null,
         "socials": {}
@@ -79721,7 +79724,7 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/94/All_Gamerslogo_profile.png/revision/latest/scale-to-width-down/359?cb=20260129211216",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/74/Anyone%27s_Legendlogo_profile.png/revision/latest/scale-to-width-down/520?cb=20260109094155",
         "sourcePage": "https://lol.fandom.com/wiki/Anyone%27s_Legend",
         "website": null,
         "socials": {}
@@ -79832,7 +79835,7 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/94/All_Gamerslogo_profile.png/revision/latest/scale-to-width-down/359?cb=20260129211216",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/74/Anyone%27s_Legendlogo_profile.png/revision/latest/scale-to-width-down/520?cb=20260109094155",
         "sourcePage": "https://lol.fandom.com/wiki/Anyone%27s_Legend",
         "website": null,
         "socials": {}
@@ -79949,7 +79952,7 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/94/All_Gamerslogo_profile.png/revision/latest/scale-to-width-down/359?cb=20260129211216",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/74/Anyone%27s_Legendlogo_profile.png/revision/latest/scale-to-width-down/520?cb=20260109094155",
         "sourcePage": "https://lol.fandom.com/wiki/Anyone%27s_Legend",
         "website": null,
         "socials": {}
@@ -82604,6 +82607,7 @@
       "displayName": "Rest",
       "canonicalName": "Hsu Shih-Chieh",
       "identityRegion": "Taiwan",
+      "currentTeamName": "J Team",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -93759,6 +93763,7 @@
       "displayName": "Steller",
       "canonicalName": "Lê Quang Bình",
       "identityRegion": "Vietnam",
+      "currentTeamName": "Secret Whales",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -94882,6 +94887,7 @@
       "displayName": "JimieN",
       "canonicalName": "Tseng Hao-Chun",
       "identityRegion": "Taiwan",
+      "currentTeamName": "FAK",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -99405,6 +99411,7 @@
       "displayName": "Ajwad",
       "canonicalName": "Ajwad Wazzan",
       "identityRegion": "Saudi Arabia",
+      "currentTeamName": "KnockOut Esports",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -112855,6 +112862,7 @@
       "displayName": "Hetel",
       "canonicalName": "Shuya Koyama",
       "identityRegion": "Japan",
+      "currentTeamName": "V3 Esports",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -116319,6 +116327,7 @@
       "displayName": "Kenal",
       "canonicalName": "Mikhail Karpenko",
       "identityRegion": "Russia",
+      "currentTeamName": "Black Star Gaming",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -116436,6 +116445,7 @@
       "displayName": "denyk",
       "canonicalName": "Petr Haramach",
       "identityRegion": "Czech Republic",
+      "currentTeamName": "Misfits Gaming",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -126218,6 +126228,7 @@
       "displayName": "DoubleAiM",
       "canonicalName": "Aleksa Stanković",
       "identityRegion": "Serbia",
+      "currentTeamName": "Flayn Esports",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -151320,6 +151331,7 @@
       "displayName": "Simpy",
       "canonicalName": "Sergi Ruiz Boloix",
       "identityRegion": "Spain",
+      "currentTeamName": "Wizards Club",
       "bioEnriched": true,
       "bioSource": "Leaguepedia player infobox"
     },
@@ -184529,7 +184541,7 @@
       "bioSource": "Leaguepedia player infobox"
     }
   ],
-  "identityEnrichedAt": "2026-08-18T20:35:16.029939Z",
+  "identityEnrichedAt": "2026-08-18T21:50:55.313158Z",
   "identitySource": "GPTilt League of Legends Esports Directory (Leaguepedia-derived, CC BY-SA 3.0)",
   "identitySourceUrl": "https://huggingface.co/datasets/gptilt/lol-esports-entities",
   "identityStatus": {
@@ -184539,8 +184551,8 @@
     "notFound": 139,
     "total": 1726
   },
-  "mediaEnrichedAt": "2026-08-18T20:37:33.861Z",
-  "mediaSource": "Leaguepedia / League of Legends Esports Wiki infobox + MediaWiki images",
+  "mediaEnrichedAt": "2026-08-18T21:53:19.044Z",
+  "mediaSource": "Leaguepedia / League of Legends Esports Wiki current infobox + MediaWiki images",
   "mediaStatus": {
     "players": {
       "enriched": 1471,
@@ -184558,7 +184570,8 @@
     },
     "partial": false
   },
-  "profileAuditAt": "2026-08-18T20:37:34.014Z",
+  "mediaSanitizedAt": "2026-08-18T21:53:19.160Z",
+  "profileAuditAt": "2026-08-18T21:53:19.327Z",
   "profileCoverage": {
     "image": {
       "count": 1058,
