@@ -20,7 +20,6 @@ if (!TOKEN) throw new Error('Thiếu DISCORD_TOKEN');
 if (!CLIENT_ID) throw new Error('Thiếu DISCORD_CLIENT_ID');
 
 const LEGACY_COMMAND_NAMES = new Set(['meta', 'counter', 'build', 'pro', 'patch', 'status']);
-const MANAGED_COMMAND_NAMES = new Set(['notify', ...LEGACY_COMMAND_NAMES]);
 
 const notifyTypeChoices = [
   { name: 'Patch', value: 'patch' },
@@ -60,51 +59,47 @@ function baseEmbed(title) {
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
 
-async function deleteManagedGlobalCommands() {
-  const existing = await rest.get(Routes.applicationCommands(CLIENT_ID));
-  let removed = 0;
-  for (const command of existing) {
-    if (!MANAGED_COMMAND_NAMES.has(command.name)) continue;
-    await rest.delete(Routes.applicationCommand(CLIENT_ID, command.id));
-    removed += 1;
-  }
-  return removed;
+async function clearAllGlobalCommands() {
+  await rest.put(Routes.applicationCommands(CLIENT_ID), { body: [] });
 }
 
-async function deleteManagedGuildCommands(guildId) {
-  const existing = await rest.get(Routes.applicationGuildCommands(CLIENT_ID, guildId));
-  let removed = 0;
-  for (const command of existing) {
-    if (!MANAGED_COMMAND_NAMES.has(command.name)) continue;
-    await rest.delete(Routes.applicationGuildCommand(CLIENT_ID, guildId, command.id));
-    removed += 1;
-  }
-  return removed;
+async function clearAllGuildCommands(guildId) {
+  await rest.put(Routes.applicationGuildCommands(CLIENT_ID, guildId), { body: [] });
 }
 
 async function registerCommands() {
   if (GUILD_ID) {
-    const removedGlobal = await deleteManagedGlobalCommands();
+    // Hard-reset every old global command first. Then overwrite the target guild
+    // with the one command we still support. This also removes unknown legacy
+    // commands whose names are no longer present in the repository.
+    await clearAllGlobalCommands();
     await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), { body: commands });
-    console.log(`Đã đăng ký duy nhất /notify cho guild ${GUILD_ID}. Đã dọn ${removedGlobal} managed global command.`);
+    console.log(`Đã hard-reset global commands và đăng ký duy nhất /notify cho guild ${GUILD_ID}.`);
     return;
   }
 
+  // Bulk overwrite is also the cleanup operation: every unknown/old global
+  // command is removed and the final global list becomes exactly [/notify].
   await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
-  console.log('Đã đăng ký duy nhất /notify ở global scope.');
+  console.log('Đã hard-reset global command list: chỉ còn /notify.');
 }
 
-async function cleanupOppositeGuildScopes(client) {
-  if (GUILD_ID) return;
-  let removed = 0;
+async function cleanupGuildCommandScopes(client) {
+  let cleared = 0;
   for (const guild of client.guilds.cache.values()) {
+    // The configured guild already got an exact overwrite in registerCommands().
+    if (GUILD_ID && guild.id === GUILD_ID) continue;
     try {
-      removed += await deleteManagedGuildCommands(guild.id);
+      await clearAllGuildCommands(guild.id);
+      cleared += 1;
     } catch (error) {
-      console.warn(`Không dọn được guild commands ở ${guild.id}:`, error?.message || error);
+      console.warn(`Không hard-reset được guild commands ở ${guild.id}:`, error?.message || error);
     }
   }
-  if (removed) console.log(`Đã dọn ${removed} managed guild command cũ khỏi các guild bot đang tham gia.`);
+
+  if (cleared) {
+    console.log(`Đã hard-reset guild command scope ở ${cleared} guild; command cũ không còn được giữ lại.`);
+  }
 }
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -115,8 +110,8 @@ client.once('ready', async () => {
   console.log(`Nô lệ đã tỉnh dậy và làm việc — ${client.user.tag}`);
   client.user.setActivity('Riot News & Meta • /notify');
 
-  try { await cleanupOppositeGuildScopes(client); }
-  catch (error) { console.error('Không dọn được slash command scope cũ:', error); }
+  try { await cleanupGuildCommandScopes(client); }
+  catch (error) { console.error('Không hard-reset được slash command scope cũ:', error); }
 
   try { await newsWatcher.start(); }
   catch (error) { console.error('Không khởi động được Riot News Watcher:', error); }
@@ -128,6 +123,9 @@ client.once('ready', async () => {
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
+  // Transitional fallback while a Discord client is still showing a cached
+  // command during propagation. The registered command list itself is already
+  // hard-reset by registerCommands()/cleanupGuildCommandScopes().
   if (LEGACY_COMMAND_NAMES.has(interaction.commandName)) {
     return interaction.reply({
       content: 'ℹ️ Lệnh này đã được gỡ. Bot hiện chỉ dùng `/notify` để quản lý hệ thống thông báo tự động.',
@@ -193,7 +191,7 @@ client.on('interactionCreate', async interaction => {
 
     return interaction.editReply('Lệnh `/notify` chưa hỗ trợ tác vụ này.');
   } catch (error) {
-    console.error(`[/notify]`, error);
+    console.error('[/notify]', error);
     const message = error?.name === 'AbortError' ? 'Website API phản hồi quá lâu.' : error?.message || 'Có lỗi khi xử lý lệnh.';
     return interaction.editReply(`❌ ${message}`);
   }
