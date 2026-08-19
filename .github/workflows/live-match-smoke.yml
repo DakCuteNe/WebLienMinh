@@ -74,12 +74,14 @@ jobs:
           node --check public/js/assets.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
-      - name: Verify Together as 1 v2 only
+      - name: Verify Together as 1 v3 only
         run: |
-          grep -q 'together-finisher-v2' public/js/together-finisher.js
-          grep -q 'together-finisher-v2' public/together-finisher.css
-          if grep -q 'worlds-takeover' public/js/site-effects.js public/site-effects.css; then
-            echo 'Legacy Worlds takeover is still present.'
+          grep -q 'together-finisher-v3' public/js/together-finisher.js
+          grep -q 'together-finisher-v3' public/together-finisher.css
+          grep -q 'TOGETHER_FINISHER_DURATION = 6200' public/js/together-finisher.js
+          grep -q "APP_VERSION = '3.12.0'" public/app.js
+          if grep -Eq 'together-finisher-v2|worlds-takeover' public/js/together-finisher.js public/together-finisher.css public/js/site-effects.js public/site-effects.css; then
+            echo 'Legacy Together v2 / Worlds takeover markup is still present.'
             exit 1
           fi
       - name: Start WebLienMinh
