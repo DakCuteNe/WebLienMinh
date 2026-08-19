@@ -53,13 +53,14 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 .hero-actions .primary,.hero-actions .secondary{min-height:46px}
 
 button,.primary,.secondary,.detail-btn,.feature-card,.asset-tab{position:relative;-webkit-tap-highlight-color:transparent}
-.primary,.secondary,.detail-btn,.preferences-btn,.asset-tab{transition:transform .2s var(--ux-ease),box-shadow .22s ease,border-color .22s ease,filter .22s ease,background .22s ease}
+.primary,.secondary,.detail-btn,.preferences-btn,.asset-tab{overflow:hidden;transition:transform .2s var(--ux-ease),box-shadow .22s ease,border-color .22s ease,filter .22s ease,background .22s ease}
 .primary:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 10px 30px rgba(196,153,66,.22)}
 .secondary:hover,.detail-btn:hover,.preferences-btn:hover,.asset-tab:hover{transform:translateY(-2px);border-color:rgba(76,230,214,.25);box-shadow:0 10px 24px rgba(0,0,0,.18)}
 button:active,.primary:active,.secondary:active,.detail-btn:active{transform:translateY(0) scale(.985)}
 .ux-ripple{position:absolute;z-index:3;pointer-events:none;border-radius:50%;width:10px;height:10px;background:rgba(255,255,255,.32);transform:translate(-50%,-50%) scale(0);animation:uxRipple .58s ease-out forwards}
 
-.intel-card,.feature-card,.player-card,.profile-card,.patch-card,.analysis-card,.matchup-box,.table-wrap,.counter-search.panel,.asset-card{border-color:var(--ux-border);box-shadow:0 14px 44px rgba(0,0,0,.12);transition:border-color .28s ease,box-shadow .3s ease,transform .3s var(--ux-ease),background .3s ease}
+.intel-card,.feature-card,.player-card,.profile-card,.patch-card,.analysis-card,.matchup-box,.table-wrap,.counter-search.panel,.asset-card{position:relative;border-color:var(--ux-border);box-shadow:0 14px 44px rgba(0,0,0,.12);transition:border-color .28s ease,box-shadow .3s ease,transform .3s var(--ux-ease),background .3s ease}
+.feature-card,.player-card,.intel-card,.profile-card{overflow:hidden}
 .intel-card:hover,.feature-card:hover,.player-card:hover,.profile-card:hover,.patch-card:hover,.analysis-card:hover,.matchup-box:hover,.asset-card:hover{border-color:rgba(92,225,211,.24);box-shadow:0 22px 58px rgba(0,0,0,.22)}
 .feature-card,.player-card,.patch-card,.intel-card,.profile-card{--ux-px:50%;--ux-py:50%}
 .feature-card::before,.player-card::before,.intel-card::before,.profile-card::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(280px circle at var(--ux-px) var(--ux-py),rgba(93,232,217,.09),transparent 62%);transition:opacity .28s ease;z-index:0}
