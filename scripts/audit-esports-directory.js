@@ -22,6 +22,8 @@ const hasStats = p => Number(p.games || 0) > 0 && Number.isFinite(Number(p.winRa
 const hasTeamLogo = p => has(p.team?.logo);
 const completeCore = p => has(p.image) && realName(p) && has(p.country || p.nationality) && has(p.birthdate);
 const looksLikeRosterOrPoster = value => /(?:^|[_\s/%-])(roster|lineup|team[ _-]?photo|teamphoto|poster|squad|players?)(?:[_\s./?&%-]|$)/i.test(decodeURIComponent(String(value || '')));
+const looksLegacy = value => /(?:^|[_\s/%-])(old|oldlogo|legacy|former|previous|archive|archived|retired)(?:[_\s./?&%-]|$)|old[_ -]?logo/i.test(decodeURIComponent(String(value || '')));
+const majorRegions = new Set((directory.majorMediaRefresh?.regions || ['LCK','LPL','LEC','LCS','LCP','VCS']).map(x => String(x).toUpperCase()));
 
 const fields = {
   image: p => has(p.image),
@@ -40,7 +42,7 @@ const fields = {
 };
 
 const counts = Object.fromEntries(Object.entries(fields).map(([name, fn]) => [name, players.filter(fn).length]));
-const pct = n => Number(((n / Math.max(1, players.length)) * 100).toFixed(1));
+const pct = (n, total = players.length) => Number(((n / Math.max(1, total)) * 100).toFixed(1));
 const coverage = Object.fromEntries(Object.entries(counts).map(([name, count]) => [name, { count, pct: pct(count) }]));
 
 const missing = {};
@@ -111,13 +113,52 @@ for (const target of watch.players || []) {
 }
 const pinnedProfileFailures = pinnedProfileChecks.filter(check => !check.ok);
 
+// Major-region current-media audit. The refresh stage intentionally targets active major-region
+// rosters first, and curated overrides run afterwards for known stale upstream assets.
+const majorRefresh = directory.majorMediaRefresh || null;
+const majorTeams = teams.filter(team => majorRegions.has(String(team.region || '').toUpperCase()));
+const majorActivePlayers = majorRefresh
+  ? players.filter(player => majorRegions.has(String(player.team?.region || '').toUpperCase()) && has(player.currentMediaRefreshedAt) || has(player.profileOverrideAppliedAt))
+  : [];
+const refreshedMajorTeams = majorTeams.filter(team => has(team.currentMediaRefreshedAt) || has(team.logoOverrideAppliedAt));
+const refreshedMajorPlayers = players.filter(player => majorRegions.has(String(player.team?.region || '').toUpperCase()) && (has(player.currentMediaRefreshedAt) || has(player.profileOverrideAppliedAt)));
+const majorLegacyTeamLogos = majorTeams.filter(team => looksLegacy(team.currentMediaFile || team.logo)).map(team => ({
+  id: team.id, name: team.name, region: team.region, logo: team.logo, file: team.currentMediaFile || null
+}));
+const majorLegacyPlayerImages = refreshedMajorPlayers.filter(player => looksLegacy(player.currentMediaFile || player.image)).map(player => ({
+  id: player.id, uid: player.uid || null, team: player.team?.name || null, region: player.team?.region || null, image: player.image, file: player.currentMediaFile || null
+}));
+const majorMedia = {
+  regions: [...majorRegions],
+  refreshPresent: Boolean(majorRefresh),
+  activeDays: majorRefresh?.activeDays || null,
+  teamTarget: Number(majorRefresh?.teamTotal || majorTeams.length),
+  teamUpdated: Number(majorRefresh?.teamUpdated || refreshedMajorTeams.length),
+  teamUpdatedPct: pct(Number(majorRefresh?.teamUpdated || refreshedMajorTeams.length), Number(majorRefresh?.teamTotal || majorTeams.length)),
+  playerTarget: Number(majorRefresh?.activePlayerTotal || 0),
+  playerUpdated: Number(majorRefresh?.playerUpdated || refreshedMajorPlayers.length),
+  playerUpdatedPct: pct(Number(majorRefresh?.playerUpdated || refreshedMajorPlayers.length), Number(majorRefresh?.activePlayerTotal || 0)),
+  teamUnresolved: Number(majorRefresh?.teamUnresolved || 0),
+  playerUnresolved: Number(majorRefresh?.playerUnresolved || 0),
+  legacyTeamLogoCount: majorLegacyTeamLogos.length,
+  legacyPlayerImageCount: majorLegacyPlayerImages.length
+};
+
+const majorMediaFailures = [];
+if (!majorRefresh) majorMediaFailures.push('major current-media refresh did not run');
+if (majorRefresh && majorMedia.teamTarget > 0 && majorMedia.teamUpdatedPct < 80) majorMediaFailures.push(`major team logo refresh below 80% (${majorMedia.teamUpdatedPct}%)`);
+if (majorRefresh && majorMedia.playerTarget > 0 && majorMedia.playerUpdatedPct < 70) majorMediaFailures.push(`major active-player image refresh below 70% (${majorMedia.playerUpdatedPct}%)`);
+if (majorLegacyTeamLogos.length) majorMediaFailures.push(`legacy major team logos remain=${majorLegacyTeamLogos.length}`);
+if (majorLegacyPlayerImages.length) majorMediaFailures.push(`legacy major player images remain=${majorLegacyPlayerImages.length}`);
+
 const countries = [...new Set(players.map(p => p.country || p.nationality).filter(has))].sort();
 directory.countries = countries;
 directory.profileAuditAt = new Date().toISOString();
 directory.profileCoverage = coverage;
 directory.profileIntegrity = {
   invalidTeamLogoCount: invalidTeamLogos.length,
-  pinnedProfileFailureCount: pinnedProfileFailures.length
+  pinnedProfileFailureCount: pinnedProfileFailures.length,
+  majorMediaFailureCount: majorMediaFailures.length
 };
 await fs.writeFile(input, JSON.stringify(directory, null, 2));
 
@@ -137,6 +178,10 @@ const audit = {
   pinnedProfileChecks,
   pinnedProfileFailureCount: pinnedProfileFailures.length,
   pinnedProfileFailures,
+  majorMedia,
+  majorMediaFailures,
+  majorLegacyTeamLogos,
+  majorLegacyPlayerImages,
   byRegion,
   missingCounts: Object.fromEntries(Object.entries(missing).map(([k, v]) => [k, v.length])),
   missing
@@ -151,9 +196,11 @@ console.log('Esports audit:', JSON.stringify({
   duplicateIdCount: duplicateIds.length,
   invalidTeamLogoCount: invalidTeamLogos.length,
   pinnedProfileFailureCount: pinnedProfileFailures.length,
+  majorMedia,
+  majorMediaFailures,
   pinnedProfileChecks
 }, null, 2));
 
-if (invalidTeamLogos.length || pinnedProfileFailures.length) {
-  throw new Error(`Esports profile integrity failed: invalid team logos=${invalidTeamLogos.length}, pinned profile failures=${pinnedProfileFailures.length}.`);
+if (invalidTeamLogos.length || pinnedProfileFailures.length || majorMediaFailures.length) {
+  throw new Error(`Esports profile integrity failed: invalid team logos=${invalidTeamLogos.length}, pinned profile failures=${pinnedProfileFailures.length}, major media failures=${majorMediaFailures.length}.`);
 }
