@@ -1,0 +1,58 @@
+name: Live Match Smoke
+
+on:
+  pull_request:
+    paths:
+      - 'server/esports-match-live.js'
+      - 'server/esports-match-bootstrap.js'
+      - 'public/js/match-live.js'
+      - 'public/match-live.css'
+      - 'scripts/smoke-live-match.js'
+      - 'package.json'
+      - '.github/workflows/live-match-smoke.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'server/esports-match-live.js'
+      - 'server/esports-match-bootstrap.js'
+      - 'public/js/match-live.js'
+      - 'public/match-live.css'
+      - 'scripts/smoke-live-match.js'
+      - 'package.json'
+      - '.github/workflows/live-match-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Syntax check
+        run: |
+          node --check server/esports-match-live.js
+          node --check server/esports-match-bootstrap.js
+          node --check public/js/match-live.js
+          node --check scripts/smoke-live-match.js
+      - name: Start WebLienMinh
+        run: |
+          npm start > /tmp/weblienminh.log 2>&1 &
+          echo $! > /tmp/weblienminh.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/api/status >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/weblienminh.log
+          exit 1
+      - name: Resolve official upcoming match through live endpoint
+        run: node scripts/smoke-live-match.js
+      - name: Server log
+        if: always()
+        run: cat /tmp/weblienminh.log || true
