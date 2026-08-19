@@ -3,8 +3,10 @@ import { initMeta } from './js/meta.js';
 import { initAssets, ensureAssets } from './js/assets.js';
 import { initEsports, ensureEsports } from './js/esports.js';
 import { initIntelligence } from './js/intelligence.js';
+import { getLanguage, initI18n, locale, onLanguageChange, t } from './js/i18n.js';
+import { initPreferences } from './js/preferences.js';
 
-const APP_VERSION = '2.5.1';
+const APP_VERSION = '2.6.0';
 let patchesLoaded = false;
 
 function applyVersionBranding() {
@@ -30,12 +32,14 @@ document.addEventListener('rift:navigate', event => switchSection(event.detail))
 async function loadStatus() {
   const status = await api('/api/status');
   const publicPatch = publicMetaPatch(status.metaPatch);
+  const numberLocale = locale();
   $('#patchLive').textContent = status.metaPatch === 'live-data' ? 'LIVE' : publicPatch;
-  $('#sampleGames').textContent = Number(status.sampleGames || 0).toLocaleString('vi-VN');
-  $('#globalPlayers').textContent = Number(status.esportsPlayers || 0).toLocaleString('vi-VN');
-  $('#globalTeams').textContent = Number(status.esportsTeams || 0).toLocaleString('vi-VN');
+  $('#sampleGames').textContent = Number(status.sampleGames || 0).toLocaleString(numberLocale);
+  $('#globalPlayers').textContent = Number(status.esportsPlayers || 0).toLocaleString(numberLocale);
+  $('#globalTeams').textContent = Number(status.esportsTeams || 0).toLocaleString(numberLocale);
   const scope = status.metaScope === 'GLOBAL' || String(status.metaMode || '').toLowerCase().includes('global') ? 'GLOBAL' : (status.platform || 'DATA').toUpperCase();
-  $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(publicPatch)} • ${Number(status.sampleGames || 0).toLocaleString('vi-VN')} games`;
+  const gameWord = getLanguage() === 'vi' ? 'trận' : 'games';
+  $('#statusBadge').innerHTML = `<span></span> ${scope} • Patch ${esc(publicPatch)} • ${Number(status.sampleGames || 0).toLocaleString(numberLocale)} ${gameWord}`;
 }
 
 async function getPatchData() {
@@ -64,7 +68,7 @@ async function getPatchData() {
     return { ...cached, sourceMode: 'cache', liveWarning: live?.warning || null };
   }
 
-  return live || cached || { patches: [], warning: 'Chưa đọc được Patch Notes.' };
+  return live || cached || { patches: [], warning: t('patchUnavailable') };
 }
 
 async function loadPatches() {
@@ -76,25 +80,37 @@ async function loadPatches() {
     $('#patchGrid').innerHTML = rows.length ? rows.map((p, i) => `<a class="patch-card rich-patch-card" href="${esc(p.url)}" target="_blank" rel="noreferrer">
       ${p.image ? `<img class="patch-banner" src="${esc(p.image)}" alt="${esc(p.title || `Patch ${p.patch}`)}" loading="lazy">` : ''}
       <div class="patch-card-body">
-        <div class="eyebrow">${i === 0 ? 'LATEST • RIOT GAMES' : 'RIOT GAMES'}${data.sourceMode === 'cache' ? ' • CACHED' : ''}</div>
+        <div class="eyebrow">${i === 0 ? t('latestRiot') : t('riotGames')}${data.sourceMode === 'cache' ? ` • ${t('cached')}` : ''}</div>
         <div class="patch-num">${esc(p.patch)}</div>
         <p>${esc(p.title)}</p>
         ${p.description ? `<small>${esc(p.description)}</small>` : ''}
-        <b>Đọc Patch Notes chính thức ↗</b>
+        <b>${esc(t('readPatch'))}</b>
       </div>
-    </a>`).join('') : `<div class="notice">${esc(data.warning || 'Chưa đọc được Patch Notes.')}</div>`;
+    </a>`).join('') : `<div class="notice">${esc(data.warning || t('patchUnavailable'))}</div>`;
   } catch (error) {
     $('#patchGrid').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
 }
 
 async function boot() {
+  initI18n();
   applyVersionBranding();
   initModal();
   initAssets();
   initEsports();
+  initPreferences();
+
   $$('.nav-btn').forEach(button => button.onclick = () => switchSection(button.dataset.section));
   $$('[data-go]').forEach(button => button.onclick = () => switchSection(button.dataset.go));
+
+  onLanguageChange(() => {
+    applyVersionBranding();
+    loadStatus().catch(() => {});
+    if (patchesLoaded) {
+      patchesLoaded = false;
+      loadPatches().catch(() => {});
+    }
+  });
 
   const hash = location.hash.replace('#', '');
   try {
@@ -102,7 +118,7 @@ async function boot() {
     if (hash && document.getElementById(hash)) switchSection(hash);
   } catch (error) {
     console.error(error);
-    $('#statusBadge').innerHTML = '<span class="error-dot"></span> Lỗi đồng bộ';
+    $('#statusBadge').innerHTML = `<span class="error-dot"></span> ${esc(t('syncError'))}`;
   }
 }
 
