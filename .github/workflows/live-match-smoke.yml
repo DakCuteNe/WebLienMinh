@@ -74,6 +74,14 @@ jobs:
           node --check public/js/assets.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
+      - name: Verify Together as 1 v2 only
+        run: |
+          grep -q 'together-finisher-v2' public/js/together-finisher.js
+          grep -q 'together-finisher-v2' public/together-finisher.css
+          if grep -q 'worlds-takeover' public/js/site-effects.js public/site-effects.css; then
+            echo 'Legacy Worlds takeover is still present.'
+            exit 1
+          fi
       - name: Start WebLienMinh
         run: |
           npm start > /tmp/weblienminh.log 2>&1 &
