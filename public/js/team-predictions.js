@@ -231,15 +231,14 @@ function attach(card) {
     existing?.remove();
     return;
   }
-  if (!model) return;
+  if (existing || !model) return;
   const event = cardEvent(card);
   if (!event) return;
   const prediction = model.predict(event);
   if (!prediction) return;
 
   const node = predictionNode(event, prediction);
-  if (existing) existing.replaceWith(node);
-  else card.querySelector('.schedule-match-main')?.insertAdjacentElement('afterend', node);
+  card.querySelector('.schedule-match-main')?.insertAdjacentElement('afterend', node);
 }
 
 function scan() {
