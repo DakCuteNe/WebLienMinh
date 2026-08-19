@@ -1,3 +1,5 @@
+import { locale } from './i18n.js';
+
 if (!document.querySelector('link[data-rift-v2]')) {
   const theme = document.createElement('link');
   theme.rel = 'stylesheet';
@@ -12,7 +14,7 @@ export const roleName = { TOP:'TOP', JUNGLE:'JUNGLE', MIDDLE:'MID', BOTTOM:'ADC'
 export const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
 export const fmt = n => Number(n || 0).toFixed(1) + '%';
 export const score = n => Number(n || 0).toFixed(1);
-export const number = n => Number(n || 0).toLocaleString('vi-VN');
+export const number = n => Number(n || 0).toLocaleString(locale());
 
 // Riot's 2026 public patch label is 26.x while Data Dragon / Match-V5 build data uses 16.x.
 // Keep the internal value untouched and convert only where the UI presents Meta data to users.
