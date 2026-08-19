@@ -14,7 +14,7 @@ import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
 import { initSiteEffects, triggerSectionEffect } from './js/site-effects.js';
 
-const APP_VERSION = '3.9.0';
+const APP_VERSION = '3.10.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
