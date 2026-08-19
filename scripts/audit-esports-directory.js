@@ -16,6 +16,10 @@ try { watch = JSON.parse(await fs.readFile(watchFile, 'utf8')); } catch {}
 
 const has = v => v != null && String(v).trim() !== '';
 const norm = v => String(v || '').trim().replaceAll('_', ' ').toLowerCase();
+const normMedia = value => String(value || '')
+  .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .replaceAll('_', ' ').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const mediaWords = value => new Set(normMedia(value).split(/\s+/).filter(Boolean));
 const realName = p => has(p.name) && norm(p.name) !== norm(p.id);
 const hasSocial = p => Object.values(p.socials || {}).some(has);
 const hasStats = p => Number(p.games || 0) > 0 && Number.isFinite(Number(p.winRate)) && Number.isFinite(Number(p.kda));
@@ -24,6 +28,39 @@ const completeCore = p => has(p.image) && realName(p) && has(p.country || p.nati
 const looksLikeRosterOrPoster = value => /(?:^|[_\s/%-])(roster|lineup|team[ _-]?photo|teamphoto|poster|squad|players?)(?:[_\s./?&%-]|$)/i.test(decodeURIComponent(String(value || '')));
 const looksLegacy = value => /(?:^|[_\s/%-])(old|oldlogo|legacy|former|previous|archive|archived|retired)(?:[_\s./?&%-]|$)|old[_ -]?logo/i.test(decodeURIComponent(String(value || '')));
 const majorRegions = new Set((directory.majorMediaRefresh?.regions || ['LCK','LPL','LEC','LCS','LCP','VCS']).map(x => String(x).toUpperCase()));
+const currentYear = Number(directory.majorMediaRefresh?.currentYear || new Date().getUTCFullYear());
+
+function distinctiveTeamWords(team) {
+  const ignored = new Set(['team', 'gaming', 'esports', 'esport', 'club', 'academy', 'challengers']);
+  const out = [...mediaWords(team.name)].filter(x => !ignored.has(x) && x.length >= 2);
+  if (team.short) out.push(...mediaWords(team.short));
+  const acronym = String(team.name || '').split(/\s+/).filter(Boolean).map(x => x[0]).join('').toLowerCase();
+  if (acronym.length >= 2) out.push(acronym);
+  return [...new Set(out)];
+}
+
+function isTeamEventAsset(value) {
+  const text = normMedia(value);
+  return /\b(kickoff|kickoffs|home ground|lock in|lockin|split|winter|spring|summer|season|tournament|championship|cup|msi|worlds|first stand|event)\b/.test(text);
+}
+
+function teamLogoIdentityMatches(team, value) {
+  const filename = String(value || '').replace(/^File:/i, '').replace(/logo/ig, ' logo ');
+  const candidateTokens = normMedia(filename).split(/\s+/).filter(Boolean);
+  const candidateText = ` ${candidateTokens.join(' ')} `;
+  const fullTeamTokens = [...mediaWords(team.name)];
+  const distinct = distinctiveTeamWords(team);
+  if (!distinct.some(token => candidateText.includes(` ${normMedia(token)} `))) return false;
+
+  const allowed = new Set([
+    ...fullTeamTokens,
+    ...distinct.map(normMedia),
+    'logo','profile','square','icon','crest','wordmark','emblem','mark','official','transparent','new','std','standard',
+    'lck','lpl','lec','lcs','lcp','vcs', String(currentYear), String(currentYear - 1)
+  ]);
+  const extras = candidateTokens.filter(token => token.length > 1 && !allowed.has(token));
+  return extras.length === 0;
+}
 
 const fields = {
   image: p => has(p.image),
@@ -113,24 +150,53 @@ for (const target of watch.players || []) {
 }
 const pinnedProfileFailures = pinnedProfileChecks.filter(check => !check.ok);
 
-// Major-region current-media audit. The refresh stage intentionally targets active major-region
-// rosters first, and curated overrides run afterwards for known stale upstream assets.
+// Major-region current-media audit. Curated overrides are allowed to supersede an upstream file,
+// otherwise an automatically selected logo must belong to the exact current team identity.
 const majorRefresh = directory.majorMediaRefresh || null;
 const majorTeams = teams.filter(team => majorRegions.has(String(team.region || '').toUpperCase()));
-const majorActivePlayers = majorRefresh
-  ? players.filter(player => majorRegions.has(String(player.team?.region || '').toUpperCase()) && has(player.currentMediaRefreshedAt) || has(player.profileOverrideAppliedAt))
-  : [];
 const refreshedMajorTeams = majorTeams.filter(team => has(team.currentMediaRefreshedAt) || has(team.logoOverrideAppliedAt));
 const refreshedMajorPlayers = players.filter(player => majorRegions.has(String(player.team?.region || '').toUpperCase()) && (has(player.currentMediaRefreshedAt) || has(player.profileOverrideAppliedAt)));
-const majorLegacyTeamLogos = majorTeams.filter(team => looksLegacy(team.currentMediaFile || team.logo)).map(team => ({
-  id: team.id, name: team.name, region: team.region, logo: team.logo, file: team.currentMediaFile || null
+
+const majorMismatchedTeamLogos = majorTeams
+  .filter(team => has(team.currentMediaRefreshedAt) && !has(team.logoOverrideAppliedAt))
+  .filter(team => !has(team.currentMediaFile) || !teamLogoIdentityMatches(team, team.currentMediaFile) || isTeamEventAsset(team.currentMediaFile))
+  .map(team => ({
+    id: team.id,
+    name: team.name,
+    region: team.region,
+    logo: team.logo || null,
+    file: team.currentMediaFile || null
+  }));
+
+const majorLegacyTeamLogos = majorTeams.filter(team => {
+  const effective = has(team.logoOverrideAppliedAt) ? team.preferredLogo : (team.currentMediaFile || team.logo);
+  return looksLegacy(effective);
+}).map(team => ({
+  id: team.id,
+  name: team.name,
+  region: team.region,
+  logo: team.logo,
+  file: team.currentMediaFile || null,
+  curatedOverride: has(team.logoOverrideAppliedAt)
 }));
-const majorLegacyPlayerImages = refreshedMajorPlayers.filter(player => looksLegacy(player.currentMediaFile || player.image)).map(player => ({
-  id: player.id, uid: player.uid || null, team: player.team?.name || null, region: player.team?.region || null, image: player.image, file: player.currentMediaFile || null
+
+const majorLegacyPlayerImages = refreshedMajorPlayers.filter(player => {
+  const effective = has(player.profileOverrideAppliedAt) ? player.preferredImage : (player.currentMediaFile || player.image);
+  return looksLegacy(effective);
+}).map(player => ({
+  id: player.id,
+  uid: player.uid || null,
+  team: player.team?.name || null,
+  region: player.team?.region || null,
+  image: player.image,
+  file: player.currentMediaFile || null,
+  curatedOverride: has(player.profileOverrideAppliedAt)
 }));
+
 const majorMedia = {
   regions: [...majorRegions],
   refreshPresent: Boolean(majorRefresh),
+  strategy: majorRefresh?.strategy || null,
   activeDays: majorRefresh?.activeDays || null,
   teamTarget: Number(majorRefresh?.teamTotal || majorTeams.length),
   teamUpdated: Number(majorRefresh?.teamUpdated || refreshedMajorTeams.length),
@@ -140,6 +206,8 @@ const majorMedia = {
   playerUpdatedPct: pct(Number(majorRefresh?.playerUpdated || refreshedMajorPlayers.length), Number(majorRefresh?.activePlayerTotal || 0)),
   teamUnresolved: Number(majorRefresh?.teamUnresolved || 0),
   playerUnresolved: Number(majorRefresh?.playerUnresolved || 0),
+  fallbackPlayerSearches: Number(majorRefresh?.fallbackPlayerSearches || 0),
+  mismatchedTeamLogoCount: majorMismatchedTeamLogos.length,
   legacyTeamLogoCount: majorLegacyTeamLogos.length,
   legacyPlayerImageCount: majorLegacyPlayerImages.length
 };
@@ -148,6 +216,7 @@ const majorMediaFailures = [];
 if (!majorRefresh) majorMediaFailures.push('major current-media refresh did not run');
 if (majorRefresh && majorMedia.teamTarget > 0 && majorMedia.teamUpdatedPct < 80) majorMediaFailures.push(`major team logo refresh below 80% (${majorMedia.teamUpdatedPct}%)`);
 if (majorRefresh && majorMedia.playerTarget > 0 && majorMedia.playerUpdatedPct < 70) majorMediaFailures.push(`major active-player image refresh below 70% (${majorMedia.playerUpdatedPct}%)`);
+if (majorMismatchedTeamLogos.length) majorMediaFailures.push(`major team logo identity mismatches=${majorMismatchedTeamLogos.length}`);
 if (majorLegacyTeamLogos.length) majorMediaFailures.push(`legacy major team logos remain=${majorLegacyTeamLogos.length}`);
 if (majorLegacyPlayerImages.length) majorMediaFailures.push(`legacy major player images remain=${majorLegacyPlayerImages.length}`);
 
@@ -158,7 +227,8 @@ directory.profileCoverage = coverage;
 directory.profileIntegrity = {
   invalidTeamLogoCount: invalidTeamLogos.length,
   pinnedProfileFailureCount: pinnedProfileFailures.length,
-  majorMediaFailureCount: majorMediaFailures.length
+  majorMediaFailureCount: majorMediaFailures.length,
+  majorMismatchedTeamLogoCount: majorMismatchedTeamLogos.length
 };
 await fs.writeFile(input, JSON.stringify(directory, null, 2));
 
@@ -180,6 +250,7 @@ const audit = {
   pinnedProfileFailures,
   majorMedia,
   majorMediaFailures,
+  majorMismatchedTeamLogos,
   majorLegacyTeamLogos,
   majorLegacyPlayerImages,
   byRegion,
@@ -198,6 +269,7 @@ console.log('Esports audit:', JSON.stringify({
   pinnedProfileFailureCount: pinnedProfileFailures.length,
   majorMedia,
   majorMediaFailures,
+  majorMismatchedTeamLogos: majorMismatchedTeamLogos.slice(0, 20),
   pinnedProfileChecks
 }, null, 2));
 
