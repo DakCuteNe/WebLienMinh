@@ -13,6 +13,21 @@
       "imageOverride": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
       "source": "https://lag.vn/tin/esports/msi-2026-blg-viper-mong-cho-doi-dau-t1-va-hle-gui-loi-chao-den-nguoi-ham-mo-viet-nam.html",
       "asOf": "2026-07-02"
+    },
+    {
+      "name": "Teddy",
+      "team": "HANJIN BRION",
+      "page": "Teddy",
+      "realName": "Park Jin-seong",
+      "nativeName": "박진성",
+      "country": "South Korea",
+      "birthdate": "1998-03-15",
+      "contract": "2026-11-16",
+      "imageOverride": "https://www.kukinews.com/data/kuk/image/2026/03/19/kuk20260319000058.800x.9.jpg",
+      "source": "https://www.kukinews.com/article/view/kuk202603190049",
+      "identitySource": "https://lol.fandom.com/wiki/Teddy",
+      "asOf": "2026-03-20",
+      "note": "LCK Teddy is Park Jin-seong of HANJIN BRION. Prevents collision with Teddy (Megat Badrul) and pins a 2026 HANJIN BRION portrait."
     }
   ],
   "teams": [

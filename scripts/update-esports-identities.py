@@ -11,6 +11,7 @@ import pyarrow.parquet as pq
 
 ROOT = Path(__file__).resolve().parent.parent
 DIRECTORY_FILE = ROOT / 'data' / 'esports-directory.json'
+OVERRIDES_FILE = ROOT / 'data' / 'esports-profile-overrides.json'
 HF_BASE = 'https://huggingface.co/datasets/gptilt/lol-esports-entities/resolve/main'
 FILES = {
     'figures': f'{HF_BASE}/public_figures/public_figures.parquet?download=true',
@@ -103,6 +104,38 @@ def figure_is_retired(figure):
     return False
 
 
+def load_identity_pins():
+    if not OVERRIDES_FILE.exists():
+        return []
+    payload = json.loads(OVERRIDES_FILE.read_text(encoding='utf-8'))
+    return [row for row in payload.get('players', []) if str(row.get('page') or '').strip()]
+
+
+def pinned_page_for_player(player, pins):
+    player_name = norm(player.get('id'))
+    team_name = norm((player.get('team') or {}).get('name'))
+    matches = []
+    for target in pins:
+        if norm(target.get('name')) != player_name:
+            continue
+        target_team = norm(target.get('team'))
+        if target_team and target_team != team_name:
+            continue
+        page = str(target.get('page') or '').strip()
+        if page:
+            matches.append(page)
+    unique = []
+    seen = set()
+    for page in matches:
+        key = norm(page)
+        if key and key not in seen:
+            unique.append(page)
+            seen.add(key)
+    if len(unique) > 1:
+        raise RuntimeError(f'Identity pin không duy nhất cho {player.get("id")} / {(player.get("team") or {}).get("name")}: {unique}')
+    return unique[0] if unique else None
+
+
 def choose_candidate(player, candidates, figures):
     entity_ids = []
     seen = set()
@@ -188,6 +221,7 @@ def choose_candidate(player, candidates, figures):
 
 def main():
     directory = json.loads(DIRECTORY_FILE.read_text(encoding='utf-8'))
+    identity_pins = load_identity_pins()
 
     with tempfile.TemporaryDirectory(prefix='rift-esports-identities-') as temp:
         temp = Path(temp)
@@ -225,10 +259,17 @@ def main():
     real_names = 0
     ambiguous = 0
     not_found = 0
+    pinned = 0
     match_methods = defaultdict(int)
     ambiguous_examples = []
 
     for player in directory.get('players', []):
+        preferred_pin = pinned_page_for_player(player, identity_pins)
+        if preferred_pin:
+            player['preferredPage'] = preferred_pin
+            player['preferredTeam'] = (player.get('team') or {}).get('name') or player.get('preferredTeam')
+            pinned += 1
+
         candidates = []
         keys = {norm(player.get('id')), norm(player.get('overviewPage'))}
         if player.get('preferredPage'):
@@ -300,13 +341,14 @@ def main():
         'realNames': real_names,
         'ambiguous': ambiguous,
         'notFound': not_found,
+        'pinned': pinned,
         'total': len(directory.get('players', [])),
         'matchMethods': dict(sorted(match_methods.items())),
         'ambiguousExamples': ambiguous_examples,
     }
 
     DIRECTORY_FILE.write_text(json.dumps(directory, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f'Identity resolution xong: matched={matched}, realName={real_names}, ambiguous={ambiguous}, notFound={not_found}, total={len(directory.get("players", []))}.')
+    print(f'Identity resolution xong: matched={matched}, realName={real_names}, ambiguous={ambiguous}, notFound={not_found}, pinned={pinned}, total={len(directory.get("players", []))}.')
     if ambiguous_examples:
         print('Ambiguous identity samples:', json.dumps(ambiguous_examples[:10], ensure_ascii=False))
 
