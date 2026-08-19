@@ -12,8 +12,9 @@ import { initSchedule, ensureSchedule } from './js/schedule.js';
 import { initLiveMatchCenter } from './js/match-live.js';
 import { initTeamPredictions } from './js/team-predictions.js';
 import { initMusicCenter, setMusicSection } from './js/music.js';
+import { initRiotMusic } from './js/riot-music.js';
 
-const APP_VERSION = '3.3.0';
+const APP_VERSION = '3.4.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
@@ -63,29 +64,17 @@ async function loadStatus() {
 async function getPatchData() {
   let live = null;
   let cached = null;
-
   try { live = await api('/api/patches'); } catch {}
   try { cached = await api(`/data/patches.json?v=${Date.now()}`); } catch {}
-
   if ((live?.patches || []).length) {
     const cachedByPatch = new Map((cached?.patches || []).map(row => [String(row.patch), row]));
     const patches = live.patches.map(row => {
       const fallback = cachedByPatch.get(String(row.patch)) || {};
-      return {
-        ...fallback,
-        ...row,
-        image: row.image || fallback.image || null,
-        description: row.description || fallback.description || '',
-        publishedAt: row.publishedAt || fallback.publishedAt || null
-      };
+      return { ...fallback, ...row, image: row.image || fallback.image || null, description: row.description || fallback.description || '', publishedAt: row.publishedAt || fallback.publishedAt || null };
     });
     return { ...(cached || {}), ...live, patches, sourceMode: live.sourceMode || 'live' };
   }
-
-  if ((cached?.patches || []).length) {
-    return { ...cached, sourceMode: 'cache', liveWarning: live?.warning || null };
-  }
-
+  if ((cached?.patches || []).length) return { ...cached, sourceMode: 'cache', liveWarning: live?.warning || null };
   return live || cached || { patches: [], warning: t('patchUnavailable') };
 }
 
@@ -95,16 +84,7 @@ async function loadPatches() {
   try {
     const data = await getPatchData();
     const rows = data.patches || [];
-    $('#patchGrid').innerHTML = rows.length ? rows.map((p, i) => `<a class="patch-card rich-patch-card" href="${esc(p.url)}" target="_blank" rel="noreferrer">
-      ${p.image ? `<img class="patch-banner" src="${esc(p.image)}" alt="${esc(p.title || `Patch ${p.patch}`)}" loading="lazy">` : ''}
-      <div class="patch-card-body">
-        <div class="eyebrow">${i === 0 ? t('latestRiot') : t('riotGames')}${data.sourceMode === 'cache' ? ` • ${t('cached')}` : ''}</div>
-        <div class="patch-num">${esc(p.patch)}</div>
-        <p>${esc(p.title)}</p>
-        ${p.description ? `<small>${esc(p.description)}</small>` : ''}
-        <b>${esc(t('readPatch'))}</b>
-      </div>
-    </a>`).join('') : `<div class="notice">${esc(data.warning || t('patchUnavailable'))}</div>`;
+    $('#patchGrid').innerHTML = rows.length ? rows.map((p, i) => `<a class="patch-card rich-patch-card" href="${esc(p.url)}" target="_blank" rel="noreferrer">${p.image ? `<img class="patch-banner" src="${esc(p.image)}" alt="${esc(p.title || `Patch ${p.patch}`)}" loading="lazy">` : ''}<div class="patch-card-body"><div class="eyebrow">${i === 0 ? t('latestRiot') : t('riotGames')}${data.sourceMode === 'cache' ? ` • ${t('cached')}` : ''}</div><div class="patch-num">${esc(p.patch)}</div><p>${esc(p.title)}</p>${p.description ? `<small>${esc(p.description)}</small>` : ''}<b>${esc(t('readPatch'))}</b></div></a>`).join('') : `<div class="notice">${esc(data.warning || t('patchUnavailable'))}</div>`;
   } catch (error) {
     $('#patchGrid').innerHTML = `<div class="notice">${esc(error.message)}</div>`;
   }
@@ -122,22 +102,17 @@ async function boot() {
   initLiveMatchCenter();
   initTeamPredictions();
   initMusicCenter();
+  initRiotMusic();
   installScheduleBalanceCss();
   initWorlds();
   initUX();
-
   $$('.nav-btn').forEach(button => button.onclick = () => switchSection(button.dataset.section));
   $$('[data-go]').forEach(button => button.onclick = () => switchSection(button.dataset.go));
-
   onLanguageChange(() => {
     applyVersionBranding();
     loadStatus().catch(() => {});
-    if (patchesLoaded) {
-      patchesLoaded = false;
-      loadPatches().catch(() => {});
-    }
+    if (patchesLoaded) { patchesLoaded = false; loadPatches().catch(() => {}); }
   });
-
   const hash = location.hash.replace('#', '');
   try {
     await Promise.all([loadStatus(), initMeta(), initIntelligence()]);
