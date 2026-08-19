@@ -9,7 +9,7 @@ import { initUX } from './js/ux.js';
 import { initAmbient } from './js/ambient.js';
 import { initWorlds } from './js/worlds.js';
 
-const APP_VERSION = '2.8.0';
+const APP_VERSION = '2.9.0';
 let patchesLoaded = false;
 
 function applyVersionBranding() {
