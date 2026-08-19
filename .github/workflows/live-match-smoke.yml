@@ -7,6 +7,8 @@ on:
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
       - 'public/match-live.css'
+      - 'public/js/team-predictions.js'
+      - 'public/team-predictions.css'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
@@ -17,6 +19,8 @@ on:
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
       - 'public/match-live.css'
+      - 'public/js/team-predictions.js'
+      - 'public/team-predictions.css'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
@@ -40,6 +44,7 @@ jobs:
           node --check server/esports-match-live.js
           node --check server/esports-match-bootstrap.js
           node --check public/js/match-live.js
+          node --check public/js/team-predictions.js
           node --check scripts/smoke-live-match.js
       - name: Start WebLienMinh
         run: |
