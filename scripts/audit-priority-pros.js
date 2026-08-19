@@ -19,6 +19,7 @@ const has = value => value != null && String(value).trim() !== '';
 const norm = value => String(value || '')
   .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
   .replaceAll('_', ' ').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const tokens = value => norm(value).split(/\s+/).filter(Boolean);
 
 function roleFamily(value) {
   const text = norm(value);
@@ -37,14 +38,21 @@ function activeMajor(player) {
   return Date.now() - latest <= ACTIVE_DAYS * 86_400_000;
 }
 
-function looksBadMedia(value) {
-  const text = norm(decodeURIComponent(String(value || '')));
-  return /\b(roster|lineup|poster|squad|team photo|teamphoto|wallpaper|banner|schedule|match|versus|vs|logo|icon|ward|champion|skin|flag|coach)\b/.test(text);
+function safeNormMedia(value) {
+  try { return norm(decodeURIComponent(String(value || ''))); }
+  catch { return norm(value); }
 }
-
+function looksBadMedia(value) {
+  return /\b(roster|lineup|poster|squad|team photo|teamphoto|wallpaper|banner|schedule|match|versus|vs|logo|icon|ward|champion|skin|flag|coach)\b/.test(safeNormMedia(value));
+}
 function looksLegacy(value) {
-  const text = norm(decodeURIComponent(String(value || '')));
+  const text = safeNormMedia(value);
   return /\b(old|oldlogo|legacy|former|previous|archive|archived|retired)\b/.test(text) || /old[_ -]?logo/i.test(String(value || ''));
+}
+function mediaHasExactIgn(player, value) {
+  const mediaTokens = new Set(tokens(value));
+  const ignTokens = tokens(player.id);
+  return ignTokens.length > 0 && ignTokens.every(token => mediaTokens.has(token));
 }
 
 function targetCandidates(target) {
@@ -69,15 +77,7 @@ for (const target of watch.players || []) {
   if (priority > 2) continue;
   const candidates = targetCandidates(target);
   if (!candidates.length) {
-    checks.push({
-      name: target.name,
-      priority,
-      regionHint: target.regionHint || null,
-      status: 'inactive-or-not-present',
-      blocking: false,
-      ok: true,
-      errors: []
-    });
+    checks.push({ name: target.name, priority, regionHint: target.regionHint || null, status: 'inactive-or-not-present', blocking: false, ok: true, errors: [] });
     continue;
   }
 
@@ -115,8 +115,8 @@ for (const target of watch.players || []) {
   if (priority === 1 && !has(player.currentMediaRefreshedAt) && !has(player.profileOverrideAppliedAt) && !has(player.priorityMediaRefreshedAt)) {
     errors.push('priority-1 player has no verified current-media refresh');
   }
-  if (priority === 1 && !has(player.profileOverrideAppliedAt) && has(player.currentMediaFile) && !norm(player.currentMediaFile).includes(norm(player.id))) {
-    errors.push(`current media file does not contain IGN: ${player.currentMediaFile}`);
+  if (priority === 1 && !has(player.profileOverrideAppliedAt) && has(player.currentMediaFile) && !mediaHasExactIgn(player, player.currentMediaFile)) {
+    errors.push(`current media file does not contain exact IGN tokens: ${player.currentMediaFile}`);
   }
 
   checks.push({
