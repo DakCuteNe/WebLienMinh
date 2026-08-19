@@ -8,7 +8,8 @@ const directoryFile = path.join(root, 'data', 'esports-directory.json');
 const API = 'https://lol.fandom.com/api.php';
 const CURRENT_YEAR = new Date().getUTCFullYear();
 const ACTIVE_DAYS = Math.max(60, Number(process.env.ESPORTS_MAJOR_ACTIVE_DAYS || 180));
-const DELAY_MS = Math.max(700, Number(process.env.ESPORTS_MAJOR_MEDIA_DELAY_MS || 900));
+const DELAY_MS = Math.max(600, Number(process.env.ESPORTS_MAJOR_MEDIA_DELAY_MS || 750));
+const PLAYER_BATCH = Math.max(10, Math.min(30, Number(process.env.ESPORTS_MAJOR_PLAYER_BATCH || 20)));
 const MAJOR_REGIONS = new Set(String(process.env.ESPORTS_MAJOR_REGIONS || 'LCK,LPL,LEC,LCS,LCP,VCS')
   .split(',').map(x => x.trim().toUpperCase()).filter(Boolean));
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -41,6 +42,12 @@ function fileName(value) {
 
 function words(value) {
   return new Set(norm(value).split(/\s+/).filter(Boolean));
+}
+
+function chunks(items, size) {
+  const out = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
 }
 
 function distinctiveTeamWords(team) {
@@ -102,24 +109,27 @@ function hasPlayerToken(player, value) {
   return tokens.length > 0 && tokens.some(token => text.includes(token));
 }
 
+function teamTokenMatches(team, value) {
+  const text = norm(value);
+  return distinctiveTeamWords(team).filter(token => text.includes(norm(token))).length;
+}
+
 function teamLogoScore(team, meta) {
   const name = fileName(meta.title);
   const text = norm(name);
   if (!teamLogoIdentityMatches(team, name) || isTeamEventAsset(name)) return -999;
   const logoLike = /logo|crest|wordmark|emblem|mark|profile|square|icon/.test(text);
   if (!logoLike) return -999;
-  let score = 125;
-  const matched = distinctiveTeamWords(team).filter(token => text.includes(norm(token))).length;
-  score += Math.min(60, matched * 20);
+  let score = 125 + Math.min(60, teamTokenMatches(team, name) * 20);
   const year = embeddedYear(name);
-  if (year === CURRENT_YEAR) score += 75;
-  else if (year === CURRENT_YEAR - 1) score += 35;
-  else if (year && year <= CURRENT_YEAR - 2) score -= 80;
+  if (year === CURRENT_YEAR) score += 50;
+  else if (year === CURRENT_YEAR - 1) score += 20;
+  else if (year && year <= CURRENT_YEAR - 2) score -= 20;
   const uploaded = timestampYear(meta);
-  if (uploaded === CURRENT_YEAR) score += 45;
-  else if (uploaded === CURRENT_YEAR - 1) score += 20;
-  else if (uploaded && uploaded <= CURRENT_YEAR - 3) score -= 25;
-  if (isLegacy(name)) score -= 240;
+  if (uploaded === CURRENT_YEAR) score += 35;
+  else if (uploaded === CURRENT_YEAR - 1) score += 15;
+  else if (uploaded && uploaded <= CURRENT_YEAR - 3) score -= 10;
+  if (isLegacy(name)) score -= 260;
   if (isClearlyBad(name)) score -= 300;
   if (meta.width && meta.height) {
     const ratio = Math.max(meta.width, meta.height) / Math.max(1, Math.min(meta.width, meta.height));
@@ -134,27 +144,41 @@ function playerImageScore(player, team, meta) {
   const text = norm(name);
   const playerTokens = [...words(player.id)].filter(Boolean);
   let score = 0;
-  if (playerTokens.length && playerTokens.every(token => text.includes(token))) score += 135;
-  else if (playerTokens.some(token => text.includes(token))) score += 80;
-  const teamMatches = distinctiveTeamWords(team).filter(token => text.includes(norm(token))).length;
-  score += Math.min(55, teamMatches * 18);
+  if (playerTokens.length && playerTokens.every(token => text.includes(token))) score += 140;
+  else if (playerTokens.some(token => text.includes(token))) score += 85;
+  score += Math.min(55, teamTokenMatches(team, name) * 18);
   if (/player|profile|headshot|portrait|official/.test(text)) score += 30;
-  if (/logo|icon|ward|champion|skin|flag|coach/.test(text)) score -= 110;
+  if (/logo|icon|ward|champion|skin|flag|coach/.test(text)) score -= 120;
   const year = embeddedYear(name);
-  if (year === CURRENT_YEAR) score += 90;
-  else if (year === CURRENT_YEAR - 1) score += 40;
-  else if (year && year <= CURRENT_YEAR - 2) score -= 70;
+  if (year === CURRENT_YEAR) score += 95;
+  else if (year === CURRENT_YEAR - 1) score += 45;
+  else if (year && year <= CURRENT_YEAR - 2) score -= 75;
   const uploaded = timestampYear(meta);
-  if (uploaded === CURRENT_YEAR) score += 50;
-  else if (uploaded === CURRENT_YEAR - 1) score += 22;
+  if (uploaded === CURRENT_YEAR) score += 55;
+  else if (uploaded === CURRENT_YEAR - 1) score += 25;
   else if (uploaded && uploaded <= CURRENT_YEAR - 3) score -= 30;
-  if (isLegacy(name)) score -= 140;
-  if (isClearlyBad(name)) score -= 240;
+  if (isLegacy(name)) score -= 150;
+  if (isClearlyBad(name)) score -= 250;
   if (meta.width && meta.height) {
     const ratio = meta.height / Math.max(1, meta.width);
     if (ratio >= 0.7 && ratio <= 2.6) score += 20;
     else if (ratio < 0.45 || ratio > 3.2) score -= 40;
   }
+  return score;
+}
+
+function playerCandidatePriority(player, team, value) {
+  const text = norm(fileName(value));
+  let score = 0;
+  if (hasPlayerToken(player, value)) score += 100;
+  score += Math.min(40, teamTokenMatches(team, value) * 15);
+  const year = embeddedYear(value);
+  if (year === CURRENT_YEAR) score += 100;
+  else if (year === CURRENT_YEAR - 1) score += 45;
+  else if (year && year <= CURRENT_YEAR - 2) score -= 50;
+  if (/player|profile|headshot|portrait|official/.test(text)) score += 20;
+  if (/logo|icon|flag|coach/.test(text)) score -= 80;
+  if (isLegacy(value) || isClearlyBad(value)) score -= 200;
   return score;
 }
 
@@ -190,7 +214,7 @@ async function pageImages(title) {
   const out = [];
   let imcontinue = null;
   for (let page = 0; page < 3; page++) {
-    const body = await api({ prop: 'images', titles: title, imlimit: 'max', ...(imcontinue ? { imcontinue } : {}) }, `images ${title}`);
+    const body = await api({ redirects: '1', prop: 'images', titles: title, imlimit: 'max', ...(imcontinue ? { imcontinue } : {}) }, `images ${title}`);
     const record = Object.values(body.query?.pages || {}).find(x => !x.missing);
     out.push(...(record?.images || []).map(x => x.title).filter(Boolean));
     imcontinue = body.continue?.imcontinue || null;
@@ -199,7 +223,60 @@ async function pageImages(title) {
   return [...new Set(out)];
 }
 
-async function searchFiles(query, limit = 20) {
+async function prefetchPlayerPageImages(activePlayers) {
+  const result = new Map();
+  let calls = 0;
+  const batches = chunks(activePlayers, PLAYER_BATCH);
+  for (const [index, batch] of batches.entries()) {
+    const requested = batch.map(player => player.preferredPage || player.profilePageTitle || player.overviewPage || player.identityId || player.id).map(cleanTitle);
+    const aliases = new Map();
+    const pageImagesByTitle = new Map();
+    let imcontinue = null;
+
+    for (let pass = 0; pass < 3; pass++) {
+      try {
+        const body = await api({
+          redirects: '1',
+          prop: 'images',
+          titles: requested.join('|'),
+          imlimit: 'max',
+          ...(imcontinue ? { imcontinue } : {})
+        }, `player image batch ${index + 1}/${batches.length}`);
+        calls++;
+        for (const item of body.query?.normalized || []) aliases.set(norm(item.from), item.to);
+        for (const item of body.query?.redirects || []) aliases.set(norm(item.from), item.to);
+        for (const page of Object.values(body.query?.pages || {})) {
+          if (page.missing) continue;
+          const key = norm(page.title);
+          const existing = pageImagesByTitle.get(key) || [];
+          existing.push(...(page.images || []).map(x => x.title).filter(Boolean));
+          pageImagesByTitle.set(key, existing);
+        }
+        imcontinue = body.continue?.imcontinue || null;
+        if (!imcontinue) break;
+      } catch (error) {
+        console.log(`Player image batch ${index + 1} skipped: ${error.message}`);
+        break;
+      }
+    }
+
+    for (let i = 0; i < batch.length; i++) {
+      const player = batch[i];
+      let current = requested[i];
+      const seen = new Set();
+      while (aliases.has(norm(current)) && !seen.has(norm(current))) {
+        seen.add(norm(current));
+        current = aliases.get(norm(current));
+      }
+      const images = pageImagesByTitle.get(norm(current)) || pageImagesByTitle.get(norm(requested[i])) || [];
+      result.set(player.uid || `${player.id}:${player.team?.name || ''}`, [...new Set(images)]);
+    }
+    console.log(`Prefetched player media ${index + 1}/${batches.length}: ${batch.length} players.`);
+  }
+  return { images: result, calls };
+}
+
+async function searchFiles(query, limit = 50) {
   try {
     const body = await api({ list: 'search', srnamespace: '6', srsearch: query, srlimit: String(limit) }, `search ${query}`);
     return (body.query?.search || []).map(x => x.title).filter(Boolean);
@@ -265,42 +342,57 @@ for (const player of activePlayers) {
   playersByTeam.get(key).push(player);
 }
 
+console.log(`Major current-media refresh: regions=${[...MAJOR_REGIONS].join(',')} teams=${majorTeams.length} activePlayers=${activePlayers.length} cutoff=${ACTIVE_DAYS}d.`);
+const prefetched = await prefetchPlayerPageImages(activePlayers);
+
 let teamUpdated = 0;
 let playerUpdated = 0;
 let teamUnresolved = 0;
 let playerUnresolved = 0;
-let fallbackPlayerSearches = 0;
 const details = [];
-
-console.log(`Major current-media refresh: regions=${[...MAJOR_REGIONS].join(',')} teams=${majorTeams.length} activePlayers=${activePlayers.length} cutoff=${ACTIVE_DAYS}d.`);
 
 for (const [index, team] of majorTeams.entries()) {
   const teamKey = team.id || norm(team.name);
   const roster = playersByTeam.get(teamKey) || activePlayers.filter(player => norm(player.team?.name) === norm(team.name));
   const pageTitle = team.profilePageTitle || cleanTitle(team.sourcePage) || team.name;
 
-  let pagePool = [];
-  try { pagePool = await pageImages(pageTitle); }
+  let teamPagePool = [];
+  try { teamPagePool = await pageImages(pageTitle); }
   catch (error) { console.log(`Team page images ${team.name}: ${error.message}`); }
 
   const searchPool = [
-    ...(await searchFiles(`${team.name} ${CURRENT_YEAR}`)),
-    ...(await searchFiles(`${team.name} logo ${CURRENT_YEAR}`))
+    ...(await searchFiles(`${team.name} ${CURRENT_YEAR}`, 50)),
+    ...(await searchFiles(`${team.name} logo ${CURRENT_YEAR}`, 30))
   ];
-  const sharedNames = [...new Set([...pagePool, ...searchPool])].filter(title => {
-    if (isClearlyBad(title)) return false;
-    const text = norm(fileName(title));
-    if (/logo|crest|wordmark|emblem|mark|profile|square|icon/.test(text)) return true;
-    return roster.some(player => hasPlayerToken(player, title));
-  }).slice(0, 90);
-  let sharedMeta = await imageInfo(sharedNames);
+  const sharedPool = [...new Set([...teamPagePool, ...searchPool])].filter(title => !isClearlyBad(title));
 
-  let bestLogo = bestMeta(sharedMeta, meta => teamLogoScore(team, meta), 125);
+  const logoNames = sharedPool
+    .filter(title => teamLogoIdentityMatches(team, title) && !isTeamEventAsset(title))
+    .slice(0, 30);
+
+  const playerNamesByUid = new Map();
+  const allPlayerNames = [];
+  for (const player of roster) {
+    const key = player.uid || `${player.id}:${player.team?.name || ''}`;
+    const own = prefetched.images.get(key) || [];
+    const candidates = [...new Set([...own, ...sharedPool])]
+      .filter(title => hasPlayerToken(player, title) && !isClearlyBad(title))
+      .sort((a, b) => playerCandidatePriority(player, team, b) - playerCandidatePriority(player, team, a))
+      .slice(0, 20);
+    playerNamesByUid.set(key, candidates);
+    allPlayerNames.push(...candidates);
+  }
+
+  let metaPool = await imageInfo([...new Set([...logoNames, ...allPlayerNames])].slice(0, 130));
+  let bestLogo = bestMeta(metaPool.filter(meta => logoNames.includes(meta.title) || logoNames.includes(fileName(meta.title))), meta => teamLogoScore(team, meta), 115);
+
   if (!bestLogo) {
-    const extraLogoNames = await searchFiles(`${team.name} logo`, 20);
-    const extraLogoMeta = await imageInfo(extraLogoNames);
-    sharedMeta = [...sharedMeta, ...extraLogoMeta];
-    bestLogo = bestMeta(sharedMeta, meta => teamLogoScore(team, meta), 125);
+    const genericLogoNames = (await searchFiles(`${team.name} logo`, 30))
+      .filter(title => teamLogoIdentityMatches(team, title) && !isTeamEventAsset(title))
+      .slice(0, 25);
+    const genericLogoMeta = await imageInfo(genericLogoNames);
+    metaPool = [...metaPool, ...genericLogoMeta];
+    bestLogo = bestMeta(genericLogoMeta, meta => teamLogoScore(team, meta), 115);
   }
 
   if (bestLogo) {
@@ -318,24 +410,9 @@ for (const [index, team] of majorTeams.entries()) {
   }
 
   for (const player of roster) {
-    let best = bestMeta(sharedMeta.filter(meta => hasPlayerToken(player, meta.title)), meta => playerImageScore(player, team, meta), 135);
-
-    if (!best) {
-      fallbackPlayerSearches++;
-      const playerPage = player.preferredPage || player.profilePageTitle || player.overviewPage || player.identityId || player.id;
-      let ownPool = [];
-      try { ownPool = await pageImages(playerPage); }
-      catch (error) { console.log(`Player page images ${player.id}: ${error.message}`); }
-      let fallbackNames = [...ownPool.filter(title => hasPlayerToken(player, title)), ...(await searchFiles(`${player.id} ${CURRENT_YEAR}`))];
-      let fallbackMeta = await imageInfo([...new Set(fallbackNames)].slice(0, 35));
-      best = bestMeta(fallbackMeta, meta => playerImageScore(player, team, meta), 135);
-      if (!best) {
-        fallbackNames = await searchFiles(`${player.id} ${team.name}`);
-        fallbackMeta = await imageInfo(fallbackNames.slice(0, 25));
-        best = bestMeta(fallbackMeta, meta => playerImageScore(player, team, meta), 135);
-      }
-    }
-
+    const key = player.uid || `${player.id}:${player.team?.name || ''}`;
+    const candidateSet = new Set((playerNamesByUid.get(key) || []).map(title => norm(fileName(title))));
+    const best = bestMeta(metaPool.filter(meta => candidateSet.has(norm(fileName(meta.title)))), meta => playerImageScore(player, team, meta), 140);
     if (best) {
       player.image = best.url;
       player.preferredImage = best.url;
@@ -353,9 +430,7 @@ for (const [index, team] of majorTeams.entries()) {
 
   if (bestLogo) {
     for (const player of players) {
-      if (player.team?.id === team.id || norm(player.team?.name) === norm(team.name)) {
-        player.team = { ...player.team, ...team };
-      }
+      if (player.team?.id === team.id || norm(player.team?.name) === norm(team.name)) player.team = { ...player.team, ...team };
     }
   }
 
@@ -365,7 +440,7 @@ for (const [index, team] of majorTeams.entries()) {
 directory.majorMediaRefresh = {
   generatedAt: new Date().toISOString(),
   source: 'Leaguepedia/Fandom current file repository and current team/player pages',
-  strategy: 'strict-team-identity + shared-team-media-pool + player fallback search',
+  strategy: 'strict-team-identity + batched-player-page-prefetch + shared-team-media-pool',
   currentYear: CURRENT_YEAR,
   activeDays: ACTIVE_DAYS,
   regions: [...MAJOR_REGIONS],
@@ -375,9 +450,10 @@ directory.majorMediaRefresh = {
   activePlayerTotal: activePlayers.length,
   playerUpdated,
   playerUnresolved,
-  fallbackPlayerSearches,
+  fallbackPlayerSearches: 0,
+  playerPrefetchCalls: prefetched.calls,
   details
 };
 
 await fs.writeFile(directoryFile, JSON.stringify(directory, null, 2));
-console.log(`Major current-media refresh done: teams ${teamUpdated}/${majorTeams.length}, players ${playerUpdated}/${activePlayers.length}, unresolved teams=${teamUnresolved}, players=${playerUnresolved}, playerFallbacks=${fallbackPlayerSearches}.`);
+console.log(`Major current-media refresh done: teams ${teamUpdated}/${majorTeams.length}, players ${playerUpdated}/${activePlayers.length}, unresolved teams=${teamUnresolved}, players=${playerUnresolved}, prefetchCalls=${prefetched.calls}.`);
