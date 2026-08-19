@@ -6,8 +6,10 @@ import { initIntelligence } from './js/intelligence.js';
 import { getLanguage, initI18n, locale, onLanguageChange, t } from './js/i18n.js';
 import { initPreferences } from './js/preferences.js';
 import { initUX } from './js/ux.js';
+import { initAmbient } from './js/ambient.js';
+import { initWorlds } from './js/worlds.js';
 
-const APP_VERSION = '2.7.0';
+const APP_VERSION = '2.8.0';
 let patchesLoaded = false;
 
 function applyVersionBranding() {
@@ -100,6 +102,8 @@ async function boot() {
   initAssets();
   initEsports();
   initPreferences();
+  initAmbient();
+  initWorlds();
   initUX();
 
   $$('.nav-btn').forEach(button => button.onclick = () => switchSection(button.dataset.section));
