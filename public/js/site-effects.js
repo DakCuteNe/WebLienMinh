@@ -5,9 +5,12 @@ const compactViewport = window.matchMedia('(max-width: 760px), (pointer: coarse)
 let initialized = false;
 let lastSection = 'dashboard';
 let introActive = false;
+let introEndsAt = 0;
 let worldsTimer = null;
-let introTimer = null;
-let cleanupTimer = null;
+let introLeaveTimer = null;
+let introCleanupTimer = null;
+let worldsCleanupTimer = null;
+let worldsCinematicTimer = null;
 
 const COPY = {
   vi: {
@@ -71,9 +74,15 @@ function setTransitionLoad(active) {
   document.body.classList.toggle('fx-transition-active', Boolean(active));
 }
 
-function clearEffectTimers() {
-  clearTimeout(introTimer);
-  clearTimeout(cleanupTimer);
+function clearIntroTimers() {
+  clearTimeout(introLeaveTimer);
+  clearTimeout(introCleanupTimer);
+}
+
+function clearWorldsTimers() {
+  clearTimeout(worldsTimer);
+  clearTimeout(worldsCleanupTimer);
+  clearTimeout(worldsCinematicTimer);
 }
 
 function playSiteIntro() {
@@ -81,8 +90,9 @@ function playSiteIntro() {
   document.body.dataset.fxTier = tier;
   if (tier === 'reduced' || document.querySelector('[data-rift-entry]')) return;
 
-  clearEffectTimers();
+  clearIntroTimers();
   introActive = true;
+  introEndsAt = performance.now() + 3050;
   setTransitionLoad(true);
   document.body.classList.add('rift-site-entering');
 
@@ -108,12 +118,13 @@ function playSiteIntro() {
   document.body.appendChild(node);
 
   requestAnimationFrame(() => requestAnimationFrame(() => node.classList.add('is-active')));
-  introTimer = setTimeout(() => node.classList.add('is-leaving'), 2380);
-  cleanupTimer = setTimeout(() => {
+  introLeaveTimer = setTimeout(() => node.classList.add('is-leaving'), 2380);
+  introCleanupTimer = setTimeout(() => {
     removeNode(node);
     introActive = false;
+    introEndsAt = 0;
     document.body.classList.remove('rift-site-entering');
-    setTransitionLoad(false);
+    if (!document.body.classList.contains('worlds-transitioning')) setTransitionLoad(false);
   }, 3050);
 }
 
@@ -145,11 +156,12 @@ function runWorldsTransition() {
   document.body.dataset.fxTier = tier;
   if (tier === 'reduced') {
     document.body.classList.add('worlds-cinematic-enter');
-    setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 650);
+    worldsCinematicTimer = setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 650);
     return;
   }
 
-  clearTimeout(cleanupTimer);
+  clearTimeout(worldsCleanupTimer);
+  clearTimeout(worldsCinematicTimer);
   document.querySelector('[data-worlds-takeover]')?.remove();
   const node = buildWorldsOverlay(tier);
   document.body.appendChild(node);
@@ -160,18 +172,19 @@ function runWorldsTransition() {
   setTimeout(() => node.classList.add('is-reveal'), 420);
   setTimeout(() => node.classList.add('is-hold'), 1120);
   setTimeout(() => node.classList.add('is-leaving'), 1880);
-  cleanupTimer = setTimeout(() => {
+  worldsCleanupTimer = setTimeout(() => {
     removeNode(node);
     document.body.classList.remove('worlds-transitioning');
-    setTransitionLoad(false);
+    if (!introActive) setTransitionLoad(false);
   }, 2520);
-  setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 3300);
+  worldsCinematicTimer = setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 3300);
 }
 
 function playWorldsTransition() {
   clearTimeout(worldsTimer);
   if (introActive) {
-    worldsTimer = setTimeout(runWorldsTransition, 2100);
+    const remaining = Math.max(120, introEndsAt - performance.now() + 90);
+    worldsTimer = setTimeout(runWorldsTransition, remaining);
     return;
   }
   runWorldsTransition();
@@ -181,6 +194,7 @@ export function triggerSectionEffect(sectionId) {
   const next = sectionId || 'dashboard';
   if (next === 'worlds' && lastSection !== 'worlds') playWorldsTransition();
   if (next !== 'worlds') {
+    clearWorldsTimers();
     document.body.classList.remove('worlds-transitioning', 'worlds-cinematic-enter');
     document.querySelector('[data-worlds-takeover]')?.remove();
     if (!introActive) setTransitionLoad(false);
