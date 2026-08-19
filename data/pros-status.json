@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-19T15:39:36.492Z",
+  "checkedAt": "2026-08-19T16:08:28.952Z",
   "health": "degraded",
   "exitCode": 75,
   "upstreamDegraded": true,
@@ -11,7 +11,7 @@
     "directoryRefreshed": 30,
     "unresolved": 3
   },
-  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (1/2)...\nPROS_SOURCE_DEGRADED: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\nHybrid fallback: 42 detailed giữ lại + 0 directory fallback + 0 unresolved / 42 watchlist.\nFeatured Pros reconcile: detailed=9, directory=28, unresolved=5, total=42.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.",
+  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (1/2)...\nPROS_SOURCE_DEGRADED: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\nHybrid fallback: 42 detailed giữ lại + 0 directory fallback + 0 unresolved / 42 watchlist.\nFeatured Pros reconcile: detailed=9, directory=28, unresolved=5, total=42.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.",
   "dataAvailable": true,
-  "postDirectoryReconciledAt": "2026-08-19T15:39:36.492Z"
+  "postDirectoryReconciledAt": "2026-08-19T16:08:28.952Z"
 }
