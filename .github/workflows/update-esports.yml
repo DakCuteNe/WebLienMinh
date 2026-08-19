@@ -16,6 +16,7 @@ on:
       - 'scripts/apply-esports-profile-overrides.js'
       - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
+      - 'data/esports-profile-overrides.json'
       - 'package.json'
 
 permissions:

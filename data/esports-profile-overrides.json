@@ -1,0 +1,27 @@
+{
+  "policy": "Curated overrides are only for current public identity/media when an automated upstream source is demonstrably stale. Every override must be scoped to a canonical player/team and include source + asOf.",
+  "players": [
+    {
+      "name": "Viper",
+      "team": "Bilibili Gaming",
+      "page": "Viper (Park Do-hyeon)",
+      "realName": "Park Do-hyeon",
+      "nativeName": "박도현",
+      "country": "South Korea",
+      "birthdate": "2000-10-19",
+      "contract": "2027-11-16",
+      "imageOverride": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
+      "source": "https://lag.vn/tin/esports/msi-2026-blg-viper-mong-cho-doi-dau-t1-va-hle-gui-loi-chao-den-nguoi-ham-mo-viet-nam.html",
+      "asOf": "2026-07-02"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Bilibili Gaming",
+      "logoOverride": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+      "source": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+      "asOf": "2025-12-20",
+      "note": "2026 BLG branding. Replaces Leaguepedia file named Bilibili_Gaming_Old_Logo.png."
+    }
+  ]
+}
