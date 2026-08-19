@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-19T10:26:16.900Z",
-  "directoryGeneratedAt": "2026-08-19T10:18:12.357Z",
-  "mediaEnrichedAt": "2026-08-19T10:20:33.113Z",
+  "generatedAt": "2026-08-19T10:51:28.540Z",
+  "directoryGeneratedAt": "2026-08-19T10:43:35.339Z",
+  "mediaEnrichedAt": "2026-08-19T10:45:57.235Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
-  "totalCountries": 96,
+  "totalCountries": 95,
   "coverage": {
     "image": {
       "count": 1125,
@@ -20,20 +20,20 @@
       "pct": 90.6
     },
     "birthdate": {
-      "count": 1,
+      "count": 2,
       "pct": 0.1
     },
     "age": {
-      "count": 1,
+      "count": 2,
       "pct": 0.1
     },
     "contract": {
-      "count": 1,
+      "count": 2,
       "pct": 0.1
     },
     "social": {
-      "count": 1355,
-      "pct": 78.5
+      "count": 1356,
+      "pct": 78.6
     },
     "teamLogo": {
       "count": 1471,
@@ -48,15 +48,15 @@
       "pct": 100
     },
     "soloqueueIds": {
-      "count": 727,
-      "pct": 42.1
+      "count": 728,
+      "pct": 42.2
     },
     "bioEnriched": {
       "count": 1565,
       "pct": 90.7
     },
     "completeCore": {
-      "count": 1,
+      "count": 2,
       "pct": 0.1
     }
   },
@@ -295,10 +295,10 @@
     "teamUpdated": 55,
     "teamUpdatedPct": 96.5,
     "playerTarget": 264,
-    "playerUpdated": 257,
-    "playerUpdatedPct": 97.3,
+    "playerUpdated": 258,
+    "playerUpdatedPct": 97.7,
     "teamUnresolved": 2,
-    "playerUnresolved": 7,
+    "playerUnresolved": 6,
     "fallbackPlayerSearches": 0,
     "mismatchedTeamLogoCount": 0,
     "legacyTeamLogoCount": 0,
@@ -314,21 +314,21 @@
       "image": 51,
       "realName": 52,
       "country": 52,
-      "birthdate": 0,
-      "contract": 0,
-      "social": 49,
+      "birthdate": 1,
+      "contract": 1,
+      "social": 50,
       "teamLogo": 52,
       "stats": 52,
-      "completeCore": 0,
+      "completeCore": 1,
       "imagePct": 98.1,
       "realNamePct": 100,
       "countryPct": 100,
-      "birthdatePct": 0,
-      "contractPct": 0,
-      "socialPct": 94.2,
+      "birthdatePct": 1.9,
+      "contractPct": 1.9,
+      "socialPct": 96.2,
       "teamLogoPct": 100,
       "statsPct": 100,
-      "completeCorePct": 0
+      "completeCorePct": 1.9
     },
     "LPL": {
       "total": 78,
@@ -902,16 +902,16 @@
     "image": 601,
     "realName": 163,
     "country": 162,
-    "birthdate": 1725,
-    "age": 1725,
-    "contract": 1725,
-    "social": 371,
+    "birthdate": 1724,
+    "age": 1724,
+    "contract": 1724,
+    "social": 370,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
-    "soloqueueIds": 999,
+    "soloqueueIds": 998,
     "bioEnriched": 161,
-    "completeCore": 1725
+    "completeCore": 1724
   },
   "missing": {
     "image": [
@@ -7049,11 +7049,6 @@
       {
         "id": "Rich",
         "team": "Kiwoom DRX",
-        "region": "LCK"
-      },
-      {
-        "id": "Teddy",
-        "team": "HANJIN BRION",
         "region": "LCK"
       },
       {
@@ -15679,11 +15674,6 @@
         "region": "LCK"
       },
       {
-        "id": "Teddy",
-        "team": "HANJIN BRION",
-        "region": "LCK"
-      },
-      {
         "id": "Ucal",
         "team": "Kiwoom DRX",
         "region": "LCK"
@@ -24306,11 +24296,6 @@
         "region": "LCK"
       },
       {
-        "id": "Teddy",
-        "team": "HANJIN BRION",
-        "region": "LCK"
-      },
-      {
         "id": "Ucal",
         "team": "Kiwoom DRX",
         "region": "LCK"
@@ -31583,11 +31568,6 @@
         "region": "LPL"
       },
       {
-        "id": "Teddy",
-        "team": "HANJIN BRION",
-        "region": "LCK"
-      },
-      {
         "id": "Flip",
         "team": "DN SOOPers Challengers",
         "region": "LCKC"
@@ -35360,11 +35340,6 @@
       },
       {
         "id": "Namgung",
-        "team": "HANJIN BRION",
-        "region": "LCK"
-      },
-      {
-        "id": "Teddy",
         "team": "HANJIN BRION",
         "region": "LCK"
       },
@@ -41870,11 +41845,6 @@
       {
         "id": "Rich",
         "team": "Kiwoom DRX",
-        "region": "LCK"
-      },
-      {
-        "id": "Teddy",
-        "team": "HANJIN BRION",
         "region": "LCK"
       },
       {
