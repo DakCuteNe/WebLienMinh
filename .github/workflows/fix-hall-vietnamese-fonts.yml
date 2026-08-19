@@ -95,3 +95,5 @@ jobs:
           git add public/hall-of-legends.css public/js/hall-of-legends.js
           git commit -m "Fix Vietnamese Hall of Legends typography"
           git push origin HEAD:main
+
+# trigger after workflow exists on main
