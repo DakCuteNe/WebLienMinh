@@ -10,14 +10,14 @@ import { initAmbient } from './js/ambient.js';
 import { initWorlds } from './js/worlds.js';
 import { initSchedule, ensureSchedule } from './js/schedule.js';
 
-const APP_VERSION = '3.0.1';
+const APP_VERSION = '3.0.2';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
   if (document.querySelector('link[data-schedule-balance]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = `/schedule-balance.css?v=${APP_VERSION}`;
+  link.href = `/schedule-structural.css?v=${APP_VERSION}`;
   link.dataset.scheduleBalance = 'true';
   document.head.appendChild(link);
 }
