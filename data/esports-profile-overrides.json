@@ -1,5 +1,5 @@
 {
-  "policy": "Curated overrides are only for current public identity/media when an automated upstream source is demonstrably stale. Every override must be scoped to a canonical player/team and include source + asOf.",
+  "policy": "Curated overrides are only for current public identity/media when an automated upstream source is demonstrably stale or cannot resolve the current asset safely. Every override must be scoped to a canonical player/team and include source + asOf.",
   "players": [
     {
       "name": "Viper",
@@ -22,6 +22,27 @@
       "source": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
       "asOf": "2025-12-20",
       "note": "2026 BLG branding. Replaces Leaguepedia file named Bilibili_Gaming_Old_Logo.png."
+    },
+    {
+      "name": "Disguised",
+      "logoOverride": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
+      "source": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
+      "asOf": "2026-08-19",
+      "note": "Official Riot LoL Esports 2026 LCS handbook asset for Disguised. Added because strict automatic media discovery left DSG unresolved."
+    },
+    {
+      "name": "LYON",
+      "logoOverride": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+      "source": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
+      "asOf": "2026-08-19",
+      "note": "Official Riot LoL Esports 2026 LCS handbook asset for LYON."
+    },
+    {
+      "name": "GiantX",
+      "logoOverride": "https://giantx.gg/cdn/shop/files/logo_0620238f-1e58-435d-bcd2-aa131bba7992_600x.png?v=1772036626",
+      "source": "https://giantx.gg/en/pages/press-kit",
+      "asOf": "2026-08-19",
+      "note": "Official GIANTX Press Kit logo; the press kit includes the 2026 Brandbook / Style Book."
     }
   ]
 }
