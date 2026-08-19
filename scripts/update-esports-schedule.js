@@ -9,6 +9,9 @@ const API = 'https://esports-api.lolesports.com/persisted/gw';
 const PUBLIC_API_KEY = process.env.LOLESPORTS_API_KEY || '0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z';
 const HL = process.env.LOLESPORTS_HL || 'en-US';
 const MAX_NEWER_PAGES = Math.max(1, Math.min(6, Number(process.env.ESPORTS_SCHEDULE_PAGES || 4)));
+const DAY = 86_400_000;
+const KEEP_RESULTS_DAYS = 45;
+const KEEP_FUTURE_DAYS = 240;
 
 const TARGETS = [
   { id: '98767991310872058', slug: 'lck', name: 'LCK', group: 'REGIONAL', priority: 1 },
@@ -24,6 +27,14 @@ const TARGETS = [
 
 async function readJson(file, fallback) {
   try { return JSON.parse(await fs.readFile(file, 'utf8')); } catch { return fallback; }
+}
+
+function httpsUrl(value) {
+  if (!value) return null;
+  const text = String(value);
+  if (text.startsWith('//')) return `https:${text}`;
+  if (text.startsWith('http://')) return `https://${text.slice('http://'.length)}`;
+  return text;
 }
 
 async function riotGet(endpoint, params = {}) {
@@ -51,7 +62,7 @@ async function getLeagueMetadata() {
         ...target,
         name: live.name || target.name,
         officialSlug: live.slug || target.slug,
-        image: live.image || null,
+        image: httpsUrl(live.image),
         region: live.region || null
       };
     });
@@ -70,7 +81,7 @@ function normalizeTeam(team = {}) {
   return {
     name: team.name || team.code || 'TBD',
     code: team.code || team.name || 'TBD',
-    image: team.image || null,
+    image: httpsUrl(team.image),
     slug: team.slug || null,
     wins: Number.isFinite(wins) ? wins : 0,
     outcome: team?.result?.outcome || null,
@@ -96,7 +107,7 @@ function normalizeEvent(event, league) {
       name: league.name,
       slug: league.slug,
       officialSlug: league.officialSlug,
-      image: league.image || event?.league?.image || null,
+      image: httpsUrl(league.image || event?.league?.image),
       group: league.group,
       priority: league.priority
     },
@@ -133,6 +144,14 @@ function previousEventsFor(previous, leagueId) {
   return (previous?.events || []).filter(event => String(event?.league?.id || '') === String(leagueId));
 }
 
+function keepEvent(event, now = Date.now()) {
+  if (!event.startTime) return event.state !== 'completed';
+  const time = new Date(event.startTime).getTime();
+  if (!Number.isFinite(time)) return false;
+  if (event.state !== 'completed' && time < now - 12 * 60 * 60_000) return false;
+  return time >= now - KEEP_RESULTS_DAYS * DAY && time <= now + KEEP_FUTURE_DAYS * DAY;
+}
+
 function summarize(events) {
   const now = Date.now();
   let live = 0;
@@ -144,6 +163,15 @@ function summarize(events) {
     else if (!event.startTime || new Date(event.startTime).getTime() >= now - 6 * 60 * 60_000) upcoming += 1;
   }
   return { live, upcoming, completed, total: events.length };
+}
+
+function stableProjection(value) {
+  if (!value) return null;
+  return {
+    source: value.source || null,
+    leagues: value.leagues || [],
+    events: value.events || []
+  };
 }
 
 async function main() {
@@ -173,7 +201,9 @@ async function main() {
     return;
   }
 
+  const now = Date.now();
   const deduped = [...new Map(events.map(event => [event.id, event])).values()]
+    .filter(event => keepEvent(event, now))
     .sort((a, b) => String(a.startTime).localeCompare(String(b.startTime)) || Number(a.league.priority || 99) - Number(b.league.priority || 99));
 
   const output = {
@@ -193,6 +223,11 @@ async function main() {
     leagues,
     events: deduped
   };
+
+  if (JSON.stringify(stableProjection(previous)) === JSON.stringify(stableProjection(output))) {
+    console.log(`Schedule content unchanged: ${deduped.length} cached events; skipping file write.`);
+    return;
+  }
 
   await fs.mkdir(path.dirname(OUT), { recursive: true });
   await fs.writeFile(OUT, JSON.stringify(output, null, 2) + '\n', 'utf8');
