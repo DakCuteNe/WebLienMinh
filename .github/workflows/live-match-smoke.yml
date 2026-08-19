@@ -11,6 +11,8 @@ on:
       - 'public/team-predictions.css'
       - 'public/js/riot-music.js'
       - 'public/riot-music.css'
+      - 'public/js/site-effects.js'
+      - 'public/site-effects.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
@@ -26,6 +28,8 @@ on:
       - 'public/team-predictions.css'
       - 'public/js/riot-music.js'
       - 'public/riot-music.css'
+      - 'public/js/site-effects.js'
+      - 'public/site-effects.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
@@ -52,6 +56,7 @@ jobs:
           node --check public/js/match-live.js
           node --check public/js/team-predictions.js
           node --check public/js/riot-music.js
+          node --check public/js/site-effects.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
       - name: Start WebLienMinh
