@@ -449,7 +449,12 @@ export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, 
       }
 
       const pros = await readPros();
-      const featuredStats = (pros.players || []).find(p => norm(p.name) === norm(player.id)) || null;
+      const featuredStats = player.featured
+        ? (pros.players || []).find(p => {
+            if (p.page && player.preferredPage) return norm(p.page) === norm(player.preferredPage);
+            return norm(p.name) === norm(player.id);
+          }) || null
+        : null;
 
       res.setHeader('Cache-Control', 'no-store');
       res.json({
