@@ -105,6 +105,10 @@ function fileName(value) {
   return text.replace(/^(?:File|Image):/i, '').trim() || null;
 }
 
+function looksLikeRosterOrPoster(value) {
+  return /(?:^|[_\s/%-])(roster|lineup|team[ _-]?photo|teamphoto|poster|squad|players?)(?:[_\s./?&%-]|$)/i.test(String(value || ''));
+}
+
 async function wikiApi(params, timeoutMs = 12_000) {
   const query = new URLSearchParams({ format: 'json', ...params });
   const response = await fetch(`${LEAGUEPEDIA_API}?${query}`, {
@@ -210,12 +214,18 @@ async function currentProfile(title, kind = 'player', fresh = false) {
     const revision = page.revisions?.[0];
     const wikitext = revision?.slots?.main?.['*'] ?? revision?.slots?.main?.content ?? revision?.['*'] ?? '';
     const params = parseParams(wikitext);
-    const explicitImage = fileName(kind === 'team'
-      ? param(params, 'logo', 'image', 'photo')
+    const rawExplicitImage = fileName(kind === 'team'
+      ? param(params, 'logo', 'teamlogo', 'logofile', 'image')
       : param(params, 'image', 'playerimage', 'photo'));
+    const explicitImage = kind === 'team' && looksLikeRosterOrPoster(rawExplicitImage) ? null : rawExplicitImage;
     let image = null;
     if (explicitImage) image = await resolveFileUrl(explicitImage).catch(() => null);
-    image ||= page.thumbnail?.source || page.original?.source || null;
+
+    const pageImageName = fileName(page.pageimage);
+    const fallbackAllowed = kind === 'team'
+      ? Boolean(pageImageName && /logo/i.test(pageImageName) && !looksLikeRosterOrPoster(pageImageName))
+      : !looksLikeRosterOrPoster(pageImageName);
+    if (!image && fallbackAllowed) image = page.thumbnail?.source || page.original?.source || null;
 
     const result = {
       pageTitle: page.title || pageTitle,
@@ -267,7 +277,7 @@ async function currentProfile(title, kind = 'player', fresh = false) {
 
 function matchPlayer(players, rawKey) {
   const wanted = norm(cleanTitle(rawKey) || rawKey);
-  return (players || []).find(player => [player.uid, player.id, player.identityId, player.overviewPage]
+  return (players || []).find(player => [player.uid, player.id, player.identityId, player.overviewPage, player.preferredPage, player.profilePageTitle]
     .filter(Boolean).some(value => norm(cleanTitle(value) || value) === wanted));
 }
 
@@ -303,7 +313,7 @@ async function fetchImageBuffer(url) {
 }
 
 async function getAchievements(player, leaguepediaCargo, escapeCargo) {
-  const title = player.overviewPage || player.identityId || player.id;
+  const title = player.preferredPage || player.overviewPage || player.identityId || player.id;
   const key = norm(title);
   const hit = achievementCache.get(key);
   if (hit && Date.now() - hit.at < ACHIEVEMENT_TTL_MS) return hit;
@@ -343,7 +353,7 @@ export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, 
         const player = matchPlayer(directory.players, rawKey);
         if (player) {
           storedUrl = player.image || null;
-          title = player.overviewPage || player.identityId || player.id || title;
+          title = player.preferredPage || player.overviewPage || player.identityId || player.id || title;
         }
       } else {
         const team = matchTeam(directory.teams, rawKey);
@@ -407,7 +417,7 @@ export function installEsportsLiveRoutes(app, { readEsportsDirectory, readPros, 
         team: base.team ? { ...base.team } : null,
         socials: { ...(base.socials || {}) }
       };
-      const title = player.overviewPage || player.identityId || player.id;
+      const title = player.preferredPage || player.overviewPage || player.identityId || player.id;
       let liveWarning = null;
       let live = null;
       try { live = await currentProfile(title, 'player', true); } catch (error) { liveWarning = error.message; }
