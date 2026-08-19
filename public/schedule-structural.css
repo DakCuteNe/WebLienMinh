@@ -1,11 +1,5 @@
-/* Rift Meta Global 3.0.2 — structural schedule balance fix */
+/* Rift Meta Global 3.1.1 — structural schedule + completed scoreboard */
 
-/*
- * The previous patch tried to balance the existing nested CSS Grid. The live
- * card still allowed the right-side team grid to shrink around its contents.
- * This layer intentionally changes each team half to flex so the two halves
- * always occupy equal tracks and are pinned to opposite edges.
- */
 .schedule-day{
   grid-template-columns:118px minmax(0,1fr)!important;
   gap:20px!important;
@@ -87,7 +81,6 @@
   font-variant-numeric:tabular-nums!important;
 }
 
-/* Exact visual axis of the matchup. */
 .schedule-versus{
   position:relative!important;
   display:flex!important;
@@ -125,12 +118,95 @@
   font-size:8px!important;
 }
 
-.schedule-match-top{padding:10px 15px!important}
-.schedule-league{flex:1 1 auto!important;min-width:0!important}
+/* Completed matches read like a broadcast scoreboard: TEAM A | 0 — 2 | TEAM B. */
+.schedule-match.is-completed .schedule-match-main{
+  grid-template-columns:minmax(0,1fr) 176px minmax(0,1fr)!important;
+}
+.schedule-match.is-completed .schedule-team.side-left{padding-right:22px!important}
+.schedule-match.is-completed .schedule-team.side-right{padding-left:22px!important}
+.schedule-match.is-completed .schedule-team.is-winner strong{color:#f5fbff!important}
+.schedule-match.is-completed .schedule-team.is-winner img{filter:drop-shadow(0 0 10px rgba(80,210,255,.18))!important}
+.schedule-match.is-completed .schedule-team.is-loser{opacity:.72!important}
+.schedule-match.is-completed .schedule-team.is-loser strong{font-weight:700!important}
+
+.schedule-versus.is-final{
+  width:176px!important;
+  padding:10px 16px!important;
+  gap:7px!important;
+  background:radial-gradient(circle at 50% 45%,rgba(40,84,116,.22),rgba(7,14,24,.08) 66%)!important;
+}
+.schedule-final-score{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:12px!important;
+  width:100%!important;
+  line-height:1!important;
+  font-variant-numeric:tabular-nums!important;
+}
+.schedule-final-score strong{
+  display:block!important;
+  min-width:36px!important;
+  font-size:30px!important;
+  font-weight:900!important;
+  color:#8fa1b2!important;
+  text-align:center!important;
+  letter-spacing:-.03em!important;
+}
+.schedule-final-score strong.winner{
+  color:#f4fbff!important;
+  text-shadow:0 0 18px rgba(90,214,255,.18)!important;
+}
+.schedule-final-score span{
+  color:#50677d!important;
+  font-size:17px!important;
+  font-weight:700!important;
+}
+.schedule-final-meta{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  color:#71869a!important;
+}
+.schedule-final-meta time,
+.schedule-final-meta small{
+  display:inline!important;
+  margin:0!important;
+  font-size:8px!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  color:inherit!important;
+}
+.schedule-final-meta small::before{
+  content:'•';
+  margin-right:8px;
+  color:#3f566b;
+}
+
+.schedule-match-top{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  width:100%!important;
+  padding:10px 15px!important;
+  box-sizing:border-box!important;
+  gap:16px!important;
+}
+.schedule-league{
+  flex:1 1 auto!important;
+  min-width:0!important;
+  overflow:hidden!important;
+}
 .schedule-match-state{
   flex:0 0 auto!important;
-  min-width:96px!important;
+  min-width:108px!important;
+  max-width:none!important;
+  padding-left:8px!important;
   text-align:right!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
 }
 .schedule-state-tabs{
   display:grid!important;
@@ -138,7 +214,6 @@
 }
 .schedule-state-tabs button{text-align:center!important;white-space:nowrap!important}
 
-/* Wide screens: keep content comfortably inside each equal half. */
 @media(min-width:1280px){
   .schedule-team>div{flex-basis:380px!important;max-width:380px!important}
 }
@@ -155,6 +230,10 @@
   .schedule-team.side-left{padding-right:14px!important}
   .schedule-team.side-right{padding-left:14px!important}
   .schedule-team>div{flex-basis:240px!important;max-width:240px!important}
+  .schedule-match.is-completed .schedule-match-main{grid-template-columns:minmax(0,1fr) 132px minmax(0,1fr)!important}
+  .schedule-versus.is-final{width:132px!important;padding:8px 10px!important}
+  .schedule-final-score{gap:8px!important}
+  .schedule-final-score strong{min-width:28px!important;font-size:25px!important}
 }
 
 @media(max-width:680px){
@@ -186,7 +265,17 @@
   .schedule-versus small{font-size:7px!important;margin-top:2px!important}
   .schedule-state-tabs{grid-template-columns:repeat(3,1fr)!important;width:100%!important}
   .schedule-state-tabs button{min-width:0!important;padding:8px 5px!important}
-  .schedule-match-state{min-width:68px!important}
+  .schedule-match-state{min-width:auto!important;font-size:8px!important}
+  .schedule-match.is-completed .schedule-match-main{grid-template-columns:minmax(0,1fr) 88px minmax(0,1fr)!important}
+  .schedule-match.is-completed .schedule-team.side-left{padding-right:6px!important}
+  .schedule-match.is-completed .schedule-team.side-right{padding-left:6px!important}
+  .schedule-versus.is-final{width:88px!important;padding:7px 5px!important;gap:5px!important}
+  .schedule-final-score{gap:5px!important}
+  .schedule-final-score strong{min-width:20px!important;font-size:20px!important}
+  .schedule-final-score span{font-size:12px!important}
+  .schedule-final-meta{gap:3px!important}
+  .schedule-final-meta time,.schedule-final-meta small{font-size:6px!important}
+  .schedule-final-meta small::before{margin-right:3px!important}
 }
 
 @media(max-width:440px){
@@ -205,8 +294,13 @@
   .schedule-score{flex-basis:18px!important;width:18px!important;font-size:17px!important}
   .schedule-match-top{padding:8px 9px!important;gap:7px!important}
   .schedule-league span{max-width:84px!important}
-  .schedule-match-state{min-width:58px!important;font-size:8px!important}
+  .schedule-match-state{font-size:8px!important}
   .schedule-favorite-mark{display:none!important}
+  .schedule-match.is-completed .schedule-match-main{grid-template-columns:minmax(0,1fr) 76px minmax(0,1fr)!important}
+  .schedule-versus.is-final{width:76px!important;padding:6px 3px!important}
+  .schedule-final-score strong{min-width:18px!important;font-size:18px!important}
+  .schedule-final-meta time{display:none!important}
+  .schedule-final-meta small::before{display:none!important}
 }
 
 @media(prefers-reduced-motion:reduce){
