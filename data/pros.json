@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-19T11:20:10.737Z",
+  "generatedAt": "2026-08-19T11:24:37.336Z",
   "source": "Hybrid: preserved Leaguepedia detailed analytics + Worldwide Esports Directory fallback",
   "sourceType": "degraded hybrid; community scoreboard + Oracle/identity directory",
   "degraded": true,
   "sourceError": "Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.",
-  "preservedDetailedAt": "2026-08-19T11:11:07.890Z",
-  "preservedDetailedCount": 42,
-  "directoryFallbackCount": 0,
-  "unresolvedCount": 0,
+  "preservedDetailedAt": "2026-08-19T11:20:10.737Z",
+  "preservedDetailedCount": 9,
+  "directoryFallbackCount": 28,
+  "unresolvedCount": 5,
   "watchCount": 42,
   "detailedPriorityCount": 22,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity.",
+  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
   "players": [
     {
       "name": "Faker",
@@ -455,7 +455,7 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Chovy",
@@ -894,7 +894,7 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Ruler",
@@ -1338,7 +1338,7 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Canyon",
@@ -1757,7 +1757,7 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Keria",
@@ -2200,7 +2200,7 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Zeus",
@@ -2639,7 +2639,7 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Oner",
@@ -3071,10 +3071,11 @@
       "priority": 1,
       "regionHint": "LCK",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "Gumayusi",
+      "realName": "Lee Min-hyeong",
       "page": "Gumayusi",
       "targetTeam": null,
       "priority": 1,
@@ -3082,6 +3083,7 @@
       "profileUid": "oe:player:c7319736816efe935787b4381c6f321",
       "available": true,
       "team": "Hanwha Life Esports",
+      "region": "LCK",
       "role": "BOTTOM",
       "games": 23,
       "winRate": 47.8,
@@ -3094,7 +3096,7 @@
       "avgVision": 48.7,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-10 11:46:50",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Corki",
@@ -3144,13 +3146,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/0e/HLE_Gumayusi_2026_Split_1.png/revision/latest?cb=20260122172840",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "ShowMaker",
+      "realName": "Heo Su",
       "page": "ShowMaker",
       "targetTeam": null,
       "priority": 1,
@@ -3158,6 +3161,7 @@
       "profileUid": "oe:player:5f8ff49cd56eae61d635966b183a451",
       "available": true,
       "team": "Dplus Kia",
+      "region": "LCK",
       "role": "MIDDLE",
       "games": 41,
       "winRate": 48.8,
@@ -3170,7 +3174,7 @@
       "avgVision": 42.2,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-08 09:04:42",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Azir",
@@ -3220,13 +3224,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e7/DK_ShowMaker_2026_Split_1.png/revision/latest?cb=20260122171041",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Bdd",
+      "realName": "Gwak Bo-seong",
       "page": "Bdd",
       "targetTeam": null,
       "priority": 1,
@@ -3234,6 +3239,7 @@
       "profileUid": "oe:player:30361653a485a9609fb2d3aa073282c",
       "available": true,
       "team": "KT Rolster",
+      "region": "LCK",
       "role": "MIDDLE",
       "games": 24,
       "winRate": 50,
@@ -3246,7 +3252,7 @@
       "avgVision": 41.5,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-09 12:25:37",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Taliyah",
@@ -3296,13 +3302,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d8/KT_Bdd_2026_Split_1.png/revision/latest?cb=20260124034525",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Teddy",
+      "realName": "Park Jin-seong",
       "page": "Teddy",
       "targetTeam": "HANJIN BRION",
       "priority": 1,
@@ -3310,6 +3317,7 @@
       "profileUid": "oe:player:2b5fa564a1259b97bc238fbfa719b07",
       "available": true,
       "team": "HANJIN BRION",
+      "region": "LCK",
       "role": "BOTTOM",
       "games": 26,
       "winRate": 34.6,
@@ -3322,7 +3330,7 @@
       "avgVision": 37.5,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-09 10:10:03",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Ezreal",
@@ -3372,41 +3380,170 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://www.kukinews.com/data/kuk/image/2026/03/19/kuk20260319000058.800x.9.jpg",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Kanavi",
+      "realName": "Seo Jin-hyeok",
       "page": "Kanavi",
       "targetTeam": "Hanwha Life Esports",
       "priority": 1,
       "regionHint": "LCK",
+      "profileUid": "oe:player:41deab55354f57a94135989133f9968",
+      "available": true,
+      "team": "Hanwha Life Esports",
+      "region": "LCK",
       "role": "JUNGLE",
-      "available": false,
-      "games": 0,
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "games": 23,
+      "winRate": 47.8,
+      "kda": 2.87,
+      "avgKills": 4,
+      "avgDeaths": 4,
+      "avgAssists": 7.48,
+      "avgCS": 225.3,
+      "avgDamage": null,
+      "avgVision": 64.8,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-10 11:46:50",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
+      "championPool": [
+        {
+          "name": "Jarvan IV",
+          "count": 5,
+          "rate": 21.7
+        },
+        {
+          "name": "Xin Zhao",
+          "count": 5,
+          "rate": 21.7
+        },
+        {
+          "name": "Vi",
+          "count": 4,
+          "rate": 17.4
+        },
+        {
+          "name": "Aatrox",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Pantheon",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Trundle",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Ambessa",
+          "count": 1,
+          "rate": 4.3
+        },
+        {
+          "name": "Kha'Zix",
+          "count": 1,
+          "rate": 4.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/14/HLE_Kanavi_2026_Split_1.png/revision/latest?cb=20260122172841",
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Scout",
+      "realName": "Lee Ye-chan",
       "page": "Scout",
       "targetTeam": "Nongshim RedForce",
       "priority": 1,
       "regionHint": "LCK",
-      "role": "MID",
-      "available": false,
-      "games": 0,
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "profileUid": "oe:player:71e79ef80600d398d90cfebe3b0b758",
+      "available": true,
+      "team": "Nongshim RedForce",
+      "region": "LCK",
+      "role": "MIDDLE",
+      "games": 27,
+      "winRate": 44.4,
+      "kda": 3.6,
+      "avgKills": 4.15,
+      "avgDeaths": 3.11,
+      "avgAssists": 7.04,
+      "avgCS": 297.3,
+      "avgDamage": null,
+      "avgVision": 43,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 12:25:37",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
+      "championPool": [
+        {
+          "name": "Orianna",
+          "count": 5,
+          "rate": 18.5
+        },
+        {
+          "name": "Taliyah",
+          "count": 5,
+          "rate": 18.5
+        },
+        {
+          "name": "Azir",
+          "count": 4,
+          "rate": 14.8
+        },
+        {
+          "name": "Aurora",
+          "count": 3,
+          "rate": 11.1
+        },
+        {
+          "name": "Ryze",
+          "count": 3,
+          "rate": 11.1
+        },
+        {
+          "name": "Akali",
+          "count": 2,
+          "rate": 7.4
+        },
+        {
+          "name": "Galio",
+          "count": 1,
+          "rate": 3.7
+        },
+        {
+          "name": "LeBlanc",
+          "count": 1,
+          "rate": 3.7
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8c/NS_Scout_2026_Split_1.png/revision/latest?cb=20260124035655",
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Doran",
+      "realName": "Choi Hyeon-joon",
       "page": "Doran (Choi Hyeon-joon)",
       "targetTeam": null,
       "priority": 2,
@@ -3414,6 +3551,7 @@
       "profileUid": "oe:player:a1f3b2bb3f36e5113237f92d76dc4c8",
       "available": true,
       "team": "T1",
+      "region": "LCK",
       "role": "TOP",
       "games": 30,
       "winRate": 56.7,
@@ -3426,7 +3564,7 @@
       "avgVision": 41.8,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-10 08:09:34",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Jayce",
@@ -3476,10 +3614,10 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/de/T1_Doran_2026_LCK_Cup.png/revision/latest?cb=20260122163256",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Peanut",
@@ -3490,10 +3628,9 @@
       "role": "JUNGLE",
       "available": false,
       "games": 0,
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "directory-reconcile-unresolved",
+      "note": "Không tìm thấy đúng canonical active player theo các ràng buộc identity hiện tại; WebLienMinh không tự đoán."
     },
     {
       "name": "Delight",
@@ -3501,75 +3638,12 @@
       "targetTeam": "Hanwha Life Esports",
       "priority": 2,
       "regionHint": "LCK",
-      "profileUid": "oe:player:051ca2e31ba25123961b3df95fdef4c",
-      "available": true,
-      "team": "Hanwha Life Esports",
       "role": "UTILITY",
-      "games": 23,
-      "winRate": 47.8,
-      "kda": 3.28,
-      "avgKills": 0.78,
-      "avgDeaths": 3.43,
-      "avgAssists": 10.48,
-      "avgCS": 39.2,
-      "avgDamage": null,
-      "avgVision": 140,
-      "latestPatch": "16.07",
-      "latestGameAt": "2026-04-10 11:46:50",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
-      "championPool": [
-        {
-          "name": "Rakan",
-          "count": 5,
-          "rate": 21.7
-        },
-        {
-          "name": "Alistar",
-          "count": 3,
-          "rate": 13
-        },
-        {
-          "name": "Bard",
-          "count": 3,
-          "rate": 13
-        },
-        {
-          "name": "Nautilus",
-          "count": 3,
-          "rate": 13
-        },
-        {
-          "name": "Lulu",
-          "count": 2,
-          "rate": 8.7
-        },
-        {
-          "name": "Seraphine",
-          "count": 2,
-          "rate": 8.7
-        },
-        {
-          "name": "Braum",
-          "count": 1,
-          "rate": 4.3
-        },
-        {
-          "name": "Nami",
-          "count": 1,
-          "rate": 4.3
-        }
-      ],
-      "commonBuilds": [],
-      "commonItems": [],
-      "commonRunes": [],
-      "commonSpells": [],
-      "teamBanPriorities": [],
-      "recentGames": [],
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/9a/OSU_DelightHeadPhoto.png/revision/latest?cb=20260303063603",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "available": false,
+      "games": 0,
+      "fallback": true,
+      "fallbackSource": "directory-reconcile-unresolved",
+      "note": "Không tìm thấy đúng canonical active player theo các ràng buộc identity hiện tại; WebLienMinh không tự đoán."
     },
     {
       "name": "Peyz",
@@ -3577,62 +3651,77 @@
       "targetTeam": "T1",
       "priority": 2,
       "regionHint": "LCK",
-      "profileUid": "oe:player:5bbc2b92348d930ebd500cb9ce71bb7",
-      "available": true,
-      "team": "T1",
       "role": "BOTTOM",
-      "games": 30,
-      "winRate": 56.7,
-      "kda": 3.9,
-      "avgKills": 5.23,
-      "avgDeaths": 2.8,
-      "avgAssists": 5.7,
-      "avgCS": 338,
+      "available": false,
+      "games": 0,
+      "fallback": true,
+      "fallbackSource": "directory-reconcile-unresolved",
+      "note": "Không tìm thấy đúng canonical active player theo các ràng buộc identity hiện tại; WebLienMinh không tự đoán."
+    },
+    {
+      "name": "Knight",
+      "realName": "Zhuo Ding",
+      "page": "Knight (Zhuo Ding)",
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:ed29043422e3c515e1cb292464b990b",
+      "available": true,
+      "team": "Bilibili Gaming",
+      "region": "LPL",
+      "role": "MIDDLE",
+      "games": 60,
+      "winRate": 71.7,
+      "kda": 6.02,
+      "avgKills": 5.48,
+      "avgDeaths": 2.02,
+      "avgAssists": 6.65,
+      "avgCS": 290.1,
       "avgDamage": null,
-      "avgVision": 41.6,
+      "avgVision": 40.1,
       "latestPatch": "16.07",
-      "latestGameAt": "2026-04-10 08:09:34",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "latestGameAt": "2026-04-09 13:07:10",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
-          "name": "Aphelios",
+          "name": "Ryze",
+          "count": 9,
+          "rate": 15
+        },
+        {
+          "name": "Aurora",
+          "count": 6,
+          "rate": 10
+        },
+        {
+          "name": "Syndra",
+          "count": 6,
+          "rate": 10
+        },
+        {
+          "name": "Azir",
           "count": 5,
-          "rate": 16.7
+          "rate": 8.3
         },
         {
-          "name": "Ezreal",
-          "count": 3,
-          "rate": 10
+          "name": "Orianna",
+          "count": 5,
+          "rate": 8.3
         },
         {
-          "name": "Kai'Sa",
-          "count": 3,
-          "rate": 10
-        },
-        {
-          "name": "Kalista",
-          "count": 3,
-          "rate": 10
-        },
-        {
-          "name": "Varus",
-          "count": 3,
-          "rate": 10
-        },
-        {
-          "name": "Corki",
-          "count": 2,
+          "name": "Galio",
+          "count": 4,
           "rate": 6.7
         },
         {
-          "name": "Jhin",
-          "count": 2,
+          "name": "LeBlanc",
+          "count": 4,
           "rate": 6.7
         },
         {
-          "name": "Lucian",
-          "count": 2,
-          "rate": 6.7
+          "name": "Ahri",
+          "count": 3,
+          "rate": 5
         }
       ],
       "commonBuilds": [],
@@ -3641,37 +3730,89 @@
       "commonSpells": [],
       "teamBanPriorities": [],
       "recentGames": [],
-      "image": null,
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
-    },
-    {
-      "name": "Knight",
-      "page": null,
-      "targetTeam": null,
-      "role": "MID",
-      "available": false,
-      "games": 0,
-      "note": "Chưa có scoreboard gần đây cho Knight trong khoảng 120 ngày.",
-      "priority": 1,
-      "regionHint": "LPL",
-      "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/ec/BLG_Knight_2026_Split_1.png/revision/latest?cb=20260327160422",
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Bin",
-      "page": null,
+      "realName": "Chen Ze-Bin",
+      "page": "Bin (Chen Ze-Bin)",
       "targetTeam": null,
-      "role": "TOP",
-      "available": false,
-      "games": 0,
-      "note": "Chưa có scoreboard gần đây cho Bin trong khoảng 120 ngày.",
       "priority": 1,
       "regionHint": "LPL",
-      "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "profileUid": "oe:player:fb66ef5885b4be9323905b821dc3a42",
+      "available": true,
+      "team": "Bilibili Gaming",
+      "region": "LPL",
+      "role": "TOP",
+      "games": 60,
+      "winRate": 71.7,
+      "kda": 4.16,
+      "avgKills": 3.1,
+      "avgDeaths": 2.08,
+      "avgAssists": 5.57,
+      "avgCS": 298.2,
+      "avgDamage": null,
+      "avgVision": 39.6,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 13:07:10",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
+      "championPool": [
+        {
+          "name": "Gnar",
+          "count": 11,
+          "rate": 18.3
+        },
+        {
+          "name": "Renekton",
+          "count": 8,
+          "rate": 13.3
+        },
+        {
+          "name": "Sion",
+          "count": 8,
+          "rate": 13.3
+        },
+        {
+          "name": "Rumble",
+          "count": 6,
+          "rate": 10
+        },
+        {
+          "name": "Ambessa",
+          "count": 5,
+          "rate": 8.3
+        },
+        {
+          "name": "K'Sante",
+          "count": 4,
+          "rate": 6.7
+        },
+        {
+          "name": "Yorick",
+          "count": 4,
+          "rate": 6.7
+        },
+        {
+          "name": "Jax",
+          "count": 3,
+          "rate": 5
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/18/BLG_Bin_2026_Split_1.png/revision/latest?cb=20260327160417",
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Viper",
@@ -4119,10 +4260,11 @@
       "priority": 1,
       "regionHint": "LPL",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "JackeyLove",
+      "realName": "Yu Wen-Bo",
       "page": "JackeyLove",
       "targetTeam": null,
       "priority": 1,
@@ -4130,6 +4272,7 @@
       "profileUid": "oe:player:c54e1090ef1faa736b12493051c4855",
       "available": true,
       "team": "Top Esports",
+      "region": "LPL",
       "role": "BOTTOM",
       "games": 6,
       "winRate": 66.7,
@@ -4142,7 +4285,7 @@
       "avgVision": 46.3,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-08 13:43:56",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Ashe",
@@ -4172,13 +4315,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/1f/TES_JackeyLove_2026_Split_1.png/revision/latest?cb=20260325171016",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Tarzan",
+      "realName": "Lee Seung-yong",
       "page": "Tarzan (Lee Seung-yong)",
       "targetTeam": null,
       "priority": 1,
@@ -4186,6 +4330,7 @@
       "profileUid": "oe:player:62922f2b370657a966de4d84f5586bf",
       "available": true,
       "team": "Anyone's Legend",
+      "region": "LPL",
       "role": "JUNGLE",
       "games": 47,
       "winRate": 61.7,
@@ -4198,7 +4343,7 @@
       "avgVision": 59.3,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 13:18:03",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Pantheon",
@@ -4248,13 +4393,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/eb/AL_Tarzan_2026_Split_1.png/revision/latest?cb=20260327160102",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Xiaohu",
+      "realName": "Li Yuan-Hao",
       "page": "Xiaohu",
       "targetTeam": null,
       "priority": 1,
@@ -4262,6 +4408,7 @@
       "profileUid": "oe:player:beea9fe15bff6a7ab0b3913d3d5fde6",
       "available": true,
       "team": "Weibo Gaming",
+      "region": "LPL",
       "role": "MIDDLE",
       "games": 49,
       "winRate": 46.9,
@@ -4274,7 +4421,7 @@
       "avgVision": 48.8,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-09 11:05:35",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Ryze",
@@ -4324,13 +4471,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/b/b0/WBG_Xiaohu_2026_Split_1.png/revision/latest?cb=20260328182611",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Meiko",
+      "realName": "Tian Ye",
       "page": "Meiko",
       "targetTeam": null,
       "priority": 1,
@@ -4338,6 +4486,7 @@
       "profileUid": "oe:player:bda7cc061d7a1576f1dcad33dd505cd",
       "available": true,
       "team": "Invictus Gaming",
+      "region": "LPL",
       "role": "UTILITY",
       "games": 5,
       "winRate": 80,
@@ -4350,7 +4499,7 @@
       "avgVision": 126.2,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-08 11:21:42",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Seraphine",
@@ -4380,13 +4529,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/c1/IG_Meiko_2026_Split_1.png/revision/latest?cb=20260327160909",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Elk",
+      "realName": "Zhao Jia-Hao",
       "page": "Elk",
       "targetTeam": null,
       "priority": 2,
@@ -4394,6 +4544,7 @@
       "profileUid": "oe:player:a58a0d41103cdc5b58cbb547eeaca2d",
       "available": true,
       "team": "Weibo Gaming",
+      "region": "LPL",
       "role": "BOTTOM",
       "games": 49,
       "winRate": 46.9,
@@ -4406,7 +4557,7 @@
       "avgVision": 49.5,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-09 11:05:35",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Yunara",
@@ -4456,13 +4607,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/5d/WBG_Elk_2026_Split_1.png/revision/latest?cb=20260328182558",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "ON",
+      "realName": "Luo Wen-Jun",
       "page": "ON",
       "targetTeam": "Bilibili Gaming",
       "priority": 2,
@@ -4470,6 +4622,7 @@
       "profileUid": "oe:player:90651ebea9a35ec4e018c8157492e17",
       "available": true,
       "team": "Bilibili Gaming",
+      "region": "LPL",
       "role": "UTILITY",
       "games": 60,
       "winRate": 71.7,
@@ -4482,7 +4635,7 @@
       "avgVision": 140.4,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-09 13:07:10",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Alistar",
@@ -4532,13 +4685,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/BLG_ON_2026_Split_1.png/revision/latest?cb=20260327160426",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Missing",
+      "realName": "Lou Yun-Feng",
       "page": "MISSING",
       "targetTeam": null,
       "priority": 2,
@@ -4546,6 +4700,7 @@
       "profileUid": "oe:player:10d1208b485425756fcc932229386b0",
       "available": true,
       "team": "LNG Esports",
+      "region": "LPL",
       "role": "UTILITY",
       "games": 21,
       "winRate": 76.2,
@@ -4558,7 +4713,7 @@
       "avgVision": 145.8,
       "latestPatch": "16.02",
       "latestGameAt": "2026-02-11 12:10:08",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Karma",
@@ -4608,13 +4763,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/25/ME_Hunamu_2018_Spring.png/revision/latest/scale-to-width-down/520?cb=20180322181454",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Creme",
+      "realName": "Lin Jian",
       "page": "Creme",
       "targetTeam": null,
       "priority": 2,
@@ -4622,6 +4778,7 @@
       "profileUid": "oe:player:6e7908512cb309a43388bb464a312a2",
       "available": true,
       "team": "Top Esports",
+      "region": "LPL",
       "role": "MIDDLE",
       "games": 49,
       "winRate": 51,
@@ -4634,7 +4791,7 @@
       "avgVision": 42.6,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-08 13:43:56",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Azir",
@@ -4684,10 +4841,10 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/49/TES_Creme_2026_Split_1.png/revision/latest?cb=20260328182016",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Caps",
@@ -5126,10 +5283,11 @@
       "priority": 1,
       "regionHint": "LEC",
       "fallback": false,
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "detailedPreservedFrom": "2026-08-19T11:20:10.737Z"
     },
     {
       "name": "BrokenBlade",
+      "realName": "Sergen Çelik",
       "page": "BrokenBlade",
       "targetTeam": null,
       "priority": 2,
@@ -5137,6 +5295,7 @@
       "profileUid": "oe:player:84bff3a326833c7c9181c698f676878",
       "available": true,
       "team": "G2 Esports",
+      "region": "LEC",
       "role": "TOP",
       "games": 44,
       "winRate": 65.9,
@@ -5149,7 +5308,7 @@
       "avgVision": 44.6,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 18:36:23",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "K'Sante",
@@ -5199,13 +5358,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/53/G2_BrokenBlade_2026_Split_1.png/revision/latest?cb=20260117092520",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Hans Sama",
+      "realName": "Steven Liv",
       "page": "Hans Sama",
       "targetTeam": null,
       "priority": 2,
@@ -5213,6 +5373,7 @@
       "profileUid": "oe:player:c62a5235ad6bc113a1e64eb0e9aa8c8",
       "available": true,
       "team": "G2 Esports",
+      "region": "LEC",
       "role": "BOTTOM",
       "games": 44,
       "winRate": 65.9,
@@ -5225,7 +5386,7 @@
       "avgVision": 49.7,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 18:36:23",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Ashe",
@@ -5275,13 +5436,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d9/G2_Hans_Sama_2026_Split_1.png/revision/latest?cb=20260117092525",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Mikyx",
+      "realName": "Mihael Mehle",
       "page": "Mikyx",
       "targetTeam": null,
       "priority": 2,
@@ -5289,6 +5451,7 @@
       "profileUid": "oe:player:9d5052e9f9f4a63835f738441a3b1f6",
       "available": true,
       "team": "SK Gaming",
+      "region": "LEC",
       "role": "UTILITY",
       "games": 21,
       "winRate": 33.3,
@@ -5301,7 +5464,7 @@
       "avgVision": 162.6,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 16:03:43",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Alistar",
@@ -5351,13 +5514,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2c/SK_Mikyx_2026_Split_3.png/revision/latest?cb=20260724190212",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Humanoid",
+      "realName": "Marek Brázda",
       "page": "Humanoid",
       "targetTeam": null,
       "priority": 2,
@@ -5365,6 +5529,7 @@
       "profileUid": "oe:player:edf8b064c096691e539b7e2a3e28179",
       "available": true,
       "team": "Team Vitality",
+      "region": "LEC",
       "role": "MIDDLE",
       "games": 28,
       "winRate": 60.7,
@@ -5377,7 +5542,7 @@
       "avgVision": 41.9,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-06 19:32:40",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Azir",
@@ -5427,13 +5592,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/ea/VIT_Humanoid_2026_Split_2.png/revision/latest?cb=20260721164732",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Razork",
+      "realName": "Iván Martín Díaz",
       "page": "Razork",
       "targetTeam": null,
       "priority": 2,
@@ -5441,6 +5607,7 @@
       "profileUid": "oe:player:390ca7b6b38d552363eba1b5b54ff18",
       "available": true,
       "team": "Fnatic",
+      "region": "LEC",
       "role": "JUNGLE",
       "games": 23,
       "winRate": 34.8,
@@ -5453,7 +5620,7 @@
       "avgVision": 58.3,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 18:36:23",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Pantheon",
@@ -5503,13 +5670,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f3/FNC_Razork_2026_Split_3.png/revision/latest?cb=20260724141645",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Upset",
+      "realName": "Elias Lipp",
       "page": "Upset",
       "targetTeam": null,
       "priority": 2,
@@ -5517,6 +5685,7 @@
       "profileUid": "oe:player:fe4329cec43193c425eb28a4a4b304a",
       "available": true,
       "team": "Fnatic",
+      "region": "LEC",
       "role": "BOTTOM",
       "games": 23,
       "winRate": 34.8,
@@ -5529,7 +5698,7 @@
       "avgVision": 39.8,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 18:36:23",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Yunara",
@@ -5579,13 +5748,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/9b/FNC_Upset_2026_Split_3.png/revision/latest?cb=20260724141643",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Inspired",
+      "realName": "Kacper Słoma",
       "page": "Inspired",
       "targetTeam": null,
       "priority": 2,
@@ -5593,6 +5763,7 @@
       "profileUid": "oe:player:a8307167f3a1c933295bb9e3d43700e",
       "available": true,
       "team": "LYON",
+      "region": "LCS",
       "role": "JUNGLE",
       "games": 37,
       "winRate": 54.1,
@@ -5605,7 +5776,7 @@
       "avgVision": 56.2,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-04 22:00:50",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Xin Zhao",
@@ -5655,10 +5826,10 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/fa/LYON_Inspired_2026_Split_1.png/revision/latest?cb=20260124041829",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Bwipo",
@@ -5669,13 +5840,13 @@
       "role": "TOP",
       "available": false,
       "games": 0,
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "directory-reconcile-unresolved",
+      "note": "Không tìm thấy đúng canonical active player theo các ràng buộc identity hiện tại; WebLienMinh không tự đoán."
     },
     {
       "name": "CoreJJ",
+      "realName": "Jo Yong-in",
       "page": "CoreJJ",
       "targetTeam": "Team Liquid",
       "priority": 2,
@@ -5683,6 +5854,7 @@
       "profileUid": "oe:player:05fafeaf23dc3285558a4e968970b9f",
       "available": true,
       "team": "Team Liquid",
+      "region": "LCS",
       "role": "UTILITY",
       "games": 18,
       "winRate": 55.6,
@@ -5695,7 +5867,7 @@
       "avgVision": 126,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 21:51:16",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Nami",
@@ -5745,10 +5917,10 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/80/TL_CoreJJ_2026_Split_1.png/revision/latest?cb=20260124041859",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Levi",
@@ -5759,13 +5931,13 @@
       "role": "JUNGLE",
       "available": false,
       "games": 0,
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "directory-reconcile-unresolved",
+      "note": "Không tìm thấy đúng canonical active player theo các ràng buộc identity hiện tại; WebLienMinh không tự đoán."
     },
     {
       "name": "Kiaya",
+      "realName": "Trần Duy Sang",
       "page": "Kiaya",
       "targetTeam": "GAM Esports",
       "priority": 2,
@@ -5773,6 +5945,7 @@
       "profileUid": "oe:player:73e08f7701a4316284cbe884b5d7e56",
       "available": true,
       "team": "GAM Esports",
+      "region": "LCP",
       "role": "TOP",
       "games": 22,
       "winRate": 45.5,
@@ -5785,7 +5958,7 @@
       "avgVision": 55.4,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 12:06:46",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Gnar",
@@ -5835,13 +6008,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/4d/GAM_Kiaya_2026_Split_1.png/revision/latest?cb=20260124180148",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Shogun",
+      "realName": "Nguyễn Văn Huy",
       "page": "Shogun (Nguyễn Văn Huy)",
       "targetTeam": null,
       "priority": 2,
@@ -5849,6 +6023,7 @@
       "profileUid": "oe:player:60d1428b9206634f3feb66e4b8ebd59",
       "available": true,
       "team": "MVK Esports",
+      "region": "LCP",
       "role": "BOTTOM",
       "games": 19,
       "winRate": 42.1,
@@ -5861,7 +6036,7 @@
       "avgVision": 49.2,
       "latestPatch": "16.02",
       "latestGameAt": "2026-02-08 10:25:21",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Corki",
@@ -5911,13 +6086,14 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/6/68/SGB_Shogun_2021_Split_2.png/revision/latest/scale-to-width-down/520?cb=20210616143751",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Artemis",
+      "realName": "Trần Quốc Hưng",
       "page": "Artemis (Trần Quốc Hưng)",
       "targetTeam": null,
       "priority": 2,
@@ -5925,6 +6101,7 @@
       "profileUid": "oe:player:9d2474b953a3a0be93880409ccceb4e",
       "available": true,
       "team": "GAM Esports",
+      "region": "LCP",
       "role": "BOTTOM",
       "games": 22,
       "winRate": 45.5,
@@ -5937,7 +6114,7 @@
       "avgVision": 44.4,
       "latestPatch": "16.07",
       "latestGameAt": "2026-04-05 12:06:46",
-      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory.",
       "championPool": [
         {
           "name": "Yunara",
@@ -5987,10 +6164,17 @@
       "teamBanPriorities": [],
       "recentGames": [],
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/3d/GAM_Artemis_2026_Split_1.png/revision/latest?cb=20260124180144",
-      "fallback": false,
-      "fallbackSource": "Leaguepedia Cargo throttled",
-      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại.",
-      "detailedPreservedFrom": "2026-08-19T11:11:07.890Z"
+      "fallback": true,
+      "fallbackSource": "worldwide-directory-reconcile",
+      "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+      "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
-  ]
+  ],
+  "reconciledAt": "2026-08-19T11:24:37.459Z",
+  "reconcileSource": "Worldwide Esports Directory current identity/basic stats",
+  "reconcileStats": {
+    "detailedPreserved": 9,
+    "directoryRefreshed": 28,
+    "unresolved": 5
+  }
 }
