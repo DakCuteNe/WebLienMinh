@@ -1,0 +1,67 @@
+name: Update Esports Schedule
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,37 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update-esports-schedule.js'
+      - 'data/esports-schedule.json'
+      - 'package.json'
+      - '.github/workflows/update-esports-schedule.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lol-esports-schedule
+  cancel-in-progress: true
+
+jobs:
+  refresh-schedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh official LoL Esports schedule cache
+        id: refresh
+        shell: bash
+        env:
+          LOLESPORTS_API_KEY: ${{ secrets.LOLESPORTS_API_KEY }}
+          ESPORTS_SCHEDULE_PAGES: '4'
+        run: |
+          set +e
+          npm run update:esports-schedule
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -ne 0 ] && [ "$code" -ne 75 ]; then
+            exit "$code"
+          fi
+
+      - name: Commit schedule cache
+        if: steps.refresh.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          if git diff --quiet -- data/esports-schedule.json; then
+            echo 'No schedule changes.'
+            exit 0
+          fi
+          git config user.name 'WebLienMinh Bot'
+          git config user.email 'weblienminh-bot@users.noreply.github.com'
+          git add data/esports-schedule.json
+          git commit -m 'Update LoL esports schedule'
+          git push
