@@ -14,7 +14,9 @@ on:
       - 'scripts/update-esports-media.js'
       - 'scripts/update-esports-media-safe.js'
       - 'scripts/refresh-major-esports-media.js'
+      - 'scripts/refresh-priority-pros.js'
       - 'scripts/apply-esports-profile-overrides.js'
+      - 'scripts/audit-priority-pros.js'
       - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
       - 'data/esports-profile-overrides.json'
@@ -87,6 +89,10 @@ jobs:
             CODE=${PIPESTATUS[0]}
           fi
           if [ "$CODE" = "0" ]; then
+            node scripts/refresh-priority-pros.js 2>&1 | tee -a esports-media.log
+            CODE=${PIPESTATUS[0]}
+          fi
+          if [ "$CODE" = "0" ]; then
             node scripts/apply-esports-profile-overrides.js 2>&1 | tee -a esports-media.log
             CODE=${PIPESTATUS[0]}
           fi
@@ -99,8 +105,12 @@ jobs:
         shell: bash
         run: |
           set +e
-          node scripts/audit-esports-directory.js 2>&1 | tee esports-audit.log
+          node scripts/audit-priority-pros.js 2>&1 | tee esports-audit.log
           CODE=${PIPESTATUS[0]}
+          if [ "$CODE" = "0" ]; then
+            node scripts/audit-esports-directory.js 2>&1 | tee -a esports-audit.log
+            CODE=${PIPESTATUS[0]}
+          fi
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
@@ -139,7 +149,7 @@ jobs:
             publishReady: complete,
             preservedPreviousData: !complete && directoryCreated,
             identityMessage: tail(identityLog, 45),
-            message: [tail(buildLog, 15), tail(mediaLog, 45), tail(auditLog, 35)].filter(Boolean).join('\n').slice(0, 20000)
+            message: [tail(buildLog, 15), tail(mediaLog, 55), tail(auditLog, 45)].filter(Boolean).join('\n').slice(0, 20000)
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/esports-directory-status.json', JSON.stringify(status, null, 2));
@@ -168,11 +178,12 @@ jobs:
 
           if [ "$COMPLETE" = "1" ]; then
             echo "All esports stages completed; publishing new directory."
-            git add data/esports-directory.json data/esports-audit.json
+            git add data/esports-directory.json data/esports-audit.json data/priority-pro-audit.json
           else
             echo "Esports run incomplete/cancelled; preserving last committed directory and audit."
             git restore --worktree --staged data/esports-directory.json 2>/dev/null || true
             git restore --worktree --staged data/esports-audit.json 2>/dev/null || true
+            git restore --worktree --staged data/priority-pro-audit.json 2>/dev/null || true
           fi
           git add data/esports-directory-status.json
 
