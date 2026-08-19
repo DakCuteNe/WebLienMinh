@@ -10,6 +10,8 @@ on:
       - 'scripts/update-esports-schedule.js'
       - 'public/data/esports-schedule.json'
       - 'public/js/schedule.js'
+      - 'public/schedule.css'
+      - 'public/app.js'
       - 'package.json'
       - '.github/workflows/update-esports-schedule.yml'
 
@@ -27,20 +29,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: npm
+          node-version: '22'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Validate schedule scripts
         run: |
           node --check scripts/update-esports-schedule.js
           node --check public/js/schedule.js
+          node --check public/app.js
 
       - name: Refresh official LoL Esports schedule cache
         id: refresh
