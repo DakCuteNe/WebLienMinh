@@ -41,7 +41,7 @@ function ensureCss() {
   if (document.querySelector('link[data-site-effects]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/site-effects.css?v=3.11.0';
+  link.href = '/site-effects.css?v=3.12.0';
   link.dataset.siteEffects = 'true';
   document.head.appendChild(link);
 }
