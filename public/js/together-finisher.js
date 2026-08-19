@@ -1,6 +1,6 @@
 import { getLanguage } from './i18n.js';
 
-export const TOGETHER_FINISHER_DURATION = 5480;
+export const TOGETHER_FINISHER_DURATION = 6200;
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let activeNode = null;
@@ -11,13 +11,13 @@ const COPY = {
   vi: {
     eyebrow: 'WORLD CHAMPIONS • ONE LEGACY',
     title: 'TOGETHER AS 1',
-    sub: 'NĂM NGƯỜI ĐỨNG CẠNH NHAU. MỘT DI SẢN ĐƯỢC TẠO NÊN.',
+    sub: 'NĂM NGƯỜI • MỘT Ý CHÍ • MỘT DI SẢN',
     final: 'VICTORY IS FORGED TOGETHER'
   },
   en: {
     eyebrow: 'WORLD CHAMPIONS • ONE LEGACY',
     title: 'TOGETHER AS 1',
-    sub: 'FIVE STAND TOGETHER. ONE LEGACY IS FORGED.',
+    sub: 'FIVE PLAYERS • ONE WILL • ONE LEGACY',
     final: 'VICTORY IS FORGED TOGETHER'
   }
 };
@@ -28,7 +28,7 @@ function ensureCss() {
   if (document.querySelector('link[data-together-finisher]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/together-finisher.css?v=3.11.0';
+  link.href = '/together-finisher.css?v=3.12.0';
   link.dataset.togetherFinisher = 'true';
   document.head.appendChild(link);
 }
@@ -51,138 +51,120 @@ function removeNode(node) {
   try { node?.remove(); } catch {}
 }
 
-function playerScene() {
-  return `
-    <g class="ta2-team" aria-hidden="true">
-      <g transform="translate(410 355)"><g class="ta2-player ta2-p1">
-        <circle class="ta2-head" cx="0" cy="-93" r="28"/>
-        <path class="ta2-hair" d="M-27-98c7-25 45-28 57-2l-7 8c-8-13-17-18-31-16-7 2-13 5-19 10z"/>
-        <path class="ta2-body" d="M-48-58c18-16 31-21 48-21 19 0 34 6 50 22l20 89-28 5-8-57-8 148h-55l-6-105-15 103h-50l18-149-22 54-28-11z"/>
-        <path class="ta2-jacket" d="M-41-48 0-30l42-19 6 36-27 16-21-21-22 21-26-16z"/>
-        <path class="ta2-arm" d="M-47-45-96 10l18 16 50-44z"/>
-      </g></g>
-      <g transform="translate(605 315)"><g class="ta2-player ta2-p2">
-        <circle class="ta2-head" cx="0" cy="-102" r="29"/>
-        <path class="ta2-hair" d="M-30-108c11-24 46-24 61 0l-8 7c-10-11-20-15-31-13-9 1-16 4-22 10z"/>
-        <path class="ta2-body" d="M-51-65c17-17 33-23 52-23 20 0 37 7 53 23l15 93-28 4-9-62-4 163h-58l-4-119-11 118h-53l23-171-30 44-24-17z"/>
-        <path class="ta2-jacket" d="M-44-56 0-34l45-22 7 37-30 21-22-23-24 23-27-21z"/>
-        <path class="ta2-arm" d="M49-55 96-5 78 14 30-28z"/>
-      </g></g>
-      <g transform="translate(800 275)"><g class="ta2-player ta2-p3">
-        <circle class="ta2-head" cx="0" cy="-112" r="31"/>
-        <path class="ta2-hair" d="M-32-119c11-27 50-29 66 0l-7 8c-11-12-22-17-36-15-9 1-16 5-23 11z"/>
-        <path class="ta2-body" d="M-56-73c18-18 35-25 57-25 23 0 42 8 59 26l13 103-30 3-9-69-3 174h-63l-2-127-15 125h-56l25-178-34 45-25-20z"/>
-        <path class="ta2-jacket" d="M-49-63 0-38l50-25 7 41-32 23L0-24-26 2l-31-24z"/>
-        <path class="ta2-arm" d="M-53-62-103-10l22 19 48-45zM52-62l49 52-21 19-49-45z"/>
-      </g></g>
-      <g transform="translate(995 315)"><g class="ta2-player ta2-p4">
-        <circle class="ta2-head" cx="0" cy="-102" r="29"/>
-        <path class="ta2-hair" d="M-30-109c10-23 46-26 60 0l-8 8c-8-10-19-15-31-13-8 1-15 5-21 10z"/>
-        <path class="ta2-body" d="M-52-65c16-17 33-23 53-23 19 0 36 7 52 23l18 94-29 5-10-64-5 163h-56l-6-119-10 118h-52l21-171-46 34-17-24z"/>
-        <path class="ta2-jacket" d="M-45-56 0-34l46-22 6 38L22 2 0-21-23 2l-29-20z"/>
-        <path class="ta2-arm" d="M-48-54-96-13-80 10l51-34z"/>
-      </g></g>
-      <g transform="translate(1190 355)"><g class="ta2-player ta2-p5">
-        <circle class="ta2-head" cx="0" cy="-93" r="28"/>
-        <path class="ta2-hair" d="M-28-100c10-22 43-25 57 0l-7 8c-10-10-19-14-31-12-7 1-13 4-19 9z"/>
-        <path class="ta2-body" d="M-48-58c16-16 31-21 49-21 18 0 34 6 49 22l31 73-27 10-22-46-7 148h-54l-6-105-15 103h-49l18-149-7 57-29-4 16-88z"/>
-        <path class="ta2-jacket" d="M-42-48 0-30l43-19 6 36L22 3 0-18-22 3l-27-16z"/>
-        <path class="ta2-arm" d="M47-47 93 7 73 25 28-19z"/>
-      </g></g>
-    </g>`;
-}
-
 function starScene() {
   return Array.from({ length: 6 }, (_, index) => {
     const x = 610 + index * 76;
-    return `<g transform="translate(${x} 155)"><g class="ta2-star" style="--i:${index}">
-      <path d="M0-22 6-7 22-6 10 4 14 20 0 11-14 20-10 4-22-6-6-7Z"/>
-      <circle cx="0" cy="0" r="34" class="ta2-star-ring"/>
-    </g></g>`;
+    return `
+      <g transform="translate(${x} 151)">
+        <g class="ta3-star" style="--i:${index}">
+          <circle class="ta3-star-orbit" r="31" />
+          <path class="ta3-star-burst" d="M0-43V-31M0 31v12M-43 0h12M31 0h12M-30-30l9 9M21 21l9 9M30-30l-9 9M-21 21l-9 9" />
+          <path class="ta3-star-core" d="M0-23 6.3-7.5 23-6.2 10.1 4.2 14.1 20.5 0 11.8-14.1 20.5-10.1 4.2-23-6.2-6.3-7.5Z" />
+        </g>
+      </g>`;
   }).join('');
 }
 
+function playerScene() {
+  const players = [
+    { x: 420, y: 458, scale: .88, body: 'M-47-71C-28-91 28-91 48-70L76 22 47 31 29-30 24 124H-25L-31-30-48 31-77 22Z', hair: 'M-29-109c8-30 48-34 61-5l-8 9c-11-13-22-17-34-14-8 2-14 5-19 10Z', arm: 'M-45-65-102-5l20 21 57-52Z' },
+    { x: 610, y: 432, scale: .98, body: 'M-52-78C-29-99 30-99 53-77L72 28 43 34 31-38 26 139H-29L-35-37-48 137H-101L-71-39-102 7-25 26Z', hair: 'M-31-117c9-28 48-33 64-4l-8 9c-10-11-21-16-34-14-9 1-16 5-22 9Z', arm: 'M48-70 101-13 81 8 29-40Z' },
+    { x: 800, y: 405, scale: 1.08, body: 'M-58-86C-32-109 34-109 59-85L79 34 47 39 34-44 29 153H-34L-40-43-53 151H-112L-78-42-111 5-28 29Z', hair: 'M-34-128c11-31 53-34 70-3l-8 10c-12-14-24-18-38-15-10 2-17 6-24 11Z', arm: 'M-55-77-112-17l23 23 58-52ZM52-78l58 61-23 23-57-53Z' },
+    { x: 990, y: 432, scale: .98, body: 'M-53-78C-29-99 30-99 53-77L74 27 45 34 31-39 26 138H-29L-35-38-48 137H-100L-72-39-105-10-19-22Z', hair: 'M-32-118c12-27 49-31 64-3l-8 9c-11-12-22-16-34-14-8 2-15 5-22 10Z', arm: 'M-48-69-101-20-83 4-28-40Z' },
+    { x: 1180, y: 458, scale: .88, body: 'M-48-71C-28-91 28-91 48-70L78 18 50 29 30-30 24 124H-25L-31-30-48 31-77 22Z', hair: 'M-29-109c9-27 47-32 61-4l-8 9c-10-11-20-16-33-13-8 1-15 5-20 9Z', arm: 'M45-64 99-8 78 14 26-36Z' }
+  ];
+
+  return players.map((p, index) => `
+    <g transform="translate(${p.x} ${p.y}) scale(${p.scale})">
+      <g class="ta3-player ta3-p${index + 1}" style="--p:${index}">
+        <ellipse class="ta3-player-shadow" cx="0" cy="130" rx="69" ry="13" />
+        <circle class="ta3-head" cx="0" cy="-96" r="30" />
+        <path class="ta3-hair" d="${p.hair}" />
+        <path class="ta3-body" d="${p.body}" />
+        <path class="ta3-jacket-line" d="M-42-66 0-38l42-28M0-38V24M-31 9 0 25 32 9" />
+        <path class="ta3-arm" d="${p.arm}" />
+        <path class="ta3-rim" d="M-52-70C-28-98 28-98 53-70" />
+      </g>
+    </g>`).join('');
+}
+
+function trophyScene() {
+  return `
+    <g transform="translate(800 426)">
+      <g class="ta3-trophy">
+        <ellipse class="ta3-trophy-halo" rx="205" ry="245" />
+        <circle class="ta3-trophy-ring ring-a" r="196" />
+        <circle class="ta3-trophy-ring ring-b" r="158" />
+        <path class="ta3-handle handle-left" d="M-91-126C-181-150-201-53-147 15c23 29 53 45 87 52l13-38c-37-10-63-29-77-53-24-43 3-71 47-52Z" />
+        <path class="ta3-handle handle-right" d="M91-126C181-150 201-53 147 15c-23 29-53 45-87 52L47 29c37-10 63-29 77-53 24-43-3-71-47-52Z" />
+        <path class="ta3-cup-shell" d="M-103-151H103l-12 108C84 33 45 89 0 109-45 89-84 33-91-43Z" />
+        <path class="ta3-cup-inner" d="M-77-127H77l-10 81C62 10 34 52 0 69-34 52-62 10-67-46Z" />
+        <path class="ta3-cup-rim" d="M-116-153c34-18 198-18 232 0l-11 29c-51 17-159 17-210 0Z" />
+        <path class="ta3-cup-facet facet-l" d="M-86-118-15-124-28 74C-57 46-74 5-79-47Z" />
+        <path class="ta3-cup-facet facet-r" d="M17-124 85-118 78-48C73 4 55 45 27 74Z" />
+        <path class="ta3-neck" d="M-23 89H23l10 67h-66Z" />
+        <path class="ta3-stem" d="M-31 149H31l19 47h-100Z" />
+        <path class="ta3-base-top" d="M-82 193H82l20 28h-204Z" />
+        <path class="ta3-base" d="M-108 216H108l30 54h-276Z" />
+        <path class="ta3-base-line" d="M-101 232H101" />
+        <path class="ta3-trophy-shine" d="M-84-139h39L4 95h-32Z" />
+      </g>
+    </g>`;
+}
+
 function sceneSvg() {
-  return `<svg class="ta2-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="presentation" aria-hidden="true">
+  return `
+  <svg class="ta3-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="presentation" aria-hidden="true">
     <defs>
-      <linearGradient id="ta2RedA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f23b4d"/><stop offset=".38" stop-color="#a40d20"/><stop offset="1" stop-color="#32030a"/></linearGradient>
-      <linearGradient id="ta2RedB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5663"/><stop offset=".42" stop-color="#8d0a1c"/><stop offset="1" stop-color="#240207"/></linearGradient>
-      <linearGradient id="ta2Gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6e4315"/><stop offset=".18" stop-color="#c68b36"/><stop offset=".43" stop-color="#ffe7a4"/><stop offset=".58" stop-color="#f6cd69"/><stop offset=".8" stop-color="#a96822"/><stop offset="1" stop-color="#4a2b0d"/></linearGradient>
-      <linearGradient id="ta2GoldVertical" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1bd"/><stop offset=".24" stop-color="#e8b954"/><stop offset=".7" stop-color="#8b531d"/><stop offset="1" stop-color="#4a2b0d"/></linearGradient>
-      <linearGradient id="ta2Shadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1215"/><stop offset=".55" stop-color="#090608"/><stop offset="1" stop-color="#020203"/></linearGradient>
-      <radialGradient id="ta2Halo"><stop offset="0" stop-color="#ffdf83" stop-opacity=".62"/><stop offset=".28" stop-color="#e84350" stop-opacity=".22"/><stop offset="1" stop-color="#5b0710" stop-opacity="0"/></radialGradient>
-      <radialGradient id="ta2Floor"><stop offset="0" stop-color="#d83241" stop-opacity=".23"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <linearGradient id="ta3Bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#020102"/><stop offset=".45" stop-color="#110307"/><stop offset="1" stop-color="#020102"/></linearGradient>
+      <linearGradient id="ta3RedA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4c59"/><stop offset=".23" stop-color="#cf1b31"/><stop offset=".62" stop-color="#780716"/><stop offset="1" stop-color="#230106"/></linearGradient>
+      <linearGradient id="ta3RedB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6871"/><stop offset=".3" stop-color="#b71327"/><stop offset=".7" stop-color="#650411"/><stop offset="1" stop-color="#1f0105"/></linearGradient>
+      <linearGradient id="ta3Gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4d2b0b"/><stop offset=".12" stop-color="#95601d"/><stop offset=".33" stop-color="#e4ad46"/><stop offset=".49" stop-color="#fff0ba"/><stop offset=".62" stop-color="#e2ad43"/><stop offset=".85" stop-color="#815018"/><stop offset="1" stop-color="#3e2208"/></linearGradient>
+      <linearGradient id="ta3GoldVertical" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3c6"/><stop offset=".18" stop-color="#e6b34d"/><stop offset=".58" stop-color="#9a611d"/><stop offset="1" stop-color="#432509"/></linearGradient>
+      <linearGradient id="ta3Shadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241519"/><stop offset=".55" stop-color="#090608"/><stop offset="1" stop-color="#020102"/></linearGradient>
+      <radialGradient id="ta3Halo"><stop offset="0" stop-color="#ffe39a" stop-opacity=".7"/><stop offset=".19" stop-color="#e74752" stop-opacity=".25"/><stop offset=".6" stop-color="#7b0815" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <radialGradient id="ta3Floor"><stop offset="0" stop-color="#d22539" stop-opacity=".3"/><stop offset=".45" stop-color="#7d0715" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
     </defs>
 
-    <rect width="1600" height="900" fill="#040204"/>
-    <ellipse class="ta2-floor" cx="800" cy="660" rx="620" ry="190" fill="url(#ta2Floor)"/>
-    <ellipse class="ta2-halo" cx="800" cy="410" rx="400" ry="330" fill="url(#ta2Halo)"/>
+    <rect class="ta3-bg" width="1600" height="900" fill="url(#ta3Bg)" />
+    <ellipse class="ta3-floor" cx="800" cy="697" rx="690" ry="195" fill="url(#ta3Floor)" />
+    <ellipse class="ta3-center-halo" cx="800" cy="410" rx="470" ry="355" fill="url(#ta3Halo)" />
 
-    <path class="ta2-ray ray-1" d="M720 0 770 0 835 655 755 655Z"/>
-    <path class="ta2-ray ray-2" d="M845 0 885 0 845 655 785 655Z"/>
-    <path class="ta2-ray ray-3" d="M570 0 605 0 748 650 695 650Z"/>
-    <path class="ta2-ray ray-4" d="M1010 0 1042 0 905 650 855 650Z"/>
+    <g class="ta3-rays"><path d="M640-80h45l137 730h-76Z"/><path d="M750-80h31l43 730h-57Z"/><path d="M885-80h35L850 650h-56Z"/><path d="M1004-80h42L889 650h-72Z"/></g>
 
-    <g class="ta2-cloth-layer cloth-back">
-      <path class="ta2-cloth cloth-a" fill="url(#ta2RedA)" d="M-240 140C120 65 330 82 548 184c113 53 243 71 372 30 177-57 361-26 560 106l-52 176c-195-111-359-141-518-89-153 50-313 25-467-47C244 267 69 270-190 342Z"/>
-      <path class="ta2-cloth-highlight" d="M-160 170c283-67 485-43 683 51 147 70 289 79 432 31 167-55 322-20 493 83"/>
-      <path class="ta2-cloth cloth-b" fill="url(#ta2RedB)" d="M1840 158c-327-66-548-24-753 94-126 73-258 91-394 48-181-57-368-22-563 105l63 170c182-107 352-136 510-85 157 50 315 25 465-58 187-104 374-116 626-64Z"/>
-      <path class="ta2-cloth-highlight" d="M1754 192c-287-50-494-11-688 94-153 83-300 95-446 48-169-54-324-17-482 88"/>
-    </g>
+    <g class="ta3-crest-back"><path class="ta3-crest-diamond outer" d="M800 170 1038 404 800 638 562 404Z" /><path class="ta3-crest-diamond inner" d="M800 221 985 404 800 587 615 404Z" /><circle class="ta3-crest-circle" cx="800" cy="404" r="151" /></g>
 
-    <g class="ta2-cloth-layer cloth-front">
-      <path class="ta2-cloth cloth-c" fill="url(#ta2RedA)" d="M-260 650c315-129 569-133 789-34 171 77 335 86 493 26 176-67 360-46 576 58l-32 200H-260Z"/>
-      <path class="ta2-cloth cloth-d" fill="url(#ta2RedB)" d="M1860 612c-314-93-553-79-757 44-151 91-309 104-474 42-204-76-410-58-652 51l-17 151h1900Z"/>
-    </g>
+    <g class="ta3-cloth-back"><path class="ta3-cloth ta3-cloth-a" fill="url(#ta3RedA)" d="M-300 128C35 50 296 74 514 180c173 84 326 91 468 35 186-73 399-39 647 115l-67 190c-228-130-425-167-594-104-168 62-351 45-548-48C233 280 51 279-240 355Z" /><path class="ta3-cloth ta3-cloth-b" fill="url(#ta3RedB)" d="M1900 109c-344-70-612-31-838 102-156 92-307 110-454 61-197-65-405-25-632 120l72 189c207-124 401-158 574-101 175 58 345 30 511-66 210-122 423-133 705-70Z" /><path class="ta3-cloth-line line-a" d="M-218 170c286-65 496-40 702 59 180 86 341 90 494 33 181-67 366-32 579 91" /><path class="ta3-cloth-line line-b" d="M1824 151c-295-55-520-17-730 101-170 95-333 108-490 56-180-60-353-22-548 94" /></g>
 
-    ${playerScene()}
+    <g class="ta3-energy-lines"><path d="M119 534C393 439 548 448 711 506"/><path d="M1481 534c-274-95-429-86-592-28"/><path d="M184 600c239-67 383-56 532-5"/><path d="M1416 600c-239-67-383-56-532-5"/></g>
 
-    <g transform="translate(800 430)"><g class="ta2-trophy">
-      <ellipse class="ta2-trophy-aura" cx="0" cy="0" rx="178" ry="220" fill="url(#ta2Halo)"/>
-      <path class="ta2-handle left" d="M-78-112C-161-129-177-37-126 15c19 20 43 32 69 39l13-34c-34-9-59-26-72-50-22-42 2-65 43-49Z" fill="none" stroke="url(#ta2Gold)" stroke-width="19" stroke-linecap="round"/>
-      <path class="ta2-handle right" d="M78-112C161-129 177-37 126 15c-19 20-43 32-69 39L44 20c34-9 59-26 72-50 22-42-2-65-43-49Z" fill="none" stroke="url(#ta2Gold)" stroke-width="19" stroke-linecap="round"/>
-      <path class="ta2-cup-shell" d="M-92-142H92l-9 101C77 24 41 72 0 89-41 72-77 24-83-41Z" fill="url(#ta2Gold)" stroke="#ffe7a4" stroke-opacity=".68" stroke-width="3"/>
-      <path class="ta2-cup-inner" d="M-69-122H69l-8 76C56 3 31 42 0 57-31 42-56 3-61-46Z" fill="#5d3510" fill-opacity=".28" stroke="#fff1bd" stroke-opacity=".22" stroke-width="2"/>
-      <path class="ta2-cup-rim" d="M-103-143c29-16 177-16 206 0l-10 25c-45 14-141 14-186 0Z" fill="url(#ta2GoldVertical)"/>
-      <path class="ta2-cup-facet" d="M-51-118 0 61l51-179-31 177L0 80-20 59Z" fill="#fff2bf" fill-opacity=".16"/>
-      <path class="ta2-stem" d="M-19 78H19l13 111h-64Z" fill="url(#ta2GoldVertical)"/>
-      <path class="ta2-neck" d="M-45 66H45l-8 34h-74Z" fill="url(#ta2Gold)"/>
-      <path class="ta2-base-top" d="M-74 184H74l28 37h-204Z" fill="url(#ta2Gold)"/>
-      <path class="ta2-base" d="M-116 218H116l26 48h-284Z" fill="url(#ta2GoldVertical)" stroke="#f7cf72" stroke-opacity=".45" stroke-width="2"/>
-      <path class="ta2-metal-sweep" d="M-82-126C-50-36-46 11-7 68" fill="none" stroke="#fff7d7" stroke-width="8" stroke-linecap="round"/>
-      <path class="ta2-metal-edge" d="M80-118 70-37C66 13 39 54 3 73" fill="none" stroke="#5b320d" stroke-opacity=".48" stroke-width="6" stroke-linecap="round"/>
-    </g></g>
+    <g class="ta3-players">${playerScene()}</g>
+    ${trophyScene()}
+    <g class="ta3-stars">${starScene()}</g>
 
-    <g class="ta2-stars">${starScene()}</g>
+    <g class="ta3-number-crest" transform="translate(800 410)"><path class="ta3-number-crest-frame" d="M0-105 91-52 91 53 0 106-91 53-91-52Z" /><path class="ta3-number-crest-frame inner" d="M0-82 70-41 70 42 0 83-70 42-70-41Z" /><path class="ta3-one" d="M-19-46 18-68h27V62H4V-19l-23 13Z" /></g>
 
-    <g transform="translate(800 402)"><g class="ta2-crest-svg">
-      <path class="ta2-crest-diamond" d="M0-86 86 0 0 86-86 0Z" fill="#8f0d1d" fill-opacity=".82" stroke="url(#ta2Gold)" stroke-width="3"/>
-      <path class="ta2-crest-inner" d="M0-64 64 0 0 64-64 0Z" fill="#19070b" fill-opacity=".72" stroke="#f0c66e" stroke-opacity=".5" stroke-width="2"/>
-      <path class="ta2-one" d="M-8-40 23-58v113H-5V-16l-25 13v-24Z" fill="url(#ta2GoldVertical)"/>
-    </g></g>
+    <g class="ta3-cloth-front"><path class="ta3-cloth ta3-cloth-c" fill="url(#ta3RedA)" d="M-300 691c302-139 563-154 805-55 190 78 367 86 535 23 188-71 386-55 623 51l-29 190H-300Z" /><path class="ta3-cloth ta3-cloth-d" fill="url(#ta3RedB)" d="M1900 650c-311-107-566-99-790 29-167 95-339 112-516 48-215-77-438-61-704 53l-31 120h2041Z" /></g>
+
+    <g class="ta3-sparks">${Array.from({ length: 18 }, (_, i) => { const angle = (i * 20) * Math.PI / 180; const x1 = 800 + Math.cos(angle) * 74; const y1 = 410 + Math.sin(angle) * 74; const x2 = 800 + Math.cos(angle) * (145 + (i % 3) * 28); const y2 = 410 + Math.sin(angle) * (145 + (i % 3) * 28); return `<path style="--s:${i}" d="M${x1.toFixed(1)} ${y1.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}" />`; }).join('')}</g>
   </svg>`;
 }
 
-function buildNode(tier) {
+function buildOverlay(tier) {
+  const c = text();
   const node = document.createElement('div');
-  node.className = `together-finisher-v2 fx-${tier}`;
-  node.dataset.togetherFinisher = 'v2';
+  node.className = `together-finisher-v3 fx-${tier}`;
+  node.dataset.togetherFinisher = 'v3';
   node.setAttribute('aria-hidden', 'true');
   node.innerHTML = `
-    <div class="ta2-vignette"></div>
-    <div class="ta2-grain"></div>
-    <div class="ta2-letterbox top"></div>
-    <div class="ta2-letterbox bottom"></div>
-    <div class="ta2-stage">${sceneSvg()}</div>
-    <div class="ta2-copy">
-      <small>${text().eyebrow}</small>
-      <strong>${text().title}</strong>
-      <em>${text().sub}</em>
-      <i>${text().final}</i>
-    </div>
-    <div class="ta2-impact-ring ring-a"></div>
-    <div class="ta2-impact-ring ring-b"></div>
-    <div class="ta2-final-flash"></div>`;
+    <div class="ta3-letterbox ta3-letterbox-top"></div>
+    <div class="ta3-letterbox ta3-letterbox-bottom"></div>
+    <div class="ta3-vignette"></div>
+    ${sceneSvg()}
+    <div class="ta3-title-wrap"><small>${c.eyebrow}</small><div class="ta3-title-mask"><strong>${c.title}</strong></div><em>${c.sub}</em><i>${c.final}</i></div>
+    <div class="ta3-impact-ring ring-one"></div><div class="ta3-impact-ring ring-two"></div>
+    <div class="ta3-impact-cross"><span></span><span></span></div>
+    <div class="ta3-flash"></div><div class="ta3-grain"></div>`;
   return node;
 }
 
@@ -201,48 +183,34 @@ export function cancelTogetherFinisher() {
 export function playTogetherFinisher({ tier = 'full', onComplete } = {}) {
   ensureCss();
   cancelTogetherFinisher();
-  const token = runToken;
+  const token = ++runToken;
 
   if (reducedMotion.matches || tier === 'reduced') {
-    const node = document.createElement('div');
-    node.className = 'together-finisher-v2 reduced';
-    node.dataset.togetherFinisher = 'v2';
-    node.innerHTML = `<div class="ta2-reduced-mark"><small>${text().eyebrow}</small><strong>${text().title}</strong></div>`;
-    activeNode = node;
-    document.body.appendChild(node);
-    document.body.classList.add('together-finisher-active');
-    requestAnimationFrame(() => node.classList.add('is-active'));
-    later(() => node.classList.add('is-leaving'), 760, token);
-    later(() => {
-      removeNode(node);
-      if (activeNode === node) activeNode = null;
-      document.body.classList.remove('together-finisher-active');
-      onComplete?.();
-    }, 1080, token);
-    return 1080;
+    document.body.classList.add('together-finisher-reduced');
+    later(() => document.body.classList.remove('together-finisher-reduced'), 520, token);
+    later(() => onComplete?.(), 560, token);
+    return 560;
   }
 
-  const node = buildNode(tier);
+  const node = buildOverlay(tier);
   activeNode = node;
   document.body.appendChild(node);
   document.body.classList.add('together-finisher-active');
 
-  requestAnimationFrame(() => requestAnimationFrame(() => node.classList.add('is-active')));
-  later(() => node.classList.add('stage-cloth'), 220, token);
-  later(() => node.classList.add('stage-team'), 820, token);
-  later(() => node.classList.add('stage-trophy'), 1560, token);
-  later(() => node.classList.add('stage-stars'), 2350, token);
-  later(() => node.classList.add('stage-crest'), 3070, token);
-  later(() => node.classList.add('stage-title'), 3440, token);
+  requestAnimationFrame(() => requestAnimationFrame(() => { if (token === runToken) node.classList.add('is-active'); }));
+
+  later(() => node.classList.add('phase-cloth'), 240, token);
+  later(() => node.classList.add('phase-team'), 1040, token);
+  later(() => node.classList.add('phase-cup'), 1860, token);
+  later(() => node.classList.add('phase-stars'), 2740, token);
+  later(() => node.classList.add('phase-crest'), 3380, token);
+  later(() => node.classList.add('phase-title'), 3780, token);
+  later(() => { node.classList.add('phase-impact'); document.body.classList.add('together-finisher-impact'); }, 4720, token);
+  later(() => document.body.classList.remove('together-finisher-impact'), 5140, token);
+  later(() => node.classList.add('phase-exit'), 5420, token);
   later(() => {
-    node.classList.add('stage-impact');
-    document.body.classList.add('together-finisher-impact');
-  }, 4300, token);
-  later(() => document.body.classList.remove('together-finisher-impact'), 4700, token);
-  later(() => node.classList.add('is-leaving'), 4890, token);
-  later(() => {
-    removeNode(node);
     if (activeNode === node) activeNode = null;
+    removeNode(node);
     document.body.classList.remove('together-finisher-active', 'together-finisher-impact');
     onComplete?.();
   }, TOGETHER_FINISHER_DURATION, token);
