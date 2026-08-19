@@ -89,13 +89,20 @@ jobs:
             echo 'Legacy Together v2 / Worlds takeover markup is still present.'
             exit 1
           fi
-      - name: Verify Hall of Legends official roster
+      - name: Verify Hall of Legends official roster and visual upgrade
         run: |
+          grep -q "VERSION = '3.14.0'" public/js/hall-of-legends.js
           grep -q "player: 'Faker'" public/js/hall-of-legends.js
           grep -q "player: 'Uzi'" public/js/hall-of-legends.js
+          grep -q "mediaKey: 'Uzi (Jian Zi-Hao)'" public/js/hall-of-legends.js
+          grep -q "teamMediaKey: 'Royal Never Give Up'" public/js/hall-of-legends.js
           grep -q "activeYear = 2025" public/js/hall-of-legends.js
           grep -q "2026 • SẮP TỚI" public/js/hall-of-legends.js
           grep -q "tuyển thủ thứ ba hiện chưa được công bố" public/js/hall-of-legends.js
+          grep -q 'hol-official-banner' public/hall-of-legends.css
+          grep -q 'hol-team-logo' public/hall-of-legends.css
+          grep -q 'hol-trophy-grid' public/hall-of-legends.css
+          grep -q 'hol-card-pending' public/hall-of-legends.css
           if grep -q "player: 'Caps'" public/js/hall-of-legends.js; then
             echo 'Unannounced 2026 Hall of Legends player must not be presented as official.'
             exit 1
