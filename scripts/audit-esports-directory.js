@@ -56,6 +56,7 @@ function teamLogoIdentityMatches(team, value) {
     ...fullTeamTokens,
     ...distinct.map(normMedia),
     'logo','profile','square','icon','crest','wordmark','emblem','mark','official','transparent','new','std','standard',
+    'png','jpg','jpeg','webp','svg',
     'lck','lpl','lec','lcs','lcp','vcs', String(currentYear), String(currentYear - 1)
   ]);
   const extras = candidateTokens.filter(token => token.length > 1 && !allowed.has(token));
