@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-18T21:50:49.035Z",
+  "generatedAt": "2026-08-19T03:27:25.622Z",
   "source": "Oracle's Elixir professional match data",
   "sourceType": "mirror of Oracle's Elixir dataset",
   "licenseNote": "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
   "coverage": "Tuyển thủ xuất hiện trong dataset Oracle's Elixir • 1726 tuyển thủ • 300 đội.",
-  "sourceSnapshot": "mirror-20260818",
+  "sourceSnapshot": "mirror-20260819",
   "sourceUrl": "https://raw.githubusercontent.com/twodotone/finalLOL/main/data/csv/2026_LoL_esports_match_data_from_OraclesElixir.csv",
   "sourceMode": "oracle-mirror",
   "playerCount": 1726,
@@ -184541,7 +184541,7 @@
       "bioSource": "Leaguepedia player infobox"
     }
   ],
-  "identityEnrichedAt": "2026-08-18T21:50:55.313158Z",
+  "identityEnrichedAt": "2026-08-19T03:27:33.240681Z",
   "identitySource": "GPTilt League of Legends Esports Directory (Leaguepedia-derived, CC BY-SA 3.0)",
   "identitySourceUrl": "https://huggingface.co/datasets/gptilt/lol-esports-entities",
   "identityStatus": {
@@ -184551,7 +184551,7 @@
     "notFound": 139,
     "total": 1726
   },
-  "mediaEnrichedAt": "2026-08-18T21:53:19.044Z",
+  "mediaEnrichedAt": "2026-08-19T03:29:54.209Z",
   "mediaSource": "Leaguepedia / League of Legends Esports Wiki current infobox + MediaWiki images",
   "mediaStatus": {
     "players": {
@@ -184570,8 +184570,8 @@
     },
     "partial": false
   },
-  "mediaSanitizedAt": "2026-08-18T21:53:19.160Z",
-  "profileAuditAt": "2026-08-18T21:53:19.327Z",
+  "mediaSanitizedAt": "2026-08-19T03:29:54.292Z",
+  "profileAuditAt": "2026-08-19T03:29:54.439Z",
   "profileCoverage": {
     "image": {
       "count": 1058,
