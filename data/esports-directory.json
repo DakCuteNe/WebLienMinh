@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T08:39:23.199Z",
+  "generatedAt": "2026-08-19T08:48:22.312Z",
   "source": "Oracle's Elixir professional match data",
   "sourceType": "mirror of Oracle's Elixir dataset",
   "licenseNote": "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
@@ -2534,11 +2534,15 @@
       "short": null,
       "region": "LPL",
       "location": null,
-      "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f4/Bilibili_Gaming_Old_Logo.png/revision/latest/scale-to-width-down/520?cb=20260217025844",
+      "logo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
       "sourcePage": "https://lol.fandom.com/wiki/Bilibili_Gaming",
       "website": null,
       "socials": {},
-      "profilePageTitle": "Bilibili Gaming"
+      "profilePageTitle": "Bilibili Gaming",
+      "preferredLogo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+      "preferredLogoSource": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+      "preferredLogoAsOf": "2025-12-20",
+      "logoOverrideAppliedAt": "2026-08-19T08:50:40.769Z"
     },
     {
       "id": "oe:team:056c3140a119e44a03d462e2c832f27",
@@ -4257,11 +4261,15 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f4/Bilibili_Gaming_Old_Logo.png/revision/latest/scale-to-width-down/520?cb=20260217025844",
+        "logo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
         "sourcePage": "https://lol.fandom.com/wiki/Bilibili_Gaming",
         "website": null,
         "socials": {},
-        "profilePageTitle": "Bilibili Gaming"
+        "profilePageTitle": "Bilibili Gaming",
+        "preferredLogo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+        "preferredLogoSource": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+        "preferredLogoAsOf": "2025-12-20",
+        "logoOverrideAppliedAt": "2026-08-19T08:50:40.769Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -4380,11 +4388,15 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f4/Bilibili_Gaming_Old_Logo.png/revision/latest/scale-to-width-down/520?cb=20260217025844",
+        "logo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
         "sourcePage": "https://lol.fandom.com/wiki/Bilibili_Gaming",
         "website": null,
         "socials": {},
-        "profilePageTitle": "Bilibili Gaming"
+        "profilePageTitle": "Bilibili Gaming",
+        "preferredLogo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+        "preferredLogoSource": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+        "preferredLogoAsOf": "2025-12-20",
+        "logoOverrideAppliedAt": "2026-08-19T08:50:40.769Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -4503,11 +4515,15 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f4/Bilibili_Gaming_Old_Logo.png/revision/latest/scale-to-width-down/520?cb=20260217025844",
+        "logo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
         "sourcePage": "https://lol.fandom.com/wiki/Bilibili_Gaming",
         "website": null,
         "socials": {},
-        "profilePageTitle": "Bilibili Gaming"
+        "profilePageTitle": "Bilibili Gaming",
+        "preferredLogo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+        "preferredLogoSource": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+        "preferredLogoAsOf": "2025-12-20",
+        "logoOverrideAppliedAt": "2026-08-19T08:50:40.769Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -4607,7 +4623,7 @@
       "preferredImageAsOf": "2026-07-02",
       "profileOverrideSource": "https://lag.vn/tin/esports/msi-2026-blg-viper-mong-cho-doi-dau-t1-va-hle-gui-loi-chao-den-nguoi-ham-mo-viet-nam.html",
       "profileOverrideAsOf": "2026-07-02",
-      "profileOverrideAppliedAt": "2026-08-19T08:41:42.999Z"
+      "profileOverrideAppliedAt": "2026-08-19T08:50:40.768Z"
     },
     {
       "uid": "oe:player:92544d7a994bd6841cccd9f6e42e3de",
@@ -35287,11 +35303,15 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f4/Bilibili_Gaming_Old_Logo.png/revision/latest/scale-to-width-down/520?cb=20260217025844",
+        "logo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
         "sourcePage": "https://lol.fandom.com/wiki/Bilibili_Gaming",
         "website": null,
         "socials": {},
-        "profilePageTitle": "Bilibili Gaming"
+        "profilePageTitle": "Bilibili Gaming",
+        "preferredLogo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+        "preferredLogoSource": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+        "preferredLogoAsOf": "2025-12-20",
+        "logoOverrideAppliedAt": "2026-08-19T08:50:40.769Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -35410,11 +35430,15 @@
         "short": null,
         "region": "LPL",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f4/Bilibili_Gaming_Old_Logo.png/revision/latest/scale-to-width-down/520?cb=20260217025844",
+        "logo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
         "sourcePage": "https://lol.fandom.com/wiki/Bilibili_Gaming",
         "website": null,
         "socials": {},
-        "profilePageTitle": "Bilibili Gaming"
+        "profilePageTitle": "Bilibili Gaming",
+        "preferredLogo": "https://cdn.sanity.io/images/9rqbl8zs/production/ed645a4d2cc05cd30e5f3dbd8913663e2900c8cf-1920x1080.webp",
+        "preferredLogoSource": "https://www.sheepesports.com/en/all/articles/lol-bilibili-gaming-s-completed-2026-lpl-roster/en",
+        "preferredLogoAsOf": "2025-12-20",
+        "logoOverrideAppliedAt": "2026-08-19T08:50:40.769Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -195512,7 +195536,7 @@
       "bioSource": "Leaguepedia player infobox"
     }
   ],
-  "identityEnrichedAt": "2026-08-19T08:39:27.600704Z",
+  "identityEnrichedAt": "2026-08-19T08:48:27.762278Z",
   "identitySource": "GPTilt League of Legends Esports Directory (Leaguepedia-derived, CC BY-SA 3.0)",
   "identitySourceUrl": "https://huggingface.co/datasets/gptilt/lol-esports-entities",
   "identityStatus": {
@@ -195742,7 +195766,7 @@
       }
     ]
   },
-  "mediaEnrichedAt": "2026-08-19T08:41:42.790Z",
+  "mediaEnrichedAt": "2026-08-19T08:50:40.599Z",
   "mediaSource": "Leaguepedia / League of Legends Esports Wiki current infobox + MediaWiki images",
   "mediaStatus": {
     "players": {
@@ -195761,10 +195785,11 @@
     },
     "partial": false
   },
-  "mediaSanitizedAt": "2026-08-19T08:41:42.871Z",
-  "profileOverridesAppliedAt": "2026-08-19T08:41:42.999Z",
+  "mediaSanitizedAt": "2026-08-19T08:50:40.671Z",
+  "profileOverridesAppliedAt": "2026-08-19T08:50:40.770Z",
   "profileOverrideCount": 1,
-  "profileAuditAt": "2026-08-19T08:41:43.164Z",
+  "teamLogoOverrideCount": 1,
+  "profileAuditAt": "2026-08-19T08:50:40.899Z",
   "profileCoverage": {
     "image": {
       "count": 1122,
