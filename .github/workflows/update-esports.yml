@@ -13,6 +13,7 @@ on:
       - 'scripts/update-esports-identities.py'
       - 'scripts/update-esports-media.js'
       - 'scripts/update-esports-media-safe.js'
+      - 'scripts/apply-esports-profile-overrides.js'
       - 'scripts/audit-esports-directory.js'
       - 'data/pro-watchlist.json'
       - 'package.json'
@@ -79,6 +80,10 @@ jobs:
           set +e
           npm run update:esports-media 2>&1 | tee esports-media.log
           CODE=${PIPESTATUS[0]}
+          if [ "$CODE" = "0" ]; then
+            node scripts/apply-esports-profile-overrides.js 2>&1 | tee -a esports-media.log
+            CODE=${PIPESTATUS[0]}
+          fi
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 

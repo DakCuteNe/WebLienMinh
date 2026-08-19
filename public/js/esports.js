@@ -71,8 +71,9 @@ function playerCard(p) {
   const teamLogo = img(esportsMediaUrl('team', teamMediaKey), p.currentTeamName || p.team?.name || 'Team', 'team-logo');
   const champs = (p.championPool || []).slice(0, 3).map(x => `<span>${esc(x.name)} <b>${x.rate != null ? `${score(x.rate)}%` : ''}</b></span>`).join('');
   const hasStats = Number(p.games || 0) > 0;
+  const playerImage = p.preferredImage || esportsMediaUrl('player', profileKey);
   return `<article class="player-card pro-card-23" data-profile="${esc(profileKey)}">
-    <div class="player-photo">${img(esportsMediaUrl('player', profileKey), p.id, 'player-image')}</div>
+    <div class="player-photo">${img(playerImage, p.id, 'player-image')}</div>
     <div class="player-card-info">
       <div class="player-team-row">${teamLogo}<span>${esc(teamName)}</span>${p.featured ? '<b class="featured-badge">FEATURED</b>' : ''}</div>
       <h3>${esc(p.id)}</h3>
@@ -144,11 +145,12 @@ async function openPlayer(id) {
     const favorite = (p.championPool || p.favoriteChampions || []).length ? statChips(p.championPool?.length ? p.championPool : p.favoriteChampions, 8) : '<span class="muted">Chưa có dữ liệu.</span>';
     const socials = [socialLink('X / Twitter', p.socials?.twitter, 'twitter'), socialLink('Instagram', p.socials?.instagram, 'instagram'), socialLink('Stream', p.socials?.stream, 'stream'), socialLink('YouTube', p.socials?.youtube, 'youtube')].filter(Boolean).join('');
     const missing = 'Chưa có dữ liệu công khai';
-    const sourceUrl = p.currentProfileSource || p.sourcePage || '';
+    const sourceUrl = p.preferredImageSource || p.currentProfileSource || p.sourcePage || '';
+    const profileImage = p.preferredImage || esportsMediaUrl('player', profileKey, true);
 
     $('#modalContent').innerHTML = `
       <div class="player-profile-hero rich-pro-hero">
-        <div class="profile-photo">${img(esportsMediaUrl('player', profileKey, true), p.id, 'profile-player-image')}</div>
+        <div class="profile-photo">${img(profileImage, p.id, 'profile-player-image')}</div>
         <div class="profile-main"><div class="eyebrow">${esc(roleName[p.role] || p.role || 'PRO PLAYER')} • ${esc(p.team?.region || p.residency || '')}</div><h2>${esc(p.id)}</h2><p>${p.name && p.name !== p.id ? esc(p.name) : 'Tuyển thủ chuyên nghiệp'}${p.nativeName ? ` • ${esc(p.nativeName)}` : ''}</p><div class="profile-team">${teamLogo}<div><b>${esc(teamName)}</b><span>${esc(p.team?.short || '')}</span></div></div></div>
         <div class="profile-badges"><span>Hồ sơ hiện tại</span>${p.featured ? '<span>Featured</span>' : ''}${p.latestPatch ? `<span>Patch ${esc(p.latestPatch)}</span>` : ''}</div>
       </div>
@@ -159,7 +161,7 @@ async function openPlayer(id) {
         ${f?.available ? `<div class="profile-card wide"><h3>Build / ngọc / spell nổi bật</h3><h4>Build phổ biến</h4><div class="chips">${statChips(f.commonBuilds, 5)}</div><h4>Ngọc</h4><div class="chips">${statChips(f.commonRunes, 4)}</div><h4>Spell</h4><div class="chips">${statChips(f.commonSpells, 4)}</div></div>` : ''}
         <div class="profile-card wide"><div class="profile-title-row"><h3>Danh hiệu & thành tích</h3><button class="secondary" id="loadAchievements">Tải thành tích</button></div><div id="achievementBody"><p class="muted">Không tự tải phần này để tránh Leaguepedia rate-limit. Bấm “Tải thành tích” khi cần.</p></div></div>
       </div>
-      <div class="profile-source"><span>${p.currentProfileFetchedAt ? `Hồ sơ hiện tại được kiểm tra lúc ${esc(p.currentProfileFetchedAt)}. ` : ''}Ảnh/logo được proxy qua WebLienMinh. Thống kê trận dùng Oracle’s Elixir; trường thiếu không được suy đoán.</span>${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ ↗</a>` : ''}</div>`;
+      <div class="profile-source"><span>${p.currentProfileFetchedAt ? `Hồ sơ hiện tại được kiểm tra lúc ${esc(p.currentProfileFetchedAt)}. ` : ''}${p.preferredImageAsOf ? `Ảnh current-team-era kiểm tra ${esc(p.preferredImageAsOf)}. ` : ''}Logo đội được kiểm tra qua nguồn esports hiện tại; thống kê trận dùng Oracle’s Elixir; trường thiếu không được suy đoán.</span>${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ/ảnh ↗</a>` : ''}</div>`;
 
     const achievementButton = $('#loadAchievements');
     if (achievementButton) achievementButton.onclick = () => loadAchievements(profileKey);
