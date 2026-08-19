@@ -1,0 +1,22 @@
+{
+  "generatedAt": null,
+  "source": {
+    "name": "LoL Esports",
+    "url": "https://lolesports.com/en-US/schedule",
+    "api": "https://esports-api.lolesports.com/persisted/gw/getSchedule"
+  },
+  "refresh": {
+    "successfulLeagues": 0,
+    "requestedLeagues": 9,
+    "failures": [],
+    "preservedPreviousData": false
+  },
+  "summary": {
+    "live": 0,
+    "upcoming": 0,
+    "completed": 0,
+    "total": 0
+  },
+  "leagues": [],
+  "events": []
+}
