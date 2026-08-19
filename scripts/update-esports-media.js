@@ -100,6 +100,10 @@ function fileName(value) {
   return text || null;
 }
 
+function looksLikeRosterOrPoster(value) {
+  return /(?:^|[_\s-])(roster|lineup|team[ _-]?photo|teamphoto|poster|squad|players?)(?:[_\s.-]|$)/i.test(String(value || ''));
+}
+
 async function apiQuery(params, label = 'Leaguepedia MediaWiki') {
   const query = new URLSearchParams({ action: 'query', format: 'json', origin: '*', ...params });
   let lastError = null;
@@ -145,7 +149,7 @@ async function resolveFiles(names) {
   return map;
 }
 
-async function queryProfiles(titles) {
+async function queryProfiles(titles, kind = 'player') {
   const body = await apiQuery({
     redirects: '1',
     prop: 'pageimages|info|revisions',
@@ -155,7 +159,7 @@ async function queryProfiles(titles) {
     rvprop: 'content',
     rvslots: 'main',
     titles: titles.join('|')
-  }, 'Leaguepedia profile');
+  }, `Leaguepedia ${kind} profile`);
 
   const aliases = new Map();
   for (const item of body.query?.normalized || []) aliases.set(key(item.from), item.to);
@@ -177,12 +181,23 @@ async function queryProfiles(titles) {
     const revision = page.revisions?.[0];
     const wikitext = revision?.slots?.main?.['*'] ?? revision?.slots?.main?.content ?? revision?.['*'] ?? '';
     const params = parseParams(wikitext);
-    const explicitImage = fileName(param(params, 'image', 'playerimage', 'photo', 'logo'));
+
+    const rawExplicitImage = kind === 'team'
+      ? fileName(param(params, 'logo', 'teamlogo', 'logofile', 'image'))
+      : fileName(param(params, 'image', 'playerimage', 'photo'));
+    const explicitImage = kind === 'team' && looksLikeRosterOrPoster(rawExplicitImage) ? null : rawExplicitImage;
     if (explicitImage) explicitImages.push(explicitImage);
+
+    const pageImageName = fileName(page.pageimage);
+    const pageImageAllowed = kind === 'team'
+      ? Boolean(pageImageName && /logo/i.test(pageImageName) && !looksLikeRosterOrPoster(pageImageName))
+      : !looksLikeRosterOrPoster(pageImageName);
+
     records.set(key(title), {
       pageTitle: page.title || current,
       sourcePage: page.fullurl || `https://lol.fandom.com/wiki/${encodeURIComponent(page.title || current).replace(/%20/g, '_')}`,
-      pageImage: page.thumbnail?.source || null,
+      pageImage: pageImageAllowed ? (page.thumbnail?.source || null) : null,
+      pageImageName,
       explicitImage,
       params
     });
@@ -221,19 +236,21 @@ function enrichPlayer(player, profile) {
   const currentTeamName = cleanWiki(param(p, 'team', 'currentteam', 'teamname'));
   const soloqueueIds = cleanWiki(param(p, 'ids', 'soloquequeueids', 'soloqueueids'));
 
-  set('name', realName && key(realName) !== key(player.id) ? realName : null);
-  set('nativeName', nativeName);
-  set('country', country);
-  set('nationality', nationality || country);
+  // Current Leaguepedia infobox is the highest-confidence source for public profile fields.
+  set('name', realName && key(realName) !== key(player.id) ? realName : null, true);
+  set('nativeName', nativeName, true);
+  set('country', country, true);
+  set('nationality', nationality || country, true);
   set('birthdate', birthdate, true);
   set('birthYear', birthdate ? Number(birthdate.slice(0, 4)) : null, true);
   set('age', ageFromBirthdate(birthdate), true);
   set('contract', contract, true);
-  set('residency', residency);
+  set('residency', residency, true);
   set('currentTeamName', currentTeamName, true);
-  set('soloqueueIds', soloqueueIds);
+  set('soloqueueIds', soloqueueIds, true);
   set('image', profile.image, true);
   set('sourcePage', profile.sourcePage, true);
+  set('profilePageTitle', profile.pageTitle, true);
 
   const socials = { ...(player.socials || {}) };
   const socialValues = {
@@ -255,10 +272,11 @@ function enrichTeam(team, profile) {
   let changed = false;
   if (profile.image && team.logo !== profile.image) { team.logo = profile.image; changed = true; }
   if (profile.sourcePage && team.sourcePage !== profile.sourcePage) { team.sourcePage = profile.sourcePage; changed = true; }
+  if (profile.pageTitle && team.profilePageTitle !== profile.pageTitle) { team.profilePageTitle = profile.pageTitle; changed = true; }
   return changed;
 }
 
-async function enrich(items, titleOf, apply, label) {
+async function enrich(items, titleOf, apply, label, kind) {
   let enriched = 0;
   let failedBatches = 0;
   let withImage = 0;
@@ -268,7 +286,7 @@ async function enrich(items, titleOf, apply, label) {
 
   for (const [index, batch] of allBatches.entries()) {
     try {
-      const profiles = await queryProfiles(batch);
+      const profiles = await queryProfiles(batch, kind);
       for (const item of items) {
         const title = titleOf(item);
         if (!batch.some(x => key(x) === key(title))) continue;
@@ -293,9 +311,9 @@ const players = directory.players || [];
 const teams = directory.teams || [];
 players.sort((a, b) => Number(b.featured) - Number(a.featured) || String(b.latestGameAt || '').localeCompare(String(a.latestGameAt || '')));
 
-const playerResult = await enrich(players, p => p.overviewPage || p.id, enrichPlayer, 'Player');
+const playerResult = await enrich(players, p => p.preferredPage || p.overviewPage || p.id, enrichPlayer, 'Player', 'player');
 const teamById = new Map(teams.map(t => [t.id, t]));
-const teamResult = await enrich(teams, t => t.name, enrichTeam, 'Team');
+const teamResult = await enrich(teams, t => t.name, enrichTeam, 'Team', 'team');
 
 for (const player of players) {
   const team = player.team && teamById.get(player.team.id);
