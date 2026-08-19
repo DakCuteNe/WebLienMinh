@@ -1,0 +1,93 @@
+name: Reconcile Featured Pros After Directory
+
+on:
+  workflow_run:
+    workflows:
+      - Update Worldwide Esports Directory
+    types:
+      - completed
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/reconcile-pros-after-directory.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lol-pros-directory-reconcile
+  cancel-in-progress: true
+
+jobs:
+  reconcile:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Reconcile Featured Pros from published directory
+        shell: bash
+        run: |
+          set -e
+          node scripts/reconcile-featured-pros.js 2>&1 | tee pros-reconcile.log
+
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          let status = {};
+          let pros = {};
+          let directoryStatus = {};
+          try { status = JSON.parse(await fs.readFile('data/pros-status.json', 'utf8')); } catch {}
+          try { pros = JSON.parse(await fs.readFile('data/pros.json', 'utf8')); } catch {}
+          try { directoryStatus = JSON.parse(await fs.readFile('data/esports-directory-status.json', 'utf8')); } catch {}
+          const stamp = new Date().toISOString();
+          const reconcile = pros.reconcileStats || null;
+          const line = `Post-directory reconcile: detailed=${reconcile?.detailedPreserved ?? 0}, directory=${reconcile?.directoryRefreshed ?? 0}, unresolved=${reconcile?.unresolved ?? 0}, directoryReady=${Boolean(directoryStatus.publishReady)}.`;
+          status.checkedAt = stamp;
+          status.postDirectoryReconciledAt = stamp;
+          status.watchCount = Number(pros.watchCount || pros.players?.length || 0);
+          status.reconcileStats = reconcile;
+          status.dataAvailable = Array.isArray(pros.players) && pros.players.length > 0;
+          status.upstreamDegraded = Boolean(pros.degraded);
+          status.hybridFallback = Boolean(pros.degraded && pros.reconciledAt);
+          status.preservedPreviousData = Number(pros.preservedDetailedCount || 0) > 0;
+          status.health = status.upstreamDegraded ? 'degraded' : (status.dataAvailable ? 'ok' : 'waiting');
+          status.message = [status.message || '', line].filter(Boolean).join('\n').split(/\r?\n/).slice(-30).join('\n').slice(0, 8000);
+          await fs.writeFile('data/pros-status.json', JSON.stringify(status, null, 2));
+          NODE
+
+      - name: Commit reconciled Featured Pros
+        shell: bash
+        run: |
+          set -e
+          git config user.name "WebLienMinh Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/pros.json data/pros-status.json
+
+          if git diff --cached --quiet; then
+            echo "No post-directory Featured Pros changes."
+            exit 0
+          fi
+
+          git commit -m "Reconcile featured pros after directory update"
+
+          for ATTEMPT in 1 2 3 4 5; do
+            echo "Push attempt ${ATTEMPT}/5"
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((ATTEMPT * 2))
+          done
+
+          echo "Push failed after 5 attempts."
+          exit 1
