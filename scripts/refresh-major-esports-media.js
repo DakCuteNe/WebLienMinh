@@ -62,6 +62,29 @@ function isLegacy(value) {
   return /\b(old|oldlogo|legacy|former|previous|archive|archived|retired)\b/.test(text) || /old[_ -]?logo/i.test(String(value || ''));
 }
 
+function isTeamEventAsset(value) {
+  const text = norm(value);
+  return /\b(kickoff|kickoffs|home ground|lock in|lockin|split|winter|spring|summer|season|tournament|championship|cup|msi|worlds|first stand|event)\b/.test(text);
+}
+
+function teamLogoIdentityMatches(team, value) {
+  const raw = fileName(value).replace(/logo/ig, ' logo ');
+  const candidateTokens = norm(raw).split(/\s+/).filter(Boolean);
+  const candidateText = ` ${candidateTokens.join(' ')} `;
+  const fullTeamTokens = [...words(team.name)];
+  const distinct = distinctiveTeamWords(team);
+  if (!distinct.some(token => candidateText.includes(` ${norm(token)} `))) return false;
+
+  const allowed = new Set([
+    ...fullTeamTokens,
+    ...distinct.map(norm),
+    'logo','profile','square','icon','crest','wordmark','emblem','mark','official','transparent','new','std','standard',
+    'lck','lpl','lec','lcs','lcp','vcs', String(CURRENT_YEAR), String(CURRENT_YEAR - 1)
+  ]);
+  const extras = candidateTokens.filter(token => token.length > 1 && !allowed.has(token));
+  return extras.length === 0;
+}
+
 function embeddedYear(value) {
   const years = [...String(value || '').matchAll(/\b(20\d{2})\b/g)].map(m => Number(m[1]));
   return years.length ? Math.max(...years) : null;
@@ -81,20 +104,22 @@ function hasPlayerToken(player, value) {
 function teamLogoScore(team, meta) {
   const name = fileName(meta.title);
   const text = norm(name);
+  if (!teamLogoIdentityMatches(team, name) || isTeamEventAsset(name)) return -999;
   const logoLike = /logo|crest|wordmark|emblem|mark|profile|square|icon/.test(text);
-  let score = logoLike ? 115 : -110;
+  if (!logoLike) return -999;
+  let score = 125;
   const matched = distinctiveTeamWords(team).filter(token => text.includes(norm(token))).length;
   score += Math.min(60, matched * 20);
   const year = embeddedYear(name);
   if (year === CURRENT_YEAR) score += 75;
   else if (year === CURRENT_YEAR - 1) score += 35;
-  else if (year && year <= CURRENT_YEAR - 2) score -= 60;
+  else if (year && year <= CURRENT_YEAR - 2) score -= 80;
   const uploaded = timestampYear(meta);
   if (uploaded === CURRENT_YEAR) score += 45;
   else if (uploaded === CURRENT_YEAR - 1) score += 20;
   else if (uploaded && uploaded <= CURRENT_YEAR - 3) score -= 25;
-  if (isLegacy(name)) score -= 220;
-  if (isClearlyBad(name)) score -= 280;
+  if (isLegacy(name)) score -= 240;
+  if (isClearlyBad(name)) score -= 300;
   if (meta.width && meta.height) {
     const ratio = Math.max(meta.width, meta.height) / Math.max(1, Math.min(meta.width, meta.height));
     if (ratio <= 2.2) score += 15;
@@ -164,9 +189,7 @@ async function pageImages(title) {
   const out = [];
   let imcontinue = null;
   for (let page = 0; page < 3; page++) {
-    const body = await api({
-      prop: 'images', titles: title, imlimit: 'max', ...(imcontinue ? { imcontinue } : {})
-    }, `images ${title}`);
+    const body = await api({ prop: 'images', titles: title, imlimit: 'max', ...(imcontinue ? { imcontinue } : {}) }, `images ${title}`);
     const record = Object.values(body.query?.pages || {}).find(x => !x.missing);
     out.push(...(record?.images || []).map(x => x.title).filter(Boolean));
     imcontinue = body.continue?.imcontinue || null;
@@ -191,9 +214,7 @@ async function imageInfo(titles) {
   for (let i = 0; i < unique.length; i += 35) {
     const batch = unique.slice(i, i + 35);
     try {
-      const body = await api({
-        prop: 'imageinfo', iiprop: 'url|timestamp|size', iiurlwidth: '900', titles: batch.join('|')
-      }, 'imageinfo major media');
+      const body = await api({ prop: 'imageinfo', iiprop: 'url|timestamp|size', iiurlwidth: '900', titles: batch.join('|') }, 'imageinfo major media');
       for (const page of Object.values(body.query?.pages || {})) {
         if (page.missing) continue;
         const info = page.imageinfo?.[0];
@@ -343,7 +364,7 @@ for (const [index, team] of majorTeams.entries()) {
 directory.majorMediaRefresh = {
   generatedAt: new Date().toISOString(),
   source: 'Leaguepedia/Fandom current file repository and current team/player pages',
-  strategy: 'shared-team-media-pool + player fallback search',
+  strategy: 'strict-team-identity + shared-team-media-pool + player fallback search',
   currentYear: CURRENT_YEAR,
   activeDays: ACTIVE_DAYS,
   regions: [...MAJOR_REGIONS],
