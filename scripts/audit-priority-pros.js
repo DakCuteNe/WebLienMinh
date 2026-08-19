@@ -31,6 +31,11 @@ function roleFamily(value) {
   return null;
 }
 
+function regionHints(target) {
+  return String(target?.regionHint || '')
+    .split(/[\/,]/).map(x => x.trim().toUpperCase()).filter(Boolean);
+}
+
 function activeMajor(player) {
   if (!MAJOR_REGIONS.has(String(player.team?.region || '').toUpperCase())) return false;
   const latest = Date.parse(player.latestGameAt || '');
@@ -55,19 +60,38 @@ function mediaHasExactIgn(player, value) {
   return ignTokens.length > 0 && ignTokens.every(token => mediaTokens.has(token));
 }
 
-function targetCandidates(target) {
-  let candidates = players.filter(player => activeMajor(player) && norm(player.id) === norm(target.name));
+function playerPages(player) {
+  return [player.preferredPage, player.profilePageTitle, player.overviewPage, player.identityId].filter(Boolean);
+}
+
+function candidateSummary(player) {
+  return {
+    uid: player.uid || null,
+    name: player.name || null,
+    team: player.team?.name || null,
+    region: player.team?.region || null,
+    role: player.role || null,
+    page: player.profilePageTitle || player.overviewPage || player.identityId || null,
+    identityStatus: player.identityStatus || null
+  };
+}
+
+function sameIgnCandidates(target) {
+  return players.filter(player => activeMajor(player) && norm(player.id) === norm(target.name));
+}
+
+function constrainedCandidates(target, source) {
+  let candidates = [...source];
   if (target.team) candidates = candidates.filter(player => norm(player.team?.name) === norm(target.team));
+
+  const hints = regionHints(target);
+  if (hints.length) candidates = candidates.filter(player => hints.includes(String(player.team?.region || '').toUpperCase()));
+
   const wantedRole = roleFamily(target.role);
-  if (wantedRole && candidates.length > 1) {
-    const byRole = candidates.filter(player => roleFamily(player.role) === wantedRole);
-    if (byRole.length) candidates = byRole;
-  }
-  if (target.page && candidates.length > 1) {
-    const byPage = candidates.filter(player => [player.preferredPage, player.profilePageTitle, player.overviewPage, player.identityId]
-      .filter(Boolean).some(page => norm(page) === norm(target.page)));
-    if (byPage.length) candidates = byPage;
-  }
+  if (wantedRole) candidates = candidates.filter(player => !roleFamily(player.role) || roleFamily(player.role) === wantedRole);
+
+  if (target.page) candidates = candidates.filter(player => playerPages(player).some(page => norm(page) === norm(target.page)));
+  if (target.realName) candidates = candidates.filter(player => norm(player.name) === norm(target.realName));
   return candidates;
 }
 
@@ -75,9 +99,47 @@ const checks = [];
 for (const target of watch.players || []) {
   const priority = Math.max(1, Number(target.priority || 3));
   if (priority > 2) continue;
-  const candidates = targetCandidates(target);
+  const pinned = Boolean(target.team || target.page || target.realName);
+  const blockingByPolicy = priority === 1 || pinned;
+  const sameIgn = sameIgnCandidates(target);
+
+  if (!sameIgn.length) {
+    checks.push({
+      name: target.name,
+      priority,
+      regionHint: target.regionHint || null,
+      pinned,
+      status: 'inactive-or-not-present',
+      blocking: false,
+      ok: true,
+      errors: []
+    });
+    continue;
+  }
+
+  const candidates = constrainedCandidates(target, sameIgn);
   if (!candidates.length) {
-    checks.push({ name: target.name, priority, regionHint: target.regionHint || null, status: 'inactive-or-not-present', blocking: false, ok: true, errors: [] });
+    const errors = [];
+    if (target.team && !sameIgn.some(player => norm(player.team?.name) === norm(target.team))) errors.push(`expected team not found: ${target.team}`);
+    const hints = regionHints(target);
+    if (hints.length && !sameIgn.some(player => hints.includes(String(player.team?.region || '').toUpperCase()))) errors.push(`expected region not found: ${hints.join('/')}`);
+    if (target.page && !sameIgn.some(player => playerPages(player).some(page => norm(page) === norm(target.page)))) errors.push(`expected canonical page not found: ${target.page}`);
+    if (target.realName && !sameIgn.some(player => norm(player.name) === norm(target.realName))) errors.push(`expected real name not found: ${target.realName}`);
+    const wantedRole = roleFamily(target.role);
+    if (wantedRole && !sameIgn.some(player => roleFamily(player.role) === wantedRole)) errors.push(`expected role not found: ${target.role}`);
+    if (!errors.length) errors.push('active same-IGN player does not satisfy the pinned identity constraints');
+
+    checks.push({
+      name: target.name,
+      priority,
+      regionHint: target.regionHint || null,
+      pinned,
+      status: 'active-player-does-not-match-pin',
+      blocking: blockingByPolicy,
+      ok: false,
+      errors,
+      candidates: sameIgn.map(candidateSummary)
+    });
     continue;
   }
 
@@ -86,22 +148,26 @@ for (const target of watch.players || []) {
       name: target.name,
       priority,
       regionHint: target.regionHint || null,
+      pinned,
       status: 'ambiguous-active-player',
-      blocking: priority === 1,
+      blocking: blockingByPolicy,
       ok: false,
-      errors: [`multiple active major candidates=${candidates.length}`],
-      candidates: candidates.map(player => ({ uid: player.uid || null, team: player.team?.name || null, region: player.team?.region || null, role: player.role || null, page: player.profilePageTitle || player.overviewPage || null }))
+      errors: [`multiple constrained active major candidates=${candidates.length}`],
+      candidates: candidates.map(candidateSummary)
     });
     continue;
   }
 
   const player = candidates[0];
   const errors = [];
-  const pages = [player.preferredPage, player.profilePageTitle, player.overviewPage, player.identityId].filter(Boolean);
+  const pages = playerPages(player);
   const image = player.preferredImage || player.image || null;
   const mediaIdentity = player.currentMediaFile || image || '';
+  const hints = regionHints(target);
+  const currentRegion = String(player.team?.region || '').toUpperCase();
 
   if (target.team && norm(player.team?.name) !== norm(target.team)) errors.push(`wrong team: ${player.team?.name || 'missing'}`);
+  if (hints.length && !hints.includes(currentRegion)) errors.push(`wrong region: ${currentRegion || 'missing'}; expected ${hints.join('/')}`);
   if (target.page && !pages.some(page => norm(page) === norm(target.page))) errors.push(`wrong canonical page: ${pages[0] || 'missing'}`);
   if (target.realName && norm(player.name) !== norm(target.realName)) errors.push(`wrong real name: ${player.name || 'missing'}`);
   const wantedRole = roleFamily(target.role);
@@ -115,7 +181,7 @@ for (const target of watch.players || []) {
   if (priority === 1 && !has(player.currentMediaRefreshedAt) && !has(player.profileOverrideAppliedAt) && !has(player.priorityMediaRefreshedAt)) {
     errors.push('priority-1 player has no verified current-media refresh');
   }
-  if (priority === 1 && !has(player.profileOverrideAppliedAt) && has(player.currentMediaFile) && !mediaHasExactIgn(player, player.currentMediaFile)) {
+  if ((priority === 1 || pinned) && !has(player.profileOverrideAppliedAt) && has(player.currentMediaFile) && !mediaHasExactIgn(player, player.currentMediaFile)) {
     errors.push(`current media file does not contain exact IGN tokens: ${player.currentMediaFile}`);
   }
 
@@ -123,8 +189,9 @@ for (const target of watch.players || []) {
     name: target.name,
     priority,
     regionHint: target.regionHint || null,
+    pinned,
     status: errors.length ? 'failed' : 'ok',
-    blocking: priority === 1,
+    blocking: blockingByPolicy,
     ok: errors.length === 0,
     uid: player.uid || null,
     actualName: player.name || null,
@@ -143,6 +210,8 @@ const activeChecks = checks.filter(check => check.status !== 'inactive-or-not-pr
 const tier1Checks = activeChecks.filter(check => check.priority === 1);
 const tier2Checks = activeChecks.filter(check => check.priority === 2);
 const blockingFailures = checks.filter(check => check.blocking && !check.ok);
+const tier1Failures = tier1Checks.filter(check => !check.ok);
+const pinnedTier2Failures = tier2Checks.filter(check => check.pinned && !check.ok);
 const warnings = checks.filter(check => !check.blocking && !check.ok);
 
 const audit = {
@@ -153,10 +222,12 @@ const audit = {
   activeWatchCount: activeChecks.length,
   tier1Active: tier1Checks.length,
   tier1Ok: tier1Checks.filter(check => check.ok).length,
-  tier1FailureCount: blockingFailures.length,
+  tier1FailureCount: tier1Failures.length,
   tier2Active: tier2Checks.length,
   tier2Ok: tier2Checks.filter(check => check.ok).length,
+  tier2PinnedFailureCount: pinnedTier2Failures.length,
   tier2WarningCount: warnings.length,
+  blockingFailureCount: blockingFailures.length,
   checks
 };
 
@@ -168,11 +239,13 @@ console.log('Priority pro audit:', JSON.stringify({
   tier1FailureCount: audit.tier1FailureCount,
   tier2Active: audit.tier2Active,
   tier2Ok: audit.tier2Ok,
+  tier2PinnedFailureCount: audit.tier2PinnedFailureCount,
   tier2WarningCount: audit.tier2WarningCount,
+  blockingFailureCount: audit.blockingFailureCount,
   blockingFailures: blockingFailures.slice(0, 20),
   warnings: warnings.slice(0, 20)
 }, null, 2));
 
 if (blockingFailures.length) {
-  throw new Error(`Priority-1 pro integrity failed: ${blockingFailures.length} active superstar profile(s) have identity/media errors.`);
+  throw new Error(`Priority pro integrity failed: ${blockingFailures.length} blocking superstar/pinned profile identity or media error(s).`);
 }
