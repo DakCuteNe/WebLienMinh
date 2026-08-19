@@ -1,0 +1,214 @@
+/* Rift Meta Global 3.0.2 — structural schedule balance fix */
+
+/*
+ * The previous patch tried to balance the existing nested CSS Grid. The live
+ * card still allowed the right-side team grid to shrink around its contents.
+ * This layer intentionally changes each team half to flex so the two halves
+ * always occupy equal tracks and are pinned to opposite edges.
+ */
+.schedule-day{
+  grid-template-columns:118px minmax(0,1fr)!important;
+  gap:20px!important;
+}
+.schedule-day-matches{min-width:0!important}
+
+.schedule-match-main{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 128px minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:0!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:94px!important;
+  padding:16px 20px!important;
+  box-sizing:border-box!important;
+}
+
+.schedule-team,
+.schedule-team.side-left,
+.schedule-team.side-right{
+  display:flex!important;
+  align-items:center!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:54px!important;
+  gap:12px!important;
+  box-sizing:border-box!important;
+  grid-template-columns:none!important;
+}
+.schedule-team.side-left{
+  justify-content:flex-start!important;
+  padding:0 30px 0 0!important;
+  text-align:left!important;
+}
+.schedule-team.side-right{
+  justify-content:flex-end!important;
+  padding:0 0 0 30px!important;
+  text-align:right!important;
+}
+
+.schedule-team img,
+.schedule-team-fallback{
+  flex:0 0 48px!important;
+  width:48px!important;
+  height:48px!important;
+  border-radius:12px!important;
+  box-sizing:border-box!important;
+  object-fit:contain!important;
+}
+.schedule-team>div{
+  flex:0 1 340px!important;
+  min-width:0!important;
+  max-width:340px!important;
+  width:auto!important;
+}
+.schedule-team strong{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+  font-size:15px!important;
+  line-height:1.25!important;
+}
+.schedule-team small{
+  display:block!important;
+  margin-top:3px!important;
+  font-size:9px!important;
+  min-height:11px!important;
+}
+.schedule-score{
+  flex:0 0 34px!important;
+  width:34px!important;
+  text-align:center!important;
+  font-size:25px!important;
+  line-height:1!important;
+  font-variant-numeric:tabular-nums!important;
+}
+
+/* Exact visual axis of the matchup. */
+.schedule-versus{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  align-self:stretch!important;
+  min-width:0!important;
+  width:128px!important;
+  padding:0 12px!important;
+  box-sizing:border-box!important;
+  text-align:center!important;
+  border-left:1px solid rgba(53,76,99,.58)!important;
+  border-right:1px solid rgba(53,76,99,.58)!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  background:linear-gradient(180deg,rgba(17,31,47,.30),rgba(6,13,22,.13))!important;
+}
+.schedule-versus time{
+  display:block!important;
+  margin:0!important;
+  font-size:14px!important;
+  font-weight:900!important;
+  font-variant-numeric:tabular-nums!important;
+}
+.schedule-versus>b{
+  display:block!important;
+  margin:5px 0 0!important;
+  font-size:10px!important;
+  letter-spacing:.08em!important;
+}
+.schedule-versus small{
+  display:block!important;
+  margin:4px 0 0!important;
+  font-size:8px!important;
+}
+
+.schedule-match-top{padding:10px 15px!important}
+.schedule-league{flex:1 1 auto!important;min-width:0!important}
+.schedule-match-state{
+  flex:0 0 auto!important;
+  min-width:96px!important;
+  text-align:right!important;
+}
+.schedule-state-tabs{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(86px,1fr))!important;
+}
+.schedule-state-tabs button{text-align:center!important;white-space:nowrap!important}
+
+/* Wide screens: keep content comfortably inside each equal half. */
+@media(min-width:1280px){
+  .schedule-team>div{flex-basis:380px!important;max-width:380px!important}
+}
+
+@media(max-width:980px){
+  .schedule-day{grid-template-columns:1fr!important;gap:10px!important}
+  .schedule-day-head{position:relative!important;top:auto!important}
+  .schedule-match-main{
+    grid-template-columns:minmax(0,1fr) 98px minmax(0,1fr)!important;
+    min-height:88px!important;
+    padding:14px!important;
+  }
+  .schedule-versus{width:98px!important;padding:0 8px!important}
+  .schedule-team.side-left{padding-right:14px!important}
+  .schedule-team.side-right{padding-left:14px!important}
+  .schedule-team>div{flex-basis:240px!important;max-width:240px!important}
+}
+
+@media(max-width:680px){
+  .schedule-match-main{
+    grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr)!important;
+    min-height:92px!important;
+    padding:11px 8px!important;
+  }
+  .schedule-versus{width:64px!important;padding:0 4px!important}
+  .schedule-team,
+  .schedule-team.side-left,
+  .schedule-team.side-right{gap:6px!important;min-height:42px!important}
+  .schedule-team.side-left{padding-right:7px!important}
+  .schedule-team.side-right{padding-left:7px!important}
+  .schedule-team img,
+  .schedule-team-fallback{
+    flex-basis:36px!important;
+    width:36px!important;
+    height:36px!important;
+    border-radius:9px!important;
+    padding:4px!important;
+  }
+  .schedule-team>div{flex:0 1 150px!important;max-width:150px!important}
+  .schedule-team strong{font-size:11px!important}
+  .schedule-team small{font-size:7px!important;margin-top:1px!important;min-height:8px!important}
+  .schedule-score{flex-basis:22px!important;width:22px!important;font-size:19px!important}
+  .schedule-versus time{font-size:10px!important}
+  .schedule-versus>b{font-size:8px!important;margin-top:3px!important}
+  .schedule-versus small{font-size:7px!important;margin-top:2px!important}
+  .schedule-state-tabs{grid-template-columns:repeat(3,1fr)!important;width:100%!important}
+  .schedule-state-tabs button{min-width:0!important;padding:8px 5px!important}
+  .schedule-match-state{min-width:68px!important}
+}
+
+@media(max-width:440px){
+  .schedule-match-main{
+    grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr)!important;
+    padding:10px 6px!important;
+  }
+  .schedule-versus{width:56px!important;padding:0 2px!important}
+  .schedule-team.side-left{padding-right:4px!important}
+  .schedule-team.side-right{padding-left:4px!important}
+  .schedule-team img,
+  .schedule-team-fallback{flex-basis:30px!important;width:30px!important;height:30px!important;padding:3px!important}
+  .schedule-team>div{flex-basis:105px!important;max-width:105px!important}
+  .schedule-team strong{font-size:10px!important}
+  .schedule-team small{display:none!important}
+  .schedule-score{flex-basis:18px!important;width:18px!important;font-size:17px!important}
+  .schedule-match-top{padding:8px 9px!important;gap:7px!important}
+  .schedule-league span{max-width:84px!important}
+  .schedule-match-state{min-width:58px!important;font-size:8px!important}
+  .schedule-favorite-mark{display:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .schedule-match-main,.schedule-team,.schedule-versus{transition:none!important}
+}
