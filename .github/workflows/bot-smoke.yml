@@ -39,7 +39,10 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           const source = fs.readFileSync('bot/bot.js', 'utf8');
+          const envExample = fs.readFileSync('.env.example', 'utf8');
           const legacy = ['meta', 'counter', 'build', 'pro', 'patch', 'status'];
+          const currentDomain = 'https://metalienminh.up.railway.app';
+          const oldDomain = 'https://weblienminh-production.up.railway.app';
           if (!source.includes(".setName('notify')")) throw new Error('Missing /notify command');
           for (const name of legacy) {
             if (source.includes(`interaction.commandName === '${name}'`)) {
@@ -56,5 +59,8 @@ jobs:
           }
           if (source.includes('MANAGED_COMMAND_NAMES')) throw new Error('Name-based cleanup is still present');
           if (!source.includes("Riot News & Meta • /notify")) throw new Error('Bot activity still references an old command');
-          console.log('Discord command surface is /notify-only and unknown legacy commands are hard-reset across scopes.');
+          if (!source.includes(currentDomain)) throw new Error('Bot does not contain the new MetaLienMinh domain');
+          if (!source.includes(`LEGACY_WEB_API_URL = '${oldDomain}'`)) throw new Error('Missing automatic migration from the old Railway domain');
+          if (!envExample.includes(`WEB_API_URL=${currentDomain}`)) throw new Error('.env.example still points at an old website');
+          console.log('Discord bot is /notify-only, hard-reset enabled, and points to MetaLienMinh.');
           NODE
