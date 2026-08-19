@@ -68,7 +68,8 @@ function playerCard(p) {
   const profileKey = playerKey(p);
   const teamName = p.currentTeamName || p.team?.short || p.team?.name || 'Free Agent';
   const teamMediaKey = p.currentTeamName || teamKey(p.team);
-  const teamLogo = img(esportsMediaUrl('team', teamMediaKey), p.currentTeamName || p.team?.name || 'Team', 'team-logo');
+  const teamLogoUrl = p.team?.preferredLogo || esportsMediaUrl('team', teamMediaKey);
+  const teamLogo = img(teamLogoUrl, p.currentTeamName || p.team?.name || 'Team', 'team-logo');
   const champs = (p.championPool || []).slice(0, 3).map(x => `<span>${esc(x.name)} <b>${x.rate != null ? `${score(x.rate)}%` : ''}</b></span>`).join('');
   const hasStats = Number(p.games || 0) > 0;
   const playerImage = p.preferredImage || esportsMediaUrl('player', profileKey);
@@ -141,7 +142,8 @@ async function openPlayer(id) {
     const profileKey = playerKey(p);
     const teamName = p.currentTeamName || p.team?.name || 'Không rõ đội';
     const teamMediaKey = p.currentTeamName || teamKey(p.team);
-    const teamLogo = img(esportsMediaUrl('team', teamMediaKey, true), teamName, 'profile-team-logo');
+    const teamLogoUrl = p.team?.preferredLogo || esportsMediaUrl('team', teamMediaKey, true);
+    const teamLogo = img(teamLogoUrl, teamName, 'profile-team-logo');
     const favorite = (p.championPool || p.favoriteChampions || []).length ? statChips(p.championPool?.length ? p.championPool : p.favoriteChampions, 8) : '<span class="muted">Chưa có dữ liệu.</span>';
     const socials = [socialLink('X / Twitter', p.socials?.twitter, 'twitter'), socialLink('Instagram', p.socials?.instagram, 'instagram'), socialLink('Stream', p.socials?.stream, 'stream'), socialLink('YouTube', p.socials?.youtube, 'youtube')].filter(Boolean).join('');
     const missing = 'Chưa có dữ liệu công khai';
@@ -161,7 +163,7 @@ async function openPlayer(id) {
         ${f?.available ? `<div class="profile-card wide"><h3>Build / ngọc / spell nổi bật</h3><h4>Build phổ biến</h4><div class="chips">${statChips(f.commonBuilds, 5)}</div><h4>Ngọc</h4><div class="chips">${statChips(f.commonRunes, 4)}</div><h4>Spell</h4><div class="chips">${statChips(f.commonSpells, 4)}</div></div>` : ''}
         <div class="profile-card wide"><div class="profile-title-row"><h3>Danh hiệu & thành tích</h3><button class="secondary" id="loadAchievements">Tải thành tích</button></div><div id="achievementBody"><p class="muted">Không tự tải phần này để tránh Leaguepedia rate-limit. Bấm “Tải thành tích” khi cần.</p></div></div>
       </div>
-      <div class="profile-source"><span>${p.currentProfileFetchedAt ? `Hồ sơ hiện tại được kiểm tra lúc ${esc(p.currentProfileFetchedAt)}. ` : ''}${p.preferredImageAsOf ? `Ảnh current-team-era kiểm tra ${esc(p.preferredImageAsOf)}. ` : ''}Logo đội được kiểm tra qua nguồn esports hiện tại; thống kê trận dùng Oracle’s Elixir; trường thiếu không được suy đoán.</span>${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ/ảnh ↗</a>` : ''}</div>`;
+      <div class="profile-source"><span>${p.currentProfileFetchedAt ? `Hồ sơ hiện tại được kiểm tra lúc ${esc(p.currentProfileFetchedAt)}. ` : ''}${p.preferredImageAsOf ? `Ảnh current-team-era kiểm tra ${esc(p.preferredImageAsOf)}. ` : ''}${p.team?.preferredLogoAsOf ? `Logo đội kiểm tra ${esc(p.team.preferredLogoAsOf)}. ` : ''}Thống kê trận dùng Oracle’s Elixir; trường thiếu không được suy đoán.</span>${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noreferrer">Mở nguồn hồ sơ/ảnh ↗</a>` : ''}</div>`;
 
     const achievementButton = $('#loadAchievements');
     if (achievementButton) achievementButton.onclick = () => loadAchievements(profileKey);
