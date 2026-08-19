@@ -13,9 +13,9 @@
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(circle at 78% 14%, color-mix(in srgb, var(--hol-accent, #d6aa57) 20%, transparent), transparent 28%),
-    radial-gradient(circle at 16% 60%, rgba(105,77,33,.12), transparent 30%),
-    linear-gradient(180deg, rgba(255,255,255,.012), transparent 22%);
+    radial-gradient(circle at 78% 14%,color-mix(in srgb,var(--hol-accent,#d6aa57) 20%,transparent),transparent 28%),
+    radial-gradient(circle at 16% 60%,rgba(105,77,33,.12),transparent 30%),
+    linear-gradient(180deg,rgba(255,255,255,.012),transparent 22%);
   opacity:.95;
 }
 
@@ -38,17 +38,12 @@
   box-shadow:0 28px 70px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.035);
 }
 
-.hol-hero::before,.hol-hero::after{
-  content:"";position:absolute;pointer-events:none
-}
+.hol-hero::before,.hol-hero::after{content:"";position:absolute;pointer-events:none}
 .hol-hero::before{
   width:520px;height:520px;right:-210px;top:-270px;border:1px solid rgba(214,170,87,.18);border-radius:50%;
   box-shadow:0 0 0 34px rgba(214,170,87,.025),0 0 0 92px rgba(214,170,87,.018)
 }
-.hol-hero::after{
-  left:36px;right:36px;bottom:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(214,170,87,.58),transparent)
-}
+.hol-hero::after{left:36px;right:36px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(214,170,87,.58),transparent)}
 
 .hol-hero-copy{position:relative;z-index:1;max-width:820px}
 .hol-hero h1{margin:8px 0 12px;font-size:clamp(40px,6vw,78px);line-height:.92;letter-spacing:-.045em;font-family:Georgia,'Times New Roman',serif;font-weight:500}
@@ -70,12 +65,43 @@
 .hol-year.active{background:linear-gradient(135deg,color-mix(in srgb,var(--hol-accent) 11%,rgba(255,255,255,.025)),rgba(255,255,255,.018));border-color:color-mix(in srgb,var(--hol-accent) 45%,rgba(255,255,255,.08))}
 .hol-year.active::before{opacity:1;box-shadow:0 0 18px var(--hol-accent)}
 .hol-year.active span{color:color-mix(in srgb,var(--hol-accent) 35%,transparent)}
+.hol-year-pending{cursor:default;opacity:.76;background:linear-gradient(135deg,rgba(243,231,197,.035),rgba(255,255,255,.012))}
+.hol-year-pending:hover{transform:none;border-color:rgba(243,231,197,.15)}
+.hol-year-pending::after{content:"";position:absolute;inset:7px;border:1px dashed rgba(243,231,197,.09);border-radius:10px;pointer-events:none}
+
+.hol-official-banner{
+  position:relative;
+  min-height:174px;
+  padding:26px 34px;
+  border:1px solid color-mix(in srgb,var(--hol-accent) 28%,rgba(255,255,255,.06));
+  border-radius:24px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  color:#edf1f5;
+  text-decoration:none;
+  background:
+    linear-gradient(98deg,color-mix(in srgb,var(--hol-accent) 8%,#080c12) 0%,#0b1018 52%,#080b11 100%),
+    radial-gradient(circle at 82% 44%,color-mix(in srgb,var(--hol-accent) 18%,transparent),transparent 32%);
+  box-shadow:0 20px 45px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);
+  transition:transform .22s ease,border-color .22s ease;
+}
+.hol-official-banner::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(120deg,transparent 0 72px,rgba(255,255,255,.018) 73px,transparent 74px)}
+.hol-official-banner:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--hol-accent) 48%,rgba(255,255,255,.08))}
+.hol-official-banner-copy{position:relative;z-index:3;max-width:70%;display:flex;flex-direction:column;gap:7px}
+.hol-official-banner-copy small{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--hol-accent)}
+.hol-official-banner-copy strong{font:500 clamp(30px,4vw,52px)/.95 Georgia,'Times New Roman',serif;color:#f3efe6;letter-spacing:-.035em}
+.hol-official-banner-copy strong i{font-style:normal;font-size:.34em;letter-spacing:.12em;color:#8995a5;vertical-align:middle;margin-left:8px}
+.hol-official-banner-copy p{max-width:720px;margin:1px 0;color:#aeb8c4;font-size:13px;line-height:1.55}
+.hol-official-banner-copy span{margin-top:2px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d9dde3}
+.hol-official-banner-mark{position:absolute;z-index:2;right:31%;top:50%;transform:translateY(-50%);font:500 116px/1 Georgia,serif;color:color-mix(in srgb,var(--hol-accent) 18%,transparent);pointer-events:none}
+.hol-official-banner-art{position:absolute;z-index:1;right:-1%;top:-38%;width:37%;height:180%;object-fit:contain;object-position:center top;opacity:.3;filter:saturate(.82) contrast(1.08);pointer-events:none;mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 100%)}
 
 .hol-spotlight{
   position:relative;
   display:grid;
   grid-template-columns:minmax(330px,.78fr) minmax(0,1.22fr);
-  min-height:610px;
+  min-height:650px;
   overflow:hidden;
   border:1px solid color-mix(in srgb,var(--hol-accent) 24%,rgba(255,255,255,.06));
   border-radius:30px;
@@ -90,56 +116,78 @@
 .hol-stage span:nth-child(3){width:260px;height:260px;left:80px;top:170px}
 .hol-stage i{position:absolute;left:40%;top:-20%;width:1px;height:145%;background:linear-gradient(180deg,transparent,var(--hol-accent),transparent);opacity:.12;transform:rotate(22deg)}
 
-.hol-spotlight-art{position:relative;min-height:610px;overflow:hidden;background:
-  radial-gradient(circle at 48% 46%,color-mix(in srgb,var(--hol-accent) 15%,transparent),transparent 38%),
-  linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.hol-spotlight-art{position:relative;min-height:650px;overflow:hidden;background:radial-gradient(circle at 48% 46%,color-mix(in srgb,var(--hol-accent) 15%,transparent),transparent 38%),linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
 .hol-spotlight-art::after{content:"";position:absolute;right:0;top:8%;bottom:8%;width:1px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--hol-accent) 55%,transparent),transparent)}
 .hol-roman{position:absolute;left:26px;top:24px;z-index:4;font-family:Georgia,serif;font-size:18px;letter-spacing:.18em;color:var(--hol-accent)}
 .hol-year-watermark{position:absolute;left:-12px;bottom:-26px;z-index:1;font-family:Georgia,serif;font-weight:700;font-size:clamp(92px,14vw,190px);line-height:1;color:rgba(255,255,255,.028);letter-spacing:-.08em}
 
-.hol-portrait{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--hol-accent) 13%,#141922),#070a10 72%)}
-.hol-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:saturate(.82) contrast(1.06);transition:transform .32s ease,filter .32s ease}
+.hol-portrait{--portrait-position:center top;--portrait-scale:1;--portrait-shift:0px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--hol-accent) 13%,#141922),#070a10 72%)}
+.hol-portrait img{width:100%;height:100%;object-fit:cover;object-position:var(--portrait-position);display:block;filter:saturate(.86) contrast(1.06);transition:transform .32s ease,filter .32s ease}
 .hol-portrait-fallback{position:absolute;inset:0;display:grid;place-items:center;font:600 42px/1 Georgia,serif;color:color-mix(in srgb,var(--hol-accent) 68%,white);background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--hol-accent) 18%,transparent),transparent 50%)}
 .hol-portrait-fallback.hidden{display:none}
 .hol-portrait-rim{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hol-accent) 28%,transparent),inset 0 -80px 80px rgba(3,5,8,.7)}
-.hol-portrait-large{position:absolute;z-index:2;left:8%;right:8%;top:8%;bottom:0;border-radius:46% 46% 0 0/28% 28% 0 0;background:transparent;overflow:hidden}
-.hol-portrait-large img{object-fit:contain;object-position:center bottom;filter:saturate(.78) contrast(1.08) drop-shadow(0 18px 24px rgba(0,0,0,.42))}
+.hol-portrait-large{position:absolute;z-index:2;left:4%;right:4%;top:2%;bottom:-1%;border-radius:46% 46% 0 0/25% 25% 0 0;background:transparent;overflow:hidden}
+.hol-portrait-large img{object-fit:contain;object-position:center bottom;transform:translateY(var(--portrait-shift)) scale(var(--portrait-scale));transform-origin:center bottom;filter:saturate(.84) contrast(1.08) drop-shadow(0 18px 24px rgba(0,0,0,.42))}
 .hol-portrait-large .hol-portrait-fallback{font-size:92px;background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--hol-accent) 16%,transparent),transparent 52%)}
-.hol-portrait-large .hol-portrait-rim{box-shadow:none;background:linear-gradient(180deg,transparent 62%,#07090d 100%)}
+.hol-portrait-large .hol-portrait-rim{box-shadow:none;background:linear-gradient(180deg,transparent 67%,#07090d 100%)}
 
-.hol-spotlight-copy{position:relative;z-index:3;padding:56px 56px 48px;display:flex;flex-direction:column;justify-content:center}
+.hol-spotlight-copy{position:relative;z-index:3;padding:48px 56px 42px;display:flex;flex-direction:column;justify-content:center}
 .hol-kicker{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:10px;letter-spacing:.16em;color:#9da8b7}
 .hol-kicker b{padding:6px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--hol-accent) 38%,transparent);color:var(--hol-accent);font-size:9px}
-.hol-spotlight-copy h2{margin:13px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(58px,8vw,112px);line-height:.88;font-weight:500;letter-spacing:-.055em;color:#f3efe6;text-shadow:0 8px 30px rgba(0,0,0,.5)}
+.hol-spotlight-copy h2{margin:13px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(58px,8vw,108px);line-height:.88;font-weight:500;letter-spacing:-.055em;color:#f3efe6;text-shadow:0 8px 30px rgba(0,0,0,.5)}
 .hol-real-name{margin:12px 0 0;color:#8f9bab;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.hol-spotlight-copy h3{margin:26px 0 8px;font:500 clamp(24px,3vw,36px)/1.1 Georgia,serif;color:var(--hol-accent)}
-.hol-summary{max-width:760px;margin:0;color:#b5bfcb;line-height:1.75;font-size:14px}
-.hol-legacy-line{display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06)}
-.hol-legacy-line small,.hol-highlight-block>small,.hol-cosmetics small{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#778393}
+.hol-spotlight-copy h3{margin:24px 0 8px;font:500 clamp(24px,3vw,36px)/1.1 Georgia,serif;color:var(--hol-accent)}
+.hol-summary{max-width:760px;margin:0;color:#b5bfcb;line-height:1.72;font-size:14px}
+
+.hol-legacy-line{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)}
+.hol-legacy-line>div:last-child{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.hol-legacy-line small,.hol-highlight-block>small,.hol-cosmetics small,.hol-trophy-block>small{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#778393}
 .hol-legacy-line b{color:#e6e9ed;font-size:14px}
-.hol-highlight-block{margin-top:18px}
+.hol-team-logo{position:relative;width:42px;height:42px;display:grid;place-items:center;flex:none;border-radius:12px;border:1px solid color-mix(in srgb,var(--hol-accent) 25%,rgba(255,255,255,.07));background:color-mix(in srgb,var(--hol-accent) 7%,rgba(255,255,255,.018));overflow:hidden}
+.hol-team-logo img{width:31px;height:31px;object-fit:contain;display:block;filter:drop-shadow(0 6px 9px rgba(0,0,0,.25))}
+.hol-team-logo-fallback{font:700 11px/1 system-ui,sans-serif;letter-spacing:.05em;color:var(--hol-accent)}
+.hol-team-logo-fallback.hidden{display:none}
+
+.hol-trophy-block{margin-top:17px}
+.hol-trophy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:8px}
+.hol-trophy-card{min-height:78px;padding:12px 13px;border-radius:14px;border:1px solid color-mix(in srgb,var(--hol-accent) 18%,rgba(255,255,255,.055));background:linear-gradient(145deg,color-mix(in srgb,var(--hol-accent) 6%,rgba(255,255,255,.018)),rgba(255,255,255,.012));display:flex;align-items:center;gap:10px}
+.hol-trophy-card>span{font-size:15px;color:var(--hol-accent);text-shadow:0 0 16px color-mix(in srgb,var(--hol-accent) 42%,transparent)}
+.hol-trophy-card>div{min-width:0;display:grid;grid-template-columns:auto 1fr;align-items:baseline;column-gap:7px;row-gap:3px}
+.hol-trophy-card b{font:500 25px/1 Georgia,serif;color:#f2eee5}
+.hol-trophy-card strong{font-size:11px;color:#d4dae2;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.hol-trophy-card small{grid-column:1/-1;font-size:9px;color:#7f8a99;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.hol-highlight-block{margin-top:17px}
 .hol-highlight-block>div{display:grid;gap:7px;margin-top:8px}
 .hol-highlight-block span{font-size:13px;color:#cbd2da}
 .hol-highlight-block span::first-letter{color:var(--hol-accent)}
-.hol-cosmetics{display:flex;flex-direction:column;gap:5px;margin-top:18px;padding:13px 15px;border-radius:14px;border:1px solid color-mix(in srgb,var(--hol-accent) 17%,rgba(255,255,255,.05));background:color-mix(in srgb,var(--hol-accent) 5%,rgba(255,255,255,.015))}
+.hol-cosmetics{display:flex;flex-direction:column;gap:5px;margin-top:17px;padding:13px 15px;border-radius:14px;border:1px solid color-mix(in srgb,var(--hol-accent) 17%,rgba(255,255,255,.05));background:color-mix(in srgb,var(--hol-accent) 5%,rgba(255,255,255,.015))}
 .hol-cosmetics b{font-size:12px;color:#e3dac6;line-height:1.5}
-.hol-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hol-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .hol-actions a{text-decoration:none}
 
 .hol-gallery-head{display:flex;justify-content:space-between;align-items:end;padding:10px 2px 0}
 .hol-gallery-head h3{margin:4px 0 0;font-size:24px}
-.hol-gallery-head>span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(214,170,87,.28);color:#d6aa57;font-family:Georgia,serif}
+.hol-gallery-head>span{display:grid;place-items:center;min-width:42px;height:42px;padding:0 10px;border-radius:999px;border:1px solid rgba(214,170,87,.28);color:#d6aa57;font-family:Georgia,serif}
 .hol-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.hol-card{position:relative;display:grid;grid-template-columns:130px 1fr;min-height:166px;padding:0;text-align:left;border:1px solid rgba(255,255,255,.065);border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(13,18,26,.94),rgba(8,11,16,.97));color:#e7ecf2;cursor:pointer;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.hol-card{position:relative;display:grid;grid-template-columns:130px 1fr;min-height:166px;padding:0;text-align:left;border:1px solid rgba(255,255,255,.065);border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(13,18,26,.94),rgba(8,11,16,.97));color:#e7ecf2;cursor:pointer;text-decoration:none;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
 .hol-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--hol-accent) 34%,rgba(255,255,255,.08));box-shadow:0 18px 35px rgba(0,0,0,.25)}
 .hol-card.active{border-color:color-mix(in srgb,var(--hol-accent) 48%,rgba(255,255,255,.08));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--hol-accent) 12%,transparent)}
 .hol-card .hol-portrait{height:100%;border-radius:0}
 .hol-card-copy{position:relative;z-index:2;padding:22px 42px 18px 18px;align-self:center}
 .hol-card-copy small{font-size:9px;letter-spacing:.14em;color:#7d8998}
 .hol-card-copy h4{margin:4px 0 2px;font:500 29px/1 Georgia,serif;color:#f1eee7}
-.hol-card-copy p{margin:5px 0;color:#aab4c0;font-size:12px}
+.hol-card-copy p{margin:5px 0;color:#aab4c0;font-size:12px;line-height:1.45}
 .hol-card-copy span{display:block;margin-top:11px;color:#7f8a97;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
 .hol-card-mark{position:absolute;right:13px;top:12px;font:500 21px/1 Georgia,serif;color:color-mix(in srgb,var(--hol-accent) 48%,transparent)}
+.hol-card-pending{cursor:pointer;background:linear-gradient(135deg,rgba(19,20,22,.96),rgba(10,12,16,.98));border-style:dashed}
+.hol-card-pending:hover{border-color:rgba(243,231,197,.27)}
+.hol-pending-art{position:relative;display:grid;place-items:center;height:100%;min-height:166px;background:radial-gradient(circle at 50% 45%,rgba(243,231,197,.1),transparent 48%),linear-gradient(180deg,rgba(255,255,255,.018),transparent);overflow:hidden}
+.hol-pending-art::before,.hol-pending-art::after{content:"";position:absolute;border:1px solid rgba(243,231,197,.09);border-radius:50%}
+.hol-pending-art::before{width:118px;height:118px}
+.hol-pending-art::after{width:78px;height:78px}
+.hol-pending-art span{position:relative;z-index:2;font:500 37px/1 Georgia,serif;color:#e9debf}
+.hol-pending-art i{position:absolute;left:7px;bottom:2px;font:700 42px/1 Georgia,serif;color:rgba(255,255,255,.035);font-style:normal}
 .hol-source{margin:0;padding:0 4px;color:#737f8f;font-size:11px;line-height:1.6}
 
 .hol-switching .hol-spotlight{animation:hol-panel-in .55s cubic-bezier(.2,.8,.2,1) both}
@@ -147,6 +195,7 @@
 .hol-switching .hol-spotlight-copy>*:nth-child(2){animation-delay:.04s}.hol-switching .hol-spotlight-copy>*:nth-child(3){animation-delay:.07s}.hol-switching .hol-spotlight-copy>*:nth-child(4){animation-delay:.1s}.hol-switching .hol-spotlight-copy>*:nth-child(5){animation-delay:.13s}
 .hol-section.active-section .hol-hero{animation:hol-hero-in .55s ease both}
 .hol-section.active-section .hol-timeline{animation:hol-rise .55s .08s ease both}
+.hol-section.active-section .hol-official-banner{animation:hol-rise .58s .1s ease both}
 .hol-section.active-section .hol-spotlight{animation:hol-rise .62s .12s ease both}
 .hol-section.active-section .hol-gallery-head,.hol-section.active-section .hol-gallery{animation:hol-rise .58s .18s ease both}
 
@@ -158,13 +207,20 @@ body.hall-legends-active .ambient-horizon{opacity:.3}
 @keyframes hol-panel-in{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes hol-copy-in{from{opacity:0;transform:translateX(9px)}to{opacity:1;transform:none}}
 
+@media (max-width:1180px){
+  .hol-spotlight-copy{padding:42px 34px 38px}
+  .hol-trophy-card{padding:11px 10px;gap:7px}
+  .hol-trophy-card strong{font-size:10px}
+}
+
 @media (max-width:1050px){
   .hol-hero{grid-template-columns:1fr;padding:28px;min-height:0}
   .hol-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hol-official-banner-copy{max-width:75%}
   .hol-spotlight{grid-template-columns:minmax(280px,.82fr) 1.18fr}
-  .hol-spotlight-copy{padding:42px 34px}
   .hol-gallery{grid-template-columns:1fr}
   .hol-card{grid-template-columns:150px 1fr}
+  .hol-pending-art{min-height:150px}
 }
 
 @media (max-width:760px){
@@ -177,10 +233,15 @@ body.hall-legends-active .ambient-horizon{opacity:.3}
   .hol-stats b{font-size:16px}
   .hol-timeline{grid-template-columns:1fr;padding:8px}
   .hol-year{min-height:60px}
+  .hol-official-banner{min-height:0;padding:22px;border-radius:19px}
+  .hol-official-banner-copy{max-width:100%}
+  .hol-official-banner-copy strong{font-size:36px}
+  .hol-official-banner-art{opacity:.13;width:55%;right:-14%}
+  .hol-official-banner-mark{right:8%;font-size:88px;opacity:.5}
   .hol-spotlight{display:block;border-radius:22px;min-height:0}
-  .hol-spotlight-art{min-height:390px}
+  .hol-spotlight-art{min-height:410px}
   .hol-spotlight-art::after{right:8%;left:8%;top:auto;bottom:0;width:auto;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--hol-accent) 55%,transparent),transparent)}
-  .hol-portrait-large{left:12%;right:12%;top:8%}
+  .hol-portrait-large{left:7%;right:7%;top:2%}
   .hol-year-watermark{font-size:110px}
   .hol-stage span:nth-child(1){width:390px;height:390px;left:calc(50% - 195px);top:12px}
   .hol-stage span:nth-child(2){width:300px;height:300px;left:calc(50% - 150px);top:58px}
@@ -188,18 +249,24 @@ body.hall-legends-active .ambient-horizon{opacity:.3}
   .hol-spotlight-copy{padding:30px 22px 28px}
   .hol-spotlight-copy h2{font-size:66px}
   .hol-spotlight-copy h3{font-size:26px}
+  .hol-trophy-grid{grid-template-columns:1fr}
+  .hol-trophy-card{min-height:66px}
   .hol-actions{display:grid;grid-template-columns:1fr}
   .hol-actions>*{width:100%;text-align:center}
   .hol-card{grid-template-columns:105px 1fr;min-height:142px}
   .hol-card-copy{padding:18px 36px 16px 14px}
   .hol-card-copy h4{font-size:25px}
+  .hol-pending-art{min-height:142px}
 }
 
 @media (max-width:460px){
   .hol-hero h1{font-size:39px}
   .hol-stats{grid-template-columns:1fr 1fr}
   .hol-stats small{font-size:8px}
-  .hol-spotlight-art{min-height:340px}
+  .hol-official-banner-copy strong{font-size:31px}
+  .hol-official-banner-copy p{font-size:12px}
+  .hol-official-banner-art{display:none}
+  .hol-spotlight-art{min-height:360px}
   .hol-spotlight-copy h2{font-size:58px}
   .hol-card{grid-template-columns:88px 1fr}
   .hol-card-copy span{letter-spacing:.04em}
@@ -207,6 +274,6 @@ body.hall-legends-active .ambient-horizon{opacity:.3}
 
 @media (prefers-reduced-motion:reduce){
   .hol-section *{scroll-behavior:auto!important}
-  .hol-section.active-section .hol-hero,.hol-section.active-section .hol-timeline,.hol-section.active-section .hol-spotlight,.hol-section.active-section .hol-gallery-head,.hol-section.active-section .hol-gallery,.hol-switching .hol-spotlight,.hol-switching .hol-spotlight-copy>*{animation:none!important}
-  .hol-year,.hol-card,.hol-portrait img{transition:none!important}
+  .hol-section.active-section .hol-hero,.hol-section.active-section .hol-timeline,.hol-section.active-section .hol-official-banner,.hol-section.active-section .hol-spotlight,.hol-section.active-section .hol-gallery-head,.hol-section.active-section .hol-gallery,.hol-switching .hol-spotlight,.hol-switching .hol-spotlight-copy>*{animation:none!important}
+  .hol-year,.hol-card,.hol-official-banner,.hol-portrait img{transition:none!important}
 }
