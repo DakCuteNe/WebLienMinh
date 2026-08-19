@@ -2,7 +2,7 @@
   "patch": "16.16",
   "dataDragonVersion": "16.16.1",
   "mode": "match-v5-global-high-elo-v3",
-  "generatedAt": "2026-08-19T16:34:14.890Z",
+  "generatedAt": "2026-08-19T16:48:28.915Z",
   "sampleGames": 140,
   "methodology": {
     "banRate": "Tỷ lệ số trận tướng xuất hiện trong bans / tổng trận mẫu.",
@@ -231,7 +231,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -416,7 +416,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -635,7 +635,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -842,7 +842,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1050,7 +1050,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1274,7 +1274,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1460,7 +1460,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1633,7 +1633,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -1846,7 +1846,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2112,7 +2112,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2312,7 +2312,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2489,7 +2489,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2666,7 +2666,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -2862,7 +2862,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3039,7 +3039,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3238,7 +3238,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3436,7 +3436,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3635,7 +3635,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -3827,7 +3827,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4021,7 +4021,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4220,7 +4220,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4387,7 +4387,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4590,7 +4590,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4800,7 +4800,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -4985,7 +4985,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5161,7 +5161,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5352,7 +5352,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5546,7 +5546,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5738,7 +5738,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -5915,7 +5915,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6090,7 +6090,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6298,7 +6298,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6489,7 +6489,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6676,7 +6676,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -6868,7 +6868,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7047,7 +7047,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7236,7 +7236,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "ĐÁNG ƯU TIÊN",
@@ -7421,7 +7421,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -7618,7 +7618,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -7794,7 +7794,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -7946,7 +7946,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8125,7 +8125,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8263,7 +8263,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8421,7 +8421,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8612,7 +8612,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8756,7 +8756,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -8943,7 +8943,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9126,7 +9126,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9299,7 +9299,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9562,7 +9562,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9737,7 +9737,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -9908,7 +9908,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10086,7 +10086,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10260,7 +10260,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10415,7 +10415,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10572,7 +10572,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10680,7 +10680,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10776,7 +10776,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -10884,7 +10884,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11024,7 +11024,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11121,7 +11121,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11307,7 +11307,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11441,7 +11441,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11572,7 +11572,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11703,7 +11703,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11834,7 +11834,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -11975,7 +11975,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12152,7 +12152,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12279,7 +12279,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12400,7 +12400,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12552,7 +12552,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12623,7 +12623,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12790,7 +12790,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -12932,7 +12932,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13085,7 +13085,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13227,7 +13227,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13344,7 +13344,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13420,7 +13420,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13627,7 +13627,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13744,7 +13744,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -13883,7 +13883,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14022,7 +14022,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14163,7 +14163,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14315,7 +14315,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14412,7 +14412,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14586,7 +14586,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14682,7 +14682,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14783,7 +14783,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -14880,7 +14880,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15070,7 +15070,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15248,7 +15248,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15462,7 +15462,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15629,7 +15629,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15705,7 +15705,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -15881,7 +15881,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16027,7 +16027,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16128,7 +16128,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16214,7 +16214,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16305,7 +16305,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16402,7 +16402,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16499,7 +16499,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16590,7 +16590,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16698,7 +16698,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16839,7 +16839,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -16995,7 +16995,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17162,7 +17162,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17270,7 +17270,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17367,7 +17367,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17469,7 +17469,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17545,7 +17545,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17637,7 +17637,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17734,7 +17734,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17820,7 +17820,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -17974,7 +17974,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18128,7 +18128,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18224,7 +18224,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18332,7 +18332,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18435,7 +18435,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18532,7 +18532,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18639,7 +18639,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18735,7 +18735,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18832,7 +18832,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -18934,7 +18934,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19037,7 +19037,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19134,7 +19134,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19225,7 +19225,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19327,7 +19327,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19430,7 +19430,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19532,7 +19532,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19623,7 +19623,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19715,7 +19715,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19811,7 +19811,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -19908,7 +19908,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20092,7 +20092,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20258,7 +20258,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20349,7 +20349,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20445,7 +20445,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20537,7 +20537,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20628,7 +20628,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20730,7 +20730,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20822,7 +20822,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -20913,7 +20913,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21016,7 +21016,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21152,7 +21152,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21321,7 +21321,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21478,7 +21478,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21664,7 +21664,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -21853,7 +21853,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22038,7 +22038,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22223,7 +22223,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22339,7 +22339,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22557,7 +22557,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22680,7 +22680,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22809,7 +22809,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -22900,7 +22900,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23078,7 +23078,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23175,7 +23175,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23272,7 +23272,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23375,7 +23375,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23471,7 +23471,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23616,7 +23616,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23810,7 +23810,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -23917,7 +23917,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24112,7 +24112,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24238,7 +24238,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24380,7 +24380,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24502,7 +24502,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24636,7 +24636,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24751,7 +24751,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -24906,7 +24906,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25070,7 +25070,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25248,7 +25248,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25387,7 +25387,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25530,7 +25530,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25672,7 +25672,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25824,7 +25824,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -25956,7 +25956,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26106,7 +26106,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26240,7 +26240,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26359,7 +26359,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26456,7 +26456,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26572,7 +26572,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26673,7 +26673,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26799,7 +26799,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26900,7 +26900,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -26996,7 +26996,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27164,7 +27164,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27349,7 +27349,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27518,7 +27518,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27599,7 +27599,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27680,7 +27680,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -27888,7 +27888,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28054,7 +28054,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28135,7 +28135,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28340,7 +28340,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28442,7 +28442,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28539,7 +28539,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28630,7 +28630,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28737,7 +28737,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28833,7 +28833,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -28935,7 +28935,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29036,7 +29036,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29132,7 +29132,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29223,7 +29223,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29299,7 +29299,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29402,7 +29402,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29575,7 +29575,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29651,7 +29651,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29754,7 +29754,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29851,7 +29851,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -29948,7 +29948,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30039,7 +30039,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30136,7 +30136,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30227,7 +30227,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30323,7 +30323,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30420,7 +30420,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30528,7 +30528,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30624,7 +30624,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30715,7 +30715,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30786,7 +30786,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30882,7 +30882,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -30958,7 +30958,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31034,7 +31034,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31210,7 +31210,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31307,7 +31307,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31383,7 +31383,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31474,7 +31474,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31576,7 +31576,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31673,7 +31673,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31749,7 +31749,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31845,7 +31845,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -31948,7 +31948,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32045,7 +32045,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32141,7 +32141,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32294,7 +32294,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32453,7 +32453,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32620,7 +32620,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32717,7 +32717,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32814,7 +32814,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -32905,7 +32905,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33090,7 +33090,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33248,7 +33248,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33409,7 +33409,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33596,7 +33596,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33717,7 +33717,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -33895,7 +33895,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34037,7 +34037,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34167,7 +34167,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34343,7 +34343,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34480,7 +34480,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34596,7 +34596,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34736,7 +34736,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -34905,7 +34905,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35035,7 +35035,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35167,7 +35167,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35258,7 +35258,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35435,7 +35435,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35631,7 +35631,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35818,7 +35818,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -35954,7 +35954,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36090,7 +36090,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36271,7 +36271,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36409,7 +36409,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36606,7 +36606,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36785,7 +36785,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -36969,7 +36969,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37114,7 +37114,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37310,7 +37310,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37489,7 +37489,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37690,7 +37690,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -37867,7 +37867,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38032,7 +38032,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38201,7 +38201,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38369,7 +38369,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38533,7 +38533,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38709,7 +38709,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -38863,7 +38863,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -39036,7 +39036,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -39206,7 +39206,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -39413,7 +39413,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -39623,7 +39623,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -39812,7 +39812,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -39975,7 +39975,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -40151,7 +40151,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -40329,7 +40329,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -40534,7 +40534,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -40729,7 +40729,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -40896,7 +40896,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -41075,7 +41075,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -41285,7 +41285,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -41461,7 +41461,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -41666,7 +41666,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "CÂN NHẮC",
@@ -41908,7 +41908,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42083,7 +42083,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42294,7 +42294,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42471,7 +42471,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42645,7 +42645,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -42854,7 +42854,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43006,7 +43006,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43205,7 +43205,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43390,7 +43390,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43575,7 +43575,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43763,7 +43763,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -43957,7 +43957,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44204,7 +44204,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44427,7 +44427,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44594,7 +44594,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44778,7 +44778,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -44984,7 +44984,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -45205,7 +45205,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -45399,7 +45399,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -45639,7 +45639,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -45854,7 +45854,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -46095,7 +46095,7 @@
         "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
-        "comparedAt": "2026-08-19T16:20:57.048Z",
+        "comparedAt": "2026-08-19T16:34:14.890Z",
         "previousPatch": "16.16"
       },
       "verdict": "KÉM ỔN ĐỊNH",
@@ -46105,7 +46105,7 @@
   "scope": "GLOBAL",
   "scopeLabel": "Global High-Elo",
   "coverage": {
-    "generatedAt": "2026-08-19T16:34:14.480Z",
+    "generatedAt": "2026-08-19T16:48:28.445Z",
     "patch": "16.16",
     "scope": "GLOBAL",
     "mode": "global-high-elo-ranked-solo",
