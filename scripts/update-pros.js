@@ -16,8 +16,9 @@ const featured = watch.players || [];
 if (!featured.length) throw new Error('pro-watchlist.json chưa có tuyển thủ.');
 
 const escapeCargo = value => String(value).replaceAll('\\', '\\\\').replaceAll("'", "\\'");
+const canonicalPlayer = target => String(target?.page || target?.name || '').trim();
 const cutoff = new Date(Date.now() - 120 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
-const namesWhere = featured.map(x => `SP.Link='${escapeCargo(x.name)}'`).join(' OR ');
+const namesWhere = featured.map(x => `SP.Link='${escapeCargo(canonicalPlayer(x))}'`).join(' OR ');
 
 const params = new URLSearchParams({
   action: 'cargoquery',
@@ -164,9 +165,18 @@ if (!payload) {
 
   const players = [];
   for (const target of featured) {
-    const games = rows.filter(x => String(x.player).toLowerCase() === target.name.toLowerCase());
+    const targetPage = canonicalPlayer(target);
+    const games = rows.filter(x => String(x.player || '').trim().toLowerCase() === targetPage.toLowerCase());
     if (!games.length) {
-      players.push({ name: target.name, role: target.role, available: false, games: 0, note: 'Chưa có scoreboard gần đây trong khoảng 120 ngày.' });
+      players.push({
+        name: target.name,
+        page: target.page || null,
+        targetTeam: target.team || null,
+        role: target.role,
+        available: false,
+        games: 0,
+        note: `Chưa có scoreboard gần đây cho ${targetPage} trong khoảng 120 ngày.`
+      });
       continue;
     }
 
@@ -191,6 +201,8 @@ if (!payload) {
 
     players.push({
       name: target.name,
+      page: target.page || null,
+      targetTeam: target.team || null,
       available: true,
       team: recent[0]?.team || null,
       role,
@@ -235,7 +247,7 @@ if (!payload) {
     sourceType: 'community-maintained, not Riot official',
     rangeDays: 120,
     perPlayerGames: 30,
-    note: 'Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.',
+    note: 'Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Với IGN trùng, scoreboard được khóa theo canonical Leaguepedia page. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.',
     players
   };
 
