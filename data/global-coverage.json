@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T14:16:06.947Z",
+  "generatedAt": "2026-08-19T14:35:30.814Z",
   "patch": "16.16",
   "scope": "GLOBAL",
   "mode": "global-high-elo-ranked-solo",
@@ -45,9 +45,9 @@
     "SEA"
   ],
   "macroRegionCount": 4,
-  "matchesSaved": 139,
+  "matchesSaved": 140,
   "matchesDiscovered": 166,
-  "skippedOldPatch": 27,
+  "skippedOldPatch": 26,
   "failedMatches": 0,
   "settings": {
     "playersPerPlatform": 2,
@@ -60,7 +60,7 @@
     "br1": 10,
     "eun1": 6,
     "euw1": 12,
-    "jp1": 11,
+    "jp1": 12,
     "la1": 10,
     "la2": 12,
     "na1": 6,
@@ -73,7 +73,7 @@
   },
   "matchesByMacroRegion": {
     "AMERICAS": 38,
-    "ASIA": 11,
+    "ASIA": 12,
     "EUROPE": 42,
     "SEA": 48
   },

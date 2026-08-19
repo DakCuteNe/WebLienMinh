@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-19T14:16:07.858Z",
+  "checkedAt": "2026-08-19T14:35:31.767Z",
   "health": "ok",
   "scope": "GLOBAL",
   "patch": "16.16",
@@ -14,7 +14,7 @@
     "platformCount": 13,
     "attemptedPlatforms": 16,
     "macroRegionCount": 4,
-    "matchesSaved": 139,
+    "matchesSaved": 140,
     "successfulPlatforms": [
       "na1",
       "br1",
@@ -32,12 +32,12 @@
     ],
     "matchesByMacroRegion": {
       "AMERICAS": 38,
-      "ASIA": 11,
+      "ASIA": 12,
       "EUROPE": 42,
       "SEA": 48
     }
   },
-  "riotStaticMessage": "> rift-meta-vn@3.0.2 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.16.1 (patch 16.16)\nChưa có version Data Dragon mới. Đang ở 16.16.1.",
-  "collectorMessage": "[128] OC1 • OC1_708379854 • 16.16.804.9184\n[129] OC1 • OC1_708376907 • 16.16.804.9184\n[130] OC1 • OC1_708371932 • 16.16.804.9184\n[131] OC1 • OC1_708370127 • 16.16.804.9184\n[132] OC1 • OC1_708292841 • 16.16.804.9184\n[133] OC1 • OC1_708226367 • 16.16.804.9184\n[134] OC1 • OC1_708395485 • 16.16.804.9184\n[135] OC1 • OC1_708390746 • 16.16.804.9184\n[136] OC1 • OC1_708388729 • 16.16.804.9184\n[137] OC1 • OC1_708384208 • 16.16.804.9184\n[138] OC1 • OC1_708379063 • 16.16.804.9184\n[139] OC1 • OC1_708374459 • 16.16.804.9184\nGLOBAL DATASET OK: 139 trận • 13/16 platforms • 4/4 macro regions.\nTheo platform: {\"na1\":6,\"br1\":10,\"la1\":10,\"la2\":12,\"euw1\":12,\"eun1\":6,\"tr1\":12,\"ru\":12,\"jp1\":11,\"vn2\":12,\"sg2\":12,\"tw2\":12,\"oc1\":12}",
-  "aggregateMessage": "> rift-meta-vn@3.0.2 aggregate\n> node scripts/aggregate.js\nĐã tạo /home/runner/work/WebLienMinh/WebLienMinh/data/meta.json: patch 16.16, 139 trận, 315 champion-role.\n> rift-meta-vn@3.0.2 finalize:global\n> node scripts/finalize-global-meta.js\nĐã finalize meta toàn cầu: 139 trận • 13/16 server Riot • 4/4 cụm khu vực."
+  "riotStaticMessage": "> rift-meta-vn@3.1.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.16.1 (patch 16.16)\nChưa có version Data Dragon mới. Đang ở 16.16.1.",
+  "collectorMessage": "[129] OC1 • OC1_708379854 • 16.16.804.9184\n[130] OC1 • OC1_708376907 • 16.16.804.9184\n[131] OC1 • OC1_708371932 • 16.16.804.9184\n[132] OC1 • OC1_708370127 • 16.16.804.9184\n[133] OC1 • OC1_708292841 • 16.16.804.9184\n[134] OC1 • OC1_708226367 • 16.16.804.9184\n[135] OC1 • OC1_708395485 • 16.16.804.9184\n[136] OC1 • OC1_708390746 • 16.16.804.9184\n[137] OC1 • OC1_708388729 • 16.16.804.9184\n[138] OC1 • OC1_708384208 • 16.16.804.9184\n[139] OC1 • OC1_708379063 • 16.16.804.9184\n[140] OC1 • OC1_708374459 • 16.16.804.9184\nGLOBAL DATASET OK: 140 trận • 13/16 platforms • 4/4 macro regions.\nTheo platform: {\"na1\":6,\"br1\":10,\"la1\":10,\"la2\":12,\"euw1\":12,\"eun1\":6,\"tr1\":12,\"ru\":12,\"jp1\":12,\"vn2\":12,\"sg2\":12,\"tw2\":12,\"oc1\":12}",
+  "aggregateMessage": "> rift-meta-vn@3.1.0 aggregate\n> node scripts/aggregate.js\nĐã tạo /home/runner/work/WebLienMinh/WebLienMinh/data/meta.json: patch 16.16, 140 trận, 318 champion-role.\n> rift-meta-vn@3.1.0 finalize:global\n> node scripts/finalize-global-meta.js\nĐã finalize meta toàn cầu: 140 trận • 13/16 server Riot • 4/4 cụm khu vực."
 }
