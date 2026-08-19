@@ -14,6 +14,7 @@ const ORACLE_MIRRORS = [
 
 const num = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const round = (value, digits = 1) => Number(num(value).toFixed(digits));
+const normText = value => String(value || '').trim().replaceAll('_', ' ').toLowerCase();
 
 function normalizeRole(value) {
   const role = String(value || '').toLowerCase();
@@ -59,14 +60,29 @@ function ymd(date) { return date.toISOString().slice(0, 10).replaceAll('-', '');
 async function loadFeatured() {
   try {
     const watch = JSON.parse(await fs.readFile(watchFile, 'utf8'));
-    return new Set((watch.players || []).map(x => String(x.name || '').toLowerCase()).filter(Boolean));
-  } catch { return new Set(); }
+    return (watch.players || []).map(target => ({
+      name: String(target.name || '').trim(),
+      role: normalizeRole(target.role),
+      team: String(target.team || '').trim() || null,
+      page: String(target.page || '').trim() || null
+    })).filter(target => target.name);
+  } catch {
+    return [];
+  }
+}
+
+function featuredTarget(featured, playerName, teamName, role) {
+  return featured.find(target =>
+    normText(target.name) === normText(playerName) &&
+    (!target.team || normText(target.team) === normText(teamName)) &&
+    (!target.role || target.role === role)
+  ) || null;
 }
 
 async function downloadCsvUrl(url, label) {
   console.log(`Oracle's Elixir: thử ${label}...`);
   const response = await fetch(url, {
-    headers: { 'User-Agent': 'WebLienMinh/2.4 global-esports-directory' },
+    headers: { 'User-Agent': 'WebLienMinh/2.5.1 global-esports-directory' },
     signal: AbortSignal.timeout(120_000)
   });
   if (!response.ok) throw new Error(`${label}: HTTP ${response.status}`);
@@ -135,13 +151,19 @@ function buildDirectoryFromOracle(text, source) {
     const cs = num(first(row, ['total cs', 'totalcs', 'cs']));
     const dpm = num(first(row, ['dpm', 'damagetochampionsperminute']));
     const visionScore = num(first(row, ['visionscore', 'vision score']));
+    const watchTarget = featuredTarget(featured, playerName, teamName, role);
 
     let p = players.get(playerKey);
     if (!p) {
       p = { key: playerKey, id: playerName, overviewPage: playerName, name: playerName, role, latestAt: '', latestPatch: null, team: null,
         teams: new Set(), champions: new Map(), games: new Set(), wins: 0, kills: 0, deaths: 0, assists: 0, cs: 0, dpm: 0, visionScore: 0, statRows: 0,
-        featured: featured.has(playerName.toLowerCase()) };
+        featured: false, preferredPage: null, preferredTeam: null };
       players.set(playerKey, p);
+    }
+    if (watchTarget) {
+      p.featured = true;
+      p.preferredPage ||= watchTarget.page;
+      p.preferredTeam ||= watchTarget.team;
     }
     p.role = role || p.role;
     p.teams.add(teamName);
@@ -165,6 +187,8 @@ function buildDirectoryFromOracle(text, source) {
       uid: p.key,
       id: p.id,
       overviewPage: p.overviewPage,
+      preferredPage: p.preferredPage,
+      preferredTeam: p.preferredTeam,
       name: p.name,
       nativeName: null,
       image: null,
@@ -199,7 +223,7 @@ function buildDirectoryFromOracle(text, source) {
       avgCS: p.cs ? round(p.cs / games, 1) : null,
       avgDPM: p.dpm ? round(p.dpm / Math.max(1, p.statRows), 1) : null,
       avgVision: p.visionScore ? round(p.visionScore / games, 1) : null,
-      sourcePage: wikiUrl(p.overviewPage),
+      sourcePage: wikiUrl(p.preferredPage || p.overviewPage),
       matchDataSource: source.url
     };
   }).sort((a, b) => Number(b.featured) - Number(a.featured) || String(b.latestGameAt || '').localeCompare(String(a.latestGameAt || '')) || (a.team?.region || '').localeCompare(b.team?.region || '') || a.id.localeCompare(b.id));
