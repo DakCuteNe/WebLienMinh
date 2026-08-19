@@ -13,6 +13,8 @@ on:
       - 'public/riot-music.css'
       - 'public/js/site-effects.js'
       - 'public/site-effects.css'
+      - 'public/js/together-finisher.js'
+      - 'public/together-finisher.css'
       - 'public/js/ambient.js'
       - 'public/ambient.css'
       - 'public/js/assets.js'
@@ -34,6 +36,8 @@ on:
       - 'public/riot-music.css'
       - 'public/js/site-effects.js'
       - 'public/site-effects.css'
+      - 'public/js/together-finisher.js'
+      - 'public/together-finisher.css'
       - 'public/js/ambient.js'
       - 'public/ambient.css'
       - 'public/js/assets.js'
@@ -65,6 +69,7 @@ jobs:
           node --check public/js/team-predictions.js
           node --check public/js/riot-music.js
           node --check public/js/site-effects.js
+          node --check public/js/together-finisher.js
           node --check public/js/ambient.js
           node --check public/js/assets.js
           node --check public/app.js

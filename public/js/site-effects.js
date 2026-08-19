@@ -1,4 +1,5 @@
 import { getLanguage } from './i18n.js';
+import { cancelTogetherFinisher, playTogetherFinisher, TOGETHER_FINISHER_DURATION } from './together-finisher.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const compactViewport = window.matchMedia('(max-width: 760px), (pointer: coarse)');
@@ -11,6 +12,7 @@ let introLeaveTimer = null;
 let introCleanupTimer = null;
 let worldsCleanupTimer = null;
 let worldsCinematicTimer = null;
+let worldsFinisherTimer = null;
 
 const COPY = {
   vi: {
@@ -49,7 +51,7 @@ function ensureCss() {
   if (document.querySelector('link[data-site-effects]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/site-effects.css?v=3.8.1';
+  link.href = '/site-effects.css?v=3.10.0';
   link.dataset.siteEffects = 'true';
   document.head.appendChild(link);
 }
@@ -83,6 +85,8 @@ function clearWorldsTimers() {
   clearTimeout(worldsTimer);
   clearTimeout(worldsCleanupTimer);
   clearTimeout(worldsCinematicTimer);
+  clearTimeout(worldsFinisherTimer);
+  cancelTogetherFinisher();
 }
 
 function playSiteIntro() {
@@ -151,17 +155,23 @@ function buildWorldsOverlay(tier) {
   return node;
 }
 
+function finishWorldsTransition(node) {
+  removeNode(node);
+  document.body.classList.remove('worlds-transitioning');
+  if (!introActive) setTransitionLoad(false);
+}
+
 function runWorldsTransition() {
   const tier = performanceTier();
   document.body.dataset.fxTier = tier;
   if (tier === 'reduced') {
     document.body.classList.add('worlds-cinematic-enter');
-    worldsCinematicTimer = setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 650);
+    playTogetherFinisher({ tier });
+    worldsCinematicTimer = setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 850);
     return;
   }
 
-  clearTimeout(worldsCleanupTimer);
-  clearTimeout(worldsCinematicTimer);
+  clearWorldsTimers();
   document.querySelector('[data-worlds-takeover]')?.remove();
   const node = buildWorldsOverlay(tier);
   document.body.appendChild(node);
@@ -171,13 +181,17 @@ function runWorldsTransition() {
   requestAnimationFrame(() => requestAnimationFrame(() => node.classList.add('is-active')));
   setTimeout(() => node.classList.add('is-reveal'), 420);
   setTimeout(() => node.classList.add('is-hold'), 1120);
-  setTimeout(() => node.classList.add('is-leaving'), 1880);
-  worldsCleanupTimer = setTimeout(() => {
-    removeNode(node);
-    document.body.classList.remove('worlds-transitioning');
-    if (!introActive) setTransitionLoad(false);
-  }, 2520);
-  worldsCinematicTimer = setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 3300);
+  setTimeout(() => node.classList.add('is-leaving'), 1710);
+
+  worldsFinisherTimer = setTimeout(() => {
+    playTogetherFinisher({
+      tier,
+      onComplete: () => finishWorldsTransition(node)
+    });
+  }, 1780);
+
+  worldsCleanupTimer = setTimeout(() => finishWorldsTransition(node), 1780 + TOGETHER_FINISHER_DURATION + 420);
+  worldsCinematicTimer = setTimeout(() => document.body.classList.remove('worlds-cinematic-enter'), 1780 + TOGETHER_FINISHER_DURATION + 850);
 }
 
 function playWorldsTransition() {
