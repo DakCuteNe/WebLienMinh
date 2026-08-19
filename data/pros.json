@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-08-18T17:42:43.939Z",
+  "generatedAt": "2026-08-19T08:28:32.414Z",
   "source": "Leaguepedia / League of Legends Esports Wiki scoreboard data",
   "sourceType": "community-maintained, not Riot official",
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng tuyệt đối. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.",
+  "note": "Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Với IGN trùng, scoreboard được khóa theo canonical Leaguepedia page. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.",
   "players": [
     {
       "name": "Faker",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "T1",
       "role": "MIDDLE",
@@ -445,6 +447,8 @@
     },
     {
       "name": "Chovy",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "Gen.G",
       "role": "MIDDLE",
@@ -878,6 +882,8 @@
     },
     {
       "name": "Ruler",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "Gen.G",
       "role": "BOTTOM",
@@ -1316,6 +1322,8 @@
     },
     {
       "name": "Canyon",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "Gen.G",
       "role": "JUNGLE",
@@ -1729,6 +1737,8 @@
     },
     {
       "name": "Keria",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "T1",
       "role": "UTILITY",
@@ -2166,6 +2176,8 @@
     },
     {
       "name": "Zeus",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "Hanwha Life Esports",
       "role": "TOP",
@@ -2599,13 +2611,452 @@
     },
     {
       "name": "Viper",
+      "page": "Viper (Park Do-hyeon)",
+      "targetTeam": "Bilibili Gaming",
+      "available": true,
+      "team": "Bilibili Gaming",
       "role": "BOTTOM",
-      "available": false,
-      "games": 0,
-      "note": "Chưa có scoreboard gần đây trong khoảng 120 ngày."
+      "games": 30,
+      "winRate": 66.7,
+      "kda": 4.77,
+      "avgKills": 5.4,
+      "avgDeaths": 2.6,
+      "avgAssists": 7.2,
+      "avgCS": 320.5,
+      "avgDamage": 27768.2,
+      "avgVision": 48.6,
+      "latestPatch": "26.15",
+      "latestGameAt": "2026-08-15 14:10:00",
+      "styleSummary": "Trong 30 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, KDA ổn định, chuyển hóa lợi thế tốt.",
+      "championPool": [
+        {
+          "name": "Ezreal",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Xerath",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Ziggs",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Ashe",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Caitlyn",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Lucian",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Xayah",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Yunara",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Akali",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Cassiopeia",
+          "count": 1,
+          "rate": 3.3
+        }
+      ],
+      "commonBuilds": [
+        {
+          "name": "Doran's Bow → Spear of Shojin → Trinity Force → Endless Hunger → Muramana",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Hexoptics C44 → Infinity Edge → Cloak of Agility → Bloodthirster → Rapid Firecannon",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Hextech Gunblade → Void Staff → Hextech Rocketbelt → Amplifying Tome",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Infinity Edge → Bloodthirster → Yun Tal Wildarrows → Navori Flickerblade → B. F. Sword → Doran's Bow",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Infinity Edge → Hexoptics C44 → Rapid Firecannon → Steel Sigil → Doran's Bow",
+          "count": 1,
+          "rate": 3.3
+        }
+      ],
+      "commonItems": [
+        {
+          "name": "Infinity Edge",
+          "count": 10,
+          "rate": 33.3
+        },
+        {
+          "name": "Doran's Bow",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Muramana",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Rabadon's Deathcap",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Trinity Force",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Lord Dominik's Regards",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Shadowflame",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Spear of Shojin",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Blackfire Torch",
+          "count": 4,
+          "rate": 13.3
+        },
+        {
+          "name": "Hextech Rocketbelt",
+          "count": 4,
+          "rate": 13.3
+        }
+      ],
+      "commonRunes": [
+        {
+          "name": "Lethal Tempo • Precision • Inspiration",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Arcane Comet • Sorcery • Inspiration",
+          "count": 8,
+          "rate": 26.7
+        },
+        {
+          "name": "Lethal Tempo • Precision • Resolve",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Stormraider's Surge • Sorcery • Inspiration",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Conqueror • Precision • Inspiration",
+          "count": 1,
+          "rate": 3.3
+        }
+      ],
+      "commonSpells": [
+        {
+          "name": "Flash + Teleport",
+          "count": 10,
+          "rate": 33.3
+        },
+        {
+          "name": "Flash + Ghost",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Barrier + Flash",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Exhaust + Flash",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Cleanse + Flash",
+          "count": 4,
+          "rate": 13.3
+        }
+      ],
+      "teamBanPriorities": [
+        {
+          "name": "Vi",
+          "count": 13,
+          "rate": 43.3
+        },
+        {
+          "name": "Orianna",
+          "count": 12,
+          "rate": 40
+        },
+        {
+          "name": "Lucian",
+          "count": 11,
+          "rate": 36.7
+        },
+        {
+          "name": "Ezreal",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Nautilus",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Poppy",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Vayne",
+          "count": 8,
+          "rate": 26.7
+        },
+        {
+          "name": "Gnar",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Cassiopeia",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Olaf",
+          "count": 4,
+          "rate": 13.3
+        }
+      ],
+      "recentGames": [
+        {
+          "date": "2026-08-15 14:10:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "Team WE",
+          "champion": "Yunara",
+          "win": true,
+          "kda": "8/2/12",
+          "items": [
+            "Infinity Edge",
+            "Lord Dominik's Regards",
+            "Kraken Slayer",
+            "Runaan's Hurricane"
+          ],
+          "spells": [
+            "Exhaust",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Resolve"
+        },
+        {
+          "date": "2026-08-15 13:09:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "Team WE",
+          "champion": "Kalista",
+          "win": true,
+          "kda": "4/1/8",
+          "items": [
+            "Jak'Sho, The Protean",
+            "Terminus",
+            "Guinsoo's Rageblade",
+            "Statikk Shiv",
+            "Doran's Bow",
+            "Control Ward"
+          ],
+          "spells": [
+            "Cleanse",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Domination"
+        },
+        {
+          "date": "2026-08-13 13:58:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "ThunderTalk Gaming",
+          "champion": "Ashe",
+          "win": true,
+          "kda": "6/2/10",
+          "items": [
+            "Infinity Edge",
+            "Yun Tal Wildarrows",
+            "Phantom Dancer",
+            "Pickaxe",
+            "Doran's Bow"
+          ],
+          "spells": [
+            "Ghost",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-13 13:04:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "ThunderTalk Gaming",
+          "champion": "Ezreal",
+          "win": true,
+          "kda": "7/2/12",
+          "items": [
+            "Trinity Force",
+            "Endless Hunger",
+            "Tunneler",
+            "Pickaxe",
+            "Doran's Bow",
+            "Muramana"
+          ],
+          "spells": [
+            "Exhaust",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-12 14:34:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "JD Gaming",
+          "champion": "Ziggs",
+          "win": false,
+          "kda": "4/3/6",
+          "items": [
+            "Rabadon's Deathcap",
+            "Shadowflame",
+            "Blackfire Torch",
+            "Horizon Focus",
+            "Tear of the Goddess"
+          ],
+          "spells": [
+            "Teleport",
+            "Flash"
+          ],
+          "keystone": "Arcane Comet",
+          "primaryTree": "Sorcery",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-12 13:41:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "JD Gaming",
+          "champion": "Lucian",
+          "win": false,
+          "kda": "3/4/3",
+          "items": [
+            "Lord Dominik's Regards",
+            "Essence Reaver",
+            "Navori Flickerblade",
+            "Doran's Bow",
+            "Control Ward"
+          ],
+          "spells": [
+            "Cleanse",
+            "Flash"
+          ],
+          "keystone": "Press the Attack",
+          "primaryTree": "Precision",
+          "secondaryTree": "Resolve"
+        },
+        {
+          "date": "2026-08-12 12:48:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "JD Gaming",
+          "champion": "Ezreal",
+          "win": true,
+          "kda": "8/1/8",
+          "items": [
+            "Trinity Force",
+            "Spear of Shojin",
+            "Endless Hunger",
+            "Doran's Bow",
+            "Muramana"
+          ],
+          "spells": [
+            "Exhaust",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-08 12:53:00",
+          "patch": "26.15",
+          "team": "Bilibili Gaming",
+          "opponent": "EDward Gaming",
+          "champion": "Xayah",
+          "win": true,
+          "kda": "10/5/6",
+          "items": [
+            "Infinity Edge",
+            "Lord Dominik's Regards",
+            "Stormrazor",
+            "Guardian Angel",
+            "Phantom Dancer"
+          ],
+          "spells": [
+            "Cleanse",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        }
+      ]
     },
     {
       "name": "Oner",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "T1",
       "role": "JUNGLE",
@@ -3032,20 +3483,26 @@
     },
     {
       "name": "Knight",
+      "page": null,
+      "targetTeam": null,
       "role": "MID",
       "available": false,
       "games": 0,
-      "note": "Chưa có scoreboard gần đây trong khoảng 120 ngày."
+      "note": "Chưa có scoreboard gần đây cho Knight trong khoảng 120 ngày."
     },
     {
       "name": "Bin",
+      "page": null,
+      "targetTeam": null,
       "role": "TOP",
       "available": false,
       "games": 0,
-      "note": "Chưa có scoreboard gần đây trong khoảng 120 ngày."
+      "note": "Chưa có scoreboard gần đây cho Bin trong khoảng 120 ngày."
     },
     {
       "name": "Caps",
+      "page": null,
+      "targetTeam": null,
       "available": true,
       "team": "G2 Esports",
       "role": "MIDDLE",

@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-08-19T08:05:49.409Z",
-  "health": "degraded",
-  "exitCode": 75,
-  "preservedPreviousData": true,
-  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (1/2)...\nPROS_SOURCE_DEGRADED: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\nGiữ pros.json tốt trước đó (2026-08-18T17:42:43.939Z; 11 tuyển thủ).",
+  "checkedAt": "2026-08-19T08:28:32.482Z",
+  "health": "ok",
+  "exitCode": 0,
+  "preservedPreviousData": false,
+  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nĐã cập nhật 9/11 featured pros từ 500 scoreboard rows.",
   "dataAvailable": true
 }
