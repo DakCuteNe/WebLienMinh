@@ -1,0 +1,82 @@
+name: One-shot cleanup squash-merged branches
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-squash-merged-branches.yml'
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Delete current branches whose exact head SHA was merged by PR
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune
+
+          declare -A merged_heads
+          while IFS=$'\t' read -r branch sha; do
+            [[ -z "${branch:-}" || -z "${sha:-}" ]] && continue
+            merged_heads["$branch"]="$sha"
+          done < <(
+            gh api --method GET --paginate \
+              "repos/${GITHUB_REPOSITORY}/pulls?state=closed&per_page=100&sort=updated&direction=desc" \
+              --jq '.[] | select(.merged_at != null) | select(.head.repo.full_name == "'"${GITHUB_REPOSITORY}"'") | [.head.ref, .head.sha] | @tsv'
+          )
+
+          deleted=0
+          kept=0
+          failures=0
+
+          while IFS= read -r ref; do
+            branch="${ref#origin/}"
+            if [[ -z "$branch" || "$branch" == "HEAD" || "$branch" == "main" ]]; then
+              continue
+            fi
+
+            current_sha="$(git rev-parse "origin/$branch")"
+            merged_sha="${merged_heads[$branch]:-}"
+
+            if [[ -n "$merged_sha" && "$current_sha" == "$merged_sha" ]]; then
+              echo "Deleting merged branch: $branch ($current_sha)"
+              if git push origin --delete "$branch"; then
+                deleted=$((deleted + 1))
+              else
+                echo "Failed to delete: $branch"
+                failures=$((failures + 1))
+              fi
+            else
+              echo "Keeping branch: $branch (current=$current_sha merged=${merged_sha:-none})"
+              kept=$((kept + 1))
+            fi
+          done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin | sort)
+
+          echo "Deleted exact merged branches: $deleted"
+          echo "Kept branches: $kept"
+          echo "Deletion failures: $failures"
+          if (( failures > 0 )); then
+            exit 1
+          fi
+
+      - name: Remove one-shot cleanup workflow
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "WebLienMinh Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/cleanup-squash-merged-branches.yml
+          git commit -m "Remove squash-merged branch cleanup"
+          git push origin HEAD:main
