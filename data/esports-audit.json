@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-19T10:51:28.540Z",
-  "directoryGeneratedAt": "2026-08-19T10:43:35.339Z",
-  "mediaEnrichedAt": "2026-08-19T10:45:57.235Z",
+  "generatedAt": "2026-08-19T11:12:16.178Z",
+  "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
+  "mediaEnrichedAt": "2026-08-19T11:05:11.040Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 95,
   "coverage": {
     "image": {
-      "count": 1125,
+      "count": 1126,
       "pct": 65.2
     },
     "realName": {
@@ -264,6 +264,19 @@
   "invalidTeamLogos": [],
   "pinnedProfileChecks": [
     {
+      "name": "Teddy",
+      "expectedPage": "Teddy",
+      "expectedRealName": "Park Jin-seong",
+      "expectedTeam": "HANJIN BRION",
+      "uid": "oe:player:2b5fa564a1259b97bc238fbfa719b07",
+      "actualPage": "Teddy",
+      "actualRealName": "Park Jin-seong",
+      "actualTeam": "HANJIN BRION",
+      "image": "https://www.kukinews.com/data/kuk/image/2026/03/19/kuk20260319000058.800x.9.jpg",
+      "ok": true,
+      "errors": []
+    },
+    {
       "name": "Viper",
       "expectedPage": "Viper (Park Do-hyeon)",
       "expectedRealName": "Park Do-hyeon",
@@ -311,7 +324,7 @@
   "byRegion": {
     "LCK": {
       "total": 52,
-      "image": 51,
+      "image": 52,
       "realName": 52,
       "country": 52,
       "birthdate": 1,
@@ -320,7 +333,7 @@
       "teamLogo": 52,
       "stats": 52,
       "completeCore": 1,
-      "imagePct": 98.1,
+      "imagePct": 100,
       "realNamePct": 100,
       "countryPct": 100,
       "birthdatePct": 1.9,
@@ -369,6 +382,69 @@
       "contractPct": 0,
       "socialPct": 96.1,
       "teamLogoPct": 100,
+      "statsPct": 100,
+      "completeCorePct": 0
+    },
+    "LCS": {
+      "total": 40,
+      "image": 39,
+      "realName": 40,
+      "country": 40,
+      "birthdate": 0,
+      "contract": 0,
+      "social": 40,
+      "teamLogo": 40,
+      "stats": 40,
+      "completeCore": 0,
+      "imagePct": 97.5,
+      "realNamePct": 100,
+      "countryPct": 100,
+      "birthdatePct": 0,
+      "contractPct": 0,
+      "socialPct": 100,
+      "teamLogoPct": 100,
+      "statsPct": 100,
+      "completeCorePct": 0
+    },
+    "LCP": {
+      "total": 48,
+      "image": 48,
+      "realName": 47,
+      "country": 47,
+      "birthdate": 0,
+      "contract": 0,
+      "social": 37,
+      "teamLogo": 48,
+      "stats": 48,
+      "completeCore": 0,
+      "imagePct": 100,
+      "realNamePct": 97.9,
+      "countryPct": 97.9,
+      "birthdatePct": 0,
+      "contractPct": 0,
+      "socialPct": 77.1,
+      "teamLogoPct": 100,
+      "statsPct": 100,
+      "completeCorePct": 0
+    },
+    "EM": {
+      "total": 71,
+      "image": 57,
+      "realName": 69,
+      "country": 69,
+      "birthdate": 0,
+      "contract": 0,
+      "social": 69,
+      "teamLogo": 66,
+      "stats": 71,
+      "completeCore": 0,
+      "imagePct": 80.3,
+      "realNamePct": 97.2,
+      "countryPct": 97.2,
+      "birthdatePct": 0,
+      "contractPct": 0,
+      "socialPct": 97.2,
+      "teamLogoPct": 93,
       "statsPct": 100,
       "completeCorePct": 0
     },
@@ -624,27 +700,6 @@
       "statsPct": 100,
       "completeCorePct": 0
     },
-    "EM": {
-      "total": 71,
-      "image": 57,
-      "realName": 69,
-      "country": 69,
-      "birthdate": 0,
-      "contract": 0,
-      "social": 69,
-      "teamLogo": 66,
-      "stats": 71,
-      "completeCore": 0,
-      "imagePct": 80.3,
-      "realNamePct": 97.2,
-      "countryPct": 97.2,
-      "birthdatePct": 0,
-      "contractPct": 0,
-      "socialPct": 97.2,
-      "teamLogoPct": 93,
-      "statsPct": 100,
-      "completeCorePct": 0
-    },
     "LRN": {
       "total": 67,
       "image": 49,
@@ -666,27 +721,6 @@
       "statsPct": 100,
       "completeCorePct": 0
     },
-    "LCS": {
-      "total": 40,
-      "image": 39,
-      "realName": 40,
-      "country": 40,
-      "birthdate": 0,
-      "contract": 0,
-      "social": 40,
-      "teamLogo": 40,
-      "stats": 40,
-      "completeCore": 0,
-      "imagePct": 97.5,
-      "realNamePct": 100,
-      "countryPct": 100,
-      "birthdatePct": 0,
-      "contractPct": 0,
-      "socialPct": 100,
-      "teamLogoPct": 100,
-      "statsPct": 100,
-      "completeCorePct": 0
-    },
     "CBLOL": {
       "total": 46,
       "image": 45,
@@ -705,27 +739,6 @@
       "contractPct": 0,
       "socialPct": 97.8,
       "teamLogoPct": 54.3,
-      "statsPct": 100,
-      "completeCorePct": 0
-    },
-    "LCP": {
-      "total": 48,
-      "image": 48,
-      "realName": 47,
-      "country": 47,
-      "birthdate": 0,
-      "contract": 0,
-      "social": 37,
-      "teamLogo": 48,
-      "stats": 48,
-      "completeCore": 0,
-      "imagePct": 100,
-      "realNamePct": 97.9,
-      "countryPct": 97.9,
-      "birthdatePct": 0,
-      "contractPct": 0,
-      "socialPct": 77.1,
-      "teamLogoPct": 100,
       "statsPct": 100,
       "completeCorePct": 0
     },
@@ -899,7 +912,7 @@
     }
   },
   "missingCounts": {
-    "image": 601,
+    "image": 600,
     "realName": 163,
     "country": 162,
     "birthdate": 1724,
@@ -915,11 +928,6 @@
   },
   "missing": {
     "image": [
-      {
-        "id": "Peyz",
-        "team": "T1",
-        "region": "LCK"
-      },
       {
         "id": "Cracker",
         "team": "Hanwha Life Esports Challengers",
@@ -5552,8 +5560,28 @@
     ],
     "birthdate": [
       {
+        "id": "Delight",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Gumayusi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Kanavi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
         "id": "Zeus",
         "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Doran",
+        "team": "T1",
         "region": "LCK"
       },
       {
@@ -5572,6 +5600,11 @@
         "region": "LCK"
       },
       {
+        "id": "Peyz",
+        "team": "T1",
+        "region": "LCK"
+      },
+      {
         "id": "Bin",
         "team": "Bilibili Gaming",
         "region": "LPL"
@@ -5579,6 +5612,46 @@
       {
         "id": "Knight",
         "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "ON",
+        "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Bdd",
+        "team": "KT Rolster",
+        "region": "LCK"
+      },
+      {
+        "id": "Scout",
+        "team": "Nongshim RedForce",
+        "region": "LCK"
+      },
+      {
+        "id": "Elk",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Xiaohu",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Creme",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "JackeyLove",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Meiko",
+        "team": "Invictus Gaming",
         "region": "LPL"
       },
       {
@@ -5597,9 +5670,84 @@
         "region": "LCK"
       },
       {
+        "id": "ShowMaker",
+        "team": "Dplus Kia",
+        "region": "LCK"
+      },
+      {
+        "id": "Humanoid",
+        "team": "Team Vitality",
+        "region": "LEC"
+      },
+      {
+        "id": "CoreJJ",
+        "team": "Team Liquid",
+        "region": "LCS"
+      },
+      {
+        "id": "BrokenBlade",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
         "id": "Caps",
         "team": "G2 Esports",
         "region": "LEC"
+      },
+      {
+        "id": "Hans Sama",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
+        "id": "Razork",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Upset",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Mikyx",
+        "team": "SK Gaming",
+        "region": "LEC"
+      },
+      {
+        "id": "Tarzan",
+        "team": "Anyone's Legend",
+        "region": "LPL"
+      },
+      {
+        "id": "Artemis",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Kiaya",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Inspired",
+        "team": "LYON",
+        "region": "LCS"
+      },
+      {
+        "id": "Bwipo",
+        "team": "Witchcraft",
+        "region": "EM"
+      },
+      {
+        "id": "MISSING",
+        "team": "LNG Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Shogun",
+        "team": "MVK Esports",
+        "region": "LCP"
       },
       {
         "id": "Clear",
@@ -5607,23 +5755,8 @@
         "region": "LCK"
       },
       {
-        "id": "Delight",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
         "id": "Diable",
         "team": "BNK FEARX",
-        "region": "LCK"
-      },
-      {
-        "id": "Gumayusi",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
-        "id": "Kanavi",
-        "team": "Hanwha Life Esports",
         "region": "LCK"
       },
       {
@@ -5657,11 +5790,6 @@
         "region": "LCK"
       },
       {
-        "id": "Doran",
-        "team": "T1",
-        "region": "LCK"
-      },
-      {
         "id": "DuDu",
         "team": "DN SOOPers",
         "region": "LCK"
@@ -5669,11 +5797,6 @@
       {
         "id": "Peter",
         "team": "DN SOOPers",
-        "region": "LCK"
-      },
-      {
-        "id": "Peyz",
-        "team": "T1",
         "region": "LCK"
       },
       {
@@ -6907,22 +7030,12 @@
         "region": "LPL"
       },
       {
-        "id": "ON",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Xun",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },
       {
         "id": "Aiming",
-        "team": "KT Rolster",
-        "region": "LCK"
-      },
-      {
-        "id": "Bdd",
         "team": "KT Rolster",
         "region": "LCK"
       },
@@ -6952,11 +7065,6 @@
         "region": "LCK"
       },
       {
-        "id": "Scout",
-        "team": "Nongshim RedForce",
-        "region": "LCK"
-      },
-      {
         "id": "Sponge",
         "team": "Nongshim RedForce",
         "region": "LCK"
@@ -6977,11 +7085,6 @@
         "region": "LPL"
       },
       {
-        "id": "Elk",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Guwon",
         "team": "Ninjas in Pyjamas",
         "region": "LPL"
@@ -6998,11 +7101,6 @@
       },
       {
         "id": "Jiejie",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Xiaohu",
         "team": "Weibo Gaming",
         "region": "LPL"
       },
@@ -7867,17 +7965,7 @@
         "region": "HLL"
       },
       {
-        "id": "Creme",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
         "id": "fengyue",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
-        "id": "JackeyLove",
         "team": "Top Esports",
         "region": "LPL"
       },
@@ -7898,11 +7986,6 @@
       },
       {
         "id": "JiaQi",
-        "team": "Invictus Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Meiko",
         "team": "Invictus Gaming",
         "region": "LPL"
       },
@@ -7933,11 +8016,6 @@
       },
       {
         "id": "Lucid",
-        "team": "Dplus Kia",
-        "region": "LCK"
-      },
-      {
-        "id": "ShowMaker",
         "team": "Dplus Kia",
         "region": "LCK"
       },
@@ -8657,11 +8735,6 @@
         "region": "LEC"
       },
       {
-        "id": "Humanoid",
-        "team": "Team Vitality",
-        "region": "LEC"
-      },
-      {
         "id": "Jojopyun",
         "team": "Movistar KOI",
         "region": "LEC"
@@ -8792,11 +8865,6 @@
         "region": "LCS"
       },
       {
-        "id": "CoreJJ",
-        "team": "Team Liquid",
-        "region": "LCS"
-      },
-      {
         "id": "Cryogen",
         "team": "FlyQuest",
         "region": "LCS"
@@ -8892,18 +8960,8 @@
         "region": "CBLOL"
       },
       {
-        "id": "BrokenBlade",
-        "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
         "id": "Empyros",
         "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
-        "id": "Hans Sama",
-        "team": "G2 Esports",
         "region": "LEC"
       },
       {
@@ -8917,18 +8975,8 @@
         "region": "LEC"
       },
       {
-        "id": "Razork",
-        "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
         "id": "SkewMond",
         "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
-        "id": "Upset",
-        "team": "Fnatic",
         "region": "LEC"
       },
       {
@@ -8997,11 +9045,6 @@
         "region": "LEC"
       },
       {
-        "id": "Mikyx",
-        "team": "SK Gaming",
-        "region": "LEC"
-      },
-      {
         "id": "Skeanz",
         "team": "SK Gaming",
         "region": "LEC"
@@ -9032,17 +9075,7 @@
         "region": "LPL"
       },
       {
-        "id": "Tarzan",
-        "team": "Anyone's Legend",
-        "region": "LPL"
-      },
-      {
         "id": "Aress",
-        "team": "GAM Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Artemis",
         "team": "GAM Esports",
         "region": "LCP"
       },
@@ -9069,11 +9102,6 @@
       {
         "id": "Hizto",
         "team": "Team Secret Whales",
-        "region": "LCP"
-      },
-      {
-        "id": "Kiaya",
-        "team": "GAM Esports",
         "region": "LCP"
       },
       {
@@ -9428,11 +9456,6 @@
       },
       {
         "id": "Dhokla",
-        "team": "LYON",
-        "region": "LCS"
-      },
-      {
-        "id": "Inspired",
         "team": "LYON",
         "region": "LCS"
       },
@@ -10545,11 +10568,6 @@
         "id": "NM advance",
         "team": "New Meta",
         "region": "LJL"
-      },
-      {
-        "id": "Bwipo",
-        "team": "Witchcraft",
-        "region": "EM"
       },
       {
         "id": "Crownie",
@@ -12827,11 +12845,6 @@
         "region": "LPL"
       },
       {
-        "id": "MISSING",
-        "team": "LNG Esports",
-        "region": "LPL"
-      },
-      {
         "id": "sheer",
         "team": "LNG Esports",
         "region": "LPL"
@@ -13013,11 +13026,6 @@
       },
       {
         "id": "Kratos",
-        "team": "MVK Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Shogun",
         "team": "MVK Esports",
         "region": "LCP"
       },
@@ -14174,8 +14182,28 @@
     ],
     "age": [
       {
+        "id": "Delight",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Gumayusi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Kanavi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
         "id": "Zeus",
         "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Doran",
+        "team": "T1",
         "region": "LCK"
       },
       {
@@ -14194,6 +14222,11 @@
         "region": "LCK"
       },
       {
+        "id": "Peyz",
+        "team": "T1",
+        "region": "LCK"
+      },
+      {
         "id": "Bin",
         "team": "Bilibili Gaming",
         "region": "LPL"
@@ -14201,6 +14234,46 @@
       {
         "id": "Knight",
         "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "ON",
+        "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Bdd",
+        "team": "KT Rolster",
+        "region": "LCK"
+      },
+      {
+        "id": "Scout",
+        "team": "Nongshim RedForce",
+        "region": "LCK"
+      },
+      {
+        "id": "Elk",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Xiaohu",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Creme",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "JackeyLove",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Meiko",
+        "team": "Invictus Gaming",
         "region": "LPL"
       },
       {
@@ -14219,9 +14292,84 @@
         "region": "LCK"
       },
       {
+        "id": "ShowMaker",
+        "team": "Dplus Kia",
+        "region": "LCK"
+      },
+      {
+        "id": "Humanoid",
+        "team": "Team Vitality",
+        "region": "LEC"
+      },
+      {
+        "id": "CoreJJ",
+        "team": "Team Liquid",
+        "region": "LCS"
+      },
+      {
+        "id": "BrokenBlade",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
         "id": "Caps",
         "team": "G2 Esports",
         "region": "LEC"
+      },
+      {
+        "id": "Hans Sama",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
+        "id": "Razork",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Upset",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Mikyx",
+        "team": "SK Gaming",
+        "region": "LEC"
+      },
+      {
+        "id": "Tarzan",
+        "team": "Anyone's Legend",
+        "region": "LPL"
+      },
+      {
+        "id": "Artemis",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Kiaya",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Inspired",
+        "team": "LYON",
+        "region": "LCS"
+      },
+      {
+        "id": "Bwipo",
+        "team": "Witchcraft",
+        "region": "EM"
+      },
+      {
+        "id": "MISSING",
+        "team": "LNG Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Shogun",
+        "team": "MVK Esports",
+        "region": "LCP"
       },
       {
         "id": "Clear",
@@ -14229,23 +14377,8 @@
         "region": "LCK"
       },
       {
-        "id": "Delight",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
         "id": "Diable",
         "team": "BNK FEARX",
-        "region": "LCK"
-      },
-      {
-        "id": "Gumayusi",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
-        "id": "Kanavi",
-        "team": "Hanwha Life Esports",
         "region": "LCK"
       },
       {
@@ -14279,11 +14412,6 @@
         "region": "LCK"
       },
       {
-        "id": "Doran",
-        "team": "T1",
-        "region": "LCK"
-      },
-      {
         "id": "DuDu",
         "team": "DN SOOPers",
         "region": "LCK"
@@ -14291,11 +14419,6 @@
       {
         "id": "Peter",
         "team": "DN SOOPers",
-        "region": "LCK"
-      },
-      {
-        "id": "Peyz",
-        "team": "T1",
         "region": "LCK"
       },
       {
@@ -15529,22 +15652,12 @@
         "region": "LPL"
       },
       {
-        "id": "ON",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Xun",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },
       {
         "id": "Aiming",
-        "team": "KT Rolster",
-        "region": "LCK"
-      },
-      {
-        "id": "Bdd",
         "team": "KT Rolster",
         "region": "LCK"
       },
@@ -15574,11 +15687,6 @@
         "region": "LCK"
       },
       {
-        "id": "Scout",
-        "team": "Nongshim RedForce",
-        "region": "LCK"
-      },
-      {
         "id": "Sponge",
         "team": "Nongshim RedForce",
         "region": "LCK"
@@ -15599,11 +15707,6 @@
         "region": "LPL"
       },
       {
-        "id": "Elk",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Guwon",
         "team": "Ninjas in Pyjamas",
         "region": "LPL"
@@ -15620,11 +15723,6 @@
       },
       {
         "id": "Jiejie",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Xiaohu",
         "team": "Weibo Gaming",
         "region": "LPL"
       },
@@ -16489,17 +16587,7 @@
         "region": "HLL"
       },
       {
-        "id": "Creme",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
         "id": "fengyue",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
-        "id": "JackeyLove",
         "team": "Top Esports",
         "region": "LPL"
       },
@@ -16520,11 +16608,6 @@
       },
       {
         "id": "JiaQi",
-        "team": "Invictus Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Meiko",
         "team": "Invictus Gaming",
         "region": "LPL"
       },
@@ -16555,11 +16638,6 @@
       },
       {
         "id": "Lucid",
-        "team": "Dplus Kia",
-        "region": "LCK"
-      },
-      {
-        "id": "ShowMaker",
         "team": "Dplus Kia",
         "region": "LCK"
       },
@@ -17279,11 +17357,6 @@
         "region": "LEC"
       },
       {
-        "id": "Humanoid",
-        "team": "Team Vitality",
-        "region": "LEC"
-      },
-      {
         "id": "Jojopyun",
         "team": "Movistar KOI",
         "region": "LEC"
@@ -17414,11 +17487,6 @@
         "region": "LCS"
       },
       {
-        "id": "CoreJJ",
-        "team": "Team Liquid",
-        "region": "LCS"
-      },
-      {
         "id": "Cryogen",
         "team": "FlyQuest",
         "region": "LCS"
@@ -17514,18 +17582,8 @@
         "region": "CBLOL"
       },
       {
-        "id": "BrokenBlade",
-        "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
         "id": "Empyros",
         "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
-        "id": "Hans Sama",
-        "team": "G2 Esports",
         "region": "LEC"
       },
       {
@@ -17539,18 +17597,8 @@
         "region": "LEC"
       },
       {
-        "id": "Razork",
-        "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
         "id": "SkewMond",
         "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
-        "id": "Upset",
-        "team": "Fnatic",
         "region": "LEC"
       },
       {
@@ -17619,11 +17667,6 @@
         "region": "LEC"
       },
       {
-        "id": "Mikyx",
-        "team": "SK Gaming",
-        "region": "LEC"
-      },
-      {
         "id": "Skeanz",
         "team": "SK Gaming",
         "region": "LEC"
@@ -17654,17 +17697,7 @@
         "region": "LPL"
       },
       {
-        "id": "Tarzan",
-        "team": "Anyone's Legend",
-        "region": "LPL"
-      },
-      {
         "id": "Aress",
-        "team": "GAM Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Artemis",
         "team": "GAM Esports",
         "region": "LCP"
       },
@@ -17691,11 +17724,6 @@
       {
         "id": "Hizto",
         "team": "Team Secret Whales",
-        "region": "LCP"
-      },
-      {
-        "id": "Kiaya",
-        "team": "GAM Esports",
         "region": "LCP"
       },
       {
@@ -18050,11 +18078,6 @@
       },
       {
         "id": "Dhokla",
-        "team": "LYON",
-        "region": "LCS"
-      },
-      {
-        "id": "Inspired",
         "team": "LYON",
         "region": "LCS"
       },
@@ -19167,11 +19190,6 @@
         "id": "NM advance",
         "team": "New Meta",
         "region": "LJL"
-      },
-      {
-        "id": "Bwipo",
-        "team": "Witchcraft",
-        "region": "EM"
       },
       {
         "id": "Crownie",
@@ -21449,11 +21467,6 @@
         "region": "LPL"
       },
       {
-        "id": "MISSING",
-        "team": "LNG Esports",
-        "region": "LPL"
-      },
-      {
         "id": "sheer",
         "team": "LNG Esports",
         "region": "LPL"
@@ -21635,11 +21648,6 @@
       },
       {
         "id": "Kratos",
-        "team": "MVK Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Shogun",
         "team": "MVK Esports",
         "region": "LCP"
       },
@@ -22796,8 +22804,28 @@
     ],
     "contract": [
       {
+        "id": "Delight",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Gumayusi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Kanavi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
         "id": "Zeus",
         "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Doran",
+        "team": "T1",
         "region": "LCK"
       },
       {
@@ -22816,6 +22844,11 @@
         "region": "LCK"
       },
       {
+        "id": "Peyz",
+        "team": "T1",
+        "region": "LCK"
+      },
+      {
         "id": "Bin",
         "team": "Bilibili Gaming",
         "region": "LPL"
@@ -22823,6 +22856,46 @@
       {
         "id": "Knight",
         "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "ON",
+        "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Bdd",
+        "team": "KT Rolster",
+        "region": "LCK"
+      },
+      {
+        "id": "Scout",
+        "team": "Nongshim RedForce",
+        "region": "LCK"
+      },
+      {
+        "id": "Elk",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Xiaohu",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Creme",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "JackeyLove",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Meiko",
+        "team": "Invictus Gaming",
         "region": "LPL"
       },
       {
@@ -22841,9 +22914,84 @@
         "region": "LCK"
       },
       {
+        "id": "ShowMaker",
+        "team": "Dplus Kia",
+        "region": "LCK"
+      },
+      {
+        "id": "Humanoid",
+        "team": "Team Vitality",
+        "region": "LEC"
+      },
+      {
+        "id": "CoreJJ",
+        "team": "Team Liquid",
+        "region": "LCS"
+      },
+      {
+        "id": "BrokenBlade",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
         "id": "Caps",
         "team": "G2 Esports",
         "region": "LEC"
+      },
+      {
+        "id": "Hans Sama",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
+        "id": "Razork",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Upset",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Mikyx",
+        "team": "SK Gaming",
+        "region": "LEC"
+      },
+      {
+        "id": "Tarzan",
+        "team": "Anyone's Legend",
+        "region": "LPL"
+      },
+      {
+        "id": "Artemis",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Kiaya",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Inspired",
+        "team": "LYON",
+        "region": "LCS"
+      },
+      {
+        "id": "Bwipo",
+        "team": "Witchcraft",
+        "region": "EM"
+      },
+      {
+        "id": "MISSING",
+        "team": "LNG Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Shogun",
+        "team": "MVK Esports",
+        "region": "LCP"
       },
       {
         "id": "Clear",
@@ -22851,23 +22999,8 @@
         "region": "LCK"
       },
       {
-        "id": "Delight",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
         "id": "Diable",
         "team": "BNK FEARX",
-        "region": "LCK"
-      },
-      {
-        "id": "Gumayusi",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
-        "id": "Kanavi",
-        "team": "Hanwha Life Esports",
         "region": "LCK"
       },
       {
@@ -22901,11 +23034,6 @@
         "region": "LCK"
       },
       {
-        "id": "Doran",
-        "team": "T1",
-        "region": "LCK"
-      },
-      {
         "id": "DuDu",
         "team": "DN SOOPers",
         "region": "LCK"
@@ -22913,11 +23041,6 @@
       {
         "id": "Peter",
         "team": "DN SOOPers",
-        "region": "LCK"
-      },
-      {
-        "id": "Peyz",
-        "team": "T1",
         "region": "LCK"
       },
       {
@@ -24151,22 +24274,12 @@
         "region": "LPL"
       },
       {
-        "id": "ON",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Xun",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },
       {
         "id": "Aiming",
-        "team": "KT Rolster",
-        "region": "LCK"
-      },
-      {
-        "id": "Bdd",
         "team": "KT Rolster",
         "region": "LCK"
       },
@@ -24196,11 +24309,6 @@
         "region": "LCK"
       },
       {
-        "id": "Scout",
-        "team": "Nongshim RedForce",
-        "region": "LCK"
-      },
-      {
         "id": "Sponge",
         "team": "Nongshim RedForce",
         "region": "LCK"
@@ -24221,11 +24329,6 @@
         "region": "LPL"
       },
       {
-        "id": "Elk",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Guwon",
         "team": "Ninjas in Pyjamas",
         "region": "LPL"
@@ -24242,11 +24345,6 @@
       },
       {
         "id": "Jiejie",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Xiaohu",
         "team": "Weibo Gaming",
         "region": "LPL"
       },
@@ -25111,17 +25209,7 @@
         "region": "HLL"
       },
       {
-        "id": "Creme",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
         "id": "fengyue",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
-        "id": "JackeyLove",
         "team": "Top Esports",
         "region": "LPL"
       },
@@ -25142,11 +25230,6 @@
       },
       {
         "id": "JiaQi",
-        "team": "Invictus Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Meiko",
         "team": "Invictus Gaming",
         "region": "LPL"
       },
@@ -25177,11 +25260,6 @@
       },
       {
         "id": "Lucid",
-        "team": "Dplus Kia",
-        "region": "LCK"
-      },
-      {
-        "id": "ShowMaker",
         "team": "Dplus Kia",
         "region": "LCK"
       },
@@ -25901,11 +25979,6 @@
         "region": "LEC"
       },
       {
-        "id": "Humanoid",
-        "team": "Team Vitality",
-        "region": "LEC"
-      },
-      {
         "id": "Jojopyun",
         "team": "Movistar KOI",
         "region": "LEC"
@@ -26036,11 +26109,6 @@
         "region": "LCS"
       },
       {
-        "id": "CoreJJ",
-        "team": "Team Liquid",
-        "region": "LCS"
-      },
-      {
         "id": "Cryogen",
         "team": "FlyQuest",
         "region": "LCS"
@@ -26136,18 +26204,8 @@
         "region": "CBLOL"
       },
       {
-        "id": "BrokenBlade",
-        "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
         "id": "Empyros",
         "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
-        "id": "Hans Sama",
-        "team": "G2 Esports",
         "region": "LEC"
       },
       {
@@ -26161,18 +26219,8 @@
         "region": "LEC"
       },
       {
-        "id": "Razork",
-        "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
         "id": "SkewMond",
         "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
-        "id": "Upset",
-        "team": "Fnatic",
         "region": "LEC"
       },
       {
@@ -26241,11 +26289,6 @@
         "region": "LEC"
       },
       {
-        "id": "Mikyx",
-        "team": "SK Gaming",
-        "region": "LEC"
-      },
-      {
         "id": "Skeanz",
         "team": "SK Gaming",
         "region": "LEC"
@@ -26276,17 +26319,7 @@
         "region": "LPL"
       },
       {
-        "id": "Tarzan",
-        "team": "Anyone's Legend",
-        "region": "LPL"
-      },
-      {
         "id": "Aress",
-        "team": "GAM Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Artemis",
         "team": "GAM Esports",
         "region": "LCP"
       },
@@ -26313,11 +26346,6 @@
       {
         "id": "Hizto",
         "team": "Team Secret Whales",
-        "region": "LCP"
-      },
-      {
-        "id": "Kiaya",
-        "team": "GAM Esports",
         "region": "LCP"
       },
       {
@@ -26672,11 +26700,6 @@
       },
       {
         "id": "Dhokla",
-        "team": "LYON",
-        "region": "LCS"
-      },
-      {
-        "id": "Inspired",
         "team": "LYON",
         "region": "LCS"
       },
@@ -27789,11 +27812,6 @@
         "id": "NM advance",
         "team": "New Meta",
         "region": "LJL"
-      },
-      {
-        "id": "Bwipo",
-        "team": "Witchcraft",
-        "region": "EM"
       },
       {
         "id": "Crownie",
@@ -30071,11 +30089,6 @@
         "region": "LPL"
       },
       {
-        "id": "MISSING",
-        "team": "LNG Esports",
-        "region": "LPL"
-      },
-      {
         "id": "sheer",
         "team": "LNG Esports",
         "region": "LPL"
@@ -30257,11 +30270,6 @@
       },
       {
         "id": "Kratos",
-        "team": "MVK Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Shogun",
         "team": "MVK Esports",
         "region": "LCP"
       },
@@ -31428,6 +31436,16 @@
         "region": "LCK"
       },
       {
+        "id": "Creme",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Artemis",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
         "id": "Janus",
         "team": "Nongshim Esports Academy",
         "region": "LCKC"
@@ -31648,11 +31666,6 @@
         "region": "HLL"
       },
       {
-        "id": "Creme",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
         "id": "fengyue",
         "team": "Top Esports",
         "region": "LPL"
@@ -31706,11 +31719,6 @@
         "id": "Shanks",
         "team": "Anyone's Legend",
         "region": "LPL"
-      },
-      {
-        "id": "Artemis",
-        "team": "GAM Esports",
-        "region": "LCP"
       },
       {
         "id": "Dire",
@@ -34549,13 +34557,13 @@
     "championPool": [],
     "soloqueueIds": [
       {
-        "id": "Peter",
-        "team": "DN SOOPers",
+        "id": "Peyz",
+        "team": "T1",
         "region": "LCK"
       },
       {
-        "id": "Peyz",
-        "team": "T1",
+        "id": "Peter",
+        "team": "DN SOOPers",
         "region": "LCK"
       },
       {
@@ -40348,8 +40356,28 @@
     ],
     "completeCore": [
       {
+        "id": "Delight",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Gumayusi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Kanavi",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
         "id": "Zeus",
         "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
+      {
+        "id": "Doran",
+        "team": "T1",
         "region": "LCK"
       },
       {
@@ -40368,6 +40396,11 @@
         "region": "LCK"
       },
       {
+        "id": "Peyz",
+        "team": "T1",
+        "region": "LCK"
+      },
+      {
         "id": "Bin",
         "team": "Bilibili Gaming",
         "region": "LPL"
@@ -40375,6 +40408,46 @@
       {
         "id": "Knight",
         "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "ON",
+        "team": "Bilibili Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Bdd",
+        "team": "KT Rolster",
+        "region": "LCK"
+      },
+      {
+        "id": "Scout",
+        "team": "Nongshim RedForce",
+        "region": "LCK"
+      },
+      {
+        "id": "Elk",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Xiaohu",
+        "team": "Weibo Gaming",
+        "region": "LPL"
+      },
+      {
+        "id": "Creme",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "JackeyLove",
+        "team": "Top Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Meiko",
+        "team": "Invictus Gaming",
         "region": "LPL"
       },
       {
@@ -40393,9 +40466,84 @@
         "region": "LCK"
       },
       {
+        "id": "ShowMaker",
+        "team": "Dplus Kia",
+        "region": "LCK"
+      },
+      {
+        "id": "Humanoid",
+        "team": "Team Vitality",
+        "region": "LEC"
+      },
+      {
+        "id": "CoreJJ",
+        "team": "Team Liquid",
+        "region": "LCS"
+      },
+      {
+        "id": "BrokenBlade",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
         "id": "Caps",
         "team": "G2 Esports",
         "region": "LEC"
+      },
+      {
+        "id": "Hans Sama",
+        "team": "G2 Esports",
+        "region": "LEC"
+      },
+      {
+        "id": "Razork",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Upset",
+        "team": "Fnatic",
+        "region": "LEC"
+      },
+      {
+        "id": "Mikyx",
+        "team": "SK Gaming",
+        "region": "LEC"
+      },
+      {
+        "id": "Tarzan",
+        "team": "Anyone's Legend",
+        "region": "LPL"
+      },
+      {
+        "id": "Artemis",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Kiaya",
+        "team": "GAM Esports",
+        "region": "LCP"
+      },
+      {
+        "id": "Inspired",
+        "team": "LYON",
+        "region": "LCS"
+      },
+      {
+        "id": "Bwipo",
+        "team": "Witchcraft",
+        "region": "EM"
+      },
+      {
+        "id": "MISSING",
+        "team": "LNG Esports",
+        "region": "LPL"
+      },
+      {
+        "id": "Shogun",
+        "team": "MVK Esports",
+        "region": "LCP"
       },
       {
         "id": "Clear",
@@ -40403,23 +40551,8 @@
         "region": "LCK"
       },
       {
-        "id": "Delight",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
         "id": "Diable",
         "team": "BNK FEARX",
-        "region": "LCK"
-      },
-      {
-        "id": "Gumayusi",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
-        "id": "Kanavi",
-        "team": "Hanwha Life Esports",
         "region": "LCK"
       },
       {
@@ -40453,11 +40586,6 @@
         "region": "LCK"
       },
       {
-        "id": "Doran",
-        "team": "T1",
-        "region": "LCK"
-      },
-      {
         "id": "DuDu",
         "team": "DN SOOPers",
         "region": "LCK"
@@ -40465,11 +40593,6 @@
       {
         "id": "Peter",
         "team": "DN SOOPers",
-        "region": "LCK"
-      },
-      {
-        "id": "Peyz",
-        "team": "T1",
         "region": "LCK"
       },
       {
@@ -41703,22 +41826,12 @@
         "region": "LPL"
       },
       {
-        "id": "ON",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Xun",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },
       {
         "id": "Aiming",
-        "team": "KT Rolster",
-        "region": "LCK"
-      },
-      {
-        "id": "Bdd",
         "team": "KT Rolster",
         "region": "LCK"
       },
@@ -41748,11 +41861,6 @@
         "region": "LCK"
       },
       {
-        "id": "Scout",
-        "team": "Nongshim RedForce",
-        "region": "LCK"
-      },
-      {
         "id": "Sponge",
         "team": "Nongshim RedForce",
         "region": "LCK"
@@ -41773,11 +41881,6 @@
         "region": "LPL"
       },
       {
-        "id": "Elk",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Guwon",
         "team": "Ninjas in Pyjamas",
         "region": "LPL"
@@ -41794,11 +41897,6 @@
       },
       {
         "id": "Jiejie",
-        "team": "Weibo Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Xiaohu",
         "team": "Weibo Gaming",
         "region": "LPL"
       },
@@ -42663,17 +42761,7 @@
         "region": "HLL"
       },
       {
-        "id": "Creme",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
         "id": "fengyue",
-        "team": "Top Esports",
-        "region": "LPL"
-      },
-      {
-        "id": "JackeyLove",
         "team": "Top Esports",
         "region": "LPL"
       },
@@ -42694,11 +42782,6 @@
       },
       {
         "id": "JiaQi",
-        "team": "Invictus Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Meiko",
         "team": "Invictus Gaming",
         "region": "LPL"
       },
@@ -42729,11 +42812,6 @@
       },
       {
         "id": "Lucid",
-        "team": "Dplus Kia",
-        "region": "LCK"
-      },
-      {
-        "id": "ShowMaker",
         "team": "Dplus Kia",
         "region": "LCK"
       },
@@ -43453,11 +43531,6 @@
         "region": "LEC"
       },
       {
-        "id": "Humanoid",
-        "team": "Team Vitality",
-        "region": "LEC"
-      },
-      {
         "id": "Jojopyun",
         "team": "Movistar KOI",
         "region": "LEC"
@@ -43588,11 +43661,6 @@
         "region": "LCS"
       },
       {
-        "id": "CoreJJ",
-        "team": "Team Liquid",
-        "region": "LCS"
-      },
-      {
         "id": "Cryogen",
         "team": "FlyQuest",
         "region": "LCS"
@@ -43688,18 +43756,8 @@
         "region": "CBLOL"
       },
       {
-        "id": "BrokenBlade",
-        "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
         "id": "Empyros",
         "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
-        "id": "Hans Sama",
-        "team": "G2 Esports",
         "region": "LEC"
       },
       {
@@ -43713,18 +43771,8 @@
         "region": "LEC"
       },
       {
-        "id": "Razork",
-        "team": "Fnatic",
-        "region": "LEC"
-      },
-      {
         "id": "SkewMond",
         "team": "G2 Esports",
-        "region": "LEC"
-      },
-      {
-        "id": "Upset",
-        "team": "Fnatic",
         "region": "LEC"
       },
       {
@@ -43793,11 +43841,6 @@
         "region": "LEC"
       },
       {
-        "id": "Mikyx",
-        "team": "SK Gaming",
-        "region": "LEC"
-      },
-      {
         "id": "Skeanz",
         "team": "SK Gaming",
         "region": "LEC"
@@ -43828,17 +43871,7 @@
         "region": "LPL"
       },
       {
-        "id": "Tarzan",
-        "team": "Anyone's Legend",
-        "region": "LPL"
-      },
-      {
         "id": "Aress",
-        "team": "GAM Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Artemis",
         "team": "GAM Esports",
         "region": "LCP"
       },
@@ -43865,11 +43898,6 @@
       {
         "id": "Hizto",
         "team": "Team Secret Whales",
-        "region": "LCP"
-      },
-      {
-        "id": "Kiaya",
-        "team": "GAM Esports",
         "region": "LCP"
       },
       {
@@ -44224,11 +44252,6 @@
       },
       {
         "id": "Dhokla",
-        "team": "LYON",
-        "region": "LCS"
-      },
-      {
-        "id": "Inspired",
         "team": "LYON",
         "region": "LCS"
       },
@@ -45341,11 +45364,6 @@
         "id": "NM advance",
         "team": "New Meta",
         "region": "LJL"
-      },
-      {
-        "id": "Bwipo",
-        "team": "Witchcraft",
-        "region": "EM"
       },
       {
         "id": "Crownie",
@@ -47623,11 +47641,6 @@
         "region": "LPL"
       },
       {
-        "id": "MISSING",
-        "team": "LNG Esports",
-        "region": "LPL"
-      },
-      {
         "id": "sheer",
         "team": "LNG Esports",
         "region": "LPL"
@@ -47809,11 +47822,6 @@
       },
       {
         "id": "Kratos",
-        "team": "MVK Esports",
-        "region": "LCP"
-      },
-      {
-        "id": "Shogun",
         "team": "MVK Esports",
         "region": "LCP"
       },
