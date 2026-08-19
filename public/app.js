@@ -5,8 +5,9 @@ import { initEsports, ensureEsports } from './js/esports.js';
 import { initIntelligence } from './js/intelligence.js';
 import { getLanguage, initI18n, locale, onLanguageChange, t } from './js/i18n.js';
 import { initPreferences } from './js/preferences.js';
+import { initUX } from './js/ux.js';
 
-const APP_VERSION = '2.6.0';
+const APP_VERSION = '2.7.0';
 let patchesLoaded = false;
 
 function applyVersionBranding() {
@@ -99,6 +100,7 @@ async function boot() {
   initAssets();
   initEsports();
   initPreferences();
+  initUX();
 
   $$('.nav-btn').forEach(button => button.onclick = () => switchSection(button.dataset.section));
   $$('[data-go]').forEach(button => button.onclick = () => switchSection(button.dataset.go));
