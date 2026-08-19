@@ -29,7 +29,15 @@ if (!response.ok) throw new Error(`Live endpoint HTTP ${response.status}: ${JSON
 if (!body.ok) throw new Error(`Live endpoint returned ok=false: ${JSON.stringify(body)}`);
 if (!body.resolved) throw new Error(`LoL Esports event did not resolve: ${JSON.stringify({ event: event.id, startTime: event.startTime, teams: event.teams?.map(x => x.code) })}`);
 if (!Array.isArray(body.teams) || body.teams.length < 2) throw new Error(`Resolved match has no team score data: ${JSON.stringify(body)}`);
-if (!body.officialUrl) throw new Error('Resolved match has no official LoL Esports URL fallback.');
+if (!body.matchId) throw new Error(`Resolved match has no Riot matchId: ${JSON.stringify(body)}`);
+if (!Array.isArray(body.games) || body.games.length < 1) throw new Error(`Resolved match has no BO game list: ${JSON.stringify(body)}`);
+if (!body.officialUrl || !new URL(body.officialUrl).pathname.includes('/schedule')) throw new Error(`Resolved match has no schedule-scoped LoL Esports URL: ${body.officialUrl}`);
+if (body.watchUrl) {
+  const watch = new URL(body.watchUrl);
+  if (watch.hostname.startsWith('static.') || /\.(?:png|jpe?g|gif|webp|svg|ico)$/i.test(watch.pathname)) {
+    throw new Error(`Asset URL was incorrectly classified as a stream: ${body.watchUrl}`);
+  }
+}
 
 console.log(JSON.stringify({
   smoke: 'ok',
