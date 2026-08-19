@@ -40,7 +40,7 @@ const params = new URLSearchParams({
 });
 
 function isTransientLeaguepediaError(value) {
-  return /rate limit|ratelimited|too many|maxlag|lagged|temporar/i.test(String(value || ''));
+  return /rate limit|ratelimited|too many|maxlag|lagged|temporar|HTTP\s+(?:429|502|503|504)/i.test(String(value || ''));
 }
 
 async function cachedPros() {
