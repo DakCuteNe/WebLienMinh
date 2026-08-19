@@ -11,7 +11,7 @@ import { initWorlds } from './js/worlds.js';
 import { initSchedule, ensureSchedule } from './js/schedule.js';
 import { initLiveMatchCenter } from './js/match-live.js';
 
-const APP_VERSION = '3.1.0';
+const APP_VERSION = '3.1.1';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {

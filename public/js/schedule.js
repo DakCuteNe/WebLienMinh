@@ -128,14 +128,29 @@ function teamLogo(team) {
     : `<span class="schedule-team-fallback">${esc(String(team?.code || team?.name || '?').slice(0, 3).toUpperCase())}</span>`;
 }
 
-function teamHtml(team, side, completed) {
-  const score = completed || Number(team?.wins || 0) > 0 ? `<b class="schedule-score">${Number(team?.wins || 0)}</b>` : '';
-  return `<div class="schedule-team side-${side}">
+function teamHtml(team, side, showScore = false) {
+  const score = showScore ? `<b class="schedule-score">${Number(team?.wins || 0)}</b>` : '';
+  const outcome = team?.outcome === 'win' ? 'is-winner' : team?.outcome === 'loss' ? 'is-loser' : '';
+  return `<div class="schedule-team side-${side} ${outcome}">
     ${side === 'left' ? teamLogo(team) : ''}
     <div><strong>${esc(team?.name || 'TBD')}</strong><small>${esc(team?.code || '')}</small></div>
     ${score}
     ${side === 'right' ? teamLogo(team) : ''}
   </div>`;
+}
+
+function versusHtml(event, left, right, completed, live) {
+  if (completed) {
+    const leftWin = left?.outcome === 'win';
+    const rightWin = right?.outcome === 'win';
+    return `<div class="schedule-versus is-final">
+      <div class="schedule-final-score" aria-label="${esc(`${left?.name || 'Team A'} ${Number(left?.wins || 0)} - ${Number(right?.wins || 0)} ${right?.name || 'Team B'}`)}">
+        <strong class="${leftWin ? 'winner' : ''}">${Number(left?.wins || 0)}</strong><span>—</span><strong class="${rightWin ? 'winner' : ''}">${Number(right?.wins || 0)}</strong>
+      </div>
+      <div class="schedule-final-meta"><time>${esc(formatTime(event.startTime))}</time>${event.bestOf ? `<small>${c().bo}${event.bestOf}</small>` : ''}</div>
+    </div>`;
+  }
+  return `<div class="schedule-versus"><time>${esc(formatTime(event.startTime))}</time><b>${live ? '—' : 'VS'}</b><small>${event.bestOf ? `${c().bo}${event.bestOf}` : ''}</small></div>`;
 }
 
 function matchCard(event, favorite) {
@@ -152,9 +167,9 @@ function matchCard(event, favorite) {
       <div class="schedule-match-state ${live ? 'live' : ''}">${live ? '<i></i>' : ''}${esc(state)}</div>
     </div>
     <div class="schedule-match-main">
-      ${teamHtml(left, 'left', completed)}
-      <div class="schedule-versus"><time>${esc(formatTime(event.startTime))}</time><b>${completed || live ? '—' : 'VS'}</b><small>${event.bestOf ? `${c().bo}${event.bestOf}` : ''}</small></div>
-      ${teamHtml(right, 'right', completed)}
+      ${teamHtml(left, 'left', live)}
+      ${versusHtml(event, left, right, completed, live)}
+      ${teamHtml(right, 'right', live)}
     </div>
     ${fav ? `<div class="schedule-favorite-mark">★ ${esc(c().favorite)}</div>` : ''}
   </article>`;
