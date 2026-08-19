@@ -23,6 +23,8 @@ function norm(value) {
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .replaceAll('_', ' ').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
+const tokens = value => norm(value).split(/\s+/).filter(Boolean);
+const fileName = value => String(value || '').replace(/^File:/i, '').trim();
 
 function cleanTitle(value) {
   let title = String(value || '').trim();
@@ -36,30 +38,21 @@ function cleanTitle(value) {
   return title.replaceAll('_', ' ').trim() || null;
 }
 
-function fileName(value) {
-  return String(value || '').replace(/^File:/i, '').trim();
-}
-
 function embeddedYear(value) {
   const years = [...String(value || '').matchAll(/\b(20\d{2})\b/g)].map(m => Number(m[1]));
   return years.length ? Math.max(...years) : null;
 }
-
 function timestampYear(meta) {
   const year = Number(String(meta?.timestamp || '').slice(0, 4));
   return Number.isFinite(year) ? year : null;
 }
-
 function looksBad(value) {
-  const text = norm(value);
-  return /\b(roster|lineup|poster|squad|team photo|teamphoto|wallpaper|banner|schedule|match|versus|vs|logo|icon|ward|champion|skin|flag|coach)\b/.test(text);
+  return /\b(roster|lineup|poster|squad|team photo|teamphoto|wallpaper|banner|schedule|match|versus|vs|logo|icon|ward|champion|skin|flag|coach)\b/.test(norm(value));
 }
-
 function looksLegacy(value) {
   const text = norm(value);
   return /\b(old|oldlogo|legacy|former|previous|archive|archived|retired)\b/.test(text) || /old[_ -]?logo/i.test(String(value || ''));
 }
-
 function roleFamily(value) {
   const text = norm(value);
   if (text.includes('top')) return 'top';
@@ -69,23 +62,19 @@ function roleFamily(value) {
   if (text.includes('support') || text.includes('utility') || text === 'sup') return 'support';
   return null;
 }
-
 function activeMajor(player) {
   if (!MAJOR_REGIONS.has(String(player.team?.region || '').toUpperCase())) return false;
   const latest = Date.parse(player.latestGameAt || '');
   if (!Number.isFinite(latest)) return true;
   return Date.now() - latest <= ACTIVE_DAYS * 86_400_000;
 }
-
 function watchMatchesPlayer(target, player) {
   if (norm(target.name) !== norm(player.id)) return false;
   if (target.team && norm(target.team) !== norm(player.team?.name)) return false;
   const wantedRole = roleFamily(target.role);
   const actualRole = roleFamily(player.role);
-  if (wantedRole && actualRole && wantedRole !== actualRole) return false;
-  return true;
+  return !(wantedRole && actualRole && wantedRole !== actualRole);
 }
-
 function findPlayer(target) {
   const candidates = players.filter(player => activeMajor(player) && watchMatchesPlayer(target, player));
   if (candidates.length === 1) return candidates[0];
@@ -96,23 +85,20 @@ function findPlayer(target) {
   }
   return null;
 }
-
 function playerTokenMatches(player, value) {
-  const text = norm(fileName(value));
-  return norm(player.id).split(/\s+/).filter(Boolean).some(token => text.includes(token));
+  const fileTokens = new Set(tokens(fileName(value)));
+  const ignTokens = tokens(player.id);
+  return ignTokens.length > 0 && ignTokens.every(token => fileTokens.has(token));
 }
-
 function teamTokenScore(player, value) {
-  const text = norm(fileName(value));
-  const teamTokens = norm(player.team?.name).split(/\s+/).filter(token => token.length >= 3 && !['team','gaming','esports'].includes(token));
-  return teamTokens.filter(token => text.includes(token)).length;
+  const fileTokens = new Set(tokens(fileName(value)));
+  const teamTokens = tokens(player.team?.name).filter(token => token.length >= 3 && !['team','gaming','esports'].includes(token));
+  return teamTokens.filter(token => fileTokens.has(token)).length;
 }
-
 function scoreImage(player, meta) {
   const name = fileName(meta.title);
   if (!playerTokenMatches(player, name) || looksBad(name) || looksLegacy(name)) return -999;
-  let score = 150;
-  score += Math.min(60, teamTokenScore(player, name) * 20);
+  let score = 150 + Math.min(60, teamTokenScore(player, name) * 20);
   if (/player|profile|headshot|portrait|official/.test(norm(name))) score += 30;
   const fileYear = embeddedYear(name);
   if (fileYear === CURRENT_YEAR) score += 110;
@@ -156,7 +142,6 @@ async function api(params, label) {
   }
   throw lastError || new Error(`${label}: request failed`);
 }
-
 async function pageImages(title) {
   if (!title) return [];
   try {
@@ -168,7 +153,6 @@ async function pageImages(title) {
     return [];
   }
 }
-
 async function searchFiles(query, limit = 30) {
   try {
     const body = await api({ list: 'search', srnamespace: '6', srsearch: query, srlimit: String(limit) }, `priority search ${query}`);
@@ -178,7 +162,6 @@ async function searchFiles(query, limit = 30) {
     return [];
   }
 }
-
 async function imageInfo(titles) {
   const unique = [...new Set(titles.map(title => title.startsWith('File:') ? title : `File:${title}`).filter(Boolean))].slice(0, 45);
   if (!unique.length) return [];
@@ -189,13 +172,7 @@ async function imageInfo(titles) {
       if (page.missing) continue;
       const info = page.imageinfo?.[0];
       if (!info) continue;
-      out.push({
-        title: page.title,
-        url: info.thumburl || info.url || null,
-        timestamp: info.timestamp || null,
-        width: Number(info.width || 0),
-        height: Number(info.height || 0)
-      });
+      out.push({ title: page.title, url: info.thumburl || info.url || null, timestamp: info.timestamp || null, width: Number(info.width || 0), height: Number(info.height || 0) });
     }
     return out;
   } catch (error) {
@@ -203,7 +180,6 @@ async function imageInfo(titles) {
     return [];
   }
 }
-
 function sourceForFile(meta) {
   const title = String(meta?.title || '').replaceAll(' ', '_');
   return title ? `https://lol.fandom.com/wiki/${encodeURIComponent(title).replace(/%3A/i, ':')}` : null;
@@ -243,15 +219,11 @@ for (const target of targets) {
   ];
   const names = [...new Set([...pagePool, ...searchPool])]
     .filter(title => playerTokenMatches(player, title) && !looksBad(title) && !looksLegacy(title))
-    .sort((a, b) => {
-      const ay = embeddedYear(a) || 0;
-      const by = embeddedYear(b) || 0;
-      return by - ay || teamTokenScore(player, b) - teamTokenScore(player, a);
-    })
+    .sort((a, b) => (embeddedYear(b) || 0) - (embeddedYear(a) || 0) || teamTokenScore(player, b) - teamTokenScore(player, a))
     .slice(0, target.priority === 1 ? 40 : 25);
 
-  const metas = await imageInfo(names);
-  const ranked = metas.map(meta => ({ ...meta, score: scoreImage(player, meta) }))
+  const ranked = (await imageInfo(names))
+    .map(meta => ({ ...meta, score: scoreImage(player, meta) }))
     .filter(meta => meta.url && meta.score >= 150)
     .sort((a, b) => b.score - a.score || String(b.timestamp || '').localeCompare(String(a.timestamp || '')));
   const best = ranked[0] || null;
@@ -272,15 +244,7 @@ for (const target of targets) {
   player.priorityMediaRefreshedAt = new Date().toISOString();
   player.priorityMediaTier = target.priority;
   refreshed++;
-  details.push({
-    name: player.id,
-    team: player.team?.name || null,
-    region: player.team?.region || null,
-    priority: target.priority,
-    status: 'refreshed',
-    file: best.title,
-    score: best.score
-  });
+  details.push({ name: player.id, team: player.team?.name || null, region: player.team?.region || null, priority: target.priority, status: 'refreshed', file: best.title, score: best.score });
   console.log(`Priority pro media: P${target.priority} ${player.team?.region || '?'} ${player.id} (${player.team?.name || '?'}) -> ${best.title} score=${best.score}`);
 }
 
