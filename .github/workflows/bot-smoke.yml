@@ -1,0 +1,54 @@
+name: Discord Bot Smoke
+
+on:
+  pull_request:
+    paths:
+      - 'bot/**'
+      - '.env.example'
+      - 'package.json'
+      - '.github/workflows/bot-smoke.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'bot/**'
+      - '.env.example'
+      - 'package.json'
+      - '.github/workflows/bot-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Syntax check
+        run: |
+          node --check bot/bot.js
+          node --check bot/news-watcher.js
+          node --check bot/meta-watcher.js
+      - name: Verify notify-only command surface
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const source = fs.readFileSync('bot/bot.js', 'utf8');
+          const legacy = ['meta', 'counter', 'build', 'pro', 'patch', 'status'];
+          if (!source.includes(".setName('notify')")) throw new Error('Missing /notify command');
+          for (const name of legacy) {
+            if (source.includes(`interaction.commandName === '${name}'`)) {
+              throw new Error(`Legacy handler still active: /${name}`);
+            }
+          }
+          if (!source.includes('LEGACY_COMMAND_NAMES')) throw new Error('Missing legacy command cleanup list');
+          if (!source.includes('Routes.applicationCommand(')) throw new Error('Missing global command cleanup');
+          if (!source.includes('Routes.applicationGuildCommand(')) throw new Error('Missing guild command cleanup');
+          if (!source.includes("Riot News & Meta • /notify")) throw new Error('Bot activity still references an old command');
+          console.log('Discord command surface is notify-only and legacy cleanup is enabled.');
+          NODE
