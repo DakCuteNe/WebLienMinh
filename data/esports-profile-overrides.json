@@ -28,6 +28,42 @@
       "identitySource": "https://lol.fandom.com/wiki/Teddy",
       "asOf": "2026-03-20",
       "note": "LCK Teddy is Park Jin-seong of HANJIN BRION. Prevents collision with Teddy (Megat Badrul) and pins a 2026 HANJIN BRION portrait."
+    },
+    {
+      "name": "Delight",
+      "team": "Hanwha Life Esports",
+      "page": "Delight",
+      "realName": "Yoo Hwan-joong",
+      "source": "https://lol.fandom.com/wiki/Delight",
+      "asOf": "2026-08-19",
+      "note": "Pins the active LCK/HLE support Delight to Yoo Hwan-joong and prevents collision with Delight (Lingyu Zhang)."
+    },
+    {
+      "name": "Peyz",
+      "team": "T1",
+      "page": "Peyz",
+      "realName": "Kim Su-hwan",
+      "source": "https://lol.fandom.com/wiki/Peyz",
+      "asOf": "2026-08-19",
+      "note": "Pins the active T1 bot laner Peyz to Kim Su-hwan and prevents collision with Peyz (Joseph Younan)."
+    },
+    {
+      "name": "Kanavi",
+      "team": "Hanwha Life Esports",
+      "page": "Kanavi",
+      "realName": "Seo Jin-hyeok",
+      "source": "https://lol.fandom.com/wiki/Kanavi",
+      "asOf": "2026-08-19",
+      "note": "Current 2026 LCK identity lock after Kanavi moved to Hanwha Life Esports."
+    },
+    {
+      "name": "Scout",
+      "team": "Nongshim RedForce",
+      "page": "Scout",
+      "realName": "Lee Ye-chan",
+      "source": "https://lol.fandom.com/wiki/Scout",
+      "asOf": "2026-08-19",
+      "note": "Current 2026 LCK identity lock for Scout on Nongshim RedForce."
     }
   ],
   "teams": [
