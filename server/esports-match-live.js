@@ -116,10 +116,28 @@ function currentGame(games = []) {
     || null;
 }
 
+function validStreamUrl(value) {
+  if (!value) return null;
+  try {
+    const url = new URL(httpsUrl(value));
+    const host = url.hostname.toLowerCase();
+    if (host === 'youtu.be' || host === 'youtube.com' || host.endsWith('.youtube.com')) return url.toString();
+    if (host === 'twitch.tv' || host.endsWith('.twitch.tv')) return url.toString();
+    if (host === 'sooplive.com' || host.endsWith('.sooplive.com') || host === 'sooplive.co.kr' || host.endsWith('.sooplive.co.kr')) return url.toString();
+    if (host === 'afreecatv.com' || host.endsWith('.afreecatv.com')) return url.toString();
+    if (host === 'lolesports.com' || host === 'www.lolesports.com') {
+      if (/\.(?:png|jpe?g|gif|webp|svg|ico)(?:$|\?)/i.test(url.pathname)) return null;
+      return url.toString();
+    }
+  } catch {}
+  return null;
+}
+
 function collectStreamUrls(value, found = []) {
   if (!value) return found;
   if (typeof value === 'string') {
-    if (/^https?:\/\//i.test(value) && /(lolesports\.com|youtube\.com|youtu\.be|twitch\.tv|sooplive\.|afreecatv\.)/i.test(value)) found.push(httpsUrl(value));
+    const url = validStreamUrl(value);
+    if (url) found.push(url);
     return found;
   }
   if (Array.isArray(value)) {
@@ -142,15 +160,33 @@ function normalizeStart(value) {
   return new Date(Math.floor(time / 10_000) * 10_000).toISOString();
 }
 
-async function fetchLiveWindow(game, fallbackStart) {
-  if (!game?.id) return null;
-  const startingTime = normalizeStart(game.startTime || fallbackStart);
-  const response = await fetch(`${LIVE_FEED}/window/${encodeURIComponent(game.id)}?startingTime=${encodeURIComponent(startingTime)}`, {
+async function fetchLiveWindowAt(gameId, startingTime) {
+  const response = await fetch(`${LIVE_FEED}/window/${encodeURIComponent(gameId)}?startingTime=${encodeURIComponent(startingTime)}`, {
     headers: { 'User-Agent': 'WebLienMinh/3.1 live-match-center' },
     signal: AbortSignal.timeout(7_000)
   });
   if (!response.ok) throw new Error(`live window HTTP ${response.status}`);
   return response.json();
+}
+
+async function fetchLiveWindow(game, fallbackStart) {
+  if (!game?.id) return null;
+  const candidates = [
+    normalizeStart(Date.now() - 30_000),
+    normalizeStart(Date.now() - 90_000),
+    normalizeStart(game.startTime || fallbackStart)
+  ];
+  let lastError = null;
+  for (const startingTime of [...new Set(candidates)]) {
+    try {
+      const body = await fetchLiveWindowAt(game.id, startingTime);
+      if (body?.frames?.length || body?.gameMetadata) return body;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  if (lastError) throw lastError;
+  return null;
 }
 
 function championIds(value, out = []) {
@@ -220,7 +256,7 @@ function normalizeWindow(windowData) {
 }
 
 function officialScheduleUrl(slug, locale = 'vi-VN') {
-  const base = `https://lolesports.com/${locale || 'vi-VN'}/`;
+  const base = `https://lolesports.com/${locale || 'vi-VN'}/schedule`;
   return slug ? `${base}?leagues=${encodeURIComponent(slug)}` : base;
 }
 
@@ -249,7 +285,7 @@ async function buildLivePayload(query) {
   const games = normalizeGames(match);
   const game = currentGame(games);
   const teams = scheduleMatchScore(detail?.match ? detail : scheduleEvent || { match });
-  const streams = [...new Set(collectStreamUrls(detail || scheduleEvent))];
+  const streams = [...new Set(collectStreamUrls(detail || scheduleEvent))].filter(Boolean);
   let live = null;
 
   if (wanted.detail && game?.id) {
