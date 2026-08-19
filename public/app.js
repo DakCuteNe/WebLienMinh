@@ -10,8 +10,9 @@ import { initAmbient } from './js/ambient.js';
 import { initWorlds } from './js/worlds.js';
 import { initSchedule, ensureSchedule } from './js/schedule.js';
 import { initLiveMatchCenter } from './js/match-live.js';
+import { initTeamPredictions } from './js/team-predictions.js';
 
-const APP_VERSION = '3.1.1';
+const APP_VERSION = '3.2.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
@@ -117,6 +118,7 @@ async function boot() {
   initAmbient();
   initSchedule();
   initLiveMatchCenter();
+  initTeamPredictions();
   installScheduleBalanceCss();
   initWorlds();
   initUX();
