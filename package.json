@@ -16,6 +16,7 @@
     "update:esports": "node scripts/update-esports-directory.js",
     "update:esports-identities": "node scripts/update-esports-identities.js",
     "update:esports-media": "node scripts/update-esports-media-safe.js",
+    "update:esports-major-media": "node scripts/refresh-major-esports-media.js",
     "update:riot-content": "node scripts/update-riot-content.js"
   },
   "dependencies": {
