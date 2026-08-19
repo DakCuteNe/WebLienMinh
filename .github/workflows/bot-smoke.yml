@@ -34,7 +34,7 @@ jobs:
           node --check bot/bot.js
           node --check bot/news-watcher.js
           node --check bot/meta-watcher.js
-      - name: Verify notify-only command surface
+      - name: Verify notify-only hard reset
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
@@ -46,9 +46,15 @@ jobs:
               throw new Error(`Legacy handler still active: /${name}`);
             }
           }
-          if (!source.includes('LEGACY_COMMAND_NAMES')) throw new Error('Missing legacy command cleanup list');
-          if (!source.includes('Routes.applicationCommand(')) throw new Error('Missing global command cleanup');
-          if (!source.includes('Routes.applicationGuildCommand(')) throw new Error('Missing guild command cleanup');
+          if (!source.includes('clearAllGlobalCommands')) throw new Error('Missing global hard-reset helper');
+          if (!source.includes('clearAllGuildCommands')) throw new Error('Missing guild hard-reset helper');
+          if (!source.includes('Routes.applicationCommands(CLIENT_ID), { body: [] }')) {
+            throw new Error('Global command list is not hard-reset with an empty bulk overwrite');
+          }
+          if (!source.includes('Routes.applicationGuildCommands(CLIENT_ID, guildId), { body: [] }')) {
+            throw new Error('Guild command list is not hard-reset with an empty bulk overwrite');
+          }
+          if (source.includes('MANAGED_COMMAND_NAMES')) throw new Error('Name-based cleanup is still present');
           if (!source.includes("Riot News & Meta • /notify")) throw new Error('Bot activity still references an old command');
-          console.log('Discord command surface is notify-only and legacy cleanup is enabled.');
+          console.log('Discord command surface is /notify-only and unknown legacy commands are hard-reset across scopes.');
           NODE
