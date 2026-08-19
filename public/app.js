@@ -7,6 +7,7 @@ import { getLanguage, initI18n, locale, onLanguageChange, t } from './js/i18n.js
 import { initPreferences } from './js/preferences.js';
 import { initUX } from './js/ux.js';
 import { initAmbient } from './js/ambient.js';
+import { initHallOfLegends, ensureHallOfLegends } from './js/hall-of-legends.js';
 import { initWorlds } from './js/worlds.js';
 import { initSchedule, ensureSchedule } from './js/schedule.js';
 import { initLiveMatchCenter } from './js/match-live.js';
@@ -14,7 +15,7 @@ import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
 import { initSiteEffects, triggerSectionEffect } from './js/site-effects.js';
 
-const APP_VERSION = '3.12.0';
+const APP_VERSION = '3.13.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
@@ -41,6 +42,7 @@ function switchSection(id) {
   setRiotMusicSection(id);
   if (id === 'assets') ensureAssets();
   if (id === 'esports') ensureEsports();
+  if (id === 'hall') ensureHallOfLegends();
   if (id === 'schedule') ensureSchedule();
   if (id === 'patch') loadPatches();
   history.replaceState(null, '', '#' + id);
@@ -105,6 +107,7 @@ async function boot() {
   initTeamPredictions();
   initRiotMusic();
   installScheduleBalanceCss();
+  initHallOfLegends();
   initWorlds();
   initUX();
   $$('.nav-btn').forEach(button => button.onclick = () => switchSection(button.dataset.section));
