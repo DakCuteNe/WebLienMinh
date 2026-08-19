@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-19T08:31:07.530Z",
-  "directoryGeneratedAt": "2026-08-19T08:28:45.297Z",
-  "mediaEnrichedAt": "2026-08-19T08:31:07.242Z",
+  "generatedAt": "2026-08-19T08:41:43.198Z",
+  "directoryGeneratedAt": "2026-08-19T08:39:23.199Z",
+  "mediaEnrichedAt": "2026-08-19T08:41:42.790Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -20,16 +20,16 @@
       "pct": 90.6
     },
     "birthdate": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     },
     "age": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     },
     "contract": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     },
     "social": {
       "count": 1355,
@@ -56,8 +56,8 @@
       "pct": 90.7
     },
     "completeCore": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     }
   },
   "duplicateIdCount": 10,
@@ -272,7 +272,7 @@
       "actualPage": "Viper (Park Do-hyeon)",
       "actualRealName": "Park Do-hyeon",
       "actualTeam": "Bilibili Gaming",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/20/GRF_Viper_2018_Split_1.png/revision/latest?cb=20250426112816",
+      "image": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
       "ok": true,
       "errors": []
     }
@@ -306,21 +306,21 @@
       "image": 78,
       "realName": 78,
       "country": 78,
-      "birthdate": 0,
-      "contract": 0,
+      "birthdate": 1,
+      "contract": 1,
       "social": 40,
       "teamLogo": 46,
       "stats": 78,
-      "completeCore": 0,
+      "completeCore": 1,
       "imagePct": 100,
       "realNamePct": 100,
       "countryPct": 100,
-      "birthdatePct": 0,
-      "contractPct": 0,
+      "birthdatePct": 1.3,
+      "contractPct": 1.3,
       "socialPct": 51.3,
       "teamLogoPct": 59,
       "statsPct": 100,
-      "completeCorePct": 0
+      "completeCorePct": 1.3
     },
     "LEC": {
       "total": 51,
@@ -873,16 +873,16 @@
     "image": 604,
     "realName": 163,
     "country": 162,
-    "birthdate": 1726,
-    "age": 1726,
-    "contract": 1726,
+    "birthdate": 1725,
+    "age": 1725,
+    "contract": 1725,
     "social": 371,
     "teamLogo": 366,
     "stats": 0,
     "championPool": 0,
     "soloqueueIds": 999,
     "bioEnriched": 161,
-    "completeCore": 1726
+    "completeCore": 1725
   },
   "missing": {
     "image": [
@@ -5564,11 +5564,6 @@
       },
       {
         "id": "Knight",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Viper",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },
@@ -14200,11 +14195,6 @@
         "region": "LPL"
       },
       {
-        "id": "Viper",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
         "id": "Canyon",
         "team": "Gen.G",
         "region": "LCK"
@@ -22828,11 +22818,6 @@
       },
       {
         "id": "Knight",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Viper",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },
@@ -40955,11 +40940,6 @@
       },
       {
         "id": "Knight",
-        "team": "Bilibili Gaming",
-        "region": "LPL"
-      },
-      {
-        "id": "Viper",
         "team": "Bilibili Gaming",
         "region": "LPL"
       },

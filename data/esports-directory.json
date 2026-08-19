@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T08:28:45.297Z",
+  "generatedAt": "2026-08-19T08:39:23.199Z",
   "source": "Oracle's Elixir professional match data",
   "sourceType": "mirror of Oracle's Elixir dataset",
   "licenseNote": "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
@@ -4488,15 +4488,15 @@
       "preferredTeam": "Bilibili Gaming",
       "name": "Park Do-hyeon",
       "nativeName": "박도현",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/20/GRF_Viper_2018_Split_1.png/revision/latest?cb=20250426112816",
+      "image": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
       "country": "South Korea",
       "nationality": "South Korea",
-      "age": null,
-      "birthdate": null,
-      "birthYear": null,
+      "age": 25,
+      "birthdate": "2000-10-19",
+      "birthYear": 2000,
       "residency": "Korea",
       "role": "BOTTOM",
-      "contract": null,
+      "contract": "2027-11-16",
       "team": {
         "id": "oe:team:d356a144644879dabb5f34cd99c886d",
         "name": "Bilibili Gaming",
@@ -4601,7 +4601,13 @@
       "identityRole": "Bot",
       "profilePageTitle": "Viper (Park Do-hyeon)",
       "bioEnriched": true,
-      "bioSource": "Leaguepedia player infobox"
+      "bioSource": "Leaguepedia player infobox",
+      "preferredImage": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
+      "preferredImageSource": "https://lag.vn/tin/esports/msi-2026-blg-viper-mong-cho-doi-dau-t1-va-hle-gui-loi-chao-den-nguoi-ham-mo-viet-nam.html",
+      "preferredImageAsOf": "2026-07-02",
+      "profileOverrideSource": "https://lag.vn/tin/esports/msi-2026-blg-viper-mong-cho-doi-dau-t1-va-hle-gui-loi-chao-den-nguoi-ham-mo-viet-nam.html",
+      "profileOverrideAsOf": "2026-07-02",
+      "profileOverrideAppliedAt": "2026-08-19T08:41:42.999Z"
     },
     {
       "uid": "oe:player:92544d7a994bd6841cccd9f6e42e3de",
@@ -195506,7 +195512,7 @@
       "bioSource": "Leaguepedia player infobox"
     }
   ],
-  "identityEnrichedAt": "2026-08-19T08:28:52.070861Z",
+  "identityEnrichedAt": "2026-08-19T08:39:27.600704Z",
   "identitySource": "GPTilt League of Legends Esports Directory (Leaguepedia-derived, CC BY-SA 3.0)",
   "identitySourceUrl": "https://huggingface.co/datasets/gptilt/lol-esports-entities",
   "identityStatus": {
@@ -195736,7 +195742,7 @@
       }
     ]
   },
-  "mediaEnrichedAt": "2026-08-19T08:31:07.242Z",
+  "mediaEnrichedAt": "2026-08-19T08:41:42.790Z",
   "mediaSource": "Leaguepedia / League of Legends Esports Wiki current infobox + MediaWiki images",
   "mediaStatus": {
     "players": {
@@ -195755,8 +195761,10 @@
     },
     "partial": false
   },
-  "mediaSanitizedAt": "2026-08-19T08:31:07.335Z",
-  "profileAuditAt": "2026-08-19T08:31:07.496Z",
+  "mediaSanitizedAt": "2026-08-19T08:41:42.871Z",
+  "profileOverridesAppliedAt": "2026-08-19T08:41:42.999Z",
+  "profileOverrideCount": 1,
+  "profileAuditAt": "2026-08-19T08:41:43.164Z",
   "profileCoverage": {
     "image": {
       "count": 1122,
@@ -195771,16 +195779,16 @@
       "pct": 90.6
     },
     "birthdate": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     },
     "age": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     },
     "contract": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     },
     "social": {
       "count": 1355,
@@ -195807,8 +195815,8 @@
       "pct": 90.7
     },
     "completeCore": {
-      "count": 0,
-      "pct": 0
+      "count": 1,
+      "pct": 0.1
     }
   },
   "profileIntegrity": {
