@@ -9,8 +9,6 @@ on:
       - 'public/match-live.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
-      - 'public/js/music.js'
-      - 'public/music.css'
       - 'public/js/riot-music.js'
       - 'public/riot-music.css'
       - 'public/app.js'
@@ -26,8 +24,6 @@ on:
       - 'public/match-live.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
-      - 'public/js/music.js'
-      - 'public/music.css'
       - 'public/js/riot-music.js'
       - 'public/riot-music.css'
       - 'public/app.js'
@@ -55,7 +51,6 @@ jobs:
           node --check server/esports-match-bootstrap.js
           node --check public/js/match-live.js
           node --check public/js/team-predictions.js
-          node --check public/js/music.js
           node --check public/js/riot-music.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
