@@ -1,0 +1,169 @@
+/* Rift Meta Global 3.2.0 — pre-match team win predictions */
+.schedule-prediction{
+  position:relative;
+  margin:0 20px 14px;
+  padding:10px 12px 9px;
+  border:1px solid rgba(69,104,134,.28);
+  border-radius:12px;
+  background:
+    linear-gradient(90deg,rgba(25,104,143,.08),rgba(6,13,22,.16) 47%,rgba(173,118,37,.07)),
+    rgba(6,13,22,.32);
+  overflow:hidden;
+}
+.schedule-prediction::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.025) 48%,transparent 75%);
+}
+.schedule-prediction-head,
+.schedule-prediction-values{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.schedule-prediction-head>span{
+  display:flex;
+  align-items:center;
+  min-width:0;
+  gap:7px;
+}
+.schedule-prediction-head i{
+  flex:0 0 7px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#53cfff;
+  box-shadow:0 0 10px rgba(83,207,255,.65);
+}
+.schedule-prediction-head b{
+  font-size:10px;
+  letter-spacing:.035em;
+  color:#dbeaf5;
+  white-space:nowrap;
+}
+.schedule-prediction-head small{
+  color:#667f93;
+  font-size:8px;
+  white-space:nowrap;
+}
+.schedule-prediction-head em{
+  flex:0 0 auto;
+  padding:3px 7px;
+  border:1px solid rgba(96,129,154,.28);
+  border-radius:999px;
+  color:#7f96a9;
+  background:rgba(11,24,36,.62);
+  font-size:7px;
+  font-style:normal;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.schedule-prediction-values{
+  margin-top:8px;
+  display:grid;
+  grid-template-columns:minmax(80px,1fr) auto auto minmax(80px,1fr);
+  align-items:end;
+  gap:10px;
+}
+.schedule-prediction-values>strong{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  min-width:0;
+  color:#9fb5c6;
+}
+.schedule-prediction-values>strong:last-child{justify-content:flex-end}
+.schedule-prediction-values strong span{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:9px;
+  letter-spacing:.06em;
+}
+.schedule-prediction-values strong b{
+  color:#f3f8fb;
+  font-size:19px;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.schedule-prediction-values>small{
+  color:#5f7487;
+  font-size:7px;
+  white-space:nowrap;
+}
+.schedule-prediction-bar{
+  position:relative;
+  z-index:1;
+  display:flex;
+  width:100%;
+  height:6px;
+  margin-top:7px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#101c29;
+  box-shadow:inset 0 0 0 1px rgba(77,105,128,.18);
+}
+.schedule-prediction-bar>span{display:block;height:100%}
+.schedule-prediction-bar .prediction-left{
+  background:linear-gradient(90deg,rgba(41,147,195,.62),#54d3ff);
+}
+.schedule-prediction-bar .prediction-right{
+  flex:1 1 auto;
+  background:linear-gradient(90deg,#d9a751,rgba(160,106,35,.58));
+}
+.schedule-prediction-bar>i{
+  position:absolute;
+  top:-2px;
+  bottom:-2px;
+  width:2px;
+  transform:translateX(-1px);
+  border-radius:2px;
+  background:#eef7fb;
+  box-shadow:0 0 7px rgba(238,247,251,.42);
+}
+.schedule-prediction-note{
+  position:relative;
+  z-index:1;
+  margin-top:6px;
+  color:#536b7d;
+  font-size:7px;
+  text-align:center;
+  letter-spacing:.025em;
+}
+.schedule-match.is-live .schedule-prediction{
+  border-color:rgba(69,191,151,.28);
+  background:
+    linear-gradient(90deg,rgba(35,126,102,.09),rgba(6,13,22,.18) 50%,rgba(173,118,37,.06)),
+    rgba(6,13,22,.34);
+}
+.schedule-match.is-live .schedule-prediction-head i{
+  background:#4ce1a9;
+  box-shadow:0 0 11px rgba(76,225,169,.72);
+}
+
+@media(max-width:680px){
+  .schedule-prediction{margin:0 9px 10px;padding:8px 9px}
+  .schedule-prediction-head small{display:none}
+  .schedule-prediction-values{grid-template-columns:1fr auto auto 1fr;gap:5px}
+  .schedule-prediction-values>small{display:none}
+  .schedule-prediction-values strong b{font-size:16px}
+  .schedule-prediction-values strong span{font-size:8px}
+  .schedule-prediction-bar{height:5px}
+}
+
+@media(max-width:440px){
+  .schedule-prediction-head b{font-size:8px}
+  .schedule-prediction-head em{font-size:6px;padding:2px 5px}
+  .schedule-prediction-values{margin-top:6px}
+  .schedule-prediction-values strong b{font-size:15px}
+  .schedule-prediction-note{font-size:6px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .schedule-prediction,.schedule-prediction-bar>i{transition:none!important}
+}
