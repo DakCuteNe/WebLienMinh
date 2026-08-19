@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const OUT = path.join(ROOT, 'data', 'esports-schedule.json');
+const OUT = path.join(ROOT, 'public', 'data', 'esports-schedule.json');
 const API = 'https://esports-api.lolesports.com/persisted/gw';
 const PUBLIC_API_KEY = process.env.LOLESPORTS_API_KEY || '0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z';
 const HL = process.env.LOLESPORTS_HL || 'en-US';
@@ -40,10 +40,6 @@ async function riotGet(endpoint, params = {}) {
   return body;
 }
 
-function normalizeText(value) {
-  return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-}
-
 async function getLeagueMetadata() {
   try {
     const body = await riotGet('getLeagues');
@@ -54,14 +50,14 @@ async function getLeagueMetadata() {
       return {
         ...target,
         name: live.name || target.name,
-        slug: live.slug || target.slug,
+        officialSlug: live.slug || target.slug,
         image: live.image || null,
         region: live.region || null
       };
     });
   } catch (error) {
     console.warn(`getLeagues failed: ${error.message}`);
-    return TARGETS.map(x => ({ ...x, image: null, region: null }));
+    return TARGETS.map(x => ({ ...x, officialSlug: x.slug, image: null, region: null }));
   }
 }
 
@@ -99,6 +95,7 @@ function normalizeEvent(event, league) {
       id: league.id,
       name: league.name,
       slug: league.slug,
+      officialSlug: league.officialSlug,
       image: league.image || event?.league?.image || null,
       group: league.group,
       priority: league.priority
