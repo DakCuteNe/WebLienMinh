@@ -1,6 +1,6 @@
 {
   "source": "Leaguepedia scoreboard data",
-  "note": "Danh sách tuyển thủ nổi bật để theo dõi, không phải bảng xếp hạng sức mạnh tuyệt đối. Có thể thêm/bớt tên tại file này. Với IGN trùng, thêm team/page để khóa đúng người.",
+  "note": "Danh sách tuyển thủ nổi bật để theo dõi, không phải bảng xếp hạng sức mạnh tuyệt đối. Có thể thêm/bớt tên tại file này. Với IGN trùng, thêm team/page/realName để khóa đúng người.",
   "players": [
     { "name": "Faker", "role": "MID" },
     { "name": "Chovy", "role": "MID" },
@@ -8,7 +8,7 @@
     { "name": "Canyon", "role": "JUNGLE" },
     { "name": "Keria", "role": "UTILITY" },
     { "name": "Zeus", "role": "TOP" },
-    { "name": "Viper", "role": "BOTTOM", "team": "Bilibili Gaming", "page": "Viper (Park Do-hyeon)" },
+    { "name": "Viper", "role": "BOTTOM", "team": "Bilibili Gaming", "page": "Viper (Park Do-hyeon)", "realName": "Park Do-hyeon" },
     { "name": "Oner", "role": "JUNGLE" },
     { "name": "Knight", "role": "MID" },
     { "name": "Bin", "role": "TOP" },
