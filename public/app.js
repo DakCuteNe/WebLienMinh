@@ -12,8 +12,9 @@ import { initSchedule, ensureSchedule } from './js/schedule.js';
 import { initLiveMatchCenter } from './js/match-live.js';
 import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
+import { initSiteEffects, triggerSectionEffect } from './js/site-effects.js';
 
-const APP_VERSION = '3.7.0';
+const APP_VERSION = '3.8.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
@@ -34,6 +35,7 @@ function applyVersionBranding() {
 }
 
 function switchSection(id) {
+  triggerSectionEffect(id);
   $$('.page-section').forEach(section => section.classList.toggle('active-section', section.id === id));
   $$('.nav-btn').forEach(button => button.classList.toggle('active', button.dataset.section === id));
   setRiotMusicSection(id);
@@ -97,6 +99,7 @@ async function boot() {
   initEsports();
   initPreferences();
   initAmbient();
+  initSiteEffects();
   initSchedule();
   initLiveMatchCenter();
   initTeamPredictions();
