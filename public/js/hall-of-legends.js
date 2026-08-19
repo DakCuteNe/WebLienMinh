@@ -1,7 +1,7 @@
 import { api, esc, esportsMediaUrl, initials } from './shared.js';
 import { getLanguage, onLanguageChange } from './i18n.js';
 
-const VERSION = '3.13.1';
+const VERSION = '3.14.0';
 const OFFICIAL_HALL = 'https://halloflegends.leagueoflegends.com/';
 
 const INDUCTEES = [
@@ -12,16 +12,38 @@ const INDUCTEES = [
     role: 'MID',
     region: 'KOREA',
     legacyTeam: 'T1',
+    teamShort: 'T1',
+    mediaKey: 'Faker',
+    teamMediaKey: 'T1',
     mark: 'I',
     accent: '#d6aa57',
+    portraitPosition: 'center 8%',
+    portraitScale: 1.18,
+    portraitShift: '18px',
     title: { vi: 'Quỷ Vương Bất Tử', en: 'The Unkillable Demon King' },
     summary: {
       vi: 'Tuyển thủ đầu tiên được ghi danh. Faker trở thành chuẩn mực của sự bền bỉ, khả năng thích nghi và thành công ở sân khấu lớn nhất của Liên Minh Huyền Thoại.',
       en: 'The inaugural inductee. Faker became the benchmark for longevity, adaptation, and winning on League of Legends’ biggest stages.'
     },
+    officialTagline: {
+      vi: 'Một trong những tuyển thủ xuất sắc nhất từng bước lên Summoner’s Rift — người mở đầu Hall of Legends.',
+      en: 'One of the greatest players ever to step onto Summoner’s Rift — the first Hall of Legends inductee.'
+    },
     highlights: {
       vi: ['Người đầu tiên của Hall of Legends', '6× World Champion • 2× MSI Champion', 'Biểu tượng định nghĩa nhiều kỷ nguyên của T1 và LoL Esports'],
       en: ['First Hall of Legends inductee', '6× World Champion • 2× MSI Champion', 'An icon who defined multiple eras of T1 and LoL Esports']
+    },
+    trophies: {
+      vi: [
+        { label: 'Worlds', value: '6', note: 'Chức vô địch' },
+        { label: 'MSI', value: '2', note: 'Chức vô địch' },
+        { label: 'Hall', value: '2024', note: 'Inductee đầu tiên' }
+      ],
+      en: [
+        { label: 'Worlds', value: '6', note: 'Championships' },
+        { label: 'MSI', value: '2', note: 'Championships' },
+        { label: 'Hall', value: '2024', note: 'First inductee' }
+      ]
     },
     cosmetics: { vi: 'Ahri Huyền Thoại Bất Tử • Ahri / LeBlanc Huyền Thoại Trỗi Dậy', en: 'Immortalized Legend Ahri • Risen Legend Ahri / LeBlanc' }
   },
@@ -32,16 +54,38 @@ const INDUCTEES = [
     role: 'ADC',
     region: 'CHINA',
     legacyTeam: 'Royal Never Give Up',
+    teamShort: 'RNG',
+    mediaKey: 'Uzi (Jian Zi-Hao)',
+    teamMediaKey: 'Royal Never Give Up',
     mark: 'II',
     accent: '#e24d45',
+    portraitPosition: 'center 10%',
+    portraitScale: 1.12,
+    portraitShift: '8px',
     title: { vi: 'Mad Dog', en: 'The Mad Dog' },
     summary: {
       vi: 'Tuyển thủ thứ hai được vinh danh. Uzi là một trong những xạ thủ có ảnh hưởng lớn nhất lịch sử, nổi tiếng với cơ chế cá nhân, áp lực đường dưới và sức hút với người hâm mộ LPL.',
       en: 'The second inductee. Uzi is one of the most influential bot laners ever, renowned for mechanical precision, lane pressure, and his impact on the LPL fanbase.'
     },
+    officialTagline: {
+      vi: 'Một trong những xạ thủ có tầm ảnh hưởng lớn nhất mọi thời đại, nổi bật với kỹ năng thuần túy và lối chơi cực kỳ quyết liệt.',
+      en: 'One of the most influential marksmen of all time, defined by pure skill and an ultra-aggressive playstyle.'
+    },
     highlights: {
       vi: ['Tuyển thủ thứ hai của Hall of Legends', 'MSI 2018 Champion • đỉnh cao quốc nội năm 2018', 'Hai lần vào Chung kết CKTG 2013 và 2014'],
       en: ['Second Hall of Legends inductee', 'MSI 2018 Champion • dominant domestic 2018 season', 'Back-to-back Worlds finalist in 2013 and 2014']
+    },
+    trophies: {
+      vi: [
+        { label: 'MSI', value: '1', note: 'Vô địch 2018' },
+        { label: 'Worlds', value: '2×', note: 'Chung kết' },
+        { label: 'Hall', value: '2025', note: 'Inductee thứ hai' }
+      ],
+      en: [
+        { label: 'MSI', value: '1', note: '2018 champion' },
+        { label: 'Worlds', value: '2×', note: 'Finalist' },
+        { label: 'Hall', value: '2025', note: 'Second inductee' }
+      ]
     },
     cosmetics: { vi: "Kai'Sa Huyền Thoại Bất Tử • Kai'Sa / Vayne Huyền Thoại Trỗi Dậy", en: "Immortalized Legend Kai'Sa • Risen Legend Kai'Sa / Vayne" }
   }
@@ -55,11 +99,13 @@ const COPY = {
     lead: 'Nơi LoL Esports lưu danh những tuyển thủ đã định hình lịch sử thi đấu chuyên nghiệp và truyền cảm hứng cho hàng triệu người hâm mộ.',
     inductees: 'Tuyển thủ được vinh danh', regions: 'Khu vực đã có đại diện', since: 'Bắt đầu từ', latest: 'Mới nhất',
     inducted: 'HALL OF LEGENDS INDUCTEE', legacy: 'Di sản', career: 'Dấu ấn sự nghiệp', cosmetics: 'Nội dung kỷ niệm',
+    trophyCase: 'Tủ danh hiệu', officialVisual: 'RIOT HALL OF LEGENDS', officialProfile: 'Hồ sơ chính thức',
     profile: 'Mở hồ sơ tuyển thủ', official: 'Trang Hall of Legends chính thức', all: 'Những cái tên đã được lưu danh',
     source: 'Nguồn chính: Hall of Legends / LoL Esports. Web chỉ đánh dấu tuyển thủ 2026 sau khi Riot công bố chính thức.',
     current: 'MỚI NHẤT',
     upcoming: '2026 • SẮP TỚI',
     pending: 'Chưa công bố',
+    pendingShort: 'Đang chờ Riot công bố inductee tiếp theo.',
     upcomingNote: 'Riot đã xác nhận Hall of Legends sẽ trở lại trước CKTG 2026, nhưng tuyển thủ thứ ba hiện chưa được công bố. Mục này sẽ được cập nhật ngay khi có thông báo chính thức.'
   },
   en: {
@@ -69,11 +115,13 @@ const COPY = {
     lead: 'LoL Esports’ hall of fame for the pros who shaped competitive League history and inspired millions of fans around the world.',
     inductees: 'Inductees', regions: 'Represented regions', since: 'Established', latest: 'Latest',
     inducted: 'HALL OF LEGENDS INDUCTEE', legacy: 'Legacy', career: 'Career marks', cosmetics: 'Commemorative content',
+    trophyCase: 'Trophy case', officialVisual: 'RIOT HALL OF LEGENDS', officialProfile: 'Official profile',
     profile: 'Open pro profile', official: 'Official Hall of Legends', all: 'The legends enshrined so far',
     source: 'Primary sources: Hall of Legends / LoL Esports. The site only marks a 2026 inductee after Riot officially announces one.',
     current: 'LATEST',
     upcoming: '2026 • UPCOMING',
     pending: 'Not announced',
+    pendingShort: 'Waiting for Riot to reveal the next inductee.',
     upcomingNote: 'Riot has confirmed Hall of Legends will return ahead of Worlds 2026, but the third inductee has not been announced yet. This section will update after the official reveal.'
   }
 };
@@ -132,12 +180,57 @@ function ensureStructure() {
   }
 }
 
+function mediaStyle(row) {
+  return [
+    `--hol-accent:${row.accent}`,
+    `--portrait-position:${row.portraitPosition || 'center top'}`,
+    `--portrait-scale:${Number(row.portraitScale || 1)}`,
+    `--portrait-shift:${row.portraitShift || '0px'}`
+  ].join(';');
+}
+
+function uniqueUrls(values) {
+  return [...new Set(values.filter(Boolean).map(value => String(value)))];
+}
+
+function mediaAttrs(urls) {
+  const sources = uniqueUrls(urls);
+  if (!sources.length) return { src: '', attrs: '' };
+  return {
+    src: sources[0],
+    attrs: `data-hol-media="1" data-hol-media-index="0" data-hol-fallbacks="${esc(JSON.stringify(sources))}"`
+  };
+}
+
+function portraitSources(row) {
+  const stored = portraits.get(row.player) || [];
+  return uniqueUrls([
+    ...stored,
+    esportsMediaUrl('player', row.mediaKey || row.player, true),
+    esportsMediaUrl('player', row.mediaKey || row.player),
+    esportsMediaUrl('player', row.player, true),
+    esportsMediaUrl('player', row.player)
+  ]);
+}
+
 function portraitHtml(row, extraClass = '') {
-  const url = portraits.get(row.player);
-  return `<div class="hol-portrait ${extraClass}" style="--hol-accent:${row.accent}">
-    ${url ? `<img src="${esc(url)}" alt="${esc(row.player)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden')">` : ''}
-    <span class="hol-portrait-fallback ${url ? 'hidden' : ''}">${esc(initials(row.player))}</span>
+  const media = mediaAttrs(portraitSources(row));
+  return `<div class="hol-portrait ${extraClass}" style="${mediaStyle(row)}">
+    ${media.src ? `<img src="${esc(media.src)}" ${media.attrs} alt="${esc(row.player)}" loading="lazy" referrerpolicy="no-referrer">` : ''}
+    <span class="hol-portrait-fallback ${media.src ? 'hidden' : ''}">${esc(initials(row.player))}</span>
     <i class="hol-portrait-rim"></i>
+  </div>`;
+}
+
+function teamLogoHtml(row) {
+  const urls = uniqueUrls([
+    esportsMediaUrl('team', row.teamMediaKey || row.legacyTeam, true),
+    esportsMediaUrl('team', row.teamMediaKey || row.legacyTeam)
+  ]);
+  const media = mediaAttrs(urls);
+  return `<div class="hol-team-logo" style="--hol-accent:${row.accent}">
+    ${media.src ? `<img src="${esc(media.src)}" ${media.attrs} alt="${esc(row.legacyTeam)}" loading="lazy" referrerpolicy="no-referrer">` : ''}
+    <span class="hol-team-logo-fallback ${media.src ? 'hidden' : ''}">${esc(row.teamShort || initials(row.legacyTeam))}</span>
   </div>`;
 }
 
@@ -148,10 +241,38 @@ function timelineHtml() {
       <small>${row.year}</small><b>${esc(row.player)}</b><span>${esc(row.mark)}</span>
     </button>`).join('');
   const upcoming = `
-    <button type="button" class="hol-year" style="--hol-accent:#f3e7c5" disabled aria-disabled="true" title="${esc(c.upcomingNote)}">
+    <button type="button" class="hol-year hol-year-pending" style="--hol-accent:#f3e7c5" disabled aria-disabled="true" title="${esc(c.upcomingNote)}">
       <small>${esc(c.upcoming)}</small><b>${esc(c.pending)}</b><span>III</span>
     </button>`;
   return `<div class="hol-timeline" role="tablist" aria-label="Hall of Legends inductees">${confirmed}${upcoming}</div>`;
+}
+
+function officialBannerHtml(row) {
+  const c = copy();
+  const media = mediaAttrs(portraitSources(row));
+  return `<a class="hol-official-banner" href="${OFFICIAL_HALL}" target="_blank" rel="noreferrer" style="--hol-accent:${row.accent}">
+    <div class="hol-official-banner-copy">
+      <small>${esc(c.officialVisual)}</small>
+      <strong>${esc(row.player)} <i>${row.year}</i></strong>
+      <p>${esc(text(row.officialTagline))}</p>
+      <span>${esc(c.officialProfile)} ↗</span>
+    </div>
+    <div class="hol-official-banner-mark" aria-hidden="true">${esc(row.mark)}</div>
+    ${media.src ? `<img class="hol-official-banner-art" src="${esc(media.src)}" ${media.attrs} alt="" loading="lazy" referrerpolicy="no-referrer">` : ''}
+  </a>`;
+}
+
+function trophyHtml(row) {
+  const c = copy();
+  const rows = row.trophies?.[lang()] || row.trophies?.vi || [];
+  if (!rows.length) return '';
+  return `<div class="hol-trophy-block"><small>${esc(c.trophyCase)}</small><div class="hol-trophy-grid">${rows.map(item => `
+    <div class="hol-trophy-card"><span aria-hidden="true">✦</span><div><b>${esc(item.value)}</b><strong>${esc(item.label)}</strong><small>${esc(item.note)}</small></div></div>`).join('')}</div></div>`;
+}
+
+function legacyHtml(row) {
+  const c = copy();
+  return `<div class="hol-legacy-line">${teamLogoHtml(row)}<div><small>${esc(c.legacy)}</small><b>${esc(row.legacyTeam)}</b></div></div>`;
 }
 
 function spotlightHtml(row) {
@@ -170,7 +291,8 @@ function spotlightHtml(row) {
       <p class="hol-real-name">${esc(row.realName)} • ${esc(row.role)} • ${esc(row.region)}</p>
       <h3>${esc(text(row.title))}</h3>
       <p class="hol-summary">${esc(text(row.summary))}</p>
-      <div class="hol-legacy-line"><small>${esc(c.legacy)}</small><b>${esc(row.legacyTeam)}</b></div>
+      ${legacyHtml(row)}
+      ${trophyHtml(row)}
       <div class="hol-highlight-block"><small>${esc(c.career)}</small><div>${row.highlights[lang()].map(item => `<span>✦ ${esc(item)}</span>`).join('')}</div></div>
       <div class="hol-cosmetics"><small>${esc(c.cosmetics)}</small><b>${esc(text(row.cosmetics))}</b></div>
       <div class="hol-actions">
@@ -181,15 +303,24 @@ function spotlightHtml(row) {
   </article>`;
 }
 
+function pendingCardHtml() {
+  const c = copy();
+  return `<a class="hol-card hol-card-pending" href="${OFFICIAL_HALL}" target="_blank" rel="noreferrer" style="--hol-accent:#f3e7c5">
+    <div class="hol-pending-art"><span>III</span><i>2026</i></div>
+    <div class="hol-card-copy"><small>${esc(c.upcoming)}</small><h4>${esc(c.pending)}</h4><p>${esc(c.pendingShort)}</p><span>${esc(c.officialProfile)} ↗</span></div>
+    <b class="hol-card-mark">III</b>
+  </a>`;
+}
+
 function galleryHtml() {
   const c = copy();
-  return `<div class="hol-gallery-head"><div><div class="eyebrow">2024 — 2026</div><h3>${esc(c.all)}</h3></div><span>${INDUCTEES.length}</span></div>
+  return `<div class="hol-gallery-head"><div><div class="eyebrow">2024 — 2026</div><h3>${esc(c.all)}</h3></div><span>${INDUCTEES.length}+1</span></div>
     <div class="hol-gallery">${INDUCTEES.map(row => `
       <button type="button" class="hol-card ${row.year === activeYear ? 'active' : ''}" data-hol-card="${row.year}" style="--hol-accent:${row.accent}">
         ${portraitHtml(row)}
         <div class="hol-card-copy"><small>${row.year} • ${esc(row.role)}</small><h4>${esc(row.player)}</h4><p>${esc(row.realName)}</p><span>${esc(row.region)} • ${esc(row.legacyTeam)}</span></div>
         <b class="hol-card-mark">${esc(row.mark)}</b>
-      </button>`).join('')}</div>`;
+      </button>`).join('')}${pendingCardHtml()}</div>`;
 }
 
 function navigateToPlayer(player) {
@@ -208,6 +339,24 @@ function navigateToPlayer(player) {
   }, 80);
 }
 
+function bindMediaFallbacks() {
+  section?.querySelectorAll('img[data-hol-media]').forEach(img => {
+    img.addEventListener('error', () => {
+      let sources = [];
+      try { sources = JSON.parse(img.dataset.holFallbacks || '[]'); } catch {}
+      const nextIndex = Number(img.dataset.holMediaIndex || 0) + 1;
+      if (sources[nextIndex]) {
+        img.dataset.holMediaIndex = String(nextIndex);
+        img.src = sources[nextIndex];
+        return;
+      }
+      img.style.display = 'none';
+      const sibling = img.nextElementSibling;
+      if (sibling?.classList.contains('hidden')) sibling.classList.remove('hidden');
+    });
+  });
+}
+
 function bind() {
   section?.querySelectorAll('[data-hol-year], [data-hol-card]').forEach(button => {
     button.addEventListener('click', () => {
@@ -219,6 +368,7 @@ function bind() {
     });
   });
   section?.querySelectorAll('[data-hol-player]').forEach(button => button.addEventListener('click', () => navigateToPlayer(button.dataset.holPlayer)));
+  bindMediaFallbacks();
 }
 
 function render(animate = false) {
@@ -238,27 +388,35 @@ function render(animate = false) {
       </div>
     </header>
     ${timelineHtml()}
-    <div class="hol-cosmetics" style="--hol-accent:#f3e7c5"><small>${esc(c.upcoming)}</small><b>${esc(c.upcomingNote)}</b></div>
+    ${officialBannerHtml(row)}
     ${spotlightHtml(row)}
     ${galleryHtml()}
-    <p class="hol-source">ⓘ ${esc(c.source)}</p>
+    <p class="hol-source">ⓘ ${esc(c.source)} ${esc(c.upcomingNote)}</p>
   </div>`;
   bind();
   if (animate) setTimeout(() => section?.querySelector('.hol-shell')?.classList.remove('hol-switching'), 900);
 }
 
 async function resolvePlayerMedia(row) {
+  const canonical = esportsMediaUrl('player', row.mediaKey || row.player, true);
+  const fallback = esportsMediaUrl('player', row.mediaKey || row.player);
+  const urls = [canonical, fallback];
   try {
-    const params = new URLSearchParams({ page: '1', limit: '8', search: row.player, role: 'ALL', region: 'ALL', team: 'ALL' });
+    const params = new URLSearchParams({ page: '1', limit: '12', search: row.player, role: 'ALL', region: 'ALL', team: 'ALL' });
     const data = await api('/api/esports?' + params.toString());
     const players = data.players || [];
-    const exact = players.find(player => String(player.id || '').toLowerCase() === row.player.toLowerCase()) || players[0];
-    if (!exact) return;
-    const key = exact.uid || exact.identityId || exact.overviewPage || exact.id || row.player;
-    portraits.set(row.player, exact.preferredImage || esportsMediaUrl('player', key));
-  } catch {
-    portraits.set(row.player, esportsMediaUrl('player', row.player));
-  }
+    const exact = players.find(player => {
+      const playerId = String(player.id || '').toLowerCase();
+      const realName = String(player.name || player.realName || '').toLowerCase();
+      const page = String(player.preferredPage || player.overviewPage || player.identityId || '').toLowerCase();
+      return playerId === row.player.toLowerCase() || realName === row.realName.toLowerCase() || page === String(row.mediaKey || '').toLowerCase();
+    }) || players[0];
+    if (exact) {
+      const key = exact.preferredPage || exact.overviewPage || exact.identityId || exact.uid || exact.id || row.mediaKey || row.player;
+      urls.unshift(exact.preferredImage || exact.image || null, esportsMediaUrl('player', key, true), esportsMediaUrl('player', key));
+    }
+  } catch {}
+  portraits.set(row.player, uniqueUrls(urls));
 }
 
 export async function ensureHallOfLegends() {
