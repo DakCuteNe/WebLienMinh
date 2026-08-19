@@ -1,7 +1,7 @@
 import { api, esc, esportsMediaUrl, initials } from './shared.js';
 import { getLanguage, onLanguageChange } from './i18n.js';
 
-const VERSION = '3.13.0';
+const VERSION = '3.13.1';
 const OFFICIAL_HALL = 'https://halloflegends.leagueoflegends.com/';
 
 const INDUCTEES = [
@@ -44,26 +44,6 @@ const INDUCTEES = [
       en: ['Second Hall of Legends inductee', 'MSI 2018 Champion • dominant domestic 2018 season', 'Back-to-back Worlds finalist in 2013 and 2014']
     },
     cosmetics: { vi: "Kai'Sa Huyền Thoại Bất Tử • Kai'Sa / Vayne Huyền Thoại Trỗi Dậy", en: "Immortalized Legend Kai'Sa • Risen Legend Kai'Sa / Vayne" }
-  },
-  {
-    year: 2026,
-    player: 'Caps',
-    realName: 'Rasmus Winther',
-    role: 'MID',
-    region: 'EUROPE',
-    legacyTeam: 'G2 Esports',
-    mark: 'III',
-    accent: '#f3e7c5',
-    title: { vi: 'Niềm Tự Hào Châu Âu', en: 'Europe’s Standard Bearer' },
-    summary: {
-      vi: 'Tuyển thủ thứ ba và là đại diện châu Âu đầu tiên bước vào Hall of Legends. Caps là gương mặt tiêu biểu của kỷ nguyên LEC hiện đại và là mid laner phương Tây thành công nhất trên đấu trường quốc tế.',
-      en: 'The third inductee and the first European representative. Caps became the face of the modern LEC era and the most accomplished Western mid laner on the international stage.'
-    },
-    highlights: {
-      vi: ['Tuyển thủ thứ ba • đại diện châu Âu đầu tiên', 'MSI 2019 Champion • Finals MVP', 'Chung kết CKTG 2018 và 2019'],
-      en: ['Third inductee • first European representative', 'MSI 2019 Champion • Finals MVP', 'Worlds finalist in 2018 and 2019']
-    },
-    cosmetics: { vi: 'Bộ nội dung Hall of Legends 2026 • sự kiện trong game sắp ra mắt', en: 'Hall of Legends 2026 collection • in-game celebration coming soon' }
   }
 ];
 
@@ -76,8 +56,11 @@ const COPY = {
     inductees: 'Tuyển thủ được vinh danh', regions: 'Khu vực đã có đại diện', since: 'Bắt đầu từ', latest: 'Mới nhất',
     inducted: 'HALL OF LEGENDS INDUCTEE', legacy: 'Di sản', career: 'Dấu ấn sự nghiệp', cosmetics: 'Nội dung kỷ niệm',
     profile: 'Mở hồ sơ tuyển thủ', official: 'Trang Hall of Legends chính thức', all: 'Những cái tên đã được lưu danh',
-    source: 'Danh sách inductee và năm vinh danh theo Hall of Legends / LoL Esports. Thành tích hiển thị là career snapshot cập nhật trên web.',
-    current: 'MỚI NHẤT'
+    source: 'Nguồn chính: Hall of Legends / LoL Esports. Web chỉ đánh dấu tuyển thủ 2026 sau khi Riot công bố chính thức.',
+    current: 'MỚI NHẤT',
+    upcoming: '2026 • SẮP TỚI',
+    pending: 'Chưa công bố',
+    upcomingNote: 'Riot đã xác nhận Hall of Legends sẽ trở lại trước CKTG 2026, nhưng tuyển thủ thứ ba hiện chưa được công bố. Mục này sẽ được cập nhật ngay khi có thông báo chính thức.'
   },
   en: {
     nav: 'Legends',
@@ -87,14 +70,17 @@ const COPY = {
     inductees: 'Inductees', regions: 'Represented regions', since: 'Established', latest: 'Latest',
     inducted: 'HALL OF LEGENDS INDUCTEE', legacy: 'Legacy', career: 'Career marks', cosmetics: 'Commemorative content',
     profile: 'Open pro profile', official: 'Official Hall of Legends', all: 'The legends enshrined so far',
-    source: 'Inductee names and years follow Hall of Legends / LoL Esports. Career achievements are a current snapshot presented by this site.',
-    current: 'LATEST'
+    source: 'Primary sources: Hall of Legends / LoL Esports. The site only marks a 2026 inductee after Riot officially announces one.',
+    current: 'LATEST',
+    upcoming: '2026 • UPCOMING',
+    pending: 'Not announced',
+    upcomingNote: 'Riot has confirmed Hall of Legends will return ahead of Worlds 2026, but the third inductee has not been announced yet. This section will update after the official reveal.'
   }
 };
 
 let section = null;
 let navButton = null;
-let activeYear = 2026;
+let activeYear = 2025;
 let sectionObserver = null;
 let mediaPromise = null;
 const portraits = new Map();
@@ -156,10 +142,16 @@ function portraitHtml(row, extraClass = '') {
 }
 
 function timelineHtml() {
-  return `<div class="hol-timeline" role="tablist" aria-label="Hall of Legends inductees">${INDUCTEES.map(row => `
+  const c = copy();
+  const confirmed = INDUCTEES.map(row => `
     <button type="button" role="tab" aria-selected="${row.year === activeYear}" class="hol-year ${row.year === activeYear ? 'active' : ''}" data-hol-year="${row.year}" style="--hol-accent:${row.accent}">
       <small>${row.year}</small><b>${esc(row.player)}</b><span>${esc(row.mark)}</span>
-    </button>`).join('')}</div>`;
+    </button>`).join('');
+  const upcoming = `
+    <button type="button" class="hol-year" style="--hol-accent:#f3e7c5" disabled aria-disabled="true" title="${esc(c.upcomingNote)}">
+      <small>${esc(c.upcoming)}</small><b>${esc(c.pending)}</b><span>III</span>
+    </button>`;
+  return `<div class="hol-timeline" role="tablist" aria-label="Hall of Legends inductees">${confirmed}${upcoming}</div>`;
 }
 
 function spotlightHtml(row) {
@@ -240,12 +232,13 @@ function render(animate = false) {
       <div class="hol-hero-copy"><div class="eyebrow">${esc(c.eyebrow)}</div><h1>${c.title}</h1><p>${esc(c.lead)}</p></div>
       <div class="hol-stats">
         <div><small>${esc(c.inductees)}</small><b>${INDUCTEES.length}</b></div>
-        <div><small>${esc(c.regions)}</small><b>3</b></div>
+        <div><small>${esc(c.regions)}</small><b>2</b></div>
         <div><small>${esc(c.since)}</small><b>2024</b></div>
-        <div><small>${esc(c.latest)}</small><b>CAPS • 2026</b></div>
+        <div><small>${esc(c.latest)}</small><b>UZI • 2025</b></div>
       </div>
     </header>
     ${timelineHtml()}
+    <div class="hol-cosmetics" style="--hol-accent:#f3e7c5"><small>${esc(c.upcoming)}</small><b>${esc(c.upcomingNote)}</b></div>
     ${spotlightHtml(row)}
     ${galleryHtml()}
     <p class="hol-source">ⓘ ${esc(c.source)}</p>
