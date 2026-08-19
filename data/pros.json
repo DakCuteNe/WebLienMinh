@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-08-19T08:39:20.515Z",
-  "source": "Leaguepedia / League of Legends Esports Wiki scoreboard data",
-  "sourceType": "community-maintained, not Riot official",
+  "generatedAt": "2026-08-19T11:11:07.890Z",
+  "source": "Hybrid: preserved Leaguepedia detailed analytics + Worldwide Esports Directory fallback",
+  "sourceType": "degraded hybrid; community scoreboard + Oracle/identity directory",
+  "degraded": true,
+  "sourceError": "Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.",
+  "preservedDetailedAt": "2026-08-19T08:39:20.515Z",
+  "preservedDetailedCount": 11,
+  "directoryFallbackCount": 26,
+  "unresolvedCount": 5,
+  "watchCount": 42,
+  "detailedPriorityCount": 22,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "Featured Pros là danh sách theo dõi tuyển thủ nổi bật, không phải bảng xếp hạng sức mạnh tuyệt đối. Với IGN trùng, scoreboard được khóa theo canonical Leaguepedia page. Build là end-game build từ scoreboard; ban là ưu tiên ban của đội trong các trận có tuyển thủ đó.",
+  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity.",
   "players": [
     {
       "name": "Faker",
@@ -443,7 +451,11 @@
           "primaryTree": "Sorcery",
           "secondaryTree": "Resolve"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
       "name": "Chovy",
@@ -878,7 +890,11 @@
           "primaryTree": "Sorcery",
           "secondaryTree": "Resolve"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
       "name": "Ruler",
@@ -1318,7 +1334,11 @@
           "primaryTree": "Precision",
           "secondaryTree": "Domination"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
       "name": "Canyon",
@@ -1733,7 +1753,11 @@
           "primaryTree": "Resolve",
           "secondaryTree": "Inspiration"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
       "name": "Keria",
@@ -2172,7 +2196,11 @@
           "primaryTree": "Domination",
           "secondaryTree": "Resolve"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
       "name": "Zeus",
@@ -2607,7 +2635,1007 @@
           "primaryTree": "Precision",
           "secondaryTree": "Resolve"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
+    },
+    {
+      "name": "Oner",
+      "page": null,
+      "targetTeam": null,
+      "available": true,
+      "team": "T1",
+      "role": "JUNGLE",
+      "games": 30,
+      "winRate": 53.3,
+      "kda": 3.58,
+      "avgKills": 4.4,
+      "avgDeaths": 3.6,
+      "avgAssists": 8.6,
+      "avgCS": 234.4,
+      "avgDamage": 18172.1,
+      "avgVision": 67.3,
+      "latestPatch": "26.15",
+      "latestGameAt": "2026-08-16 09:15:00",
+      "styleSummary": "Trong 30 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, đọc bản đồ và phối hợp mục tiêu.",
+      "championPool": [
+        {
+          "name": "Vi",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Xin Zhao",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Jarvan IV",
+          "count": 4,
+          "rate": 13.3
+        },
+        {
+          "name": "Lee Sin",
+          "count": 4,
+          "rate": 13.3
+        },
+        {
+          "name": "Pantheon",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Wukong",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Naafiri",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Nocturne",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Sejuani",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Skarner",
+          "count": 1,
+          "rate": 3.3
+        }
+      ],
+      "commonBuilds": [
+        {
+          "name": "Mercury's Treads → Sundered Sky → Black Cleaver → Guardian Angel",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Control Ward → Eclipse → Sundered Sky → Death's Dance → Steel Sigil → Plated Steelcaps",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Control Ward → Sundered Sky → Black Cleaver → Cloth Armor → B. F. Sword → Mercury's Treads",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Control Ward → Sundered Sky → Black Cleaver → Guardian Angel → Caulfield's Warhammer → Mercury's Treads",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Control Ward → Sundered Sky → Black Cleaver → Guardian Angel → Null-Magic Mantle → Mercury's Treads",
+          "count": 1,
+          "rate": 3.3
+        }
+      ],
+      "commonItems": [
+        {
+          "name": "Sundered Sky",
+          "count": 25,
+          "rate": 83.3
+        },
+        {
+          "name": "Mercury's Treads",
+          "count": 23,
+          "rate": 76.7
+        },
+        {
+          "name": "Black Cleaver",
+          "count": 22,
+          "rate": 73.3
+        },
+        {
+          "name": "Guardian Angel",
+          "count": 17,
+          "rate": 56.7
+        },
+        {
+          "name": "Control Ward",
+          "count": 10,
+          "rate": 33.3
+        },
+        {
+          "name": "Steel Sigil",
+          "count": 10,
+          "rate": 33.3
+        },
+        {
+          "name": "Plated Steelcaps",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "B. F. Sword",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Death's Dance",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Long Sword",
+          "count": 3,
+          "rate": 10
+        }
+      ],
+      "commonRunes": [
+        {
+          "name": "Conqueror • Precision • Inspiration",
+          "count": 26,
+          "rate": 86.7
+        },
+        {
+          "name": "Aftershock • Resolve • Domination",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Conqueror • Precision • Domination",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Grasp of the Undying • Resolve • Inspiration",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Press the Attack • Precision • Inspiration",
+          "count": 1,
+          "rate": 3.3
+        }
+      ],
+      "commonSpells": [
+        {
+          "name": "Flash + Smite",
+          "count": 30,
+          "rate": 100
+        }
+      ],
+      "teamBanPriorities": [
+        {
+          "name": "Poppy",
+          "count": 16,
+          "rate": 53.3
+        },
+        {
+          "name": "Jayce",
+          "count": 11,
+          "rate": 36.7
+        },
+        {
+          "name": "Nautilus",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Renekton",
+          "count": 8,
+          "rate": 26.7
+        },
+        {
+          "name": "Locke",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Cassiopeia",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Gnar",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Orianna",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Vayne",
+          "count": 6,
+          "rate": 20
+        },
+        {
+          "name": "Akali",
+          "count": 5,
+          "rate": 16.7
+        }
+      ],
+      "recentGames": [
+        {
+          "date": "2026-08-16 09:15:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Gen.G",
+          "champion": "Xin Zhao",
+          "win": false,
+          "kda": "0/3/2",
+          "items": [
+            "Control Ward",
+            "Sundered Sky",
+            "Black Cleaver",
+            "Guardian Angel",
+            "Caulfield's Warhammer",
+            "Mercury's Treads"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-16 08:07:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Gen.G",
+          "champion": "Pantheon",
+          "win": false,
+          "kda": "3/3/9",
+          "items": [
+            "Plated Steelcaps",
+            "Sundered Sky",
+            "Black Cleaver",
+            "Guardian Angel",
+            "Steel Sigil",
+            "Caulfield's Warhammer"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-14 10:12:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Dplus Kia",
+          "champion": "Trundle",
+          "win": false,
+          "kda": "2/2/0",
+          "items": [
+            "Control Ward",
+            "Trinity Force",
+            "Spirit Visage",
+            "Kindlegem",
+            "Negatron Cloak",
+            "Mercury's Treads"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Press the Attack",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-14 09:03:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Dplus Kia",
+          "champion": "Pantheon",
+          "win": false,
+          "kda": "3/8/5",
+          "items": [
+            "Mercury's Treads",
+            "Sundered Sky",
+            "Black Cleaver",
+            "Guardian Angel",
+            "Chempunk Chainsword"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-14 08:08:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Dplus Kia",
+          "champion": "Vi",
+          "win": true,
+          "kda": "4/2/17",
+          "items": [
+            "Mercury's Treads",
+            "Sundered Sky",
+            "Black Cleaver",
+            "Guardian Angel",
+            "Long Sword"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-06 11:06:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Dplus Kia",
+          "champion": "Sejuani",
+          "win": true,
+          "kda": "1/0/8",
+          "items": [
+            "Locket of the Iron Solari",
+            "Control Ward",
+            "Protoplasm Harness",
+            "Bandlepipes",
+            "Zeke's Convergence",
+            "Mercury's Treads"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Aftershock",
+          "primaryTree": "Resolve",
+          "secondaryTree": "Domination"
+        },
+        {
+          "date": "2026-08-06 10:15:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Dplus Kia",
+          "champion": "Vi",
+          "win": true,
+          "kda": "2/1/10",
+          "items": [
+            "Sundered Sky",
+            "Black Cleaver",
+            "Long Sword",
+            "B. F. Sword",
+            "Mercury's Treads"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-04 08:26:00",
+          "patch": "26.15",
+          "team": "T1",
+          "opponent": "Hanwha Life Esports",
+          "champion": "Naafiri",
+          "win": true,
+          "kda": "8/5/8",
+          "items": [
+            "Control Ward",
+            "Voltaic Cyclosword",
+            "Black Cleaver",
+            "Serpent's Fang",
+            "Steel Sigil",
+            "Mercury's Treads"
+          ],
+          "spells": [
+            "Smite",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        }
+      ],
+      "priority": 1,
+      "regionHint": "LCK",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
+    },
+    {
+      "name": "Gumayusi",
+      "page": "Gumayusi",
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LCK",
+      "profileUid": "oe:player:c7319736816efe935787b4381c6f321",
+      "available": true,
+      "team": "Hanwha Life Esports",
+      "role": "BOTTOM",
+      "games": 23,
+      "winRate": 47.8,
+      "kda": 3.42,
+      "avgKills": 3.87,
+      "avgDeaths": 3.09,
+      "avgAssists": 6.7,
+      "avgCS": 329.7,
+      "avgDamage": null,
+      "avgVision": 48.7,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-10 11:46:50",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Corki",
+          "count": 4,
+          "rate": 17.4
+        },
+        {
+          "name": "Jhin",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Varus",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Ziggs",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Ashe",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Sivir",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Yunara",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Aphelios",
+          "count": 1,
+          "rate": 4.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/0e/HLE_Gumayusi_2026_Split_1.png/revision/latest?cb=20260122172840",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "ShowMaker",
+      "page": "ShowMaker",
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LCK",
+      "profileUid": "oe:player:5f8ff49cd56eae61d635966b183a451",
+      "available": true,
+      "team": "Dplus Kia",
+      "role": "MIDDLE",
+      "games": 41,
+      "winRate": 48.8,
+      "kda": 2.97,
+      "avgKills": 3.61,
+      "avgDeaths": 3,
+      "avgAssists": 5.29,
+      "avgCS": 290,
+      "avgDamage": null,
+      "avgVision": 42.2,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-08 09:04:42",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Azir",
+          "count": 6,
+          "rate": 14.6
+        },
+        {
+          "name": "Ryze",
+          "count": 6,
+          "rate": 14.6
+        },
+        {
+          "name": "Ahri",
+          "count": 5,
+          "rate": 12.2
+        },
+        {
+          "name": "Cassiopeia",
+          "count": 3,
+          "rate": 7.3
+        },
+        {
+          "name": "Orianna",
+          "count": 3,
+          "rate": 7.3
+        },
+        {
+          "name": "Zoe",
+          "count": 3,
+          "rate": 7.3
+        },
+        {
+          "name": "Anivia",
+          "count": 2,
+          "rate": 4.9
+        },
+        {
+          "name": "LeBlanc",
+          "count": 2,
+          "rate": 4.9
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e7/DK_ShowMaker_2026_Split_1.png/revision/latest?cb=20260122171041",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Bdd",
+      "page": "Bdd",
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LCK",
+      "profileUid": "oe:player:30361653a485a9609fb2d3aa073282c",
+      "available": true,
+      "team": "KT Rolster",
+      "role": "MIDDLE",
+      "games": 24,
+      "winRate": 50,
+      "kda": 3.87,
+      "avgKills": 3.17,
+      "avgDeaths": 2.54,
+      "avgAssists": 6.67,
+      "avgCS": 306.6,
+      "avgDamage": null,
+      "avgVision": 41.5,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 12:25:37",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Taliyah",
+          "count": 6,
+          "rate": 25
+        },
+        {
+          "name": "Ryze",
+          "count": 5,
+          "rate": 20.8
+        },
+        {
+          "name": "Akali",
+          "count": 3,
+          "rate": 12.5
+        },
+        {
+          "name": "Azir",
+          "count": 3,
+          "rate": 12.5
+        },
+        {
+          "name": "Zoe",
+          "count": 3,
+          "rate": 12.5
+        },
+        {
+          "name": "Ahri",
+          "count": 2,
+          "rate": 8.3
+        },
+        {
+          "name": "Annie",
+          "count": 1,
+          "rate": 4.2
+        },
+        {
+          "name": "Syndra",
+          "count": 1,
+          "rate": 4.2
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d8/KT_Bdd_2026_Split_1.png/revision/latest?cb=20260124034525",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Teddy",
+      "page": "Teddy",
+      "targetTeam": "HANJIN BRION",
+      "priority": 1,
+      "regionHint": "LCK",
+      "profileUid": "oe:player:2b5fa564a1259b97bc238fbfa719b07",
+      "available": true,
+      "team": "HANJIN BRION",
+      "role": "BOTTOM",
+      "games": 26,
+      "winRate": 34.6,
+      "kda": 3.21,
+      "avgKills": 4.65,
+      "avgDeaths": 3,
+      "avgAssists": 4.96,
+      "avgCS": 339.5,
+      "avgDamage": null,
+      "avgVision": 37.5,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 10:10:03",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Ezreal",
+          "count": 5,
+          "rate": 19.2
+        },
+        {
+          "name": "Corki",
+          "count": 3,
+          "rate": 11.5
+        },
+        {
+          "name": "Jhin",
+          "count": 3,
+          "rate": 11.5
+        },
+        {
+          "name": "Varus",
+          "count": 3,
+          "rate": 11.5
+        },
+        {
+          "name": "Aphelios",
+          "count": 2,
+          "rate": 7.7
+        },
+        {
+          "name": "Lucian",
+          "count": 2,
+          "rate": 7.7
+        },
+        {
+          "name": "Yunara",
+          "count": 2,
+          "rate": 7.7
+        },
+        {
+          "name": "Caitlyn",
+          "count": 1,
+          "rate": 3.8
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://www.kukinews.com/data/kuk/image/2026/03/19/kuk20260319000058.800x.9.jpg",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Doran",
+      "page": "Doran (Choi Hyeon-joon)",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCK",
+      "profileUid": "oe:player:a1f3b2bb3f36e5113237f92d76dc4c8",
+      "available": true,
+      "team": "T1",
+      "role": "TOP",
+      "games": 30,
+      "winRate": 56.7,
+      "kda": 2.61,
+      "avgKills": 3.03,
+      "avgDeaths": 3.27,
+      "avgAssists": 5.5,
+      "avgCS": 283.7,
+      "avgDamage": null,
+      "avgVision": 41.8,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-10 08:09:34",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Jayce",
+          "count": 4,
+          "rate": 13.3
+        },
+        {
+          "name": "Ambessa",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Gnar",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "K'Sante",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Kennen",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Aurora",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Sion",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Zaahen",
+          "count": 2,
+          "rate": 6.7
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/de/T1_Doran_2026_LCK_Cup.png/revision/latest?cb=20260122163256",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Peanut",
+      "page": null,
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCK",
+      "role": "JUNGLE",
+      "available": false,
+      "games": 0,
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity."
+    },
+    {
+      "name": "Delight",
+      "page": "Delight (Lingyu Zhang)",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCK",
+      "profileUid": "oe:player:051ca2e31ba25123961b3df95fdef4c",
+      "available": true,
+      "team": "Hanwha Life Esports",
+      "role": "UTILITY",
+      "games": 23,
+      "winRate": 47.8,
+      "kda": 3.28,
+      "avgKills": 0.78,
+      "avgDeaths": 3.43,
+      "avgAssists": 10.48,
+      "avgCS": 39.2,
+      "avgDamage": null,
+      "avgVision": 140,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-10 11:46:50",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Rakan",
+          "count": 5,
+          "rate": 21.7
+        },
+        {
+          "name": "Alistar",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Bard",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Nautilus",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Lulu",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Seraphine",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Braum",
+          "count": 1,
+          "rate": 4.3
+        },
+        {
+          "name": "Nami",
+          "count": 1,
+          "rate": 4.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/9a/OSU_DelightHeadPhoto.png/revision/latest?cb=20260303063603",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Peyz",
+      "page": "Peyz (Joseph Younan)",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCK/LPL",
+      "profileUid": "oe:player:5bbc2b92348d930ebd500cb9ce71bb7",
+      "available": true,
+      "team": "T1",
+      "role": "BOTTOM",
+      "games": 30,
+      "winRate": 56.7,
+      "kda": 3.9,
+      "avgKills": 5.23,
+      "avgDeaths": 2.8,
+      "avgAssists": 5.7,
+      "avgCS": 338,
+      "avgDamage": null,
+      "avgVision": 41.6,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-10 08:09:34",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Aphelios",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
+          "name": "Ezreal",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Kai'Sa",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Kalista",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Varus",
+          "count": 3,
+          "rate": 10
+        },
+        {
+          "name": "Corki",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Jhin",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Lucian",
+          "count": 2,
+          "rate": 6.7
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": null,
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Knight",
+      "page": null,
+      "targetTeam": null,
+      "role": "MID",
+      "available": false,
+      "games": 0,
+      "note": "Chưa có scoreboard gần đây cho Knight trong khoảng 120 ngày.",
+      "priority": 1,
+      "regionHint": "LPL",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
+    },
+    {
+      "name": "Bin",
+      "page": null,
+      "targetTeam": null,
+      "role": "TOP",
+      "available": false,
+      "games": 0,
+      "note": "Chưa có scoreboard gần đây cho Bin trong khoảng 120 ngày.",
+      "priority": 1,
+      "regionHint": "LPL",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
       "name": "Viper",
@@ -3051,453 +4079,597 @@
           "primaryTree": "Precision",
           "secondaryTree": "Inspiration"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LPL",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
     },
     {
-      "name": "Oner",
-      "page": null,
+      "name": "JackeyLove",
+      "page": "JackeyLove",
       "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:c54e1090ef1faa736b12493051c4855",
       "available": true,
-      "team": "T1",
-      "role": "JUNGLE",
-      "games": 30,
-      "winRate": 53.3,
-      "kda": 3.58,
-      "avgKills": 4.4,
-      "avgDeaths": 3.6,
-      "avgAssists": 8.6,
-      "avgCS": 234.4,
-      "avgDamage": 18172.1,
-      "avgVision": 67.3,
-      "latestPatch": "26.15",
-      "latestGameAt": "2026-08-16 09:15:00",
-      "styleSummary": "Trong 30 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, đọc bản đồ và phối hợp mục tiêu.",
+      "team": "Top Esports",
+      "role": "BOTTOM",
+      "games": 6,
+      "winRate": 66.7,
+      "kda": 3.24,
+      "avgKills": 4.67,
+      "avgDeaths": 3.5,
+      "avgAssists": 6.67,
+      "avgCS": 318.7,
+      "avgDamage": null,
+      "avgVision": 46.3,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-08 13:43:56",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
       "championPool": [
         {
-          "name": "Vi",
-          "count": 7,
-          "rate": 23.3
-        },
-        {
-          "name": "Xin Zhao",
-          "count": 5,
-          "rate": 16.7
-        },
-        {
-          "name": "Jarvan IV",
-          "count": 4,
-          "rate": 13.3
-        },
-        {
-          "name": "Lee Sin",
-          "count": 4,
-          "rate": 13.3
-        },
-        {
-          "name": "Pantheon",
-          "count": 3,
-          "rate": 10
-        },
-        {
-          "name": "Wukong",
+          "name": "Ashe",
           "count": 2,
-          "rate": 6.7
-        },
-        {
-          "name": "Naafiri",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Nocturne",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Sejuani",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Skarner",
-          "count": 1,
-          "rate": 3.3
-        }
-      ],
-      "commonBuilds": [
-        {
-          "name": "Mercury's Treads → Sundered Sky → Black Cleaver → Guardian Angel",
-          "count": 2,
-          "rate": 6.7
-        },
-        {
-          "name": "Control Ward → Eclipse → Sundered Sky → Death's Dance → Steel Sigil → Plated Steelcaps",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Control Ward → Sundered Sky → Black Cleaver → Cloth Armor → B. F. Sword → Mercury's Treads",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Control Ward → Sundered Sky → Black Cleaver → Guardian Angel → Caulfield's Warhammer → Mercury's Treads",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Control Ward → Sundered Sky → Black Cleaver → Guardian Angel → Null-Magic Mantle → Mercury's Treads",
-          "count": 1,
-          "rate": 3.3
-        }
-      ],
-      "commonItems": [
-        {
-          "name": "Sundered Sky",
-          "count": 25,
-          "rate": 83.3
-        },
-        {
-          "name": "Mercury's Treads",
-          "count": 23,
-          "rate": 76.7
-        },
-        {
-          "name": "Black Cleaver",
-          "count": 22,
-          "rate": 73.3
-        },
-        {
-          "name": "Guardian Angel",
-          "count": 17,
-          "rate": 56.7
-        },
-        {
-          "name": "Control Ward",
-          "count": 10,
           "rate": 33.3
         },
         {
-          "name": "Steel Sigil",
-          "count": 10,
+          "name": "Corki",
+          "count": 2,
           "rate": 33.3
         },
         {
-          "name": "Plated Steelcaps",
-          "count": 7,
-          "rate": 23.3
-        },
-        {
-          "name": "B. F. Sword",
-          "count": 6,
-          "rate": 20
-        },
-        {
-          "name": "Death's Dance",
-          "count": 3,
-          "rate": 10
-        },
-        {
-          "name": "Long Sword",
-          "count": 3,
-          "rate": 10
-        }
-      ],
-      "commonRunes": [
-        {
-          "name": "Conqueror • Precision • Inspiration",
-          "count": 26,
-          "rate": 86.7
-        },
-        {
-          "name": "Aftershock • Resolve • Domination",
+          "name": "Jhin",
           "count": 1,
-          "rate": 3.3
+          "rate": 16.7
         },
         {
-          "name": "Conqueror • Precision • Domination",
+          "name": "Lucian",
           "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Grasp of the Undying • Resolve • Inspiration",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Press the Attack • Precision • Inspiration",
-          "count": 1,
-          "rate": 3.3
-        }
-      ],
-      "commonSpells": [
-        {
-          "name": "Flash + Smite",
-          "count": 30,
-          "rate": 100
-        }
-      ],
-      "teamBanPriorities": [
-        {
-          "name": "Poppy",
-          "count": 16,
-          "rate": 53.3
-        },
-        {
-          "name": "Jayce",
-          "count": 11,
-          "rate": 36.7
-        },
-        {
-          "name": "Nautilus",
-          "count": 9,
-          "rate": 30
-        },
-        {
-          "name": "Renekton",
-          "count": 8,
-          "rate": 26.7
-        },
-        {
-          "name": "Locke",
-          "count": 7,
-          "rate": 23.3
-        },
-        {
-          "name": "Cassiopeia",
-          "count": 6,
-          "rate": 20
-        },
-        {
-          "name": "Gnar",
-          "count": 6,
-          "rate": 20
-        },
-        {
-          "name": "Orianna",
-          "count": 6,
-          "rate": 20
-        },
-        {
-          "name": "Vayne",
-          "count": 6,
-          "rate": 20
-        },
-        {
-          "name": "Akali",
-          "count": 5,
           "rate": 16.7
         }
       ],
-      "recentGames": [
-        {
-          "date": "2026-08-16 09:15:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Gen.G",
-          "champion": "Xin Zhao",
-          "win": false,
-          "kda": "0/3/2",
-          "items": [
-            "Control Ward",
-            "Sundered Sky",
-            "Black Cleaver",
-            "Guardian Angel",
-            "Caulfield's Warhammer",
-            "Mercury's Treads"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Conqueror",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-16 08:07:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Gen.G",
-          "champion": "Pantheon",
-          "win": false,
-          "kda": "3/3/9",
-          "items": [
-            "Plated Steelcaps",
-            "Sundered Sky",
-            "Black Cleaver",
-            "Guardian Angel",
-            "Steel Sigil",
-            "Caulfield's Warhammer"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Conqueror",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-14 10:12:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Dplus Kia",
-          "champion": "Trundle",
-          "win": false,
-          "kda": "2/2/0",
-          "items": [
-            "Control Ward",
-            "Trinity Force",
-            "Spirit Visage",
-            "Kindlegem",
-            "Negatron Cloak",
-            "Mercury's Treads"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Press the Attack",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-14 09:03:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Dplus Kia",
-          "champion": "Pantheon",
-          "win": false,
-          "kda": "3/8/5",
-          "items": [
-            "Mercury's Treads",
-            "Sundered Sky",
-            "Black Cleaver",
-            "Guardian Angel",
-            "Chempunk Chainsword"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Conqueror",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-14 08:08:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Dplus Kia",
-          "champion": "Vi",
-          "win": true,
-          "kda": "4/2/17",
-          "items": [
-            "Mercury's Treads",
-            "Sundered Sky",
-            "Black Cleaver",
-            "Guardian Angel",
-            "Long Sword"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Conqueror",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-06 11:06:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Dplus Kia",
-          "champion": "Sejuani",
-          "win": true,
-          "kda": "1/0/8",
-          "items": [
-            "Locket of the Iron Solari",
-            "Control Ward",
-            "Protoplasm Harness",
-            "Bandlepipes",
-            "Zeke's Convergence",
-            "Mercury's Treads"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Aftershock",
-          "primaryTree": "Resolve",
-          "secondaryTree": "Domination"
-        },
-        {
-          "date": "2026-08-06 10:15:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Dplus Kia",
-          "champion": "Vi",
-          "win": true,
-          "kda": "2/1/10",
-          "items": [
-            "Sundered Sky",
-            "Black Cleaver",
-            "Long Sword",
-            "B. F. Sword",
-            "Mercury's Treads"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Conqueror",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-04 08:26:00",
-          "patch": "26.15",
-          "team": "T1",
-          "opponent": "Hanwha Life Esports",
-          "champion": "Naafiri",
-          "win": true,
-          "kda": "8/5/8",
-          "items": [
-            "Control Ward",
-            "Voltaic Cyclosword",
-            "Black Cleaver",
-            "Serpent's Fang",
-            "Steel Sigil",
-            "Mercury's Treads"
-          ],
-          "spells": [
-            "Smite",
-            "Flash"
-          ],
-          "keystone": "Conqueror",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        }
-      ]
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/1f/TES_JackeyLove_2026_Split_1.png/revision/latest?cb=20260325171016",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
-      "name": "Knight",
+      "name": "Kanavi",
       "page": null,
       "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LPL",
+      "role": "JUNGLE",
+      "available": false,
+      "games": 0,
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity."
+    },
+    {
+      "name": "Scout",
+      "page": null,
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LPL",
       "role": "MID",
       "available": false,
       "games": 0,
-      "note": "Chưa có scoreboard gần đây cho Knight trong khoảng 120 ngày."
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity."
     },
     {
-      "name": "Bin",
-      "page": null,
+      "name": "Tarzan",
+      "page": "Tarzan (Lee Seung-yong)",
       "targetTeam": null,
-      "role": "TOP",
-      "available": false,
-      "games": 0,
-      "note": "Chưa có scoreboard gần đây cho Bin trong khoảng 120 ngày."
+      "priority": 1,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:62922f2b370657a966de4d84f5586bf",
+      "available": true,
+      "team": "Anyone's Legend",
+      "role": "JUNGLE",
+      "games": 47,
+      "winRate": 61.7,
+      "kda": 4.63,
+      "avgKills": 3.28,
+      "avgDeaths": 2.49,
+      "avgAssists": 8.26,
+      "avgCS": 235.3,
+      "avgDamage": null,
+      "avgVision": 59.3,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 13:18:03",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Pantheon",
+          "count": 9,
+          "rate": 19.1
+        },
+        {
+          "name": "Qiyana",
+          "count": 6,
+          "rate": 12.8
+        },
+        {
+          "name": "Xin Zhao",
+          "count": 6,
+          "rate": 12.8
+        },
+        {
+          "name": "Jarvan IV",
+          "count": 5,
+          "rate": 10.6
+        },
+        {
+          "name": "Naafiri",
+          "count": 4,
+          "rate": 8.5
+        },
+        {
+          "name": "Poppy",
+          "count": 4,
+          "rate": 8.5
+        },
+        {
+          "name": "Wukong",
+          "count": 4,
+          "rate": 8.5
+        },
+        {
+          "name": "Sejuani",
+          "count": 2,
+          "rate": 4.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/eb/AL_Tarzan_2026_Split_1.png/revision/latest?cb=20260327160102",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Xiaohu",
+      "page": "Xiaohu",
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:beea9fe15bff6a7ab0b3913d3d5fde6",
+      "available": true,
+      "team": "Weibo Gaming",
+      "role": "MIDDLE",
+      "games": 49,
+      "winRate": 46.9,
+      "kda": 3.66,
+      "avgKills": 3.24,
+      "avgDeaths": 2.78,
+      "avgAssists": 6.92,
+      "avgCS": 295.5,
+      "avgDamage": null,
+      "avgVision": 48.8,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 11:05:35",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Ryze",
+          "count": 8,
+          "rate": 16.3
+        },
+        {
+          "name": "Azir",
+          "count": 6,
+          "rate": 12.2
+        },
+        {
+          "name": "Aurora",
+          "count": 5,
+          "rate": 10.2
+        },
+        {
+          "name": "Cassiopeia",
+          "count": 5,
+          "rate": 10.2
+        },
+        {
+          "name": "Syndra",
+          "count": 5,
+          "rate": 10.2
+        },
+        {
+          "name": "Taliyah",
+          "count": 4,
+          "rate": 8.2
+        },
+        {
+          "name": "Galio",
+          "count": 3,
+          "rate": 6.1
+        },
+        {
+          "name": "Orianna",
+          "count": 3,
+          "rate": 6.1
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/b/b0/WBG_Xiaohu_2026_Split_1.png/revision/latest?cb=20260328182611",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Meiko",
+      "page": "Meiko",
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:bda7cc061d7a1576f1dcad33dd505cd",
+      "available": true,
+      "team": "Invictus Gaming",
+      "role": "UTILITY",
+      "games": 5,
+      "winRate": 80,
+      "kda": 8.22,
+      "avgKills": 1.4,
+      "avgDeaths": 1.8,
+      "avgAssists": 13.4,
+      "avgCS": 34.2,
+      "avgDamage": null,
+      "avgVision": 126.2,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-08 11:21:42",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Seraphine",
+          "count": 2,
+          "rate": 40
+        },
+        {
+          "name": "Bard",
+          "count": 1,
+          "rate": 20
+        },
+        {
+          "name": "Lulu",
+          "count": 1,
+          "rate": 20
+        },
+        {
+          "name": "Nami",
+          "count": 1,
+          "rate": 20
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/c1/IG_Meiko_2026_Split_1.png/revision/latest?cb=20260327160909",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Elk",
+      "page": "Elk",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:a58a0d41103cdc5b58cbb547eeaca2d",
+      "available": true,
+      "team": "Weibo Gaming",
+      "role": "BOTTOM",
+      "games": 49,
+      "winRate": 46.9,
+      "kda": 3.94,
+      "avgKills": 5.78,
+      "avgDeaths": 2.9,
+      "avgAssists": 5.65,
+      "avgCS": 324.7,
+      "avgDamage": null,
+      "avgVision": 49.5,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 11:05:35",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Yunara",
+          "count": 9,
+          "rate": 18.4
+        },
+        {
+          "name": "Kai'Sa",
+          "count": 6,
+          "rate": 12.2
+        },
+        {
+          "name": "Sivir",
+          "count": 6,
+          "rate": 12.2
+        },
+        {
+          "name": "Corki",
+          "count": 5,
+          "rate": 10.2
+        },
+        {
+          "name": "Jhin",
+          "count": 5,
+          "rate": 10.2
+        },
+        {
+          "name": "Ashe",
+          "count": 3,
+          "rate": 6.1
+        },
+        {
+          "name": "Miss Fortune",
+          "count": 3,
+          "rate": 6.1
+        },
+        {
+          "name": "Varus",
+          "count": 3,
+          "rate": 6.1
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/5d/WBG_Elk_2026_Split_1.png/revision/latest?cb=20260328182558",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "ON",
+      "page": "ON",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:90651ebea9a35ec4e018c8157492e17",
+      "available": true,
+      "team": "Bilibili Gaming",
+      "role": "UTILITY",
+      "games": 60,
+      "winRate": 71.7,
+      "kda": 4.09,
+      "avgKills": 0.82,
+      "avgDeaths": 3.18,
+      "avgAssists": 12.22,
+      "avgCS": 34.8,
+      "avgDamage": null,
+      "avgVision": 140.4,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-09 13:07:10",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Alistar",
+          "count": 11,
+          "rate": 18.3
+        },
+        {
+          "name": "Bard",
+          "count": 10,
+          "rate": 16.7
+        },
+        {
+          "name": "Lulu",
+          "count": 7,
+          "rate": 11.7
+        },
+        {
+          "name": "Neeko",
+          "count": 6,
+          "rate": 10
+        },
+        {
+          "name": "Shen",
+          "count": 5,
+          "rate": 8.3
+        },
+        {
+          "name": "Seraphine",
+          "count": 4,
+          "rate": 6.7
+        },
+        {
+          "name": "Rakan",
+          "count": 3,
+          "rate": 5
+        },
+        {
+          "name": "Anivia",
+          "count": 2,
+          "rate": 3.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/BLG_ON_2026_Split_1.png/revision/latest?cb=20260327160426",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Missing",
+      "page": "MISSING",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:10d1208b485425756fcc932229386b0",
+      "available": true,
+      "team": "LNG Esports",
+      "role": "UTILITY",
+      "games": 21,
+      "winRate": 76.2,
+      "kda": 4.89,
+      "avgKills": 0.38,
+      "avgDeaths": 2.9,
+      "avgAssists": 13.81,
+      "avgCS": 36.4,
+      "avgDamage": null,
+      "avgVision": 145.8,
+      "latestPatch": "16.02",
+      "latestGameAt": "2026-02-11 12:10:08",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Karma",
+          "count": 3,
+          "rate": 14.3
+        },
+        {
+          "name": "Leona",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Lulu",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Nami",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Rakan",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Rell",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Renata Glasc",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Alistar",
+          "count": 1,
+          "rate": 4.8
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/25/ME_Hunamu_2018_Spring.png/revision/latest/scale-to-width-down/520?cb=20180322181454",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Creme",
+      "page": "Creme",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LPL",
+      "profileUid": "oe:player:6e7908512cb309a43388bb464a312a2",
+      "available": true,
+      "team": "Top Esports",
+      "role": "MIDDLE",
+      "games": 49,
+      "winRate": 51,
+      "kda": 3.65,
+      "avgKills": 3.73,
+      "avgDeaths": 2.67,
+      "avgAssists": 6.02,
+      "avgCS": 291.4,
+      "avgDamage": null,
+      "avgVision": 42.6,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-08 13:43:56",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Azir",
+          "count": 12,
+          "rate": 24.5
+        },
+        {
+          "name": "Ahri",
+          "count": 6,
+          "rate": 12.2
+        },
+        {
+          "name": "Akali",
+          "count": 4,
+          "rate": 8.2
+        },
+        {
+          "name": "Orianna",
+          "count": 4,
+          "rate": 8.2
+        },
+        {
+          "name": "Ryze",
+          "count": 4,
+          "rate": 8.2
+        },
+        {
+          "name": "Aurora",
+          "count": 3,
+          "rate": 6.1
+        },
+        {
+          "name": "Syndra",
+          "count": 3,
+          "rate": 6.1
+        },
+        {
+          "name": "Viktor",
+          "count": 3,
+          "rate": 6.1
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/49/TES_Creme_2026_Split_1.png/revision/latest?cb=20260328182016",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
       "name": "Caps",
@@ -3932,7 +5104,862 @@
           "primaryTree": "Sorcery",
           "secondaryTree": "Precision"
         }
-      ]
+      ],
+      "priority": 1,
+      "regionHint": "LEC",
+      "fallback": false,
+      "detailedPreservedFrom": "2026-08-19T08:39:20.515Z"
+    },
+    {
+      "name": "BrokenBlade",
+      "page": "BrokenBlade",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LEC",
+      "profileUid": "oe:player:84bff3a326833c7c9181c698f676878",
+      "available": true,
+      "team": "G2 Esports",
+      "role": "TOP",
+      "games": 44,
+      "winRate": 65.9,
+      "kda": 3.51,
+      "avgKills": 2.16,
+      "avgDeaths": 2.27,
+      "avgAssists": 5.82,
+      "avgCS": 271.7,
+      "avgDamage": null,
+      "avgVision": 44.6,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 18:36:23",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "K'Sante",
+          "count": 11,
+          "rate": 25
+        },
+        {
+          "name": "Sion",
+          "count": 6,
+          "rate": 13.6
+        },
+        {
+          "name": "Rumble",
+          "count": 5,
+          "rate": 11.4
+        },
+        {
+          "name": "Shen",
+          "count": 4,
+          "rate": 9.1
+        },
+        {
+          "name": "Poppy",
+          "count": 3,
+          "rate": 6.8
+        },
+        {
+          "name": "Renekton",
+          "count": 3,
+          "rate": 6.8
+        },
+        {
+          "name": "Gwen",
+          "count": 2,
+          "rate": 4.5
+        },
+        {
+          "name": "Kled",
+          "count": 2,
+          "rate": 4.5
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/53/G2_BrokenBlade_2026_Split_1.png/revision/latest?cb=20260117092520",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Hans Sama",
+      "page": "Hans Sama",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LEC",
+      "profileUid": "oe:player:c62a5235ad6bc113a1e64eb0e9aa8c8",
+      "available": true,
+      "team": "G2 Esports",
+      "role": "BOTTOM",
+      "games": 44,
+      "winRate": 65.9,
+      "kda": 4.44,
+      "avgKills": 4.52,
+      "avgDeaths": 2.18,
+      "avgAssists": 5.16,
+      "avgCS": 327.1,
+      "avgDamage": null,
+      "avgVision": 49.7,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 18:36:23",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Ashe",
+          "count": 6,
+          "rate": 13.6
+        },
+        {
+          "name": "Corki",
+          "count": 6,
+          "rate": 13.6
+        },
+        {
+          "name": "Kai'Sa",
+          "count": 5,
+          "rate": 11.4
+        },
+        {
+          "name": "Sivir",
+          "count": 5,
+          "rate": 11.4
+        },
+        {
+          "name": "Yunara",
+          "count": 5,
+          "rate": 11.4
+        },
+        {
+          "name": "Caitlyn",
+          "count": 4,
+          "rate": 9.1
+        },
+        {
+          "name": "Ezreal",
+          "count": 4,
+          "rate": 9.1
+        },
+        {
+          "name": "Varus",
+          "count": 4,
+          "rate": 9.1
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d9/G2_Hans_Sama_2026_Split_1.png/revision/latest?cb=20260117092525",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Mikyx",
+      "page": "Mikyx",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LEC",
+      "profileUid": "oe:player:9d5052e9f9f4a63835f738441a3b1f6",
+      "available": true,
+      "team": "SK Gaming",
+      "role": "UTILITY",
+      "games": 21,
+      "winRate": 33.3,
+      "kda": 2.15,
+      "avgKills": 0.52,
+      "avgDeaths": 4.67,
+      "avgAssists": 9.52,
+      "avgCS": 39.4,
+      "avgDamage": null,
+      "avgVision": 162.6,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 16:03:43",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Alistar",
+          "count": 3,
+          "rate": 14.3
+        },
+        {
+          "name": "Rakan",
+          "count": 3,
+          "rate": 14.3
+        },
+        {
+          "name": "Nami",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Nautilus",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Neeko",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Rell",
+          "count": 2,
+          "rate": 9.5
+        },
+        {
+          "name": "Bard",
+          "count": 1,
+          "rate": 4.8
+        },
+        {
+          "name": "Elise",
+          "count": 1,
+          "rate": 4.8
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2c/SK_Mikyx_2026_Split_3.png/revision/latest?cb=20260724190212",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Humanoid",
+      "page": "Humanoid",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LEC",
+      "profileUid": "oe:player:edf8b064c096691e539b7e2a3e28179",
+      "available": true,
+      "team": "Team Vitality",
+      "role": "MIDDLE",
+      "games": 28,
+      "winRate": 60.7,
+      "kda": 2.66,
+      "avgKills": 3.36,
+      "avgDeaths": 3.29,
+      "avgAssists": 5.39,
+      "avgCS": 333,
+      "avgDamage": null,
+      "avgVision": 41.9,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-06 19:32:40",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Azir",
+          "count": 6,
+          "rate": 21.4
+        },
+        {
+          "name": "Ryze",
+          "count": 4,
+          "rate": 14.3
+        },
+        {
+          "name": "Orianna",
+          "count": 3,
+          "rate": 10.7
+        },
+        {
+          "name": "Aurelion Sol",
+          "count": 2,
+          "rate": 7.1
+        },
+        {
+          "name": "Taliyah",
+          "count": 2,
+          "rate": 7.1
+        },
+        {
+          "name": "Zoe",
+          "count": 2,
+          "rate": 7.1
+        },
+        {
+          "name": "Ahri",
+          "count": 1,
+          "rate": 3.6
+        },
+        {
+          "name": "Annie",
+          "count": 1,
+          "rate": 3.6
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/ea/VIT_Humanoid_2026_Split_2.png/revision/latest?cb=20260721164732",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Razork",
+      "page": "Razork",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LEC",
+      "profileUid": "oe:player:390ca7b6b38d552363eba1b5b54ff18",
+      "available": true,
+      "team": "Fnatic",
+      "role": "JUNGLE",
+      "games": 23,
+      "winRate": 34.8,
+      "kda": 2.28,
+      "avgKills": 2.35,
+      "avgDeaths": 3.74,
+      "avgAssists": 6.17,
+      "avgCS": 214.5,
+      "avgDamage": null,
+      "avgVision": 58.3,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 18:36:23",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Pantheon",
+          "count": 4,
+          "rate": 17.4
+        },
+        {
+          "name": "Vi",
+          "count": 4,
+          "rate": 17.4
+        },
+        {
+          "name": "Xin Zhao",
+          "count": 4,
+          "rate": 17.4
+        },
+        {
+          "name": "Jarvan IV",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Wukong",
+          "count": 3,
+          "rate": 13
+        },
+        {
+          "name": "Zaahen",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Jayce",
+          "count": 1,
+          "rate": 4.3
+        },
+        {
+          "name": "Nocturne",
+          "count": 1,
+          "rate": 4.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f3/FNC_Razork_2026_Split_3.png/revision/latest?cb=20260724141645",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Upset",
+      "page": "Upset",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LEC",
+      "profileUid": "oe:player:fe4329cec43193c425eb28a4a4b304a",
+      "available": true,
+      "team": "Fnatic",
+      "role": "BOTTOM",
+      "games": 23,
+      "winRate": 34.8,
+      "kda": 5.38,
+      "avgKills": 4.48,
+      "avgDeaths": 1.61,
+      "avgAssists": 4.17,
+      "avgCS": 329.4,
+      "avgDamage": null,
+      "avgVision": 39.8,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 18:36:23",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Yunara",
+          "count": 8,
+          "rate": 34.8
+        },
+        {
+          "name": "Corki",
+          "count": 4,
+          "rate": 17.4
+        },
+        {
+          "name": "Ezreal",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Jhin",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Kai'Sa",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Varus",
+          "count": 2,
+          "rate": 8.7
+        },
+        {
+          "name": "Aphelios",
+          "count": 1,
+          "rate": 4.3
+        },
+        {
+          "name": "Sivir",
+          "count": 1,
+          "rate": 4.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/9b/FNC_Upset_2026_Split_3.png/revision/latest?cb=20260724141643",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Inspired",
+      "page": "Inspired",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCS",
+      "profileUid": "oe:player:a8307167f3a1c933295bb9e3d43700e",
+      "available": true,
+      "team": "LYON",
+      "role": "JUNGLE",
+      "games": 37,
+      "winRate": 54.1,
+      "kda": 5.26,
+      "avgKills": 2.62,
+      "avgDeaths": 1.65,
+      "avgAssists": 6.05,
+      "avgCS": 255.1,
+      "avgDamage": null,
+      "avgVision": 56.2,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-04 22:00:50",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Xin Zhao",
+          "count": 5,
+          "rate": 13.5
+        },
+        {
+          "name": "Jarvan IV",
+          "count": 4,
+          "rate": 10.8
+        },
+        {
+          "name": "Malphite",
+          "count": 4,
+          "rate": 10.8
+        },
+        {
+          "name": "Nocturne",
+          "count": 4,
+          "rate": 10.8
+        },
+        {
+          "name": "Wukong",
+          "count": 4,
+          "rate": 10.8
+        },
+        {
+          "name": "Vi",
+          "count": 3,
+          "rate": 8.1
+        },
+        {
+          "name": "Dr. Mundo",
+          "count": 2,
+          "rate": 5.4
+        },
+        {
+          "name": "Pantheon",
+          "count": 2,
+          "rate": 5.4
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/fa/LYON_Inspired_2026_Split_1.png/revision/latest?cb=20260124041829",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Bwipo",
+      "page": null,
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCS",
+      "role": "TOP",
+      "available": false,
+      "games": 0,
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity."
+    },
+    {
+      "name": "CoreJJ",
+      "page": "CoreJJ",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCS",
+      "profileUid": "oe:player:05fafeaf23dc3285558a4e968970b9f",
+      "available": true,
+      "team": "Team Liquid",
+      "role": "UTILITY",
+      "games": 18,
+      "winRate": 55.6,
+      "kda": 3.89,
+      "avgKills": 0.94,
+      "avgDeaths": 2.61,
+      "avgAssists": 9.22,
+      "avgCS": 32.2,
+      "avgDamage": null,
+      "avgVision": 126,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 21:51:16",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Nami",
+          "count": 4,
+          "rate": 22.2
+        },
+        {
+          "name": "Neeko",
+          "count": 3,
+          "rate": 16.7
+        },
+        {
+          "name": "Bard",
+          "count": 2,
+          "rate": 11.1
+        },
+        {
+          "name": "Lulu",
+          "count": 2,
+          "rate": 11.1
+        },
+        {
+          "name": "Alistar",
+          "count": 1,
+          "rate": 5.6
+        },
+        {
+          "name": "Karma",
+          "count": 1,
+          "rate": 5.6
+        },
+        {
+          "name": "Rakan",
+          "count": 1,
+          "rate": 5.6
+        },
+        {
+          "name": "Rell",
+          "count": 1,
+          "rate": 5.6
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/80/TL_CoreJJ_2026_Split_1.png/revision/latest?cb=20260124041859",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Levi",
+      "page": null,
+      "targetTeam": null,
+      "priority": 1,
+      "regionHint": "LCP/VCS",
+      "role": "JUNGLE",
+      "available": false,
+      "games": 0,
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Chưa resolve được duy nhất tuyển thủ active trong Worldwide Esports Directory; không tự đoán identity."
+    },
+    {
+      "name": "Kiaya",
+      "page": "Kiaya",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCP/VCS",
+      "profileUid": "oe:player:73e08f7701a4316284cbe884b5d7e56",
+      "available": true,
+      "team": "GAM Esports",
+      "role": "TOP",
+      "games": 22,
+      "winRate": 45.5,
+      "kda": 2.36,
+      "avgKills": 2.14,
+      "avgDeaths": 2.91,
+      "avgAssists": 4.73,
+      "avgCS": 304,
+      "avgDamage": null,
+      "avgVision": 55.4,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 12:06:46",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Gnar",
+          "count": 4,
+          "rate": 18.2
+        },
+        {
+          "name": "Ambessa",
+          "count": 3,
+          "rate": 13.6
+        },
+        {
+          "name": "Gwen",
+          "count": 3,
+          "rate": 13.6
+        },
+        {
+          "name": "Rumble",
+          "count": 3,
+          "rate": 13.6
+        },
+        {
+          "name": "Renekton",
+          "count": 2,
+          "rate": 9.1
+        },
+        {
+          "name": "Aurora",
+          "count": 1,
+          "rate": 4.5
+        },
+        {
+          "name": "Jax",
+          "count": 1,
+          "rate": 4.5
+        },
+        {
+          "name": "Jayce",
+          "count": 1,
+          "rate": 4.5
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/4d/GAM_Kiaya_2026_Split_1.png/revision/latest?cb=20260124180148",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Shogun",
+      "page": "Shogun (Nguyễn Văn Huy)",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCP/VCS",
+      "profileUid": "oe:player:60d1428b9206634f3feb66e4b8ebd59",
+      "available": true,
+      "team": "MVK Esports",
+      "role": "BOTTOM",
+      "games": 19,
+      "winRate": 42.1,
+      "kda": 3.26,
+      "avgKills": 3.68,
+      "avgDeaths": 2.47,
+      "avgAssists": 4.37,
+      "avgCS": 364.8,
+      "avgDamage": null,
+      "avgVision": 49.2,
+      "latestPatch": "16.02",
+      "latestGameAt": "2026-02-08 10:25:21",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Corki",
+          "count": 3,
+          "rate": 15.8
+        },
+        {
+          "name": "Sivir",
+          "count": 3,
+          "rate": 15.8
+        },
+        {
+          "name": "Varus",
+          "count": 2,
+          "rate": 10.5
+        },
+        {
+          "name": "Yunara",
+          "count": 2,
+          "rate": 10.5
+        },
+        {
+          "name": "Ziggs",
+          "count": 2,
+          "rate": 10.5
+        },
+        {
+          "name": "Aphelios",
+          "count": 1,
+          "rate": 5.3
+        },
+        {
+          "name": "Ashe",
+          "count": 1,
+          "rate": 5.3
+        },
+        {
+          "name": "Ezreal",
+          "count": 1,
+          "rate": 5.3
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/6/68/SGB_Shogun_2021_Split_2.png/revision/latest/scale-to-width-down/520?cb=20210616143751",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
+    },
+    {
+      "name": "Artemis",
+      "page": "Artemis (Trần Quốc Hưng)",
+      "targetTeam": null,
+      "priority": 2,
+      "regionHint": "LCP/VCS",
+      "profileUid": "oe:player:9d2474b953a3a0be93880409ccceb4e",
+      "available": true,
+      "team": "GAM Esports",
+      "role": "BOTTOM",
+      "games": 22,
+      "winRate": 45.5,
+      "kda": 3.25,
+      "avgKills": 5,
+      "avgDeaths": 3.14,
+      "avgAssists": 5.18,
+      "avgCS": 348,
+      "avgDamage": null,
+      "avgVision": 44.4,
+      "latestPatch": "16.07",
+      "latestGameAt": "2026-04-05 12:06:46",
+      "styleSummary": "Basic stats lấy từ Worldwide Esports Directory do Leaguepedia Cargo throttled.",
+      "championPool": [
+        {
+          "name": "Yunara",
+          "count": 5,
+          "rate": 22.7
+        },
+        {
+          "name": "Corki",
+          "count": 3,
+          "rate": 13.6
+        },
+        {
+          "name": "Miss Fortune",
+          "count": 3,
+          "rate": 13.6
+        },
+        {
+          "name": "Sivir",
+          "count": 3,
+          "rate": 13.6
+        },
+        {
+          "name": "Ezreal",
+          "count": 2,
+          "rate": 9.1
+        },
+        {
+          "name": "Jhin",
+          "count": 2,
+          "rate": 9.1
+        },
+        {
+          "name": "Ashe",
+          "count": 1,
+          "rate": 4.5
+        },
+        {
+          "name": "Kai'Sa",
+          "count": 1,
+          "rate": 4.5
+        }
+      ],
+      "commonBuilds": [],
+      "commonItems": [],
+      "commonRunes": [],
+      "commonSpells": [],
+      "teamBanPriorities": [],
+      "recentGames": [],
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/3d/GAM_Artemis_2026_Split_1.png/revision/latest?cb=20260124180144",
+      "fallback": true,
+      "fallbackSource": "Leaguepedia Cargo throttled",
+      "note": "Basic performance fallback từ Worldwide Esports Directory; build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
   ]
 }
