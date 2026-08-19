@@ -19,6 +19,8 @@ on:
       - 'public/ambient.css'
       - 'public/js/assets.js'
       - 'public/assets-library.css'
+      - 'public/js/hall-of-legends.js'
+      - 'public/hall-of-legends.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
@@ -42,6 +44,8 @@ on:
       - 'public/ambient.css'
       - 'public/js/assets.js'
       - 'public/assets-library.css'
+      - 'public/js/hall-of-legends.js'
+      - 'public/hall-of-legends.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
@@ -72,6 +76,7 @@ jobs:
           node --check public/js/together-finisher.js
           node --check public/js/ambient.js
           node --check public/js/assets.js
+          node --check public/js/hall-of-legends.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
       - name: Verify Together as 1 v3 only
@@ -79,11 +84,20 @@ jobs:
           grep -q 'together-finisher-v3' public/js/together-finisher.js
           grep -q 'together-finisher-v3' public/together-finisher.css
           grep -q 'TOGETHER_FINISHER_DURATION = 6200' public/js/together-finisher.js
-          grep -q "APP_VERSION = '3.12.0'" public/app.js
+          grep -q "APP_VERSION = '3.13.0'" public/app.js
           if grep -Eq 'together-finisher-v2|worlds-takeover' public/js/together-finisher.js public/together-finisher.css public/js/site-effects.js public/site-effects.css; then
             echo 'Legacy Together v2 / Worlds takeover markup is still present.'
             exit 1
           fi
+      - name: Verify Hall of Legends 2024-2026
+        run: |
+          grep -q "player: 'Faker'" public/js/hall-of-legends.js
+          grep -q "player: 'Uzi'" public/js/hall-of-legends.js
+          grep -q "player: 'Caps'" public/js/hall-of-legends.js
+          grep -q 'year: 2026' public/js/hall-of-legends.js
+          grep -q 'initHallOfLegends' public/app.js
+          grep -q 'ensureHallOfLegends' public/app.js
+          grep -q 'hol-section' public/hall-of-legends.css
       - name: Start WebLienMinh
         run: |
           npm start > /tmp/weblienminh.log 2>&1 &
