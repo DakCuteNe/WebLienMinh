@@ -10,7 +10,9 @@ on:
     paths:
       - '.github/workflows/update-pros.yml'
       - 'scripts/update-pros.js'
+      - 'scripts/reconcile-featured-pros.js'
       - 'data/pro-watchlist.json'
+      - 'data/esports-directory.json'
 
 permissions:
   contents: write
@@ -41,6 +43,15 @@ jobs:
           set +e
           npm run update:pros 2>&1 | tee pros.log
           CODE=${PIPESTATUS[0]}
+
+          if [ -f data/pros.json ] && [ -f data/esports-directory.json ]; then
+            node scripts/reconcile-featured-pros.js 2>&1 | tee -a pros.log
+            RECON_CODE=${PIPESTATUS[0]}
+            if [ "$RECON_CODE" != "0" ]; then
+              CODE=$RECON_CODE
+            fi
+          fi
+
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           exit 0
 
@@ -53,15 +64,22 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs/promises';
           let log = '';
+          let pros = null;
           try { log = await fs.readFile('pros.log', 'utf8'); } catch {}
+          try { pros = JSON.parse(await fs.readFile('data/pros.json', 'utf8')); } catch {}
           const code = Number(process.env.EXIT_CODE ?? -1);
+          const dataAvailable = Boolean(pros);
           const status = {
             checkedAt: new Date().toISOString(),
-            health: code === 0 ? 'ok' : 'degraded',
+            health: code === 0 ? 'ok' : (dataAvailable ? 'degraded' : 'waiting'),
             exitCode: code,
-            preservedPreviousData: code !== 0,
-            message: log.trim().split(/\r?\n/).filter(Boolean).slice(-20).join('\n').slice(0, 5000),
-            dataAvailable: await fs.access('data/pros.json').then(() => true).catch(() => false)
+            upstreamDegraded: Boolean(pros?.degraded),
+            hybridFallback: Boolean(pros?.degraded && pros?.reconciledAt),
+            preservedPreviousData: Number(pros?.preservedDetailedCount || 0) > 0,
+            watchCount: Number(pros?.watchCount || pros?.players?.length || 0),
+            reconcileStats: pros?.reconcileStats || null,
+            message: log.trim().split(/\r?\n/).filter(Boolean).slice(-25).join('\n').slice(0, 7000),
+            dataAvailable
           };
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile('data/pros-status.json', JSON.stringify(status, null, 2));
