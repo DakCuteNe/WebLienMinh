@@ -1,0 +1,109 @@
+/* Rift Meta Global 2.9 — Worlds player tributes + championship FX */
+.worlds-section{--worlds-accent:#f05b5b}
+body.worlds-active .rift-ambient{opacity:1;filter:saturate(1.08)}
+body.worlds-active .aurora-a{opacity:.38;filter:blur(42px) saturate(1.18)}
+body.worlds-active .aurora-b{opacity:.34;filter:blur(42px) saturate(1.16)}
+body.worlds-active .rift-beam{opacity:.22}
+body.worlds-active .rift-rune{border-color:color-mix(in srgb,var(--worlds-accent) 24%,rgba(101,219,207,.08));box-shadow:0 0 55px color-mix(in srgb,var(--worlds-accent) 8%,transparent)}
+body.worlds-active .rift-horizon::before{background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--worlds-accent) 58%,#65e6db),transparent);box-shadow:0 0 42px color-mix(in srgb,var(--worlds-accent) 20%,transparent)}
+
+.worlds-section::after{content:"";position:absolute;left:50%;top:165px;width:min(980px,88vw);height:520px;translate:-50% 0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--worlds-accent) 9%,transparent),transparent 63%);filter:blur(2px);transition:background .45s ease}
+.worlds-crown{animation:worldCrownFloat 6.5s ease-in-out infinite;transform-origin:center}
+.worlds-crown>i{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--worlds-accent);filter:blur(1px);box-shadow:0 0 22px var(--worlds-accent);opacity:.38;animation:worldCrownSpark 2.6s ease-in-out infinite}
+.worlds-crown>span{animation:worldCrownRing 14s linear infinite}
+.worlds-crown>span:nth-child(2){animation-direction:reverse;animation-duration:18s}
+.worlds-crown>span:nth-child(3){animation-duration:11s}
+
+.world-year{isolation:isolate}
+.world-year::before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;background:radial-gradient(circle at 50% 140%,color-mix(in srgb,var(--team-accent) 24%,transparent),transparent 58%);opacity:0;transition:opacity .24s ease}
+.world-year:hover::before,.world-year.active::before{opacity:1}
+.world-year.active{box-shadow:0 10px 32px color-mix(in srgb,var(--team-accent) 12%,transparent),inset 0 0 24px color-mix(in srgb,var(--team-accent) 7%,transparent)}
+.world-year.active b{text-shadow:0 0 16px color-mix(in srgb,var(--team-accent) 48%,transparent)}
+
+.worlds-selected{animation:worldPanelIn .5s cubic-bezier(.2,.8,.2,1) both}
+.worlds-stage-fx{position:absolute;left:50%;top:-58px;width:min(760px,76vw);height:270px;translate:-50% 0;z-index:-1;pointer-events:none;overflow:visible}
+.worlds-stage-fx>span{position:absolute;left:50%;top:44%;border:1px solid color-mix(in srgb,var(--world-accent) 20%,transparent);border-radius:50%;translate:-50% -50%;filter:drop-shadow(0 0 18px color-mix(in srgb,var(--world-accent) 12%,transparent))}
+.worlds-stage-fx>span:nth-child(1){width:390px;height:132px;animation:worldStageOrbit 14s linear infinite}
+.worlds-stage-fx>span:nth-child(2){width:530px;height:180px;opacity:.55;animation:worldStageOrbitReverse 19s linear infinite}
+.worlds-stage-fx>span:nth-child(3){width:660px;height:226px;opacity:.3;animation:worldStageOrbit 27s linear infinite}
+.worlds-stage-fx>b{position:absolute;inset:8% 5%;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--world-accent) 16%,transparent),transparent 62%);filter:blur(20px);animation:worldStageGlow 4.6s ease-in-out infinite alternate}
+
+.worlds-champion-card{isolation:isolate;transition:border-color .4s ease,box-shadow .4s ease,background .4s ease}
+.worlds-champion-card::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,transparent 15%,color-mix(in srgb,var(--world-accent) 8%,transparent) 45%,transparent 72%);translate:-80% 0;animation:worldChampionSweep 5.8s ease-in-out infinite}
+.worlds-champion-card:hover{box-shadow:0 30px 84px rgba(0,0,0,.28),0 0 44px color-mix(in srgb,var(--world-accent) 7%,transparent)}
+.worlds-trophy-mark{overflow:hidden}
+.worlds-trophy-mark::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 32%,color-mix(in srgb,var(--world-accent) 48%,transparent) 43%,transparent 54% 100%);animation:worldTrophySpin 5s linear infinite}
+.worlds-trophy-mark>*{position:relative;z-index:1}
+.worlds-trophy-mark i{position:absolute;inset:10px;border-radius:12px;z-index:0;box-shadow:inset 0 0 22px color-mix(in srgb,var(--world-accent) 18%,transparent);animation:worldTrophyPulse 2.3s ease-in-out infinite}
+.worlds-mvp-meta{color:#f0d88f!important;border-color:rgba(231,195,111,.26)!important;background:rgba(231,195,111,.055)!important}
+
+.worlds-roster-strip{margin:12px 0 3px;padding:12px 14px;border:1px solid rgba(126,159,193,.12);border-radius:14px;background:rgba(8,16,26,.62);backdrop-filter:blur(10px)}
+.worlds-roster-strip>small{display:block;margin-bottom:8px;color:#71879e;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.worlds-roster-strip>div{display:flex;gap:7px;flex-wrap:wrap}
+.worlds-roster-player{display:grid;grid-template-columns:30px auto auto;grid-template-areas:"avatar name role" "avatar mvp mvp";align-items:center;gap:0 7px;min-height:40px;padding:5px 9px 5px 6px;border:1px solid #24364b;border-radius:12px;background:linear-gradient(145deg,#0c1724,#09121d);color:#d8e6f2;cursor:pointer;text-align:left;transition:transform .2s ease,border-color .2s ease,box-shadow .25s ease}
+.worlds-roster-player>span{grid-area:avatar;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:color-mix(in srgb,var(--world-accent) 11%,#101d2c);border:1px solid color-mix(in srgb,var(--world-accent) 23%,#26394e);color:#eef7ff;font-size:9px;font-weight:950}
+.worlds-roster-player>b{grid-area:name;font-size:10px}
+.worlds-roster-player>em{grid-area:role;font-size:8px;font-style:normal;color:#71869b}
+.worlds-roster-player>i{grid-area:mvp;font-size:7px;font-style:normal;color:#e8c86e;letter-spacing:.04em}
+.worlds-roster-player:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--worlds-accent) 33%,#2b4057);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.worlds-roster-player.mvp{border-color:rgba(230,195,105,.27);box-shadow:inset 0 0 22px rgba(230,195,105,.035)}
+
+.world-skin{isolation:isolate}
+.world-skin::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--world-accent) 0%,transparent);transition:box-shadow .28s ease}
+.world-skin:hover::after{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--world-accent) 20%,transparent),inset 0 -70px 80px color-mix(in srgb,var(--world-accent) 4%,transparent)}
+.skin-player-watermark{position:absolute;right:10px;bottom:5px;z-index:2;font-size:54px;line-height:1;font-weight:1000;letter-spacing:-.08em;color:rgba(255,255,255,.055);text-shadow:0 0 24px color-mix(in srgb,var(--world-accent) 14%,transparent);user-select:none}
+.world-skin.special .skin-player-watermark{color:rgba(238,207,126,.08)}
+.world-skin-honoree{display:grid;grid-template-columns:34px 1fr 28px;gap:8px;align-items:center;margin:9px 0 8px;padding:7px;border:1px solid #21344a;border-radius:11px;background:rgba(7,15,24,.72)}
+.honoree-mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,color-mix(in srgb,var(--world-accent) 15%,#132234),#09121c);border:1px solid color-mix(in srgb,var(--world-accent) 24%,#2a3d53);color:#eff8ff;font-size:9px;font-weight:950;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.world-skin-honoree div{min-width:0}
+.world-skin-honoree div small{display:block;color:#698096;font-size:7px;letter-spacing:.09em;text-transform:uppercase}
+.world-skin-honoree strong{display:inline-block;margin-top:1px;color:#edf5fc;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.world-skin-honoree em{display:inline-block;margin-left:6px;color:var(--world-accent);font-size:8px;font-style:normal;font-weight:850}
+.world-player-open{width:28px;height:28px;border-radius:9px;border:1px solid #293d54;background:#0c1724;color:#8ba0b5;cursor:pointer;transition:transform .2s ease,color .2s ease,border-color .2s ease}
+.world-player-open:hover{transform:translateY(-1px) rotate(-4deg);color:#eefbf9;border-color:color-mix(in srgb,var(--world-accent) 40%,#294057)}
+.world-skin.special .world-skin-honoree{border-color:rgba(229,195,105,.23);background:rgba(91,67,17,.08)}
+.world-skin.special .honoree-mark{border-color:rgba(229,195,105,.28);background:linear-gradient(145deg,rgba(177,132,41,.18),#0c151f);color:#f4dda1}
+
+.worlds-burst{position:absolute;left:50%;top:88px;width:8px;height:8px;z-index:8;pointer-events:none;animation:worldBurstFade 1s ease-out both}
+.worlds-burst i{position:absolute;left:0;top:0;width:5px;height:5px;border-radius:50%;background:var(--world-accent);box-shadow:0 0 14px var(--world-accent);transform:rotate(var(--a)) translateX(0);animation:worldBurstParticle .86s cubic-bezier(.15,.72,.27,1) both;animation-delay:calc(var(--i) * 8ms)}
+
+.world-skin-grid .world-skin{animation:worldSkinRise .48s cubic-bezier(.2,.8,.2,1) both}
+.world-skin-grid .world-skin:nth-child(2){animation-delay:35ms}
+.world-skin-grid .world-skin:nth-child(3){animation-delay:70ms}
+.world-skin-grid .world-skin:nth-child(4){animation-delay:105ms}
+.world-skin-grid .world-skin:nth-child(5){animation-delay:140ms}
+.world-skin-grid .world-skin:nth-child(6){animation-delay:175ms}
+.world-skin-grid .world-skin:nth-child(7){animation-delay:210ms}
+
+@keyframes worldPanelIn{from{opacity:.25;transform:translateY(12px) scale(.992)}to{opacity:1;transform:none}}
+@keyframes worldCrownFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -9px;rotate:2deg}}
+@keyframes worldCrownSpark{0%,100%{opacity:.18;scale:.72}50%{opacity:.62;scale:1.18}}
+@keyframes worldCrownRing{to{rotate:360deg}}
+@keyframes worldStageOrbit{to{rotate:360deg}}
+@keyframes worldStageOrbitReverse{to{rotate:-360deg}}
+@keyframes worldStageGlow{to{opacity:.46;scale:1.05}}
+@keyframes worldChampionSweep{0%,28%{translate:-90% 0;opacity:0}42%{opacity:1}68%,100%{translate:90% 0;opacity:0}}
+@keyframes worldTrophySpin{to{rotate:360deg}}
+@keyframes worldTrophyPulse{0%,100%{opacity:.45;scale:.92}50%{opacity:1;scale:1}}
+@keyframes worldBurstFade{0%{opacity:1}75%{opacity:1}100%{opacity:0}}
+@keyframes worldBurstParticle{0%{opacity:0;transform:rotate(var(--a)) translateX(6px) scale(.3)}15%{opacity:1}100%{opacity:0;transform:rotate(var(--a)) translateX(130px) scale(1)}}
+@keyframes worldSkinRise{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+
+@media(max-width:800px){
+  body.worlds-active .rift-ambient{opacity:.78}
+  .worlds-stage-fx{width:96vw;opacity:.55}
+  .worlds-stage-fx>span:nth-child(3){display:none}
+  .worlds-roster-strip{padding:10px}
+  .worlds-roster-player{grid-template-columns:28px auto auto}
+  .worlds-roster-player>span{width:28px;height:28px}
+}
+@media(max-width:560px){
+  .worlds-roster-player{flex:1 1 132px}
+  .skin-player-watermark{font-size:46px}
+  .worlds-burst{top:72px}
+}
+@media(prefers-reduced-motion:reduce){
+  .worlds-crown,.worlds-crown>span,.worlds-crown>i,.worlds-stage-fx>span,.worlds-stage-fx>b,.worlds-champion-card::before,.worlds-trophy-mark::before,.worlds-trophy-mark i,.worlds-selected,.world-skin-grid .world-skin,.worlds-burst,.worlds-burst i{animation:none!important}
+  .worlds-burst{display:none}
+  body.worlds-active .rift-ambient{filter:none}
+}
