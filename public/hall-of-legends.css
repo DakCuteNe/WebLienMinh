@@ -277,3 +277,24 @@ body.hall-legends-active .ambient-horizon{opacity:.3}
   .hol-section.active-section .hol-hero,.hol-section.active-section .hol-timeline,.hol-section.active-section .hol-official-banner,.hol-section.active-section .hol-spotlight,.hol-section.active-section .hol-gallery-head,.hol-section.active-section .hol-gallery,.hol-switching .hol-spotlight,.hol-switching .hol-spotlight-copy>*{animation:none!important}
   .hol-year,.hol-card,.hol-official-banner,.hol-portrait img{transition:none!important}
 }
+
+/* Vietnamese-safe Hall display typography */
+.hol-hero h1,
+.hol-official-banner-copy strong,
+.hol-spotlight-copy h3{
+  font-family:"Times New Roman","Noto Serif",Cambria,serif;
+  font-kerning:normal;
+  text-rendering:optimizeLegibility;
+}
+.hol-hero h1{
+  letter-spacing:-.015em;
+  line-height:1.02;
+}
+.hol-official-banner-copy strong{
+  letter-spacing:-.015em;
+  line-height:1.02;
+}
+.hol-spotlight-copy h3{
+  letter-spacing:0;
+  line-height:1.18;
+}
