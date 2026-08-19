@@ -12,6 +12,15 @@ const revealBound = new WeakSet();
 let revealObserver = null;
 let scrollTicking = false;
 
+function ensureUxCss() {
+  if (document.querySelector('link[data-rift-ux]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = '/ux.css';
+  link.dataset.riftUx = 'true';
+  document.head.appendChild(link);
+}
+
 function ensureProgress() {
   if (document.getElementById('uxScrollProgress')) return;
   const progress = document.createElement('div');
@@ -233,6 +242,7 @@ function initNavigationUx() {
 }
 
 export function initUX() {
+  ensureUxCss();
   document.documentElement.classList.add('ux-ready');
   ensureProgress();
   ensureBackToTop();
