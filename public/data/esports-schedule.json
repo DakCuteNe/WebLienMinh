@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T13:51:11.695Z",
+  "generatedAt": "2026-08-19T14:26:57.734Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -7171,7 +7171,7 @@
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
