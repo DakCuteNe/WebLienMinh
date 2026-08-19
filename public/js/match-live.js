@@ -243,7 +243,7 @@ function attachCard(card) {
       if (card._livePayload) renderPanel(card, card._livePayload);
     }
   };
-  pollCard(card, false, true);
+  if (withinLiveWindow(card)) pollCard(card, false, true);
 }
 
 function scan() {
