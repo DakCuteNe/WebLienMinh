@@ -4,11 +4,28 @@ const SETTINGS_KEY = 'rift:riot-youtube-music:v2';
 const YOUTUBE_CHANNEL = 'https://www.youtube.com/@leagueoflegends';
 
 const TRACKS = {
-  'yt-rise': { icon: '⛰', title: 'RISE', subtitle: 'Worlds 2018 • The Glitch Mob, Mako & The Word Alive', videoId: 'fB8TyLTD7EE', year: 2018 },
-  'yt-legends': { icon: '♜', title: 'Legends Never Die', subtitle: 'Worlds 2017 • Against The Current', videoId: 'r6zIGXun57U', year: 2017 },
-  'yt-gods': { icon: '⚡', title: 'GODS', subtitle: 'Worlds 2023 • NewJeans', videoId: 'C3GouGa0noM', year: 2023 },
-  'yt-heavy': { icon: '♛', title: 'Heavy Is The Crown', subtitle: 'Worlds 2024 • Linkin Park', videoId: '5FrhtahQiRc', year: 2024 },
-  'yt-sacrifice': { icon: '✦', title: 'Sacrifice', subtitle: 'Worlds 2025 • G.E.M. (鄧紫棋)', videoId: 'pzt6SmvGpXk', year: 2025 }
+  'yt-warriors-2014': { icon: '⚔', title: 'Warriors', subtitle: 'Worlds 2014 • Imagine Dragons', videoId: 'fmI_Ndrxy14', year: 2014, group: 'worlds' },
+  'yt-worlds-collide': { icon: '✧', title: 'Worlds Collide', subtitle: 'Worlds 2015 • Nicki Taylor', videoId: '4Twd965VzX4', year: 2015, group: 'worlds' },
+  'yt-ignite': { icon: '🔥', title: 'Ignite', subtitle: 'Worlds 2016 • Zedd', videoId: 'Zasx9hjo4WY', year: 2016, group: 'worlds' },
+  'yt-legends': { icon: '♜', title: 'Legends Never Die', subtitle: 'Worlds 2017 • Against The Current', videoId: 'r6zIGXun57U', year: 2017, group: 'worlds' },
+  'yt-rise': { icon: '⛰', title: 'RISE', subtitle: 'Worlds 2018 • The Glitch Mob, Mako & The Word Alive', videoId: 'fB8TyLTD7EE', year: 2018, group: 'worlds' },
+  'yt-phoenix': { icon: '🜂', title: 'Phoenix', subtitle: 'Worlds 2019 • Cailin Russo & Chrissy Costanza', videoId: 'i1IKnWDecwA', year: 2019, group: 'worlds' },
+  'yt-take-over': { icon: '👑', title: 'Take Over', subtitle: 'Worlds 2020 • Jeremy McKinnon, MAX & Henry', videoId: 'KbNL9ZyB49c', year: 2020, group: 'worlds' },
+  'yt-burn-it-all-down': { icon: '♨', title: 'Burn It All Down', subtitle: 'Worlds 2021 • PVRIS', videoId: '1Z6CHioIn3s', year: 2021, group: 'worlds' },
+  'yt-star-walkin': { icon: '★', title: "STAR WALKIN'", subtitle: 'Worlds 2022 • Lil Nas X', videoId: 'HYsz1hP0BFo', year: 2022, group: 'worlds' },
+  'yt-gods': { icon: '⚡', title: 'GODS', subtitle: 'Worlds 2023 • NewJeans', videoId: 'C3GouGa0noM', year: 2023, group: 'worlds' },
+  'yt-heavy': { icon: '♛', title: 'Heavy Is The Crown', subtitle: 'Worlds 2024 • Linkin Park', videoId: '5FrhtahQiRc', year: 2024, group: 'worlds' },
+  'yt-sacrifice': { icon: '✦', title: 'Sacrifice', subtitle: 'Worlds 2025 • G.E.M. (鄧紫棋)', videoId: 'pzt6SmvGpXk', year: 2025, group: 'worlds' },
+
+  'yt-pop-stars': { icon: '◆', title: 'POP/STARS', subtitle: 'K/DA • Madison Beer, (G)I-DLE & Jaira Burns', videoId: 'UOxkGD8qRB4', year: 2018, group: 'music' },
+  'yt-giants': { icon: '⬢', title: 'GIANTS', subtitle: 'True Damage • Becky G, Keke Palmer, SOYEON, DUCKWRTH & Thutmose', videoId: 'sVZpHFXcFJw', year: 2019, group: 'music' },
+  'yt-more': { icon: '◇', title: 'MORE', subtitle: 'K/DA • Madison Beer, (G)I-DLE, Lexie Liu, Jaira Burns & Seraphine', videoId: '3VTkBuxU4yk', year: 2020, group: 'music' },
+  'yt-get-jinxed': { icon: '💥', title: 'Get Jinxed', subtitle: 'Jinx Music Video • Agnete Kjølsrud', videoId: '0nlJuwO0GDs', year: 2013, group: 'music' },
+
+  'yt-awaken': { icon: '◉', title: 'Awaken', subtitle: 'Season 2019 Cinematic • Valerie Broussard', videoId: 'zF5Ddo9JdpY', year: 2019, group: 'cinematic' },
+  'yt-warriors-2020': { icon: '🛡', title: 'Warriors', subtitle: 'Season 2020 Cinematic • 2WEI & Edda Hayes', videoId: 'aR-KAldshAE', year: 2020, group: 'cinematic' },
+  'yt-the-call': { icon: '📯', title: 'The Call', subtitle: 'Season 2022 Cinematic • 2WEI, Louis Leibfried & Edda Hayes', videoId: 'mDYqT0_9VR4', year: 2022, group: 'cinematic' },
+  'yt-still-here': { icon: '∞', title: 'Still Here', subtitle: 'Season 2024 Cinematic • Forts, Tiffany Aris & 2WEI', videoId: 'ZHhqwBwmRkI', year: 2024, group: 'cinematic' }
 };
 
 const COPY = {
@@ -20,7 +37,8 @@ const COPY = {
     autoplay: 'Tự phát khi vào web', muted: 'Trình duyệt chặn autoplay có tiếng • nhạc đang chạy muted và sẽ tự bật tiếng ở lần click/tap đầu tiên.',
     loading: 'Đang kết nối YouTube…', unavailable: 'YouTube player không khả dụng hoặc video không cho phép nhúng.',
     dock: 'Riot Music • YouTube', close: 'Dừng Riot Music', panelClose: 'Đóng', openPanel: 'Mở Riot Music',
-    autoplayInfo: 'Riot Music tự khởi động khi vào web. Nếu browser chặn âm thanh, player sẽ chạy muted trước rồi tự unmute sau tương tác đầu tiên.'
+    autoplayInfo: 'Riot Music tự khởi động khi vào web. Nếu browser chặn âm thanh, player sẽ chạy muted trước rồi tự unmute sau tương tác đầu tiên.',
+    groupWorlds: '🏆 Worlds / CKTG 2014–2025', groupMusic: '🎤 K/DA • True Damage • Riot Music', groupCinematic: '🎬 Season / Cinematic'
   },
   en: {
     title: 'Riot Music', subtitle: 'Official YouTube • League of Legends', playing: 'Playing', stopped: 'Off',
@@ -30,7 +48,8 @@ const COPY = {
     autoplay: 'Autoplay on entry', muted: 'The browser blocked audible autoplay • playback is muted and will unmute on your first click/tap.',
     loading: 'Connecting to YouTube…', unavailable: 'The YouTube player is unavailable or this video cannot be embedded.',
     dock: 'Riot Music • YouTube', close: 'Stop Riot Music', panelClose: 'Close', openPanel: 'Open Riot Music',
-    autoplayInfo: 'Riot Music starts automatically when the site opens. If audible autoplay is blocked, it starts muted and unmutes after the first interaction.'
+    autoplayInfo: 'Riot Music starts automatically when the site opens. If audible autoplay is blocked, it starts muted and unmutes after the first interaction.',
+    groupWorlds: '🏆 Worlds 2014–2025', groupMusic: '🎤 K/DA • True Damage • Riot Music', groupCinematic: '🎬 Season / Cinematic'
   }
 };
 
@@ -83,7 +102,7 @@ function ensureCss() {
   if (document.querySelector('link[data-riot-music]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/riot-music.css?v=3.6.0';
+  link.href = '/riot-music.css?v=3.7.0';
   link.dataset.riotMusic = 'true';
   document.head.appendChild(link);
 }
@@ -96,10 +115,19 @@ function track(id) { return TRACKS[id] || TRACKS['yt-rise']; }
 function youtubeUrl(id) { return `https://www.youtube.com/watch?v=${track(id).videoId}`; }
 
 function options(selected) {
-  return Object.entries(TRACKS)
-    .sort((a, b) => Number(b[1].year || 0) - Number(a[1].year || 0))
-    .map(([id, item]) => `<option value="${id}" ${selected === id ? 'selected' : ''}>${item.icon} ${item.title} • ${item.year}</option>`)
-    .join('');
+  const groups = [
+    ['worlds', text().groupWorlds],
+    ['music', text().groupMusic],
+    ['cinematic', text().groupCinematic]
+  ];
+  return groups.map(([group, label]) => {
+    const rows = Object.entries(TRACKS)
+      .filter(([, item]) => item.group === group)
+      .sort((a, b) => Number(b[1].year || 0) - Number(a[1].year || 0))
+      .map(([id, item]) => `<option value="${id}" ${selected === id ? 'selected' : ''}>${item.icon} ${item.title} • ${item.year}</option>`)
+      .join('');
+    return `<optgroup label="${label}">${rows}</optgroup>`;
+  }).join('');
 }
 
 function updateBody() {

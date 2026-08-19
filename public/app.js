@@ -13,7 +13,7 @@ import { initLiveMatchCenter } from './js/match-live.js';
 import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
 
-const APP_VERSION = '3.6.0';
+const APP_VERSION = '3.7.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
