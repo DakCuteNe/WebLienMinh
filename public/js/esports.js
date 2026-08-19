@@ -56,7 +56,8 @@ function metric(label, value, suffix = '') {
 }
 
 function playerKey(p) {
-  return p.overviewPage || p.identityId || p.uid || p.id;
+  // uid comes from the match dataset and remains unique even when two pros share the same IGN.
+  return p.uid || p.identityId || p.overviewPage || p.id;
 }
 
 function teamKey(team) {
