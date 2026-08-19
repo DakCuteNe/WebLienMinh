@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-08-19T05:05:02.896Z",
+  "checkedAt": "2026-08-19T08:05:49.409Z",
   "health": "degraded",
-  "exitCode": 1,
+  "exitCode": 75,
   "preservedPreviousData": true,
-  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (1/8)...\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (2/8)...\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (3/8)...\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (4/8)...\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (5/8)...\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (6/8)...\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (7/8)...\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:64\n      throw new Error(`Leaguepedia Cargo: ${info}`);\n            ^\nError: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\n    at fetchCargo (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:64:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/update-pros.js:71:17\nNode.js v22.23.2",
+  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (1/2)...\nPROS_SOURCE_DEGRADED: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\nGiữ pros.json tốt trước đó (2026-08-18T17:42:43.939Z; 11 tuyển thủ).",
   "dataAvailable": true
 }
