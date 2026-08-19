@@ -35,7 +35,7 @@ def page_key_from_url(value):
 
 
 def download(url, path):
-    request = urllib.request.Request(url, headers={'User-Agent': 'WebLienMinh/2.4 global-esports-identity-resolver'})
+    request = urllib.request.Request(url, headers={'User-Agent': 'WebLienMinh/2.5.1 global-esports-identity-resolver'})
     with urllib.request.urlopen(request, timeout=90) as response, open(path, 'wb') as out:
         while True:
             chunk = response.read(1024 * 1024)
@@ -72,6 +72,37 @@ def league_family(league):
     return []
 
 
+def role_family(value):
+    text = norm(value)
+    if not text:
+        return None
+    if 'top' in text:
+        return 'top'
+    if 'jung' in text or text in {'jng', 'jg'}:
+        return 'jungle'
+    if 'mid' in text:
+        return 'middle'
+    if any(token in text for token in ['bottom', 'bot lan', 'adc', 'ad carry', 'marksman']):
+        return 'bottom'
+    if 'support' in text or text in {'sup', 'utility'}:
+        return 'support'
+    return None
+
+
+def figure_is_retired(figure):
+    for key in ('is_retired', 'retired'):
+        if key not in figure:
+            continue
+        value = figure.get(key)
+        if isinstance(value, bool):
+            return value
+        if str(value or '').strip().lower() in {'1', 'true', 'yes', 'y'}:
+            return True
+        if str(value or '').strip().lower() in {'0', 'false', 'no', 'n'}:
+            return False
+    return False
+
+
 def choose_candidate(player, candidates, figures):
     entity_ids = []
     seen = set()
@@ -80,21 +111,51 @@ def choose_candidate(player, candidates, figures):
         if entity_id and entity_id not in seen:
             entity_ids.append(entity_id)
             seen.add(entity_id)
-    if not entity_ids:
-        return None
-    if len(entity_ids) == 1:
-        return entity_ids[0]
 
-    page_key = norm(page_key_from_url(player.get('sourcePage')))
-    if page_key:
+    preferred = str(player.get('preferredPage') or '').strip()
+    if preferred:
+        exact = [entity_id for entity_id in entity_ids if norm(entity_id) == norm(preferred)]
+        if len(exact) == 1:
+            return exact[0], 'preferred-page'
+        if preferred in figures:
+            return preferred, 'preferred-page'
+
+    if not entity_ids:
+        return None, None
+    if len(entity_ids) == 1:
+        return entity_ids[0], 'unique-alias'
+
+    raw_id = norm(player.get('id'))
+    page_key_raw = page_key_from_url(player.get('sourcePage'))
+    page_key = norm(page_key_raw)
+    # A synthetic /wiki/Viper URL is not enough to resolve one of many people named Viper.
+    # Only trust the URL when it is already a more specific canonical page key.
+    if page_key and page_key != raw_id:
         exact = [entity_id for entity_id in entity_ids if norm(entity_id) == page_key]
         if len(exact) == 1:
-            return exact[0]
+            return exact[0], 'specific-source-page'
 
-    for current in [player.get('overviewPage'), player.get('id')]:
-        exact = [entity_id for entity_id in entity_ids if norm(entity_id) == norm(current)]
+    overview = norm(player.get('overviewPage'))
+    if overview and overview != raw_id:
+        exact = [entity_id for entity_id in entity_ids if norm(entity_id) == overview]
         if len(exact) == 1:
-            return exact[0]
+            return exact[0], 'specific-overview-page'
+
+    wanted_role = role_family(player.get('role'))
+    if wanted_role:
+        role_matches = [
+            entity_id for entity_id in entity_ids
+            if role_family((figures.get(entity_id) or {}).get('role')) == wanted_role
+        ]
+        if len(role_matches) == 1:
+            return role_matches[0], 'role'
+
+        active_role_matches = [
+            entity_id for entity_id in role_matches
+            if not figure_is_retired(figures.get(entity_id) or {})
+        ]
+        if len(active_role_matches) == 1:
+            return active_role_matches[0], 'role-active'
 
     ign_ids = []
     seen_ign = set()
@@ -106,7 +167,7 @@ def choose_candidate(player, candidates, figures):
             ign_ids.append(entity_id)
             seen_ign.add(entity_id)
     if len(ign_ids) == 1:
-        return ign_ids[0]
+        return ign_ids[0], 'unique-ign'
 
     families = league_family((player.get('team') or {}).get('region') or player.get('residency'))
     if families:
@@ -116,9 +177,13 @@ def choose_candidate(player, candidates, figures):
             if any(norm(family) in region for family in families):
                 matches.append(entity_id)
         if len(matches) == 1:
-            return matches[0]
+            return matches[0], 'region'
 
-    return None
+    active = [entity_id for entity_id in entity_ids if not figure_is_retired(figures.get(entity_id) or {})]
+    if len(active) == 1:
+        return active[0], 'only-active'
+
+    return None, None
 
 
 def main():
@@ -160,18 +225,30 @@ def main():
     real_names = 0
     ambiguous = 0
     not_found = 0
+    match_methods = defaultdict(int)
+    ambiguous_examples = []
 
     for player in directory.get('players', []):
         candidates = []
-        for key in {norm(player.get('id')), norm(player.get('overviewPage'))}:
+        keys = {norm(player.get('id')), norm(player.get('overviewPage'))}
+        if player.get('preferredPage'):
+            keys.add(norm(player.get('preferredPage')))
+        for key in keys:
             if key:
                 candidates.extend(aliases_by_text.get(key, []))
 
-        entity_id = choose_candidate(player, candidates, figures)
+        entity_id, method = choose_candidate(player, candidates, figures)
         if not entity_id:
             if candidates:
                 ambiguous += 1
                 player['identityStatus'] = 'ambiguous'
+                if len(ambiguous_examples) < 20:
+                    ambiguous_examples.append({
+                        'id': player.get('id'),
+                        'role': player.get('role'),
+                        'team': (player.get('team') or {}).get('name'),
+                        'candidates': sorted({str(row.get('entity_id') or '') for row in candidates if row.get('entity_id')})[:12],
+                    })
             else:
                 not_found += 1
                 player['identityStatus'] = 'not-found'
@@ -187,10 +264,15 @@ def main():
 
         source_url = str(figure.get('source_url') or '').strip()
         if not source_url:
-            source_url = next((str(row.get('source_url') or '').strip() for row in candidates if row.get('source_url')), '')
+            source_url = next((
+                str(row.get('source_url') or '').strip()
+                for row in candidates
+                if str(row.get('entity_id') or '').strip() == entity_id and row.get('source_url')
+            ), '')
 
         player['identityId'] = entity_id
         player['identityStatus'] = 'matched'
+        player['identityMatchMethod'] = method
         player['identitySource'] = 'GPTilt Leaguepedia entity directory'
         player['identitySourceUrl'] = source_url or None
         player['overviewPage'] = entity_id
@@ -205,7 +287,10 @@ def main():
             player['canonicalName'] = str(figure['canonical_name'])
         if figure.get('region'):
             player['identityRegion'] = str(figure['region'])
+        if figure.get('role'):
+            player['identityRole'] = str(figure['role'])
         matched += 1
+        match_methods[method or 'unknown'] += 1
 
     directory['identityEnrichedAt'] = __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat().replace('+00:00', 'Z')
     directory['identitySource'] = 'GPTilt League of Legends Esports Directory (Leaguepedia-derived, CC BY-SA 3.0)'
@@ -216,10 +301,14 @@ def main():
         'ambiguous': ambiguous,
         'notFound': not_found,
         'total': len(directory.get('players', [])),
+        'matchMethods': dict(sorted(match_methods.items())),
+        'ambiguousExamples': ambiguous_examples,
     }
 
     DIRECTORY_FILE.write_text(json.dumps(directory, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'Identity resolution xong: matched={matched}, realName={real_names}, ambiguous={ambiguous}, notFound={not_found}, total={len(directory.get("players", []))}.')
+    if ambiguous_examples:
+        print('Ambiguous identity samples:', json.dumps(ambiguous_examples[:10], ensure_ascii=False))
 
 
 if __name__ == '__main__':
