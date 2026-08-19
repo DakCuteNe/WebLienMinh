@@ -1,0 +1,97 @@
+name: Fix Hall Vietnamese typography
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-hall-vietnamese-fonts.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch Hall typography and Unicode handling
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          css_path = Path('public/hall-of-legends.css')
+          js_path = Path('public/js/hall-of-legends.js')
+          css = css_path.read_text(encoding='utf-8')
+          js = js_path.read_text(encoding='utf-8')
+
+          marker = '/* Vietnamese-safe Hall display typography */'
+          if marker not in css:
+              css += r'''
+
+/* Vietnamese-safe Hall display typography */
+.hol-hero h1,
+.hol-official-banner-copy strong,
+.hol-spotlight-copy h3{
+  font-family:"Times New Roman","Noto Serif",Cambria,serif;
+  font-kerning:normal;
+  text-rendering:optimizeLegibility;
+}
+.hol-hero h1{
+  letter-spacing:-.015em;
+  line-height:1.02;
+}
+.hol-official-banner-copy strong{
+  letter-spacing:-.015em;
+  line-height:1.02;
+}
+.hol-spotlight-copy h3{
+  letter-spacing:0;
+  line-height:1.18;
+}
+'''
+
+          old_version = "const VERSION = '3.14.0';"
+          new_version = "const VERSION = '3.14.1';"
+          if old_version not in js:
+              raise SystemExit('Hall VERSION 3.14.0 not found; refusing unsafe patch')
+          js = js.replace(old_version, new_version, 1)
+
+          old_text = "function text(value) { return typeof value === 'string' ? value : value?.[lang()] || value?.vi || ''; }"
+          new_text = """function text(value) {
+  const resolved = typeof value === 'string' ? value : value?.[lang()] || value?.vi || '';
+  return String(resolved).normalize('NFC');
+}"""
+          if old_text not in js:
+              raise SystemExit('Hall text() helper not found; refusing unsafe patch')
+          js = js.replace(old_text, new_text, 1)
+
+          old_title = '<h1>${c.title}</h1>'
+          new_title = "<h1>${c.title.normalize('NFC')}</h1>"
+          if old_title not in js:
+              raise SystemExit('Hall hero title render not found; refusing unsafe patch')
+          js = js.replace(old_title, new_title, 1)
+
+          css_path.write_text(css, encoding='utf-8')
+          js_path.write_text(js, encoding='utf-8')
+          PY
+
+          node --check public/js/hall-of-legends.js
+          grep -q "Vietnamese-safe Hall display typography" public/hall-of-legends.css
+          grep -q "Times New Roman" public/hall-of-legends.css
+          grep -q "normalize('NFC')" public/js/hall-of-legends.js
+          grep -q "VERSION = '3.14.1'" public/js/hall-of-legends.js
+
+      - name: Commit fix and remove one-shot workflow
+        shell: bash
+        run: |
+          git config user.name "WebLienMinh Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/fix-hall-vietnamese-fonts.yml
+          git add public/hall-of-legends.css public/js/hall-of-legends.js
+          git commit -m "Fix Vietnamese Hall of Legends typography"
+          git push origin HEAD:main
