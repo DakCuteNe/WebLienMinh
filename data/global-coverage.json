@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T13:22:34.905Z",
+  "generatedAt": "2026-08-19T13:59:44.873Z",
   "patch": "16.16",
   "scope": "GLOBAL",
   "mode": "global-high-elo-ranked-solo",
@@ -45,8 +45,8 @@
     "SEA"
   ],
   "macroRegionCount": 4,
-  "matchesSaved": 138,
-  "matchesDiscovered": 165,
+  "matchesSaved": 139,
+  "matchesDiscovered": 166,
   "skippedOldPatch": 27,
   "failedMatches": 0,
   "settings": {
@@ -64,7 +64,7 @@
     "la1": 10,
     "la2": 12,
     "na1": 6,
-    "oc1": 11,
+    "oc1": 12,
     "ru": 12,
     "sg2": 12,
     "tr1": 12,
@@ -75,7 +75,7 @@
     "AMERICAS": 38,
     "ASIA": 11,
     "EUROPE": 42,
-    "SEA": 47
+    "SEA": 48
   },
   "platforms": [
     {
