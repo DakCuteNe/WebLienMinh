@@ -8,8 +8,9 @@ import { initPreferences } from './js/preferences.js';
 import { initUX } from './js/ux.js';
 import { initAmbient } from './js/ambient.js';
 import { initWorlds } from './js/worlds.js';
+import { initSchedule, ensureSchedule } from './js/schedule.js';
 
-const APP_VERSION = '2.9.0';
+const APP_VERSION = '3.0.0';
 let patchesLoaded = false;
 
 function applyVersionBranding() {
@@ -25,6 +26,7 @@ function switchSection(id) {
   $$('.nav-btn').forEach(button => button.classList.toggle('active', button.dataset.section === id));
   if (id === 'assets') ensureAssets();
   if (id === 'esports') ensureEsports();
+  if (id === 'schedule') ensureSchedule();
   if (id === 'patch') loadPatches();
   history.replaceState(null, '', '#' + id);
   window.scrollTo({ top: 64, behavior: 'smooth' });
@@ -103,6 +105,7 @@ async function boot() {
   initEsports();
   initPreferences();
   initAmbient();
+  initSchedule();
   initWorlds();
   initUX();
 
