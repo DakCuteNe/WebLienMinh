@@ -15,6 +15,8 @@ on:
       - 'public/site-effects.css'
       - 'public/js/ambient.js'
       - 'public/ambient.css'
+      - 'public/js/assets.js'
+      - 'public/assets-library.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
@@ -34,6 +36,8 @@ on:
       - 'public/site-effects.css'
       - 'public/js/ambient.js'
       - 'public/ambient.css'
+      - 'public/js/assets.js'
+      - 'public/assets-library.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'package.json'
@@ -62,6 +66,7 @@ jobs:
           node --check public/js/riot-music.js
           node --check public/js/site-effects.js
           node --check public/js/ambient.js
+          node --check public/js/assets.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
       - name: Start WebLienMinh
