@@ -1,25 +1,35 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-let ticking = false;
+const compactViewport = window.matchMedia('(max-width: 760px), (pointer: coarse)');
+let pointerTicking = false;
+let scrollTicking = false;
 let mx = 0;
 let my = 0;
+let sy = 0;
+
+function isLiteDevice() {
+  const memory = Number(navigator.deviceMemory || 8);
+  const cores = Number(navigator.hardwareConcurrency || 8);
+  return compactViewport.matches || memory <= 4 || cores <= 4;
+}
 
 function ensureCss() {
   if (document.querySelector('link[data-rift-ambient]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/ambient.css';
+  link.href = '/ambient.css?v=3.8.1';
   link.dataset.riftAmbient = 'true';
   document.head.appendChild(link);
 }
 
 function makeDust() {
-  return Array.from({ length: 28 }, (_, i) => {
+  const count = reducedMotion.matches ? 0 : isLiteDevice() ? 7 : 14;
+  return Array.from({ length: count }, (_, i) => {
     const x = (i * 37 + 11) % 100;
     const y = (i * 61 + 7) % 100;
-    const size = 1 + (i % 3);
-    const delay = -(i % 11) * 1.7;
-    const duration = 13 + (i % 9) * 2.1;
+    const size = 1 + (i % 2);
+    const delay = -(i % 9) * 1.9;
+    const duration = 17 + (i % 7) * 2.4;
     return `<i style="--x:${x}%;--y:${y}%;--s:${size}px;--delay:${delay}s;--duration:${duration}s"></i>`;
   }).join('');
 }
@@ -28,7 +38,7 @@ function ensureAmbient() {
   if (document.getElementById('riftAmbient')) return;
   const node = document.createElement('div');
   node.id = 'riftAmbient';
-  node.className = 'rift-ambient';
+  node.className = `rift-ambient ${isLiteDevice() ? 'ambient-lite' : ''}`;
   node.setAttribute('aria-hidden', 'true');
   node.innerHTML = `
     <div class="rift-aurora aurora-a"></div>
@@ -45,24 +55,35 @@ function ensureAmbient() {
 }
 
 function paintPointer() {
-  ticking = false;
+  pointerTicking = false;
   document.documentElement.style.setProperty('--ambient-x', mx.toFixed(3));
   document.documentElement.style.setProperty('--ambient-y', my.toFixed(3));
 }
 
 function onPointer(event) {
-  if (reducedMotion.matches || !finePointer.matches) return;
+  if (reducedMotion.matches || !finePointer.matches || isLiteDevice() || document.body.classList.contains('fx-transition-active')) return;
   mx = event.clientX / Math.max(1, window.innerWidth) - .5;
   my = event.clientY / Math.max(1, window.innerHeight) - .5;
-  if (ticking) return;
-  ticking = true;
+  if (pointerTicking) return;
+  pointerTicking = true;
   requestAnimationFrame(paintPointer);
 }
 
+function paintScroll() {
+  scrollTicking = false;
+  document.documentElement.style.setProperty('--ambient-scroll', `${sy}px`);
+}
+
 function onScroll() {
-  if (reducedMotion.matches) return;
-  const y = Math.min(1600, window.scrollY || 0);
-  document.documentElement.style.setProperty('--ambient-scroll', `${y}px`);
+  if (reducedMotion.matches || document.body.classList.contains('fx-transition-active')) return;
+  sy = Math.min(1400, window.scrollY || 0);
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(paintScroll);
+}
+
+function onVisibility() {
+  document.documentElement.classList.toggle('ambient-page-hidden', document.hidden);
 }
 
 export function initAmbient() {
@@ -73,4 +94,6 @@ export function initAmbient() {
   document.documentElement.style.setProperty('--ambient-scroll', '0px');
   window.addEventListener('pointermove', onPointer, { passive: true });
   window.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('visibilitychange', onVisibility, { passive: true });
+  onVisibility();
 }
