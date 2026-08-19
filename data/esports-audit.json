@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-19T11:12:16.178Z",
-  "directoryGeneratedAt": "2026-08-19T11:02:30.237Z",
-  "mediaEnrichedAt": "2026-08-19T11:05:11.040Z",
+  "generatedAt": "2026-08-19T11:28:29.288Z",
+  "directoryGeneratedAt": "2026-08-19T11:19:12.993Z",
+  "mediaEnrichedAt": "2026-08-19T11:21:33.938Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
-  "totalCountries": 95,
+  "totalCountries": 94,
   "coverage": {
     "image": {
       "count": 1126,
@@ -32,8 +32,8 @@
       "pct": 0.1
     },
     "social": {
-      "count": 1356,
-      "pct": 78.6
+      "count": 1358,
+      "pct": 78.7
     },
     "teamLogo": {
       "count": 1471,
@@ -48,7 +48,7 @@
       "pct": 100
     },
     "soloqueueIds": {
-      "count": 728,
+      "count": 729,
       "pct": 42.2
     },
     "bioEnriched": {
@@ -277,6 +277,58 @@
       "errors": []
     },
     {
+      "name": "Kanavi",
+      "expectedPage": "Kanavi",
+      "expectedRealName": "Seo Jin-hyeok",
+      "expectedTeam": "Hanwha Life Esports",
+      "uid": "oe:player:41deab55354f57a94135989133f9968",
+      "actualPage": "Kanavi",
+      "actualRealName": "Seo Jin-hyeok",
+      "actualTeam": "Hanwha Life Esports",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/14/HLE_Kanavi_2026_Split_1.png/revision/latest?cb=20260122172841",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "name": "Scout",
+      "expectedPage": "Scout",
+      "expectedRealName": "Lee Ye-chan",
+      "expectedTeam": "Nongshim RedForce",
+      "uid": "oe:player:71e79ef80600d398d90cfebe3b0b758",
+      "actualPage": "Scout",
+      "actualRealName": "Lee Ye-chan",
+      "actualTeam": "Nongshim RedForce",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8c/NS_Scout_2026_Split_1.png/revision/latest?cb=20260124035655",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "name": "Delight",
+      "expectedPage": "Delight",
+      "expectedRealName": "Yoo Hwan-joong",
+      "expectedTeam": "Hanwha Life Esports",
+      "uid": "oe:player:051ca2e31ba25123961b3df95fdef4c",
+      "actualPage": "Delight",
+      "actualRealName": "Yoo Hwan-joong",
+      "actualTeam": "Hanwha Life Esports",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/7b/HLE_Delight_2026_Split_1.png/revision/latest?cb=20260122172846",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "name": "Peyz",
+      "expectedPage": "Peyz",
+      "expectedRealName": "Kim Su-hwan",
+      "expectedTeam": "T1",
+      "uid": "oe:player:5bbc2b92348d930ebd500cb9ce71bb7",
+      "actualPage": "Peyz",
+      "actualRealName": "Kim Su-hwan",
+      "actualTeam": "T1",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/T1_Peyz_2026_LCK_Cup.png/revision/latest?cb=20260122163320",
+      "ok": true,
+      "errors": []
+    },
+    {
       "name": "Viper",
       "expectedPage": "Viper (Park Do-hyeon)",
       "expectedRealName": "Park Do-hyeon",
@@ -286,6 +338,45 @@
       "actualRealName": "Park Do-hyeon",
       "actualTeam": "Bilibili Gaming",
       "image": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "name": "ON",
+      "expectedPage": "ON",
+      "expectedRealName": "Luo Wen-Jun",
+      "expectedTeam": "Bilibili Gaming",
+      "uid": "oe:player:90651ebea9a35ec4e018c8157492e17",
+      "actualPage": "ON",
+      "actualRealName": "Luo Wen-Jun",
+      "actualTeam": "Bilibili Gaming",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/BLG_ON_2026_Split_1.png/revision/latest?cb=20260327160426",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "name": "CoreJJ",
+      "expectedPage": "CoreJJ",
+      "expectedRealName": "Jo Yong-in",
+      "expectedTeam": "Team Liquid",
+      "uid": "oe:player:05fafeaf23dc3285558a4e968970b9f",
+      "actualPage": "CoreJJ",
+      "actualRealName": "Jo Yong-in",
+      "actualTeam": "Team Liquid",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/80/TL_CoreJJ_2026_Split_1.png/revision/latest?cb=20260124041859",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "name": "Kiaya",
+      "expectedPage": "Kiaya",
+      "expectedRealName": "Trần Duy Sang",
+      "expectedTeam": "GAM Esports",
+      "uid": "oe:player:73e08f7701a4316284cbe884b5d7e56",
+      "actualPage": "Kiaya",
+      "actualRealName": "Trần Duy Sang",
+      "actualTeam": "GAM Esports",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/4d/GAM_Kiaya_2026_Split_1.png/revision/latest?cb=20260124180148",
       "ok": true,
       "errors": []
     }
@@ -308,10 +399,10 @@
     "teamUpdated": 55,
     "teamUpdatedPct": 96.5,
     "playerTarget": 264,
-    "playerUpdated": 258,
-    "playerUpdatedPct": 97.7,
+    "playerUpdated": 259,
+    "playerUpdatedPct": 98.1,
     "teamUnresolved": 2,
-    "playerUnresolved": 6,
+    "playerUnresolved": 5,
     "fallbackPlayerSearches": 0,
     "mismatchedTeamLogoCount": 0,
     "legacyTeamLogoCount": 0,
@@ -329,7 +420,7 @@
       "country": 52,
       "birthdate": 1,
       "contract": 1,
-      "social": 50,
+      "social": 52,
       "teamLogo": 52,
       "stats": 52,
       "completeCore": 1,
@@ -338,7 +429,7 @@
       "countryPct": 100,
       "birthdatePct": 1.9,
       "contractPct": 1.9,
-      "socialPct": 96.2,
+      "socialPct": 100,
       "teamLogoPct": 100,
       "statsPct": 100,
       "completeCorePct": 1.9
@@ -918,11 +1009,11 @@
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
-    "social": 370,
+    "social": 368,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
-    "soloqueueIds": 998,
+    "soloqueueIds": 997,
     "bioEnriched": 161,
     "completeCore": 1724
   },
@@ -31426,16 +31517,6 @@
     ],
     "social": [
       {
-        "id": "Delight",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
-      {
-        "id": "Peyz",
-        "team": "T1",
-        "region": "LCK"
-      },
-      {
         "id": "Creme",
         "team": "Top Esports",
         "region": "LPL"
@@ -34556,11 +34637,6 @@
     "stats": [],
     "championPool": [],
     "soloqueueIds": [
-      {
-        "id": "Peyz",
-        "team": "T1",
-        "region": "LCK"
-      },
       {
         "id": "Peter",
         "team": "DN SOOPers",
