@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T10:43:25.682Z",
+  "generatedAt": "2026-08-20T11:19:10.102Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -7229,7 +7229,7 @@
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 5,
@@ -7275,7 +7275,7 @@
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
-          "wins": 1,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -7321,7 +7321,7 @@
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 3,
