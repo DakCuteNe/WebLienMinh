@@ -3,7 +3,7 @@ import { __liveMatchTest } from '../server/esports-match-live.js';
 import { __liveHistoryTest } from '../server/esports-match-history-cache.js';
 
 const { currentGame, selectViewGame, inferSeriesState, alignLiveTeams, mergeLiveWindows, normalizeWindow } = __liveMatchTest;
-const { reconcileHistoricalLive } = __liveHistoryTest;
+const { reconcileHistoricalLive, recoveryStartingTimes, draftScore } = __liveHistoryTest;
 
 const games = [
   { id: 'game-1', number: 1, state: 'completed' },
@@ -139,6 +139,15 @@ const cachedGame1 = {
     { teamId: 'team-b', side: 'red', picks: [{ championId: 58, summonerName: 'TopB' }], bans: [24], stats: { gold: 36000, kills: 5 } }
   ]
 };
+
+const recoveryTimes = recoveryStartingTimes(
+  { id: 'game-1', number: 1, state: 'completed' },
+  '2026-08-20T10:00:00.000Z',
+  '2026-08-20T10:33:20.000Z'
+);
+assert.ok(recoveryTimes.includes('2026-08-20T10:05:00.000Z'), 'Game 1 recovery must probe shortly after the scheduled series start');
+assert.ok(recoveryTimes.includes('2026-08-20T10:13:20.000Z'), 'Game 1 recovery must walk backward from its surviving same-game frame');
+assert.equal(draftScore(cachedGame1), 4, 'draft score counts picks and bans from the exact cached game only');
 
 const restoredGame1 = reconcileHistoricalLive(null, cachedGame1, 'game-1');
 assert.equal(restoredGame1?.gameId, 'game-1', 'completed Game 1 draft must remain available when Riot temporarily returns no window');
