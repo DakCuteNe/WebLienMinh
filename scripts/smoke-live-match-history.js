@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
 import { __liveMatchTest } from '../server/esports-match-live.js';
+import { __liveHistoryTest } from '../server/esports-match-history-cache.js';
 
 const { currentGame, selectViewGame, inferSeriesState, alignLiveTeams, mergeLiveWindows, normalizeWindow } = __liveMatchTest;
+const { reconcileHistoricalLive } = __liveHistoryTest;
 
 const games = [
   { id: 'game-1', number: 1, state: 'completed' },
@@ -115,4 +117,51 @@ assert.equal(aligned.teams[1].side, 'blue', 'series team B must render its blue-
 assert.equal(aligned.teams[1].stats.gold, 39900);
 assert.equal(aligned.teams[1].picks[0].summonerName, 'TopB');
 
-console.log('Live Match score/state/side/history regression smoke passed.');
+const cachedGame1 = {
+  gameId: 'game-1',
+  gameNumber: 1,
+  patchVersion: '16.16.1',
+  timestamp: '2026-08-20T07:40:00.000Z',
+  blue: {
+    teamId: 'team-a',
+    picks: [{ championId: 266, summonerName: 'TopA' }],
+    bans: [238],
+    stats: { gold: 38000, kills: 8 }
+  },
+  red: {
+    teamId: 'team-b',
+    picks: [{ championId: 58, summonerName: 'TopB' }],
+    bans: [24],
+    stats: { gold: 36000, kills: 5 }
+  },
+  teams: [
+    { teamId: 'team-a', side: 'blue', picks: [{ championId: 266, summonerName: 'TopA' }], bans: [238], stats: { gold: 38000, kills: 8 } },
+    { teamId: 'team-b', side: 'red', picks: [{ championId: 58, summonerName: 'TopB' }], bans: [24], stats: { gold: 36000, kills: 5 } }
+  ]
+};
+
+const restoredGame1 = reconcileHistoricalLive(null, cachedGame1, 'game-1');
+assert.equal(restoredGame1?.gameId, 'game-1', 'completed Game 1 draft must remain available when Riot temporarily returns no window');
+assert.equal(restoredGame1?.teams?.[0]?.picks?.[0]?.championId, 266, 'Game 1 cached picks must be retained');
+assert.equal(restoredGame1?.historyCached, true, 'restored history should be marked as cached');
+
+const wrongGameFresh = { ...aligned, gameId: 'game-2' };
+const protectedGame1 = reconcileHistoricalLive(wrongGameFresh, cachedGame1, 'game-1');
+assert.equal(protectedGame1?.gameId, 'game-1', 'Game 2 live payload must never replace Game 1 history');
+assert.equal(protectedGame1?.teams?.[0]?.picks?.[0]?.championId, 266, 'Game 1 ban/pick must not leak from another game');
+
+const statsOnlyGame1 = {
+  gameId: 'game-1',
+  timestamp: '2026-08-20T07:45:00.000Z',
+  blue: { teamId: 'team-a', picks: [], bans: [], stats: { gold: 40100, kills: 10 } },
+  red: { teamId: 'team-b', picks: [], bans: [], stats: { gold: 38900, kills: 7 } },
+  teams: [
+    { teamId: 'team-a', side: 'blue', picks: [], bans: [], stats: { gold: 40100, kills: 10 } },
+    { teamId: 'team-b', side: 'red', picks: [], bans: [], stats: { gold: 38900, kills: 7 } }
+  ]
+};
+const mergedGame1History = reconcileHistoricalLive(statsOnlyGame1, cachedGame1, 'game-1');
+assert.equal(mergedGame1History?.teams?.[0]?.picks?.[0]?.championId, 266, 'fresh stats-only windows must keep the archived Game 1 draft');
+assert.equal(mergedGame1History?.teams?.[0]?.stats?.gold, 40100, 'fresh same-game stats should still update over archived history');
+
+console.log('Live Match score/state/side/exact-game draft history regression smoke passed.');
