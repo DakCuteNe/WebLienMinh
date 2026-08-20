@@ -59,7 +59,17 @@ function statsSignal(live) {
     + Number(stats?.kills || 0) * 1000
     + Number(stats?.towers || 0) * 1000
     + Number(stats?.dragons || 0) * 1000
-    + Number(stats?.barons || 0) * 1000, 0);
+    + Number(stats?.barons || 0) * 1000
+    + Number(stats?.inhibitors || 0) * 1000, 0);
+}
+
+function objectivesReady(live) {
+  const sides = [live?.blue?.stats, live?.red?.stats];
+  return sides.every(stats => stats
+    && Array.isArray(stats.dragonTypes)
+    && Number.isFinite(Number(stats.inhibitors))
+    && Number.isFinite(Number(stats.towers))
+    && Number.isFinite(Number(stats.barons)));
 }
 
 // Basic resolver smoke: choose a recent/upcoming real event, never a TBD placeholder.
@@ -121,6 +131,7 @@ if (regressionEvent) {
     if (detail.live?.gameId !== game.id) throw new Error(`Game ${game.number} returned no exact-game live/history snapshot.`);
     if (pickCount(detail.live) < 10) throw new Error(`Game ${game.number} did not recover all 10 Riot picks.`);
     if (statsSignal(detail.live) <= 0) throw new Error(`Game ${game.number} recovered picks but no real team stats.`);
+    if (!objectivesReady(detail.live)) throw new Error(`Game ${game.number} did not enrich Riot objective details.`);
 
     const expectedIds = new Set((series.teams || []).map(team => String(team.id || '')).filter(Boolean));
     const alignedIds = new Set((detail.live.teams || []).map(team => String(team.teamId || '')).filter(Boolean));
