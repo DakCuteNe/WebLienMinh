@@ -1,0 +1,111 @@
+/* Rift Meta Global 3.15 — live scoreboard alignment override */
+
+/* Keep live scores pinned to the inner edge of each team column, independent
+   of team-name length. The DOM order differs left/right, so place each child
+   explicitly instead of relying on flex width. */
+.schedule-match.is-live .schedule-team,
+.schedule-match.is-live .schedule-team.side-left,
+.schedule-match.is-live .schedule-team.side-right{
+  display:grid!important;
+  align-items:center!important;
+  justify-content:stretch!important;
+  width:100%!important;
+  min-width:0!important;
+  column-gap:12px!important;
+}
+
+.schedule-match.is-live .schedule-team.side-left{
+  grid-template-columns:48px minmax(0,1fr) 34px!important;
+  padding:0 14px 0 0!important;
+  text-align:left!important;
+}
+.schedule-match.is-live .schedule-team.side-right{
+  grid-template-columns:34px minmax(0,1fr) 48px!important;
+  padding:0 0 0 14px!important;
+  text-align:right!important;
+}
+
+.schedule-match.is-live .schedule-team.side-left>img,
+.schedule-match.is-live .schedule-team.side-left>.schedule-team-fallback{grid-column:1!important;grid-row:1!important}
+.schedule-match.is-live .schedule-team.side-left>div{grid-column:2!important;grid-row:1!important}
+.schedule-match.is-live .schedule-team.side-left>.schedule-score{grid-column:3!important;grid-row:1!important;justify-self:end!important}
+
+.schedule-match.is-live .schedule-team.side-right>.schedule-score{grid-column:1!important;grid-row:1!important;justify-self:start!important}
+.schedule-match.is-live .schedule-team.side-right>div{grid-column:2!important;grid-row:1!important}
+.schedule-match.is-live .schedule-team.side-right>img,
+.schedule-match.is-live .schedule-team.side-right>.schedule-team-fallback{grid-column:3!important;grid-row:1!important}
+
+.schedule-match.is-live .schedule-team>div{
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  flex:none!important;
+}
+.schedule-match.is-live .schedule-score,
+.schedule-match.is-live .schedule-live-score{
+  width:34px!important;
+  min-width:34px!important;
+  margin:0!important;
+  padding:0!important;
+  text-align:center!important;
+  font-size:25px!important;
+  line-height:1!important;
+  font-variant-numeric:tabular-nums!important;
+}
+
+/* Historical-game status is intentionally subordinate to the BO score, while
+   the current-live shortcut stays visually distinct. */
+.schedule-match.live-panel-open .live-view-state{
+  display:block!important;
+  margin-top:4px!important;
+  line-height:1.35!important;
+}
+.schedule-match.live-panel-open .live-follow-current{
+  padding:3px 7px!important;
+  border:1px solid rgba(91,218,205,.22)!important;
+  border-radius:999px!important;
+  background:rgba(66,190,179,.055)!important;
+}
+
+@media(max-width:980px){
+  .schedule-match.is-live .schedule-team.side-left{
+    grid-template-columns:42px minmax(0,1fr) 28px!important;
+    padding-right:8px!important;
+    column-gap:8px!important;
+  }
+  .schedule-match.is-live .schedule-team.side-right{
+    grid-template-columns:28px minmax(0,1fr) 42px!important;
+    padding-left:8px!important;
+    column-gap:8px!important;
+  }
+  .schedule-match.is-live .schedule-score,
+  .schedule-match.is-live .schedule-live-score{width:28px!important;min-width:28px!important;font-size:22px!important}
+  .schedule-match.is-live .schedule-team img,
+  .schedule-match.is-live .schedule-team-fallback{width:42px!important;height:42px!important;flex-basis:42px!important}
+}
+
+@media(max-width:680px){
+  .schedule-match.is-live .schedule-team.side-left{
+    grid-template-columns:36px minmax(0,1fr) 23px!important;
+    padding-right:5px!important;
+    column-gap:5px!important;
+  }
+  .schedule-match.is-live .schedule-team.side-right{
+    grid-template-columns:23px minmax(0,1fr) 36px!important;
+    padding-left:5px!important;
+    column-gap:5px!important;
+  }
+  .schedule-match.is-live .schedule-score,
+  .schedule-match.is-live .schedule-live-score{width:23px!important;min-width:23px!important;font-size:19px!important}
+  .schedule-match.is-live .schedule-team img,
+  .schedule-match.is-live .schedule-team-fallback{width:36px!important;height:36px!important;flex-basis:36px!important}
+}
+
+@media(max-width:440px){
+  .schedule-match.is-live .schedule-team.side-left{grid-template-columns:30px minmax(0,1fr) 19px!important;column-gap:4px!important;padding-right:3px!important}
+  .schedule-match.is-live .schedule-team.side-right{grid-template-columns:19px minmax(0,1fr) 30px!important;column-gap:4px!important;padding-left:3px!important}
+  .schedule-match.is-live .schedule-score,
+  .schedule-match.is-live .schedule-live-score{width:19px!important;min-width:19px!important;font-size:17px!important}
+  .schedule-match.is-live .schedule-team img,
+  .schedule-match.is-live .schedule-team-fallback{width:30px!important;height:30px!important;flex-basis:30px!important}
+}
