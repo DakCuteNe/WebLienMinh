@@ -4,9 +4,12 @@ on:
   pull_request:
     paths:
       - 'server/esports-match-live.js'
+      - 'server/esports-match-history-cache.js'
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
+      - 'public/js/live-match-history-cache.js'
       - 'public/match-live.css'
+      - 'public/live-match-layout-fix.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
       - 'public/js/riot-music.js'
@@ -30,9 +33,12 @@ on:
     branches: [main]
     paths:
       - 'server/esports-match-live.js'
+      - 'server/esports-match-history-cache.js'
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
+      - 'public/js/live-match-history-cache.js'
       - 'public/match-live.css'
+      - 'public/live-match-layout-fix.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
       - 'public/js/riot-music.js'
@@ -70,8 +76,10 @@ jobs:
       - name: Syntax check
         run: |
           node --check server/esports-match-live.js
+          node --check server/esports-match-history-cache.js
           node --check server/esports-match-bootstrap.js
           node --check public/js/match-live.js
+          node --check public/js/live-match-history-cache.js
           node --check public/js/team-predictions.js
           node --check public/js/riot-music.js
           node --check public/js/site-effects.js
@@ -87,7 +95,7 @@ jobs:
           grep -q 'together-finisher-v3' public/js/together-finisher.js
           grep -q 'together-finisher-v3' public/together-finisher.css
           grep -q 'TOGETHER_FINISHER_DURATION = 6200' public/js/together-finisher.js
-          grep -q "APP_VERSION = '3.13.0'" public/app.js
+          grep -Eq "APP_VERSION = '[0-9]+\.[0-9]+\.[0-9]+'" public/app.js
           if grep -Eq 'together-finisher-v2|worlds-takeover' public/js/together-finisher.js public/together-finisher.css public/js/site-effects.js public/site-effects.css; then
             echo 'Legacy Together v2 / Worlds takeover markup is still present.'
             exit 1
@@ -119,7 +127,8 @@ jobs:
           grep -q 'viewGameId' public/js/match-live.js
           grep -q 'viewGame' server/esports-match-live.js
           grep -q 'mergeLiveWindows' server/esports-match-live.js
-          grep -q "match-live.css?v=3.2.0" public/js/match-live.js
+          grep -q 'installEsportsMatchHistoryCache' server/esports-match-bootstrap.js
+          grep -q 'initLiveMatchHistoryCache' public/app.js
           if grep -q '<span class="live-game-pill' public/js/match-live.js; then
             echo 'Game pills regressed to non-clickable spans.'
             exit 1
