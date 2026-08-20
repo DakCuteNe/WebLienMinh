@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T14:18:17.613Z",
+  "generatedAt": "2026-08-20T15:08:59.095Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -517,7 +517,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         }
       ],
@@ -1056,7 +1056,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         },
@@ -1471,7 +1471,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -1482,7 +1482,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -1942,7 +1942,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -2311,7 +2311,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         }
       ],
@@ -2448,7 +2448,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -3311,7 +3311,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -3449,7 +3449,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -3966,7 +3966,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -4185,7 +4185,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -4334,7 +4334,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -5254,7 +5254,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -5381,7 +5381,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -5518,7 +5518,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         },
@@ -5577,7 +5577,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         }
       ],
@@ -6162,7 +6162,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         },
@@ -6405,7 +6405,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         }
       ],
@@ -7356,10 +7356,10 @@
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -7367,10 +7367,10 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
@@ -7634,7 +7634,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         },
@@ -7773,7 +7773,7 @@
           "outcome": null,
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         },
         {
@@ -8242,7 +8242,7 @@
           "outcome": null,
           "record": {
             "wins": 4,
-            "losses": 7
+            "losses": 8
           }
         }
       ],
@@ -8468,7 +8468,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 9,
+            "wins": 10,
             "losses": 2
           }
         }
