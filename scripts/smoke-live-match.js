@@ -2,12 +2,24 @@ import fs from 'node:fs/promises';
 
 const schedule = JSON.parse(await fs.readFile(new URL('../public/data/esports-schedule.json', import.meta.url), 'utf8'));
 const now = Date.now();
+const hasTwoTeams = event => Array.isArray(event?.teams)
+  && event.teams.length >= 2
+  && event.teams.slice(0, 2).every(team => String(team?.code || team?.name || '').trim());
 const candidates = (schedule.events || [])
-  .filter(event => event.state !== 'completed' && event.startTime && new Date(event.startTime).getTime() >= now - 6 * 60 * 60_000)
+  .filter(event => event.state !== 'completed'
+    && event.startTime
+    && new Date(event.startTime).getTime() >= now - 6 * 60 * 60_000
+    && hasTwoTeams(event))
   .sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
 
-const event = candidates[0];
-if (!event) throw new Error('No upcoming/live event available for live-match smoke test.');
+const fallbackCandidates = (schedule.events || [])
+  .filter(event => event.startTime
+    && Math.abs(now - new Date(event.startTime).getTime()) <= 18 * 60 * 60_000
+    && hasTwoTeams(event))
+  .sort((a, b) => Math.abs(now - new Date(a.startTime).getTime()) - Math.abs(now - new Date(b.startTime).getTime()));
+
+const event = candidates[0] || fallbackCandidates[0];
+if (!event) throw new Error('No resolvable recent/upcoming event with two teams available for live-match smoke test.');
 
 const params = new URLSearchParams({
   leagueId: String(event.league?.id || ''),
@@ -52,7 +64,10 @@ console.log(JSON.stringify({
 // KRX vs NS series from the reported screenshot; otherwise use the most recent
 // LCK series so CI still exercises a real Riot game id.
 const lckRecent = (schedule.events || [])
-  .filter(row => row.league?.slug === 'lck' && row.startTime && Math.abs(now - new Date(row.startTime).getTime()) <= 18 * 60 * 60_000)
+  .filter(row => row.league?.slug === 'lck'
+    && row.startTime
+    && hasTwoTeams(row)
+    && Math.abs(now - new Date(row.startTime).getTime()) <= 18 * 60 * 60_000)
   .sort((a, b) => Math.abs(now - new Date(a.startTime).getTime()) - Math.abs(now - new Date(b.startTime).getTime()));
 const diagnosticEvent = lckRecent.find(row => {
   const codes = (row.teams || []).map(team => String(team.code || '').toUpperCase());
