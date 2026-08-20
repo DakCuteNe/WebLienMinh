@@ -23,15 +23,32 @@ function statsSignal(stats) {
     + Number(stats.kills || 0) * 1000
     + Number(stats.towers || 0) * 1000
     + Number(stats.dragons || 0) * 1000
-    + Number(stats.barons || 0) * 1000;
+    + Number(stats.barons || 0) * 1000
+    + Number(stats.inhibitors || 0) * 1000;
+}
+
+function hasOwn(value, key) {
+  return Boolean(value && typeof value === 'object' && Object.prototype.hasOwnProperty.call(value, key));
 }
 
 function bestStats(fresh, cached) {
   const freshSignal = statsSignal(fresh);
   const cachedSignal = statsSignal(cached);
-  if (freshSignal === 0 && cachedSignal > 0) return cached;
-  if (fresh && typeof fresh === 'object') return fresh;
-  return cached || null;
+  const freshUsable = fresh && typeof fresh === 'object';
+  const cachedUsable = cached && typeof cached === 'object';
+  if (!freshUsable && !cachedUsable) return null;
+
+  const useFresh = freshUsable && !(freshSignal === 0 && cachedSignal > 0);
+  const primary = useFresh ? fresh : cached;
+  const secondary = useFresh ? cached : fresh;
+  return {
+    ...(secondary || {}),
+    ...(primary || {}),
+    dragonTypes: bestRows(primary?.dragonTypes, secondary?.dragonTypes),
+    inhibitors: hasOwn(primary, 'inhibitors')
+      ? Number(primary.inhibitors || 0) || 0
+      : Number(secondary?.inhibitors || 0) || 0
+  };
 }
 
 function mergeSide(fresh = {}, cached = {}) {
@@ -77,6 +94,15 @@ function liveStatsSignal(live) {
   if (!live) return 0;
   const sides = Array.isArray(live.teams) && live.teams.length ? live.teams : [live.blue, live.red];
   return sides.reduce((sum, side) => sum + statsSignal(side?.stats), 0);
+}
+
+function objectivesComplete(live) {
+  if (!live) return false;
+  const sides = Array.isArray(live.teams) && live.teams.length ? live.teams : [live.blue, live.red];
+  if (sides.length < 2) return false;
+  return sides.every(side => side?.stats
+    && Array.isArray(side.stats.dragonTypes)
+    && hasOwn(side.stats, 'inhibitors'));
 }
 
 export function reconcileHistoricalLive(fresh, cached, gameId) {
@@ -254,14 +280,23 @@ function statFrame(frames = []) {
   return [...frames].reverse().find(frame => frame?.blueTeam && frame?.redTeam) || null;
 }
 
+function objectiveCount(value) {
+  if (Array.isArray(value)) return value.length;
+  const number = Number(value);
+  return Number.isFinite(number) && number > 0 ? number : 0;
+}
+
 function teamStats(team) {
   if (!team || typeof team !== 'object') return null;
+  const dragonTypes = Array.isArray(team.dragons) ? team.dragons.map(text).filter(Boolean) : [];
   return {
     kills: Number(team.totalKills ?? team.kills ?? 0) || 0,
     gold: Number(team.totalGold ?? team.gold ?? 0) || 0,
     towers: Number(team.towers ?? team.turrets ?? 0) || 0,
     barons: Number(team.barons ?? 0) || 0,
-    dragons: Array.isArray(team.dragons) ? team.dragons.length : Number(team.dragons ?? 0) || 0
+    dragons: dragonTypes.length || objectiveCount(team.dragons),
+    dragonTypes,
+    inhibitors: objectiveCount(team.inhibitors ?? team.inhibitorKills ?? team.inhibitorsDestroyed)
   };
 }
 
@@ -310,7 +345,7 @@ async function fetchHistoricalWindow(gameId, startingTime) {
   return fetchJson(`${LIVE_FEED}/window/${encodeURIComponent(gameId)}?startingTime=${encodeURIComponent(startingTime)}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.16 live-window-recovery'
+      'User-Agent': 'WebLienMinh/3.17 live-objective-recovery'
     },
     signal: AbortSignal.timeout(4_500)
   });
@@ -352,7 +387,7 @@ async function recoverHistoricalDraft(body, gameId) {
         bestRank = rank;
       }
     }
-    if (draftScore(best) >= 10 && liveStatsSignal(best) > 0) break;
+    if (draftScore(best) >= 10 && liveStatsSignal(best) > 0 && objectivesComplete(best)) break;
   }
 
   return best;
@@ -375,10 +410,11 @@ export function installEsportsMatchHistoryCache(app) {
 
           const needsPicks = draftScore(live) < 10;
           const needsStats = liveStatsSignal(live) === 0;
-          if (needsPicks || needsStats) {
+          const needsObjectives = !objectivesComplete(live);
+          if (needsPicks || needsStats || needsObjectives) {
             const recovered = await recoverHistoricalDraft(body, gameId);
-            // The recovered window owns missing Pick/real-stat data. Reconcile
-            // exact game ids only, never leaking another BO game's snapshot.
+            // The recovered window owns missing Pick/real-stat/objective data.
+            // Reconcile exact game ids only, never leaking another BO game's snapshot.
             live = reconcileHistoricalLive(recovered, live, gameId);
           }
 
@@ -402,5 +438,6 @@ export const __liveHistoryTest = {
   reconcileHistoricalLive,
   recoveryStartingTimes,
   draftScore,
-  statsSignal
+  statsSignal,
+  objectivesComplete
 };
