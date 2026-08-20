@@ -9,6 +9,7 @@ on:
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
       - 'public/match-live.css'
+      - 'public/live-objectives.css'
       - 'public/live-match-layout-fix.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
@@ -38,6 +39,7 @@ on:
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
       - 'public/match-live.css'
+      - 'public/live-objectives.css'
       - 'public/live-match-layout-fix.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
@@ -129,6 +131,8 @@ jobs:
           grep -q 'mergeLiveWindows' server/esports-match-live.js
           grep -q 'installEsportsMatchHistoryCache' server/esports-match-bootstrap.js
           grep -q 'initLiveMatchHistoryCache' public/app.js
+          grep -q 'live-objective-detail' public/live-objectives.css
+          grep -q 'dragonTypes' public/js/match-live.js
           if grep -q '<span class="live-game-pill' public/js/match-live.js; then
             echo 'Game pills regressed to non-clickable spans.'
             exit 1
