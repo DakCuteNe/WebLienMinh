@@ -16,16 +16,24 @@ import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
 import { initSiteEffects, triggerSectionEffect } from './js/site-effects.js';
 
-const APP_VERSION = '3.14.0';
+const APP_VERSION = '3.15.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
-  if (document.querySelector('link[data-schedule-balance]')) return;
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = `/schedule-structural.css?v=${APP_VERSION}`;
-  link.dataset.scheduleBalance = 'true';
-  document.head.appendChild(link);
+  if (!document.querySelector('link[data-schedule-balance]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `/schedule-structural.css?v=${APP_VERSION}`;
+    link.dataset.scheduleBalance = 'true';
+    document.head.appendChild(link);
+  }
+  if (!document.querySelector('link[data-live-match-layout-fix]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `/live-match-layout-fix.css?v=${APP_VERSION}`;
+    link.dataset.liveMatchLayoutFix = 'true';
+    document.head.appendChild(link);
+  }
 }
 
 function applyVersionBranding() {
