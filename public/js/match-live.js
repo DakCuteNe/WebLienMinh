@@ -223,10 +223,20 @@ function gameIsCurrentLive(game, payload) {
   return Boolean(game?.id && payload?.currentGame?.id === game.id && payloadIsLive(payload));
 }
 
+function gameIsCompletedForDisplay(game, payload) {
+  if (!game) return false;
+  if (stateIsCompleted(game.state)) return true;
+  const currentNumber = Number(payload?.currentGame?.number || 0);
+  const number = Number(game.number || 0);
+  if (payloadIsLive(payload) && currentNumber && number && number < currentNumber) return true;
+  if (stateIsCompleted(payload?.state) && currentNumber && number && number <= currentNumber) return true;
+  return false;
+}
+
 function gameStateLabel(game, payload) {
   if (!game) return '';
-  if (gameIsCurrentLive(game, payload) || stateIsLive(game.state)) return c().live;
-  if (stateIsCompleted(game.state)) return c().finished;
+  if (gameIsCurrentLive(game, payload)) return c().live;
+  if (gameIsCompletedForDisplay(game, payload)) return c().finished;
   return c().upcoming;
 }
 
@@ -276,8 +286,9 @@ async function renderPanel(card, payload) {
   const currentIsLive = payloadIsLive(payload);
   const viewingHistorical = Boolean(viewed?.id && current?.id && viewed.id !== current.id);
   const gamesHtml = games.length ? games.map(game => {
-    const liveGame = gameIsCurrentLive(game, payload) || stateIsLive(game.state);
-    return `<button type="button" class="live-game-pill ${viewed?.id && viewed.id === game.id ? 'active' : ''} ${stateIsCompleted(game.state) ? 'done' : ''} ${liveGame ? 'current-live' : ''}" data-live-game-id="${esc(game.id || '')}" ${game.id ? '' : 'disabled'}><span>${esc(c().game)} ${game.number}</span>${liveGame ? '<i></i>' : ''}</button>`;
+    const liveGame = gameIsCurrentLive(game, payload);
+    const done = gameIsCompletedForDisplay(game, payload);
+    return `<button type="button" class="live-game-pill ${viewed?.id && viewed.id === game.id ? 'active' : ''} ${done ? 'done' : ''} ${liveGame ? 'current-live' : ''}" data-live-game-id="${esc(game.id || '')}" ${game.id ? '' : 'disabled'}><span>${esc(c().game)} ${game.number}</span>${liveGame ? '<i></i>' : ''}</button>`;
   }).join('') : '';
   const followLive = viewingHistorical && currentIsLive ? `<button type="button" class="live-follow-current" data-live-follow-current>● ${esc(c().followLive)} • ${esc(c().game)} ${current.number}</button>` : '';
   const watchUrl = payload.watchUrl || payload.officialUrl || '#';
