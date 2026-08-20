@@ -10,12 +10,13 @@ import { initAmbient } from './js/ambient.js';
 import { initHallOfLegends, ensureHallOfLegends } from './js/hall-of-legends.js';
 import { initWorlds } from './js/worlds.js';
 import { initSchedule, ensureSchedule } from './js/schedule.js';
+import { initLiveMatchHistoryCache } from './js/live-match-history-cache.js';
 import { initLiveMatchCenter } from './js/match-live.js';
 import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
 import { initSiteEffects, triggerSectionEffect } from './js/site-effects.js';
 
-const APP_VERSION = '3.13.0';
+const APP_VERSION = '3.14.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
@@ -103,6 +104,7 @@ async function boot() {
   initAmbient();
   initSiteEffects();
   initSchedule();
+  initLiveMatchHistoryCache();
   initLiveMatchCenter();
   initTeamPredictions();
   initRiotMusic();
