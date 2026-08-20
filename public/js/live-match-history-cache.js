@@ -10,8 +10,10 @@ const prefetchAt = new Map();
 
 const text = value => String(value ?? '').trim();
 
-function hasRows(value) {
-  return Array.isArray(value) && value.length > 0;
+function bestRows(fresh, cached) {
+  const a = Array.isArray(fresh) ? fresh : [];
+  const b = Array.isArray(cached) ? cached : [];
+  return a.length >= b.length ? a : b;
 }
 
 function readStore() {
@@ -40,8 +42,8 @@ function mergeSide(fresh = {}, cached = {}) {
   return {
     ...cached,
     ...fresh,
-    picks: hasRows(fresh?.picks) ? fresh.picks : (cached?.picks || []),
-    bans: hasRows(fresh?.bans) ? fresh.bans : (cached?.bans || []),
+    picks: bestRows(fresh?.picks, cached?.picks),
+    bans: bestRows(fresh?.bans, cached?.bans),
     stats: fresh?.stats && Object.keys(fresh.stats).length ? fresh.stats : (cached?.stats || {})
   };
 }
@@ -63,8 +65,7 @@ function mergeTeamRows(freshRows = [], cachedRows = []) {
 
 function sameGame(live, gameId) {
   if (!live || !gameId) return false;
-  const liveId = text(live.gameId);
-  return !liveId || liveId === text(gameId);
+  return text(live.gameId) === text(gameId);
 }
 
 function mergeLive(fresh, cached, gameId) {
