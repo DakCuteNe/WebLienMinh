@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { __liveMatchTest } from '../server/esports-match-live.js';
 
-const { currentGame, selectViewGame, mergeLiveWindows, normalizeWindow } = __liveMatchTest;
+const { currentGame, selectViewGame, inferSeriesState, alignLiveTeams, mergeLiveWindows, normalizeWindow } = __liveMatchTest;
 
 const games = [
   { id: 'game-1', number: 1, state: 'completed' },
@@ -17,46 +17,61 @@ const transitionGames = [
   { id: 'game-2', number: 2, state: 'unstarted' },
   { id: 'game-3', number: 3, state: 'unstarted' }
 ];
+const oneZero = [{ id: 'team-a', wins: 1 }, { id: 'team-b', wins: 0 }];
+assert.equal(currentGame(transitionGames, 'inprogress', oneZero, 3)?.id, 'game-2');
+assert.equal(selectViewGame(transitionGames, '', 0, 'inprogress', oneZero, 3)?.id, 'game-2');
 
+const staleGameState = [
+  { id: 'game-1', number: 1, state: 'inprogress' },
+  { id: 'game-2', number: 2, state: 'unstarted' },
+  { id: 'game-3', number: 3, state: 'unstarted' }
+];
 assert.equal(
-  currentGame(transitionGames, 'inprogress')?.id,
+  currentGame(staleGameState, 'inprogress', oneZero, 3)?.id,
   'game-2',
-  'live series must advance from completed Game 1 to the next non-completed game while Riot game state catches up'
+  'a stale Game 1 inprogress flag must not override the 1-0 series score'
 );
-assert.equal(
-  currentGame(transitionGames, 'completed')?.id,
-  'game-1',
-  'completed series must stay on its last completed game instead of selecting an unused placeholder'
-);
-assert.equal(
-  selectViewGame(transitionGames, '', 0, 'inprogress')?.id,
-  'game-2',
-  'default detailed view must follow the advancing live game during a game-state transition'
-);
+
+const twoZero = [{ id: 'team-a', wins: 2 }, { id: 'team-b', wins: 0 }];
+assert.equal(inferSeriesState('inprogress', twoZero, 3, false), 'completed');
+assert.equal(inferSeriesState('inprogress', twoZero, 3, true), 'completed', 'clinched score must beat a stale getLive event');
+assert.equal(currentGame(transitionGames, 'completed', twoZero, 3)?.id, 'game-1', 'completed series must not jump to unused Game 3');
+
+const sidedGame = {
+  id: 'game-2', number: 2, state: 'inprogress',
+  teams: [
+    { id: 'team-a', side: 'red' },
+    { id: 'team-b', side: 'blue' }
+  ]
+};
+const teams = [
+  { id: 'team-a', code: 'AAA', wins: 1 },
+  { id: 'team-b', code: 'BBB', wins: 0 }
+];
 
 const metadataWindow = {
   esportsGameId: 'game-2',
   gameMetadata: {
     patchVersion: '16.16.1',
     blueTeamMetadata: {
-      esportsTeamId: 'blue-team',
+      esportsTeamId: 'team-b',
       participantMetadata: [
-        { participantId: 1, summonerName: 'TopA', championId: '266', role: 'top' },
-        { participantId: 2, summonerName: 'JungleA', championId: '64', role: 'jungle' },
-        { participantId: 3, summonerName: 'MidA', championId: '103', role: 'mid' },
-        { participantId: 4, summonerName: 'AdcA', championId: '22', role: 'bottom' },
-        { participantId: 5, summonerName: 'SupportA', championId: '412', role: 'support' }
+        { participantId: 1, summonerName: 'TopB', championId: '266', role: 'top' },
+        { participantId: 2, summonerName: 'JungleB', championId: '64', role: 'jungle' },
+        { participantId: 3, summonerName: 'MidB', championId: '103', role: 'mid' },
+        { participantId: 4, summonerName: 'AdcB', championId: '22', role: 'bottom' },
+        { participantId: 5, summonerName: 'SupportB', championId: '412', role: 'support' }
       ],
       bans: [238, 517, 150, 555, 84]
     },
     redTeamMetadata: {
-      esportsTeamId: 'red-team',
+      esportsTeamId: 'team-a',
       participantMetadata: [
-        { participantId: 6, summonerName: 'TopB', championId: '58', role: 'top' },
-        { participantId: 7, summonerName: 'JungleB', championId: '121', role: 'jungle' },
-        { participantId: 8, summonerName: 'MidB', championId: '7', role: 'mid' },
-        { participantId: 9, summonerName: 'AdcB', championId: '81', role: 'bottom' },
-        { participantId: 10, summonerName: 'SupportB', championId: '111', role: 'support' }
+        { participantId: 6, summonerName: 'TopA', championId: '58', role: 'top' },
+        { participantId: 7, summonerName: 'JungleA', championId: '121', role: 'jungle' },
+        { participantId: 8, summonerName: 'MidA', championId: '7', role: 'mid' },
+        { participantId: 9, summonerName: 'AdcA', championId: '81', role: 'bottom' },
+        { participantId: 10, summonerName: 'SupportA', championId: '111', role: 'support' }
       ],
       bans: [24, 39, 268, 777, 89]
     }
@@ -69,8 +84,6 @@ const metadataWindow = {
   }]
 };
 
-// This reproduces the production bug: the newest Riot window has fresh stats,
-// but its rolling response can omit gameMetadata / champion draft data.
 const latestWindow = {
   esportsGameId: 'game-2',
   frames: [{
@@ -82,17 +95,22 @@ const latestWindow = {
 };
 
 const merged = mergeLiveWindows(metadataWindow, latestWindow);
-const normalized = normalizeWindow(merged, games[1]);
+const normalized = normalizeWindow(merged, sidedGame);
+const aligned = alignLiveTeams(normalized, sidedGame, teams);
 
 assert.equal(normalized.gameId, 'game-2');
-assert.equal(normalized.blue.picks.length, 5, 'fresh frame must retain blue picks from metadata window');
-assert.equal(normalized.red.picks.length, 5, 'fresh frame must retain red picks from metadata window');
-assert.equal(normalized.blue.bans.length, 5, 'blue bans should survive metadata merge');
-assert.equal(normalized.red.bans.length, 5, 'red bans should survive metadata merge');
-assert.equal(normalized.blue.stats.gold, 39900, 'stats must come from newest frame');
-assert.equal(normalized.red.stats.gold, 40400, 'stats must come from newest frame');
-assert.equal(normalized.blue.stats.kills, 9);
-assert.equal(normalized.red.stats.kills, 8);
+assert.equal(normalized.blue.picks.length, 5);
+assert.equal(normalized.red.picks.length, 5);
+assert.equal(normalized.blue.bans.length, 5);
+assert.equal(normalized.red.bans.length, 5);
+assert.equal(normalized.blue.stats.gold, 39900);
+assert.equal(normalized.red.stats.gold, 40400);
 assert.equal(normalized.timestamp, '2026-08-20T08:32:10.000Z');
+assert.equal(aligned.teams[0].side, 'red', 'series team A must render its red-side data in this game');
+assert.equal(aligned.teams[0].stats.gold, 40400);
+assert.equal(aligned.teams[0].picks[0].summonerName, 'TopA');
+assert.equal(aligned.teams[1].side, 'blue', 'series team B must render its blue-side data in this game');
+assert.equal(aligned.teams[1].stats.gold, 39900);
+assert.equal(aligned.teams[1].picks[0].summonerName, 'TopB');
 
-console.log('Live Match history + transition + rolling metadata regression smoke passed.');
+console.log('Live Match score/state/side/history regression smoke passed.');
