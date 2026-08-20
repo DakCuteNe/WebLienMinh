@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T11:35:40.159Z",
+  "generatedAt": "2026-08-20T11:37:41.854Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -7288,7 +7288,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -7299,7 +7299,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -7941,7 +7941,7 @@
           "outcome": null,
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -8397,7 +8397,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
