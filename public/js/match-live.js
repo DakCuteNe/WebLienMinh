@@ -80,6 +80,35 @@ function teamCode(card, side) {
   return String(team?.querySelector('small')?.textContent || team?.querySelector('strong')?.textContent || '').trim();
 }
 
+function teamKey(value) {
+  return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
+function payloadTeamIndex(card, side, teams = [], fallbackIndex = 0) {
+  const wanted = teamKey(teamCode(card, side));
+  if (wanted) {
+    const exact = teams.findIndex(team => [team?.code, team?.name].some(value => teamKey(value) === wanted));
+    if (exact >= 0) return exact;
+  }
+  return Math.min(fallbackIndex, Math.max(0, teams.length - 1));
+}
+
+function cardSeriesContext(card, payload) {
+  const teams = payload?.teams || [];
+  const leftIndex = payloadTeamIndex(card, 'left', teams, 0);
+  let rightIndex = payloadTeamIndex(card, 'right', teams, 1);
+  if (rightIndex === leftIndex && teams.length > 1) rightIndex = leftIndex === 0 ? 1 : 0;
+  const liveTeams = payload?.live?.teams || [];
+  return {
+    leftIndex,
+    rightIndex,
+    leftTeam: teams[leftIndex] || teams[0] || null,
+    rightTeam: teams[rightIndex] || teams[1] || null,
+    leftLive: liveTeams[leftIndex] || (leftIndex === 0 ? payload?.live?.blue : payload?.live?.red) || null,
+    rightLive: liveTeams[rightIndex] || (rightIndex === 0 ? payload?.live?.blue : payload?.live?.red) || null
+  };
+}
+
 function officialUrl(slug) {
   const base = `https://lolesports.com/${locale()}/`;
   return slug ? `${base}?leagues=${encodeURIComponent(slug)}` : base;
@@ -121,10 +150,11 @@ function ensureScore(team, side) {
 function applySeries(card, payload) {
   const teams = payload?.teams || [];
   if (teams.length >= 2) {
+    const ctx = cardSeriesContext(card, payload);
     const left = card.querySelector('.schedule-team.side-left');
     const right = card.querySelector('.schedule-team.side-right');
-    if (left) ensureScore(left, 'left').textContent = String(teams[0]?.wins ?? 0);
-    if (right) ensureScore(right, 'right').textContent = String(teams[1]?.wins ?? 0);
+    if (left) ensureScore(left, 'left').textContent = String(ctx.leftTeam?.wins ?? 0);
+    if (right) ensureScore(right, 'right').textContent = String(ctx.rightTeam?.wins ?? 0);
   }
 
   const state = String(payload?.state || '').toLowerCase();
@@ -185,9 +215,17 @@ function draftTeam(title, side, map) {
   </div>`;
 }
 
-function gameStateLabel(game) {
+function payloadIsLive(payload) {
+  return stateIsLive(payload?.state) || stateIsLive(payload?.currentGame?.state);
+}
+
+function gameIsCurrentLive(game, payload) {
+  return Boolean(game?.id && payload?.currentGame?.id === game.id && payloadIsLive(payload));
+}
+
+function gameStateLabel(game, payload) {
   if (!game) return '';
-  if (stateIsLive(game.state)) return c().live;
+  if (gameIsCurrentLive(game, payload) || stateIsLive(game.state)) return c().live;
   if (stateIsCompleted(game.state)) return c().finished;
   return c().upcoming;
 }
@@ -232,23 +270,29 @@ async function renderPanel(card, payload) {
   const games = payload.games || [];
   const current = payload.currentGame;
   const viewed = payload.viewGame || current;
-  const live = payload.live;
-  const score = teams.length >= 2 ? `${teams[0].wins ?? 0} — ${teams[1].wins ?? 0}` : '—';
-  const currentIsLive = stateIsLive(current?.state) || String(payload.state || '').toLowerCase().includes('progress');
+  const live = payload.live && (!viewed?.id || !payload.live.gameId || payload.live.gameId === viewed.id) ? payload.live : null;
+  const ctx = cardSeriesContext(card, { ...payload, live });
+  const score = teams.length >= 2 ? `${ctx.leftTeam?.wins ?? 0} — ${ctx.rightTeam?.wins ?? 0}` : '—';
+  const currentIsLive = payloadIsLive(payload);
   const viewingHistorical = Boolean(viewed?.id && current?.id && viewed.id !== current.id);
-  const gamesHtml = games.length ? games.map(game => `<button type="button" class="live-game-pill ${viewed?.id && viewed.id === game.id ? 'active' : ''} ${stateIsCompleted(game.state) ? 'done' : ''} ${stateIsLive(game.state) ? 'current-live' : ''}" data-live-game-id="${esc(game.id || '')}" ${game.id ? '' : 'disabled'}><span>${esc(c().game)} ${game.number}</span>${stateIsLive(game.state) ? '<i></i>' : ''}</button>`).join('') : '';
+  const gamesHtml = games.length ? games.map(game => {
+    const liveGame = gameIsCurrentLive(game, payload) || stateIsLive(game.state);
+    return `<button type="button" class="live-game-pill ${viewed?.id && viewed.id === game.id ? 'active' : ''} ${stateIsCompleted(game.state) ? 'done' : ''} ${liveGame ? 'current-live' : ''}" data-live-game-id="${esc(game.id || '')}" ${game.id ? '' : 'disabled'}><span>${esc(c().game)} ${game.number}</span>${liveGame ? '<i></i>' : ''}</button>`;
+  }).join('') : '';
   const followLive = viewingHistorical && currentIsLive ? `<button type="button" class="live-follow-current" data-live-follow-current>● ${esc(c().followLive)} • ${esc(c().game)} ${current.number}</button>` : '';
   const watchUrl = payload.watchUrl || payload.officialUrl || '#';
-  const viewedLabel = viewed?.number ? `${c().viewing} ${c().game} ${viewed.number} • ${gameStateLabel(viewed)}` : '';
+  const viewedLabel = viewed?.number ? `${c().viewing} ${c().game} ${viewed.number} • ${gameStateLabel(viewed, payload)}` : '';
   const feedClock = clock(live?.timestamp);
   const syncClock = clock(payload.fetchedAt);
+  const leftTitle = ctx.leftTeam?.name || teamCode(card, 'left');
+  const rightTitle = ctx.rightTeam?.name || teamCode(card, 'right');
 
   panel.innerHTML = `<div class="live-panel-head">
     <div><span class="live-source-dot"></span><small>${esc(c().source)}</small><b>${esc(c().series)} ${esc(score)}${viewed?.number ? ` • ${esc(c().game)} ${viewed.number}` : ''}</b>${viewedLabel ? `<em class="live-view-state">${esc(viewedLabel)}</em>` : ''}</div>
     <div class="live-game-nav"><div class="live-game-pills">${gamesHtml}</div>${followLive}</div>
     <a href="${esc(watchUrl)}" target="_blank" rel="noreferrer" class="live-watch-big ${payload.watchUrl && currentIsLive ? 'is-stream' : ''}">${payload.watchUrl && currentIsLive ? '▶ ' + esc(c().watch) : esc(c().matchPage)} ↗</a>
   </div>
-  ${live ? `<div class="live-draft-grid">${draftTeam(teams[0]?.name || teamCode(card, 'left'), live.blue, map)}${draftTeam(teams[1]?.name || teamCode(card, 'right'), live.red, map)}</div>` : `<div class="live-feed-wait"><span>◉</span><div><b>${esc(c().waiting)}</b><small>${esc(c().noFeed)}</small></div></div>`}
+  ${live ? `<div class="live-draft-grid">${draftTeam(leftTitle, ctx.leftLive, map)}${draftTeam(rightTitle, ctx.rightLive, map)}</div>` : `<div class="live-feed-wait"><span>◉</span><div><b>${esc(c().waiting)}</b><small>${esc(c().noFeed)}</small></div></div>`}
   <div class="live-panel-foot">${feedClock ? `${esc(c().feedAt)} ${esc(feedClock)}` : ''}${feedClock && syncClock ? ' • ' : ''}${syncClock ? `${esc(c().syncedAt)} ${esc(syncClock)}` : ''}${live?.patchVersion ? ` • Patch ${esc(live.patchVersion)}` : ''}</div>`;
 
   bindGameButtons(card, panel, payload);
