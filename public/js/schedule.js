@@ -229,6 +229,16 @@ function renderMatches() {
   </div>`).join('');
 }
 
+function refreshVisibleMatchStates() {
+  if (!section?.classList.contains('active-section')) return;
+  section.querySelectorAll('.schedule-match').forEach(card => {
+    if (card.classList.contains('is-live') || card.classList.contains('is-completed')) return;
+    const stateNode = card.querySelector('.schedule-match-state');
+    if (!stateNode || stateNode.classList.contains('live')) return;
+    stateNode.textContent = relativeTime(card.dataset.start || '');
+  });
+}
+
 function render() {
   if (!section) return;
   if (navButton) navButton.textContent = c().nav;
@@ -292,9 +302,7 @@ export function initSchedule() {
   initialized = true;
   render();
   onLanguageChange(render);
-  timer = window.setInterval(() => {
-    if (document.getElementById('schedule')?.classList.contains('active-section')) renderMatches();
-  }, 30_000);
+  timer = window.setInterval(refreshVisibleMatchStates, 30_000);
 }
 
 export async function ensureSchedule() {

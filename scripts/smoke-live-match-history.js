@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { __liveMatchTest } from '../server/esports-match-live.js';
 
-const { selectViewGame, mergeLiveWindows, normalizeWindow } = __liveMatchTest;
+const { currentGame, selectViewGame, mergeLiveWindows, normalizeWindow } = __liveMatchTest;
 
 const games = [
   { id: 'game-1', number: 1, state: 'completed' },
@@ -11,6 +11,28 @@ const games = [
 
 assert.equal(selectViewGame(games, 'game-1')?.id, 'game-1', 'must allow selecting completed Game 1');
 assert.equal(selectViewGame(games)?.id, 'game-2', 'default view must follow the current live game');
+
+const transitionGames = [
+  { id: 'game-1', number: 1, state: 'completed' },
+  { id: 'game-2', number: 2, state: 'unstarted' },
+  { id: 'game-3', number: 3, state: 'unstarted' }
+];
+
+assert.equal(
+  currentGame(transitionGames, 'inprogress')?.id,
+  'game-2',
+  'live series must advance from completed Game 1 to the next non-completed game while Riot game state catches up'
+);
+assert.equal(
+  currentGame(transitionGames, 'completed')?.id,
+  'game-1',
+  'completed series must stay on its last completed game instead of selecting an unused placeholder'
+);
+assert.equal(
+  selectViewGame(transitionGames, '', 0, 'inprogress')?.id,
+  'game-2',
+  'default detailed view must follow the advancing live game during a game-state transition'
+);
 
 const metadataWindow = {
   esportsGameId: 'game-2',
@@ -73,4 +95,4 @@ assert.equal(normalized.blue.stats.kills, 9);
 assert.equal(normalized.red.stats.kills, 8);
 assert.equal(normalized.timestamp, '2026-08-20T08:32:10.000Z');
 
-console.log('Live Match history + rolling metadata regression smoke passed.');
+console.log('Live Match history + transition + rolling metadata regression smoke passed.');

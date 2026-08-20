@@ -4,6 +4,7 @@ const PUBLIC_API_KEY = process.env.LOLESPORTS_API_KEY || '0TvQnueqKa5mxJntVWt0w4
 const CACHE_TTL = 3_000;
 const cache = new Map();
 const metadataCache = new Map();
+const latestWindowCache = new Map();
 
 const text = value => String(value ?? '').trim();
 const lower = value => text(value).toLowerCase();
@@ -119,15 +120,21 @@ function stateIsCompleted(value) {
   return state.includes('complete') || state.includes('finished');
 }
 
-function currentGame(games = []) {
-  return games.find(game => stateIsLive(game.state))
-    || [...games].reverse().find(game => stateIsCompleted(game.state))
-    || games.find(game => !stateIsCompleted(game.state))
+function currentGame(games = [], seriesState = '') {
+  const live = games.find(game => stateIsLive(game.state));
+  if (live) return live;
+
+  if (!stateIsCompleted(seriesState)) {
+    const next = games.find(game => !stateIsCompleted(game.state));
+    if (next) return next;
+  }
+
+  return [...games].reverse().find(game => stateIsCompleted(game.state))
     || games.at(-1)
     || null;
 }
 
-export function selectViewGame(games = [], requestedId = '', requestedNumber = 0) {
+export function selectViewGame(games = [], requestedId = '', requestedNumber = 0, seriesState = '') {
   const id = text(requestedId);
   if (id) {
     const byId = games.find(game => text(game.id) === id);
@@ -138,7 +145,7 @@ export function selectViewGame(games = [], requestedId = '', requestedNumber = 0
     const byNumber = games.find(game => Number(game.number) === number);
     if (byNumber) return byNumber;
   }
-  return currentGame(games);
+  return currentGame(games, seriesState);
 }
 
 function validStreamUrl(value) {
@@ -332,6 +339,22 @@ function rememberMetadata(gameId, metadata) {
   }
 }
 
+function frameTimestamp(windowData) {
+  const value = windowData?.frames?.at(-1)?.rfc460Timestamp;
+  const parsed = Date.parse(value || '');
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function rememberLatestWindow(gameId, windowData) {
+  if (!gameId || !windowData) return windowData;
+  const previous = latestWindowCache.get(gameId)?.value || null;
+  if (!previous || frameTimestamp(windowData) >= frameTimestamp(previous)) {
+    latestWindowCache.set(gameId, { value: windowData, at: Date.now() });
+    return windowData;
+  }
+  return previous;
+}
+
 async function firstWindow(gameId, candidates, predicate) {
   let lastError = null;
   for (const startingTime of [...new Set(candidates.filter(Boolean))]) {
@@ -369,21 +392,31 @@ async function fetchMetadataWindow(game, fallbackStart, latestWindow) {
 
 async function fetchLatestWindow(game, fallbackStart) {
   const completed = stateIsCompleted(game.state);
+  const cached = latestWindowCache.get(game.id)?.value || null;
+  const cachedAt = frameTimestamp(cached);
+  const start = game.startTime || fallbackStart;
+
   const candidates = completed
     ? [
         normalizeStart(Date.now() + 5 * 60_000),
-        normalizeStart(Date.now() + 60_000),
         normalizeStart(Date.now()),
-        normalizeStart(game.startTime || fallbackStart)
+        shiftedStart(start, 60 * 60_000),
+        shiftedStart(start, 45 * 60_000),
+        shiftedStart(start, 30 * 60_000),
+        normalizeStart(start)
       ]
     : [
-        normalizeStart(Date.now() - 20_000),
-        normalizeStart(Date.now() - 50_000),
+        cachedAt ? normalizeStart(cachedAt + 10_000) : null,
+        normalizeStart(Date.now() - 30_000),
         normalizeStart(Date.now() - 90_000),
-        normalizeStart(Date.now() - 150_000),
-        normalizeStart(game.startTime || fallbackStart)
+        normalizeStart(Date.now() - 180_000),
+        normalizeStart(Date.now() - 300_000),
+        normalizeStart(Date.now() - 600_000),
+        normalizeStart(start)
       ];
-  return firstWindow(game.id, candidates, body => Boolean(body?.frames?.length || body?.gameMetadata));
+
+  const fresh = await firstWindow(game.id, candidates, body => Boolean(body?.frames?.length || body?.gameMetadata)).catch(() => null);
+  return fresh ? rememberLatestWindow(game.id, fresh) : cached;
 }
 
 async function fetchLiveWindow(game, fallbackStart) {
@@ -461,8 +494,9 @@ async function buildLivePayload(query) {
   const detail = await fetchEventDetail(resolvedEventId || resolvedMatchId);
   const match = detailMatch(detail, scheduleEvent);
   const games = normalizeGames(match);
-  const game = currentGame(games);
-  const viewGame = selectViewGame(games, wanted.viewGameId, wanted.viewGameNumber);
+  const state = lower(detail?.state || scheduleEvent?.state || query.state || 'unstarted');
+  const game = currentGame(games, state);
+  const viewGame = selectViewGame(games, wanted.viewGameId, wanted.viewGameNumber, state);
   const teams = scheduleMatchScore(detail?.match ? detail : scheduleEvent || { match });
   const streams = [...new Set(collectStreamUrls(detail || scheduleEvent))].filter(Boolean);
   let live = null;
@@ -478,7 +512,7 @@ async function buildLivePayload(query) {
     resolved: Boolean(scheduleEvent || detail),
     eventId: resolvedEventId,
     matchId: resolvedMatchId,
-    state: lower(detail?.state || scheduleEvent?.state || query.state || 'unstarted'),
+    state,
     startTime: detail?.startTime || scheduleEvent?.startTime || wanted.startTime || null,
     teams,
     bestOf: Number(match?.strategy?.count || match?.bestOf || 0) || null,
@@ -495,6 +529,7 @@ async function buildLivePayload(query) {
 }
 
 export const __liveMatchTest = {
+  currentGame,
   selectViewGame,
   mergeLiveWindows,
   normalizeWindow
