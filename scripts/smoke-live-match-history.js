@@ -143,11 +143,12 @@ const cachedGame1 = {
 const recoveryTimes = recoveryStartingTimes(
   { id: 'game-1', number: 1, state: 'completed' },
   '2026-08-20T10:00:00.000Z',
-  '2026-08-20T10:33:20.000Z'
+  '2026-08-20T10:33:20.000Z',
+  Date.parse('2026-08-20T12:00:00.000Z')
 );
-assert.ok(recoveryTimes.includes('2026-08-20T10:05:00.000Z'), 'Game 1 recovery must probe shortly after the scheduled series start');
-assert.ok(recoveryTimes.includes('2026-08-20T10:13:20.000Z'), 'Game 1 recovery must walk backward from its surviving same-game frame');
-assert.equal(draftScore(cachedGame1), 4, 'draft score counts picks and bans from the exact cached game only');
+assert.ok(recoveryTimes.includes('2026-08-20T10:43:20.000Z'), 'Game 1 recovery must probe forward from a surviving partial frame to a usable Riot window');
+assert.ok(recoveryTimes.includes('2026-08-20T10:13:20.000Z'), 'Game 1 recovery must also walk backward from its surviving same-game frame');
+assert.equal(draftScore(cachedGame1), 2, 'draft completeness is based on picks; Riot window bans are optional');
 
 const restoredGame1 = reconcileHistoricalLive(null, cachedGame1, 'game-1');
 assert.equal(restoredGame1?.gameId, 'game-1', 'completed Game 1 draft must remain available when Riot temporarily returns no window');
@@ -172,5 +173,18 @@ const statsOnlyGame1 = {
 const mergedGame1History = reconcileHistoricalLive(statsOnlyGame1, cachedGame1, 'game-1');
 assert.equal(mergedGame1History?.teams?.[0]?.picks?.[0]?.championId, 266, 'fresh stats-only windows must keep the archived Game 1 draft');
 assert.equal(mergedGame1History?.teams?.[0]?.stats?.gold, 40100, 'fresh same-game stats should still update over archived history');
+
+const fakeZeroFrame = {
+  gameId: 'game-1',
+  timestamp: '2026-08-20T07:50:00.000Z',
+  blue: { teamId: 'team-a', picks: [], bans: [], stats: { gold: 0, kills: 0, towers: 0, dragons: 0, barons: 0 } },
+  red: { teamId: 'team-b', picks: [], bans: [], stats: { gold: 0, kills: 0, towers: 0, dragons: 0, barons: 0 } },
+  teams: [
+    { teamId: 'team-a', side: 'blue', picks: [], bans: [], stats: { gold: 0, kills: 0, towers: 0, dragons: 0, barons: 0 } },
+    { teamId: 'team-b', side: 'red', picks: [], bans: [], stats: { gold: 0, kills: 0, towers: 0, dragons: 0, barons: 0 } }
+  ]
+};
+const protectedFromZeroFrame = reconcileHistoricalLive(fakeZeroFrame, cachedGame1, 'game-1');
+assert.equal(protectedFromZeroFrame?.teams?.[0]?.stats?.gold, 38000, 'partial zero frame must not erase real same-game stats');
 
 console.log('Live Match score/state/side/exact-game draft history regression smoke passed.');
