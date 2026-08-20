@@ -65,7 +65,7 @@ function scheduleMatchScore(...events) {
     const wins = variants.map(candidate => Number(candidate?.result?.gameWins ?? candidate?.result?.wins ?? 0) || 0);
     const richest = variants.find(candidate => candidate?.name || candidate?.code || candidate?.image) || team;
     return {
-      id: text(richest?.id || team?.id) || null,
+      id: variants.map(candidate => text(candidate?.id)).find(Boolean) || text(team?.id) || null,
       name: richest?.name || richest?.code || team?.name || team?.code || 'TBD',
       code: richest?.code || richest?.name || team?.code || team?.name || 'TBD',
       image: httpsUrl(richest?.image || team?.image),
@@ -181,10 +181,11 @@ export function currentGame(games = [], seriesState = '', teams = [], bestOf = 0
   const playedWins = totalSeriesWins(teams);
 
   if (stateIsCompleted(seriesState) || seriesClinched(teams, bestOf)) {
-    const completed = ordered.filter(game => stateIsCompleted(game.state));
-    if (completed.length) return completed.at(-1);
-    if (playedWins > 0) return ordered[Math.min(playedWins - 1, ordered.length - 1)] || ordered.at(-1);
-    return ordered.at(-1);
+    if (playedWins > 0) {
+      const byScore = ordered.find(game => Number(game.number) === playedWins);
+      if (byScore) return byScore;
+    }
+    return ordered.filter(game => stateIsCompleted(game.state)).at(-1) || ordered.at(-1) || null;
   }
 
   const expectedNumber = Math.max(1, playedWins + 1);
