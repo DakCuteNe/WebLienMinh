@@ -1,8 +1,9 @@
 const ESPORTS_API = 'https://esports-api.lolesports.com/persisted/gw';
 const LIVE_FEED = 'https://feed.lolesports.com/livestats/v1';
 const PUBLIC_API_KEY = process.env.LOLESPORTS_API_KEY || '0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z';
-const CACHE_TTL = 5_000;
+const CACHE_TTL = 3_000;
 const cache = new Map();
+const metadataCache = new Map();
 
 const text = value => String(value ?? '').trim();
 const lower = value => text(value).toLowerCase();
@@ -20,7 +21,7 @@ async function riotGet(endpoint, params = {}) {
   const response = await fetch(`${ESPORTS_API}/${endpoint}?${query}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.1 live-match-center'
+      'User-Agent': 'WebLienMinh/3.2 live-match-center'
     },
     signal: AbortSignal.timeout(8_000)
   });
@@ -108,12 +109,36 @@ function normalizeGames(match = {}) {
   }));
 }
 
+function stateIsLive(value) {
+  const state = lower(value);
+  return state.includes('progress') || state === 'in_game' || state === 'in-game';
+}
+
+function stateIsCompleted(value) {
+  const state = lower(value);
+  return state.includes('complete') || state.includes('finished');
+}
+
 function currentGame(games = []) {
-  return games.find(game => game.state.includes('progress') || game.state === 'in_game')
-    || [...games].reverse().find(game => game.state.includes('complete'))
-    || games.find(game => !game.state.includes('complete'))
+  return games.find(game => stateIsLive(game.state))
+    || [...games].reverse().find(game => stateIsCompleted(game.state))
+    || games.find(game => !stateIsCompleted(game.state))
     || games.at(-1)
     || null;
+}
+
+export function selectViewGame(games = [], requestedId = '', requestedNumber = 0) {
+  const id = text(requestedId);
+  if (id) {
+    const byId = games.find(game => text(game.id) === id);
+    if (byId) return byId;
+  }
+  const number = Number(requestedNumber || 0);
+  if (number > 0) {
+    const byNumber = games.find(game => Number(game.number) === number);
+    if (byNumber) return byNumber;
+  }
+  return currentGame(games);
 }
 
 function validStreamUrl(value) {
@@ -160,33 +185,21 @@ function normalizeStart(value) {
   return new Date(Math.floor(time / 10_000) * 10_000).toISOString();
 }
 
+function shiftedStart(value, deltaMs) {
+  const base = new Date(value || Date.now()).getTime();
+  return normalizeStart((Number.isFinite(base) ? base : Date.now()) + deltaMs);
+}
+
 async function fetchLiveWindowAt(gameId, startingTime) {
   const response = await fetch(`${LIVE_FEED}/window/${encodeURIComponent(gameId)}?startingTime=${encodeURIComponent(startingTime)}`, {
-    headers: { 'User-Agent': 'WebLienMinh/3.1 live-match-center' },
+    headers: {
+      'x-api-key': PUBLIC_API_KEY,
+      'User-Agent': 'WebLienMinh/3.2 live-match-center'
+    },
     signal: AbortSignal.timeout(7_000)
   });
   if (!response.ok) throw new Error(`live window HTTP ${response.status}`);
   return response.json();
-}
-
-async function fetchLiveWindow(game, fallbackStart) {
-  if (!game?.id) return null;
-  const candidates = [
-    normalizeStart(Date.now() - 30_000),
-    normalizeStart(Date.now() - 90_000),
-    normalizeStart(game.startTime || fallbackStart)
-  ];
-  let lastError = null;
-  for (const startingTime of [...new Set(candidates)]) {
-    try {
-      const body = await fetchLiveWindowAt(game.id, startingTime);
-      if (body?.frames?.length || body?.gameMetadata) return body;
-    } catch (error) {
-      lastError = error;
-    }
-  }
-  if (lastError) throw lastError;
-  return null;
 }
 
 function championIds(value, out = []) {
@@ -211,12 +224,173 @@ function bansFromTeam(meta = {}) {
 
 function picksFromTeam(meta = {}) {
   return (meta.participantMetadata || meta.participants || []).map((player, index) => ({
+    participantId: Number(player.participantId || index + 1) || index + 1,
     championId: Number(player.championId || 0) || null,
     playerId: text(player.esportsPlayerId || player.playerId) || null,
     summonerName: player.summonerName || player.name || null,
     role: player.role || null,
     slot: index + 1
   })).filter(row => row.championId);
+}
+
+function collectBanEntries(value, path = '', out = []) {
+  if (value == null) return out;
+  if (Array.isArray(value)) {
+    for (const item of value) collectBanEntries(item, path, out);
+    return out;
+  }
+  if (typeof value !== 'object') return out;
+  if (/ban/i.test(path) && value.championId != null) {
+    const championId = Number(value.championId || 0);
+    if (championId > 0) {
+      out.push({
+        championId,
+        teamId: text(value.esportsTeamId || value.teamId) || null,
+        side: lower(value.side || value.teamSide),
+        path: lower(path),
+        order: Number(value.pickTurn || value.order || value.slot || 0) || 0
+      });
+    }
+  }
+  for (const [key, child] of Object.entries(value)) collectBanEntries(child, path ? `${path}.${key}` : key, out);
+  return out;
+}
+
+function bansForSide(metadata = {}, teamMeta = {}, side = 'blue') {
+  const direct = bansFromTeam(teamMeta);
+  if (direct.length) return direct.slice(0, 5);
+
+  const entries = collectBanEntries(metadata);
+  if (!entries.length) return [];
+  const teamId = text(teamMeta.esportsTeamId || teamMeta.teamId);
+  const byTeam = teamId ? entries.filter(row => row.teamId && row.teamId === teamId) : [];
+  const bySide = entries.filter(row => row.side === side || row.path.includes(`${side}team`) || row.path.includes(`${side}.`));
+  const chosen = byTeam.length ? byTeam : bySide;
+  if (chosen.length) return [...new Set(chosen.sort((a, b) => a.order - b.order).map(row => row.championId))].slice(0, 5);
+
+  const unique = [...new Set(entries.sort((a, b) => a.order - b.order).map(row => row.championId))];
+  if (unique.length >= 10) return side === 'blue' ? unique.slice(0, 5) : unique.slice(5, 10);
+  return [];
+}
+
+function metadataScore(metadata = {}) {
+  const blue = metadata.blueTeamMetadata || {};
+  const red = metadata.redTeamMetadata || {};
+  return picksFromTeam(blue).length + picksFromTeam(red).length
+    + bansForSide(metadata, blue, 'blue').length + bansForSide(metadata, red, 'red').length;
+}
+
+function mergeTeamMetadata(fresh = {}, fallback = {}) {
+  const freshParticipants = fresh.participantMetadata || fresh.participants || [];
+  const fallbackParticipants = fallback.participantMetadata || fallback.participants || [];
+  const participants = picksFromTeam(fresh).length >= picksFromTeam(fallback).length ? freshParticipants : fallbackParticipants;
+  const merged = { ...fallback, ...fresh };
+  if (participants.length) merged.participantMetadata = participants;
+
+  const keys = new Set([...Object.keys(fallback || {}), ...Object.keys(fresh || {})]);
+  for (const key of keys) {
+    if (!/ban/i.test(key)) continue;
+    const a = fresh?.[key];
+    const b = fallback?.[key];
+    merged[key] = championIds(a, []).length >= championIds(b, []).length ? a : b;
+  }
+  return merged;
+}
+
+function mergeGameMetadata(fresh = {}, fallback = {}) {
+  return {
+    ...fallback,
+    ...fresh,
+    patchVersion: fresh.patchVersion || fallback.patchVersion || null,
+    blueTeamMetadata: mergeTeamMetadata(fresh.blueTeamMetadata || {}, fallback.blueTeamMetadata || {}),
+    redTeamMetadata: mergeTeamMetadata(fresh.redTeamMetadata || {}, fallback.redTeamMetadata || {})
+  };
+}
+
+export function mergeLiveWindows(metadataWindow, latestWindow) {
+  if (!metadataWindow && !latestWindow) return null;
+  const fallback = metadataWindow || {};
+  const latest = latestWindow || {};
+  const metadata = metadataScore(latest.gameMetadata || {}) >= metadataScore(fallback.gameMetadata || {})
+    ? mergeGameMetadata(latest.gameMetadata || {}, fallback.gameMetadata || {})
+    : mergeGameMetadata(fallback.gameMetadata || {}, latest.gameMetadata || {});
+  return {
+    ...fallback,
+    ...latest,
+    esportsGameId: latest.esportsGameId || fallback.esportsGameId || null,
+    esportsMatchId: latest.esportsMatchId || fallback.esportsMatchId || null,
+    gameMetadata: metadata,
+    frames: latest.frames?.length ? latest.frames : (fallback.frames || [])
+  };
+}
+
+function rememberMetadata(gameId, metadata) {
+  if (!gameId || !metadata) return;
+  const previous = metadataCache.get(gameId);
+  if (!previous || metadataScore(metadata) >= metadataScore(previous.metadata)) {
+    metadataCache.set(gameId, { metadata, at: Date.now() });
+  }
+}
+
+async function firstWindow(gameId, candidates, predicate) {
+  let lastError = null;
+  for (const startingTime of [...new Set(candidates.filter(Boolean))]) {
+    try {
+      const body = await fetchLiveWindowAt(gameId, startingTime);
+      if (predicate(body)) return body;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  if (lastError) throw lastError;
+  return null;
+}
+
+async function fetchMetadataWindow(game, fallbackStart, latestWindow) {
+  const cached = metadataCache.get(game.id);
+  const latestMetadata = latestWindow?.gameMetadata || null;
+  if (latestMetadata) rememberMetadata(game.id, latestMetadata);
+  if (latestMetadata && metadataScore(latestMetadata) >= 10) return { gameMetadata: latestMetadata, frames: [] };
+  if (cached?.metadata && metadataScore(cached.metadata) >= 10) return { gameMetadata: cached.metadata, frames: [] };
+
+  const start = game.startTime || fallbackStart || Date.now() - 30 * 60_000;
+  const candidates = [
+    normalizeStart(start),
+    shiftedStart(start, 2 * 60_000),
+    shiftedStart(start, 5 * 60_000),
+    normalizeStart(Date.now() - 15 * 60_000),
+    normalizeStart(Date.now() - 30 * 60_000),
+    normalizeStart(Date.now() - 60 * 60_000)
+  ];
+  const window = await firstWindow(game.id, candidates, body => Boolean(body?.gameMetadata && metadataScore(body.gameMetadata) > 0)).catch(() => null);
+  if (window?.gameMetadata) rememberMetadata(game.id, window.gameMetadata);
+  return window || (cached?.metadata ? { gameMetadata: cached.metadata, frames: [] } : null);
+}
+
+async function fetchLatestWindow(game, fallbackStart) {
+  const completed = stateIsCompleted(game.state);
+  const candidates = completed
+    ? [
+        normalizeStart(Date.now() + 5 * 60_000),
+        normalizeStart(Date.now() + 60_000),
+        normalizeStart(Date.now()),
+        normalizeStart(game.startTime || fallbackStart)
+      ]
+    : [
+        normalizeStart(Date.now() - 20_000),
+        normalizeStart(Date.now() - 50_000),
+        normalizeStart(Date.now() - 90_000),
+        normalizeStart(Date.now() - 150_000),
+        normalizeStart(game.startTime || fallbackStart)
+      ];
+  return firstWindow(game.id, candidates, body => Boolean(body?.frames?.length || body?.gameMetadata));
+}
+
+async function fetchLiveWindow(game, fallbackStart) {
+  if (!game?.id) return null;
+  const latest = await fetchLatestWindow(game, fallbackStart).catch(() => null);
+  const metadataWindow = await fetchMetadataWindow(game, fallbackStart, latest).catch(() => null);
+  return mergeLiveWindows(metadataWindow, latest);
 }
 
 function liveTeamStats(team = {}) {
@@ -229,7 +403,7 @@ function liveTeamStats(team = {}) {
   };
 }
 
-function normalizeWindow(windowData) {
+export function normalizeWindow(windowData, game = null) {
   if (!windowData) return null;
   const metadata = windowData.gameMetadata || {};
   const frames = windowData.frames || [];
@@ -237,19 +411,21 @@ function normalizeWindow(windowData) {
   const blueMeta = metadata.blueTeamMetadata || {};
   const redMeta = metadata.redTeamMetadata || {};
   return {
+    gameId: game?.id || text(windowData.esportsGameId) || null,
+    gameNumber: game?.number || null,
     patchVersion: metadata.patchVersion || null,
-    gameState: frame.gameState || null,
+    gameState: frame.gameState || game?.state || null,
     timestamp: frame.rfc460Timestamp || null,
     blue: {
       teamId: text(blueMeta.esportsTeamId) || null,
       picks: picksFromTeam(blueMeta),
-      bans: bansFromTeam(blueMeta),
+      bans: bansForSide(metadata, blueMeta, 'blue'),
       stats: liveTeamStats(frame.blueTeam)
     },
     red: {
       teamId: text(redMeta.esportsTeamId) || null,
       picks: picksFromTeam(redMeta),
-      bans: bansFromTeam(redMeta),
+      bans: bansForSide(metadata, redMeta, 'red'),
       stats: liveTeamStats(frame.redTeam)
     }
   };
@@ -274,7 +450,9 @@ async function buildLivePayload(query) {
     teamA: text(query.teamA),
     teamB: text(query.teamB),
     locale: text(query.locale) || 'vi-VN',
-    detail: String(query.detail || '') === '1'
+    detail: String(query.detail || '') === '1',
+    viewGameId: text(query.viewGameId),
+    viewGameNumber: Number(query.viewGameNumber || 0) || 0
   };
 
   const scheduleEvent = await resolveScheduleEvent(wanted).catch(() => null);
@@ -284,13 +462,14 @@ async function buildLivePayload(query) {
   const match = detailMatch(detail, scheduleEvent);
   const games = normalizeGames(match);
   const game = currentGame(games);
+  const viewGame = selectViewGame(games, wanted.viewGameId, wanted.viewGameNumber);
   const teams = scheduleMatchScore(detail?.match ? detail : scheduleEvent || { match });
   const streams = [...new Set(collectStreamUrls(detail || scheduleEvent))].filter(Boolean);
   let live = null;
 
-  if (wanted.detail && game?.id) {
-    live = await fetchLiveWindow(game, game.startTime || scheduleEvent?.startTime || wanted.startTime)
-      .then(normalizeWindow)
+  if (wanted.detail && viewGame?.id) {
+    live = await fetchLiveWindow(viewGame, viewGame.startTime || scheduleEvent?.startTime || wanted.startTime)
+      .then(window => normalizeWindow(window, viewGame))
       .catch(() => null);
   }
 
@@ -305,6 +484,7 @@ async function buildLivePayload(query) {
     bestOf: Number(match?.strategy?.count || match?.bestOf || 0) || null,
     games,
     currentGame: game,
+    viewGame,
     live,
     watchUrl: streams[0] || null,
     streams,
@@ -314,6 +494,12 @@ async function buildLivePayload(query) {
   };
 }
 
+export const __liveMatchTest = {
+  selectViewGame,
+  mergeLiveWindows,
+  normalizeWindow
+};
+
 export function installEsportsMatchLiveRoutes(app) {
   app.get('/api/esports/match-live', async (req, res) => {
     const key = JSON.stringify(req.query || {});
@@ -322,7 +508,7 @@ export function installEsportsMatchLiveRoutes(app) {
     try {
       const value = await buildLivePayload(req.query || {});
       cache.set(key, { at: Date.now(), value });
-      res.set('Cache-Control', 'no-store');
+      res.set('Cache-Control', 'no-store, max-age=0');
       res.json(value);
     } catch (error) {
       res.status(502).json({ ok: false, error: error.message, source: 'LoL Esports' });

@@ -17,18 +17,20 @@ const COPY = {
   vi: {
     center: 'Chi tiết trực tiếp', close: 'Thu gọn', watch: 'Xem trực tiếp', matchPage: 'Mở trận đấu',
     syncing: 'Đang đồng bộ trận đấu...', waiting: 'Đang chờ dữ liệu trận đấu từ LoL Esports.',
-    draftWaiting: 'Ban/Pick sẽ tự xuất hiện khi draft bắt đầu.', picks: 'PICK', bans: 'BAN', game: 'Ván',
+    draftWaiting: 'Pick sẽ xuất hiện khi feed draft được Riot công bố.', picks: 'PICK', bans: 'BAN', game: 'Ván',
     series: 'Tỉ số BO', kills: 'Mạng', gold: 'Vàng', towers: 'Trụ', dragons: 'Rồng', barons: 'Baron',
     live: 'ĐANG LIVE', upcoming: 'SẮP DIỄN RA', finished: 'ĐÃ KẾT THÚC', source: 'Live • LoL Esports',
-    noFeed: 'Feed chi tiết chưa mở; tỉ số series vẫn tiếp tục được cập nhật.'
+    noFeed: 'Feed chi tiết chưa có cho ván này; tỉ số series vẫn tiếp tục được cập nhật.',
+    viewing: 'Đang xem', currentLive: 'đang live', feedAt: 'Feed', syncedAt: 'Đồng bộ', followLive: 'Theo ván đang live'
   },
   en: {
     center: 'Live details', close: 'Collapse', watch: 'Watch live', matchPage: 'Open match',
     syncing: 'Syncing live match...', waiting: 'Waiting for LoL Esports match data.',
-    draftWaiting: 'Pick/ban will appear automatically when draft starts.', picks: 'PICKS', bans: 'BANS', game: 'Game',
+    draftWaiting: 'Picks will appear when Riot publishes the draft feed.', picks: 'PICKS', bans: 'BANS', game: 'Game',
     series: 'Series', kills: 'Kills', gold: 'Gold', towers: 'Towers', dragons: 'Dragons', barons: 'Barons',
     live: 'LIVE NOW', upcoming: 'UPCOMING', finished: 'FINISHED', source: 'Live • LoL Esports',
-    noFeed: 'Detailed feed is not open yet; series score will still keep updating.'
+    noFeed: 'Detailed feed is not available for this game yet; series score will still keep updating.',
+    viewing: 'Viewing', currentLive: 'live now', feedAt: 'Feed', syncedAt: 'Synced', followLive: 'Follow live game'
   }
 };
 
@@ -41,11 +43,21 @@ const lang = () => getLanguage() === 'en' ? 'en' : 'vi';
 const c = () => COPY[lang()];
 const locale = () => lang() === 'vi' ? 'vi-VN' : 'en-US';
 
+function stateIsLive(value) {
+  const state = String(value || '').toLowerCase();
+  return state.includes('progress') || state === 'in_game' || state === 'in-game';
+}
+
+function stateIsCompleted(value) {
+  const state = String(value || '').toLowerCase();
+  return state.includes('complete') || state.includes('finished');
+}
+
 function ensureCss() {
   if (document.querySelector('link[data-live-match-center]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/match-live.css?v=3.1.0';
+  link.href = '/match-live.css?v=3.2.0';
   link.dataset.liveMatchCenter = 'true';
   document.head.appendChild(link);
 }
@@ -75,12 +87,14 @@ function officialUrl(slug) {
 
 function queryFor(card, detail = false) {
   const [leagueId, leagueSlug] = leagueInfo(card);
-  return new URLSearchParams({
+  const params = new URLSearchParams({
     leagueId: leagueId || '', leagueSlug: leagueSlug || '', startTime: card.dataset.start || '',
     teamA: teamCode(card, 'left'), teamB: teamCode(card, 'right'),
     state: card.classList.contains('is-live') ? 'inprogress' : card.classList.contains('is-completed') ? 'completed' : 'unstarted',
     locale: locale(), detail: detail ? '1' : '0'
   });
+  if (detail && card._livePinnedGameId) params.set('viewGameId', card._livePinnedGameId);
+  return params;
 }
 
 function withinLiveWindow(card) {
@@ -114,8 +128,9 @@ function applySeries(card, payload) {
   }
 
   const state = String(payload?.state || '').toLowerCase();
-  const live = state.includes('progress') || payload?.live?.gameState === 'in_game';
-  const completed = state.includes('complete');
+  const currentState = payload?.currentGame?.state;
+  const live = state.includes('progress') || stateIsLive(currentState);
+  const completed = state.includes('complete') || (!live && stateIsCompleted(currentState) && payload?.games?.every(game => stateIsCompleted(game.state)));
   card.classList.toggle('is-live', live);
   card.classList.toggle('is-completed', completed);
   const stateNode = card.querySelector('.schedule-match-state');
@@ -170,6 +185,45 @@ function draftTeam(title, side, map) {
   </div>`;
 }
 
+function gameStateLabel(game) {
+  if (!game) return '';
+  if (stateIsLive(game.state)) return c().live;
+  if (stateIsCompleted(game.state)) return c().finished;
+  return c().upcoming;
+}
+
+function clock(value) {
+  if (!value || Number.isNaN(Date.parse(value))) return '';
+  return new Intl.DateTimeFormat(locale(), { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(new Date(value));
+}
+
+function bindGameButtons(card, panel, payload) {
+  const current = payload.currentGame;
+  panel.querySelectorAll('[data-live-game-id]').forEach(button => {
+    button.onclick = async () => {
+      const gameId = button.dataset.liveGameId || '';
+      const isCurrent = current?.id && current.id === gameId;
+      card._livePinnedGameId = isCurrent ? '' : gameId;
+      button.classList.add('loading');
+      const pending = requests.get(card);
+      if (pending) await pending;
+      lastPoll.delete(card);
+      await pollCard(card, true, true);
+    };
+  });
+
+  const follow = panel.querySelector('[data-live-follow-current]');
+  if (follow) {
+    follow.onclick = async () => {
+      card._livePinnedGameId = '';
+      const pending = requests.get(card);
+      if (pending) await pending;
+      lastPoll.delete(card);
+      await pollCard(card, true, true);
+    };
+  }
+}
+
 async function renderPanel(card, payload) {
   const panel = card.querySelector('.schedule-live-panel');
   if (!panel) return;
@@ -177,18 +231,27 @@ async function renderPanel(card, payload) {
   const teams = payload.teams || [];
   const games = payload.games || [];
   const current = payload.currentGame;
+  const viewed = payload.viewGame || current;
   const live = payload.live;
   const score = teams.length >= 2 ? `${teams[0].wins ?? 0} — ${teams[1].wins ?? 0}` : '—';
-  const gamesHtml = games.length ? games.map(game => `<span class="live-game-pill ${current?.id && current.id === game.id ? 'active' : ''} ${game.state.includes('complete') ? 'done' : ''}">${esc(c().game)} ${game.number}</span>`).join('') : '';
+  const currentIsLive = stateIsLive(current?.state) || String(payload.state || '').toLowerCase().includes('progress');
+  const viewingHistorical = Boolean(viewed?.id && current?.id && viewed.id !== current.id);
+  const gamesHtml = games.length ? games.map(game => `<button type="button" class="live-game-pill ${viewed?.id && viewed.id === game.id ? 'active' : ''} ${stateIsCompleted(game.state) ? 'done' : ''} ${stateIsLive(game.state) ? 'current-live' : ''}" data-live-game-id="${esc(game.id || '')}" ${game.id ? '' : 'disabled'}><span>${esc(c().game)} ${game.number}</span>${stateIsLive(game.state) ? '<i></i>' : ''}</button>`).join('') : '';
+  const followLive = viewingHistorical && currentIsLive ? `<button type="button" class="live-follow-current" data-live-follow-current>● ${esc(c().followLive)} • ${esc(c().game)} ${current.number}</button>` : '';
   const watchUrl = payload.watchUrl || payload.officialUrl || '#';
+  const viewedLabel = viewed?.number ? `${c().viewing} ${c().game} ${viewed.number} • ${gameStateLabel(viewed)}` : '';
+  const feedClock = clock(live?.timestamp);
+  const syncClock = clock(payload.fetchedAt);
 
   panel.innerHTML = `<div class="live-panel-head">
-    <div><span class="live-source-dot"></span><small>${esc(c().source)}</small><b>${esc(c().series)} ${esc(score)}${current?.number ? ` • ${esc(c().game)} ${current.number}` : ''}</b></div>
-    <div class="live-game-pills">${gamesHtml}</div>
-    <a href="${esc(watchUrl)}" target="_blank" rel="noreferrer" class="live-watch-big ${payload.watchUrl ? 'is-stream' : ''}">${payload.watchUrl ? '▶ ' + esc(c().watch) : esc(c().matchPage)} ↗</a>
+    <div><span class="live-source-dot"></span><small>${esc(c().source)}</small><b>${esc(c().series)} ${esc(score)}${viewed?.number ? ` • ${esc(c().game)} ${viewed.number}` : ''}</b>${viewedLabel ? `<em class="live-view-state">${esc(viewedLabel)}</em>` : ''}</div>
+    <div class="live-game-nav"><div class="live-game-pills">${gamesHtml}</div>${followLive}</div>
+    <a href="${esc(watchUrl)}" target="_blank" rel="noreferrer" class="live-watch-big ${payload.watchUrl && currentIsLive ? 'is-stream' : ''}">${payload.watchUrl && currentIsLive ? '▶ ' + esc(c().watch) : esc(c().matchPage)} ↗</a>
   </div>
   ${live ? `<div class="live-draft-grid">${draftTeam(teams[0]?.name || teamCode(card, 'left'), live.blue, map)}${draftTeam(teams[1]?.name || teamCode(card, 'right'), live.red, map)}</div>` : `<div class="live-feed-wait"><span>◉</span><div><b>${esc(c().waiting)}</b><small>${esc(c().noFeed)}</small></div></div>`}
-  <div class="live-panel-foot">${payload.fetchedAt ? new Intl.DateTimeFormat(locale(), { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(new Date(payload.fetchedAt)) : ''}${live?.patchVersion ? ` • Patch ${esc(live.patchVersion)}` : ''}</div>`;
+  <div class="live-panel-foot">${feedClock ? `${esc(c().feedAt)} ${esc(feedClock)}` : ''}${feedClock && syncClock ? ' • ' : ''}${syncClock ? `${esc(c().syncedAt)} ${esc(syncClock)}` : ''}${live?.patchVersion ? ` • Patch ${esc(live.patchVersion)}` : ''}</div>`;
+
+  bindGameButtons(card, panel, payload);
 }
 
 async function pollCard(card, detail = false, force = false) {
@@ -196,17 +259,21 @@ async function pollCard(card, detail = false, force = false) {
   const now = Date.now();
   const previousAt = lastPoll.get(card) || 0;
   const live = card.classList.contains('is-live');
-  const minGap = detail || live ? 7_000 : 25_000;
+  const minGap = detail || live ? 4_500 : 25_000;
   if (!force && now - previousAt < minGap) return;
   if (!force && !detail && !withinLiveWindow(card)) return;
   if (requests.has(card)) return requests.get(card);
   lastPoll.set(card, now);
 
-  const request = fetch(`/api/esports/match-live?${queryFor(card, detail)}`, { cache: 'no-store' })
+  const request = fetch(`/api/esports/match-live?${queryFor(card, detail)}`, {
+    cache: 'no-store',
+    headers: { 'Cache-Control': 'no-cache' }
+  })
     .then(response => response.ok ? response.json() : Promise.reject(new Error(`live ${response.status}`)))
     .then(payload => {
       if (payload?.ok) {
         card._livePayload = payload;
+        if (card._livePinnedGameId && !payload.games?.some(game => game.id === card._livePinnedGameId)) card._livePinnedGameId = '';
         applySeries(card, payload);
         if (card.classList.contains('live-panel-open')) renderPanel(card, payload);
       }
@@ -222,8 +289,9 @@ async function pollCard(card, detail = false, force = false) {
 }
 
 function attachCard(card) {
-  if (card.dataset.liveCenterReady === '1' || card.classList.contains('is-completed')) return;
+  if (card.dataset.liveCenterReady === '1') return;
   card.dataset.liveCenterReady = '1';
+  card._livePinnedGameId = '';
   const [, slug] = leagueInfo(card);
   const bar = document.createElement('div');
   bar.className = 'schedule-live-actions';
@@ -269,6 +337,6 @@ export function initLiveMatchCenter() {
     if (!document.getElementById('schedule')?.classList.contains('active-section')) return;
     scan();
     document.querySelectorAll('#schedule .schedule-match').forEach(card => pollCard(card, card.classList.contains('live-panel-open')));
-  }, 8_000);
+  }, 5_000);
   onLanguageChange(refreshLanguage);
 }

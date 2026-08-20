@@ -23,6 +23,7 @@ on:
       - 'public/hall-of-legends.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
+      - 'scripts/smoke-live-match-history.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   push:
@@ -48,6 +49,7 @@ on:
       - 'public/hall-of-legends.css'
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
+      - 'scripts/smoke-live-match-history.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   workflow_dispatch:
@@ -79,6 +81,7 @@ jobs:
           node --check public/js/hall-of-legends.js
           node --check public/app.js
           node --check scripts/smoke-live-match.js
+          node --check scripts/smoke-live-match-history.js
       - name: Verify Together as 1 v3 only
         run: |
           grep -q 'together-finisher-v3' public/js/together-finisher.js
@@ -110,6 +113,19 @@ jobs:
           grep -q 'initHallOfLegends' public/app.js
           grep -q 'ensureHallOfLegends' public/app.js
           grep -q 'hol-section' public/hall-of-legends.css
+      - name: Verify Live Match game history controls
+        run: |
+          grep -q 'data-live-game-id' public/js/match-live.js
+          grep -q 'viewGameId' public/js/match-live.js
+          grep -q 'viewGame' server/esports-match-live.js
+          grep -q 'mergeLiveWindows' server/esports-match-live.js
+          grep -q "match-live.css?v=3.2.0" public/js/match-live.js
+          if grep -q '<span class="live-game-pill' public/js/match-live.js; then
+            echo 'Game pills regressed to non-clickable spans.'
+            exit 1
+          fi
+      - name: Live Match rolling-window regression
+        run: node scripts/smoke-live-match-history.js
       - name: Start WebLienMinh
         run: |
           npm start > /tmp/weblienminh.log 2>&1 &
