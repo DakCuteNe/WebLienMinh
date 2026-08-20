@@ -201,9 +201,11 @@ export function installEsportsMatchHistoryCache(app) {
           const fresh = sameGame(body.live, gameId) ? body.live : null;
           let live = reconcileHistoricalLive(fresh, cached, gameId);
 
-          if (draftScore(live) < 10) {
+          if (draftScore(live) < 20) {
             const recovered = await recoverHistoricalDraft(body, gameId);
-            live = reconcileHistoricalLive(recovered, live, gameId);
+            // Keep the newest same-game stats/timestamp as the fresh side while
+            // using the recovered older window only to fill richer Pick/Ban rows.
+            live = reconcileHistoricalLive(live, recovered, gameId);
           }
 
           if (live) body.live = remember(gameId, live);
