@@ -35,7 +35,7 @@ assert.equal(
 const twoZero = [{ id: 'team-a', wins: 2 }, { id: 'team-b', wins: 0 }];
 assert.equal(inferSeriesState('inprogress', twoZero, 3, false), 'completed');
 assert.equal(inferSeriesState('inprogress', twoZero, 3, true), 'completed', 'clinched score must beat a stale getLive event');
-assert.equal(currentGame(transitionGames, 'completed', twoZero, 3)?.id, 'game-1', 'completed series must not jump to unused Game 3');
+assert.equal(currentGame(transitionGames, 'completed', twoZero, 3)?.id, 'game-2', '2-0 BO3 must identify Game 2 as the last played game even when Riot leaves its state stale');
 
 const sidedGame = {
   id: 'game-2', number: 2, state: 'inprogress',
