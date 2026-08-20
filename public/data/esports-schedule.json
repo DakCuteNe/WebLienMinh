@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T15:10:08.936Z",
+  "generatedAt": "2026-08-20T03:07:11.766Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 82,
-    "completed": 155,
-    "total": 237
+    "completed": 154,
+    "total": 236
   },
   "leagues": [
     {
@@ -110,52 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991325878492:2026-07-06T03:00:00Z:BLG-LYON",
-      "startTime": "2026-07-06T03:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Knockouts",
-      "league": {
-        "id": "98767991325878492",
-        "name": "MSI",
-        "slug": "msi",
-        "officialSlug": "msi",
-        "image": "https://static.lolesports.com/leagues/1592594634248_MSIDarkBG.png",
-        "group": "INTERNATIONAL",
-        "priority": 8
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "BILIBILI GAMING",
-          "code": "BLG",
-          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        },
-        {
-          "name": "LYON",
-          "code": "LYON",
-          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991325878492:2026-07-06T08:00:00Z:T1-FUR",
       "startTime": "2026-07-06T08:00:00Z",
