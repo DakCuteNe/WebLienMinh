@@ -1,17 +1,16 @@
 {
-  "checkedAt": "2026-08-20T03:37:57.596Z",
-  "health": "degraded",
-  "exitCode": 75,
-  "upstreamDegraded": true,
-  "hybridFallback": true,
+  "checkedAt": "2026-08-20T04:58:34.927Z",
+  "health": "ok",
+  "exitCode": 0,
+  "upstreamDegraded": false,
+  "hybridFallback": false,
   "preservedPreviousData": true,
   "watchCount": 42,
   "reconcileStats": {
-    "detailedPreserved": 9,
-    "directoryRefreshed": 30,
+    "detailedPreserved": 18,
+    "directoryRefreshed": 21,
     "unresolved": 3
   },
-  "message": "> rift-meta-vn@2.5.1 update:pros\n> node scripts/update-pros.js\nLeaguepedia tạm giới hạn: You've exceeded your rate limit. Please wait some time and try again.. Chờ 65s (1/2)...\nPROS_SOURCE_DEGRADED: Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.\nHybrid fallback: 42 detailed giữ lại + 0 directory fallback + 0 unresolved / 42 watchlist.\nFeatured Pros reconcile: detailed=9, directory=28, unresolved=5, total=42.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.\nPost-directory reconcile: detailed=9, directory=30, unresolved=3, directoryReady=true.",
-  "dataAvailable": true,
-  "postDirectoryReconciledAt": "2026-08-20T03:37:57.596Z"
+  "message": "> rift-meta-vn@3.13.0 update:pros\n> node scripts/update-pros.js\nFeatured Pros: detailed=18, preserved=4, directoryFallback=18, total=42, Cargo rows=500.\nFeatured Pros reconcile: detailed=18, directory=21, unresolved=3, total=42.",
+  "dataAvailable": true
 }
