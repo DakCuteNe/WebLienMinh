@@ -18,11 +18,16 @@ function httpsUrl(value) {
 }
 
 async function riotGet(endpoint, params = {}) {
-  const query = new URLSearchParams({ hl: 'en-US', ...params });
+  const query = new URLSearchParams({ hl: 'en-US' });
+  for (const [key, value] of Object.entries(params || {})) {
+    if (value == null || value === '') continue;
+    if (Array.isArray(value)) for (const item of value) query.append(key, item);
+    else query.set(key, value);
+  }
   const response = await fetch(`${ESPORTS_API}/${endpoint}?${query}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.2 live-match-center'
+      'User-Agent': 'WebLienMinh/3.3 live-match-center'
     },
     signal: AbortSignal.timeout(8_000)
   });
@@ -33,37 +38,67 @@ async function riotGet(endpoint, params = {}) {
 }
 
 function teamCodes(event) {
-  return (event?.match?.teams || []).slice(0, 2).map(team => lower(team.code || team.name));
+  return (event?.match?.teams || []).slice(0, 2).map(team => lower(team.code || team.name || team.slug));
 }
 
-function scheduleMatchScore(event) {
-  return (event?.match?.teams || []).slice(0, 2).map(team => ({
-    name: team.name || team.code || 'TBD',
-    code: team.code || team.name || 'TBD',
-    image: httpsUrl(team.image),
-    wins: Number(team?.result?.gameWins ?? team?.result?.wins ?? 0) || 0,
-    outcome: team?.result?.outcome || null
-  }));
+function sameTeam(team, other) {
+  if (!team || !other) return false;
+  const aId = text(team.id);
+  const bId = text(other.id);
+  if (aId && bId && aId === bId) return true;
+  const a = [team.code, team.name, team.slug].map(lower).filter(Boolean);
+  const b = [other.code, other.name, other.slug].map(lower).filter(Boolean);
+  return a.some(value => b.includes(value));
+}
+
+function collectTeamRows(...events) {
+  return events
+    .map(event => event?.match?.teams || [])
+    .filter(rows => Array.isArray(rows) && rows.length >= 2);
+}
+
+function scheduleMatchScore(...events) {
+  const rows = collectTeamRows(...events);
+  const primary = rows.find(teamRows => teamRows.some(team => team?.name || team?.code)) || rows[0] || [];
+  return primary.slice(0, 2).map(team => {
+    const variants = rows.flatMap(teamRows => teamRows.filter(candidate => sameTeam(team, candidate)));
+    const wins = variants.map(candidate => Number(candidate?.result?.gameWins ?? candidate?.result?.wins ?? 0) || 0);
+    const richest = variants.find(candidate => candidate?.name || candidate?.code || candidate?.image) || team;
+    return {
+      id: text(richest?.id || team?.id) || null,
+      name: richest?.name || richest?.code || team?.name || team?.code || 'TBD',
+      code: richest?.code || richest?.name || team?.code || team?.name || 'TBD',
+      image: httpsUrl(richest?.image || team?.image),
+      wins: wins.length ? Math.max(...wins) : 0,
+      outcome: variants.map(candidate => candidate?.result?.outcome).find(Boolean) || team?.result?.outcome || null
+    };
+  });
 }
 
 function eventMatches(event, wanted) {
   if (!event?.match) return false;
   if (wanted.eventId && text(event.id) === wanted.eventId) return true;
   if (wanted.matchId && text(event.match?.id) === wanted.matchId) return true;
+  if (wanted.leagueId && text(event?.league?.id) && text(event.league.id) !== wanted.leagueId) return false;
   const startDelta = wanted.startTime && event.startTime
     ? Math.abs(new Date(event.startTime).getTime() - new Date(wanted.startTime).getTime())
     : Number.POSITIVE_INFINITY;
   const codes = teamCodes(event);
   const wantedCodes = [wanted.teamA, wanted.teamB].map(lower).filter(Boolean);
   const sameTeams = wantedCodes.length === 2 && wantedCodes.every(code => codes.includes(code));
-  return sameTeams && startDelta <= 3 * 60 * 60_000;
+  return sameTeams && (startDelta <= 3 * 60 * 60_000 || !Number.isFinite(startDelta));
+}
+
+async function resolveLiveEvent(wanted) {
+  const body = await riotGet('getLive');
+  return (body?.data?.schedule?.events || []).find(event => eventMatches(event, wanted)) || null;
 }
 
 async function resolveScheduleEvent(wanted) {
   if (!wanted.leagueId) return null;
   let pageToken = null;
   const seen = new Set();
-  for (let page = 0; page < 3; page += 1) {
+  for (let page = 0; page < 4; page += 1) {
     const body = await riotGet('getSchedule', pageToken
       ? { leagueId: wanted.leagueId, pageToken }
       : { leagueId: wanted.leagueId });
@@ -85,8 +120,7 @@ function eventFromDetail(body) {
 async function fetchEventDetail(id) {
   if (!id) return null;
   try {
-    const body = await riotGet('getEventDetails', { id });
-    return eventFromDetail(body);
+    return eventFromDetail(await riotGet('getEventDetails', { id }));
   } catch {
     return null;
   }
@@ -106,8 +140,12 @@ function normalizeGames(match = {}) {
     number: gameNumber(game, index),
     state: gameState(game),
     startTime: game.startTime || null,
+    teams: (game.teams || []).map(team => ({
+      id: text(team?.id || team?.teamId) || null,
+      side: lower(team?.side || team?.teamSide) || null
+    })).filter(team => team.id || team.side),
     vods: Array.isArray(game.vods) ? game.vods : []
-  }));
+  })).sort((a, b) => a.number - b.number);
 }
 
 function stateIsLive(value) {
@@ -120,21 +158,47 @@ function stateIsCompleted(value) {
   return state.includes('complete') || state.includes('finished');
 }
 
-function currentGame(games = [], seriesState = '') {
-  const live = games.find(game => stateIsLive(game.state));
-  if (live) return live;
-
-  if (!stateIsCompleted(seriesState)) {
-    const next = games.find(game => !stateIsCompleted(game.state));
-    if (next) return next;
-  }
-
-  return [...games].reverse().find(game => stateIsCompleted(game.state))
-    || games.at(-1)
-    || null;
+function totalSeriesWins(teams = []) {
+  return teams.reduce((sum, team) => sum + (Number(team?.wins || 0) || 0), 0);
 }
 
-export function selectViewGame(games = [], requestedId = '', requestedNumber = 0, seriesState = '') {
+function seriesClinched(teams = [], bestOf = 0) {
+  const count = Number(bestOf || 0);
+  if (!count) return false;
+  const needed = Math.floor(count / 2) + 1;
+  return teams.some(team => Number(team?.wins || 0) >= needed);
+}
+
+function inferSeriesState(rawState, teams = [], bestOf = 0, hasLiveEvent = false) {
+  if (stateIsCompleted(rawState) || seriesClinched(teams, bestOf)) return 'completed';
+  if (hasLiveEvent) return 'inprogress';
+  return lower(rawState || 'unstarted');
+}
+
+export function currentGame(games = [], seriesState = '', teams = [], bestOf = 0) {
+  if (!games.length) return null;
+  const ordered = [...games].sort((a, b) => Number(a.number || 0) - Number(b.number || 0));
+  const playedWins = totalSeriesWins(teams);
+
+  if (stateIsCompleted(seriesState) || seriesClinched(teams, bestOf)) {
+    const completed = ordered.filter(game => stateIsCompleted(game.state));
+    if (completed.length) return completed.at(-1);
+    if (playedWins > 0) return ordered[Math.min(playedWins - 1, ordered.length - 1)] || ordered.at(-1);
+    return ordered.at(-1);
+  }
+
+  const expectedNumber = Math.max(1, playedWins + 1);
+  const live = ordered.find(game => stateIsLive(game.state) && Number(game.number) >= expectedNumber);
+  if (live) return live;
+
+  const next = ordered.find(game => !stateIsCompleted(game.state) && Number(game.number) >= expectedNumber)
+    || ordered.find(game => !stateIsCompleted(game.state));
+  if (next) return next;
+
+  return ordered.filter(game => stateIsCompleted(game.state)).at(-1) || ordered.at(-1) || null;
+}
+
+export function selectViewGame(games = [], requestedId = '', requestedNumber = 0, seriesState = '', teams = [], bestOf = 0) {
   const id = text(requestedId);
   if (id) {
     const byId = games.find(game => text(game.id) === id);
@@ -145,7 +209,7 @@ export function selectViewGame(games = [], requestedId = '', requestedNumber = 0
     const byNumber = games.find(game => Number(game.number) === number);
     if (byNumber) return byNumber;
   }
-  return currentGame(games, seriesState);
+  return currentGame(games, seriesState, teams, bestOf);
 }
 
 function validStreamUrl(value) {
@@ -197,16 +261,24 @@ function shiftedStart(value, deltaMs) {
   return normalizeStart((Number.isFinite(base) ? base : Date.now()) + deltaMs);
 }
 
-async function fetchLiveWindowAt(gameId, startingTime) {
-  const response = await fetch(`${LIVE_FEED}/window/${encodeURIComponent(gameId)}?startingTime=${encodeURIComponent(startingTime)}`, {
+async function fetchLiveWindowAt(gameId, startingTime = null) {
+  const suffix = startingTime ? `?startingTime=${encodeURIComponent(startingTime)}` : '';
+  const response = await fetch(`${LIVE_FEED}/window/${encodeURIComponent(gameId)}${suffix}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.2 live-match-center'
+      'User-Agent': 'WebLienMinh/3.3 live-match-center'
     },
-    signal: AbortSignal.timeout(7_000)
+    signal: AbortSignal.timeout(startingTime ? 7_000 : 4_500)
   });
   if (!response.ok) throw new Error(`live window HTTP ${response.status}`);
   return response.json();
+}
+
+function windowHasData(body, gameId) {
+  if (!body) return false;
+  const returnedId = text(body.esportsGameId);
+  if (returnedId && gameId && returnedId !== text(gameId)) return false;
+  return Boolean(body.frames?.length || body.gameMetadata);
 }
 
 function championIds(value, out = []) {
@@ -223,9 +295,7 @@ function championIds(value, out = []) {
 
 function bansFromTeam(meta = {}) {
   const values = [];
-  for (const [key, value] of Object.entries(meta)) {
-    if (/ban/i.test(key)) championIds(value, values);
-  }
+  for (const [key, value] of Object.entries(meta)) if (/ban/i.test(key)) championIds(value, values);
   return [...new Set(values)].slice(0, 10);
 }
 
@@ -266,7 +336,6 @@ function collectBanEntries(value, path = '', out = []) {
 function bansForSide(metadata = {}, teamMeta = {}, side = 'blue') {
   const direct = bansFromTeam(teamMeta);
   if (direct.length) return direct.slice(0, 5);
-
   const entries = collectBanEntries(metadata);
   if (!entries.length) return [];
   const teamId = text(teamMeta.esportsTeamId || teamMeta.teamId);
@@ -274,7 +343,6 @@ function bansForSide(metadata = {}, teamMeta = {}, side = 'blue') {
   const bySide = entries.filter(row => row.side === side || row.path.includes(`${side}team`) || row.path.includes(`${side}.`));
   const chosen = byTeam.length ? byTeam : bySide;
   if (chosen.length) return [...new Set(chosen.sort((a, b) => a.order - b.order).map(row => row.championId))].slice(0, 5);
-
   const unique = [...new Set(entries.sort((a, b) => a.order - b.order).map(row => row.championId))];
   if (unique.length >= 10) return side === 'blue' ? unique.slice(0, 5) : unique.slice(5, 10);
   return [];
@@ -293,7 +361,6 @@ function mergeTeamMetadata(fresh = {}, fallback = {}) {
   const participants = picksFromTeam(fresh).length >= picksFromTeam(fallback).length ? freshParticipants : fallbackParticipants;
   const merged = { ...fallback, ...fresh };
   if (participants.length) merged.participantMetadata = participants;
-
   const keys = new Set([...Object.keys(fallback || {}), ...Object.keys(fresh || {})]);
   for (const key of keys) {
     if (!/ban/i.test(key)) continue;
@@ -334,9 +401,7 @@ export function mergeLiveWindows(metadataWindow, latestWindow) {
 function rememberMetadata(gameId, metadata) {
   if (!gameId || !metadata) return;
   const previous = metadataCache.get(gameId);
-  if (!previous || metadataScore(metadata) >= metadataScore(previous.metadata)) {
-    metadataCache.set(gameId, { metadata, at: Date.now() });
-  }
+  if (!previous || metadataScore(metadata) >= metadataScore(previous.metadata)) metadataCache.set(gameId, { metadata, at: Date.now() });
 }
 
 function frameTimestamp(windowData) {
@@ -369,6 +434,30 @@ async function firstWindow(gameId, candidates, predicate) {
   return null;
 }
 
+async function fetchLatestWindow(game, fallbackStart) {
+  const cached = latestWindowCache.get(game.id)?.value || null;
+  const direct = await fetchLiveWindowAt(game.id).catch(() => null);
+  if (windowHasData(direct, game.id)) return rememberLatestWindow(game.id, direct);
+
+  const cachedAt = frameTimestamp(cached);
+  const start = game.startTime || fallbackStart;
+  const completed = stateIsCompleted(game.state);
+  const candidates = completed
+    ? [
+        normalizeStart(Date.now() + 5 * 60_000), normalizeStart(Date.now()),
+        shiftedStart(start, 60 * 60_000), shiftedStart(start, 45 * 60_000),
+        shiftedStart(start, 30 * 60_000), normalizeStart(start)
+      ]
+    : [
+        cachedAt ? normalizeStart(cachedAt + 10_000) : null,
+        normalizeStart(Date.now() - 30_000), normalizeStart(Date.now() - 90_000),
+        normalizeStart(Date.now() - 180_000), normalizeStart(Date.now() - 300_000),
+        normalizeStart(Date.now() - 600_000), normalizeStart(start)
+      ];
+  const fresh = await firstWindow(game.id, candidates, body => windowHasData(body, game.id)).catch(() => null);
+  return fresh ? rememberLatestWindow(game.id, fresh) : cached;
+}
+
 async function fetchMetadataWindow(game, fallbackStart, latestWindow) {
   const cached = metadataCache.get(game.id);
   const latestMetadata = latestWindow?.gameMetadata || null;
@@ -378,45 +467,12 @@ async function fetchMetadataWindow(game, fallbackStart, latestWindow) {
 
   const start = game.startTime || fallbackStart || Date.now() - 30 * 60_000;
   const candidates = [
-    normalizeStart(start),
-    shiftedStart(start, 2 * 60_000),
-    shiftedStart(start, 5 * 60_000),
-    normalizeStart(Date.now() - 15 * 60_000),
-    normalizeStart(Date.now() - 30 * 60_000),
-    normalizeStart(Date.now() - 60 * 60_000)
+    normalizeStart(start), shiftedStart(start, 2 * 60_000), shiftedStart(start, 5 * 60_000),
+    normalizeStart(Date.now() - 15 * 60_000), normalizeStart(Date.now() - 30 * 60_000), normalizeStart(Date.now() - 60 * 60_000)
   ];
   const window = await firstWindow(game.id, candidates, body => Boolean(body?.gameMetadata && metadataScore(body.gameMetadata) > 0)).catch(() => null);
   if (window?.gameMetadata) rememberMetadata(game.id, window.gameMetadata);
   return window || (cached?.metadata ? { gameMetadata: cached.metadata, frames: [] } : null);
-}
-
-async function fetchLatestWindow(game, fallbackStart) {
-  const completed = stateIsCompleted(game.state);
-  const cached = latestWindowCache.get(game.id)?.value || null;
-  const cachedAt = frameTimestamp(cached);
-  const start = game.startTime || fallbackStart;
-
-  const candidates = completed
-    ? [
-        normalizeStart(Date.now() + 5 * 60_000),
-        normalizeStart(Date.now()),
-        shiftedStart(start, 60 * 60_000),
-        shiftedStart(start, 45 * 60_000),
-        shiftedStart(start, 30 * 60_000),
-        normalizeStart(start)
-      ]
-    : [
-        cachedAt ? normalizeStart(cachedAt + 10_000) : null,
-        normalizeStart(Date.now() - 30_000),
-        normalizeStart(Date.now() - 90_000),
-        normalizeStart(Date.now() - 180_000),
-        normalizeStart(Date.now() - 300_000),
-        normalizeStart(Date.now() - 600_000),
-        normalizeStart(start)
-      ];
-
-  const fresh = await firstWindow(game.id, candidates, body => Boolean(body?.frames?.length || body?.gameMetadata)).catch(() => null);
-  return fresh ? rememberLatestWindow(game.id, fresh) : cached;
 }
 
 async function fetchLiveWindow(game, fallbackStart) {
@@ -438,13 +494,15 @@ function liveTeamStats(team = {}) {
 
 export function normalizeWindow(windowData, game = null) {
   if (!windowData) return null;
+  const returnedId = text(windowData.esportsGameId);
+  if (returnedId && game?.id && returnedId !== text(game.id)) return null;
   const metadata = windowData.gameMetadata || {};
   const frames = windowData.frames || [];
   const frame = frames.at(-1) || {};
   const blueMeta = metadata.blueTeamMetadata || {};
   const redMeta = metadata.redTeamMetadata || {};
   return {
-    gameId: game?.id || text(windowData.esportsGameId) || null,
+    gameId: game?.id || returnedId || null,
     gameNumber: game?.number || null,
     patchVersion: metadata.patchVersion || null,
     gameState: frame.gameState || game?.state || null,
@@ -464,58 +522,77 @@ export function normalizeWindow(windowData, game = null) {
   };
 }
 
+export function alignLiveTeams(live, game = null, teams = []) {
+  if (!live) return null;
+  const gameTeams = game?.teams || [];
+  const aligned = teams.map((team, index) => {
+    let side = null;
+    if (team?.id) side = gameTeams.find(row => row.id && row.id === team.id)?.side || null;
+    if (!side && team?.id && live.blue?.teamId === team.id) side = 'blue';
+    if (!side && team?.id && live.red?.teamId === team.id) side = 'red';
+    const data = side === 'red' ? live.red : side === 'blue' ? live.blue : (index === 0 ? live.blue : live.red);
+    return {
+      ...(data || {}),
+      teamId: team?.id || data?.teamId || null,
+      side: side || (data === live.red ? 'red' : 'blue')
+    };
+  });
+  return { ...live, teams: aligned };
+}
+
 function officialScheduleUrl(slug, locale = 'vi-VN') {
   const base = `https://lolesports.com/${locale || 'vi-VN'}/schedule`;
   return slug ? `${base}?leagues=${encodeURIComponent(slug)}` : base;
 }
 
-function detailMatch(detail, scheduleEvent) {
-  return detail?.match || detail?.event?.match || (detail?.games ? detail : null) || scheduleEvent?.match || {};
+function detailMatch(detail, scheduleEvent, liveEvent) {
+  return detail?.match || detail?.event?.match || (detail?.games ? detail : null) || scheduleEvent?.match || liveEvent?.match || {};
 }
 
 async function buildLivePayload(query) {
   const wanted = {
-    eventId: text(query.eventId),
-    matchId: text(query.matchId),
-    leagueId: text(query.leagueId),
-    leagueSlug: text(query.leagueSlug),
-    startTime: text(query.startTime),
-    teamA: text(query.teamA),
-    teamB: text(query.teamB),
-    locale: text(query.locale) || 'vi-VN',
-    detail: String(query.detail || '') === '1',
-    viewGameId: text(query.viewGameId),
-    viewGameNumber: Number(query.viewGameNumber || 0) || 0
+    eventId: text(query.eventId), matchId: text(query.matchId), leagueId: text(query.leagueId),
+    leagueSlug: text(query.leagueSlug), startTime: text(query.startTime), teamA: text(query.teamA), teamB: text(query.teamB),
+    locale: text(query.locale) || 'vi-VN', detail: String(query.detail || '') === '1',
+    viewGameId: text(query.viewGameId), viewGameNumber: Number(query.viewGameNumber || 0) || 0
   };
 
-  const scheduleEvent = await resolveScheduleEvent(wanted).catch(() => null);
-  const resolvedEventId = text(scheduleEvent?.id || wanted.eventId) || null;
-  const resolvedMatchId = text(scheduleEvent?.match?.id || wanted.matchId) || null;
+  const wantLiveLookup = stateIsLive(query.state) || (!stateIsCompleted(query.state) && wanted.startTime && new Date(wanted.startTime).getTime() <= Date.now());
+  const [liveEvent, scheduleEvent] = await Promise.all([
+    wantLiveLookup ? resolveLiveEvent(wanted).catch(() => null) : Promise.resolve(null),
+    resolveScheduleEvent(wanted).catch(() => null)
+  ]);
+  const baseEvent = liveEvent || scheduleEvent;
+  const resolvedEventId = text(baseEvent?.id || wanted.eventId) || null;
+  const resolvedMatchId = text(baseEvent?.match?.id || scheduleEvent?.match?.id || wanted.matchId) || null;
   const detail = await fetchEventDetail(resolvedEventId || resolvedMatchId);
-  const match = detailMatch(detail, scheduleEvent);
+  const match = detailMatch(detail, scheduleEvent, liveEvent);
+  const teams = scheduleMatchScore(detail, scheduleEvent, liveEvent);
+  const bestOf = Number(match?.strategy?.count || scheduleEvent?.match?.strategy?.count || liveEvent?.match?.strategy?.count || match?.bestOf || 0) || null;
   const games = normalizeGames(match);
-  const state = lower(detail?.state || scheduleEvent?.state || query.state || 'unstarted');
-  const game = currentGame(games, state);
-  const viewGame = selectViewGame(games, wanted.viewGameId, wanted.viewGameNumber, state);
-  const teams = scheduleMatchScore(detail?.match ? detail : scheduleEvent || { match });
-  const streams = [...new Set(collectStreamUrls(detail || scheduleEvent))].filter(Boolean);
+  const rawState = lower(liveEvent ? 'inprogress' : (detail?.state || scheduleEvent?.state || query.state || 'unstarted'));
+  const state = inferSeriesState(rawState, teams, bestOf, Boolean(liveEvent));
+  const game = currentGame(games, state, teams, bestOf);
+  const viewGame = selectViewGame(games, wanted.viewGameId, wanted.viewGameNumber, state, teams, bestOf);
+  const streams = [...new Set(collectStreamUrls([detail, liveEvent, scheduleEvent]))].filter(Boolean);
   let live = null;
 
   if (wanted.detail && viewGame?.id) {
-    live = await fetchLiveWindow(viewGame, viewGame.startTime || scheduleEvent?.startTime || wanted.startTime)
+    live = await fetchLiveWindow(viewGame, viewGame.startTime || baseEvent?.startTime || wanted.startTime)
       .then(window => normalizeWindow(window, viewGame))
+      .then(value => alignLiveTeams(value, viewGame, teams))
       .catch(() => null);
   }
 
   return {
     ok: true,
-    resolved: Boolean(scheduleEvent || detail),
+    resolved: Boolean(baseEvent || detail),
     eventId: resolvedEventId,
     matchId: resolvedMatchId,
     state,
-    startTime: detail?.startTime || scheduleEvent?.startTime || wanted.startTime || null,
+    startTime: detail?.startTime || baseEvent?.startTime || wanted.startTime || null,
     teams,
-    bestOf: Number(match?.strategy?.count || match?.bestOf || 0) || null,
+    bestOf,
     games,
     currentGame: game,
     viewGame,
@@ -531,6 +608,8 @@ async function buildLivePayload(query) {
 export const __liveMatchTest = {
   currentGame,
   selectViewGame,
+  inferSeriesState,
+  alignLiveTeams,
   mergeLiveWindows,
   normalizeWindow
 };
@@ -544,9 +623,9 @@ export function installEsportsMatchLiveRoutes(app) {
       const value = await buildLivePayload(req.query || {});
       cache.set(key, { at: Date.now(), value });
       res.set('Cache-Control', 'no-store, max-age=0');
-      res.json(value);
+      return res.json(value);
     } catch (error) {
-      res.status(502).json({ ok: false, error: error.message, source: 'LoL Esports' });
+      return res.status(502).json({ ok: false, error: error.message, source: 'LoL Esports' });
     }
   });
 }
