@@ -1,14 +1,16 @@
 import fs from 'node:fs/promises';
 
-// Temporary diagnostic: inspect Riot's per-game result metadata for the exact
-// KRX vs NS series stored in the repo schedule.
+// Temporary diagnostic: resolve the exact KRX vs NS series through the local
+// backend, then inspect Riot's per-game result metadata.
 const API_KEY = process.env.LOLESPORTS_API_KEY || '0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z';
 const ESPORTS_API = 'https://esports-api.lolesports.com/persisted/gw';
+const TARGET_TIME = Date.parse('2026-08-20T10:00:00.000Z');
 
-async function fetchJson(url) {
+async function fetchJson(url, options = {}) {
   const response = await fetch(url, {
-    headers: { 'x-api-key': API_KEY, 'User-Agent': 'WebLienMinh result diagnostic' },
-    signal: AbortSignal.timeout(10_000)
+    ...options,
+    headers: { 'x-api-key': API_KEY, 'User-Agent': 'WebLienMinh result diagnostic', ...(options.headers || {}) },
+    signal: options.signal || AbortSignal.timeout(15_000)
   });
   if (!response.ok) return null;
   const raw = await response.text();
@@ -17,18 +19,37 @@ async function fetchJson(url) {
 }
 
 const localSchedule = JSON.parse(await fs.readFile(new URL('../public/data/esports-schedule.json', import.meta.url), 'utf8'));
-const event = (localSchedule.events || []).find(row => {
+const candidates = (localSchedule.events || []).filter(row => {
   const codes = (row.teams || []).map(team => String(team.code || '').toUpperCase());
-  return codes.includes('KRX') && codes.includes('NS');
-});
-if (!event?.id) throw new Error('KRX vs NS event id not found in local schedule.');
+  return codes.includes('KRX') && codes.includes('NS') && Number.isFinite(Date.parse(row.startTime || ''));
+}).sort((a, b) => Math.abs(Date.parse(a.startTime) - TARGET_TIME) - Math.abs(Date.parse(b.startTime) - TARGET_TIME));
+const event = candidates[0];
+if (!event) throw new Error('KRX vs NS event not found in local schedule.');
 
-const detail = await fetchJson(`${ESPORTS_API}/getEventDetails?hl=en-US&id=${encodeURIComponent(event.id)}`);
+const params = new URLSearchParams({
+  leagueId: String(event.league?.id || '98767991310872058'),
+  leagueSlug: String(event.league?.slug || 'lck'),
+  startTime: String(event.startTime || ''),
+  teamA: String(event.teams?.[0]?.code || event.teams?.[0]?.name || ''),
+  teamB: String(event.teams?.[1]?.code || event.teams?.[1]?.name || ''),
+  state: String(event.state || 'completed'),
+  locale: 'vi-VN',
+  detail: '0'
+});
+const local = await fetchJson(`http://127.0.0.1:${process.env.PORT || 3000}/api/esports/match-live?${params}`, {
+  headers: { 'x-api-key': '' },
+  signal: AbortSignal.timeout(30_000)
+});
+if (!local?.eventId) throw new Error(`Local live endpoint did not resolve Riot event id: ${JSON.stringify({ startTime: event.startTime, teams: event.teams?.map(team => team.code), local })}`);
+
+const detail = await fetchJson(`${ESPORTS_API}/getEventDetails?hl=en-US&id=${encodeURIComponent(local.eventId)}`);
 const eventDetail = detail?.data?.event || detail?.data?.eventDetails || null;
-if (!eventDetail) throw new Error(`getEventDetails returned no event for ${event.id}`);
+if (!eventDetail) throw new Error(`getEventDetails returned no event for Riot id ${local.eventId}`);
 const match = eventDetail.match || {};
 console.log('EVENT_GAME_RESULTS', JSON.stringify({
-  eventId: event.id,
+  requested: { startTime: event.startTime, teams: event.teams?.map(team => team.code) },
+  resolvedEventId: local.eventId,
+  resolvedMatchId: local.matchId,
   eventState: eventDetail.state,
   matchKeys: Object.keys(match),
   teams: match.teams,
