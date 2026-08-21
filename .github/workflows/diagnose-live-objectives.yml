@@ -1,10 +1,10 @@
 name: Diagnose Riot live objective shape
 
 on:
-  push:
-    branches: [main]
+  pull_request:
     paths:
       - '.github/workflows/diagnose-live-objectives.yml'
+      - 'scripts/diagnose-live-objective-shape.js'
 
 permissions:
   contents: read
