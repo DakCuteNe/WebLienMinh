@@ -16,6 +16,16 @@ async function json(url, options = {}) {
   return JSON.parse(raw);
 }
 
+async function textFetch(url, options = {}) {
+  const response = await fetch(url, {
+    ...options,
+    headers: { 'User-Agent': 'Mozilla/5.0 WebLienMinh/1.0', ...(options.headers || {}) },
+    signal: AbortSignal.timeout(20_000)
+  });
+  const raw = await response.text();
+  return { status: response.status, raw, finalUrl: response.url };
+}
+
 function deepMatches(value, regex, path = '', out = []) {
   if (value == null) return out;
   if (Array.isArray(value)) {
@@ -99,3 +109,22 @@ try {
 } catch (error) {
   console.log('OE_ERROR', error.message);
 }
+
+const golTournament = 'https://gol.gg/tournament/tournament-matchlist/LCK%202026%20Rounds%203-4/';
+const golList = await textFetch(golTournament).catch(error => ({ status: 0, raw: error.message, finalUrl: golTournament }));
+const normalizedHtml = golList.raw.replace(/\s+/g, ' ');
+const around = [];
+for (const marker of ['2026-08-21', 'KT Rolster vs T1', 'KT Rolster', 'T1']) {
+  let at = normalizedHtml.indexOf(marker);
+  while (at >= 0 && around.length < 20) {
+    around.push(normalizedHtml.slice(Math.max(0, at - 450), at + 700));
+    at = normalizedHtml.indexOf(marker, at + marker.length);
+  }
+}
+const gameLinks = [...normalizedHtml.matchAll(/href=["']([^"']*(?:game\/stats|page-game\/stats|game\/game-stats)[^"']*)["'][^>]*>([^<]*)</gi)]
+  .map(match => ({ href: match[1], text: match[2].replace(/<[^>]+>/g, '').trim() }));
+console.log('GOL_LIST', JSON.stringify({ status: golList.status, finalUrl: golList.finalUrl, bytes: golList.raw.length, snippets: around.slice(0, 10), gameLinks: gameLinks.slice(-30) }, null, 2));
+
+const genericLinks = [...normalizedHtml.matchAll(/href=["']([^"']+)["'][^>]*>(.*?)<\/a>/gi)].map(row => ({ href: row[1], text: row[2].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim() }));
+const likely = genericLinks.filter(row => /T1|KT Rolster|2026-08-21/.test(row.text) || /game\/stats|page-game\/stats/.test(row.href));
+console.log('GOL_LIKELY_LINKS', JSON.stringify(likely.slice(-80), null, 2));
