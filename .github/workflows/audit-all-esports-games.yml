@@ -15,6 +15,17 @@ on:
       - 'server/esports-match-bootstrap.js'
       - 'public/data/esports-schedule.json'
       - '.github/workflows/audit-all-esports-games.yml'
+  pull_request:
+    paths:
+      - 'scripts/audit-esports-game-coverage.js'
+      - 'server/esports-match-live.js'
+      - 'server/esports-match-history-cache.js'
+      - 'server/esports-match-objectives.js'
+      - 'server/esports-match-community-fallback.js'
+      - 'server/esports-match-community-overlay.js'
+      - 'server/esports-match-bootstrap.js'
+      - 'public/data/esports-schedule.json'
+      - '.github/workflows/audit-all-esports-games.yml'
   workflow_dispatch:
 
 permissions:
