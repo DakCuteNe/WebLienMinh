@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T12:26:19.899Z",
+  "generatedAt": "2026-08-21T13:07:11.249Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 2,
+    "live": 1,
     "upcoming": 71,
-    "completed": 162,
+    "completed": 163,
     "total": 235
   },
   "leagues": [
@@ -7519,7 +7519,7 @@
     {
       "id": "113476371197627891:2026-08-21T09:00:00Z:GAM-TSW",
       "startTime": "2026-08-21T09:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7540,10 +7540,10 @@
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -7551,10 +7551,10 @@
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -7585,7 +7585,7 @@
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
@@ -7885,7 +7885,7 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-22T09:00:00Z:TBD-MVK",
+      "id": "113476371197627891:2026-08-22T09:00:00Z:GAM-MVK",
       "startTime": "2026-08-22T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7903,13 +7903,16 @@
       "strategyType": "bestOf",
       "teams": [
         {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
+          "name": "GAM Esports",
+          "code": "GAM",
+          "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
-          "record": null
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
         },
         {
           "name": "MVK Esports",
@@ -8342,7 +8345,7 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-23T09:00:00Z:TBD-CFO",
+      "id": "113476371197627891:2026-08-23T09:00:00Z:TSW-CFO",
       "startTime": "2026-08-23T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8360,13 +8363,16 @@
       "strategyType": "bestOf",
       "teams": [
         {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
+          "name": "Team Secret Whales",
+          "code": "TSW",
+          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
-          "record": null
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
         },
         {
           "name": "CTBC Flying Oyster",
