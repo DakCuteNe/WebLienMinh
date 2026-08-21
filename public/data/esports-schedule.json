@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T15:45:13.509Z",
+  "generatedAt": "2026-08-21T16:03:18.917Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 70,
+    "upcoming": 38,
     "completed": 164,
-    "total": 235
+    "total": 203
   },
   "leagues": [
     {
@@ -112,6 +112,8 @@
   "events": [
     {
       "id": "98767991325878492:2026-07-08T03:00:00Z:LYON-TSW",
+      "riotEventId": null,
+      "matchId": "115570934355614587",
       "startTime": "2026-07-08T03:00:00Z",
       "state": "completed",
       "type": "match",
@@ -129,6 +131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -141,6 +144,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -158,6 +162,8 @@
     },
     {
       "id": "98767991325878492:2026-07-08T08:00:00Z:G2-T1",
+      "riotEventId": null,
+      "matchId": "115570934355614581",
       "startTime": "2026-07-08T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -175,6 +181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -187,6 +194,7 @@
           }
         },
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -204,6 +212,8 @@
     },
     {
       "id": "98767991325878492:2026-07-09T08:00:00Z:BLG-HLE",
+      "riotEventId": null,
+      "matchId": "115570934355614575",
       "startTime": "2026-07-09T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -221,6 +231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -233,6 +244,7 @@
           }
         },
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -250,6 +262,8 @@
     },
     {
       "id": "98767991325878492:2026-07-10T08:00:00Z:G2-LYON",
+      "riotEventId": null,
+      "matchId": "115570934355614593",
       "startTime": "2026-07-10T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -267,6 +281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -279,6 +294,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -296,6 +312,8 @@
     },
     {
       "id": "98767991325878492:2026-07-11T08:00:00Z:LYON-HLE",
+      "riotEventId": null,
+      "matchId": "115570934355614599",
       "startTime": "2026-07-11T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -313,6 +331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -325,6 +344,7 @@
           }
         },
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -342,6 +362,8 @@
     },
     {
       "id": "98767991325878492:2026-07-12T06:00:00Z:BLG-HLE",
+      "riotEventId": null,
+      "matchId": "115570934355614605",
       "startTime": "2026-07-12T06:00:00Z",
       "state": "completed",
       "type": "match",
@@ -359,6 +381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -371,6 +394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -388,6 +412,8 @@
     },
     {
       "id": "98767991302996019:2026-07-24T14:30:00Z:MKOI-G2",
+      "riotEventId": null,
+      "matchId": "115548681803406275",
       "startTime": "2026-07-24T14:30:00Z",
       "state": "completed",
       "type": "match",
@@ -405,6 +431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -417,6 +444,7 @@
           }
         },
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -434,6 +462,8 @@
     },
     {
       "id": "98767991302996019:2026-07-24T17:30:00Z:KC-VIT",
+      "riotEventId": null,
+      "matchId": "115548681803406199",
       "startTime": "2026-07-24T17:30:00Z",
       "state": "completed",
       "type": "match",
@@ -451,6 +481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -463,6 +494,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -480,6 +512,8 @@
     },
     {
       "id": "98767991314006698:2026-07-25T07:00:00Z:WE-LGD",
+      "riotEventId": null,
+      "matchId": "116566854547769604",
       "startTime": "2026-07-25T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -497,6 +531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -509,6 +544,7 @@
           }
         },
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -526,6 +562,8 @@
     },
     {
       "id": "98767991314006698:2026-07-25T09:00:00Z:IG-WBG",
+      "riotEventId": null,
+      "matchId": "116566854547835312",
       "startTime": "2026-07-25T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -543,6 +581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
@@ -555,6 +594,7 @@
           }
         },
         {
+          "id": null,
           "name": "WeiboGaming",
           "code": "WBG",
           "image": "https://static.lolesports.com/teams/1641202879910_3.png",
@@ -572,6 +612,8 @@
     },
     {
       "id": "113476371197627891:2026-07-25T09:00:00Z:MVK-GZ",
+      "riotEventId": null,
+      "matchId": "115570814727838285",
       "startTime": "2026-07-25T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -589,6 +631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -601,6 +644,7 @@
           }
         },
         {
+          "id": null,
           "name": "Ground Zero Gaming",
           "code": "GZ",
           "image": "https://static.lolesports.com/teams/1766395585595_LCP_TEAMLogo_GZ_Full_B.png",
@@ -618,6 +662,8 @@
     },
     {
       "id": "98767991314006698:2026-07-25T11:00:00Z:TES-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769592",
       "startTime": "2026-07-25T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -635,6 +681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -647,6 +694,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -664,6 +712,8 @@
     },
     {
       "id": "113476371197627891:2026-07-25T11:30:00Z:TSW-SHG",
+      "riotEventId": null,
+      "matchId": "115570814727903825",
       "startTime": "2026-07-25T11:30:00Z",
       "state": "completed",
       "type": "match",
@@ -681,6 +731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -693,6 +744,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fukuoka SoftBank HAWKS gaming",
           "code": "SHG",
           "image": "https://static.lolesports.com/teams/1725885083108_SHG_White_Main.png",
@@ -710,6 +762,8 @@
     },
     {
       "id": "98767991302996019:2026-07-25T14:30:00Z:G2-VIT",
+      "riotEventId": null,
+      "matchId": "115548681803406203",
       "startTime": "2026-07-25T14:30:00Z",
       "state": "completed",
       "type": "match",
@@ -727,6 +781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -739,6 +794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -756,6 +812,8 @@
     },
     {
       "id": "98767991302996019:2026-07-25T17:30:00Z:MKOI-KC",
+      "riotEventId": null,
+      "matchId": "115548681803406271",
       "startTime": "2026-07-25T17:30:00Z",
       "state": "completed",
       "type": "match",
@@ -773,6 +831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -785,6 +844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -802,6 +862,8 @@
     },
     {
       "id": "98767991299243165:2026-07-25T20:00:00Z:FLY-LYON",
+      "riotEventId": null,
+      "matchId": "115564797164345551",
       "startTime": "2026-07-25T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -819,6 +881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -831,6 +894,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -848,6 +912,8 @@
     },
     {
       "id": "98767991299243165:2026-07-25T23:00:00Z:SEN-DIG",
+      "riotEventId": null,
+      "matchId": "115564797163821179",
       "startTime": "2026-07-25T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -865,6 +931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -877,6 +944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -894,6 +962,8 @@
     },
     {
       "id": "98767991314006698:2026-07-26T07:00:00Z:LNG-NIP",
+      "riotEventId": null,
+      "matchId": "116566854547835316",
       "startTime": "2026-07-26T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -911,6 +981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Suzhou LNG Esports",
           "code": "LNG",
           "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
@@ -923,6 +994,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shenzhen NINJAS IN PYJAMAS",
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
@@ -940,6 +1012,8 @@
     },
     {
       "id": "98767991314006698:2026-07-26T09:00:00Z:EDG-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769652",
       "startTime": "2026-07-26T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -957,6 +1031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -969,6 +1044,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -986,6 +1062,8 @@
     },
     {
       "id": "113476371197627891:2026-07-26T09:00:00Z:DFM-GAM",
+      "riotEventId": null,
+      "matchId": "115570814727903829",
       "startTime": "2026-07-26T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1003,6 +1081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DetonatioN FocusMe",
           "code": "DFM",
           "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
@@ -1015,6 +1094,7 @@
           }
         },
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -1032,6 +1112,8 @@
     },
     {
       "id": "98767991314006698:2026-07-26T11:00:00Z:BLG-AL",
+      "riotEventId": null,
+      "matchId": "116566854547769552",
       "startTime": "2026-07-26T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1049,6 +1131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -1061,6 +1144,7 @@
           }
         },
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -1078,6 +1162,8 @@
     },
     {
       "id": "113476371197627891:2026-07-26T11:30:00Z:DCG-CFO",
+      "riotEventId": null,
+      "matchId": "115570814727903833",
       "startTime": "2026-07-26T11:30:00Z",
       "state": "completed",
       "type": "match",
@@ -1095,6 +1181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Relove Deep Cross Gaming",
           "code": "DCG",
           "image": "https://static.lolesports.com/teams/1785400397160_LCP_DCG_Full_W1.png",
@@ -1107,6 +1194,7 @@
           }
         },
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -1124,6 +1212,8 @@
     },
     {
       "id": "98767991302996019:2026-07-26T14:30:00Z:VIT-MKOI",
+      "riotEventId": null,
+      "matchId": "115548681803406191",
       "startTime": "2026-07-26T14:30:00Z",
       "state": "completed",
       "type": "match",
@@ -1141,6 +1231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -1153,6 +1244,7 @@
           }
         },
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -1170,6 +1262,8 @@
     },
     {
       "id": "98767991302996019:2026-07-26T17:30:00Z:G2-KC",
+      "riotEventId": null,
+      "matchId": "115548681803406287",
       "startTime": "2026-07-26T17:30:00Z",
       "state": "completed",
       "type": "match",
@@ -1187,6 +1281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -1199,6 +1294,7 @@
           }
         },
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -1216,6 +1312,8 @@
     },
     {
       "id": "98767991299243165:2026-07-26T20:00:00Z:TLAW-C9",
+      "riotEventId": null,
+      "matchId": "115564797163886759",
       "startTime": "2026-07-26T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1233,6 +1331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -1245,6 +1344,7 @@
           }
         },
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -1262,6 +1362,8 @@
     },
     {
       "id": "98767991299243165:2026-07-26T23:00:00Z:SR-DSG",
+      "riotEventId": null,
+      "matchId": "115564797163952327",
       "startTime": "2026-07-26T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1279,6 +1381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -1291,6 +1394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -1308,6 +1412,8 @@
     },
     {
       "id": "98767991310872058:2026-07-29T08:00:00Z:KRX-NS",
+      "riotEventId": null,
+      "matchId": "115548147900684661",
       "startTime": "2026-07-29T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1325,6 +1431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -1337,6 +1444,7 @@
           }
         },
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -1354,6 +1462,8 @@
     },
     {
       "id": "98767991314006698:2026-07-29T09:00:00Z:AL-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769576",
       "startTime": "2026-07-29T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1371,6 +1481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -1383,6 +1494,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -1400,6 +1512,8 @@
     },
     {
       "id": "98767991310872058:2026-07-29T10:00:00Z:T1-KT",
+      "riotEventId": null,
+      "matchId": "115548147900553461",
       "startTime": "2026-07-29T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1417,6 +1531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -1429,6 +1544,7 @@
           }
         },
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -1446,6 +1562,8 @@
     },
     {
       "id": "98767991314006698:2026-07-29T11:00:00Z:LGD-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769560",
       "startTime": "2026-07-29T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1463,6 +1581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -1475,6 +1594,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -1492,6 +1612,8 @@
     },
     {
       "id": "98767991314006698:2026-07-30T07:00:00Z:NIP-WBG",
+      "riotEventId": null,
+      "matchId": "116566854547835324",
       "startTime": "2026-07-30T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1509,6 +1631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shenzhen NINJAS IN PYJAMAS",
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
@@ -1521,6 +1644,7 @@
           }
         },
         {
+          "id": null,
           "name": "WeiboGaming",
           "code": "WBG",
           "image": "https://static.lolesports.com/teams/1641202879910_3.png",
@@ -1538,6 +1662,8 @@
     },
     {
       "id": "98767991310872058:2026-07-30T08:00:00Z:BFX-DNS",
+      "riotEventId": null,
+      "matchId": "115548147900684657",
       "startTime": "2026-07-30T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1555,6 +1681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -1567,6 +1694,7 @@
           }
         },
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -1584,6 +1712,8 @@
     },
     {
       "id": "98767991314006698:2026-07-30T09:00:00Z:EDG-WE",
+      "riotEventId": null,
+      "matchId": "116566854547769608",
       "startTime": "2026-07-30T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1601,6 +1731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -1613,6 +1744,7 @@
           }
         },
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -1630,6 +1762,8 @@
     },
     {
       "id": "113476371197627891:2026-07-30T09:00:00Z:DFM-SHG",
+      "riotEventId": null,
+      "matchId": "115570814727903845",
       "startTime": "2026-07-30T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1647,6 +1781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DetonatioN FocusMe",
           "code": "DFM",
           "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
@@ -1659,6 +1794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fukuoka SoftBank HAWKS gaming",
           "code": "SHG",
           "image": "https://static.lolesports.com/teams/1725885083108_SHG_White_Main.png",
@@ -1676,6 +1812,8 @@
     },
     {
       "id": "98767991310872058:2026-07-30T10:00:00Z:HLE-DK",
+      "riotEventId": null,
+      "matchId": "115548147900553453",
       "startTime": "2026-07-30T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1693,6 +1831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -1705,6 +1844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -1722,6 +1862,8 @@
     },
     {
       "id": "98767991314006698:2026-07-30T11:00:00Z:JDG-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769640",
       "startTime": "2026-07-30T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1739,6 +1881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -1751,6 +1894,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -1768,6 +1912,8 @@
     },
     {
       "id": "113476371197627891:2026-07-30T11:30:00Z:GZ-DCG",
+      "riotEventId": null,
+      "matchId": "115570814727903849",
       "startTime": "2026-07-30T11:30:00Z",
       "state": "completed",
       "type": "match",
@@ -1785,6 +1931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Ground Zero Gaming",
           "code": "GZ",
           "image": "https://static.lolesports.com/teams/1766395585595_LCP_TEAMLogo_GZ_Full_B.png",
@@ -1797,6 +1944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Relove Deep Cross Gaming",
           "code": "DCG",
           "image": "https://static.lolesports.com/teams/1785400397160_LCP_DCG_Full_W1.png",
@@ -1814,6 +1962,8 @@
     },
     {
       "id": "98767991314006698:2026-07-31T07:00:00Z:AL-EDG",
+      "riotEventId": null,
+      "matchId": "116566854547769624",
       "startTime": "2026-07-31T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1831,6 +1981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -1843,6 +1994,7 @@
           }
         },
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -1860,6 +2012,8 @@
     },
     {
       "id": "98767991310872058:2026-07-31T08:00:00Z:GEN-T1",
+      "riotEventId": null,
+      "matchId": "115548147900553457",
       "startTime": "2026-07-31T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1877,6 +2031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -1889,6 +2044,7 @@
           }
         },
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -1906,6 +2062,8 @@
     },
     {
       "id": "98767991314006698:2026-07-31T09:00:00Z:WE-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769548",
       "startTime": "2026-07-31T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1923,6 +2081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -1935,6 +2094,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -1952,6 +2112,8 @@
     },
     {
       "id": "113476371197627891:2026-07-31T09:00:00Z:TSW-MVK",
+      "riotEventId": null,
+      "matchId": "115570814727903837",
       "startTime": "2026-07-31T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -1969,6 +2131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -1981,6 +2144,7 @@
           }
         },
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -1998,6 +2162,8 @@
     },
     {
       "id": "98767991310872058:2026-07-31T10:00:00Z:KRX-BRO",
+      "riotEventId": null,
+      "matchId": "115548147900684637",
       "startTime": "2026-07-31T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2015,6 +2181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -2027,6 +2194,7 @@
           }
         },
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -2044,6 +2212,8 @@
     },
     {
       "id": "113476371197627891:2026-07-31T11:30:00Z:CFO-GAM",
+      "riotEventId": null,
+      "matchId": "115570814727903841",
       "startTime": "2026-07-31T11:30:00Z",
       "state": "completed",
       "type": "match",
@@ -2061,6 +2231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -2073,6 +2244,7 @@
           }
         },
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -2090,6 +2262,8 @@
     },
     {
       "id": "98767991302996019:2026-07-31T15:00:00Z:TH-VIT",
+      "riotEventId": null,
+      "matchId": "115548681803406115",
       "startTime": "2026-07-31T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2107,6 +2281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -2119,6 +2294,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -2136,6 +2312,8 @@
     },
     {
       "id": "98767991302996019:2026-07-31T17:15:00Z:MKOI-SHFT",
+      "riotEventId": null,
+      "matchId": "115548681803406215",
       "startTime": "2026-07-31T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -2153,6 +2331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -2165,6 +2344,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -2182,6 +2362,8 @@
     },
     {
       "id": "98767991314006698:2026-08-01T07:00:00Z:TT-AL",
+      "riotEventId": null,
+      "matchId": "116566854547769628",
       "startTime": "2026-08-01T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2199,6 +2381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -2211,6 +2394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -2228,6 +2412,8 @@
     },
     {
       "id": "98767991310872058:2026-08-01T08:00:00Z:NS-BFX",
+      "riotEventId": null,
+      "matchId": "115548147900684653",
       "startTime": "2026-08-01T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2245,6 +2431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -2257,6 +2444,7 @@
           }
         },
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -2274,6 +2462,8 @@
     },
     {
       "id": "98767991314006698:2026-08-01T09:00:00Z:TES-LGD",
+      "riotEventId": null,
+      "matchId": "116566854547769584",
       "startTime": "2026-08-01T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2291,6 +2481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -2303,6 +2494,7 @@
           }
         },
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -2320,6 +2512,8 @@
     },
     {
       "id": "113476371197627891:2026-08-01T09:00:00Z:DFM-DCG",
+      "riotEventId": null,
+      "matchId": "115570814727903859",
       "startTime": "2026-08-01T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2337,6 +2531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DetonatioN FocusMe",
           "code": "DFM",
           "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
@@ -2349,6 +2544,7 @@
           }
         },
         {
+          "id": null,
           "name": "Relove Deep Cross Gaming",
           "code": "DCG",
           "image": "https://static.lolesports.com/teams/1785400397160_LCP_DCG_Full_W1.png",
@@ -2366,6 +2562,8 @@
     },
     {
       "id": "98767991310872058:2026-08-01T10:00:00Z:GEN-DK",
+      "riotEventId": null,
+      "matchId": "115548147900553473",
       "startTime": "2026-08-01T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2383,6 +2581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -2395,6 +2594,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -2412,6 +2612,8 @@
     },
     {
       "id": "98767991314006698:2026-08-01T11:00:00Z:JDG-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769556",
       "startTime": "2026-08-01T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2429,6 +2631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -2441,6 +2644,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -2458,6 +2662,8 @@
     },
     {
       "id": "113476371197627891:2026-08-01T11:30:00Z:MVK-GAM",
+      "riotEventId": null,
+      "matchId": "115570814727903863",
       "startTime": "2026-08-01T11:30:00Z",
       "state": "completed",
       "type": "match",
@@ -2475,6 +2681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -2487,6 +2694,7 @@
           }
         },
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -2504,6 +2712,8 @@
     },
     {
       "id": "98767991302996019:2026-08-01T15:00:00Z:GX-SK",
+      "riotEventId": null,
+      "matchId": "115548681803406231",
       "startTime": "2026-08-01T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2521,6 +2731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -2533,6 +2744,7 @@
           }
         },
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -2550,6 +2762,8 @@
     },
     {
       "id": "98767991302996019:2026-08-01T17:15:00Z:KC-NAVI",
+      "riotEventId": null,
+      "matchId": "115548681803406171",
       "startTime": "2026-08-01T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -2567,6 +2781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -2579,6 +2794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -2596,6 +2812,8 @@
     },
     {
       "id": "98767991299243165:2026-08-01T20:00:00Z:DIG-C9",
+      "riotEventId": null,
+      "matchId": "115564797163821203",
       "startTime": "2026-08-01T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2613,6 +2831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -2625,6 +2844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -2642,6 +2862,8 @@
     },
     {
       "id": "98767991299243165:2026-08-01T23:00:00Z:DSG-FLY",
+      "riotEventId": null,
+      "matchId": "115564797163886783",
       "startTime": "2026-08-01T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2659,6 +2881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -2671,6 +2894,7 @@
           }
         },
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -2688,6 +2912,8 @@
     },
     {
       "id": "98767991314006698:2026-08-02T07:00:00Z:TT-WE",
+      "riotEventId": null,
+      "matchId": "116566854547769612",
       "startTime": "2026-08-02T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2705,6 +2931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -2717,6 +2944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -2734,6 +2962,8 @@
     },
     {
       "id": "98767991310872058:2026-08-02T08:00:00Z:BRO-DNS",
+      "riotEventId": null,
+      "matchId": "115548147900684645",
       "startTime": "2026-08-02T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2751,6 +2981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -2763,6 +2994,7 @@
           }
         },
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -2780,6 +3012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-02T09:00:00Z:IG-LNG",
+      "riotEventId": null,
+      "matchId": "116566854547835304",
       "startTime": "2026-08-02T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2797,6 +3031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
@@ -2809,6 +3044,7 @@
           }
         },
         {
+          "id": null,
           "name": "Suzhou LNG Esports",
           "code": "LNG",
           "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
@@ -2826,6 +3062,8 @@
     },
     {
       "id": "113476371197627891:2026-08-02T09:00:00Z:TSW-CFO",
+      "riotEventId": null,
+      "matchId": "115570814727903853",
       "startTime": "2026-08-02T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2843,6 +3081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -2855,6 +3094,7 @@
           }
         },
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -2872,6 +3112,8 @@
     },
     {
       "id": "98767991310872058:2026-08-02T10:00:00Z:HLE-KT",
+      "riotEventId": null,
+      "matchId": "115548147900553449",
       "startTime": "2026-08-02T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2889,6 +3131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -2901,6 +3144,7 @@
           }
         },
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -2918,6 +3162,8 @@
     },
     {
       "id": "98767991314006698:2026-08-02T11:00:00Z:TES-JDG",
+      "riotEventId": null,
+      "matchId": "116566854547769580",
       "startTime": "2026-08-02T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2935,6 +3181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -2947,6 +3194,7 @@
           }
         },
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -2964,6 +3212,8 @@
     },
     {
       "id": "98767991302996019:2026-08-02T15:00:00Z:G2-SK",
+      "riotEventId": null,
+      "matchId": "115548681803406263",
       "startTime": "2026-08-02T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -2981,6 +3231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -2993,6 +3244,7 @@
           }
         },
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -3010,6 +3262,8 @@
     },
     {
       "id": "98767991302996019:2026-08-02T17:15:00Z:MKOI-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406267",
       "startTime": "2026-08-02T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -3027,6 +3281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -3039,6 +3294,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -3056,6 +3312,8 @@
     },
     {
       "id": "98767991299243165:2026-08-02T20:00:00Z:SR-LYON",
+      "riotEventId": null,
+      "matchId": "115564797164345563",
       "startTime": "2026-08-02T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3073,6 +3331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -3085,6 +3344,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -3102,6 +3362,8 @@
     },
     {
       "id": "98767991299243165:2026-08-02T23:00:00Z:TLAW-SEN",
+      "riotEventId": null,
+      "matchId": "115564797163821199",
       "startTime": "2026-08-02T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3119,6 +3381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -3131,6 +3394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -3148,6 +3412,8 @@
     },
     {
       "id": "98767991302996019:2026-08-03T15:00:00Z:NAVI-SHFT",
+      "riotEventId": null,
+      "matchId": "115548681803406151",
       "startTime": "2026-08-03T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3165,6 +3431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -3177,6 +3444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -3194,6 +3462,8 @@
     },
     {
       "id": "98767991302996019:2026-08-03T17:15:00Z:KC-TH",
+      "riotEventId": null,
+      "matchId": "115548681803406139",
       "startTime": "2026-08-03T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -3211,6 +3481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -3223,6 +3494,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -3240,6 +3512,8 @@
     },
     {
       "id": "98767991310872058:2026-08-05T08:00:00Z:NS-BRO",
+      "riotEventId": null,
+      "matchId": "115548147900684641",
       "startTime": "2026-08-05T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3257,6 +3531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -3269,6 +3544,7 @@
           }
         },
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -3286,6 +3562,8 @@
     },
     {
       "id": "98767991314006698:2026-08-05T09:00:00Z:LGD-JDG",
+      "riotEventId": null,
+      "matchId": "116566854547769632",
       "startTime": "2026-08-05T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3303,6 +3581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -3315,6 +3594,7 @@
           }
         },
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -3332,6 +3612,8 @@
     },
     {
       "id": "98767991310872058:2026-08-05T10:00:00Z:GEN-HLE",
+      "riotEventId": null,
+      "matchId": "115548147900553445",
       "startTime": "2026-08-05T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3349,6 +3631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -3361,6 +3644,7 @@
           }
         },
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -3378,6 +3662,8 @@
     },
     {
       "id": "98767991314006698:2026-08-05T11:00:00Z:TES-EDG",
+      "riotEventId": null,
+      "matchId": "116566854547769588",
       "startTime": "2026-08-05T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3395,6 +3681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -3407,6 +3694,7 @@
           }
         },
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -3424,6 +3712,8 @@
     },
     {
       "id": "98767991314006698:2026-08-06T07:00:00Z:LGD-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769648",
       "startTime": "2026-08-06T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3441,6 +3731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -3453,6 +3744,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -3470,6 +3762,8 @@
     },
     {
       "id": "98767991310872058:2026-08-06T08:00:00Z:KRX-DNS",
+      "riotEventId": null,
+      "matchId": "115548147900684665",
       "startTime": "2026-08-06T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3487,6 +3781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -3499,6 +3794,7 @@
           }
         },
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -3516,6 +3812,8 @@
     },
     {
       "id": "98767991314006698:2026-08-06T09:00:00Z:IG-NIP",
+      "riotEventId": null,
+      "matchId": "116566854547835308",
       "startTime": "2026-08-06T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3533,6 +3831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
@@ -3545,6 +3844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shenzhen NINJAS IN PYJAMAS",
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
@@ -3562,6 +3862,8 @@
     },
     {
       "id": "113476371197627891:2026-08-06T09:00:00Z:GZ-SHG",
+      "riotEventId": null,
+      "matchId": "115570814727903867",
       "startTime": "2026-08-06T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3579,6 +3881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Ground Zero Gaming",
           "code": "GZ",
           "image": "https://static.lolesports.com/teams/1766395585595_LCP_TEAMLogo_GZ_Full_B.png",
@@ -3591,6 +3894,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fukuoka SoftBank HAWKS gaming",
           "code": "SHG",
           "image": "https://static.lolesports.com/teams/1725885083108_SHG_White_Main.png",
@@ -3608,6 +3912,8 @@
     },
     {
       "id": "98767991310872058:2026-08-06T10:00:00Z:T1-DK",
+      "riotEventId": null,
+      "matchId": "115548147900553465",
       "startTime": "2026-08-06T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3625,6 +3931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -3637,6 +3944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -3654,6 +3962,8 @@
     },
     {
       "id": "98767991314006698:2026-08-06T11:00:00Z:WE-AL",
+      "riotEventId": null,
+      "matchId": "116566854547769596",
       "startTime": "2026-08-06T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3671,6 +3981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -3683,6 +3994,7 @@
           }
         },
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -3700,6 +4012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-07T07:00:00Z:EDG-JDG",
+      "riotEventId": null,
+      "matchId": "116566854547769636",
       "startTime": "2026-08-07T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3717,6 +4031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -3729,6 +4044,7 @@
           }
         },
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -3746,6 +4062,8 @@
     },
     {
       "id": "98767991310872058:2026-08-07T08:00:00Z:GEN-KT",
+      "riotEventId": null,
+      "matchId": "115548147900553469",
       "startTime": "2026-08-07T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3763,6 +4081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -3775,6 +4094,7 @@
           }
         },
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -3792,6 +4112,8 @@
     },
     {
       "id": "98767991314006698:2026-08-07T09:00:00Z:WE-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769724",
       "startTime": "2026-08-07T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3809,6 +4131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -3821,6 +4144,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -3838,6 +4162,8 @@
     },
     {
       "id": "113476371197627891:2026-08-07T09:00:00Z:DFM-GAM",
+      "riotEventId": null,
+      "matchId": "115570814727903885",
       "startTime": "2026-08-07T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3855,6 +4181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DetonatioN FocusMe",
           "code": "DFM",
           "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
@@ -3867,6 +4194,7 @@
           }
         },
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -3884,6 +4212,8 @@
     },
     {
       "id": "98767991310872058:2026-08-07T10:00:00Z:BRO-BFX",
+      "riotEventId": null,
+      "matchId": "115548147900684633",
       "startTime": "2026-08-07T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3901,6 +4231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -3913,6 +4244,7 @@
           }
         },
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -3930,6 +4262,8 @@
     },
     {
       "id": "98767991314006698:2026-08-07T11:00:00Z:TES-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547704008",
       "startTime": "2026-08-07T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3947,6 +4281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -3959,6 +4294,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -3976,6 +4312,8 @@
     },
     {
       "id": "98767991302996019:2026-08-07T15:00:00Z:SHFT-GX",
+      "riotEventId": null,
+      "matchId": "115548681803406207",
       "startTime": "2026-08-07T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -3993,6 +4331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -4005,6 +4344,7 @@
           }
         },
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -4022,6 +4362,8 @@
     },
     {
       "id": "98767991302996019:2026-08-07T17:15:00Z:TH-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406135",
       "startTime": "2026-08-07T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -4039,6 +4381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -4051,6 +4394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -4068,6 +4412,8 @@
     },
     {
       "id": "98767991314006698:2026-08-08T07:00:00Z:WBG-LNG",
+      "riotEventId": null,
+      "matchId": "116566854547835320",
       "startTime": "2026-08-08T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4085,6 +4431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "WeiboGaming",
           "code": "WBG",
           "image": "https://static.lolesports.com/teams/1641202879910_3.png",
@@ -4097,6 +4444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Suzhou LNG Esports",
           "code": "LNG",
           "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
@@ -4114,6 +4462,8 @@
     },
     {
       "id": "98767991310872058:2026-08-08T08:00:00Z:T1-HLE",
+      "riotEventId": null,
+      "matchId": "115548147900487905",
       "startTime": "2026-08-08T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4131,6 +4481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -4143,6 +4494,7 @@
           }
         },
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -4160,6 +4512,8 @@
     },
     {
       "id": "98767991314006698:2026-08-08T09:00:00Z:LGD-AL",
+      "riotEventId": null,
+      "matchId": "116566854547769732",
       "startTime": "2026-08-08T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4177,6 +4531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -4189,6 +4544,7 @@
           }
         },
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -4206,6 +4562,8 @@
     },
     {
       "id": "113476371197627891:2026-08-08T09:00:00Z:DCG-MVK",
+      "riotEventId": null,
+      "matchId": "115570814727903873",
       "startTime": "2026-08-08T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4223,6 +4581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Relove Deep Cross Gaming",
           "code": "DCG",
           "image": "https://static.lolesports.com/teams/1785400397160_LCP_DCG_Full_W1.png",
@@ -4235,6 +4594,7 @@
           }
         },
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -4252,6 +4612,8 @@
     },
     {
       "id": "98767991310872058:2026-08-08T10:00:00Z:DNS-NS",
+      "riotEventId": null,
+      "matchId": "115548147900684669",
       "startTime": "2026-08-08T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4269,6 +4631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -4281,6 +4644,7 @@
           }
         },
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -4298,6 +4662,8 @@
     },
     {
       "id": "98767991314006698:2026-08-08T11:00:00Z:EDG-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769676",
       "startTime": "2026-08-08T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4315,6 +4681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -4327,6 +4694,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -4344,6 +4712,8 @@
     },
     {
       "id": "98767991302996019:2026-08-08T15:00:00Z:NAVI-SK",
+      "riotEventId": null,
+      "matchId": "115548681803406159",
       "startTime": "2026-08-08T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4361,6 +4731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -4373,6 +4744,7 @@
           }
         },
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -4390,6 +4762,8 @@
     },
     {
       "id": "98767991302996019:2026-08-08T17:15:00Z:GX-MKOI",
+      "riotEventId": null,
+      "matchId": "115548681803406235",
       "startTime": "2026-08-08T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -4407,6 +4781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -4419,6 +4794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -4436,6 +4812,8 @@
     },
     {
       "id": "98767991299243165:2026-08-08T20:00:00Z:DSG-C9",
+      "riotEventId": null,
+      "matchId": "115564797163886743",
       "startTime": "2026-08-08T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4453,6 +4831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -4465,6 +4844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -4482,6 +4862,8 @@
     },
     {
       "id": "98767991299243165:2026-08-08T23:00:00Z:SR-SEN",
+      "riotEventId": null,
+      "matchId": "115564797163821195",
       "startTime": "2026-08-08T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4499,6 +4881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -4511,6 +4894,7 @@
           }
         },
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -4528,6 +4912,8 @@
     },
     {
       "id": "98767991314006698:2026-08-09T07:00:00Z:LNG-IG",
+      "riotEventId": null,
+      "matchId": "116566854547835328",
       "startTime": "2026-08-09T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4545,6 +4931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Suzhou LNG Esports",
           "code": "LNG",
           "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
@@ -4557,6 +4944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
@@ -4574,6 +4962,8 @@
     },
     {
       "id": "98767991310872058:2026-08-09T08:00:00Z:KT-DK",
+      "riotEventId": null,
+      "matchId": "115548147900553477",
       "startTime": "2026-08-09T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4591,6 +4981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -4603,6 +4994,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -4620,6 +5012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-09T09:00:00Z:TT-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769704",
       "startTime": "2026-08-09T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4637,6 +5031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -4649,6 +5044,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -4666,6 +5062,8 @@
     },
     {
       "id": "113476371197627891:2026-08-09T09:00:00Z:GZ-CFO",
+      "riotEventId": null,
+      "matchId": "115570814727903879",
       "startTime": "2026-08-09T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4683,6 +5081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Ground Zero Gaming",
           "code": "GZ",
           "image": "https://static.lolesports.com/teams/1766395585595_LCP_TEAMLogo_GZ_Full_B.png",
@@ -4695,6 +5094,7 @@
           }
         },
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -4712,6 +5112,8 @@
     },
     {
       "id": "98767991310872058:2026-08-09T10:00:00Z:BFX-KRX",
+      "riotEventId": null,
+      "matchId": "115548147900684649",
       "startTime": "2026-08-09T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4729,6 +5131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -4741,6 +5144,7 @@
           }
         },
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -4758,6 +5162,8 @@
     },
     {
       "id": "98767991314006698:2026-08-09T11:00:00Z:WE-JDG",
+      "riotEventId": null,
+      "matchId": "116566854547769712",
       "startTime": "2026-08-09T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4775,6 +5181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -4787,6 +5194,7 @@
           }
         },
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -4804,6 +5212,8 @@
     },
     {
       "id": "98767991302996019:2026-08-09T15:00:00Z:G2-TH",
+      "riotEventId": null,
+      "matchId": "115548681803406143",
       "startTime": "2026-08-09T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4821,6 +5231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -4833,6 +5244,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -4850,6 +5262,8 @@
     },
     {
       "id": "98767991302996019:2026-08-09T17:15:00Z:KC-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406279",
       "startTime": "2026-08-09T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -4867,6 +5281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -4879,6 +5294,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -4896,6 +5312,8 @@
     },
     {
       "id": "98767991299243165:2026-08-09T20:00:00Z:DIG-LYON",
+      "riotEventId": null,
+      "matchId": "115564797163886771",
       "startTime": "2026-08-09T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4913,6 +5331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -4925,6 +5344,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -4942,6 +5362,8 @@
     },
     {
       "id": "98767991299243165:2026-08-09T23:00:00Z:TLAW-FLY",
+      "riotEventId": null,
+      "matchId": "115564797164345559",
       "startTime": "2026-08-09T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -4959,6 +5381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -4971,6 +5394,7 @@
           }
         },
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -4988,6 +5412,8 @@
     },
     {
       "id": "98767991302996019:2026-08-10T15:00:00Z:SK-VIT",
+      "riotEventId": null,
+      "matchId": "115548681803406187",
       "startTime": "2026-08-10T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5005,6 +5431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -5017,6 +5444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -5034,6 +5462,8 @@
     },
     {
       "id": "98767991302996019:2026-08-10T17:15:00Z:G2-NAVI",
+      "riotEventId": null,
+      "matchId": "115548681803406175",
       "startTime": "2026-08-10T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -5051,6 +5481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -5063,6 +5494,7 @@
           }
         },
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -5080,6 +5512,8 @@
     },
     {
       "id": "98767991310872058:2026-08-12T08:00:00Z:NS-DNS",
+      "riotEventId": null,
+      "matchId": "115548147900750245",
       "startTime": "2026-08-12T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5097,6 +5531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -5109,6 +5544,7 @@
           }
         },
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -5126,6 +5562,8 @@
     },
     {
       "id": "98767991314006698:2026-08-12T09:00:00Z:AL-EDG",
+      "riotEventId": null,
+      "matchId": "116566854547769736",
       "startTime": "2026-08-12T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5143,6 +5581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -5155,6 +5594,7 @@
           }
         },
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -5172,6 +5612,8 @@
     },
     {
       "id": "98767991310872058:2026-08-12T10:00:00Z:DK-KT",
+      "riotEventId": null,
+      "matchId": "115548147900684589",
       "startTime": "2026-08-12T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5189,6 +5631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -5201,6 +5644,7 @@
           }
         },
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -5218,6 +5662,8 @@
     },
     {
       "id": "98767991314006698:2026-08-12T11:00:00Z:JDG-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769668",
       "startTime": "2026-08-12T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5235,6 +5681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -5247,6 +5694,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -5264,6 +5712,8 @@
     },
     {
       "id": "98767991314006698:2026-08-13T07:00:00Z:WBG-NIP",
+      "riotEventId": null,
+      "matchId": "116566854547835348",
       "startTime": "2026-08-13T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5281,6 +5731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "WeiboGaming",
           "code": "WBG",
           "image": "https://static.lolesports.com/teams/1641202879910_3.png",
@@ -5293,6 +5744,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shenzhen NINJAS IN PYJAMAS",
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
@@ -5310,6 +5762,8 @@
     },
     {
       "id": "98767991310872058:2026-08-13T08:00:00Z:KRX-BFX",
+      "riotEventId": null,
+      "matchId": "115548147900750225",
       "startTime": "2026-08-13T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5327,6 +5781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -5339,6 +5794,7 @@
           }
         },
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -5356,6 +5812,8 @@
     },
     {
       "id": "98767991314006698:2026-08-13T09:00:00Z:LGD-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769696",
       "startTime": "2026-08-13T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5373,6 +5831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -5385,6 +5844,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -5402,6 +5862,8 @@
     },
     {
       "id": "113476371197627891:2026-08-13T09:00:00Z:DCG-GAM",
+      "riotEventId": null,
+      "matchId": "115570814727903891",
       "startTime": "2026-08-13T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5419,6 +5881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Relove Deep Cross Gaming",
           "code": "DCG",
           "image": "https://static.lolesports.com/teams/1785400397160_LCP_DCG_Full_W1.png",
@@ -5431,6 +5894,7 @@
           }
         },
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -5448,6 +5912,8 @@
     },
     {
       "id": "98767991310872058:2026-08-13T10:00:00Z:HLE-GEN",
+      "riotEventId": null,
+      "matchId": "115548147900619021",
       "startTime": "2026-08-13T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5465,6 +5931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -5477,6 +5944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -5494,6 +5962,8 @@
     },
     {
       "id": "98767991314006698:2026-08-13T11:00:00Z:BLG-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769680",
       "startTime": "2026-08-13T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5511,6 +5981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -5523,6 +5994,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -5540,6 +6012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-14T07:00:00Z:EDG-LGD",
+      "riotEventId": null,
+      "matchId": "116566854547835292",
       "startTime": "2026-08-14T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5557,6 +6031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -5569,6 +6044,7 @@
           }
         },
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -5586,6 +6062,8 @@
     },
     {
       "id": "98767991310872058:2026-08-14T08:00:00Z:DK-T1",
+      "riotEventId": null,
+      "matchId": "115548147900619041",
       "startTime": "2026-08-14T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5603,6 +6081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -5615,6 +6094,7 @@
           }
         },
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -5632,6 +6112,8 @@
     },
     {
       "id": "98767991314006698:2026-08-14T09:00:00Z:WE-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769684",
       "startTime": "2026-08-14T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5649,6 +6131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -5661,6 +6144,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -5678,6 +6162,8 @@
     },
     {
       "id": "113476371197627891:2026-08-14T09:00:00Z:CFO-MVK",
+      "riotEventId": null,
+      "matchId": "116769725389404173",
       "startTime": "2026-08-14T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5695,6 +6181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -5707,6 +6194,7 @@
           }
         },
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -5724,6 +6212,8 @@
     },
     {
       "id": "98767991310872058:2026-08-14T10:00:00Z:BRO-NS",
+      "riotEventId": null,
+      "matchId": "115548147900684681",
       "startTime": "2026-08-14T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5741,6 +6231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -5753,6 +6244,7 @@
           }
         },
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -5770,6 +6262,8 @@
     },
     {
       "id": "98767991314006698:2026-08-14T11:00:00Z:JDG-AL",
+      "riotEventId": null,
+      "matchId": "116566854547769728",
       "startTime": "2026-08-14T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5787,6 +6281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -5799,6 +6294,7 @@
           }
         },
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -5816,6 +6312,8 @@
     },
     {
       "id": "98767991302996019:2026-08-14T15:00:00Z:SK-SHFT",
+      "riotEventId": null,
+      "matchId": "115548681803406211",
       "startTime": "2026-08-14T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5833,6 +6331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -5845,6 +6344,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -5862,6 +6362,8 @@
     },
     {
       "id": "98767991302996019:2026-08-14T17:15:00Z:GX-VIT",
+      "riotEventId": null,
+      "matchId": "115548681803406183",
       "startTime": "2026-08-14T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -5879,6 +6381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -5891,6 +6394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -5908,6 +6412,8 @@
     },
     {
       "id": "98767991314006698:2026-08-15T07:00:00Z:NIP-LNG",
+      "riotEventId": null,
+      "matchId": "116566854547835340",
       "startTime": "2026-08-15T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5925,6 +6431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shenzhen NINJAS IN PYJAMAS",
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
@@ -5937,6 +6444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Suzhou LNG Esports",
           "code": "LNG",
           "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
@@ -5954,6 +6462,8 @@
     },
     {
       "id": "98767991310872058:2026-08-15T08:00:00Z:KT-HLE",
+      "riotEventId": null,
+      "matchId": "115548147900619025",
       "startTime": "2026-08-15T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -5971,6 +6481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -5983,6 +6494,7 @@
           }
         },
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -6000,6 +6512,8 @@
     },
     {
       "id": "98767991314006698:2026-08-15T09:00:00Z:AL-TT",
+      "riotEventId": null,
+      "matchId": "116566854547769740",
       "startTime": "2026-08-15T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6017,6 +6531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -6029,6 +6544,7 @@
           }
         },
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -6046,6 +6562,8 @@
     },
     {
       "id": "113476371197627891:2026-08-15T09:00:00Z:DFM-GZ",
+      "riotEventId": null,
+      "matchId": "116769725389404179",
       "startTime": "2026-08-15T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6063,6 +6581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DetonatioN FocusMe",
           "code": "DFM",
           "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
@@ -6075,6 +6594,7 @@
           }
         },
         {
+          "id": null,
           "name": "Ground Zero Gaming",
           "code": "GZ",
           "image": "https://static.lolesports.com/teams/1766395585595_LCP_TEAMLogo_GZ_Full_B.png",
@@ -6092,6 +6612,8 @@
     },
     {
       "id": "98767991310872058:2026-08-15T10:00:00Z:BFX-DNS",
+      "riotEventId": null,
+      "matchId": "115548147900750233",
       "startTime": "2026-08-15T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6109,6 +6631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -6121,6 +6644,7 @@
           }
         },
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -6138,6 +6662,8 @@
     },
     {
       "id": "98767991314006698:2026-08-15T11:00:00Z:BLG-WE",
+      "riotEventId": null,
+      "matchId": "116566854547769660",
       "startTime": "2026-08-15T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6155,6 +6681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -6167,6 +6694,7 @@
           }
         },
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -6184,6 +6712,8 @@
     },
     {
       "id": "98767991302996019:2026-08-15T15:00:00Z:FNC-SK",
+      "riotEventId": null,
+      "matchId": "115548681803406255",
       "startTime": "2026-08-15T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6201,6 +6731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -6213,6 +6744,7 @@
           }
         },
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -6230,6 +6762,8 @@
     },
     {
       "id": "98767991302996019:2026-08-15T17:15:00Z:G2-SHFT",
+      "riotEventId": null,
+      "matchId": "115548681803406227",
       "startTime": "2026-08-15T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -6247,6 +6781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -6259,6 +6794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -6276,6 +6812,8 @@
     },
     {
       "id": "98767991299243165:2026-08-15T20:00:00Z:TLAW-DSG",
+      "riotEventId": null,
+      "matchId": "115564797164280011",
       "startTime": "2026-08-15T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6293,6 +6831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -6305,6 +6844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -6322,6 +6862,8 @@
     },
     {
       "id": "98767991299243165:2026-08-15T23:00:00Z:SR-DIG",
+      "riotEventId": null,
+      "matchId": "115564797163886775",
       "startTime": "2026-08-15T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6339,6 +6881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -6351,6 +6894,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -6368,6 +6912,8 @@
     },
     {
       "id": "98767991314006698:2026-08-16T07:00:00Z:JDG-LGD",
+      "riotEventId": null,
+      "matchId": "116566854547769744",
       "startTime": "2026-08-16T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6385,6 +6931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -6397,6 +6944,7 @@
           }
         },
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -6414,6 +6962,8 @@
     },
     {
       "id": "98767991310872058:2026-08-16T08:00:00Z:GEN-T1",
+      "riotEventId": null,
+      "matchId": "115548147900619033",
       "startTime": "2026-08-16T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6431,6 +6981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -6443,6 +6994,7 @@
           }
         },
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -6460,6 +7012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-16T09:00:00Z:WBG-IG",
+      "riotEventId": null,
+      "matchId": "116566854547835336",
       "startTime": "2026-08-16T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6477,6 +7031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "WeiboGaming",
           "code": "WBG",
           "image": "https://static.lolesports.com/teams/1641202879910_3.png",
@@ -6489,6 +7044,7 @@
           }
         },
         {
+          "id": null,
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
@@ -6506,6 +7062,8 @@
     },
     {
       "id": "113476371197627891:2026-08-16T09:00:00Z:TSW-CFO",
+      "riotEventId": null,
+      "matchId": "116769725389404185",
       "startTime": "2026-08-16T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6523,6 +7081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -6535,6 +7094,7 @@
           }
         },
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -6552,6 +7112,8 @@
     },
     {
       "id": "98767991310872058:2026-08-16T10:00:00Z:BRO-KRX",
+      "riotEventId": null,
+      "matchId": "115548147900684677",
       "startTime": "2026-08-16T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6569,6 +7131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -6581,6 +7144,7 @@
           }
         },
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -6598,6 +7162,8 @@
     },
     {
       "id": "98767991314006698:2026-08-16T11:00:00Z:EDG-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769700",
       "startTime": "2026-08-16T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6615,6 +7181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -6627,6 +7194,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -6644,6 +7212,8 @@
     },
     {
       "id": "98767991302996019:2026-08-16T15:00:00Z:NAVI-MKOI",
+      "riotEventId": null,
+      "matchId": "115548681803406163",
       "startTime": "2026-08-16T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6661,6 +7231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -6673,6 +7244,7 @@
           }
         },
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -6690,6 +7262,8 @@
     },
     {
       "id": "98767991302996019:2026-08-16T17:15:00Z:FNC-G2",
+      "riotEventId": null,
+      "matchId": "115548681803406283",
       "startTime": "2026-08-16T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -6707,6 +7281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -6719,6 +7294,7 @@
           }
         },
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -6736,6 +7312,8 @@
     },
     {
       "id": "98767991299243165:2026-08-16T20:00:00Z:C9-FLY",
+      "riotEventId": null,
+      "matchId": "115564797163886747",
       "startTime": "2026-08-16T20:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6753,6 +7331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -6765,6 +7344,7 @@
           }
         },
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -6782,6 +7362,8 @@
     },
     {
       "id": "98767991299243165:2026-08-16T23:00:00Z:SEN-LYON",
+      "riotEventId": null,
+      "matchId": "115564797163821191",
       "startTime": "2026-08-16T23:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6799,6 +7381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -6811,6 +7394,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -6828,6 +7412,8 @@
     },
     {
       "id": "98767991302996019:2026-08-17T15:00:00Z:TH-NAVI",
+      "riotEventId": null,
+      "matchId": "115548681803340575",
       "startTime": "2026-08-17T15:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6845,6 +7431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -6857,6 +7444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -6874,6 +7462,8 @@
     },
     {
       "id": "98767991302996019:2026-08-17T17:15:00Z:KC-GX",
+      "riotEventId": null,
+      "matchId": "115548681803406243",
       "startTime": "2026-08-17T17:15:00Z",
       "state": "completed",
       "type": "match",
@@ -6891,6 +7481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -6903,6 +7494,7 @@
           }
         },
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -6920,6 +7512,8 @@
     },
     {
       "id": "98767991314006698:2026-08-19T07:00:00Z:WBG-LNG",
+      "riotEventId": null,
+      "matchId": "116566854547835344",
       "startTime": "2026-08-19T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6937,6 +7531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "WeiboGaming",
           "code": "WBG",
           "image": "https://static.lolesports.com/teams/1641202879910_3.png",
@@ -6949,6 +7544,7 @@
           }
         },
         {
+          "id": null,
           "name": "Suzhou LNG Esports",
           "code": "LNG",
           "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
@@ -6966,6 +7562,8 @@
     },
     {
       "id": "98767991310872058:2026-08-19T08:00:00Z:GEN-KT",
+      "riotEventId": null,
+      "matchId": "115548147900619045",
       "startTime": "2026-08-19T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -6983,6 +7581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -6995,6 +7594,7 @@
           }
         },
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -7012,6 +7612,8 @@
     },
     {
       "id": "98767991314006698:2026-08-19T08:00:00Z:TES-AL",
+      "riotEventId": null,
+      "matchId": "116566854547769688",
       "startTime": "2026-08-19T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7029,6 +7631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -7041,6 +7644,7 @@
           }
         },
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -7058,6 +7662,8 @@
     },
     {
       "id": "98767991314006698:2026-08-19T09:00:00Z:EDG-WE",
+      "riotEventId": null,
+      "matchId": "116566854547769720",
       "startTime": "2026-08-19T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7075,6 +7681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -7087,6 +7694,7 @@
           }
         },
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -7104,6 +7712,8 @@
     },
     {
       "id": "98767991310872058:2026-08-19T10:00:00Z:DNS-BRO",
+      "riotEventId": null,
+      "matchId": "115548147900684685",
       "startTime": "2026-08-19T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7121,6 +7731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -7133,6 +7744,7 @@
           }
         },
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -7150,6 +7762,8 @@
     },
     {
       "id": "98767991310872058:2026-08-20T08:00:00Z:HLE-DK",
+      "riotEventId": null,
+      "matchId": "115548147900619029",
       "startTime": "2026-08-20T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7167,6 +7781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -7179,6 +7794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -7196,6 +7812,8 @@
     },
     {
       "id": "98767991314006698:2026-08-20T09:00:00Z:TT-JDG",
+      "riotEventId": null,
+      "matchId": "116566854547769752",
       "startTime": "2026-08-20T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7213,6 +7831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -7225,6 +7844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -7242,6 +7862,8 @@
     },
     {
       "id": "113476371197627891:2026-08-20T09:00:00Z:MVK-CFO",
+      "riotEventId": null,
+      "matchId": "116769742220455389",
       "startTime": "2026-08-20T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7259,6 +7881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -7271,6 +7894,7 @@
           }
         },
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -7288,6 +7912,8 @@
     },
     {
       "id": "98767991310872058:2026-08-20T10:00:00Z:KRX-NS",
+      "riotEventId": null,
+      "matchId": "115548147900750237",
       "startTime": "2026-08-20T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7305,6 +7931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -7317,6 +7944,7 @@
           }
         },
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -7334,6 +7962,8 @@
     },
     {
       "id": "98767991314006698:2026-08-20T11:00:00Z:LGD-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769672",
       "startTime": "2026-08-20T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7351,6 +7981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -7363,6 +7994,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -7380,6 +8012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-21T07:00:00Z:TT-EDG",
+      "riotEventId": null,
+      "matchId": "116566854547835300",
       "startTime": "2026-08-21T07:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7397,6 +8031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -7409,6 +8044,7 @@
           }
         },
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -7426,6 +8062,8 @@
     },
     {
       "id": "98767991310872058:2026-08-21T08:00:00Z:BFX-BRO",
+      "riotEventId": null,
+      "matchId": "115548147900684673",
       "startTime": "2026-08-21T08:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7443,6 +8081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -7455,6 +8094,7 @@
           }
         },
         {
+          "id": null,
           "name": "HANJIN BRION",
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
@@ -7472,6 +8112,8 @@
     },
     {
       "id": "98767991314006698:2026-08-21T09:00:00Z:AL-WE",
+      "riotEventId": null,
+      "matchId": "116566854547769708",
       "startTime": "2026-08-21T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7489,6 +8131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -7501,6 +8144,7 @@
           }
         },
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -7518,6 +8162,8 @@
     },
     {
       "id": "113476371197627891:2026-08-21T09:00:00Z:GAM-TSW",
+      "riotEventId": null,
+      "matchId": "116769742220520931",
       "startTime": "2026-08-21T09:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7535,6 +8181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -7547,6 +8194,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -7564,6 +8212,8 @@
     },
     {
       "id": "98767991310872058:2026-08-21T10:00:00Z:T1-KT",
+      "riotEventId": null,
+      "matchId": "115548147900619037",
       "startTime": "2026-08-21T10:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7581,6 +8231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -7593,6 +8244,7 @@
           }
         },
         {
+          "id": null,
           "name": "kt Rolster",
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
@@ -7610,6 +8262,8 @@
     },
     {
       "id": "98767991314006698:2026-08-21T11:00:00Z:BLG-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769656",
       "startTime": "2026-08-21T11:00:00Z",
       "state": "completed",
       "type": "match",
@@ -7627,6 +8281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -7639,6 +8294,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -7656,6 +8312,8 @@
     },
     {
       "id": "98767991302996019:2026-08-21T15:00:00Z:SK-TH",
+      "riotEventId": null,
+      "matchId": "115548681803406127",
       "startTime": "2026-08-21T15:00:00Z",
       "state": "inprogress",
       "type": "match",
@@ -7673,6 +8331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -7685,11 +8344,12 @@
           }
         },
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -7702,6 +8362,8 @@
     },
     {
       "id": "98767991302996019:2026-08-21T17:15:00Z:NAVI-VIT",
+      "riotEventId": null,
+      "matchId": "115548681803406147",
       "startTime": "2026-08-21T17:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7719,6 +8381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -7731,6 +8394,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -7748,6 +8412,8 @@
     },
     {
       "id": "98767991314006698:2026-08-22T07:00:00Z:LGD-WE",
+      "riotEventId": null,
+      "matchId": "116566854547769716",
       "startTime": "2026-08-22T07:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7765,6 +8431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -7777,6 +8444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Xi'an Team WE",
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
@@ -7794,6 +8462,8 @@
     },
     {
       "id": "98767991310872058:2026-08-22T08:00:00Z:DK-GEN",
+      "riotEventId": null,
+      "matchId": "115548147900619049",
       "startTime": "2026-08-22T08:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7811,6 +8481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dplus KIA",
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
@@ -7823,6 +8494,7 @@
           }
         },
         {
+          "id": null,
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
@@ -7840,6 +8512,8 @@
     },
     {
       "id": "98767991314006698:2026-08-22T09:00:00Z:NIP-IG",
+      "riotEventId": null,
+      "matchId": "116566854547835332",
       "startTime": "2026-08-22T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7857,6 +8531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shenzhen NINJAS IN PYJAMAS",
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
@@ -7869,6 +8544,7 @@
           }
         },
         {
+          "id": null,
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
@@ -7886,6 +8562,8 @@
     },
     {
       "id": "113476371197627891:2026-08-22T09:00:00Z:MVK-GAM",
+      "riotEventId": null,
+      "matchId": "116769742220520943",
       "startTime": "2026-08-22T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7903,6 +8581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "MVK Esports",
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
@@ -7915,6 +8594,7 @@
           }
         },
         {
+          "id": null,
           "name": "GAM Esports",
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
@@ -7932,6 +8612,8 @@
     },
     {
       "id": "98767991310872058:2026-08-22T10:00:00Z:DNS-KRX",
+      "riotEventId": null,
+      "matchId": "115548147900750241",
       "startTime": "2026-08-22T10:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7949,6 +8631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "DN SOOPers",
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
@@ -7961,6 +8644,7 @@
           }
         },
         {
+          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -7978,6 +8662,8 @@
     },
     {
       "id": "98767991314006698:2026-08-22T11:00:00Z:JDG-TES",
+      "riotEventId": null,
+      "matchId": "116566854547769692",
       "startTime": "2026-08-22T11:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7995,6 +8681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -8007,6 +8694,7 @@
           }
         },
         {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -8024,6 +8712,8 @@
     },
     {
       "id": "98767991302996019:2026-08-22T15:00:00Z:SHFT-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406219",
       "startTime": "2026-08-22T15:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8041,6 +8731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -8053,6 +8744,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -8070,6 +8762,8 @@
     },
     {
       "id": "98767991302996019:2026-08-22T17:15:00Z:SK-MKOI",
+      "riotEventId": null,
+      "matchId": "115548681803406251",
       "startTime": "2026-08-22T17:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8087,6 +8781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -8099,6 +8794,7 @@
           }
         },
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -8116,6 +8812,8 @@
     },
     {
       "id": "98767991299243165:2026-08-22T20:00:00Z:SEN-FLY",
+      "riotEventId": null,
+      "matchId": "115564797163821187",
       "startTime": "2026-08-22T20:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8133,6 +8831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -8145,6 +8844,7 @@
           }
         },
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -8162,6 +8862,8 @@
     },
     {
       "id": "98767991299243165:2026-08-22T23:00:00Z:DIG-DSG",
+      "riotEventId": null,
+      "matchId": "115564797163886763",
       "startTime": "2026-08-22T23:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8179,6 +8881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -8191,6 +8894,7 @@
           }
         },
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -8208,6 +8912,8 @@
     },
     {
       "id": "98767991314006698:2026-08-23T07:00:00Z:TT-LGD",
+      "riotEventId": null,
+      "matchId": "116566854547835296",
       "startTime": "2026-08-23T07:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8225,6 +8931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "THUNDER TALK GAMING",
           "code": "TT",
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
@@ -8237,6 +8944,7 @@
           }
         },
         {
+          "id": null,
           "name": "LGD GAMING",
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
@@ -8254,6 +8962,8 @@
     },
     {
       "id": "98767991310872058:2026-08-23T08:00:00Z:HLE-T1",
+      "riotEventId": null,
+      "matchId": "115548147900553481",
       "startTime": "2026-08-23T08:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8271,6 +8981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Hanwha Life Esports",
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
@@ -8283,6 +8994,7 @@
           }
         },
         {
+          "id": null,
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -8300,6 +9012,8 @@
     },
     {
       "id": "98767991314006698:2026-08-23T09:00:00Z:JDG-EDG",
+      "riotEventId": null,
+      "matchId": "116566854547769748",
       "startTime": "2026-08-23T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8317,6 +9031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -8329,6 +9044,7 @@
           }
         },
         {
+          "id": null,
           "name": "EDWARD GAMING",
           "code": "EDG",
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
@@ -8346,6 +9062,8 @@
     },
     {
       "id": "113476371197627891:2026-08-23T09:00:00Z:CFO-TSW",
+      "riotEventId": null,
+      "matchId": "116769742220520937",
       "startTime": "2026-08-23T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8363,6 +9081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "CTBC Flying Oyster",
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
@@ -8375,6 +9094,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Secret Whales",
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
@@ -8392,6 +9112,8 @@
     },
     {
       "id": "98767991310872058:2026-08-23T10:00:00Z:BFX-NS",
+      "riotEventId": null,
+      "matchId": "115548147900750229",
       "startTime": "2026-08-23T10:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8409,6 +9131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "BNK FEARX",
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
@@ -8421,6 +9144,7 @@
           }
         },
         {
+          "id": null,
           "name": "NONGSHIM RED FORCE",
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
@@ -8438,6 +9162,8 @@
     },
     {
       "id": "98767991314006698:2026-08-23T11:00:00Z:AL-BLG",
+      "riotEventId": null,
+      "matchId": "116566854547769664",
       "startTime": "2026-08-23T11:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8455,6 +9181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Anyone's Legend",
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
@@ -8467,6 +9194,7 @@
           }
         },
         {
+          "id": null,
           "name": "BILIBILI GAMING",
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
@@ -8484,6 +9212,8 @@
     },
     {
       "id": "98767991302996019:2026-08-23T15:00:00Z:TH-GX",
+      "riotEventId": null,
+      "matchId": "115548681803406123",
       "startTime": "2026-08-23T15:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8501,6 +9231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -8513,6 +9244,7 @@
           }
         },
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -8530,6 +9262,8 @@
     },
     {
       "id": "98767991302996019:2026-08-23T17:15:00Z:SHFT-KC",
+      "riotEventId": null,
+      "matchId": "115548681803406223",
       "startTime": "2026-08-23T17:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8547,6 +9281,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -8559,6 +9294,7 @@
           }
         },
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -8576,6 +9312,8 @@
     },
     {
       "id": "98767991299243165:2026-08-23T20:00:00Z:DSG-SEN",
+      "riotEventId": null,
+      "matchId": "115564797163821183",
       "startTime": "2026-08-23T20:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8593,6 +9331,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -8605,6 +9344,7 @@
           }
         },
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -8622,6 +9362,8 @@
     },
     {
       "id": "98767991299243165:2026-08-23T23:00:00Z:DIG-FLY",
+      "riotEventId": null,
+      "matchId": "115564797163886767",
       "startTime": "2026-08-23T23:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8639,6 +9381,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -8651,6 +9394,7 @@
           }
         },
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -8668,6 +9412,8 @@
     },
     {
       "id": "98767991302996019:2026-08-24T15:00:00Z:NAVI-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406167",
       "startTime": "2026-08-24T15:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8685,6 +9431,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -8697,6 +9444,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -8714,6 +9462,8 @@
     },
     {
       "id": "98767991302996019:2026-08-24T17:15:00Z:GX-G2",
+      "riotEventId": null,
+      "matchId": "115548681803406247",
       "startTime": "2026-08-24T17:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8731,6 +9481,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -8743,6 +9494,7 @@
           }
         },
         {
+          "id": null,
           "name": "G2 Esports",
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
@@ -8759,207 +9511,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-26T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-26T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Play-Ins",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-27T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-27T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Play-Ins",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-28T06:00:00Z:TBD-TBD",
-      "startTime": "2026-08-28T06:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Play In Knockouts",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-28T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-28T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Play-Ins",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-28T09:00:00Z:TBD-TBD",
-      "startTime": "2026-08-28T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Play In Knockouts",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "98767991302996019:2026-08-28T15:00:00Z:TH-SHFT",
+      "riotEventId": null,
+      "matchId": "115548681803406119",
       "startTime": "2026-08-28T15:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8977,6 +9531,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -8989,6 +9544,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -9006,6 +9562,8 @@
     },
     {
       "id": "98767991302996019:2026-08-28T17:15:00Z:VIT-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406195",
       "startTime": "2026-08-28T17:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9023,6 +9581,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -9035,6 +9594,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -9051,127 +9611,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-29T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-29T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-08-29T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-29T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-29T09:00:00Z:TBD-TBD",
-      "startTime": "2026-08-29T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "98767991302996019:2026-08-29T15:00:00Z:SK-KC",
+      "riotEventId": null,
+      "matchId": "115548681803406259",
       "startTime": "2026-08-29T15:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9189,6 +9631,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -9201,6 +9644,7 @@
           }
         },
         {
+          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -9218,6 +9662,8 @@
     },
     {
       "id": "98767991302996019:2026-08-29T17:15:00Z:NAVI-GX",
+      "riotEventId": null,
+      "matchId": "115548681803406155",
       "startTime": "2026-08-29T17:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9235,6 +9681,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Natus Vincere",
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
@@ -9247,6 +9694,7 @@
           }
         },
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -9264,6 +9712,8 @@
     },
     {
       "id": "98767991299243165:2026-08-29T20:00:00Z:SR-TLAW",
+      "riotEventId": null,
+      "matchId": "115564797164345571",
       "startTime": "2026-08-29T20:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9281,6 +9731,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -9293,6 +9744,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -9310,6 +9762,8 @@
     },
     {
       "id": "98767991299243165:2026-08-29T23:00:00Z:C9-LYON",
+      "riotEventId": null,
+      "matchId": "115564797163886751",
       "startTime": "2026-08-29T23:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9327,6 +9781,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -9339,6 +9794,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -9355,127 +9811,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-30T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-30T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-08-30T08:00:00Z:TBD-TBD",
-      "startTime": "2026-08-30T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Finals",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-30T09:00:00Z:TBD-TBD",
-      "startTime": "2026-08-30T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "98767991302996019:2026-08-30T12:00:00Z:VIT-SHFT",
+      "riotEventId": null,
+      "matchId": "115548681803406179",
       "startTime": "2026-08-30T12:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9493,6 +9831,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Vitality",
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
@@ -9505,6 +9844,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shifters",
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
@@ -9522,6 +9862,8 @@
     },
     {
       "id": "98767991302996019:2026-08-30T14:15:00Z:TH-MKOI",
+      "riotEventId": null,
+      "matchId": "115548681803406131",
       "startTime": "2026-08-30T14:15:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9539,6 +9881,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Team Heretics",
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
@@ -9551,6 +9894,7 @@
           }
         },
         {
+          "id": null,
           "name": "Movistar KOI",
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
@@ -9568,6 +9912,8 @@
     },
     {
       "id": "98767991302996019:2026-08-30T16:30:00Z:GX-FNC",
+      "riotEventId": null,
+      "matchId": "115548681803406239",
       "startTime": "2026-08-30T16:30:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9585,6 +9931,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -9597,6 +9944,7 @@
           }
         },
         {
+          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -9614,6 +9962,8 @@
     },
     {
       "id": "98767991299243165:2026-08-30T20:00:00Z:LYON-TLAW",
+      "riotEventId": null,
+      "matchId": "115564797164345567",
       "startTime": "2026-08-30T20:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9631,6 +9981,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -9643,6 +9994,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -9660,6 +10012,8 @@
     },
     {
       "id": "98767991299243165:2026-08-30T23:00:00Z:C9-SR",
+      "riotEventId": null,
+      "matchId": "115564797163886755",
       "startTime": "2026-08-30T23:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -9677,6 +10031,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -9689,6 +10044,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -9705,367 +10061,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-09-01T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-01T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-02T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-02T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-03T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-03T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-03T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-03T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-04T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-04T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-04T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-04T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-05T06:00:00Z:TBD-TBD",
-      "startTime": "2026-09-05T06:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-05T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-05T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-05T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-05T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "98767991299243165:2026-09-05T20:00:00Z:SEN-C9",
+      "riotEventId": null,
+      "matchId": "115564797163821175",
       "startTime": "2026-09-05T20:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -10083,6 +10081,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -10095,6 +10094,7 @@
           }
         },
         {
+          "id": null,
           "name": "Cloud9 Kia",
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
@@ -10112,6 +10112,8 @@
     },
     {
       "id": "98767991299243165:2026-09-05T23:00:00Z:DIG-TLAW",
+      "riotEventId": null,
+      "matchId": "115564797163886779",
       "startTime": "2026-09-05T23:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -10129,6 +10131,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Dignitas",
           "code": "DIG",
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
@@ -10141,6 +10144,7 @@
           }
         },
         {
+          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -10157,127 +10161,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991314006698:2026-09-06T06:00:00Z:TBD-TBD",
-      "startTime": "2026-09-06T06:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-06T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-06T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-06T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-06T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "98767991299243165:2026-09-06T20:00:00Z:FLY-SR",
+      "riotEventId": null,
+      "matchId": "115564797164345555",
       "startTime": "2026-09-06T20:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -10295,6 +10181,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "FlyQuest",
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
@@ -10307,6 +10194,7 @@
           }
         },
         {
+          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
@@ -10324,6 +10212,8 @@
     },
     {
       "id": "98767991299243165:2026-09-06T23:00:00Z:DSG-LYON",
+      "riotEventId": null,
+      "matchId": "115564797163886787",
       "startTime": "2026-09-06T23:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -10341,6 +10231,7 @@
       "strategyType": "bestOf",
       "teams": [
         {
+          "id": null,
           "name": "Disguised",
           "code": "DSG",
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
@@ -10353,6 +10244,7 @@
           }
         },
         {
+          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -10363,366 +10255,6 @@
             "wins": 3,
             "losses": 1
           }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-07T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-07T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-08T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-08T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-12T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-12T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-12T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-12T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-09-13T08:00:00Z:TBD-TBD",
-      "startTime": "2026-09-13T08:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Finals",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-13T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-13T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Finals",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-17T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-17T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Regional Qualifier",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-18T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-18T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Regional Qualifier",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-09-19T09:00:00Z:TBD-TBD",
-      "startTime": "2026-09-19T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Regional Qualifier",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
-        },
-        {
-          "name": "TBD",
-          "code": "TBD",
-          "image": "https://static.lolesports.com/teams/team-tbd.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": null
         }
       ],
       "vodsAvailable": false,
