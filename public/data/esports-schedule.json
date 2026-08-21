@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T16:48:21.505Z",
+  "generatedAt": "2026-08-21T17:39:26.669Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8399,7 +8399,7 @@
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 4,
