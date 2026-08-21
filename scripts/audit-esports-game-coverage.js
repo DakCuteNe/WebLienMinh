@@ -19,6 +19,19 @@ const lower = value => text(value).toLowerCase();
 const stateCompleted = value => lower(value).includes('complete') || lower(value).includes('finished');
 const stateLive = value => lower(value).includes('progress') || lower(value) === 'in_game' || lower(value) === 'in-game';
 
+function usableTeams(event) {
+  const teams = event?.teams || [];
+  return teams.length === 2 && teams.every(team => {
+    const name = text(team?.name);
+    const code = text(team?.code);
+    return Boolean((name || code) && upper(name || code) !== 'TBD');
+  });
+}
+
+function upper(value) {
+  return text(value).toUpperCase();
+}
+
 function teamLabel(event) {
   return (event.teams || []).map(team => team.code || team.name || 'TBD').join(' vs ');
 }
@@ -41,6 +54,8 @@ function requestParams(event, gameNumber = 0) {
     locale: 'vi-VN',
     detail: '1'
   });
+  if (event?.riotEventId) params.set('eventId', text(event.riotEventId));
+  if (event?.matchId) params.set('matchId', text(event.matchId));
   if (gameNumber > 0) params.set('viewGameNumber', String(gameNumber));
   return params;
 }
@@ -101,7 +116,7 @@ const report = {
   scheduleGeneratedAt: schedule.generatedAt || null,
   league: LEAGUE || 'all',
   events: allEvents.length,
-  counts: { completed: 0, live: 0, upcoming: 0, auditedGames: 0, errors: 0 },
+  counts: { completed: 0, live: 0, upcoming: 0, placeholders: 0, auditedGames: 0, errors: 0 },
   coverage: {
     picks: 0, bans: 0, gold: 0, kills: 0, towers: 0, inhibitors: 0,
     dragons: 0, barons: 0, voidGrubs: 0, riftHeralds: 0, winner: 0, scoreAfterGame: 0
@@ -117,8 +132,12 @@ function issue(level, event, message, extra = {}) {
 
 for (const event of allEvents) {
   const teams = event.teams || [];
-  if (teams.length !== 2 || teams.some(team => !(team?.code || team?.name))) {
-    issue('error', event, 'Schedule event does not contain two usable teams.');
+  if (!usableTeams(event)) {
+    if (stateCompleted(event.state) || stateLive(event.state)) issue('error', event, 'Played/live schedule event does not contain two usable teams.');
+    else {
+      report.counts.placeholders += 1;
+      issue('placeholder', event, 'Unassigned Riot schedule placeholder; schedule generator will omit this row.');
+    }
     continue;
   }
   if (stateCompleted(event.state)) report.counts.completed += 1;
@@ -167,6 +186,8 @@ for (const event of allEvents) {
 
     const row = {
       eventId: event.id,
+      riotEventId: event.riotEventId || null,
+      matchId: event.matchId || null,
       match: teamLabel(event),
       league: event?.league?.slug || event?.league?.name || null,
       state: event.state,
@@ -193,7 +214,7 @@ await fs.mkdir(path.resolve('audit-results'), { recursive: true });
 const safeLeague = (LEAGUE || 'all').replace(/[^a-z0-9_-]+/g, '-');
 await fs.writeFile(path.resolve(`audit-results/${safeLeague}.json`), JSON.stringify(report, null, 2));
 
-console.log(`AUDIT ${LEAGUE || 'ALL'}: ${report.events} events, ${report.counts.auditedGames} played/live games, ${report.counts.upcoming} upcoming, ${report.counts.errors} integrity errors.`);
+console.log(`AUDIT ${LEAGUE || 'ALL'}: ${report.events} events, ${report.counts.auditedGames} played/live games, ${report.counts.upcoming} upcoming, ${report.counts.placeholders} placeholders, ${report.counts.errors} integrity errors.`);
 console.log('COVERAGE %', JSON.stringify(report.coveragePercent));
 console.log('COVERAGE GAPS', report.coverageIssues);
 for (const row of report.issues.filter(item => item.level === 'error').slice(0, 40)) console.error('ERROR', JSON.stringify(row));
