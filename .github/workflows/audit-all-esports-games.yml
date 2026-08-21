@@ -1,0 +1,73 @@
+name: Audit all esports games
+
+on:
+  push:
+    branches:
+      - audit/all-esports-games
+      - main
+    paths:
+      - 'scripts/audit-esports-game-coverage.js'
+      - 'server/esports-match-live.js'
+      - 'server/esports-match-history-cache.js'
+      - 'server/esports-match-objectives.js'
+      - 'server/esports-match-community-fallback.js'
+      - 'server/esports-match-community-overlay.js'
+      - 'server/esports-match-bootstrap.js'
+      - 'public/data/esports-schedule.json'
+      - '.github/workflows/audit-all-esports-games.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit ${{ matrix.league }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        league: [lck, lpl, lec, lcs, lcp, vcs, first_stand, msi, worlds]
+    env:
+      AUDIT_LEAGUE: ${{ matrix.league }}
+      AUDIT_REQUEST_GAP_MS: '180'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Syntax check audit and live modules
+        run: |
+          node --check scripts/audit-esports-game-coverage.js
+          node --check server/esports-match-live.js
+          node --check server/esports-match-history-cache.js
+          node --check server/esports-match-objectives.js
+          node --check server/esports-match-community-fallback.js
+          node --check server/esports-match-community-overlay.js
+          node --check server/esports-match-bootstrap.js
+      - name: Start WebLienMinh
+        run: |
+          npm start > /tmp/weblienminh-audit.log 2>&1 &
+          echo $! > /tmp/weblienminh-audit.pid
+          for i in {1..40}; do
+            if curl -fsS http://127.0.0.1:3000/api/status >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/weblienminh-audit.log
+          exit 1
+      - name: Audit every played/live game and upcoming schedule row
+        run: node scripts/audit-esports-game-coverage.js
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: esports-game-audit-${{ matrix.league }}
+          path: audit-results/${{ matrix.league }}.json
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Server log
+        if: always()
+        run: cat /tmp/weblienminh-audit.log || true
