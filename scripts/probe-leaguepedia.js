@@ -1,4 +1,6 @@
 const hosts = [
+  'https://wiki.leagueoflegends.com/en-us/api.php',
+  'https://wiki.leagueoflegends.com/api.php',
   'https://lol.fandom.com/api.php',
   'https://leaguepedia.net/api.php',
   'https://wiki.leaguepedia.com/api.php',
@@ -22,12 +24,23 @@ for (const base of hosts) {
     });
     const raw = await response.text();
     let rows = [];
+    let apiError = null;
     try {
       const body = JSON.parse(raw);
       rows = (body?.cargoquery || []).map(row => row?.title || row).slice(0, 3);
+      apiError = body?.error || null;
     } catch {}
-    console.log(JSON.stringify({ leaguepediaProbe: base, status: response.status, bytes: raw.length, rows }));
+    console.log(JSON.stringify({
+      leaguepediaProbe: base,
+      status: response.status,
+      finalUrl: response.url,
+      contentType: response.headers.get('content-type'),
+      bytes: raw.length,
+      rows,
+      apiError,
+      preview: raw.slice(0, 180).replace(/\s+/g, ' ')
+    }));
   } catch (error) {
-    console.log(JSON.stringify({ leaguepediaProbe: base, error: error.message }));
+    console.log(JSON.stringify({ leaguepediaProbe: base, error: error.message, cause: error?.cause?.message || null }));
   }
 }
