@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T16:03:18.917Z",
+  "generatedAt": "2026-08-21T16:48:21.505Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 38,
-    "completed": 164,
+    "upcoming": 37,
+    "completed": 165,
     "total": 203
   },
   "leagues": [
@@ -2289,7 +2289,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         },
@@ -2753,7 +2753,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -3253,7 +3253,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -3502,7 +3502,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         }
@@ -4389,7 +4389,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         },
@@ -4753,7 +4753,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -5252,7 +5252,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         }
@@ -5440,7 +5440,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -6340,7 +6340,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -6753,7 +6753,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -7439,7 +7439,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         },
@@ -8315,7 +8315,7 @@
       "riotEventId": null,
       "matchId": "115548681803406127",
       "startTime": "2026-08-21T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -8337,10 +8337,10 @@
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -8349,10 +8349,10 @@
           "code": "TH",
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         }
@@ -8365,7 +8365,7 @@
       "riotEventId": null,
       "matchId": "115548681803406147",
       "startTime": "2026-08-21T17:15:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -8790,7 +8790,7 @@
           "outcome": null,
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -9239,7 +9239,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         },
@@ -9539,7 +9539,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         },
@@ -9640,7 +9640,7 @@
           "outcome": null,
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -9889,7 +9889,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 4
           }
         },
