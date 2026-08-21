@@ -10,7 +10,7 @@ on:
       - 'server/esports-match-bootstrap.js'
       - 'scripts/smoke-live-match-community.js'
       - 'scripts/smoke-live-match-multigame.js'
-      - 'scripts/probe-oracle-drive-games.js'
+      - 'scripts/probe-gol-bans.js'
       - '.github/workflows/live-community-smoke.yml'
   pull_request:
     paths:
@@ -20,7 +20,7 @@ on:
       - 'server/esports-match-bootstrap.js'
       - 'scripts/smoke-live-match-community.js'
       - 'scripts/smoke-live-match-multigame.js'
-      - 'scripts/probe-oracle-drive-games.js'
+      - 'scripts/probe-gol-bans.js'
       - '.github/workflows/live-community-smoke.yml'
   workflow_dispatch:
 
@@ -44,10 +44,10 @@ jobs:
           node --check server/esports-match-bootstrap.js
           node --check scripts/smoke-live-match-community.js
           node --check scripts/smoke-live-match-multigame.js
-          node --check scripts/probe-oracle-drive-games.js
+          node --check scripts/probe-gol-bans.js
       - name: Ban, objective and score regression
         run: |
           node scripts/smoke-live-match-community.js
           node scripts/smoke-live-match-multigame.js
-      - name: Oracle recent Ban coverage probe
-        run: node scripts/probe-oracle-drive-games.js
+      - name: Games of Legends Ban markup probe
+        run: node scripts/probe-gol-bans.js
