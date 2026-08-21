@@ -1,6 +1,5 @@
 const FILE_ID = '1hnpbrUpBMS1TZI7IovfpKeZfWJH1Aptm';
 const URL = `https://drive.usercontent.google.com/download?id=${FILE_ID}&export=download&confirm=t`;
-const UA = { 'User-Agent': 'WebLienMinh/3.26 oracle-range-probe' };
 
 function csvRow(line) {
   const out = [];
@@ -19,29 +18,25 @@ function csvRow(line) {
   return out;
 }
 
-async function range(start, end) {
-  const response = await fetch(URL, {
-    headers: { ...UA, Range: `bytes=${start}-${end}` },
-    signal: AbortSignal.timeout(45_000)
-  });
-  const raw = await response.text();
-  if (response.status !== 206) throw new Error(`Oracle range HTTP ${response.status}: ${raw.slice(0, 80)}`);
-  return { raw, contentRange: response.headers.get('content-range') || '' };
-}
+// Oracle's verified 2026 schema. Keep this probe to a single suffix-range request
+// so Google Drive quota does not turn a regression test into a 62 MB download.
+const col = {
+  gameid: 0, league: 3, date: 7, game: 8, participantid: 10,
+  side: 11, position: 12, teamname: 15, teamid: 16,
+  ban1: 19, ban2: 20, ban3: 21, ban4: 22, ban5: 23
+};
 
-const head = await range(0, 65535);
-const total = Number(head.contentRange.match(/\/(\d+)$/)?.[1] || 0);
-if (!total) throw new Error(`Missing Oracle total size: ${head.contentRange}`);
-const headerLine = head.raw.split(/\r?\n/, 1)[0].replace(/^\uFEFF/, '');
-const headers = csvRow(headerLine);
-const col = Object.fromEntries(headers.map((name, i) => [name, i]));
-const wanted = ['gameid','league','date','game','participantid','side','position','teamname','teamid','ban1','ban2','ban3','ban4','ban5'];
-for (const name of wanted) if (col[name] == null) throw new Error(`Missing Oracle column ${name}`);
-
-const tailBytes = Math.min(12 * 1024 * 1024, total - 1);
-const tail = await range(Math.max(0, total - tailBytes), total - 1);
-const lines = tail.raw.split(/\r?\n/);
-lines.shift(); // range starts inside a CSV row
+const response = await fetch(URL, {
+  headers: {
+    Range: 'bytes=-4194304',
+    'User-Agent': 'WebLienMinh/3.27 oracle-range-probe'
+  },
+  signal: AbortSignal.timeout(45_000)
+});
+const raw = await response.text();
+if (response.status !== 206) throw new Error(`Oracle range HTTP ${response.status}: ${raw.slice(0, 80)}`);
+const lines = raw.split(/\r?\n/);
+lines.shift(); // suffix range begins inside a CSV row
 
 let minDate = '9999';
 let maxDate = '';
@@ -50,7 +45,7 @@ const latestLck = [];
 for (const line of lines) {
   if (!line) continue;
   const row = csvRow(line);
-  if (row.length < headers.length / 2) continue;
+  if (row.length < 24) continue;
   const date = row[col.date] || '';
   if (!/^2026-/.test(date)) continue;
   if (date < minDate) minDate = date;
@@ -68,8 +63,8 @@ for (const line of lines) {
   if (String(row[col.league] || '').toLowerCase().includes('lck')) latestLck.push(record);
 }
 console.log(JSON.stringify({
-  oracleTotalBytes: total,
-  tailBytes,
+  contentRange: response.headers.get('content-range'),
+  bytes: raw.length,
   minDate,
   maxDate,
   recentRows: recent,
