@@ -26,6 +26,7 @@ if (!response.ok) throw new Error(`Oracle Drive HTTP ${response.status}`);
 const raw = await response.text();
 const lines = raw.split(/\r?\n/).filter(Boolean);
 const headers = csvRow(lines.shift());
+if (headers.length) headers[0] = headers[0].replace(/^\uFEFF/, '');
 const col = Object.fromEntries(headers.map((name, i) => [name, i]));
 const wanted = ['gameid','league','date','game','participantid','side','position','teamname','teamid','ban1','ban2','ban3','ban4','ban5'];
 for (const name of wanted) if (col[name] == null) throw new Error(`Missing Oracle column ${name}`);
