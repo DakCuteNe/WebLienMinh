@@ -17,4 +17,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Start WebLienMinh
+        run: |
+          npm start > /tmp/weblienminh-diagnostic.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/api/status >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/weblienminh-diagnostic.log
+          exit 1
       - run: node scripts/diagnose-live-objective-shape.js
