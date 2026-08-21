@@ -5,12 +5,15 @@ on:
     paths:
       - 'server/esports-match-live.js'
       - 'server/esports-match-history-cache.js'
+      - 'server/esports-match-objectives.js'
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
+      - 'public/js/live-game-objectives-v2.js'
       - 'public/match-live.css'
       - 'public/live-objectives.css'
       - 'public/live-match-layout-fix.css'
+      - 'public/live-game-objectives-v2.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
       - 'public/js/riot-music.js'
@@ -28,6 +31,7 @@ on:
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'scripts/smoke-live-match-history.js'
+      - 'scripts/smoke-live-match-objectives.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   push:
@@ -35,12 +39,15 @@ on:
     paths:
       - 'server/esports-match-live.js'
       - 'server/esports-match-history-cache.js'
+      - 'server/esports-match-objectives.js'
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
+      - 'public/js/live-game-objectives-v2.js'
       - 'public/match-live.css'
       - 'public/live-objectives.css'
       - 'public/live-match-layout-fix.css'
+      - 'public/live-game-objectives-v2.css'
       - 'public/js/team-predictions.js'
       - 'public/team-predictions.css'
       - 'public/js/riot-music.js'
@@ -58,6 +65,7 @@ on:
       - 'public/app.js'
       - 'scripts/smoke-live-match.js'
       - 'scripts/smoke-live-match-history.js'
+      - 'scripts/smoke-live-match-objectives.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   workflow_dispatch:
@@ -79,9 +87,11 @@ jobs:
         run: |
           node --check server/esports-match-live.js
           node --check server/esports-match-history-cache.js
+          node --check server/esports-match-objectives.js
           node --check server/esports-match-bootstrap.js
           node --check public/js/match-live.js
           node --check public/js/live-match-history-cache.js
+          node --check public/js/live-game-objectives-v2.js
           node --check public/js/team-predictions.js
           node --check public/js/riot-music.js
           node --check public/js/site-effects.js
@@ -92,6 +102,7 @@ jobs:
           node --check public/app.js
           node --check scripts/smoke-live-match.js
           node --check scripts/smoke-live-match-history.js
+          node --check scripts/smoke-live-match-objectives.js
       - name: Verify Together as 1 v3 only
         run: |
           grep -q 'together-finisher-v3' public/js/together-finisher.js
@@ -130,15 +141,21 @@ jobs:
           grep -q 'viewGame' server/esports-match-live.js
           grep -q 'mergeLiveWindows' server/esports-match-live.js
           grep -q 'installEsportsMatchHistoryCache' server/esports-match-bootstrap.js
+          grep -q 'installEsportsMatchObjectives' server/esports-match-bootstrap.js
           grep -q 'initLiveMatchHistoryCache' public/app.js
+          grep -q 'initLiveGameObjectivesV2' public/app.js
           grep -q 'live-objective-detail' public/live-objectives.css
-          grep -q 'dragonTypes' public/js/match-live.js
+          grep -q 'live-game-summary-v2' public/js/live-game-objectives-v2.js
+          grep -q 'voidGrubs' server/esports-match-objectives.js
+          grep -q 'riftHeralds' server/esports-match-objectives.js
           if grep -q '<span class="live-game-pill' public/js/match-live.js; then
             echo 'Game pills regressed to non-clickable spans.'
             exit 1
           fi
       - name: Live Match rolling-window regression
         run: node scripts/smoke-live-match-history.js
+      - name: Per-game result and objective regression
+        run: node scripts/smoke-live-match-objectives.js
       - name: Start WebLienMinh
         run: |
           npm start > /tmp/weblienminh.log 2>&1 &

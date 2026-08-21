@@ -12,11 +12,12 @@ import { initWorlds } from './js/worlds.js';
 import { initSchedule, ensureSchedule } from './js/schedule.js';
 import { initLiveMatchHistoryCache } from './js/live-match-history-cache.js';
 import { initLiveMatchCenter } from './js/match-live.js';
+import { initLiveGameObjectivesV2 } from './js/live-game-objectives-v2.js';
 import { initTeamPredictions } from './js/team-predictions.js';
 import { initRiotMusic, setRiotMusicSection } from './js/riot-music.js';
 import { initSiteEffects, triggerSectionEffect } from './js/site-effects.js';
 
-const APP_VERSION = '3.15.0';
+const APP_VERSION = '3.18.0';
 let patchesLoaded = false;
 
 function installScheduleBalanceCss() {
@@ -114,6 +115,7 @@ async function boot() {
   initSchedule();
   initLiveMatchHistoryCache();
   initLiveMatchCenter();
+  initLiveGameObjectivesV2();
   initTeamPredictions();
   initRiotMusic();
   installScheduleBalanceCss();
