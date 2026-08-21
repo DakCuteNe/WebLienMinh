@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T14:49:34.049Z",
+  "generatedAt": "2026-08-21T15:45:13.509Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 71,
+    "upcoming": 70,
     "completed": 164,
-    "total": 236
+    "total": 235
   },
   "leagues": [
     {
@@ -7655,30 +7655,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-21T14:03:58.675Z:",
-      "startTime": "2026-08-21T14:03:58.675Z",
-      "state": "inprogress",
-      "type": "show",
-      "blockName": null,
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": null,
-      "strategyType": null,
-      "teams": [],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-21T15:00:00Z:TH-SK",
+      "id": "98767991302996019:2026-08-21T15:00:00Z:SK-TH",
       "startTime": "2026-08-21T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -7694,18 +7673,6 @@
       "strategyType": "bestOf",
       "teams": [
         {
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 4
-          }
-        },
-        {
           "name": "SK Gaming",
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
@@ -7714,6 +7681,18 @@
           "outcome": null,
           "record": {
             "wins": 2,
+            "losses": 4
+          }
+        },
+        {
+          "name": "Team Heretics",
+          "code": "TH",
+          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
             "losses": 4
           }
         }
