@@ -65,28 +65,40 @@ const local = await json(`http://127.0.0.1:${process.env.PORT || 3000}/api/espor
 console.log('LOCAL_MATCH', JSON.stringify({ matchId: local.matchId, state: local.state, teams: local.teams?.map(t => ({id:t.id,code:t.code,wins:t.wins})), games: local.games?.map(g => ({id:g.id,number:g.number,state:g.state})), viewGame: local.viewGame, live: local.live }, null, 2));
 
 const game = local.viewGame;
-const starts = new Set();
-const add = value => { const ms = Date.parse(value || ''); if (Number.isFinite(ms)) starts.add(new Date(Math.floor(ms / 10000) * 10000).toISOString()); };
-add(local.live?.timestamp);
-for (const vod of game?.vods || []) {
-  const base = Date.parse(vod.firstFrameTime || '');
-  for (const delta of [0, 10, 20, 30, 40, 50, 60]) if (Number.isFinite(base)) add(new Date(base + delta * 60_000).toISOString());
-}
-for (const startingTime of [...starts].slice(0, 10)) {
+const detailProbeStart = Date.parse('2026-08-21T11:10:00Z');
+const detailProbeEnd = Date.parse('2026-08-21T13:00:00Z');
+for (let at = detailProbeStart; at <= detailProbeEnd; at += 5 * 60_000) {
+  const startingTime = new Date(at).toISOString();
   const details = await json(`${LIVE_FEED}/details/${game.id}?startingTime=${encodeURIComponent(startingTime)}`, { headers: { 'x-api-key': RIOT_KEY } }).catch(() => null);
-  if (!details) continue;
-  const matches = deepMatches(details, /ban|herald|grub|void|rift|monster|objective|3513/i).slice(0, 150);
-  const frame = details.frames?.at(-1) || {};
-  console.log('RIOT_DETAILS', JSON.stringify({ startingTime, rootKeys: Object.keys(details), frameKeys: Object.keys(frame), matches }, null, 2));
+  if (!details?.frames?.length) continue;
+  const frame = details.frames.at(-1) || {};
+  const sample = frame.participants?.[0] || null;
+  const matches = deepMatches(details, /ban|herald|grub|void|rift|monster|objective|item|buff|stack|3513/i).slice(0, 100);
+  console.log('RIOT_EARLY_DETAILS', JSON.stringify({ startingTime, frameTime: frame.rfc460Timestamp, frameKeys: Object.keys(frame), participantKeys: sample ? Object.keys(sample) : [], sample, matches }, null, 2));
 }
 
-const redditQuery = encodeURIComponent('KT Rolster T1 LCK 2026 Rounds 3-4 Legend Group Week 13 Game 2 Discussion');
-for (const host of ['www.reddit.com','old.reddit.com']) {
-  const url = `https://${host}/r/leagueoflegends/search.json?q=${redditQuery}&restrict_sr=1&sort=new&t=week&limit=20&raw_json=1`;
-  const data = await json(url, { headers: { 'User-Agent': 'WebLienMinh/1.0 contact github.com/DakCuteNe/WebLienMinh' } }).catch(error => ({ error: error.message }));
-  const posts = data?.data?.children?.map(row => row.data).filter(Boolean) || [];
-  const hit = posts.find(post => /KT Rolster vs\. T1.*Game 2 Discussion/i.test(post.title || '')) || posts[0] || null;
-  console.log('REDDIT_SOURCE', JSON.stringify({ host, error: data?.error || null, count: posts.length, hit: hit && { title: hit.title, permalink: hit.permalink, selftext: hit.selftext } }, null, 2));
+const pullQueries = [
+  'KT Rolster vs. T1 LCK 2026 Rounds 3-4 Legend Group Week 13 Game 2 Discussion',
+  'KT Rolster T1 Game 2 Discussion',
+  'KT Rolster vs T1 LCK 2026'
+];
+for (const q of pullQueries) {
+  const url = `https://api.pullpush.io/topic?subreddit=leagueoflegends&size=30&q=${encodeURIComponent(q)}`;
+  const data = await json(url).catch(error => ({ error: error.message }));
+  const rows = data?.data || [];
+  console.log('PULLPUSH', JSON.stringify({ q, error: data?.error || null, count: rows.length, rows: rows.slice(0, 10).map(row => ({ id: row.id, title: row.title, created_utc: row.created_utc, selftext: row.selftext })) }, null, 2));
+}
+
+const after = Math.floor(Date.parse('2026-08-21T00:00:00Z') / 1000);
+const before = Math.floor(Date.parse('2026-08-22T00:00:00Z') / 1000);
+for (const endpoint of [
+  `https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=leagueoflegends&after=${after}&before=${before}&limit=100&sort=desc`,
+  `https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=leagueoflegends&after=${after}&before=${before}&limit=100&sort=asc`
+]) {
+  const data = await json(endpoint).catch(error => ({ error: error.message }));
+  const rows = data?.data || [];
+  const hits = rows.filter(row => /KT Rolster.*T1|T1.*KT Rolster/i.test(row.title || '') || /KT vs\. T1/i.test(row.title || ''));
+  console.log('ARCTIC', JSON.stringify({ endpoint, error: data?.error || null, count: rows.length, hits: hits.map(row => ({ id: row.id, title: row.title, created_utc: row.created_utc, selftext: row.selftext })) }, null, 2));
 }
 
 const date = '20260821';
@@ -113,18 +125,20 @@ try {
 const golTournament = 'https://gol.gg/tournament/tournament-matchlist/LCK%202026%20Rounds%203-4/';
 const golList = await textFetch(golTournament).catch(error => ({ status: 0, raw: error.message, finalUrl: golTournament }));
 const normalizedHtml = golList.raw.replace(/\s+/g, ' ');
-const around = [];
-for (const marker of ['2026-08-21', 'KT Rolster vs T1', 'KT Rolster', 'T1']) {
-  let at = normalizedHtml.indexOf(marker);
-  while (at >= 0 && around.length < 20) {
-    around.push(normalizedHtml.slice(Math.max(0, at - 450), at + 700));
-    at = normalizedHtml.indexOf(marker, at + marker.length);
+const rowAt = normalizedHtml.indexOf('KT Rolster vs T1');
+console.log('GOL_LIST', JSON.stringify({ status: golList.status, finalUrl: golList.finalUrl, bytes: golList.raw.length, currentRow: rowAt >= 0 ? normalizedHtml.slice(Math.max(0, rowAt - 250), rowAt + 800) : null }, null, 2));
+
+for (const id of [81853, 81854, 81855, 81856]) {
+  for (const page of ['page-summary', 'page-game']) {
+    const url = `https://gol.gg/game/stats/${id}/${page}/`;
+    const result = await textFetch(url).catch(error => ({ status: 0, raw: error.message, finalUrl: url }));
+    const html = result.raw.replace(/\s+/g, ' ');
+    const title = (html.match(/<title>(.*?)<\/title>/i)?.[1] || '').replace(/<[^>]+>/g, '').trim();
+    const markers = [];
+    for (const word of ['Bans', 'Herald', 'Void', 'Grub', 'Dragon', 'Baron', 'KT Rolster', 'T1']) {
+      const idx = html.toLowerCase().indexOf(word.toLowerCase());
+      if (idx >= 0) markers.push({ word, snippet: html.slice(Math.max(0, idx - 250), idx + 900) });
+    }
+    console.log('GOL_PAGE', JSON.stringify({ id, page, status: result.status, finalUrl: result.finalUrl, title, bytes: result.raw.length, markers }, null, 2));
   }
 }
-const gameLinks = [...normalizedHtml.matchAll(/href=["']([^"']*(?:game\/stats|page-game\/stats|game\/game-stats)[^"']*)["'][^>]*>([^<]*)</gi)]
-  .map(match => ({ href: match[1], text: match[2].replace(/<[^>]+>/g, '').trim() }));
-console.log('GOL_LIST', JSON.stringify({ status: golList.status, finalUrl: golList.finalUrl, bytes: golList.raw.length, snippets: around.slice(0, 10), gameLinks: gameLinks.slice(-30) }, null, 2));
-
-const genericLinks = [...normalizedHtml.matchAll(/href=["']([^"']+)["'][^>]*>(.*?)<\/a>/gi)].map(row => ({ href: row[1], text: row[2].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim() }));
-const likely = genericLinks.filter(row => /T1|KT Rolster|2026-08-21/.test(row.text) || /game\/stats|page-game\/stats/.test(row.href));
-console.log('GOL_LIKELY_LINKS', JSON.stringify(likely.slice(-80), null, 2));
