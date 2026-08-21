@@ -1,6 +1,7 @@
-// Temporary diagnostic: print objective-related fields exposed by Riot's live
-// window and details endpoints for the exact KRX vs NS Game 2 regression.
+// Temporary diagnostic: inspect Riot's live objective shape and per-game result
+// metadata for the exact KRX vs NS series used by the regression.
 const API_KEY = process.env.LOLESPORTS_API_KEY || '0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z';
+const ESPORTS_API = 'https://esports-api.lolesports.com/persisted/gw';
 const gameId = '115548147900750239';
 const start = Date.parse('2026-08-20T10:00:00.000Z');
 const probes = Array.from({ length: 19 }, (_, index) => new Date(start + index * 10 * 60_000).toISOString());
@@ -36,6 +37,26 @@ async function fetchJson(url) {
   const raw = await response.text();
   if (!raw.trim()) return null;
   try { return JSON.parse(raw); } catch { return null; }
+}
+
+// Inspect persisted event metadata so per-game winner/result can be sourced from
+// Riot instead of inferred from the final BO score.
+const schedule = await fetchJson(`${ESPORTS_API}/getSchedule?hl=en-US&leagueId=98767991310872058`);
+const lckEvents = schedule?.data?.schedule?.events || [];
+const krxNs = lckEvents.find(event => {
+  const codes = (event?.match?.teams || []).map(team => String(team?.code || '').toUpperCase());
+  return codes.includes('KRX') && codes.includes('NS');
+});
+if (krxNs?.id) {
+  const detail = await fetchJson(`${ESPORTS_API}/getEventDetails?hl=en-US&id=${encodeURIComponent(krxNs.id)}`);
+  const eventDetail = detail?.data?.event || detail?.data?.eventDetails || detail?.data?.match || null;
+  console.log('EVENT_GAME_RESULTS', JSON.stringify({
+    scheduleEventId: krxNs.id,
+    scheduleGames: krxNs?.match?.games || [],
+    detailKeys: eventDetail ? Object.keys(eventDetail) : [],
+    detailMatch: eventDetail?.match || null,
+    detailGames: eventDetail?.match?.games || eventDetail?.games || []
+  }, null, 2));
 }
 
 let found = 0;
