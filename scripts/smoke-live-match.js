@@ -226,3 +226,37 @@ if (t1KtEvent) {
     games: summaries
   }, null, 2));
 }
+
+// Temporary source probe: verify whether GitHub-hosted production can refresh
+// the latest Reddit selftext for the known T1-KT Post-Match thread instead of
+// relying only on Arctic Shift's archived snapshot.
+for (const url of [
+  'https://www.reddit.com/comments/1vugxz5.json?raw_json=1',
+  'https://www.reddit.com/r/leagueoflegends/comments/1vugxz5/.json?raw_json=1',
+  'https://old.reddit.com/comments/1vugxz5.json?raw_json=1'
+]) {
+  try {
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'WebLienMinh/3.21 ban-pick-diagnostic' },
+      signal: AbortSignal.timeout(10_000)
+    });
+    const raw = await response.text();
+    let selftext = '';
+    try {
+      const body = JSON.parse(raw);
+      selftext = String(body?.[0]?.data?.children?.[0]?.data?.selftext || '');
+    } catch {}
+    console.log(JSON.stringify({
+      redditCurrentProbe: url,
+      status: response.status,
+      bytes: raw.length,
+      selftextBytes: selftext.length,
+      match1: /MATCH\s*1/i.test(selftext),
+      match2: /MATCH\s*2/i.test(selftext),
+      match3: /MATCH\s*3/i.test(selftext),
+      bansHeader: /Bans?\s*1/i.test(selftext)
+    }));
+  } catch (error) {
+    console.log(JSON.stringify({ redditCurrentProbe: url, error: error.message }));
+  }
+}
