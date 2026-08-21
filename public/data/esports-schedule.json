@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T10:42:34.443Z",
+  "generatedAt": "2026-08-21T11:36:40.669Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 2,
-    "upcoming": 72,
-    "completed": 161,
+    "upcoming": 71,
+    "completed": 162,
     "total": 235
   },
   "leagues": [
@@ -7427,7 +7427,7 @@
     {
       "id": "98767991310872058:2026-08-21T08:00:00Z:BFX-BRO",
       "startTime": "2026-08-21T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 13",
       "league": {
@@ -7505,7 +7505,7 @@
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 6,
@@ -7551,7 +7551,7 @@
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
-          "wins": 1,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -7563,9 +7563,9 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-21T10:00:00Z:KT-T1",
+      "id": "98767991310872058:2026-08-21T10:00:00Z:T1-KT",
       "startTime": "2026-08-21T10:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 13",
       "league": {
@@ -7581,18 +7581,6 @@
       "strategyType": "bestOf",
       "teams": [
         {
-          "name": "kt Rolster",
-          "code": "KT",
-          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 2,
-            "losses": 5
-          }
-        },
-        {
           "name": "T1",
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
@@ -7602,6 +7590,18 @@
           "record": {
             "wins": 2,
             "losses": 4
+          }
+        },
+        {
+          "name": "kt Rolster",
+          "code": "KT",
+          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 5
           }
         }
       ],
