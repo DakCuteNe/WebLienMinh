@@ -1,0 +1,52 @@
+name: Cleanup stale feature branches
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-stale-feature-branches.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Delete stale remote branches
+        shell: bash
+        run: |
+          set -euo pipefail
+          for branch in \
+            'audit/all-esports-games' \
+            'fix/live-ban-herald-grubs' \
+            'fix/hall-vietnamese-fonts'
+          do
+            if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+              git push origin --delete "$branch"
+              echo "Deleted $branch"
+            else
+              echo "$branch already absent"
+            fi
+          done
+      - name: Remove this one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'WebLienMinh Bot'
+          git config user.email 'weblienminh-bot@users.noreply.github.com'
+          rm -f .github/workflows/cleanup-stale-feature-branches.yml
+          git add -A
+          git commit -m 'Remove temporary stale branch cleanup workflow'
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Retry cleanup push: $attempt"
+            sleep 3
+          done
+          exit 1
