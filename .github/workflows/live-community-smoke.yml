@@ -12,6 +12,7 @@ on:
       - 'scripts/smoke-live-match-community.js'
       - 'scripts/smoke-live-match-multigame.js'
       - 'scripts/smoke-live-match-gol.js'
+      - 'scripts/probe-gol-current.js'
       - '.github/workflows/live-community-smoke.yml'
   pull_request:
     paths:
@@ -23,6 +24,7 @@ on:
       - 'scripts/smoke-live-match-community.js'
       - 'scripts/smoke-live-match-multigame.js'
       - 'scripts/smoke-live-match-gol.js'
+      - 'scripts/probe-gol-current.js'
       - '.github/workflows/live-community-smoke.yml'
   workflow_dispatch:
 
@@ -48,8 +50,11 @@ jobs:
           node --check scripts/smoke-live-match-community.js
           node --check scripts/smoke-live-match-multigame.js
           node --check scripts/smoke-live-match-gol.js
+          node --check scripts/probe-gol-current.js
       - name: Ban, objective and score regression
         run: |
           node scripts/smoke-live-match-community.js
           node scripts/smoke-live-match-multigame.js
           node scripts/smoke-live-match-gol.js
+      - name: Current LCK GOL Ban coverage probe
+        run: node scripts/probe-gol-current.js
