@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T09:49:25.415Z",
+  "generatedAt": "2026-08-21T10:42:34.443Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -1562,7 +1562,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         },
@@ -2035,7 +2035,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -2264,7 +2264,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         }
@@ -2759,7 +2759,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -3277,7 +3277,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -3909,7 +3909,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -3920,7 +3920,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         }
@@ -4736,7 +4736,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         },
@@ -5346,7 +5346,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         }
@@ -5749,7 +5749,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -6116,7 +6116,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         },
@@ -6577,7 +6577,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -7141,7 +7141,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -7447,10 +7447,10 @@
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         },
@@ -7459,11 +7459,11 @@
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -7493,7 +7493,7 @@
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 9,
@@ -7551,7 +7551,7 @@
           "code": "TSW",
           "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -8410,7 +8410,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 3
           }
         },
