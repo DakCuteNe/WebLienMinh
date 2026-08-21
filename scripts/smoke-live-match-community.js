@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { __communityFallbackTest } from '../server/esports-match-community-fallback.js';
 import { __communityOverlayTest } from '../server/esports-match-community-overlay.js';
 
-const { buildChampionIndex, parseCommunityPosts } = __communityFallbackTest;
+const { buildChampionIndex, parseCommunityPosts, postSearchWindows } = __communityFallbackTest;
 const { applyCommunityOverlay } = __communityOverlayTest;
 
 const teams = [
@@ -19,6 +19,17 @@ const champions = buildChampionIndex([
   { key: 78, name: 'Poppy', id: 'Poppy' }, { key: 80, name: 'Pantheon', id: 'Pantheon' },
   { key: 517, name: 'Sylas', id: 'Sylas' }
 ]);
+
+const baseStart = '2026-08-21T10:00:00Z';
+const g1Windows = postSearchWindows({ startTime: baseStart, viewGame: { number: 1 } });
+const g2Windows = postSearchWindows({ startTime: baseStart, viewGame: { number: 2 } });
+const g3Windows = postSearchWindows({ startTime: baseStart, viewGame: { number: 3 } });
+assert.equal(g1Windows.length, 2);
+assert.equal(g2Windows.length, 2);
+assert.equal(g3Windows.length, 2);
+assert.ok(g2Windows[0].after > g1Windows[0].after, 'Game 2 search must move forward from Game 1');
+assert.ok(g3Windows[0].after > g2Windows[0].after, 'Game 3 search must have its own later window');
+assert.equal(g1Windows[1].sort, 'desc', 'wide fallback window must keep the newest post-match result');
 
 const parsed = parseCommunityPosts([
   {
