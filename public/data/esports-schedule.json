@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T13:07:11.249Z",
+  "generatedAt": "2026-08-21T13:57:32.396Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 1,
     "upcoming": 71,
-    "completed": 163,
-    "total": 235
+    "completed": 164,
+    "total": 236
   },
   "leagues": [
     {
@@ -1424,7 +1424,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         },
@@ -1437,7 +1437,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -1896,7 +1896,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -2909,7 +2909,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -3632,7 +3632,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         },
@@ -3783,7 +3783,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -4138,7 +4138,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         },
@@ -4599,7 +4599,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -5209,7 +5209,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -5622,7 +5622,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -5979,7 +5979,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -6450,7 +6450,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -7003,7 +7003,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -7425,6 +7425,27 @@
       "tournamentId": null
     },
     {
+      "id": "98767991310872058:2026-08-21T07:27:08.478Z:",
+      "startTime": "2026-08-21T07:27:08.478Z",
+      "state": "inprogress",
+      "type": "show",
+      "blockName": null,
+      "league": {
+        "id": "98767991310872058",
+        "name": "LCK",
+        "slug": "lck",
+        "officialSlug": "lck",
+        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
+        "group": "REGIONAL",
+        "priority": 1
+      },
+      "bestOf": null,
+      "strategyType": null,
+      "teams": [],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
       "id": "98767991310872058:2026-08-21T08:00:00Z:BFX-BRO",
       "startTime": "2026-08-21T08:00:00Z",
       "state": "completed",
@@ -7565,7 +7586,7 @@
     {
       "id": "98767991310872058:2026-08-21T10:00:00Z:T1-KT",
       "startTime": "2026-08-21T10:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 13",
       "league": {
@@ -7585,10 +7606,10 @@
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         },
@@ -7598,10 +7619,10 @@
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -7631,7 +7652,7 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 10,
@@ -8290,7 +8311,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
