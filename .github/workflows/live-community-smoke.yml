@@ -6,21 +6,23 @@ on:
     paths:
       - 'server/esports-match-community-fallback.js'
       - 'server/esports-match-community-multigame.js'
+      - 'server/esports-match-gol-fallback.js'
       - 'server/esports-match-community-overlay.js'
       - 'server/esports-match-bootstrap.js'
       - 'scripts/smoke-live-match-community.js'
       - 'scripts/smoke-live-match-multigame.js'
-      - 'scripts/probe-gol-bans.js'
+      - 'scripts/smoke-live-match-gol.js'
       - '.github/workflows/live-community-smoke.yml'
   pull_request:
     paths:
       - 'server/esports-match-community-fallback.js'
       - 'server/esports-match-community-multigame.js'
+      - 'server/esports-match-gol-fallback.js'
       - 'server/esports-match-community-overlay.js'
       - 'server/esports-match-bootstrap.js'
       - 'scripts/smoke-live-match-community.js'
       - 'scripts/smoke-live-match-multigame.js'
-      - 'scripts/probe-gol-bans.js'
+      - 'scripts/smoke-live-match-gol.js'
       - '.github/workflows/live-community-smoke.yml'
   workflow_dispatch:
 
@@ -40,14 +42,14 @@ jobs:
         run: |
           node --check server/esports-match-community-fallback.js
           node --check server/esports-match-community-multigame.js
+          node --check server/esports-match-gol-fallback.js
           node --check server/esports-match-community-overlay.js
           node --check server/esports-match-bootstrap.js
           node --check scripts/smoke-live-match-community.js
           node --check scripts/smoke-live-match-multigame.js
-          node --check scripts/probe-gol-bans.js
+          node --check scripts/smoke-live-match-gol.js
       - name: Ban, objective and score regression
         run: |
           node scripts/smoke-live-match-community.js
           node scripts/smoke-live-match-multigame.js
-      - name: Games of Legends Ban markup probe
-        run: node scripts/probe-gol-bans.js
+          node scripts/smoke-live-match-gol.js
