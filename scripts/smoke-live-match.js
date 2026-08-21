@@ -19,6 +19,8 @@ function paramsFor(event, detail = false, viewGameId = '') {
     locale: 'vi-VN',
     detail: detail ? '1' : '0'
   });
+  if (event.riotEventId) params.set('eventId', String(event.riotEventId));
+  if (event.matchId) params.set('matchId', String(event.matchId));
   if (viewGameId) params.set('viewGameId', String(viewGameId));
   return params;
 }
