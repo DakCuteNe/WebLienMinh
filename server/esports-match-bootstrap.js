@@ -1,6 +1,7 @@
 import express from 'express';
 import { installEsportsMatchLiveRoutes } from './esports-match-live.js';
 import { installEsportsMatchHistoryCache } from './esports-match-history-cache.js';
+import { installEsportsMatchObjectives } from './esports-match-objectives.js';
 
 const originalUse = express.application.use;
 let installed = false;
@@ -12,6 +13,7 @@ express.application.use = function patchedUse(...args) {
   if (!installed && args[0] === '/api') {
     installed = true;
     installEsportsMatchHistoryCache(this);
+    installEsportsMatchObjectives(this);
     installEsportsMatchLiveRoutes(this);
   }
   return originalUse.apply(this, args);
