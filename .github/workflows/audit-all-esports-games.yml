@@ -1,35 +1,16 @@
 name: Audit all esports games
 
 on:
-  push:
-    branches:
-      - audit/all-esports-games
-      - main
-    paths:
-      - 'scripts/audit-esports-game-coverage.js'
-      - 'server/esports-match-live.js'
-      - 'server/esports-match-history-cache.js'
-      - 'server/esports-match-objectives.js'
-      - 'server/esports-match-community-fallback.js'
-      - 'server/esports-match-community-overlay.js'
-      - 'server/esports-match-bootstrap.js'
-      - 'public/data/esports-schedule.json'
-      - '.github/workflows/audit-all-esports-games.yml'
-  pull_request:
-    paths:
-      - 'scripts/audit-esports-game-coverage.js'
-      - 'server/esports-match-live.js'
-      - 'server/esports-match-history-cache.js'
-      - 'server/esports-match-objectives.js'
-      - 'server/esports-match-community-fallback.js'
-      - 'server/esports-match-community-overlay.js'
-      - 'server/esports-match-bootstrap.js'
-      - 'public/data/esports-schedule.json'
-      - '.github/workflows/audit-all-esports-games.yml'
   workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * 1'
 
 permissions:
   contents: read
+
+concurrency:
+  group: esports-full-audit
+  cancel-in-progress: true
 
 jobs:
   audit:
@@ -49,7 +30,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
+          cache: npm
+      - run: npm ci --no-audit --no-fund
       - name: Syntax check audit and live modules
         run: |
           node --check scripts/audit-esports-game-coverage.js
