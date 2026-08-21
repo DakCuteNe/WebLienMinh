@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T18:52:26.390Z",
+  "generatedAt": "2026-08-21T19:33:42.460Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 37,
-    "completed": 165,
+    "completed": 166,
     "total": 203
   },
   "leagues": [
@@ -502,7 +502,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         }
@@ -802,7 +802,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         }
@@ -1239,7 +1239,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         },
@@ -2302,7 +2302,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         }
@@ -2803,7 +2803,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -3440,7 +3440,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -4740,7 +4740,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -5452,7 +5452,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         }
@@ -5503,7 +5503,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -6402,7 +6402,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         }
@@ -7240,7 +7240,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -7453,7 +7453,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -8365,7 +8365,7 @@
       "riotEventId": null,
       "matchId": "115548681803406147",
       "startTime": "2026-08-21T17:15:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -8387,10 +8387,10 @@
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -8399,10 +8399,10 @@
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         }
@@ -9440,7 +9440,7 @@
           "outcome": null,
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -9589,7 +9589,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         },
@@ -9690,7 +9690,7 @@
           "outcome": null,
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -9839,7 +9839,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           }
         },
