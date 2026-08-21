@@ -42,7 +42,7 @@ async function riotGet(endpoint, params = {}) {
   const response = await fetch(`${API}/${endpoint}?${query}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.0 schedule-cache'
+      'User-Agent': 'WebLienMinh/3.20 schedule-cache'
     }
   });
   if (!response.ok) throw new Error(`${endpoint} HTTP ${response.status}`);
@@ -79,6 +79,7 @@ function eventId(event, leagueId) {
 function normalizeTeam(team = {}) {
   const wins = Number(team?.result?.gameWins ?? team?.result?.wins ?? 0);
   return {
+    id: team?.id ? String(team.id) : null,
     name: team.name || team.code || 'TBD',
     code: team.code || team.name || 'TBD',
     image: httpsUrl(team.image),
@@ -98,6 +99,8 @@ function normalizeEvent(event, league) {
   const teams = (match?.teams || []).slice(0, 2).map(normalizeTeam);
   return {
     id: eventId(event, league.id),
+    riotEventId: event?.id ? String(event.id) : null,
+    matchId: match?.id ? String(match.id) : null,
     startTime: event?.startTime || null,
     state: String(event?.state || 'unstarted').toLowerCase(),
     type: event?.type || 'match',
