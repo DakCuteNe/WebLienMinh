@@ -42,7 +42,7 @@ async function riotGet(endpoint, params = {}) {
   const response = await fetch(`${API}/${endpoint}?${query}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.0 schedule-cache'
+      'User-Agent': 'WebLienMinh/3.20 schedule-cache'
     }
   });
   if (!response.ok) throw new Error(`${endpoint} HTTP ${response.status}`);
@@ -79,6 +79,7 @@ function eventId(event, leagueId) {
 function normalizeTeam(team = {}) {
   const wins = Number(team?.result?.gameWins ?? team?.result?.wins ?? 0);
   return {
+    id: team?.id ? String(team.id) : null,
     name: team.name || team.code || 'TBD',
     code: team.code || team.name || 'TBD',
     image: httpsUrl(team.image),
@@ -98,6 +99,8 @@ function normalizeEvent(event, league) {
   const teams = (match?.teams || []).slice(0, 2).map(normalizeTeam);
   return {
     id: eventId(event, league.id),
+    riotEventId: event?.id ? String(event.id) : null,
+    matchId: match?.id ? String(match.id) : null,
     startTime: event?.startTime || null,
     state: String(event?.state || 'unstarted').toLowerCase(),
     type: event?.type || 'match',
@@ -119,6 +122,20 @@ function normalizeEvent(event, league) {
   };
 }
 
+function usableMatchEvent(event) {
+  if (!event || lowerType(event.type) !== 'match') return false;
+  if (!Array.isArray(event.teams) || event.teams.length !== 2) return false;
+  return event.teams.every(team => {
+    const name = String(team?.name || '').trim();
+    const code = String(team?.code || '').trim();
+    return Boolean(name && code && name.toUpperCase() !== 'TBD' && code.toUpperCase() !== 'TBD');
+  });
+}
+
+function lowerType(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
 async function fetchLeagueSchedule(league) {
   const all = [];
   let pageToken = null;
@@ -127,7 +144,10 @@ async function fetchLeagueSchedule(league) {
   for (let page = 0; page < MAX_NEWER_PAGES; page += 1) {
     const body = await riotGet('getSchedule', pageToken ? { leagueId: league.id, pageToken } : { leagueId: league.id });
     const schedule = body?.data?.schedule || {};
-    for (const event of schedule.events || []) all.push(normalizeEvent(event, league));
+    for (const event of schedule.events || []) {
+      const normalized = normalizeEvent(event, league);
+      if (usableMatchEvent(normalized)) all.push(normalized);
+    }
 
     const next = schedule?.pages?.newer || null;
     if (!next || seenTokens.has(next)) break;
@@ -141,10 +161,11 @@ async function fetchLeagueSchedule(league) {
 }
 
 function previousEventsFor(previous, leagueId) {
-  return (previous?.events || []).filter(event => String(event?.league?.id || '') === String(leagueId));
+  return (previous?.events || []).filter(event => String(event?.league?.id || '') === String(leagueId) && usableMatchEvent(event));
 }
 
 function keepEvent(event, now = Date.now()) {
+  if (!usableMatchEvent(event)) return false;
   if (!event.startTime) return event.state !== 'completed';
   const time = new Date(event.startTime).getTime();
   if (!Number.isFinite(time)) return false;
