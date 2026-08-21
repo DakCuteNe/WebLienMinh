@@ -1,0 +1,43 @@
+name: Build Oracle game details
+
+on:
+  push:
+    branches: [audit/all-esports-games]
+    paths:
+      - 'scripts/update-esports-game-details.py'
+      - '.github/workflows/build-oracle-game-details.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --disable-pip-version-check gdown
+      - name: Build compact detail cache
+        run: python scripts/update-esports-game-details.py
+      - name: Validate cache
+        run: |
+          python - <<'PY'
+          import json
+          data=json.load(open('public/data/esports-game-details.json',encoding='utf-8'))
+          games=data.get('games',[])
+          assert games, 'cache has no games'
+          recent=games[-100:]
+          assert any(len(t.get('bans',[])) == 5 for g in recent for t in g.get('teams',[])), 'no five-ban team row in recent cache'
+          assert any(t.get('stats',{}).get('voidGrubs') is not None for g in recent for t in g.get('teams',[])), 'void_grubs absent from recent cache'
+          assert any(t.get('stats',{}).get('riftHeralds') is not None for g in recent for t in g.get('teams',[])), 'heralds absent from recent cache'
+          print(data['summary'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oracle-esports-game-details
+          path: public/data/esports-game-details.json
+          retention-days: 2
