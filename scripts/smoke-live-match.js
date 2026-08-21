@@ -50,8 +50,26 @@ function assertResolved(body, event) {
   }
 }
 
+function draftRows(live) {
+  if (Array.isArray(live?.teams) && live.teams.length >= 2) return live.teams.slice(0, 2);
+  return [live?.blue, live?.red].filter(Boolean).slice(0, 2);
+}
+
 function pickCount(live) {
-  return (live?.blue?.picks?.length || 0) + (live?.red?.picks?.length || 0);
+  return draftRows(live).reduce((sum, row) => sum + (Array.isArray(row?.picks) ? row.picks.length : 0), 0);
+}
+
+function banCount(live) {
+  return draftRows(live).reduce((sum, row) => sum + (Array.isArray(row?.bans) ? row.bans.length : 0), 0);
+}
+
+function draftRefs(live) {
+  return draftRows(live).map(row => ({
+    teamId: row?.teamId || null,
+    side: row?.side || null,
+    picks: (row?.picks || []).map(item => item?.championId ?? item),
+    bans: (row?.bans || []).map(item => item?.championId ?? item)
+  }));
 }
 
 function statsSignal(live) {
@@ -72,6 +90,19 @@ function objectivesReady(live) {
     && Number.isFinite(Number(stats.inhibitors))
     && Number.isFinite(Number(stats.towers))
     && Number.isFinite(Number(stats.barons)));
+}
+
+function codesFor(event) {
+  return (event?.teams || []).map(team => String(team?.code || team?.name || '').toUpperCase());
+}
+
+function playedGamesFrom(series) {
+  const currentNumber = Number(series.currentGame?.number || 0);
+  return (series.games || []).filter(game => {
+    const state = String(game?.state || '').toLowerCase();
+    const number = Number(game?.number || 0);
+    return game?.id && number > 0 && number <= currentNumber && !state.includes('unneeded');
+  });
 }
 
 // Basic resolver smoke: choose a recent/upcoming real event, never a TBD placeholder.
@@ -108,7 +139,7 @@ const recentLck = (schedule.events || [])
     && Math.abs(now - new Date(row.startTime).getTime()) <= 36 * 60 * 60_000)
   .sort((a, b) => Math.abs(now - new Date(a.startTime).getTime()) - Math.abs(now - new Date(b.startTime).getTime()));
 const exactReported = recentLck.find(row => {
-  const codes = (row.teams || []).map(team => String(team.code || '').toUpperCase());
+  const codes = codesFor(row);
   return codes.includes('KRX') && codes.includes('NS');
 });
 const playedFallback = recentLck.find(row => row.state === 'completed' || (row.teams || []).some(team => Number(team?.wins || 0) > 0));
@@ -117,12 +148,7 @@ const regressionEvent = exactReported || playedFallback || null;
 if (regressionEvent) {
   const series = await liveRequest(regressionEvent, false, '', 30_000);
   assertResolved(series, regressionEvent);
-  const currentNumber = Number(series.currentGame?.number || 0);
-  const playedGames = (series.games || []).filter(game => {
-    const state = String(game?.state || '').toLowerCase();
-    const number = Number(game?.number || 0);
-    return game?.id && number > 0 && number <= currentNumber && !state.includes('unneeded');
-  });
+  const playedGames = playedGamesFrom(series);
 
   if (!playedGames.length) throw new Error('Recent played LCK series resolved without a played game.');
 
@@ -145,6 +171,10 @@ if (regressionEvent) {
       game: game.number,
       gameId: game.id,
       picks: pickCount(detail.live),
+      bans: banCount(detail.live),
+      secondarySource: detail.live?.secondarySource || null,
+      dataAvailability: detail.live?.dataAvailability || null,
+      draft: draftRefs(detail.live),
       blue: detail.live.blue?.stats,
       red: detail.live.red?.stats
     });
@@ -159,6 +189,39 @@ if (regressionEvent) {
   console.log(JSON.stringify({
     liveHistoryRegression: 'ok',
     teams: regressionEvent.teams?.map(team => team.code),
+    score: series.teams?.map(team => ({ code: team.code, wins: team.wins })),
+    games: summaries
+  }, null, 2));
+}
+
+// Dedicated real Ban fallback probe: the reported T1–KT series has published
+// post-match draft tables. Keep this diagnostic in smoke output so future
+// regressions cannot hide behind the Riot-only Pick path.
+const t1KtEvent = recentLck.find(row => {
+  const codes = codesFor(row);
+  return codes.includes('T1') && codes.includes('KT');
+}) || null;
+
+if (t1KtEvent) {
+  const series = await liveRequest(t1KtEvent, false, '', 30_000);
+  assertResolved(series, t1KtEvent);
+  const summaries = [];
+  for (const game of playedGamesFrom(series)) {
+    const detail = await liveRequest(t1KtEvent, true, game.id, 60_000);
+    summaries.push({
+      game: game.number,
+      gameId: game.id,
+      picks: pickCount(detail.live),
+      bans: banCount(detail.live),
+      secondarySource: detail.live?.secondarySource || null,
+      dataAvailability: detail.live?.dataAvailability || null,
+      draft: draftRefs(detail.live)
+    });
+  }
+  console.log(JSON.stringify({
+    realBanProbe: 'T1-KT',
+    startTime: t1KtEvent.startTime,
+    matchId: series.matchId,
     score: series.teams?.map(team => ({ code: team.code, wins: team.wins })),
     games: summaries
   }, null, 2));
