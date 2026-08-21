@@ -266,7 +266,7 @@ export function parseCommunityPosts(posts = [], teams = [], championIndex = []) 
 }
 
 async function fetchJson(url, options = {}) {
-  const response = await fetch(url, { ...options, headers: { 'User-Agent': 'WebLienMinh/3.19 community-fallback', ...(options.headers || {}) }, signal: options.signal || AbortSignal.timeout(8_000) });
+  const response = await fetch(url, { ...options, headers: { 'User-Agent': 'WebLienMinh/3.20 community-fallback', ...(options.headers || {}) }, signal: options.signal || AbortSignal.timeout(8_000) });
   if (!response.ok) return null;
   const raw = await response.text();
   if (!raw.trim()) return null;
@@ -286,17 +286,50 @@ async function championIndex() {
   return championIndexPromise;
 }
 
+function selectedGameNumber(body) {
+  return Math.max(1, Number(body?.viewGame?.number || body?.currentGame?.number || 1) || 1);
+}
+
 function cacheKey(body) {
-  return [text(body?.startTime).slice(0, 10), ...(body?.teams || []).map(team => text(team?.id || team?.code)).sort()].join(':');
+  return [
+    text(body?.startTime).slice(0, 10),
+    ...(body?.teams || []).map(team => text(team?.id || team?.code)).sort(),
+    `game-${selectedGameNumber(body)}`
+  ].join(':');
+}
+
+export function postSearchWindows(body) {
+  const start = Date.parse(body?.startTime || '');
+  if (!Number.isFinite(start)) return [];
+  const number = selectedGameNumber(body);
+  const estimatedGameStart = start + (number - 1) * 65 * 60_000;
+  return [
+    {
+      after: Math.floor((estimatedGameStart - 30 * 60_000) / 1000),
+      before: Math.floor((estimatedGameStart + 120 * 60_000) / 1000),
+      sort: 'asc'
+    },
+    {
+      after: Math.floor((start - 45 * 60_000) / 1000),
+      before: Math.floor((start + 7 * 60 * 60_000) / 1000),
+      sort: 'desc'
+    }
+  ];
 }
 
 async function fetchPostsForMatch(body) {
-  const start = Date.parse(body?.startTime || '');
-  if (!Number.isFinite(start)) return [];
-  const after = Math.floor((start - 45 * 60_000) / 1000);
-  const before = Math.floor((start + 7 * 60 * 60_000) / 1000);
-  const base = `subreddit=leagueoflegends&after=${after}&before=${before}&limit=100`;
-  const urls = [`${ARCTIC_SHIFT}?${base}&sort=desc`, `${ARCTIC_SHIFT}?${base}&sort=asc`];
+  const windows = postSearchWindows(body);
+  if (!windows.length) return [];
+  const urls = windows.map(window => {
+    const query = new URLSearchParams({
+      subreddit: 'leagueoflegends',
+      after: String(window.after),
+      before: String(window.before),
+      limit: '100',
+      sort: window.sort
+    });
+    return `${ARCTIC_SHIFT}?${query}`;
+  });
   const responses = await Promise.all(urls.map(url => fetchJson(url).catch(() => null)));
   const byId = new Map();
   for (const response of responses) for (const post of response?.data || []) if (post?.id) byId.set(post.id, post);
@@ -315,4 +348,4 @@ export async function loadCommunityMatchFallback(body) {
   return value;
 }
 
-export const __communityFallbackTest = { buildChampionIndex, parseChampionCell, parseCommunityPost, parseCommunityPosts };
+export const __communityFallbackTest = { buildChampionIndex, parseChampionCell, parseCommunityPost, parseCommunityPosts, postSearchWindows };
