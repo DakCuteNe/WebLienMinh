@@ -1,0 +1,18 @@
+name: Delete merged live game objectives v2 branch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/delete-live-game-objectives-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  delete-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Delete merged feature branch
+        run: git push origin --delete feat/live-game-objectives-v2
