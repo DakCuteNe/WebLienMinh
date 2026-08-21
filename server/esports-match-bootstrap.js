@@ -1,6 +1,7 @@
 import express from 'express';
 import { installEsportsMatchLiveRoutes } from './esports-match-live.js';
 import { installEsportsMatchHistoryCache } from './esports-match-history-cache.js';
+import { installEsportsMatchCommunityOverlay } from './esports-match-community-overlay.js';
 import { installEsportsMatchObjectives } from './esports-match-objectives.js';
 
 const originalUse = express.application.use;
@@ -13,6 +14,11 @@ express.application.use = function patchedUse(...args) {
   if (!installed && args[0] === '/api') {
     installed = true;
     installEsportsMatchHistoryCache(this);
+    // Install the community overlay before the objective middleware so its
+    // response wrapper runs after Riot/objective enrichment. Official Riot data
+    // stays primary; the overlay only fills missing bans/Grubs/Herald and keeps
+    // the series score moving when the final live frame lands first.
+    installEsportsMatchCommunityOverlay(this);
     installEsportsMatchObjectives(this);
     installEsportsMatchLiveRoutes(this);
   }
