@@ -1,0 +1,118 @@
+name: Apply live draft rendering repair
+
+on:
+  push:
+    branches: [fix/live-draft-rendering]
+    paths: ['.github/workflows/fix-live-draft-rendering.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/live-draft-rendering
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Patch draft pipeline
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace(path, old, new):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              if old not in s:
+                  raise SystemExit(f'missing patch anchor in {path}: {old[:100]!r}')
+              p.write_text(s.replace(old, new, 1), encoding='utf-8')
+
+          # Backend: preserve Riot champion names such as "Olaf" / "LeeSin"
+          # instead of Number(...) => NaN => filtered draft rows.
+          replace('server/esports-match-live.js',
+          """function championIds(value, out = []) {\n  if (value == null) return out;\n  if (typeof value === 'number' && value > 0) out.push(value);\n  else if (typeof value === 'string' && /^\\d+$/.test(value) && Number(value) > 0) out.push(Number(value));\n  else if (Array.isArray(value)) for (const item of value) championIds(item, out);\n  else if (typeof value === 'object') {\n    if (value.championId != null) championIds(value.championId, out);\n    else for (const item of Object.values(value)) championIds(item, out);\n  }\n  return out;\n}\n""",
+          """function championRef(value) {\n  if (typeof value === 'number' && value > 0) return value;\n  const raw = text(value);\n  if (!raw) return null;\n  if (/^\\d+$/.test(raw) && Number(raw) > 0) return Number(raw);\n  return raw;\n}\n\nfunction championIds(value, out = []) {\n  if (value == null) return out;\n  if (typeof value === 'number' || typeof value === 'string') {\n    const ref = championRef(value);\n    if (ref != null) out.push(ref);\n  } else if (Array.isArray(value)) for (const item of value) championIds(item, out);\n  else if (typeof value === 'object') {\n    if (value.championId != null) championIds(value.championId, out);\n    else for (const item of Object.values(value)) championIds(item, out);\n  }\n  return out;\n}\n""")
+
+          replace('server/esports-match-live.js',
+          """    championId: Number(player.championId || 0) || null,\n""",
+          """    championId: championRef(player.championId),\n""")
+
+          replace('server/esports-match-live.js',
+          """    const championId = Number(value.championId || 0);\n    if (championId > 0) {\n""",
+          """    const championId = championRef(value.championId);\n    if (championId != null) {\n""")
+
+          # Never turn a metadata-only/partial last frame into fake 0 stats.
+          replace('server/esports-match-live.js',
+          """function liveTeamStats(team = {}) {\n  return {\n""",
+          """function liveTeamStats(team) {\n  if (!team || typeof team !== 'object') return null;\n  return {\n""")
+          replace('server/esports-match-live.js',
+          """  const frame = frames.at(-1) || {};\n""",
+          """  const frame = [...frames].reverse().find(row => row?.blueTeam && row?.redTeam) || frames.at(-1) || {};\n""")
+
+          # Frontend: index champions by numeric key AND Riot string id/name.
+          replace('public/js/match-live.js',
+          """async function championMap() {\n  if (!championPromise) championPromise = fetch('/api/champions', { cache: 'force-cache' })\n    .then(response => response.ok ? response.json() : Promise.reject(new Error(`champions ${response.status}`)))\n    .then(body => new Map((body.champions || []).map(champion => [Number(champion.key), champion])))\n    .catch(() => new Map());\n  return championPromise;\n}\n""",
+          """function championAlias(value) {\n  return String(value ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '');\n}\n\nasync function championMap() {\n  if (!championPromise) championPromise = fetch('/api/champions', { cache: 'force-cache' })\n    .then(response => response.ok ? response.json() : Promise.reject(new Error(`champions ${response.status}`)))\n    .then(body => {\n      const map = new Map();\n      for (const champion of body.champions || []) {\n        const numeric = Number(champion?.key || 0);\n        if (numeric > 0) map.set(String(numeric), champion);\n        for (const alias of [champion?.id, champion?.name]) {\n          const key = championAlias(alias);\n          if (key) map.set(key, champion);\n        }\n      }\n      return map;\n    })\n    .catch(() => new Map());\n  return championPromise;\n}\n""")
+
+          replace('public/js/match-live.js',
+          """function championChip(row, map, pick = true) {\n  const champion = map.get(Number(row?.championId || row));\n  const name = champion?.name || `#${row?.championId || row || '?'}`;\n""",
+          """function championChip(row, map, pick = true) {\n  const ref = row?.championId ?? row;\n  const raw = String(ref ?? '').trim();\n  const champion = map.get(/^\\d+$/.test(raw) ? String(Number(raw)) : championAlias(raw)) || null;\n  const name = champion?.name || raw || '?';\n""")
+
+          # Pass stable Riot identifiers from schedule cache to live endpoint.
+          replace('public/js/schedule.js',
+          """  return `<article class=\"schedule-match ${live ? 'is-live' : ''} ${completed ? 'is-completed' : ''} ${fav ? 'is-favorite' : ''}\" data-start=\"${esc(event.startTime || '')}\">\n""",
+          """  return `<article class=\"schedule-match ${live ? 'is-live' : ''} ${completed ? 'is-completed' : ''} ${fav ? 'is-favorite' : ''}\" data-start=\"${esc(event.startTime || '')}\" data-event-id=\"${esc(event.riotEventId || '')}\" data-match-id=\"${esc(event.matchId || '')}\">\n""")
+
+          replace('public/js/match-live.js',
+          """  if (detail && card._livePinnedGameId) params.set('viewGameId', card._livePinnedGameId);\n  return params;\n}\n""",
+          """  if (card.dataset.eventId) params.set('eventId', card.dataset.eventId);\n  if (card.dataset.matchId) params.set('matchId', card.dataset.matchId);\n  if (detail && card._livePinnedGameId) params.set('viewGameId', card._livePinnedGameId);\n  return params;\n}\n""")
+
+          # Flush stale browser draft cache and force browsers to request repaired modules.
+          replace('public/js/live-match-history-cache.js',
+                  "const STORAGE_KEY = 'rift:live-match-game-history:v2';",
+                  "const STORAGE_KEY = 'rift:live-match-game-history:v3';")
+          replace('public/app.js', "const APP_VERSION = '3.18.0';", "const APP_VERSION = '3.21.0';")
+          replace('public/app.js', "import { initSchedule, ensureSchedule } from './js/schedule.js';", "import { initSchedule, ensureSchedule } from './js/schedule.js?v=3.21.0';")
+          replace('public/app.js', "import { initLiveMatchHistoryCache } from './js/live-match-history-cache.js';", "import { initLiveMatchHistoryCache } from './js/live-match-history-cache.js?v=3.21.0';")
+          replace('public/app.js', "import { initLiveMatchCenter } from './js/match-live.js';", "import { initLiveMatchCenter } from './js/match-live.js?v=3.21.0';")
+          replace('public/app.js', "import { initLiveGameObjectivesV2 } from './js/live-game-objectives-v2.js';", "import { initLiveGameObjectivesV2 } from './js/live-game-objectives-v2.js?v=3.21.0';")
+          replace('public/index.html', '<script type="module" src="/app.js"></script>', '<script type="module" src="/app.js?v=3.21.0"></script>')
+
+          # Regression: model Riot's real string champion ids, not only numeric strings.
+          replace('scripts/smoke-live-match-history.js',
+                  "{ participantId: 1, summonerName: 'TopB', championId: '266', role: 'top' },\n        { participantId: 2, summonerName: 'JungleB', championId: '64', role: 'jungle' },\n        { participantId: 3, summonerName: 'MidB', championId: '103', role: 'mid' },\n        { participantId: 4, summonerName: 'AdcB', championId: '22', role: 'bottom' },\n        { participantId: 5, summonerName: 'SupportB', championId: '412', role: 'support' }",
+                  "{ participantId: 1, summonerName: 'TopB', championId: 'Olaf', role: 'top' },\n        { participantId: 2, summonerName: 'JungleB', championId: 'LeeSin', role: 'jungle' },\n        { participantId: 3, summonerName: 'MidB', championId: 'Annie', role: 'mid' },\n        { participantId: 4, summonerName: 'AdcB', championId: 'Yunara', role: 'bottom' },\n        { participantId: 5, summonerName: 'SupportB', championId: 'Nautilus', role: 'support' }")
+          replace('scripts/smoke-live-match-history.js',
+                  "assert.equal(normalized.blue.picks.length, 5);\nassert.equal(normalized.red.picks.length, 5);",
+                  "assert.equal(normalized.blue.picks.length, 5);\nassert.equal(normalized.blue.picks[0].championId, 'Olaf', 'Riot string champion ids must survive normalization');\nassert.equal(normalized.blue.picks[1].championId, 'LeeSin', 'Data Dragon ids such as LeeSin must not be dropped');\nassert.equal(normalized.red.picks.length, 5);")
+
+          # Ensure smoke resolver itself uses stable IDs from the generated schedule.
+          replace('scripts/smoke-live-match.js',
+          """  if (viewGameId) params.set('viewGameId', String(viewGameId));\n  return params;\n}\n""",
+          """  if (event.riotEventId) params.set('eventId', String(event.riotEventId));\n  if (event.matchId) params.set('matchId', String(event.matchId));\n  if (viewGameId) params.set('viewGameId', String(viewGameId));\n  return params;\n}\n""")
+
+          # Remove one-shot workflow in the same commit.
+          Path('.github/workflows/fix-live-draft-rendering.yml').unlink()
+          PY
+      - name: Validate
+        run: |
+          node --check server/esports-match-live.js
+          node --check public/js/schedule.js
+          node --check public/js/match-live.js
+          node --check public/js/live-match-history-cache.js
+          node --check public/app.js
+          node --check scripts/smoke-live-match-history.js
+          node --check scripts/smoke-live-match.js
+          node scripts/smoke-live-match-history.js
+      - name: Commit repair
+        run: |
+          git config user.name 'WebLienMinh Bot'
+          git config user.email 'weblienminh-bot@users.noreply.github.com'
+          git add -A
+          git commit -m 'Fix live Ban Pick resolution and rendering'
+          git push origin HEAD:fix/live-draft-rendering
