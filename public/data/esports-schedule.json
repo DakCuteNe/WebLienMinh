@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T13:57:32.396Z",
+  "generatedAt": "2026-08-21T14:49:34.049Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -643,7 +643,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -1056,7 +1056,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         },
@@ -1391,7 +1391,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -1482,7 +1482,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -1942,7 +1942,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -2299,7 +2299,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -2448,7 +2448,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -2943,7 +2943,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -3403,7 +3403,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -3955,7 +3955,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -3966,7 +3966,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -4334,7 +4334,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -4657,7 +4657,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -5254,7 +5254,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -5393,7 +5393,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -5518,7 +5518,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         },
@@ -5669,7 +5669,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -6162,7 +6162,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         },
@@ -6635,7 +6635,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -7037,7 +7037,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -7370,7 +7370,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
@@ -7421,27 +7421,6 @@
           }
         }
       ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-21T07:27:08.478Z:",
-      "startTime": "2026-08-21T07:27:08.478Z",
-      "state": "inprogress",
-      "type": "show",
-      "blockName": null,
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": null,
-      "strategyType": null,
-      "teams": [],
       "vodsAvailable": false,
       "tournamentId": null
     },
@@ -7652,10 +7631,10 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         },
@@ -7665,13 +7644,34 @@
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991302996019:2026-08-21T14:03:58.675Z:",
+      "startTime": "2026-08-21T14:03:58.675Z",
+      "state": "inprogress",
+      "type": "show",
+      "blockName": null,
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": null,
+      "strategyType": null,
+      "teams": [],
       "vodsAvailable": false,
       "tournamentId": null
     },
@@ -7906,7 +7906,7 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-22T09:00:00Z:GAM-MVK",
+      "id": "113476371197627891:2026-08-22T09:00:00Z:MVK-GAM",
       "startTime": "2026-08-22T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -7924,9 +7924,9 @@
       "strategyType": "bestOf",
       "teams": [
         {
-          "name": "GAM Esports",
-          "code": "GAM",
-          "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -7936,9 +7936,9 @@
           }
         },
         {
-          "name": "MVK Esports",
-          "code": "MVK",
-          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
+          "name": "GAM Esports",
+          "code": "GAM",
+          "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -8036,7 +8036,7 @@
           "outcome": null,
           "record": {
             "wins": 9,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -8366,7 +8366,7 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-23T09:00:00Z:TSW-CFO",
+      "id": "113476371197627891:2026-08-23T09:00:00Z:CFO-TSW",
       "startTime": "2026-08-23T09:00:00Z",
       "state": "unstarted",
       "type": "match",
@@ -8384,9 +8384,9 @@
       "strategyType": "bestOf",
       "teams": [
         {
-          "name": "Team Secret Whales",
-          "code": "TSW",
-          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -8396,9 +8396,9 @@
           }
         },
         {
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "name": "Team Secret Whales",
+          "code": "TSW",
+          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -8495,7 +8495,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 10,
+            "wins": 11,
             "losses": 2
           }
         }
