@@ -40,14 +40,17 @@ const local = await fetchJson(`http://127.0.0.1:${process.env.PORT || 3000}/api/
   headers: { 'x-api-key': '' },
   signal: AbortSignal.timeout(30_000)
 });
-if (!local?.eventId) throw new Error(`Local live endpoint did not resolve Riot event id: ${JSON.stringify({ startTime: event.startTime, teams: event.teams?.map(team => team.code), local })}`);
+const detailLookupId = local?.eventId || local?.matchId;
+if (!detailLookupId) throw new Error(`Local live endpoint did not resolve Riot lookup id: ${JSON.stringify({ startTime: event.startTime, teams: event.teams?.map(team => team.code), local })}`);
 
-const detail = await fetchJson(`${ESPORTS_API}/getEventDetails?hl=en-US&id=${encodeURIComponent(local.eventId)}`);
+const detail = await fetchJson(`${ESPORTS_API}/getEventDetails?hl=en-US&id=${encodeURIComponent(detailLookupId)}`);
 const eventDetail = detail?.data?.event || detail?.data?.eventDetails || null;
-if (!eventDetail) throw new Error(`getEventDetails returned no event for Riot id ${local.eventId}`);
+if (!eventDetail) throw new Error(`getEventDetails returned no event for Riot id ${detailLookupId}`);
 const match = eventDetail.match || {};
 console.log('EVENT_GAME_RESULTS', JSON.stringify({
   requested: { startTime: event.startTime, teams: event.teams?.map(team => team.code) },
+  lookupId: detailLookupId,
+  detailEventId: eventDetail.id || null,
   resolvedEventId: local.eventId,
   resolvedMatchId: local.matchId,
   eventState: eventDetail.state,
