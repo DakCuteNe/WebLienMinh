@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T14:34:12.111Z",
+  "generatedAt": "2026-08-22T15:32:13.185Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 31,
+    "live": 1,
+    "upcoming": 30,
     "completed": 170,
     "total": 201
   },
@@ -8611,11 +8611,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-22T15:00:00Z:SHFT-FNC",
+      "id": "98767991302996019:2026-08-22T15:00:00Z:FNC-SHFT",
       "riotEventId": null,
       "matchId": "115548681803406219",
       "startTime": "2026-08-22T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -8632,19 +8632,6 @@
       "teams": [
         {
           "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 5
-          }
-        },
-        {
-          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -8654,6 +8641,19 @@
           "record": {
             "wins": 2,
             "losses": 3
+          }
+        },
+        {
+          "id": null,
+          "name": "Shifters",
+          "code": "SHFT",
+          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 5
           }
         }
       ],
