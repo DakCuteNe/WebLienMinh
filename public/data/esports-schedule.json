@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T11:53:49.676Z",
+  "generatedAt": "2026-08-22T12:57:18.744Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8499,7 +8499,7 @@
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
-          "wins": 1,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -8549,7 +8549,7 @@
           "code": "DNS",
           "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 4,
@@ -8586,7 +8586,7 @@
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 6,
