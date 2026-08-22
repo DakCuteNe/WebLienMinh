@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T10:35:58.854Z",
+  "generatedAt": "2026-08-22T10:57:51.287Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 2,
-    "upcoming": 32,
-    "completed": 167,
+    "upcoming": 31,
+    "completed": 168,
     "total": 201
   },
   "leagues": [
@@ -1752,7 +1752,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         }
@@ -1940,7 +1940,7 @@
           "outcome": "loss",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -2490,7 +2490,7 @@
           "outcome": "loss",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -2502,7 +2502,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         }
@@ -3540,7 +3540,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -3852,7 +3852,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         }
@@ -3990,7 +3990,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -4902,7 +4902,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         }
@@ -5539,7 +5539,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         },
@@ -5853,7 +5853,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -5989,7 +5989,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         },
@@ -6890,7 +6890,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -7490,7 +7490,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -7702,7 +7702,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         }
@@ -8365,7 +8365,7 @@
       "riotEventId": null,
       "matchId": "115548147900619049",
       "startTime": "2026-08-22T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 13",
       "league": {
@@ -8387,10 +8387,10 @@
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 5,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -8399,10 +8399,10 @@
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           }
         }
@@ -8436,7 +8436,7 @@
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 5,
@@ -8499,7 +8499,7 @@
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -8515,7 +8515,7 @@
       "riotEventId": null,
       "matchId": "115548147900750241",
       "startTime": "2026-08-22T10:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 13",
       "league": {
