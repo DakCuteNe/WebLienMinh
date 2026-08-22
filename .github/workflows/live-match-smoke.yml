@@ -6,6 +6,7 @@ on:
       - 'server/esports-match-live.js'
       - 'server/esports-match-history-cache.js'
       - 'server/esports-match-objectives.js'
+      - 'server/esports-match-objectives-v3.js'
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
@@ -34,7 +35,9 @@ on:
       - 'scripts/smoke-live-match.js'
       - 'scripts/smoke-live-match-history.js'
       - 'scripts/smoke-live-match-objectives.js'
-      - 'scripts/probe-live-objective-schema.js'
+      - 'scripts/smoke-live-match-objectives-v3.js'
+      - 'scripts/smoke-esports-schedule.js'
+      - 'scripts/probe-oe-objectives.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   push:
@@ -43,6 +46,7 @@ on:
       - 'server/esports-match-live.js'
       - 'server/esports-match-history-cache.js'
       - 'server/esports-match-objectives.js'
+      - 'server/esports-match-objectives-v3.js'
       - 'server/esports-match-bootstrap.js'
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
@@ -71,7 +75,8 @@ on:
       - 'scripts/smoke-live-match.js'
       - 'scripts/smoke-live-match-history.js'
       - 'scripts/smoke-live-match-objectives.js'
-      - 'scripts/probe-live-objective-schema.js'
+      - 'scripts/smoke-live-match-objectives-v3.js'
+      - 'scripts/smoke-esports-schedule.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   workflow_dispatch:
@@ -94,6 +99,7 @@ jobs:
           node --check server/esports-match-live.js
           node --check server/esports-match-history-cache.js
           node --check server/esports-match-objectives.js
+          node --check server/esports-match-objectives-v3.js
           node --check server/esports-match-bootstrap.js
           node --check public/js/match-live.js
           node --check public/js/live-match-history-cache.js
@@ -103,7 +109,9 @@ jobs:
           node --check scripts/smoke-live-match.js
           node --check scripts/smoke-live-match-history.js
           node --check scripts/smoke-live-match-objectives.js
-          node --check scripts/probe-live-objective-schema.js
+          node --check scripts/smoke-live-match-objectives-v3.js
+          node --check scripts/smoke-esports-schedule.js
+          node --check scripts/probe-oe-objectives.js
           node --check public/js/team-predictions.js
           node --check public/js/riot-music.js
           node --check public/js/site-effects.js
@@ -147,27 +155,34 @@ jobs:
         run: |
           grep -q 'data-live-game-id' public/js/match-live.js
           grep -q 'viewGameId' public/js/match-live.js
+          grep -q 'data-event-id' public/js/schedule.js
+          grep -q 'data-match-id' public/js/schedule.js
+          grep -q "params.*eventId\|eventId: card.dataset.eventId" public/js/match-live.js
           grep -q 'viewGame' server/esports-match-live.js
           grep -q 'mergeLiveWindows' server/esports-match-live.js
           grep -q 'installEsportsMatchHistoryCache' server/esports-match-bootstrap.js
-          grep -q 'installEsportsMatchObjectives' server/esports-match-bootstrap.js
+          grep -q 'installEsportsMatchObjectivesV3' server/esports-match-bootstrap.js
           grep -q 'initLiveMatchHistoryCache' public/app.js
           grep -q 'initLiveGameObjectivesV2' public/app.js
           grep -q 'live-objective-detail' public/live-objectives.css
           grep -q 'live-game-summary-v2' public/js/live-game-objectives-v2.js
-          grep -q 'voidGrubs' server/esports-match-objectives.js
-          grep -q 'riftHeralds' server/esports-match-objectives.js
+          grep -q 'voidGrubs' server/esports-match-objectives-v3.js
+          grep -q 'riftHeralds' server/esports-match-objectives-v3.js
+          grep -q 'elders' server/esports-match-objectives-v3.js
           if grep -q '<span class="live-game-pill' public/js/match-live.js; then
             echo 'Game pills regressed to non-clickable spans.'
             exit 1
           fi
       - name: Live Match rolling-window regression
         run: node scripts/smoke-live-match-history.js
-      - name: Per-game result and objective regression
-        run: node scripts/smoke-live-match-objectives.js
-      - name: Probe current Riot objective schema
+      - name: Per-game result and objective regressions
+        run: |
+          node scripts/smoke-live-match-objectives.js
+          node scripts/smoke-live-match-objectives-v3.js
+          node scripts/smoke-esports-schedule.js
+      - name: Probe Oracle Elixir recent objective schema
         continue-on-error: true
-        run: node scripts/probe-live-objective-schema.js
+        run: node scripts/probe-oe-objectives.js
       - name: Start WebLienMinh
         run: |
           npm start > /tmp/weblienminh.log 2>&1 &
