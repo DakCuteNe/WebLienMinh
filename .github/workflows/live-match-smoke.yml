@@ -10,6 +10,8 @@ on:
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
       - 'public/js/live-game-objectives-v2.js'
+      - 'public/js/schedule.js'
+      - 'scripts/update-esports-schedule.js'
       - 'public/match-live.css'
       - 'public/live-objectives.css'
       - 'public/live-match-layout-fix.css'
@@ -32,6 +34,7 @@ on:
       - 'scripts/smoke-live-match.js'
       - 'scripts/smoke-live-match-history.js'
       - 'scripts/smoke-live-match-objectives.js'
+      - 'scripts/probe-live-objective-schema.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   push:
@@ -44,6 +47,8 @@ on:
       - 'public/js/match-live.js'
       - 'public/js/live-match-history-cache.js'
       - 'public/js/live-game-objectives-v2.js'
+      - 'public/js/schedule.js'
+      - 'scripts/update-esports-schedule.js'
       - 'public/match-live.css'
       - 'public/live-objectives.css'
       - 'public/live-match-layout-fix.css'
@@ -66,6 +71,7 @@ on:
       - 'scripts/smoke-live-match.js'
       - 'scripts/smoke-live-match-history.js'
       - 'scripts/smoke-live-match-objectives.js'
+      - 'scripts/probe-live-objective-schema.js'
       - 'package.json'
       - '.github/workflows/live-match-smoke.yml'
   workflow_dispatch:
@@ -92,6 +98,12 @@ jobs:
           node --check public/js/match-live.js
           node --check public/js/live-match-history-cache.js
           node --check public/js/live-game-objectives-v2.js
+          node --check public/js/schedule.js
+          node --check scripts/update-esports-schedule.js
+          node --check scripts/smoke-live-match.js
+          node --check scripts/smoke-live-match-history.js
+          node --check scripts/smoke-live-match-objectives.js
+          node --check scripts/probe-live-objective-schema.js
           node --check public/js/team-predictions.js
           node --check public/js/riot-music.js
           node --check public/js/site-effects.js
@@ -100,9 +112,6 @@ jobs:
           node --check public/js/assets.js
           node --check public/js/hall-of-legends.js
           node --check public/app.js
-          node --check scripts/smoke-live-match.js
-          node --check scripts/smoke-live-match-history.js
-          node --check scripts/smoke-live-match-objectives.js
       - name: Verify Together as 1 v3 only
         run: |
           grep -q 'together-finisher-v3' public/js/together-finisher.js
@@ -156,6 +165,9 @@ jobs:
         run: node scripts/smoke-live-match-history.js
       - name: Per-game result and objective regression
         run: node scripts/smoke-live-match-objectives.js
+      - name: Probe current Riot objective schema
+        continue-on-error: true
+        run: node scripts/probe-live-objective-schema.js
       - name: Start WebLienMinh
         run: |
           npm start > /tmp/weblienminh.log 2>&1 &
