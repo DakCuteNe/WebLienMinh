@@ -11,29 +11,35 @@ async function get(path) {
   return response.json();
 }
 const first = value => Array.isArray(value) ? value[0] : value;
-const matches = await get('/matches/recentResults/');
-const recent = (Array.isArray(matches) ? matches : []).find(row => String(row?.startTime || '').startsWith('2026'));
-if (!recent?.matchId) throw new Error('No 2026 OE recent match');
-const matchPayload = await get(`/matches/singleMatch/${recent.matchId}`);
-const match = first(matchPayload) || {};
-const directIds = [1,2,3,4,5].map(n => match[`game${n}Id`]).filter(Boolean);
-const nestedIds = Array.isArray(match?.games) ? match.games.map(row => row?.gameId || row?.id).filter(Boolean) : [];
-const recentIds = Array.isArray(recent?.games) ? recent.games.map(row => row?.gameId || row?.id).filter(Boolean) : [];
-const gameId = [...directIds, ...nestedIds, ...recentIds].at(-1);
+const gameIdsFrom = value => {
+  const direct = [1,2,3,4,5].map(n => value?.[`game${n}Id`]).filter(Boolean);
+  const nested = Array.isArray(value?.games) ? value.games.map(row => row?.gameId || row?.id).filter(Boolean) : [];
+  return [...direct, ...nested];
+};
 
-if (!gameId) {
-  console.log(JSON.stringify({
-    match: { matchId: recent.matchId, startTime: recent.startTime },
-    recentKeys: Object.keys(recent || {}),
-    recentPreview: recent,
-    singleMatchType: Array.isArray(matchPayload) ? 'array' : typeof matchPayload,
-    singleMatchKeys: Object.keys(match || {}),
-    singleMatchPreview: match
-  }, null, 2));
+const matches = await get('/matches/recentResults/');
+const candidates = (Array.isArray(matches) ? matches : [])
+  .filter(row => String(row?.startTime || '').startsWith('2026') && row?.matchId)
+  .slice(0, 24);
+let resolved = null;
+const sampled = [];
+for (const recent of candidates) {
+  const payload = await get(`/matches/singleMatch/${recent.matchId}`).catch(() => null);
+  const match = first(payload) || {};
+  const ids = [...gameIdsFrom(recent), ...gameIdsFrom(match)];
+  sampled.push({ matchId: recent.matchId, league: recent.league, state: recent.state, gameIds: ids.length });
+  if (ids.length) {
+    resolved = { recent, match, gameId: ids.at(-1), ids };
+    break;
+  }
+}
+
+if (!resolved) {
+  console.log(JSON.stringify({ sampled, result: 'No recent OE series has populated game ids yet.' }, null, 2));
   process.exit(0);
 }
 
-const game = first(await get(`/games/singleGame/${gameId}`)) || {};
+const game = first(await get(`/games/singleGame/${resolved.gameId}`)) || {};
 const project = team => {
   const stats = team?.teamStats || {};
   return {
@@ -43,7 +49,14 @@ const project = team => {
   };
 };
 console.log(JSON.stringify({
-  match: { matchId: recent.matchId, startTime: recent.startTime, gameId },
+  sampled,
+  match: {
+    matchId: resolved.recent.matchId,
+    league: resolved.recent.league,
+    startTime: resolved.recent.startTime,
+    gameIds: resolved.ids,
+    selectedGameId: resolved.gameId
+  },
   gameKeys: Object.keys(game),
   blue: project(game.blueTeam),
   red: project(game.redTeam)
