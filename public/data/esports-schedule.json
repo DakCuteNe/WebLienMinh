@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T10:57:51.287Z",
+  "generatedAt": "2026-08-22T11:31:33.317Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8511,7 +8511,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-22T10:00:00Z:DNS-KRX",
+      "id": "98767991310872058:2026-08-22T10:00:00Z:KRX-DNS",
       "riotEventId": null,
       "matchId": "115548147900750241",
       "startTime": "2026-08-22T10:00:00Z",
@@ -8532,19 +8532,6 @@
       "teams": [
         {
           "id": null,
-          "name": "DN SOOPers",
-          "code": "DNS",
-          "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 4,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
           "name": "KIWOOM DRX",
           "code": "KRX",
           "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
@@ -8554,6 +8541,19 @@
           "record": {
             "wins": 2,
             "losses": 5
+          }
+        },
+        {
+          "id": null,
+          "name": "DN SOOPers",
+          "code": "DNS",
+          "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 4,
+            "losses": 3
           }
         }
       ],
