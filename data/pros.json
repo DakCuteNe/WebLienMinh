@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T04:58:54.750Z",
+  "generatedAt": "2026-08-22T04:54:51.910Z",
   "source": "Leaguepedia detailed P1 analytics + Worldwide Esports Directory P2/basic fallback",
   "sourceType": "community scoreboard + Oracle/identity directory",
   "degraded": false,
@@ -10,7 +10,7 @@
   "directoryFallbackCount": 18,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "P1 stars ưu tiên detailed Leaguepedia scoreboard; P2 dùng directory-first để tiết kiệm Cargo quota. Nếu shared query bị giới hạn 500 rows, hệ thống giữ detailed cache cũ hoặc dùng basic directory stats thay vì làm tuyển thủ biến mất. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
+  "note": "P1 stars ưu tiên detailed Leaguepedia scoreboard; P2 dùng directory-first để tiết kiệm Cargo quota. Nếu shared query bị giới hạn 500 rows, hệ thống giữ detailed cache cũ hoặc dùng basic directory stats thay vì làm tuyển thủ biến mất. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
   "players": [
     {
       "name": "Faker",
@@ -3522,238 +3522,238 @@
       "available": true,
       "team": "Dplus Kia",
       "role": "MIDDLE",
-      "games": 30,
+      "games": 27,
       "winRate": 66.7,
-      "kda": 5.07,
-      "avgKills": 3.7,
+      "kda": 4.98,
+      "avgKills": 3.8,
       "avgDeaths": 1.9,
-      "avgAssists": 5.7,
-      "avgCS": 306.8,
-      "avgDamage": 22702,
-      "avgVision": 45.6,
+      "avgAssists": 5.6,
+      "avgCS": 306.5,
+      "avgDamage": 22564.1,
+      "avgVision": 45.5,
       "latestPatch": "26.16",
       "latestGameAt": "2026-08-20 09:05:00",
-      "styleSummary": "Trong 30 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, KDA ổn định, chuyển hóa lợi thế tốt.",
+      "styleSummary": "Trong 27 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, KDA ổn định, chuyển hóa lợi thế tốt.",
       "championPool": [
-        {
-          "name": "Syndra",
-          "count": 5,
-          "rate": 16.7
-        },
-        {
-          "name": "Orianna",
-          "count": 4,
-          "rate": 13.3
-        },
         {
           "name": "Ryze",
           "count": 4,
-          "rate": 13.3
+          "rate": 14.8
+        },
+        {
+          "name": "Syndra",
+          "count": 4,
+          "rate": 14.8
         },
         {
           "name": "Taliyah",
           "count": 4,
-          "rate": 13.3
+          "rate": 14.8
         },
         {
           "name": "Viktor",
           "count": 4,
-          "rate": 13.3
+          "rate": 14.8
+        },
+        {
+          "name": "Orianna",
+          "count": 3,
+          "rate": 11.1
         },
         {
           "name": "Cassiopeia",
           "count": 2,
-          "rate": 6.7
+          "rate": 7.4
         },
         {
           "name": "Twisted Fate",
           "count": 2,
-          "rate": 6.7
-        },
-        {
-          "name": "Ahri",
-          "count": 1,
-          "rate": 3.3
+          "rate": 7.4
         },
         {
           "name": "Akali",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
         },
         {
           "name": "Anivia",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
+        },
+        {
+          "name": "Annie",
+          "count": 1,
+          "rate": 3.7
         }
       ],
       "commonBuilds": [
         {
           "name": "Actualizer → Control Ward → Chainlaced Crushers → Rod of Ages → Seraph's Embrace",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
         },
         {
           "name": "Blackfire Torch → Blighting Jewel → Blasting Wand → Crimson Lucidity → Dark Seal → Liandry's Torment",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
         },
         {
           "name": "Blackfire Torch → Hextech Rocketbelt → Aether Wisp → Crimson Lucidity → Rabadon's Deathcap → Cryptbloom",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
         },
         {
           "name": "Blackfire Torch → Hextech Rocketbelt → Control Ward → Spellslinger's Shoes → Rabadon's Deathcap → Void Staff",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
         },
         {
           "name": "Blackfire Torch → Hextech Rocketbelt → Cryptbloom → Crimson Lucidity → Dark Seal → Rabadon's Deathcap",
           "count": 1,
-          "rate": 3.3
+          "rate": 3.7
         }
       ],
       "commonItems": [
         {
           "name": "Blackfire Torch",
-          "count": 16,
-          "rate": 53.3
+          "count": 14,
+          "rate": 51.9
         },
         {
           "name": "Dark Seal",
-          "count": 14,
-          "rate": 46.7
-        },
-        {
-          "name": "Hextech Rocketbelt",
-          "count": 13,
-          "rate": 43.3
+          "count": 12,
+          "rate": 44.4
         },
         {
           "name": "Rabadon's Deathcap",
-          "count": 12,
-          "rate": 40
+          "count": 11,
+          "rate": 40.7
         },
         {
           "name": "Chainlaced Crushers",
-          "count": 11,
-          "rate": 36.7
+          "count": 10,
+          "rate": 37
         },
         {
           "name": "Crimson Lucidity",
-          "count": 11,
-          "rate": 36.7
+          "count": 10,
+          "rate": 37
+        },
+        {
+          "name": "Hextech Rocketbelt",
+          "count": 10,
+          "rate": 37
         },
         {
           "name": "Rod of Ages",
           "count": 10,
-          "rate": 33.3
+          "rate": 37
         },
         {
           "name": "Liandry's Torment",
           "count": 9,
-          "rate": 30
-        },
-        {
-          "name": "Mejai's Soulstealer",
-          "count": 7,
-          "rate": 23.3
+          "rate": 33.3
         },
         {
           "name": "Seraph's Embrace",
           "count": 7,
-          "rate": 23.3
+          "rate": 25.9
+        },
+        {
+          "name": "Mejai's Soulstealer",
+          "count": 6,
+          "rate": 22.2
         }
       ],
       "commonRunes": [
         {
-          "name": "Summon Aery • Sorcery • Precision",
-          "count": 8,
-          "rate": 26.7
-        },
-        {
           "name": "Deathfire Touch • Sorcery • Precision",
           "count": 6,
-          "rate": 20
+          "rate": 22.2
+        },
+        {
+          "name": "Summon Aery • Sorcery • Precision",
+          "count": 6,
+          "rate": 22.2
         },
         {
           "name": "Deathfire Touch • Sorcery • Resolve",
           "count": 5,
-          "rate": 16.7
+          "rate": 18.5
         },
         {
           "name": "Summon Aery • Sorcery • Resolve",
           "count": 3,
-          "rate": 10
+          "rate": 11.1
         },
         {
           "name": "Arcane Comet • Sorcery • Resolve",
           "count": 2,
-          "rate": 6.7
+          "rate": 7.4
         }
       ],
       "commonSpells": [
         {
           "name": "Flash + Teleport",
-          "count": 28,
-          "rate": 93.3
+          "count": 25,
+          "rate": 92.6
         },
         {
           "name": "Flash + Ghost",
           "count": 2,
-          "rate": 6.7
+          "rate": 7.4
         }
       ],
       "teamBanPriorities": [
         {
           "name": "Nocturne",
-          "count": 25,
-          "rate": 83.3
+          "count": 24,
+          "rate": 88.9
         },
         {
           "name": "Poppy",
-          "count": 17,
-          "rate": 56.7
+          "count": 14,
+          "rate": 51.9
         },
         {
           "name": "Orianna",
-          "count": 11,
-          "rate": 36.7
+          "count": 9,
+          "rate": 33.3
         },
         {
           "name": "Akali",
-          "count": 7,
-          "rate": 23.3
+          "count": 6,
+          "rate": 22.2
         },
         {
           "name": "Jayce",
           "count": 6,
-          "rate": 20
+          "rate": 22.2
         },
         {
           "name": "Syndra",
           "count": 6,
-          "rate": 20
+          "rate": 22.2
         },
         {
           "name": "Anivia",
           "count": 5,
-          "rate": 16.7
+          "rate": 18.5
         },
         {
           "name": "Lucian",
           "count": 5,
-          "rate": 16.7
+          "rate": 18.5
         },
         {
           "name": "Vayne",
           "count": 5,
-          "rate": 16.7
+          "rate": 18.5
         },
         {
           "name": "Bard",
           "count": 4,
-          "rate": 13.3
+          "rate": 14.8
         }
       ],
       "recentGames": [
@@ -4394,256 +4394,328 @@
       "available": true,
       "team": "HANJIN BRION",
       "role": "BOTTOM",
-      "games": 29,
-      "winRate": 51.7,
-      "kda": 4.41,
-      "avgKills": 5,
-      "avgDeaths": 2.3,
-      "avgAssists": 5,
-      "avgCS": 342.3,
-      "avgDamage": 24735.3,
-      "avgVision": 35.1,
+      "games": 30,
+      "winRate": 50,
+      "kda": 4.34,
+      "avgKills": 4.8,
+      "avgDeaths": 2.2,
+      "avgAssists": 4.9,
+      "avgCS": 352.4,
+      "avgDamage": 24344.4,
+      "avgVision": 37.2,
       "latestPatch": "26.16",
-      "latestGameAt": "2026-08-19 12:16:00",
-      "styleSummary": "Trong 29 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, xu hướng gây áp lực sát thương.",
+      "latestGameAt": "2026-08-21 10:08:00",
+      "styleSummary": "Trong 30 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, xu hướng gây áp lực sát thương.",
       "championPool": [
         {
           "name": "Ezreal",
-          "count": 8,
-          "rate": 27.6
+          "count": 7,
+          "rate": 23.3
         },
         {
           "name": "Corki",
-          "count": 5,
-          "rate": 17.2
+          "count": 6,
+          "rate": 20
         },
         {
           "name": "Jhin",
           "count": 4,
-          "rate": 13.8
+          "rate": 13.3
         },
         {
           "name": "Lucian",
           "count": 3,
-          "rate": 10.3
+          "rate": 10
         },
         {
           "name": "Caitlyn",
           "count": 2,
-          "rate": 6.9
+          "rate": 6.7
         },
         {
           "name": "Kai'Sa",
           "count": 2,
-          "rate": 6.9
+          "rate": 6.7
         },
         {
           "name": "Yunara",
           "count": 2,
-          "rate": 6.9
+          "rate": 6.7
         },
         {
-          "name": "Cassiopeia",
+          "name": "Ashe",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "Senna",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "Viktor",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         }
       ],
       "commonBuilds": [
         {
           "name": "B. F. Sword → Kraken Slayer → Guardian Angel → Infinity Edge → Fiendhunter Bolts → Mortal Reminder",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "B. F. Sword → The Collector → Guardian Angel → Infinity Edge → Rapid Firecannon → Mortal Reminder",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "B. F. Sword → The Collector → Muramana → Pickaxe → Trinity Force → Mortal Reminder",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "Caulfield's Warhammer → Spear of Shojin → Hexdrinker → Muramana → Trinity Force → Serylda's Grudge",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "Doran's Blade → Muramana → The Collector → Infinity Edge → Trinity Force",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         }
       ],
       "commonItems": [
         {
           "name": "Muramana",
           "count": 13,
-          "rate": 44.8
+          "rate": 43.3
         },
         {
           "name": "Trinity Force",
           "count": 13,
-          "rate": 44.8
-        },
-        {
-          "name": "Doran's Bow",
-          "count": 10,
-          "rate": 34.5
+          "rate": 43.3
         },
         {
           "name": "Infinity Edge",
-          "count": 10,
-          "rate": 34.5
+          "count": 12,
+          "rate": 40
+        },
+        {
+          "name": "Doran's Bow",
+          "count": 11,
+          "rate": 36.7
         },
         {
           "name": "Mortal Reminder",
-          "count": 9,
-          "rate": 31
+          "count": 11,
+          "rate": 36.7
         },
         {
           "name": "The Collector",
+          "count": 9,
+          "rate": 30
+        },
+        {
+          "name": "Guardian Angel",
           "count": 8,
-          "rate": 27.6
+          "rate": 26.7
         },
         {
           "name": "Rapid Firecannon",
           "count": 7,
-          "rate": 24.1
+          "rate": 23.3
         },
         {
           "name": "B. F. Sword",
           "count": 6,
-          "rate": 20.7
+          "rate": 20
         },
         {
-          "name": "Guardian Angel",
+          "name": "Pickaxe",
           "count": 6,
-          "rate": 20.7
-        },
-        {
-          "name": "Spear of Shojin",
-          "count": 6,
-          "rate": 20.7
+          "rate": 20
         }
       ],
       "commonRunes": [
         {
           "name": "Lethal Tempo • Precision • Inspiration",
           "count": 12,
-          "rate": 41.4
+          "rate": 40
         },
         {
           "name": "Conqueror • Precision • Inspiration",
-          "count": 5,
-          "rate": 17.2
+          "count": 7,
+          "rate": 23.3
         },
         {
           "name": "Fleet Footwork • Precision • Inspiration",
           "count": 4,
-          "rate": 13.8
+          "rate": 13.3
         },
         {
           "name": "Press the Attack • Precision • Resolve",
           "count": 3,
-          "rate": 10.3
+          "rate": 10
         },
         {
           "name": "Lethal Tempo • Precision • Sorcery",
           "count": 2,
-          "rate": 6.9
+          "rate": 6.7
         }
       ],
       "commonSpells": [
         {
           "name": "Barrier + Flash",
-          "count": 16,
-          "rate": 55.2
+          "count": 18,
+          "rate": 60
         },
         {
           "name": "Cleanse + Flash",
           "count": 7,
-          "rate": 24.1
+          "rate": 23.3
         },
         {
           "name": "Flash + Teleport",
-          "count": 4,
-          "rate": 13.8
+          "count": 3,
+          "rate": 10
         },
         {
           "name": "Exhaust + Flash",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         },
         {
           "name": "Flash + Heal",
           "count": 1,
-          "rate": 3.4
+          "rate": 3.3
         }
       ],
       "teamBanPriorities": [
         {
           "name": "Vi",
-          "count": 15,
-          "rate": 51.7
+          "count": 14,
+          "rate": 46.7
         },
         {
           "name": "Orianna",
-          "count": 14,
-          "rate": 48.3
+          "count": 13,
+          "rate": 43.3
         },
         {
           "name": "Poppy",
-          "count": 12,
-          "rate": 41.4
+          "count": 11,
+          "rate": 36.7
+        },
+        {
+          "name": "Lucian",
+          "count": 10,
+          "rate": 33.3
         },
         {
           "name": "Locke",
           "count": 9,
-          "rate": 31
-        },
-        {
-          "name": "Nocturne",
-          "count": 9,
-          "rate": 31
+          "rate": 30
         },
         {
           "name": "Bard",
-          "count": 7,
-          "rate": 24.1
+          "count": 8,
+          "rate": 26.7
         },
         {
-          "name": "Lucian",
-          "count": 7,
-          "rate": 24.1
+          "name": "Nocturne",
+          "count": 8,
+          "rate": 26.7
+        },
+        {
+          "name": "Lulu",
+          "count": 5,
+          "rate": 16.7
         },
         {
           "name": "K'Sante",
           "count": 4,
-          "rate": 13.8
-        },
-        {
-          "name": "Lulu",
-          "count": 4,
-          "rate": 13.8
+          "rate": 13.3
         },
         {
           "name": "Nautilus",
           "count": 4,
-          "rate": 13.8
+          "rate": 13.3
         }
       ],
       "recentGames": [
+        {
+          "date": "2026-08-21 10:08:00",
+          "patch": "26.16",
+          "team": "HANJIN BRION",
+          "opponent": "BNK FEARX",
+          "champion": "Ashe",
+          "win": false,
+          "kda": "0/4/2",
+          "items": [
+            "Long Sword",
+            "Yun Tal Wildarrows",
+            "Long Sword",
+            "Doran's Bow",
+            "Runaan's Hurricane",
+            "Pickaxe"
+          ],
+          "spells": [
+            "Flash",
+            "Barrier"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-21 09:09:00",
+          "patch": "26.16",
+          "team": "HANJIN BRION",
+          "opponent": "BNK FEARX",
+          "champion": "Xayah",
+          "win": true,
+          "kda": "4/1/5",
+          "items": [
+            "Doran's Bow",
+            "Essence Reaver",
+            "Guardian Angel",
+            "Infinity Edge",
+            "Navori Flickerblade",
+            "Mortal Reminder"
+          ],
+          "spells": [
+            "Flash",
+            "Barrier"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-21 08:07:00",
+          "patch": "26.16",
+          "team": "HANJIN BRION",
+          "opponent": "BNK FEARX",
+          "champion": "Corki",
+          "win": false,
+          "kda": "5/2/8",
+          "items": [
+            "Guardian Angel",
+            "The Collector",
+            "Muramana",
+            "Infinity Edge",
+            "Trinity Force",
+            "Mortal Reminder"
+          ],
+          "spells": [
+            "Flash",
+            "Barrier"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
         {
           "date": "2026-08-19 12:16:00",
           "patch": "26.16",
@@ -4762,78 +4834,6 @@
           "keystone": "Lethal Tempo",
           "primaryTree": "Precision",
           "secondaryTree": "Sorcery"
-        },
-        {
-          "date": "2026-08-14 12:17:00",
-          "patch": "26.15",
-          "team": "HANJIN BRION",
-          "opponent": "Nongshim RedForce",
-          "champion": "Yunara",
-          "win": false,
-          "kda": "3/4/1",
-          "items": [
-            "Doran's Bow",
-            "B. F. Sword",
-            "Mortal Reminder",
-            "Kraken Slayer",
-            "Fiendhunter Bolts",
-            "Cloak of Agility"
-          ],
-          "spells": [
-            "Flash",
-            "Barrier"
-          ],
-          "keystone": "Lethal Tempo",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-14 11:28:00",
-          "patch": "26.15",
-          "team": "HANJIN BRION",
-          "opponent": "Nongshim RedForce",
-          "champion": "Jhin",
-          "win": false,
-          "kda": "3/3/4",
-          "items": [
-            "Youmuu's Ghostblade",
-            "Doran's Helm",
-            "Long Sword",
-            "Stormrazor",
-            "Rapid Firecannon",
-            "Cloak of Agility"
-          ],
-          "spells": [
-            "Flash",
-            "Cleanse"
-          ],
-          "keystone": "Fleet Footwork",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-07 11:12:00",
-          "patch": "26.15",
-          "team": "HANJIN BRION",
-          "opponent": "BNK FEARX",
-          "champion": "Kai'Sa",
-          "win": true,
-          "kda": "12/3/5",
-          "items": [
-            "Guardian Angel",
-            "Guinsoo's Rageblade",
-            "Zhonya's Hourglass",
-            "Kraken Slayer",
-            "Maw of Malmortius",
-            "Terminus"
-          ],
-          "spells": [
-            "Flash",
-            "Cleanse"
-          ],
-          "keystone": "Lethal Tempo",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
         }
       ],
       "fallback": false
@@ -6121,16 +6121,16 @@
       "team": "Bilibili Gaming",
       "role": "BOTTOM",
       "games": 30,
-      "winRate": 66.7,
-      "kda": 4.77,
-      "avgKills": 5.4,
-      "avgDeaths": 2.6,
-      "avgAssists": 7.2,
-      "avgCS": 320.5,
-      "avgDamage": 27768.2,
-      "avgVision": 48.6,
-      "latestPatch": "26.15",
-      "latestGameAt": "2026-08-15 14:10:00",
+      "winRate": 73.3,
+      "kda": 4.97,
+      "avgKills": 5.8,
+      "avgDeaths": 2.5,
+      "avgAssists": 6.8,
+      "avgCS": 316.6,
+      "avgDamage": 27395.6,
+      "avgVision": 48.9,
+      "latestPatch": "26.16",
+      "latestGameAt": "2026-08-21 13:23:00",
       "styleSummary": "Trong 30 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, KDA ổn định, chuyển hóa lợi thế tốt.",
       "championPool": [
         {
@@ -6139,22 +6139,27 @@
           "rate": 16.7
         },
         {
+          "name": "Ashe",
+          "count": 3,
+          "rate": 10
+        },
+        {
           "name": "Xerath",
           "count": 3,
           "rate": 10
         },
         {
-          "name": "Ziggs",
+          "name": "Yunara",
           "count": 3,
           "rate": 10
         },
         {
-          "name": "Ashe",
+          "name": "Caitlyn",
           "count": 2,
           "rate": 6.7
         },
         {
-          "name": "Caitlyn",
+          "name": "Corki",
           "count": 2,
           "rate": 6.7
         },
@@ -6169,7 +6174,7 @@
           "rate": 6.7
         },
         {
-          "name": "Yunara",
+          "name": "Ziggs",
           "count": 2,
           "rate": 6.7
         },
@@ -6177,24 +6182,9 @@
           "name": "Akali",
           "count": 1,
           "rate": 3.3
-        },
-        {
-          "name": "Cassiopeia",
-          "count": 1,
-          "rate": 3.3
         }
       ],
       "commonBuilds": [
-        {
-          "name": "Doran's Bow → Spear of Shojin → Trinity Force → Endless Hunger → Muramana",
-          "count": 1,
-          "rate": 3.3
-        },
-        {
-          "name": "Hexoptics C44 → Infinity Edge → Cloak of Agility → Bloodthirster → Rapid Firecannon",
-          "count": 1,
-          "rate": 3.3
-        },
         {
           "name": "Hextech Gunblade → Void Staff → Hextech Rocketbelt → Amplifying Tome",
           "count": 1,
@@ -6206,44 +6196,54 @@
           "rate": 3.3
         },
         {
+          "name": "Infinity Edge → Guardian Angel → Yun Tal Wildarrows → Phantom Dancer → Doran's Bow",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
           "name": "Infinity Edge → Hexoptics C44 → Rapid Firecannon → Steel Sigil → Doran's Bow",
+          "count": 1,
+          "rate": 3.3
+        },
+        {
+          "name": "Infinity Edge → Kraken Slayer → Phantom Dancer → Last Whisper → Noonquiver → Doran's Bow",
           "count": 1,
           "rate": 3.3
         }
       ],
       "commonItems": [
         {
-          "name": "Infinity Edge",
-          "count": 10,
-          "rate": 33.3
+          "name": "Doran's Bow",
+          "count": 11,
+          "rate": 36.7
         },
         {
-          "name": "Doran's Bow",
-          "count": 9,
-          "rate": 30
+          "name": "Infinity Edge",
+          "count": 11,
+          "rate": 36.7
         },
         {
           "name": "Muramana",
-          "count": 7,
-          "rate": 23.3
-        },
-        {
-          "name": "Rabadon's Deathcap",
-          "count": 7,
-          "rate": 23.3
+          "count": 8,
+          "rate": 26.7
         },
         {
           "name": "Trinity Force",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Lord Dominik's Regards",
           "count": 6,
           "rate": 20
         },
         {
-          "name": "Lord Dominik's Regards",
-          "count": 5,
-          "rate": 16.7
+          "name": "Rabadon's Deathcap",
+          "count": 6,
+          "rate": 20
         },
         {
-          "name": "Shadowflame",
+          "name": "Phantom Dancer",
           "count": 5,
           "rate": 16.7
         },
@@ -6258,7 +6258,7 @@
           "rate": 13.3
         },
         {
-          "name": "Hextech Rocketbelt",
+          "name": "Guardian Angel",
           "count": 4,
           "rate": 13.3
         }
@@ -6266,16 +6266,21 @@
       "commonRunes": [
         {
           "name": "Lethal Tempo • Precision • Inspiration",
-          "count": 9,
-          "rate": 30
+          "count": 11,
+          "rate": 36.7
         },
         {
           "name": "Arcane Comet • Sorcery • Inspiration",
-          "count": 8,
-          "rate": 26.7
+          "count": 7,
+          "rate": 23.3
         },
         {
-          "name": "Lethal Tempo • Precision • Resolve",
+          "name": "Conqueror • Precision • Inspiration",
+          "count": 2,
+          "rate": 6.7
+        },
+        {
+          "name": "Lethal Tempo • Precision • Sorcery",
           "count": 2,
           "rate": 6.7
         },
@@ -6283,55 +6288,55 @@
           "name": "Stormraider's Surge • Sorcery • Inspiration",
           "count": 2,
           "rate": 6.7
-        },
-        {
-          "name": "Conqueror • Precision • Inspiration",
-          "count": 1,
-          "rate": 3.3
         }
       ],
       "commonSpells": [
         {
           "name": "Flash + Teleport",
-          "count": 10,
-          "rate": 33.3
+          "count": 9,
+          "rate": 30
         },
         {
-          "name": "Flash + Ghost",
+          "name": "Exhaust + Flash",
+          "count": 7,
+          "rate": 23.3
+        },
+        {
+          "name": "Cleanse + Flash",
           "count": 6,
           "rate": 20
         },
         {
+          "name": "Flash + Ghost",
+          "count": 5,
+          "rate": 16.7
+        },
+        {
           "name": "Barrier + Flash",
-          "count": 5,
-          "rate": 16.7
-        },
-        {
-          "name": "Exhaust + Flash",
-          "count": 5,
-          "rate": 16.7
-        },
-        {
-          "name": "Cleanse + Flash",
-          "count": 4,
-          "rate": 13.3
+          "count": 3,
+          "rate": 10
         }
       ],
       "teamBanPriorities": [
         {
-          "name": "Vi",
-          "count": 13,
-          "rate": 43.3
-        },
-        {
-          "name": "Orianna",
+          "name": "Lucian",
           "count": 12,
           "rate": 40
         },
         {
-          "name": "Lucian",
+          "name": "Vi",
+          "count": 12,
+          "rate": 40
+        },
+        {
+          "name": "Orianna",
           "count": 11,
           "rate": 36.7
+        },
+        {
+          "name": "Nautilus",
+          "count": 10,
+          "rate": 33.3
         },
         {
           "name": "Ezreal",
@@ -6339,14 +6344,14 @@
           "rate": 30
         },
         {
-          "name": "Nautilus",
-          "count": 9,
-          "rate": 30
+          "name": "Cassiopeia",
+          "count": 8,
+          "rate": 26.7
         },
         {
           "name": "Poppy",
-          "count": 9,
-          "rate": 30
+          "count": 8,
+          "rate": 26.7
         },
         {
           "name": "Vayne",
@@ -6359,17 +6364,130 @@
           "rate": 23.3
         },
         {
-          "name": "Cassiopeia",
+          "name": "Locke",
           "count": 6,
           "rate": 20
-        },
-        {
-          "name": "Olaf",
-          "count": 4,
-          "rate": 13.3
         }
       ],
       "recentGames": [
+        {
+          "date": "2026-08-21 13:23:00",
+          "patch": "26.16",
+          "team": "Bilibili Gaming",
+          "opponent": "Top Esports",
+          "champion": "Ezreal",
+          "win": true,
+          "kda": "7/1/9",
+          "items": [
+            "Trinity Force",
+            "Spear of Shojin",
+            "Endless Hunger",
+            "Shattered Armguard",
+            "Doran's Bow",
+            "Muramana"
+          ],
+          "spells": [
+            "Exhaust",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-21 12:34:00",
+          "patch": "26.16",
+          "team": "Bilibili Gaming",
+          "opponent": "Top Esports",
+          "champion": "Yunara",
+          "win": true,
+          "kda": "8/2/7",
+          "items": [
+            "Infinity Edge",
+            "Kraken Slayer",
+            "Runaan's Hurricane",
+            "B. F. Sword",
+            "Steel Sigil",
+            "Doran's Bow"
+          ],
+          "spells": [
+            "Cleanse",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-20 14:13:00",
+          "patch": "26.16",
+          "team": "Bilibili Gaming",
+          "opponent": "LGD Gaming",
+          "champion": "Corki",
+          "win": true,
+          "kda": "2/2/7",
+          "items": [
+            "Trinity Force",
+            "The Collector",
+            "Noonquiver",
+            "Doran's Helm",
+            "Control Ward",
+            "Muramana"
+          ],
+          "spells": [
+            "Exhaust",
+            "Flash"
+          ],
+          "keystone": "Conqueror",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-20 13:15:00",
+          "patch": "26.16",
+          "team": "Bilibili Gaming",
+          "opponent": "LGD Gaming",
+          "champion": "Ashe",
+          "win": true,
+          "kda": "7/0/4",
+          "items": [
+            "Infinity Edge",
+            "Guardian Angel",
+            "Yun Tal Wildarrows",
+            "Phantom Dancer",
+            "Doran's Bow"
+          ],
+          "spells": [
+            "Cleanse",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Inspiration"
+        },
+        {
+          "date": "2026-08-20 12:18:00",
+          "patch": "26.16",
+          "team": "Bilibili Gaming",
+          "opponent": "LGD Gaming",
+          "champion": "Caitlyn",
+          "win": false,
+          "kda": "4/2/1",
+          "items": [
+            "Infinity Edge",
+            "Lord Dominik's Regards",
+            "The Collector",
+            "Rapid Firecannon",
+            "Vampiric Scepter"
+          ],
+          "spells": [
+            "Barrier",
+            "Flash"
+          ],
+          "keystone": "Lethal Tempo",
+          "primaryTree": "Precision",
+          "secondaryTree": "Sorcery"
+        },
         {
           "date": "2026-08-15 14:10:00",
           "patch": "26.15",
@@ -6438,122 +6556,6 @@
           "keystone": "Lethal Tempo",
           "primaryTree": "Precision",
           "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-13 13:04:00",
-          "patch": "26.15",
-          "team": "Bilibili Gaming",
-          "opponent": "ThunderTalk Gaming",
-          "champion": "Ezreal",
-          "win": true,
-          "kda": "7/2/12",
-          "items": [
-            "Trinity Force",
-            "Endless Hunger",
-            "Tunneler",
-            "Pickaxe",
-            "Doran's Bow",
-            "Muramana"
-          ],
-          "spells": [
-            "Exhaust",
-            "Flash"
-          ],
-          "keystone": "Lethal Tempo",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-12 14:34:00",
-          "patch": "26.15",
-          "team": "Bilibili Gaming",
-          "opponent": "JD Gaming",
-          "champion": "Ziggs",
-          "win": false,
-          "kda": "4/3/6",
-          "items": [
-            "Rabadon's Deathcap",
-            "Shadowflame",
-            "Blackfire Torch",
-            "Horizon Focus",
-            "Tear of the Goddess"
-          ],
-          "spells": [
-            "Teleport",
-            "Flash"
-          ],
-          "keystone": "Arcane Comet",
-          "primaryTree": "Sorcery",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-12 13:41:00",
-          "patch": "26.15",
-          "team": "Bilibili Gaming",
-          "opponent": "JD Gaming",
-          "champion": "Lucian",
-          "win": false,
-          "kda": "3/4/3",
-          "items": [
-            "Lord Dominik's Regards",
-            "Essence Reaver",
-            "Navori Flickerblade",
-            "Doran's Bow",
-            "Control Ward"
-          ],
-          "spells": [
-            "Cleanse",
-            "Flash"
-          ],
-          "keystone": "Press the Attack",
-          "primaryTree": "Precision",
-          "secondaryTree": "Resolve"
-        },
-        {
-          "date": "2026-08-12 12:48:00",
-          "patch": "26.15",
-          "team": "Bilibili Gaming",
-          "opponent": "JD Gaming",
-          "champion": "Ezreal",
-          "win": true,
-          "kda": "8/1/8",
-          "items": [
-            "Trinity Force",
-            "Spear of Shojin",
-            "Endless Hunger",
-            "Doran's Bow",
-            "Muramana"
-          ],
-          "spells": [
-            "Exhaust",
-            "Flash"
-          ],
-          "keystone": "Lethal Tempo",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-08 12:53:00",
-          "patch": "26.15",
-          "team": "Bilibili Gaming",
-          "opponent": "EDward Gaming",
-          "champion": "Xayah",
-          "win": true,
-          "kda": "10/5/6",
-          "items": [
-            "Infinity Edge",
-            "Lord Dominik's Regards",
-            "Stormrazor",
-            "Guardian Angel",
-            "Phantom Dancer"
-          ],
-          "spells": [
-            "Cleanse",
-            "Flash"
-          ],
-          "keystone": "Lethal Tempo",
-          "primaryTree": "Precision",
-          "secondaryTree": "Inspiration"
         }
       ],
       "fallback": false
@@ -6567,256 +6569,304 @@
       "available": true,
       "team": "Top Esports",
       "role": "BOTTOM",
-      "games": 27,
-      "winRate": 66.7,
-      "kda": 3.85,
-      "avgKills": 4.9,
-      "avgDeaths": 3,
-      "avgAssists": 6.9,
-      "avgCS": 310,
-      "avgDamage": 28031.5,
-      "avgVision": 40.4,
+      "games": 29,
+      "winRate": 62.1,
+      "kda": 3.55,
+      "avgKills": 4.6,
+      "avgDeaths": 3.2,
+      "avgAssists": 6.7,
+      "avgCS": 307.1,
+      "avgDamage": 27134.1,
+      "avgVision": 40.1,
       "latestPatch": "26.16",
-      "latestGameAt": "2026-08-19 12:13:00",
-      "styleSummary": "Trong 27 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, chuyển hóa lợi thế tốt, xu hướng gây áp lực sát thương.",
+      "latestGameAt": "2026-08-21 13:23:00",
+      "styleSummary": "Trong 29 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, chuyển hóa lợi thế tốt, xu hướng gây áp lực sát thương.",
       "championPool": [
         {
           "name": "Ezreal",
           "count": 5,
-          "rate": 18.5
+          "rate": 17.2
+        },
+        {
+          "name": "Jhin",
+          "count": 4,
+          "rate": 13.8
         },
         {
           "name": "Lucian",
           "count": 4,
-          "rate": 14.8
+          "rate": 13.8
         },
         {
           "name": "Ashe",
           "count": 3,
-          "rate": 11.1
-        },
-        {
-          "name": "Jhin",
-          "count": 3,
-          "rate": 11.1
+          "rate": 10.3
         },
         {
           "name": "Sivir",
           "count": 3,
-          "rate": 11.1
+          "rate": 10.3
         },
         {
           "name": "Varus",
-          "count": 2,
-          "rate": 7.4
+          "count": 3,
+          "rate": 10.3
         },
         {
           "name": "Ziggs",
           "count": 2,
-          "rate": 7.4
+          "rate": 6.9
         },
         {
           "name": "Caitlyn",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         },
         {
           "name": "Cassiopeia",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         },
         {
           "name": "Corki",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         }
       ],
       "commonBuilds": [
         {
           "name": "Bastionbreaker → Youmuu's Ghostblade → Last Whisper → Caulfield's Warhammer → Doran's Bow → Muramana",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         },
         {
           "name": "Blackfire Torch → Hextech Rocketbelt → Blighting Jewel → Blasting Wand → Doran's Ring → Refillable Potion",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         },
         {
           "name": "Essence Reaver → Black Cleaver → Navori Flickerblade → Doran's Bow",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         },
         {
           "name": "Essence Reaver → Navori Flickerblade → Last Whisper → Noonquiver → Doran's Bow",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         },
         {
           "name": "Infinity Edge → Guardian Angel → Yun Tal Wildarrows → Navori Flickerblade → Doran's Bow",
           "count": 1,
-          "rate": 3.7
+          "rate": 3.4
         }
       ],
       "commonItems": [
         {
           "name": "Doran's Bow",
-          "count": 14,
-          "rate": 51.9
+          "count": 15,
+          "rate": 51.7
         },
         {
           "name": "Infinity Edge",
           "count": 11,
-          "rate": 40.7
+          "rate": 37.9
         },
         {
           "name": "Muramana",
-          "count": 8,
-          "rate": 29.6
+          "count": 9,
+          "rate": 31
+        },
+        {
+          "name": "Youmuu's Ghostblade",
+          "count": 7,
+          "rate": 24.1
+        },
+        {
+          "name": "Last Whisper",
+          "count": 6,
+          "rate": 20.7
         },
         {
           "name": "Navori Flickerblade",
           "count": 6,
-          "rate": 22.2
+          "rate": 20.7
         },
         {
           "name": "Trinity Force",
           "count": 6,
-          "rate": 22.2
+          "rate": 20.7
+        },
+        {
+          "name": "Doran's Helm",
+          "count": 5,
+          "rate": 17.2
         },
         {
           "name": "Essence Reaver",
           "count": 5,
-          "rate": 18.5
+          "rate": 17.2
         },
         {
-          "name": "Last Whisper",
-          "count": 5,
-          "rate": 18.5
-        },
-        {
-          "name": "Youmuu's Ghostblade",
-          "count": 5,
-          "rate": 18.5
-        },
-        {
-          "name": "Doran's Helm",
+          "name": "Cloak of Agility",
           "count": 4,
-          "rate": 14.8
-        },
-        {
-          "name": "Doran's Ring",
-          "count": 4,
-          "rate": 14.8
+          "rate": 13.8
         }
       ],
       "commonRunes": [
         {
           "name": "Lethal Tempo • Precision • Inspiration",
           "count": 11,
-          "rate": 40.7
+          "rate": 37.9
         },
         {
           "name": "Arcane Comet • Sorcery • Inspiration",
-          "count": 6,
-          "rate": 22.2
+          "count": 7,
+          "rate": 24.1
         },
         {
           "name": "Fleet Footwork • Precision • Sorcery",
-          "count": 3,
-          "rate": 11.1
+          "count": 4,
+          "rate": 13.8
         },
         {
           "name": "Press the Attack • Precision • Resolve",
           "count": 3,
-          "rate": 11.1
+          "rate": 10.3
         },
         {
           "name": "Conqueror • Precision • Inspiration",
           "count": 2,
-          "rate": 7.4
+          "rate": 6.9
         }
       ],
       "commonSpells": [
         {
           "name": "Barrier + Flash",
-          "count": 10,
-          "rate": 37
+          "count": 11,
+          "rate": 37.9
         },
         {
           "name": "Cleanse + Flash",
           "count": 7,
-          "rate": 25.9
+          "rate": 24.1
         },
         {
           "name": "Flash + Teleport",
-          "count": 6,
-          "rate": 22.2
+          "count": 7,
+          "rate": 24.1
         },
         {
           "name": "Exhaust + Flash",
           "count": 2,
-          "rate": 7.4
+          "rate": 6.9
         },
         {
           "name": "Flash + Ghost",
           "count": 2,
-          "rate": 7.4
+          "rate": 6.9
         }
       ],
       "teamBanPriorities": [
         {
           "name": "Naafiri",
-          "count": 14,
-          "rate": 51.9
+          "count": 16,
+          "rate": 55.2
         },
         {
           "name": "Vayne",
-          "count": 12,
-          "rate": 44.4
+          "count": 13,
+          "rate": 44.8
         },
         {
           "name": "Orianna",
-          "count": 11,
-          "rate": 40.7
+          "count": 12,
+          "rate": 41.4
         },
         {
           "name": "Poppy",
-          "count": 11,
-          "rate": 40.7
+          "count": 12,
+          "rate": 41.4
         },
         {
           "name": "Jayce",
           "count": 7,
-          "rate": 25.9
+          "rate": 24.1
+        },
+        {
+          "name": "Ziggs",
+          "count": 7,
+          "rate": 24.1
+        },
+        {
+          "name": "Locke",
+          "count": 6,
+          "rate": 20.7
         },
         {
           "name": "Olaf",
           "count": 6,
-          "rate": 22.2
-        },
-        {
-          "name": "Ziggs",
-          "count": 6,
-          "rate": 22.2
+          "rate": 20.7
         },
         {
           "name": "Bard",
           "count": 5,
-          "rate": 18.5
+          "rate": 17.2
         },
         {
           "name": "Camille",
           "count": 5,
-          "rate": 18.5
-        },
-        {
-          "name": "Lee Sin",
-          "count": 5,
-          "rate": 18.5
+          "rate": 17.2
         }
       ],
       "recentGames": [
+        {
+          "date": "2026-08-21 13:23:00",
+          "patch": "26.16",
+          "team": "Top Esports",
+          "opponent": "Bilibili Gaming",
+          "champion": "Jhin",
+          "win": false,
+          "kda": "2/3/4",
+          "items": [
+            "Stormrazor",
+            "Youmuu's Ghostblade",
+            "Rapid Firecannon",
+            "Last Whisper",
+            "Cloak of Agility",
+            "Doran's Helm"
+          ],
+          "spells": [
+            "Flash",
+            "Barrier"
+          ],
+          "keystone": "Fleet Footwork",
+          "primaryTree": "Precision",
+          "secondaryTree": "Sorcery"
+        },
+        {
+          "date": "2026-08-21 12:34:00",
+          "patch": "26.16",
+          "team": "Top Esports",
+          "opponent": "Bilibili Gaming",
+          "champion": "Varus",
+          "win": false,
+          "kda": "0/7/5",
+          "items": [
+            "Youmuu's Ghostblade",
+            "Serrated Dirk",
+            "Pickaxe",
+            "Doran's Bow",
+            "Control Ward",
+            "Muramana"
+          ],
+          "spells": [
+            "Flash",
+            "Teleport"
+          ],
+          "keystone": "Arcane Comet",
+          "primaryTree": "Sorcery",
+          "secondaryTree": "Inspiration"
+        },
         {
           "date": "2026-08-19 12:13:00",
           "patch": "26.16",
@@ -6954,52 +7004,6 @@
           "keystone": "Lethal Tempo",
           "primaryTree": "Precision",
           "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-14 09:09:00",
-          "patch": "26.15",
-          "team": "Top Esports",
-          "opponent": "Team WE",
-          "champion": "Ziggs",
-          "win": false,
-          "kda": "5/7/8",
-          "items": [
-            "Shadowflame",
-            "Void Staff",
-            "Banshee's Veil",
-            "Luden's Echo",
-            "Shattered Armguard",
-            "Oblivion Orb"
-          ],
-          "spells": [
-            "Flash",
-            "Teleport"
-          ],
-          "keystone": "Arcane Comet",
-          "primaryTree": "Sorcery",
-          "secondaryTree": "Inspiration"
-        },
-        {
-          "date": "2026-08-13 11:27:00",
-          "patch": "26.15",
-          "team": "Top Esports",
-          "opponent": "LGD Gaming",
-          "champion": "Caitlyn",
-          "win": false,
-          "kda": "2/5/3",
-          "items": [
-            "Infinity Edge",
-            "Lord Dominik's Regards",
-            "Hexoptics C44",
-            "Doran's Bow"
-          ],
-          "spells": [
-            "Flash",
-            "Barrier"
-          ],
-          "keystone": "Lethal Tempo",
-          "primaryTree": "Precision",
-          "secondaryTree": "Resolve"
         }
       ],
       "fallback": false
@@ -8274,238 +8278,238 @@
       "available": true,
       "team": "G2 Esports",
       "role": "MIDDLE",
-      "games": 22,
-      "winRate": 63.6,
+      "games": 21,
+      "winRate": 61.9,
       "kda": 3.81,
-      "avgKills": 3.8,
+      "avgKills": 3.9,
       "avgDeaths": 2.5,
-      "avgAssists": 5.5,
-      "avgCS": 311.5,
-      "avgDamage": 20601.4,
-      "avgVision": 43.5,
+      "avgAssists": 5.7,
+      "avgCS": 315.5,
+      "avgDamage": 21087.2,
+      "avgVision": 44.5,
       "latestPatch": "26.16",
       "latestGameAt": "2026-08-16 18:11:00",
-      "styleSummary": "Trong 22 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, chuyển hóa lợi thế tốt, xu hướng gây áp lực sát thương.",
+      "styleSummary": "Trong 21 ván gần đây, dữ liệu cho thấy xu hướng bể tướng rộng, chuyển hóa lợi thế tốt, xu hướng gây áp lực sát thương.",
       "championPool": [
         {
           "name": "Ahri",
           "count": 4,
-          "rate": 18.2
-        },
-        {
-          "name": "Galio",
-          "count": 3,
-          "rate": 13.6
+          "rate": 19
         },
         {
           "name": "Orianna",
           "count": 3,
-          "rate": 13.6
+          "rate": 14.3
         },
         {
           "name": "Akali",
           "count": 2,
-          "rate": 9.1
+          "rate": 9.5
         },
         {
           "name": "Cassiopeia",
           "count": 2,
-          "rate": 9.1
+          "rate": 9.5
+        },
+        {
+          "name": "Galio",
+          "count": 2,
+          "rate": 9.5
         },
         {
           "name": "Viktor",
           "count": 2,
-          "rate": 9.1
+          "rate": 9.5
         },
         {
           "name": "Anivia",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Annie",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Locke",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Ryze",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         }
       ],
       "commonBuilds": [
         {
           "name": "Blasting Wand → Rod of Ages → Crimson Lucidity → Seraph's Embrace → Doran's Ring → Lost Chapter",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Control Ward → Doran's Ring → Seeker's Armguard → Chainlaced Crushers → Imperial Mandate → Kaenic Rookern",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Control Ward → Lich Bane → Cryptbloom → Spellslinger's Shoes → Malignance → Dark Seal",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Control Ward → Randuin's Omen → Zhonya's Hourglass → Imperial Mandate → Chainlaced Crushers → Hollow Radiance",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         },
         {
           "name": "Cryptbloom → Lich Bane → Malignance → Needlessly Large Rod → Mejai's Soulstealer → Chainlaced Crushers",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         }
       ],
       "commonItems": [
         {
           "name": "Chainlaced Crushers",
           "count": 10,
-          "rate": 45.5
+          "rate": 47.6
         },
         {
           "name": "Cryptbloom",
           "count": 10,
-          "rate": 45.5
+          "rate": 47.6
         },
         {
           "name": "Zhonya's Hourglass",
           "count": 8,
-          "rate": 36.4
+          "rate": 38.1
         },
         {
           "name": "Hextech Rocketbelt",
           "count": 7,
-          "rate": 31.8
-        },
-        {
-          "name": "Spellslinger's Shoes",
-          "count": 7,
-          "rate": 31.8
+          "rate": 33.3
         },
         {
           "name": "Malignance",
           "count": 6,
-          "rate": 27.3
+          "rate": 28.6
         },
         {
           "name": "Needlessly Large Rod",
           "count": 6,
-          "rate": 27.3
+          "rate": 28.6
+        },
+        {
+          "name": "Spellslinger's Shoes",
+          "count": 6,
+          "rate": 28.6
         },
         {
           "name": "Blackfire Torch",
           "count": 5,
-          "rate": 22.7
+          "rate": 23.8
         },
         {
           "name": "Dark Seal",
           "count": 5,
-          "rate": 22.7
+          "rate": 23.8
         },
         {
-          "name": "Doran's Ring",
+          "name": "Lich Bane",
           "count": 5,
-          "rate": 22.7
+          "rate": 23.8
         }
       ],
       "commonRunes": [
         {
           "name": "Electrocute • Domination • Resolve",
           "count": 6,
-          "rate": 27.3
+          "rate": 28.6
         },
         {
           "name": "Deathfire Touch • Sorcery • Resolve",
           "count": 3,
-          "rate": 13.6
+          "rate": 14.3
         },
         {
           "name": "Electrocute • Domination • Sorcery",
           "count": 3,
-          "rate": 13.6
+          "rate": 14.3
         },
         {
           "name": "Deathfire Touch • Sorcery • Precision",
           "count": 2,
-          "rate": 9.1
+          "rate": 9.5
         },
         {
           "name": "Stormraider's Surge • Sorcery • Resolve",
           "count": 2,
-          "rate": 9.1
+          "rate": 9.5
         }
       ],
       "commonSpells": [
         {
           "name": "Flash + Teleport",
-          "count": 21,
-          "rate": 95.5
+          "count": 20,
+          "rate": 95.2
         },
         {
           "name": "Flash + Ghost",
           "count": 1,
-          "rate": 4.5
+          "rate": 4.8
         }
       ],
       "teamBanPriorities": [
         {
           "name": "Poppy",
-          "count": 12,
-          "rate": 54.5
+          "count": 11,
+          "rate": 52.4
         },
         {
           "name": "Nocturne",
           "count": 9,
-          "rate": 40.9
+          "rate": 42.9
         },
         {
           "name": "Vi",
           "count": 9,
-          "rate": 40.9
+          "rate": 42.9
         },
         {
           "name": "Cassiopeia",
-          "count": 8,
-          "rate": 36.4
+          "count": 7,
+          "rate": 33.3
         },
         {
           "name": "Bard",
           "count": 6,
-          "rate": 27.3
+          "rate": 28.6
         },
         {
           "name": "Akali",
           "count": 4,
-          "rate": 18.2
+          "rate": 19
         },
         {
           "name": "Jayce",
           "count": 4,
-          "rate": 18.2
+          "rate": 19
         },
         {
           "name": "Kai'Sa",
           "count": 4,
-          "rate": 18.2
-        },
-        {
-          "name": "Rumble",
-          "count": 4,
-          "rate": 18.2
+          "rate": 19
         },
         {
           "name": "Trundle",
           "count": 4,
-          "rate": 18.2
+          "rate": 19
+        },
+        {
+          "name": "Ambessa",
+          "count": 3,
+          "rate": 14.3
         }
       ],
       "recentGames": [
@@ -9588,7 +9592,7 @@
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
   ],
-  "reconciledAt": "2026-08-22T03:32:39.883Z",
+  "reconciledAt": "2026-08-22T04:54:52.054Z",
   "reconcileSource": "Worldwide Esports Directory current identity/basic stats",
   "reconcileStats": {
     "detailedPreserved": 18,
