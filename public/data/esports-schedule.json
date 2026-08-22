@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T20:58:21.383Z",
+  "generatedAt": "2026-08-22T21:54:00.592Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 28,
-    "completed": 172,
+    "upcoming": 27,
+    "completed": 173,
     "total": 201
   },
   "leagues": [
@@ -790,7 +790,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -839,7 +839,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -2803,7 +2803,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -3302,7 +3302,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         }
@@ -4802,7 +4802,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         }
@@ -5303,7 +5303,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -7253,7 +7253,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -7289,7 +7289,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -8715,7 +8715,7 @@
       "riotEventId": null,
       "matchId": "115564797163821187",
       "startTime": "2026-08-22T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -8736,10 +8736,10 @@
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -8750,10 +8750,10 @@
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -8765,7 +8765,7 @@
       "riotEventId": null,
       "matchId": "115564797163886763",
       "startTime": "2026-08-22T23:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -9252,7 +9252,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         }
@@ -9303,7 +9303,7 @@
           "outcome": null,
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -9989,7 +9989,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -10090,7 +10090,7 @@
           "outcome": null,
           "record": {
             "wins": 1,
-            "losses": 3
+            "losses": 4
           }
         },
         {
