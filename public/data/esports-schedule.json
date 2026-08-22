@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T16:59:09.214Z",
+  "generatedAt": "2026-08-22T17:54:51.721Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8699,7 +8699,7 @@
           "code": "SK",
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
