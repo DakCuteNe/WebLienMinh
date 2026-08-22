@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T19:33:42.460Z",
+  "generatedAt": "2026-08-22T03:04:13.210Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 37,
-    "completed": 166,
-    "total": 203
+    "completed": 165,
+    "total": 202
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991325878492:2026-07-08T03:00:00Z:LYON-TSW",
-      "riotEventId": null,
-      "matchId": "115570934355614587",
-      "startTime": "2026-07-08T03:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Knockouts",
-      "league": {
-        "id": "98767991325878492",
-        "name": "MSI",
-        "slug": "msi",
-        "officialSlug": "msi",
-        "image": "https://static.lolesports.com/leagues/1592594634248_MSIDarkBG.png",
-        "group": "INTERNATIONAL",
-        "priority": 8
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "LYON",
-          "code": "LYON",
-          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Team Secret Whales",
-          "code": "TSW",
-          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991325878492:2026-07-08T08:00:00Z:G2-T1",
       "riotEventId": null,
