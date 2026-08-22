@@ -1,6 +1,6 @@
 const BASE = 'https://oe.datalisk.io';
 const KEY = 'f561197a-82ea-4e54-acd2-386979018a7a';
-const interesting = /kill|gold|tower|turret|inhib|dragon|baron|herald|grub|elder|atakhan/i;
+const interesting = /kill|gold|tower|turret|inhib|dragon|baron|herald|grub|elder|atakhan|monster|objective/i;
 
 async function get(path) {
   const response = await fetch(`${BASE}${path}`, {
@@ -16,6 +16,22 @@ const gameIdsFrom = value => {
   const nested = Array.isArray(value?.games) ? value.games.map(row => row?.gameId || row?.id).filter(Boolean) : [];
   return [...direct, ...nested];
 };
+function interestingPaths(value, path = '', out = [], depth = 0) {
+  if (depth > 7 || value == null || out.length >= 160) return out;
+  if (Array.isArray(value)) {
+    for (const [index, child] of value.slice(0, 20).entries()) interestingPaths(child, `${path}[${index}]`, out, depth + 1);
+    return out;
+  }
+  if (typeof value !== 'object') return out;
+  for (const [key, child] of Object.entries(value)) {
+    const next = path ? `${path}.${key}` : key;
+    if (interesting.test(key) || (typeof child === 'string' && interesting.test(child))) {
+      out.push([next, typeof child === 'object' ? (Array.isArray(child) ? `[array:${child.length}]` : '[object]') : child]);
+    }
+    interestingPaths(child, next, out, depth + 1);
+  }
+  return out;
+}
 
 const matches = await get('/matches/recentResults/');
 const candidates = (Array.isArray(matches) ? matches : [])
@@ -59,5 +75,8 @@ console.log(JSON.stringify({
   },
   gameKeys: Object.keys(game),
   blue: project(game.blueTeam),
-  red: project(game.redTeam)
+  red: project(game.redTeam),
+  timelineType: Array.isArray(game.timeline) ? `array:${game.timeline.length}` : typeof game.timeline,
+  timelineKeys: game.timeline && typeof game.timeline === 'object' && !Array.isArray(game.timeline) ? Object.keys(game.timeline) : [],
+  timelineInteresting: interestingPaths(game.timeline)
 }, null, 2));
