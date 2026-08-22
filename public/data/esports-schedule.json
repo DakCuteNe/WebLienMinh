@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T15:32:13.185Z",
+  "generatedAt": "2026-08-22T15:53:22.741Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8636,7 +8636,7 @@
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
