@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T09:37:39.581Z",
+  "generatedAt": "2026-08-22T10:35:58.854Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8399,7 +8399,7 @@
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 5,
@@ -8486,7 +8486,7 @@
           "code": "GAM",
           "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
