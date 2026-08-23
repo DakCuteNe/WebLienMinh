@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T10:35:58.343Z",
+  "generatedAt": "2026-08-23T10:58:14.444Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8999,7 +8999,7 @@
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 4,
