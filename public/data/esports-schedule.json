@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T20:35:23.522Z",
+  "generatedAt": "2026-08-23T20:57:52.263Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9186,7 +9186,7 @@
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 3,
