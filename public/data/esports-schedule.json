@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T14:58:06.704Z",
+  "generatedAt": "2026-08-23T15:33:15.544Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -989,7 +989,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         },
@@ -1003,7 +1003,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -1340,7 +1340,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -1452,7 +1452,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -1840,7 +1840,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -1952,7 +1952,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -2253,7 +2253,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -2502,7 +2502,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -3853,7 +3853,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -4152,7 +4152,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -4403,7 +4403,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -4552,7 +4552,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -5440,7 +5440,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -5552,7 +5552,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -5839,7 +5839,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         },
@@ -6153,7 +6153,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -6390,7 +6390,7 @@
           "outcome": "win",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -6539,7 +6539,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         },
@@ -7503,7 +7503,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -7852,7 +7852,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -7990,7 +7990,7 @@
           "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -8139,7 +8139,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         },
@@ -9037,10 +9037,10 @@
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 9,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -9049,10 +9049,10 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 11,
+            "wins": 12,
             "losses": 2
           }
         }
@@ -9061,7 +9061,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-23T15:00:00Z:TH-GX",
+      "id": "98767991302996019:2026-08-23T15:00:00Z:GX-TH",
       "riotEventId": null,
       "matchId": "115548681803406123",
       "startTime": "2026-08-23T15:00:00Z",
@@ -9082,19 +9082,6 @@
       "teams": [
         {
           "id": null,
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 2,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -9104,6 +9091,19 @@
           "record": {
             "wins": 2,
             "losses": 3
+          }
+        },
+        {
+          "id": null,
+          "name": "Team Heretics",
+          "code": "TH",
+          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 4
           }
         }
       ],
