@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T23:32:05.884Z",
+  "generatedAt": "2026-08-23T07:43:53.764Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 27,
-    "completed": 174,
+    "upcoming": 24,
+    "completed": 177,
     "total": 201
   },
   "leagues": [
@@ -8815,7 +8815,7 @@
       "riotEventId": null,
       "matchId": "116566854547835296",
       "startTime": "2026-08-23T07:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -8915,7 +8915,7 @@
       "riotEventId": null,
       "matchId": "116566854547769748",
       "startTime": "2026-08-23T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -9065,7 +9065,7 @@
       "riotEventId": null,
       "matchId": "116566854547769664",
       "startTime": "2026-08-23T11:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
