@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T16:38:15.400Z",
+  "generatedAt": "2026-08-23T17:31:16.993Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 21,
-    "completed": 179,
+    "upcoming": 20,
+    "completed": 180,
     "total": 201
   },
   "leagues": [
@@ -2140,7 +2140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -2589,7 +2589,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         },
@@ -3353,7 +3353,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -4202,7 +4202,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         }
@@ -4240,7 +4240,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -4639,7 +4639,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         },
@@ -5103,7 +5103,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -6239,7 +6239,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         },
@@ -7290,7 +7290,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -7352,7 +7352,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         }
@@ -8203,7 +8203,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -9065,7 +9065,7 @@
       "riotEventId": null,
       "matchId": "115548681803406123",
       "startTime": "2026-08-23T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -9086,10 +9086,10 @@
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         },
@@ -9100,10 +9100,10 @@
           "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -9115,7 +9115,7 @@
       "riotEventId": null,
       "matchId": "115548681803406223",
       "startTime": "2026-08-23T17:15:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -9161,7 +9161,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-08-23T20:00:00Z:DSG-SEN",
+      "id": "98767991299243165:2026-08-23T20:00:00Z:SEN-DSG",
       "riotEventId": null,
       "matchId": "115564797163821183",
       "startTime": "2026-08-23T20:00:00Z",
@@ -9182,19 +9182,6 @@
       "teams": [
         {
           "id": null,
-          "name": "Disguised",
-          "code": "DSG",
-          "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
           "name": "Sentinels",
           "code": "SEN",
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
@@ -9204,6 +9191,19 @@
           "record": {
             "wins": 3,
             "losses": 2
+          }
+        },
+        {
+          "id": null,
+          "name": "Disguised",
+          "code": "DSG",
+          "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 4
           }
         }
       ],
@@ -9339,7 +9339,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         },
@@ -9390,7 +9390,7 @@
           "outcome": null,
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -9602,7 +9602,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         }
@@ -9790,7 +9790,7 @@
           "outcome": null,
           "record": {
             "wins": 2,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -9839,7 +9839,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 3
           }
         },
