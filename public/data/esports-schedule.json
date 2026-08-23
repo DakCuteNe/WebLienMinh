@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T18:45:08.091Z",
+  "generatedAt": "2026-08-23T19:31:02.206Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9149,7 +9149,7 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 7,
