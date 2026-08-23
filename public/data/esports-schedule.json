@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T17:31:16.993Z",
+  "generatedAt": "2026-08-23T18:45:08.091Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9136,7 +9136,7 @@
           "code": "SHFT",
           "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
