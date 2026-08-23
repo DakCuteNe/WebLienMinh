@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T21:32:53.734Z",
+  "generatedAt": "2026-08-23T22:34:21.079Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9249,7 +9249,7 @@
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
