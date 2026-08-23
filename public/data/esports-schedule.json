@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T11:53:56.458Z",
+  "generatedAt": "2026-08-23T12:58:39.917Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 22,
-    "completed": 178,
+    "completed": 179,
     "total": 201
   },
   "leagues": [
@@ -890,7 +890,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -1302,7 +1302,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         }
@@ -1540,7 +1540,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -1590,7 +1590,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -1739,7 +1739,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -1853,7 +1853,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         }
       ],
@@ -2289,7 +2289,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         },
@@ -2303,7 +2303,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -2489,7 +2489,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -3052,7 +3052,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         }
@@ -3389,7 +3389,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         },
@@ -3452,7 +3452,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         }
@@ -3553,7 +3553,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         }
       ],
@@ -3890,7 +3890,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -3902,7 +3902,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         }
@@ -4103,7 +4103,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -4502,7 +4502,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         }
@@ -4540,7 +4540,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -4990,7 +4990,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -5052,7 +5052,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         }
@@ -5389,7 +5389,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         },
@@ -5453,7 +5453,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         }
       ],
@@ -5539,7 +5539,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -5653,7 +5653,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -5890,7 +5890,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -6102,7 +6102,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         }
@@ -6139,7 +6139,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -6490,7 +6490,7 @@
           "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -6789,7 +6789,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -7040,7 +7040,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -7540,7 +7540,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         },
         {
@@ -7702,7 +7702,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         }
@@ -7802,7 +7802,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         }
@@ -7903,7 +7903,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         }
       ],
@@ -7940,7 +7940,7 @@
           "outcome": "win",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -8539,7 +8539,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -8886,10 +8886,10 @@
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 7,
+            "wins": 8,
             "losses": 6
           }
         },
@@ -8900,10 +8900,10 @@
           "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 11
+            "losses": 12
           }
         }
       ],
@@ -8965,7 +8965,7 @@
       "riotEventId": null,
       "matchId": "115548147900750229",
       "startTime": "2026-08-23T10:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 13",
       "league": {
@@ -8986,10 +8986,10 @@
           "code": "NS",
           "image": "https://static.lolesports.com/teams/NSFullonDark.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 3
           }
         },
@@ -9000,10 +9000,10 @@
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 4,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -9461,7 +9461,7 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-29T08:00:00Z:MVK-CFO",
+      "id": "113476371197627891:2026-08-29T08:00:00Z:CFO-MVK",
       "riotEventId": null,
       "matchId": "116769742220520949",
       "startTime": "2026-08-29T08:00:00Z",
@@ -9482,9 +9482,9 @@
       "teams": [
         {
           "id": null,
-          "name": "MVK Esports",
-          "code": "MVK",
-          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -9495,9 +9495,9 @@
         },
         {
           "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
