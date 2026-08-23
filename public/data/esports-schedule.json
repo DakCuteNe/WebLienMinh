@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T13:42:02.682Z",
+  "generatedAt": "2026-08-23T14:35:19.739Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9049,7 +9049,7 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 11,
