@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T08:44:49.965Z",
+  "generatedAt": "2026-08-23T09:38:16.832Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 23,
+    "live": 2,
+    "upcoming": 22,
     "completed": 176,
     "total": 200
   },
@@ -402,7 +402,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         }
@@ -553,7 +553,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -903,7 +903,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -1390,7 +1390,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -1439,7 +1439,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -1689,7 +1689,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         },
@@ -1753,7 +1753,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -1903,7 +1903,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -2240,7 +2240,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         },
         {
@@ -2352,7 +2352,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         }
@@ -2790,7 +2790,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         },
         {
@@ -2989,7 +2989,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         },
@@ -3439,7 +3439,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -3502,7 +3502,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         }
@@ -3589,7 +3589,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -3603,7 +3603,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -3790,7 +3790,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -4003,7 +4003,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -4340,7 +4340,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -4352,7 +4352,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         }
@@ -4389,7 +4389,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -4890,7 +4890,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         },
         {
@@ -5689,7 +5689,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -5789,7 +5789,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         },
@@ -5853,7 +5853,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -5902,7 +5902,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         }
@@ -5953,7 +5953,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -6352,7 +6352,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         }
@@ -6403,7 +6403,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         }
       ],
@@ -6802,7 +6802,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         }
@@ -6853,7 +6853,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         }
       ],
@@ -7639,7 +7639,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         },
@@ -7690,7 +7690,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         },
         {
@@ -7839,7 +7839,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -7890,7 +7890,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         },
         {
@@ -8090,7 +8090,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -8289,7 +8289,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         },
@@ -8787,10 +8787,10 @@
           "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 10
+            "losses": 11
           }
         },
         {
@@ -8799,10 +8799,10 @@
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 8
           }
         }
@@ -8837,10 +8837,10 @@
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 4
+            "losses": 5
           }
         },
         {
@@ -8849,10 +8849,10 @@
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 3,
+            "wins": 4,
             "losses": 4
           }
         }
@@ -8911,11 +8911,11 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-23T09:00:00Z:CFO-TSW",
+      "id": "113476371197627891:2026-08-23T09:00:00Z:TSW-CFO",
       "riotEventId": null,
       "matchId": "116769742220520937",
       "startTime": "2026-08-23T09:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -8932,9 +8932,9 @@
       "teams": [
         {
           "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "name": "Team Secret Whales",
+          "code": "TSW",
+          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -8945,9 +8945,9 @@
         },
         {
           "id": null,
-          "name": "Team Secret Whales",
-          "code": "TSW",
-          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
