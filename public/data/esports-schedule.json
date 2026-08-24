@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T15:20:25.329Z",
+  "generatedAt": "2026-08-24T16:07:33.045Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9249,7 +9249,7 @@
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 3,
