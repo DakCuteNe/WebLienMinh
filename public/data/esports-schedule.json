@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T08:23:41.996Z",
+  "generatedAt": "2026-08-24T15:20:25.329Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 20,
+    "live": 1,
+    "upcoming": 19,
     "completed": 182,
     "total": 202
   },
@@ -9211,11 +9211,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-24T15:00:00Z:NAVI-FNC",
+      "id": "98767991302996019:2026-08-24T15:00:00Z:FNC-NAVI",
       "riotEventId": null,
       "matchId": "115548681803406167",
       "startTime": "2026-08-24T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 5",
       "league": {
@@ -9232,19 +9232,6 @@
       "teams": [
         {
           "id": null,
-          "name": "Natus Vincere",
-          "code": "NAVI",
-          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 3,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
           "name": "Fnatic",
           "code": "FNC",
           "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
@@ -9254,6 +9241,19 @@
           "record": {
             "wins": 3,
             "losses": 3
+          }
+        },
+        {
+          "id": null,
+          "name": "Natus Vincere",
+          "code": "NAVI",
+          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 3,
+            "losses": 4
           }
         }
       ],
