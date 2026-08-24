@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T17:08:55.041Z",
+  "generatedAt": "2026-08-24T18:01:58.986Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9261,7 +9261,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-24T17:15:00Z:GX-G2",
+      "id": "98767991302996019:2026-08-24T17:15:00Z:G2-GX",
       "riotEventId": null,
       "matchId": "115548681803406247",
       "startTime": "2026-08-24T17:15:00Z",
@@ -9282,6 +9282,19 @@
       "teams": [
         {
           "id": null,
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": null,
+          "record": {
+            "wins": 6,
+            "losses": 2
+          }
+        },
+        {
+          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -9291,19 +9304,6 @@
           "record": {
             "wins": 3,
             "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 6,
-            "losses": 2
           }
         }
       ],
