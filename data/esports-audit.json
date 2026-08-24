@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-23T03:42:18.657Z",
-  "directoryGeneratedAt": "2026-08-23T03:33:09.347Z",
-  "mediaEnrichedAt": "2026-08-23T03:35:30.980Z",
+  "generatedAt": "2026-08-24T03:45:42.816Z",
+  "directoryGeneratedAt": "2026-08-24T03:35:30.334Z",
+  "mediaEnrichedAt": "2026-08-24T03:38:04.122Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -32,7 +32,7 @@
       "pct": 0.1
     },
     "social": {
-      "count": 1358,
+      "count": 1359,
       "pct": 78.7
     },
     "teamLogo": {
@@ -546,7 +546,7 @@
       "country": 51,
       "birthdate": 0,
       "contract": 0,
-      "social": 25,
+      "social": 26,
       "teamLogo": 47,
       "stats": 52,
       "completeCore": 0,
@@ -555,7 +555,7 @@
       "countryPct": 98.1,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 48.1,
+      "socialPct": 50,
       "teamLogoPct": 90.4,
       "statsPct": 100,
       "completeCorePct": 0
@@ -1009,7 +1009,7 @@
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
-    "social": 368,
+    "social": 367,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
@@ -31553,11 +31553,6 @@
       },
       {
         "id": "FenRir",
-        "team": "KT Rolster Challengers",
-        "region": "LCKC"
-      },
-      {
-        "id": "Ghost",
         "team": "KT Rolster Challengers",
         "region": "LCKC"
       },
