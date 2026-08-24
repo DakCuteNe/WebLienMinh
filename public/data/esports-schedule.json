@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T18:01:58.986Z",
+  "generatedAt": "2026-08-24T18:55:30.733Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9299,7 +9299,7 @@
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 3,
