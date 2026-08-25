@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-08-25T16:52:00.469Z",
+  "generatedAt": "2026-08-25T18:54:31.167Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
+    {
+      "patch": "26.17",
+      "title": "League of Legends Patch 26.17 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-17-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/e7061804e74e43de5c3cb98cc4892d318f3c7081-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-08-25T18:00:00.000Z",
+      "description": "Arenas, Bridges, Summoner’s Rifts new and old… change comes for us all."
+    },
     {
       "patch": "26.16",
       "title": "League of Legends Patch 26.16 Notes",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/e77a2205583ecc1e4c17856c64c3c1f2fcec070d-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "It’s time for First Stand and Shyvana’s update!"
-    },
-    {
-      "patch": "26.5",
-      "title": "League of Legends Patch 26.5 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-5-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/1c6e3c541e7dbfc4759097a24f350b7b2dfb13a3-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "Welcome to the official patch of First Stand, the first major international tournament of the year!"
     }
   ]
 }
