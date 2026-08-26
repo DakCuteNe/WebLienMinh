@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T07:57:16.354Z",
+  "generatedAt": "2026-08-26T08:58:12.140Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9311,7 +9311,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-26T08:00:00Z:KT-BRO",
+      "id": "98767991310872058:2026-08-26T08:00:00Z:BRO-KT",
       "riotEventId": null,
       "matchId": "117030752644841571",
       "startTime": "2026-08-26T08:00:00Z",
@@ -9332,9 +9332,9 @@
       "teams": [
         {
           "id": null,
-          "name": "kt Rolster",
-          "code": "KT",
-          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
+          "name": "HANJIN BRION",
+          "code": "BRO",
+          "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -9345,11 +9345,11 @@
         },
         {
           "id": null,
-          "name": "HANJIN BRION",
-          "code": "BRO",
-          "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
+          "name": "kt Rolster",
+          "code": "KT",
+          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
