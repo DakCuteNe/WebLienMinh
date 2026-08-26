@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T10:48:30.721Z",
+  "generatedAt": "2026-08-26T13:12:17.243Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 21,
-    "completed": 184,
+    "completed": 185,
     "total": 206
   },
   "leagues": [
@@ -9315,7 +9315,7 @@
       "riotEventId": null,
       "matchId": "117030752644841571",
       "startTime": "2026-08-26T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -9337,10 +9337,10 @@
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
           "slug": null,
           "wins": 2,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9349,10 +9349,10 @@
           "code": "KT",
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
