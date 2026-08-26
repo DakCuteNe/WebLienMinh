@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T08:58:12.140Z",
+  "generatedAt": "2026-08-26T09:53:52.338Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9336,7 +9336,7 @@
           "code": "BRO",
           "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
