@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T06:04:09.340Z",
+  "generatedAt": "2026-08-26T07:57:16.354Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 22,
+    "live": 1,
+    "upcoming": 21,
     "completed": 184,
     "total": 206
   },
@@ -9315,7 +9315,7 @@
       "riotEventId": null,
       "matchId": "117030752644841571",
       "startTime": "2026-08-26T08:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
