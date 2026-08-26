@@ -269,7 +269,7 @@
             "icon": "perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png",
             "name": "Bước Chân Thần Tốc",
             "shortDesc": "Tấn công và di chuyển tăng cộng dồn Tích Điện. Ở 100 cộng dồn, đòn đánh kế tiếp của bạn hồi máu và tăng <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>Tốc độ Di chuyển</lol-uikit-tooltipped-keyword>.",
-            "longDesc": "Tấn công và di chuyển sẽ tăng cộng dồn Tích Điện. Khi đạt 100 cộng dồn, đòn đánh kế tiếp của bạn được Tích Điện.<br><br>Đòn đánh Tích Điện hồi cho bạn 10 - 130 (+0.1 SMCK cộng thêm, +0.05 SMPT) và tăng <speed>20% Tốc Độ Di Chuyển</speed> trong 1 giây.<br><br>Với Tướng Đánh Xa, hồi Máu chỉ còn 60% hiệu lực và Tốc Độ Di Chuyển chỉ còn 75% hiệu lực. Mọi hiệu ứng hồi máu từ lính chỉ còn 15% hiệu lực."
+            "longDesc": "Tấn công và di chuyển sẽ tăng cộng dồn Tích Điện. Khi đạt 100 cộng dồn, đòn đánh kế tiếp của bạn được Tích Điện.<br><br>Đòn đánh Tích Điện hồi cho bạn 15 - 160 (+0.1 SMCK cộng thêm, +0.05 SMPT) và tăng <speed>20% Tốc Độ Di Chuyển</speed> trong 1 giây.<br><br>Với Tướng Đánh Xa, hồi Máu chỉ còn 60% hiệu lực và Tốc Độ Di Chuyển chỉ còn 75% hiệu lực. Mọi hiệu ứng hồi máu từ lính chỉ còn 15% hiệu lực."
           },
           {
             "id": 8010,
