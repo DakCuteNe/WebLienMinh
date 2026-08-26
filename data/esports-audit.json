@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-25T03:39:23.108Z",
-  "directoryGeneratedAt": "2026-08-25T03:29:00.615Z",
-  "mediaEnrichedAt": "2026-08-25T03:31:36.156Z",
+  "generatedAt": "2026-08-26T03:47:25.133Z",
+  "directoryGeneratedAt": "2026-08-26T03:37:22.438Z",
+  "mediaEnrichedAt": "2026-08-26T03:39:55.104Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1125,
+      "count": 1126,
       "pct": 65.2
     },
     "realName": {
@@ -399,10 +399,10 @@
     "teamUpdated": 55,
     "teamUpdatedPct": 96.5,
     "playerTarget": 264,
-    "playerUpdated": 258,
-    "playerUpdatedPct": 97.7,
+    "playerUpdated": 259,
+    "playerUpdatedPct": 98.1,
     "teamUnresolved": 2,
-    "playerUnresolved": 6,
+    "playerUnresolved": 5,
     "fallbackPlayerSearches": 0,
     "mismatchedTeamLogoCount": 0,
     "legacyTeamLogoCount": 0,
@@ -499,7 +499,7 @@
     },
     "LCP": {
       "total": 48,
-      "image": 47,
+      "image": 48,
       "realName": 47,
       "country": 47,
       "birthdate": 0,
@@ -508,7 +508,7 @@
       "teamLogo": 48,
       "stats": 48,
       "completeCore": 0,
-      "imagePct": 97.9,
+      "imagePct": 100,
       "realNamePct": 97.9,
       "countryPct": 97.9,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 601,
+    "image": 600,
     "realName": 163,
     "country": 162,
     "birthdate": 1724,
@@ -1808,11 +1808,6 @@
         "id": "BAO",
         "team": "Fluxo W7M",
         "region": "CBLOL"
-      },
-      {
-        "id": "Fisher",
-        "team": "DetonatioN FocusMe",
-        "region": "LCP"
       },
       {
         "id": "Tobe",
