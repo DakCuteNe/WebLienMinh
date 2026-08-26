@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T09:47:57.307Z",
+  "generatedAt": "2026-08-26T06:04:09.340Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 22,
-    "completed": 185,
-    "total": 207
+    "completed": 184,
+    "total": 206
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991325878492:2026-07-12T06:00:00Z:BLG-HLE",
-      "riotEventId": null,
-      "matchId": "115570934355614605",
-      "startTime": "2026-07-12T06:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Finals",
-      "league": {
-        "id": "98767991325878492",
-        "name": "MSI",
-        "slug": "msi",
-        "officialSlug": "msi",
-        "image": "https://static.lolesports.com/leagues/1592594634248_MSIDarkBG.png",
-        "group": "INTERNATIONAL",
-        "priority": 8
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "BILIBILI GAMING",
-          "code": "BLG",
-          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-07-24T09:00:00Z:JDG-WE",
       "riotEventId": null,
