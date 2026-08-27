@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T13:12:17.243Z",
+  "generatedAt": "2026-08-27T14:36:52.454Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 21,
-    "completed": 185,
-    "total": 206
+    "completed": 186,
+    "total": 207
   },
   "leagues": [
     {
@@ -9361,11 +9361,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-27T08:00:00Z:NS-BFX",
+      "id": "98767991310872058:2026-08-27T08:00:00Z:BFX-NS",
       "riotEventId": null,
       "matchId": "117030752644841577",
       "startTime": "2026-08-27T08:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -9382,28 +9382,28 @@
       "teams": [
         {
           "id": null,
-          "name": "NONGSHIM RED FORCE",
-          "code": "NS",
-          "image": "https://static.lolesports.com/teams/NSFullonDark.png",
+          "name": "BNK FEARX",
+          "code": "BFX",
+          "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
         {
           "id": null,
-          "name": "BNK FEARX",
-          "code": "BFX",
-          "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
+          "name": "NONGSHIM RED FORCE",
+          "code": "NS",
+          "image": "https://static.lolesports.com/teams/NSFullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -9453,6 +9453,56 @@
           "outcome": null,
           "record": {
             "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991310872058:2026-08-28T08:00:00Z:BRO-BFX",
+      "riotEventId": null,
+      "matchId": "117030752644841583",
+      "startTime": "2026-08-28T08:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Play-Ins",
+      "league": {
+        "id": "98767991310872058",
+        "name": "LCK",
+        "slug": "lck",
+        "officialSlug": "lck",
+        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
+        "group": "REGIONAL",
+        "priority": 1
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "HANJIN BRION",
+          "code": "BRO",
+          "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "BNK FEARX",
+          "code": "BFX",
+          "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
             "losses": 0
           }
         }
