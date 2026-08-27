@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-26T03:47:25.133Z",
-  "directoryGeneratedAt": "2026-08-26T03:37:22.438Z",
-  "mediaEnrichedAt": "2026-08-26T03:39:55.104Z",
+  "generatedAt": "2026-08-27T13:14:46.512Z",
+  "directoryGeneratedAt": "2026-08-27T13:04:39.253Z",
+  "mediaEnrichedAt": "2026-08-27T13:07:12.318Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -16,7 +16,7 @@
       "pct": 90.6
     },
     "country": {
-      "count": 1564,
+      "count": 1563,
       "pct": 90.6
     },
     "birthdate": {
@@ -52,8 +52,8 @@
       "pct": 42.2
     },
     "bioEnriched": {
-      "count": 1565,
-      "pct": 90.7
+      "count": 1564,
+      "pct": 90.6
     },
     "completeCore": {
       "count": 2,
@@ -398,8 +398,8 @@
     "teamTarget": 57,
     "teamUpdated": 55,
     "teamUpdatedPct": 96.5,
-    "playerTarget": 264,
-    "playerUpdated": 259,
+    "playerTarget": 263,
+    "playerUpdated": 258,
     "playerUpdatedPct": 98.1,
     "teamUnresolved": 2,
     "playerUnresolved": 5,
@@ -837,7 +837,7 @@
       "total": 53,
       "image": 5,
       "realName": 46,
-      "country": 46,
+      "country": 45,
       "birthdate": 0,
       "contract": 0,
       "social": 0,
@@ -846,7 +846,7 @@
       "completeCore": 0,
       "imagePct": 9.4,
       "realNamePct": 86.8,
-      "countryPct": 86.8,
+      "countryPct": 84.9,
       "birthdatePct": 0,
       "contractPct": 0,
       "socialPct": 0,
@@ -1005,7 +1005,7 @@
   "missingCounts": {
     "image": 600,
     "realName": 163,
-    "country": 162,
+    "country": 163,
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
@@ -1014,7 +1014,7 @@
     "stats": 0,
     "championPool": 0,
     "soloqueueIds": 997,
-    "bioEnriched": 161,
+    "bioEnriched": 162,
     "completeCore": 1724
   },
   "missing": {
@@ -4897,6 +4897,11 @@
         "id": "Noah",
         "team": "GiantX",
         "region": "LEC"
+      },
+      {
+        "id": "Harusary",
+        "team": "Gen.G Scholars",
+        "region": "LAS"
       },
       {
         "id": "BAO",
@@ -39678,6 +39683,11 @@
         "id": "Noah",
         "team": "GiantX",
         "region": "LEC"
+      },
+      {
+        "id": "Harusary",
+        "team": "Gen.G Scholars",
+        "region": "LAS"
       },
       {
         "id": "BAO",
