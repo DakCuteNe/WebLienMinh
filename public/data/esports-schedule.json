@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T10:24:18.342Z",
+  "generatedAt": "2026-08-29T15:17:43.651Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 2,
-    "upcoming": 15,
-    "completed": 192,
-    "total": 209
+    "live": 1,
+    "upcoming": 17,
+    "completed": 194,
+    "total": 212
   },
   "leagues": [
     {
@@ -7690,7 +7690,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -7702,7 +7702,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -8403,7 +8403,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -8902,7 +8902,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -9665,7 +9665,7 @@
       "riotEventId": null,
       "matchId": "117030752644841589",
       "startTime": "2026-08-29T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9686,11 +9686,11 @@
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9699,10 +9699,10 @@
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -9715,7 +9715,7 @@
       "riotEventId": null,
       "matchId": "116769742220520949",
       "startTime": "2026-08-29T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9736,11 +9736,11 @@
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -9749,10 +9749,10 @@
           "code": "CFO",
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -9786,11 +9786,11 @@
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9799,10 +9799,10 @@
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -9811,11 +9811,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-29T15:00:00Z:SK-KC",
+      "id": "98767991302996019:2026-08-29T15:00:00Z:KC-SK",
       "riotEventId": null,
       "matchId": "115548681803406259",
       "startTime": "2026-08-29T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 6",
       "league": {
@@ -9832,19 +9832,6 @@
       "teams": [
         {
           "id": null,
-          "name": "SK Gaming",
-          "code": "SK",
-          "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 3,
-            "losses": 5
-          }
-        },
-        {
-          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
@@ -9854,6 +9841,19 @@
           "record": {
             "wins": 8,
             "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "SK Gaming",
+          "code": "SK",
+          "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 3,
+            "losses": 5
           }
         }
       ],
@@ -10054,6 +10054,56 @@
           "record": {
             "wins": 0,
             "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "113476371197627891:2026-08-30T08:00:00Z:TSW-CFO",
+      "riotEventId": null,
+      "matchId": "116769742220520955",
+      "startTime": "2026-08-30T08:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Finals",
+      "league": {
+        "id": "113476371197627891",
+        "name": "LCP",
+        "slug": "lcp",
+        "officialSlug": "lcp",
+        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
+        "group": "REGIONAL",
+        "priority": 5
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Team Secret Whales",
+          "code": "TSW",
+          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 1
           }
         }
       ],
@@ -10354,6 +10404,106 @@
           "record": {
             "wins": 3,
             "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-04T09:00:00Z:LGD-AL",
+      "riotEventId": null,
+      "matchId": "117155436343202148",
+      "startTime": "2026-09-04T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "LGD GAMING",
+          "code": "LGD",
+          "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Anyone's Legend",
+          "code": "AL",
+          "image": "https://static.lolesports.com/teams/1641199582689_.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-05T06:00:00Z:TES-NIP",
+      "riotEventId": null,
+      "matchId": "117155436343202160",
+      "startTime": "2026-09-05T06:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "TOP ESPORTS",
+          "code": "TES",
+          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Shenzhen NINJAS IN PYJAMAS",
+          "code": "NIP",
+          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
           }
         }
       ],
