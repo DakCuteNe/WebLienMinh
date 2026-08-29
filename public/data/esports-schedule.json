@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T15:17:43.651Z",
+  "generatedAt": "2026-08-29T18:49:44.225Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 17,
-    "completed": 194,
+    "upcoming": 16,
+    "completed": 195,
     "total": 212
   },
   "leagues": [
@@ -289,7 +289,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         },
@@ -652,7 +652,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         }
@@ -1102,7 +1102,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         }
@@ -2553,7 +2553,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -2589,7 +2589,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         },
@@ -3053,7 +3053,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -3289,7 +3289,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         },
@@ -4553,7 +4553,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -5089,7 +5089,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         },
@@ -5240,7 +5240,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -6140,7 +6140,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -6553,7 +6553,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -7289,7 +7289,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         },
@@ -8140,7 +8140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -8603,7 +8603,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -9102,7 +9102,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         }
@@ -9815,7 +9815,7 @@
       "riotEventId": null,
       "matchId": "115548681803406259",
       "startTime": "2026-08-29T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 6",
       "league": {
@@ -9836,10 +9836,10 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 8,
+            "wins": 9,
             "losses": 0
           }
         },
@@ -9850,10 +9850,10 @@
           "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -9861,11 +9861,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-08-29T17:15:00Z:NAVI-GX",
+      "id": "98767991302996019:2026-08-29T17:15:00Z:GX-NAVI",
       "riotEventId": null,
       "matchId": "115548681803406155",
       "startTime": "2026-08-29T17:15:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 6",
       "league": {
@@ -9882,19 +9882,6 @@
       "teams": [
         {
           "id": null,
-          "name": "Natus Vincere",
-          "code": "NAVI",
-          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
           "name": "GIANTX",
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
@@ -9904,6 +9891,19 @@
           "record": {
             "wins": 4,
             "losses": 3
+          }
+        },
+        {
+          "id": null,
+          "name": "Natus Vincere",
+          "code": "NAVI",
+          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": null,
+          "record": {
+            "wins": 4,
+            "losses": 4
           }
         }
       ],
