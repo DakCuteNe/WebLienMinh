@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-28T14:44:30.197Z",
-  "directoryGeneratedAt": "2026-08-28T14:34:29.765Z",
-  "mediaEnrichedAt": "2026-08-28T14:36:59.811Z",
+  "generatedAt": "2026-08-29T09:30:56.955Z",
+  "directoryGeneratedAt": "2026-08-29T09:21:42.079Z",
+  "mediaEnrichedAt": "2026-08-29T09:24:03.001Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -16,7 +16,7 @@
       "pct": 90.6
     },
     "country": {
-      "count": 1563,
+      "count": 1564,
       "pct": 90.6
     },
     "birthdate": {
@@ -52,8 +52,8 @@
       "pct": 42.2
     },
     "bioEnriched": {
-      "count": 1564,
-      "pct": 90.6
+      "count": 1565,
+      "pct": 90.7
     },
     "completeCore": {
       "count": 2,
@@ -837,7 +837,7 @@
       "total": 53,
       "image": 5,
       "realName": 46,
-      "country": 45,
+      "country": 46,
       "birthdate": 0,
       "contract": 0,
       "social": 0,
@@ -846,7 +846,7 @@
       "completeCore": 0,
       "imagePct": 9.4,
       "realNamePct": 86.8,
-      "countryPct": 84.9,
+      "countryPct": 86.8,
       "birthdatePct": 0,
       "contractPct": 0,
       "socialPct": 0,
@@ -1005,7 +1005,7 @@
   "missingCounts": {
     "image": 600,
     "realName": 163,
-    "country": 163,
+    "country": 162,
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
@@ -1014,7 +1014,7 @@
     "stats": 0,
     "championPool": 0,
     "soloqueueIds": 997,
-    "bioEnriched": 162,
+    "bioEnriched": 161,
     "completeCore": 1724
   },
   "missing": {
@@ -4897,11 +4897,6 @@
         "id": "Noah",
         "team": "GiantX",
         "region": "LEC"
-      },
-      {
-        "id": "Harusary",
-        "team": "Gen.G Scholars",
-        "region": "LAS"
       },
       {
         "id": "BAO",
@@ -39683,11 +39678,6 @@
         "id": "Noah",
         "team": "GiantX",
         "region": "LEC"
-      },
-      {
-        "id": "Harusary",
-        "team": "Gen.G Scholars",
-        "region": "LAS"
       },
       {
         "id": "BAO",
