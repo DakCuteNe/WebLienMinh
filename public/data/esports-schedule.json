@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T21:30:59.522Z",
+  "generatedAt": "2026-08-29T10:24:18.342Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 18,
-    "completed": 191,
+    "live": 2,
+    "upcoming": 15,
+    "completed": 192,
     "total": 209
   },
   "leagues": [
@@ -9661,11 +9661,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-08-29T08:00:00Z:T1-BFX",
+      "id": "98767991310872058:2026-08-29T08:00:00Z:BFX-T1",
       "riotEventId": null,
       "matchId": "117030752644841589",
       "startTime": "2026-08-29T08:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9682,11 +9682,11 @@
       "teams": [
         {
           "id": null,
-          "name": "T1",
-          "code": "T1",
-          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+          "name": "BNK FEARX",
+          "code": "BFX",
+          "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -9695,11 +9695,11 @@
         },
         {
           "id": null,
-          "name": "BNK FEARX",
-          "code": "BFX",
-          "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
+          "name": "T1",
+          "code": "T1",
+          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -9711,11 +9711,11 @@
       "tournamentId": null
     },
     {
-      "id": "113476371197627891:2026-08-29T08:00:00Z:CFO-MVK",
+      "id": "113476371197627891:2026-08-29T08:00:00Z:MVK-CFO",
       "riotEventId": null,
       "matchId": "116769742220520949",
       "startTime": "2026-08-29T08:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9732,9 +9732,9 @@
       "teams": [
         {
           "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -9745,11 +9745,11 @@
         },
         {
           "id": null,
-          "name": "MVK Esports",
-          "code": "MVK",
-          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -9765,7 +9765,7 @@
       "riotEventId": null,
       "matchId": "117155436343202136",
       "startTime": "2026-08-29T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9799,7 +9799,7 @@
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
