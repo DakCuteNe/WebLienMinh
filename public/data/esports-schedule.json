@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T19:26:46.326Z",
+  "generatedAt": "2026-08-30T22:02:14.678Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 13,
-    "completed": 204,
+    "live": 1,
+    "upcoming": 11,
+    "completed": 205,
     "total": 217
   },
   "leagues": [
@@ -702,7 +702,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 1
           }
         }
@@ -1140,7 +1140,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -3152,7 +3152,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 1
           }
         }
@@ -3190,7 +3190,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -5152,7 +5152,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 1
           }
         }
@@ -5190,7 +5190,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -6640,7 +6640,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -7202,7 +7202,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 1
           }
         }
@@ -9940,7 +9940,7 @@
           "outcome": "win",
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9989,7 +9989,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 1
           }
         },
@@ -10311,11 +10311,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-08-30T20:00:00Z:LYON-TLAW",
+      "id": "98767991299243165:2026-08-30T20:00:00Z:TLAW-LYON",
       "riotEventId": null,
       "matchId": "115564797164345567",
       "startTime": "2026-08-30T20:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 6",
       "league": {
@@ -10330,19 +10330,6 @@
       "bestOf": 3,
       "strategyType": "bestOf",
       "teams": [
-        {
-          "id": null,
-          "name": "LYON",
-          "code": "LYON",
-          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 4,
-            "losses": 1
-          }
-        },
         {
           "id": null,
           "name": "Team Liquid Alienware",
@@ -10350,10 +10337,23 @@
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "slug": null,
+          "wins": 2,
+          "outcome": "win",
+          "record": {
+            "wins": 5,
+            "losses": 1
           }
         }
       ],
@@ -10361,11 +10361,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-08-30T23:00:00Z:C9-SR",
+      "id": "98767991299243165:2026-08-30T23:00:00Z:SR-C9",
       "riotEventId": null,
       "matchId": "115564797163886755",
       "startTime": "2026-08-30T23:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 6",
       "league": {
@@ -10382,9 +10382,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -10395,9 +10395,9 @@
         },
         {
           "id": null,
-          "name": "Shopify Rebellion",
-          "code": "SR",
-          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -10853,7 +10853,7 @@
           "outcome": null,
           "record": {
             "wins": 5,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10952,7 +10952,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 4,
+            "wins": 5,
             "losses": 1
           }
         }
