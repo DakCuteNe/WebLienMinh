@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T10:00:23.870Z",
+  "generatedAt": "2026-09-01T14:48:39.390Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 10,
-    "completed": 206,
-    "total": 217
+    "live": 0,
+    "upcoming": 12,
+    "completed": 207,
+    "total": 219
   },
   "leagues": [
     {
@@ -10040,7 +10040,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10415,7 +10415,7 @@
       "riotEventId": null,
       "matchId": "117030752644841601",
       "startTime": "2026-09-01T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10436,10 +10436,10 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -10450,10 +10450,10 @@
           "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10748,6 +10748,106 @@
           "name": "Invictus Gaming",
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991302996019:2026-09-05T10:00:00Z:VIT-G2",
+      "riotEventId": null,
+      "matchId": "115548681803406297",
+      "startTime": "2026-09-05T10:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Team Vitality",
+          "code": "VIT",
+          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991302996019:2026-09-05T15:00:00Z:KC-GX",
+      "riotEventId": null,
+      "matchId": "115548681803406291",
+      "startTime": "2026-09-05T15:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "GIANTX",
+          "code": "GX",
+          "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
