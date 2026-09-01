@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T14:48:39.390Z",
+  "generatedAt": "2026-09-01T21:17:59.726Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -10661,7 +10661,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991314006698:2026-09-05T06:00:00Z:TES-NIP",
+      "id": "98767991314006698:2026-09-05T06:00:00Z:IG-TES",
       "riotEventId": null,
       "matchId": "117155436343202160",
       "startTime": "2026-09-05T06:00:00Z",
@@ -10682,6 +10682,19 @@
       "teams": [
         {
           "id": null,
+          "name": "Invictus Gaming",
+          "code": "IG",
+          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
           "name": "TOP ESPORTS",
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
@@ -10692,26 +10705,13 @@
             "wins": 0,
             "losses": 1
           }
-        },
-        {
-          "id": null,
-          "name": "Shenzhen NINJAS IN PYJAMAS",
-          "code": "NIP",
-          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
-          }
         }
       ],
       "vodsAvailable": false,
       "tournamentId": null
     },
     {
-      "id": "98767991314006698:2026-09-05T09:00:00Z:JDG-IG",
+      "id": "98767991314006698:2026-09-05T09:00:00Z:NIP-JDG",
       "riotEventId": null,
       "matchId": "117155436343202166",
       "startTime": "2026-09-05T09:00:00Z",
@@ -10732,6 +10732,19 @@
       "teams": [
         {
           "id": null,
+          "name": "Shenzhen NINJAS IN PYJAMAS",
+          "code": "NIP",
+          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
           "name": "Beijing JDG Esports",
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
@@ -10741,19 +10754,6 @@
           "record": {
             "wins": 0,
             "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "Invictus Gaming",
-          "code": "IG",
-          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
           }
         }
       ],
