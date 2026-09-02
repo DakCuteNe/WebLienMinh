@@ -12,7 +12,7 @@
   "detailedPriorityCount": 22,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
+  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
   "players": [
     {
       "name": "Faker",
@@ -5798,7 +5798,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/de/T1_Doran_2026_LCK_Cup.png/revision/latest?cb=20260122163256",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -5889,7 +5889,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/7b/HLE_Delight_2026_Split_1.png/revision/latest?cb=20260122172846",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -5967,7 +5967,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/T1_Peyz_2026_LCK_Cup.png/revision/latest?cb=20260122163320",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -6045,7 +6045,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/ec/BLG_Knight_2026_Split_1.png/revision/latest?cb=20260327160422",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -6123,7 +6123,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/18/BLG_Bin_2026_Split_1.png/revision/latest?cb=20260327160417",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -7100,7 +7100,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/eb/AL_Tarzan_2026_Split_1.png/revision/latest?cb=20260327160102",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8051,7 +8051,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/5d/WBG_Elk_2026_Split_1.png/revision/latest?cb=20260328182558",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8129,7 +8129,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/BLG_ON_2026_Split_1.png/revision/latest?cb=20260327160426",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8207,7 +8207,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/25/ME_Hunamu_2018_Spring.png/revision/latest/scale-to-width-down/520?cb=20180322181454",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8285,7 +8285,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/49/TES_Creme_2026_Split_1.png/revision/latest?cb=20260328182016",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8802,7 +8802,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/53/G2_BrokenBlade_2026_Split_1.png/revision/latest?cb=20260117092520",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8880,7 +8880,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d9/G2_Hans_Sama_2026_Split_1.png/revision/latest?cb=20260117092525",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -8958,7 +8958,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/2/2c/SK_Mikyx_2026_Split_3.png/revision/latest?cb=20260724190212",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9036,7 +9036,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/ea/VIT_Humanoid_2026_Split_2.png/revision/latest?cb=20260721164732",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9114,7 +9114,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/f3/FNC_Razork_2026_Split_3.png/revision/latest?cb=20260724141645",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9192,7 +9192,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/9b/FNC_Upset_2026_Split_3.png/revision/latest?cb=20260724141643",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9270,7 +9270,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/f/fa/LYON_Inspired_2026_Split_1.png/revision/latest?cb=20260124041829",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9361,7 +9361,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/80/TL_CoreJJ_2026_Split_1.png/revision/latest?cb=20260124041859",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9452,7 +9452,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/4d/GAM_Kiaya_2026_Split_1.png/revision/latest?cb=20260124180148",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9530,7 +9530,7 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/6/68/SGB_Shogun_2021_Split_2.png/revision/latest/scale-to-width-down/520?cb=20210616143751",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     },
     {
@@ -9608,11 +9608,11 @@
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/3d/GAM_Artemis_2026_Split_1.png/revision/latest?cb=20260124180144",
       "fallback": true,
       "fallbackSource": "worldwide-directory-reconcile",
-      "directoryGeneratedAt": "2026-09-01T07:58:16.025Z",
+      "directoryGeneratedAt": "2026-09-02T07:18:39.688Z",
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
   ],
-  "reconciledAt": "2026-09-01T09:30:34.900Z",
+  "reconciledAt": "2026-09-02T07:28:44.771Z",
   "reconcileSource": "Worldwide Esports Directory current identity/basic stats",
   "reconcileStats": {
     "detailedPreserved": 18,
