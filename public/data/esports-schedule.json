@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T21:17:59.726Z",
+  "generatedAt": "2026-09-02T11:41:33.000Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 12,
+    "live": 1,
+    "upcoming": 11,
     "completed": 207,
     "total": 219
   },
@@ -10461,11 +10461,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-09-02T08:00:00Z:HLE-T1",
+      "id": "98767991310872058:2026-09-02T08:00:00Z:T1-HLE",
       "riotEventId": null,
       "matchId": "117030752644841607",
       "startTime": "2026-09-02T08:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10482,27 +10482,27 @@
       "teams": [
         {
           "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "name": "T1",
+          "code": "T1",
+          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
         {
           "id": null,
-          "name": "T1",
-          "code": "T1",
-          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 0,
             "losses": 0
           }
         }
