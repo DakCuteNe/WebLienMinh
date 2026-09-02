@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T11:41:33.000Z",
+  "generatedAt": "2026-09-02T16:30:44.141Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 11,
-    "completed": 207,
-    "total": 219
+    "live": 0,
+    "upcoming": 12,
+    "completed": 208,
+    "total": 220
   },
   "leagues": [
     {
@@ -9703,7 +9703,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10465,7 +10465,7 @@
       "riotEventId": null,
       "matchId": "117030752644841607",
       "startTime": "2026-09-02T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10487,10 +10487,10 @@
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
           "wins": 2,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10499,10 +10499,10 @@
           "code": "HLE",
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -10704,6 +10704,56 @@
           "record": {
             "wins": 0,
             "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991310872058:2026-09-05T08:00:00Z:HLE-GEN",
+      "riotEventId": null,
+      "matchId": "117030752644841619",
+      "startTime": "2026-09-05T08:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991310872058",
+        "name": "LCK",
+        "slug": "lck",
+        "officialSlug": "lck",
+        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
+        "group": "REGIONAL",
+        "priority": 1
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Gen.G Esports",
+          "code": "GEN",
+          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
           }
         }
       ],
