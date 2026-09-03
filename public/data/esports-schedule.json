@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T09:41:08.843Z",
+  "generatedAt": "2026-09-03T14:28:12.376Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 10,
-    "completed": 209,
-    "total": 220
+    "live": 0,
+    "upcoming": 11,
+    "completed": 210,
+    "total": 221
   },
   "leagues": [
     {
@@ -9690,7 +9690,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10052,7 +10052,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         }
@@ -10153,7 +10153,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10515,7 +10515,7 @@
       "riotEventId": null,
       "matchId": "117030752644841613",
       "startTime": "2026-09-03T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10536,11 +10536,11 @@
           "code": "BFX",
           "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10549,10 +10549,10 @@
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         }
@@ -10586,11 +10586,11 @@
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10599,11 +10599,61 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
+          "wins": 3,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991310872058:2026-09-04T08:00:00Z:KT-DK",
+      "riotEventId": null,
+      "matchId": "117030752644841625",
+      "startTime": "2026-09-04T08:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991310872058",
+        "name": "LCK",
+        "slug": "lck",
+        "officialSlug": "lck",
+        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
+        "group": "REGIONAL",
+        "priority": 1
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "kt Rolster",
+          "code": "KT",
+          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
+          "slug": null,
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 0,
-            "losses": 0
+            "wins": 1,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Dplus KIA",
+          "code": "DK",
+          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 1
           }
         }
       ],
@@ -10711,7 +10761,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-09-05T08:00:00Z:HLE-GEN",
+      "id": "98767991310872058:2026-09-05T08:00:00Z:GEN-HLE",
       "riotEventId": null,
       "matchId": "117030752644841619",
       "startTime": "2026-09-05T08:00:00Z",
@@ -10732,9 +10782,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "name": "Gen.G Esports",
+          "code": "GEN",
+          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -10745,9 +10795,9 @@
         },
         {
           "id": null,
-          "name": "Gen.G Esports",
-          "code": "GEN",
-          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
