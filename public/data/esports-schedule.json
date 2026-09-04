@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T11:42:31.448Z",
+  "generatedAt": "2026-09-04T16:17:07.867Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 10,
+    "upcoming": 11,
     "completed": 212,
-    "total": 222
+    "total": 223
   },
   "leagues": [
     {
@@ -9803,7 +9803,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10687,10 +10687,10 @@
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10699,10 +10699,10 @@
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -11204,6 +11204,56 @@
           "record": {
             "wins": 5,
             "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-07T09:00:00Z:BLG-AL",
+      "riotEventId": null,
+      "matchId": "117155436343202172",
+      "startTime": "2026-09-07T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Anyone's Legend",
+          "code": "AL",
+          "image": "https://static.lolesports.com/teams/1641199582689_.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
           }
         }
       ],
