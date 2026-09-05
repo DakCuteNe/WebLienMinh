@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T16:47:34.458Z",
+  "generatedAt": "2026-09-05T18:59:54.398Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 19,
-    "completed": 216,
+    "completed": 217,
     "total": 236
   },
   "leagues": [
@@ -10915,7 +10915,7 @@
       "riotEventId": null,
       "matchId": "115548681803406291",
       "startTime": "2026-09-05T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
