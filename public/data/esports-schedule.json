@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T06:17:29.479Z",
+  "generatedAt": "2026-09-05T10:53:52.111Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 19,
+    "live": 2,
+    "upcoming": 18,
     "completed": 214,
-    "total": 233
+    "total": 234
   },
   "leagues": [
     {
@@ -9790,7 +9790,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10736,10 +10736,10 @@
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -10749,11 +10749,11 @@
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -10761,11 +10761,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991310872058:2026-09-05T08:00:00Z:GEN-HLE",
+      "id": "98767991310872058:2026-09-05T08:00:00Z:HLE-GEN",
       "riotEventId": null,
       "matchId": "117030752644841619",
       "startTime": "2026-09-05T08:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10782,11 +10782,11 @@
       "teams": [
         {
           "id": null,
-          "name": "Gen.G Esports",
-          "code": "GEN",
-          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -10795,11 +10795,11 @@
         },
         {
           "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "name": "Gen.G Esports",
+          "code": "GEN",
+          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -10861,11 +10861,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991302996019:2026-09-05T10:00:00Z:VIT-G2",
+      "id": "98767991302996019:2026-09-05T10:00:00Z:G2-VIT",
       "riotEventId": null,
       "matchId": "115548681803406297",
       "startTime": "2026-09-05T10:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10882,9 +10882,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Team Vitality",
-          "code": "VIT",
-          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -10895,9 +10895,9 @@
         },
         {
           "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "name": "Team Vitality",
+          "code": "VIT",
+          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -11054,6 +11054,56 @@
           "record": {
             "wins": 5,
             "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-06T06:00:00Z:WE-IG",
+      "riotEventId": null,
+      "matchId": "117155436343202178",
+      "startTime": "2026-09-06T06:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Xi'an Team WE",
+          "code": "WE",
+          "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Invictus Gaming",
+          "code": "IG",
+          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
           }
         }
       ],
