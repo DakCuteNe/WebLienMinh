@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T10:53:52.111Z",
+  "generatedAt": "2026-09-05T13:50:40.349Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 2,
-    "upcoming": 18,
-    "completed": 214,
+    "live": 1,
+    "upcoming": 17,
+    "completed": 216,
     "total": 234
   },
   "leagues": [
@@ -10439,7 +10439,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -10503,7 +10503,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10765,7 +10765,7 @@
       "riotEventId": null,
       "matchId": "117030752644841619",
       "startTime": "2026-09-05T08:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10787,10 +10787,10 @@
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10799,10 +10799,10 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         }
@@ -10836,7 +10836,7 @@
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -10865,7 +10865,7 @@
       "riotEventId": null,
       "matchId": "115548681803406297",
       "startTime": "2026-09-05T10:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10886,10 +10886,10 @@
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -10900,10 +10900,10 @@
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10915,7 +10915,7 @@
       "riotEventId": null,
       "matchId": "115548681803406291",
       "startTime": "2026-09-05T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
