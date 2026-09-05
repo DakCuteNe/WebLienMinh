@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T18:59:54.398Z",
+  "generatedAt": "2026-09-05T21:10:03.871Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 19,
+    "live": 1,
+    "upcoming": 18,
     "completed": 217,
     "total": 236
   },
@@ -10961,11 +10961,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-05T20:00:00Z:SEN-C9",
+      "id": "98767991299243165:2026-09-05T20:00:00Z:C9-SEN",
       "riotEventId": null,
       "matchId": "115564797163821175",
       "startTime": "2026-09-05T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 7",
       "league": {
@@ -10982,11 +10982,11 @@
       "teams": [
         {
           "id": null,
-          "name": "Sentinels",
-          "code": "SEN",
-          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 4,
@@ -10995,9 +10995,9 @@
         },
         {
           "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "name": "Sentinels",
+          "code": "SEN",
+          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
