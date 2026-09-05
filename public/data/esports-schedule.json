@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T13:50:40.349Z",
+  "generatedAt": "2026-09-05T16:47:34.458Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 17,
+    "upcoming": 19,
     "completed": 216,
-    "total": 234
+    "total": 236
   },
   "leagues": [
     {
@@ -10140,7 +10140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10836,10 +10836,10 @@
           "code": "NIP",
           "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -10850,10 +10850,10 @@
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -10936,10 +10936,10 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -10949,11 +10949,11 @@
           "code": "GX",
           "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -11154,6 +11154,106 @@
           "record": {
             "wins": 1,
             "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-06T09:00:00Z:LGD-NIP",
+      "riotEventId": null,
+      "matchId": "117155436343202184",
+      "startTime": "2026-09-06T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "LGD GAMING",
+          "code": "LGD",
+          "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Shenzhen NINJAS IN PYJAMAS",
+          "code": "NIP",
+          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991302996019:2026-09-06T15:00:00Z:G2-KC",
+      "riotEventId": null,
+      "matchId": "115548681803406303",
+      "startTime": "2026-09-06T15:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
           }
         }
       ],
