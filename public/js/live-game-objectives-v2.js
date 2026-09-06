@@ -8,16 +8,16 @@ const COPY = {
   vi: {
     gameResult: 'KẾT QUẢ VÁN', won: 'THẮNG', finished: 'ĐÃ KẾT THÚC', live: 'ĐANG LIVE',
     scoreAfter: 'Tỉ số sau ván', kills: 'Mạng', gold: 'Vàng', towers: 'Trụ', inhibitors: 'Nhà lính',
-    dragons: 'Rồng', voidGrubs: 'Sâu Hư Không', heralds: 'Sứ Giả', barons: 'Baron',
-    bans: 'Tướng Ban', picks: 'Tướng Pick', unavailable: 'Riot không cung cấp dữ liệu này',
+    dragons: 'Rồng', elders: 'Rồng Ngàn Tuổi', voidGrubs: 'Sâu Hư Không', heralds: 'Sứ Giả', barons: 'Baron', atakhans: 'Atakhan',
+    bans: 'Tướng Ban', picks: 'Tướng Pick', unavailable: 'Nguồn trận đấu không cung cấp dữ liệu này',
     inferred: 'Kết quả ước tính từ snapshot cuối', exact: 'Kết quả xác định từ tỉ số series',
     unknownWinner: 'Riot chưa cung cấp winner riêng của ván này'
   },
   en: {
     gameResult: 'GAME RESULT', won: 'WON', finished: 'FINISHED', live: 'LIVE',
     scoreAfter: 'Score after game', kills: 'Kills', gold: 'Gold', towers: 'Towers', inhibitors: 'Inhibitors',
-    dragons: 'Dragons', voidGrubs: 'Void Grubs', heralds: 'Rift Herald', barons: 'Barons',
-    bans: 'Bans', picks: 'Picks', unavailable: 'Not supplied by Riot feed',
+    dragons: 'Dragons', elders: 'Elder Dragons', voidGrubs: 'Void Grubs', heralds: 'Rift Herald', barons: 'Barons', atakhans: 'Atakhan',
+    bans: 'Bans', picks: 'Picks', unavailable: 'Match source does not supply this data',
     inferred: 'Result inferred from final snapshot', exact: 'Result confirmed from series score',
     unknownWinner: 'Riot does not publish a per-game winner here'
   }
@@ -37,7 +37,7 @@ function ensureCss() {
   if (document.querySelector('link[data-live-game-objectives-v2]')) return;
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = '/live-game-objectives-v2.css?v=3.18.0';
+  link.href = '/live-game-objectives-v2.css?v=3.30.0';
   link.dataset.liveGameObjectivesV2 = 'true';
   document.head.appendChild(link);
 }
@@ -76,7 +76,7 @@ function dragonTypes(stats = {}) {
   const rows = Array.isArray(stats.dragonTypes) ? stats.dragonTypes : [];
   if (!rows.length) return '';
   return `<div class="live-v2-dragon-types">${rows.map(value => {
-    const key = String(value || '').toLowerCase().replace(/[^a-z]/g, '');
+    const key = String(value || '').toLowerCase().replace(/dragon|drake/g, '').replace(/[^a-z]/g, '');
     const item = DRAGONS[key] || ['🐲', String(value || '?'), String(value || '?')];
     const label = lang() === 'vi' ? item[1] : item[2];
     return `<span title="${esc(label)}">${item[0]} ${esc(label)}</span>`;
@@ -87,10 +87,12 @@ function metric(icon, label, value, formatter) {
   return `<div class="live-v2-metric"><span>${icon}</span><small>${esc(label)}</small><b>${esc(valueOrDash(value, formatter))}</b></div>`;
 }
 
-function teamObjectives(team, liveRow) {
+function teamObjectives(team, liveRow, availability = {}) {
   const stats = liveRow?.stats || {};
   const bans = Array.isArray(liveRow?.bans) ? liveRow.bans.length : 0;
   const picks = Array.isArray(liveRow?.picks) ? liveRow.picks.length : 0;
+  const banValue = availability.bans === false && !bans ? null : bans;
+  const pickValue = availability.picks === false && !picks ? null : picks;
   return `<div class="live-v2-team-block" data-team-id="${esc(team?.id || '')}">
     <div class="live-v2-team-title"><b>${esc(team?.name || team?.code || 'Team')}</b><small>${esc(team?.code || '')}</small></div>
     <div class="live-v2-metrics">
@@ -98,12 +100,14 @@ function teamObjectives(team, liveRow) {
       ${metric('💰', c().gold, stats.gold, compactGold)}
       ${metric('🗼', c().towers, stats.towers)}
       ${metric('◆', c().inhibitors, stats.inhibitors)}
-      ${metric('🐉', c().dragons, stats.dragons)}
+      ${metric('🐲', c().dragons, stats.dragons)}
+      ${metric('🐉', c().elders, stats.elders)}
       ${metric('🟣', c().voidGrubs, stats.voidGrubs)}
       ${metric('👁', c().heralds, stats.riftHeralds)}
       ${metric('👑', c().barons, stats.barons)}
-      ${metric('P', c().picks, picks)}
-      ${metric('B', c().bans, liveRow?.dataAvailability?.bans === false && !bans ? null : bans)}
+      ${metric('⚜', c().atakhans, stats.atakhans)}
+      ${metric('P', c().picks, pickValue)}
+      ${metric('B', c().bans, banValue)}
     </div>
     ${dragonTypes(stats)}
   </div>`;
@@ -118,6 +122,13 @@ function sourceLabel(game) {
   if (game?.winnerConfidence === 'inferred') return c().inferred;
   if (game?.winnerTeamId) return c().exact;
   return c().unknownWinner;
+}
+
+function unavailableKeys(availability = {}) {
+  const optional = [
+    ['elders', c().elders], ['voidGrubs', c().voidGrubs], ['riftHeralds', c().heralds], ['atakhans', c().atakhans], ['bans', c().bans]
+  ];
+  return optional.filter(([key]) => availability[key] === false).map(([, label]) => label);
 }
 
 function renderCard(card) {
@@ -138,8 +149,7 @@ function renderCard(card) {
 
   const leftLive = liveRowFor(live, leftTeam, leftIndex);
   const rightLive = liveRowFor(live, rightTeam, rightIndex);
-  if (leftLive) leftLive.dataAvailability = live?.dataAvailability || {};
-  if (rightLive) rightLive.dataAvailability = live?.dataAvailability || {};
+  const availability = live?.dataAvailability || {};
 
   const winner = teams.find(team => String(team?.id || '') === String(viewed?.winnerTeamId || '')) || null;
   const scoreAfter = Array.isArray(viewed?.scoreAfterGame) ? viewed.scoreAfterGame : null;
@@ -156,7 +166,7 @@ function renderCard(card) {
     scoreAfter, left: leftLive?.stats, right: rightLive?.stats,
     lp: leftLive?.picks?.length, rp: rightLive?.picks?.length,
     lb: leftLive?.bans?.length, rb: rightLive?.bans?.length,
-    lang: lang()
+    availability, lang: lang()
   });
 
   let summary = panel.querySelector('.live-game-summary-v2');
@@ -170,6 +180,7 @@ function renderCard(card) {
   if (summary.dataset.signature === signature) return;
   summary.dataset.signature = signature;
 
+  const missing = unavailableKeys(availability);
   summary.innerHTML = `<div class="live-v2-result-row">
       <div><small>${esc(c().gameResult)} • ${esc(lang() === 'vi' ? `Ván ${viewed.number || '?'}` : `Game ${viewed.number || '?'}`)}</small>
         <b class="${winner ? 'has-winner' : ''}">${esc(resultText)}</b>
@@ -177,9 +188,8 @@ function renderCard(card) {
       <div class="live-v2-game-score"><span>${esc(leftTeam?.code || '')}</span><b>${esc(valueOrDash(leftKills))} — ${esc(valueOrDash(rightKills))}</b><span>${esc(rightTeam?.code || '')}</span></div>
       ${scoreAfter ? `<div class="live-v2-series-after"><small>${esc(c().scoreAfter)}</small><b>${esc(String(leftScore ?? 0))} — ${esc(String(rightScore ?? 0))}</b></div>` : ''}
     </div>
-    ${live ? `<div class="live-v2-objective-grid">${teamObjectives(leftTeam, leftLive)}${teamObjectives(rightTeam, rightLive)}</div>` : ''}
-    ${live?.dataAvailability && (!live.dataAvailability.voidGrubs || !live.dataAvailability.riftHeralds || !live.dataAvailability.bans)
-      ? `<div class="live-v2-source-note">${!live.dataAvailability.voidGrubs ? `${esc(c().voidGrubs)}: —` : ''}${!live.dataAvailability.voidGrubs && !live.dataAvailability.riftHeralds ? ' • ' : ''}${!live.dataAvailability.riftHeralds ? `${esc(c().heralds)}: —` : ''}${(!live.dataAvailability.voidGrubs || !live.dataAvailability.riftHeralds) && !live.dataAvailability.bans ? ' • ' : ''}${!live.dataAvailability.bans ? `${esc(c().bans)}: —` : ''} <span>${esc(c().unavailable)}</span></div>` : ''}`;
+    ${live ? `<div class="live-v2-objective-grid">${teamObjectives(leftTeam, leftLive, availability)}${teamObjectives(rightTeam, rightLive, availability)}</div>` : ''}
+    ${live && missing.length ? `<div class="live-v2-source-note">${missing.map(label => `${esc(label)}: —`).join(' • ')} <span>${esc(c().unavailable)}</span></div>` : ''}`;
 
   panel.querySelectorAll('.live-draft-team').forEach(node => node.classList.remove('live-v2-winner-team'));
   if (winner) {
