@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T19:28:06.566Z",
+  "generatedAt": "2026-09-06T21:40:30.470Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 15,
-    "completed": 223,
+    "live": 1,
+    "upcoming": 13,
+    "completed": 224,
     "total": 238
   },
   "leagues": [
@@ -689,7 +689,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         },
@@ -1190,7 +1190,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -2702,7 +2702,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -3140,7 +3140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -4690,7 +4690,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -5202,7 +5202,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -6690,7 +6690,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -7152,7 +7152,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -8652,7 +8652,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -9202,7 +9202,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 4
           }
         }
@@ -9953,7 +9953,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         }
       ],
@@ -10390,7 +10390,7 @@
           "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
           }
         },
         {
@@ -11261,11 +11261,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-06T20:00:00Z:FLY-SR",
+      "id": "98767991299243165:2026-09-06T20:00:00Z:SR-FLY",
       "riotEventId": null,
       "matchId": "115564797164345555",
       "startTime": "2026-09-06T20:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 7",
       "league": {
@@ -11282,28 +11282,28 @@
       "teams": [
         {
           "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 2,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 3
+            "losses": 4
+          }
+        },
+        {
+          "id": null,
+          "name": "FlyQuest",
+          "code": "FLY",
+          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
+          "slug": null,
+          "wins": 2,
+          "outcome": "win",
+          "record": {
+            "wins": 3,
+            "losses": 4
           }
         }
       ],
@@ -11315,7 +11315,7 @@
       "riotEventId": null,
       "matchId": "115564797163886787",
       "startTime": "2026-09-06T23:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Week 7",
       "league": {
