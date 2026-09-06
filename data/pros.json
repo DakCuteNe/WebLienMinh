@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-05T08:26:49.661Z",
+  "generatedAt": "2026-09-06T08:45:10.924Z",
   "source": "Hybrid: preserved Leaguepedia detailed analytics + Worldwide Esports Directory fallback",
   "sourceType": "degraded hybrid; community scoreboard + Oracle/identity directory",
   "degraded": true,
   "sourceError": "Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.",
-  "preservedDetailedAt": "2026-09-04T08:55:04.054Z",
+  "preservedDetailedAt": "2026-09-05T08:26:49.661Z",
   "preservedDetailedCount": 18,
   "directoryFallbackCount": 21,
   "unresolvedCount": 3,
@@ -12,7 +12,7 @@
   "detailedPriorityCount": 22,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
+  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
   "players": [
     {
       "name": "Faker",
@@ -451,7 +451,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Chovy",
@@ -890,7 +890,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Ruler",
@@ -1342,7 +1342,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Canyon",
@@ -1766,7 +1766,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Keria",
@@ -2199,7 +2199,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Zeus",
@@ -2645,7 +2645,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Oner",
@@ -3073,7 +3073,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Gumayusi",
@@ -3524,7 +3524,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "ShowMaker",
@@ -3962,7 +3962,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Bdd",
@@ -4405,7 +4405,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Teddy",
@@ -4854,7 +4854,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Kanavi",
@@ -5280,7 +5280,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Scout",
@@ -5722,7 +5722,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Doran",
@@ -6577,7 +6577,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "JackeyLove",
@@ -7031,7 +7031,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Tarzan",
@@ -7548,7 +7548,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Meiko",
@@ -7963,7 +7963,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "Elk",
@@ -8700,7 +8700,7 @@
         }
       ],
       "fallback": false,
-      "detailedPreservedFrom": "2026-09-04T08:55:04.054Z"
+      "detailedPreservedFrom": "2026-09-05T08:26:49.661Z"
     },
     {
       "name": "BrokenBlade",
@@ -9587,7 +9587,7 @@
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
   ],
-  "reconciledAt": "2026-09-06T07:27:42.196Z",
+  "reconciledAt": "2026-09-06T08:45:11.059Z",
   "reconcileSource": "Worldwide Esports Directory current identity/basic stats",
   "reconcileStats": {
     "detailedPreserved": 18,
