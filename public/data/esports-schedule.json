@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T21:40:30.470Z",
+  "generatedAt": "2026-09-06T23:49:04.514Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 13,
-    "completed": 224,
+    "completed": 225,
     "total": 238
   },
   "leagues": [
@@ -702,7 +702,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         }
@@ -1203,7 +1203,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -2690,7 +2690,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -3152,7 +3152,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         }
@@ -4640,7 +4640,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -5152,7 +5152,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         }
@@ -6653,7 +6653,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -7202,7 +7202,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         }
@@ -8703,7 +8703,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -9153,7 +9153,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         }
       ],
@@ -9989,7 +9989,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -10352,7 +10352,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         }
@@ -11315,7 +11315,7 @@
       "riotEventId": null,
       "matchId": "115564797163886787",
       "startTime": "2026-09-06T23:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 7",
       "league": {
@@ -11337,10 +11337,10 @@
           "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 5
+            "losses": 6
           }
         },
         {
@@ -11349,10 +11349,10 @@
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         }
