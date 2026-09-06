@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T01:18:52.856Z",
+  "generatedAt": "2026-09-06T11:18:52.997Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 17,
+    "live": 1,
+    "upcoming": 16,
     "completed": 219,
     "total": 236
   },
@@ -10153,7 +10153,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -10590,7 +10590,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10739,7 +10739,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -11086,11 +11086,11 @@
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -11099,10 +11099,10 @@
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         }
@@ -11115,7 +11115,7 @@
       "riotEventId": null,
       "matchId": "117030752644841631",
       "startTime": "2026-09-06T08:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -11136,7 +11136,7 @@
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
@@ -11149,7 +11149,7 @@
           "code": "T1",
           "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -11186,7 +11186,7 @@
           "code": "LGD",
           "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
