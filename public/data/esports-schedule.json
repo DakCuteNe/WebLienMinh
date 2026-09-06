@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T23:14:38.642Z",
+  "generatedAt": "2026-09-06T01:18:52.856Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 17,
-    "completed": 218,
+    "completed": 219,
     "total": 236
   },
   "leagues": [
@@ -753,7 +753,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         }
       ],
@@ -1139,7 +1139,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -2640,7 +2640,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         },
         {
@@ -3189,7 +3189,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -5140,7 +5140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         },
         {
@@ -5189,7 +5189,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -6639,7 +6639,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -6703,7 +6703,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         }
       ],
@@ -8690,7 +8690,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         },
         {
@@ -9190,7 +9190,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         },
         {
@@ -9939,7 +9939,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -10339,7 +10339,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -11015,7 +11015,7 @@
       "riotEventId": null,
       "matchId": "115564797163886779",
       "startTime": "2026-09-05T23:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Week 7",
       "league": {
@@ -11036,10 +11036,10 @@
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 5,
+            "wins": 6,
             "losses": 1
           }
         },
@@ -11050,10 +11050,10 @@
           "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 6
+            "losses": 7
           }
         }
       ],
