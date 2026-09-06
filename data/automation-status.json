@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T15:32:12.871Z",
+  "checkedAt": "2026-09-06T20:29:22.422Z",
   "health": "degraded",
   "scope": "GLOBAL",
   "patch": "16.17",
@@ -38,6 +38,6 @@
     }
   },
   "riotStaticMessage": "> rift-meta-vn@3.13.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.17.1 (patch 16.17)\nChưa có version Data Dragon mới. Đang ở 16.17.1.",
-  "collectorMessage": "◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }\nGLOBAL HIGH-ELO • patch 16.17 • 16 platforms • 2 seed/platform • 6 match/seed\n=== NA1 • North America ===\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97\n    throw new RiotHttpError(response.status, response.statusText, body);\n          ^\nRiotHttpError: 401 Unauthorized: {\"status\":{\"message\":\"Unknown apikey\",\"status_code\":401}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async getPlatformSeeds (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:120:22)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:181:24 {\n  status: 401\n}\nNode.js v22.23.2",
+  "collectorMessage": "◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]\nGLOBAL HIGH-ELO • patch 16.17 • 16 platforms • 2 seed/platform • 6 match/seed\n=== NA1 • North America ===\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97\n    throw new RiotHttpError(response.status, response.statusText, body);\n          ^\nRiotHttpError: 401 Unauthorized: {\"status\":{\"message\":\"Unknown apikey\",\"status_code\":401}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async getPlatformSeeds (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:120:22)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:181:24 {\n  status: 401\n}\nNode.js v22.23.2",
   "aggregateMessage": "No accepted worldwide dataset. Keeping previous meta.json."
 }
