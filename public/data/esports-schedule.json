@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T17:19:49.364Z",
+  "generatedAt": "2026-09-06T19:28:06.566Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 15,
-    "completed": 222,
+    "completed": 223,
     "total": 238
   },
   "leagues": [
@@ -10889,7 +10889,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -10940,7 +10940,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -11215,7 +11215,7 @@
       "riotEventId": null,
       "matchId": "115548681803406303",
       "startTime": "2026-09-06T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -11236,11 +11236,11 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -11249,10 +11249,10 @@
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         }
