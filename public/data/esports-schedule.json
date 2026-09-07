@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T23:49:04.514Z",
+  "generatedAt": "2026-09-07T09:40:43.988Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 13,
+    "upcoming": 14,
     "completed": 225,
-    "total": 238
+    "total": 239
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-07-24T09:00:00Z:JDG-WE",
-      "riotEventId": null,
-      "matchId": "116566854547769600",
-      "startTime": "2026-07-24T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 8,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Xi'an Team WE",
-          "code": "WE",
-          "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 7,
-            "losses": 7
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-07-24T11:00:00Z:BLG-EDG",
       "riotEventId": null,
@@ -11365,7 +11315,7 @@
       "riotEventId": null,
       "matchId": "117155436343202172",
       "startTime": "2026-09-07T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -11561,6 +11511,56 @@
       "tournamentId": null
     },
     {
+      "id": "98767991302996019:2026-09-11T15:00:00Z:GX-NAVI",
+      "riotEventId": null,
+      "matchId": "115548681803406309",
+      "startTime": "2026-09-11T15:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "GIANTX",
+          "code": "GX",
+          "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Natus Vincere",
+          "code": "NAVI",
+          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
       "id": "98767991310872058:2026-09-12T05:00:00Z:T1-HLE",
       "riotEventId": null,
       "matchId": "117030752644841637",
@@ -11698,6 +11698,56 @@
           "name": "TP.HCM SN CyberCore Esports",
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991302996019:2026-09-12T15:00:00Z:VIT-MKOI",
+      "riotEventId": null,
+      "matchId": "115548681803406315",
+      "startTime": "2026-09-12T15:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Team Vitality",
+          "code": "VIT",
+          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Movistar KOI",
+          "code": "MKOI",
+          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
