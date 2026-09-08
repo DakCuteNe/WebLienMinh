@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T11:42:58.752Z",
+  "generatedAt": "2026-09-08T16:34:27.459Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 14,
-    "completed": 218,
-    "total": 232
+    "completed": 217,
+    "total": 231
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-07-25T14:30:00Z:G2-VIT",
-      "riotEventId": null,
-      "matchId": "115548681803406203",
-      "startTime": "2026-07-25T14:30:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Team Vitality",
-          "code": "VIT",
-          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 7,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-07-25T17:30:00Z:MKOI-KC",
       "riotEventId": null,
