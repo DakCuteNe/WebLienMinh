@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T19:34:18.731Z",
+  "generatedAt": "2026-09-08T22:01:08.411Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 14,
-    "completed": 216,
-    "total": 230
+    "completed": 215,
+    "total": 229
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-07-25T20:00:00Z:FLY-LYON",
-      "riotEventId": null,
-      "matchId": "115564797164345551",
-      "startTime": "2026-07-25T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "LYON",
-          "code": "LYON",
-          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-07-25T23:00:00Z:SEN-DIG",
       "riotEventId": null,
