@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T16:34:27.459Z",
+  "generatedAt": "2026-09-08T19:34:18.731Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 14,
-    "completed": 217,
-    "total": 231
+    "completed": 216,
+    "total": 230
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-07-25T17:30:00Z:MKOI-KC",
-      "riotEventId": null,
-      "matchId": "115548681803406271",
-      "startTime": "2026-07-25T17:30:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Movistar KOI",
-          "code": "MKOI",
-          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 4,
-            "losses": 5
-          }
-        },
-        {
-          "id": null,
-          "name": "Karmine Corp",
-          "code": "KC",
-          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 9,
-            "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-07-25T20:00:00Z:FLY-LYON",
       "riotEventId": null,
