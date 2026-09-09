@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T00:08:18.944Z",
+  "generatedAt": "2026-09-09T10:04:55.884Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 16,
-    "completed": 214,
-    "total": 230
+    "completed": 211,
+    "total": 227
   },
   "leagues": [
     {
@@ -110,156 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-07-26T07:00:00Z:LNG-NIP",
-      "riotEventId": null,
-      "matchId": "116566854547835316",
-      "startTime": "2026-07-26T07:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Suzhou LNG Esports",
-          "code": "LNG",
-          "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Shenzhen NINJAS IN PYJAMAS",
-          "code": "NIP",
-          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-07-26T09:00:00Z:EDG-TT",
-      "riotEventId": null,
-      "matchId": "116566854547769652",
-      "startTime": "2026-07-26T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "EDWARD GAMING",
-          "code": "EDG",
-          "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 12
-          }
-        },
-        {
-          "id": null,
-          "name": "THUNDER TALK GAMING",
-          "code": "TT",
-          "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 11
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-07-26T09:00:00Z:DFM-GAM",
-      "riotEventId": null,
-      "matchId": "115570814727903829",
-      "startTime": "2026-07-26T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Swiss",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "DetonatioN FocusMe",
-          "code": "DFM",
-          "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "GAM Esports",
-          "code": "GAM",
-          "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-07-26T11:00:00Z:BLG-AL",
       "riotEventId": null,
@@ -11211,7 +11061,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-12T20:00:00Z:SR-C9",
+      "id": "98767991299243165:2026-09-12T20:00:00Z:C9-SR",
       "riotEventId": null,
       "matchId": "115565004607949375",
       "startTime": "2026-09-12T20:00:00Z",
@@ -11232,9 +11082,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Shopify Rebellion",
-          "code": "SR",
-          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -11245,9 +11095,9 @@
         },
         {
           "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -11361,7 +11211,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-13T20:00:00Z:FLY-SEN",
+      "id": "98767991299243165:2026-09-13T20:00:00Z:SEN-FLY",
       "riotEventId": null,
       "matchId": "115565004607949381",
       "startTime": "2026-09-13T20:00:00Z",
@@ -11382,9 +11232,9 @@
       "teams": [
         {
           "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
+          "name": "Sentinels",
+          "code": "SEN",
+          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -11395,9 +11245,9 @@
         },
         {
           "id": null,
-          "name": "Sentinels",
-          "code": "SEN",
-          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
+          "name": "FlyQuest",
+          "code": "FLY",
+          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
