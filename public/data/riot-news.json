@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-09T16:34:22.962Z",
+  "generatedAt": "2026-09-09T20:53:13.116Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "League of Legends Patch 26.18 Notes",
+      "description": "Everything is where it belongs: Caps is in the Hall of Legends, Demacians are back in Classic, and ARAM Mayhem augments are on the right champions!",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-18-notes",
+      "category": "Game Updates",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/edec00cb9c1e10eb5adace738fea068ded8361ac-1920x1117.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-09-09T18:00:00.000Z",
+      "type": "hall"
+    },
     {
       "title": "LCS Promotion Tournament & WSCI",
       "description": "Esports 2026-09-08T17:00:00.000Z LCS Promotion Tournament & WSCI Everything you need to know about the end of year Tier-2 tournaments",
@@ -55,15 +64,6 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-08-25T18:00:00.000Z",
       "type": "patch"
-    },
-    {
-      "title": "Caps Becomes First Western Pro for Hall of Legends",
-      "description": "Esports 2026-08-16T14:45:00.000Z Caps Becomes First Western Pro for Hall of Legends LoL Esports welcomes Caps to the Hall of Legends.",
-      "url": "https://lolesports.com/en-us/news/caps-becomes-first-western-pro-for-hall-of-legends",
-      "category": "League News",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-08-16T14:45:00.000Z",
-      "type": "hall"
     },
     {
       "title": "League of Legends Patch 26.16 Notes",
