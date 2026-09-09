@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T22:01:08.411Z",
+  "generatedAt": "2026-09-09T00:08:18.944Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 14,
-    "completed": 215,
-    "total": 229
+    "upcoming": 16,
+    "completed": 214,
+    "total": 230
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-07-25T23:00:00Z:SEN-DIG",
-      "riotEventId": null,
-      "matchId": "115564797163821179",
-      "startTime": "2026-07-25T23:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 1",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Sentinels",
-          "code": "SEN",
-          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Dignitas",
-          "code": "DIG",
-          "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 7
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-07-26T07:00:00Z:LNG-NIP",
       "riotEventId": null,
@@ -11261,6 +11211,56 @@
       "tournamentId": null
     },
     {
+      "id": "98767991299243165:2026-09-12T20:00:00Z:SR-C9",
+      "riotEventId": null,
+      "matchId": "115565004607949375",
+      "startTime": "2026-09-12T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
       "id": "107213827295848783:2026-09-13T09:00:00Z:SGW-DINO",
       "riotEventId": null,
       "matchId": "116952475624364017",
@@ -11348,6 +11348,56 @@
           "name": "TP.HCM SN CyberCore Esports",
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-09-13T20:00:00Z:FLY-SEN",
+      "riotEventId": null,
+      "matchId": "115565004607949381",
+      "startTime": "2026-09-13T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "FlyQuest",
+          "code": "FLY",
+          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Sentinels",
+          "code": "SEN",
+          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
