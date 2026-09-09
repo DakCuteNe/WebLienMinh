@@ -1,6 +1,6 @@
 {
   "type": "item",
-  "version": "16.17.1",
+  "version": "16.18.1",
   "basic": {
     "name": "",
     "rune": {
@@ -8796,7 +8796,7 @@
     },
     "3124": {
       "name": "Cuồng Đao Guinsoo",
-      "description": "<mainText><stats><attention>30</attention> Sức Mạnh Công Kích<br><attention>30</attention> Sức Mạnh Phép Thuật<br><attention>25%</attention> Tốc Độ Đánh</stats><br><br><passive>Thịnh Nộ</passive><br>Đòn đánh gây <magicDamage>30 sát thương phép cộng thêm <OnHit>Khi Đánh Trúng</OnHit></magicDamage>.<br><br><passive>Nhát Chém Cuồng Nộ</passive><br>Đánh thường sẽ cho <attackSpeed>8% Tốc Độ Đánh</attackSpeed> trong 3 giây (cộng dồn tối đa 4 lần). <br>Khi đạt cộng dồn tối đa, mỗi Đòn Đánh thứ ba áp dụng hiệu ứng <OnHit>Khi Đánh Trúng</OnHit> 2 lần.</mainText>",
+      "description": "<mainText><stats><attention>30</attention> Sức Mạnh Công Kích<br><attention>30</attention> Sức Mạnh Phép Thuật<br><attention>25%</attention> Tốc Độ Đánh</stats><br><br><passive>Thịnh Nộ</passive><br>Đòn đánh gây <magicDamage>30 sát thương phép cộng thêm <OnHit>Khi Đánh Trúng</OnHit></magicDamage>.<br><br><passive>Nhát Chém Cuồng Nộ</passive><br>Đánh thường sẽ cho <attackSpeed>8% Tốc Độ Đánh</attackSpeed> trong 4 giây (cộng dồn tối đa 4 lần). <br>Khi đạt cộng dồn tối đa, mỗi Đòn Đánh thứ ba áp dụng hiệu ứng <OnHit>Khi Đánh Trúng</OnHit> 2 lần.</mainText>",
       "colloq": "",
       "plaintext": "",
       "from": [
@@ -8841,7 +8841,7 @@
         "Effect1Amount": "0.08",
         "Effect2Amount": "2.5",
         "Effect3Amount": "2.5",
-        "Effect4Amount": "3",
+        "Effect4Amount": "4",
         "Effect5Amount": "4",
         "Effect6Amount": "0.1",
         "Effect7Amount": "0.1",
@@ -15766,7 +15766,7 @@
     },
     "8010": {
       "name": "Lời Nguyền Huyết Tự",
-      "description": "<mainText><stats><attention>65</attention> Sức Mạnh Phép Thuật<br><attention>400</attention> Máu<br><attention>15</attention> Điểm Hồi Kỹ Năng</stats><br><br><passive>Mục Rữa Đáng Sợ:</passive><br>Gây <magicDamage>sát thương phép</magicDamage> bằng kỹ năng hoặc nội tại lên tướng sẽ giảm <scaleMR>Kháng Phép của kẻ đó đi 7.5%</scaleMR> trong 6 giây (cộng dồn 4 lần).</mainText>",
+      "description": "<mainText><stats><attention>65</attention> Sức Mạnh Phép Thuật<br><attention>400</attention> Máu<br><attention>15</attention> Điểm Hồi Kỹ Năng</stats><br><br><passive>Mục Rữa Đáng Sợ:</passive><br>Gây <magicDamage>sát thương phép</magicDamage> bằng kỹ năng hoặc nội tại lên tướng sẽ giảm <scaleMR>Kháng Phép của kẻ đó đi 7.5%</scaleMR> trong 6 giây. (Cộng dồn 4 lần).</mainText>",
       "colloq": "",
       "plaintext": "",
       "from": [
@@ -21247,7 +21247,7 @@
         "Effect1Amount": "0.08",
         "Effect2Amount": "2.5",
         "Effect3Amount": "2.5",
-        "Effect4Amount": "3",
+        "Effect4Amount": "4",
         "Effect5Amount": "4",
         "Effect6Amount": "0.1",
         "Effect7Amount": "0.1",
@@ -32838,7 +32838,7 @@
     },
     "773102": {
       "name": "Dây Chuyền Chữ Thập",
-      "description": "<mainText><stats><attention>450</attention> Máu<br><attention>55</attention> Kháng Phép</stats><br><br><jadeUnique>Vô Hình:</jadeUnique> Tạo một <shield>Khiên Phép</shield> giúp chặn kỹ năng tiếp theo của kẻ địch. <shield>Khiên Phép</shield> này sẽ được làm mới sau khi không nhận sát thương từ tướng địch trong 25 giây.<br><jadeUnique>Hắc Ám Hồi Phục:</jadeUnique> Tăng <healing>9 Hồi Máu mỗi 5 giây</healing> trong tối đa 10 giây sau khi nhận sát thương từ tướng địch hoặc khi <shield>Khiên Phép</shield> bị phá.</mainText>",
+      "description": "<mainText><stats><attention>450</attention> Máu<br><attention>55</attention> Kháng Phép</stats><br><br><jadeUnique>Vô Hình:</jadeUnique> Tạo một <shield>Khiên Phép</shield> giúp chặn kỹ năng tiếp theo của kẻ địch. <shield>Khiên Phép</shield> này sẽ được làm mới sau khi không nhận sát thương từ tướng địch trong 25 giây.<br><jadeUnique>Hắc Ám Hồi Phục:</jadeUnique> Tăng <healing>45 Hồi Máu mỗi 5 giây</healing> trong tối đa 10 giây sau khi nhận sát thương từ tướng địch hoặc khi <shield>Khiên Phép</shield> bị phá.</mainText>",
       "colloq": "",
       "plaintext": "",
       "from": [
@@ -34912,7 +34912,7 @@
     },
     "773211": {
       "name": "Áo Choàng Ám Ảnh",
-      "description": "<mainText><stats><attention>200</attention> Máu<br><attention>45</attention> Kháng Phép</stats><br><br><jadeUnique>Hắc Ám Hồi Phục:</jadeUnique> Tăng <healing>3 Hồi Máu</healing> mỗi 5 giây trong tối đa 10 giây sau khi nhận sát thương từ tướng địch.</mainText>",
+      "description": "<mainText><stats><attention>200</attention> Máu<br><attention>45</attention> Kháng Phép</stats><br><br><jadeUnique>Hắc Ám Hồi Phục:</jadeUnique> Tăng <healing>15 Hồi Máu</healing> mỗi 5 giây trong tối đa 10 giây sau khi nhận sát thương từ tướng địch.</mainText>",
       "colloq": "",
       "plaintext": "",
       "from": [

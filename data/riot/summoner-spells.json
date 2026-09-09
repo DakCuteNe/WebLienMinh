@@ -1,6 +1,6 @@
 {
   "type": "summoner",
-  "version": "16.17.1",
+  "version": "16.18.1",
   "data": {
     "SummonerBarrier": {
       "id": "SummonerBarrier",
@@ -1821,8 +1821,8 @@
     "SummonerMana_Jade": {
       "id": "SummonerMana_Jade",
       "name": "Minh Mẫn",
-      "description": "Hồi lại toàn bộ năng lượng cho tất cả tướng đồng minh xung quanh. Thấu Hiểu Triệu Hồi Sư: Hồi phục thêm 25% năng lượng.",
-      "tooltip": "Hồi <scaleMana>{{ selfmanaactual }}% Năng Lượng tối đa</scaleMana> cho Tướng của bạn và <scaleMana>{{ allymanaactual }}% Năng Lượng tối đa</scaleMana> cho các đồng minh gần đó.<br /><br />",
+      "description": "Hồi Năng Lượng cho bạn và tướng đồng minh. Thấu Hiểu Triệu Hồi Sư: Hồi nhiều năng lượng hơn.",
+      "tooltip": "Hồi <scaleMana>{{ selfmanaactual }} Năng Lượng</scaleMana> cho Tướng của bạn và <scaleMana>{{ allymanaactual }} Năng Lượng tối đa</scaleMana> cho đồng minh xung quanh.<br /><br />",
       "maxrank": 1,
       "cooldown": [
         135
@@ -1836,10 +1836,10 @@
       "effect": [
         null,
         [
-          40
+          0
         ],
         [
-          40
+          0
         ],
         [
           0
@@ -1868,8 +1868,8 @@
       ],
       "effectBurn": [
         null,
-        "40",
-        "40",
+        "0",
+        "0",
         "0",
         "0",
         "0",
