@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T18:43:03.244Z",
+  "generatedAt": "2026-09-12T21:24:37.513Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,7 +14,7 @@
   "summary": {
     "live": 1,
     "upcoming": 10,
-    "completed": 206,
+    "completed": 207,
     "total": 219
   },
   "leagues": [
@@ -9603,7 +9603,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -10411,56 +10411,6 @@
       "tournamentId": null
     },
     {
-      "id": "107213827295848783:2026-09-12T09:00:00Z:MVKA-9G",
-      "riotEventId": null,
-      "matchId": "116952475624364041",
-      "startTime": "2026-09-12T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Groups",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon MVKE Academy",
-          "code": "MVKA",
-          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "Saigon 9Gaming Esports",
-          "code": "9G",
-          "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "107213827295848783:2026-09-12T12:00:00Z:SGW-SCBC",
       "riotEventId": null,
       "matchId": "116952475624364029",
@@ -10515,7 +10465,7 @@
       "riotEventId": null,
       "matchId": "115548681803406315",
       "startTime": "2026-09-12T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10537,10 +10487,10 @@
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
           "slug": null,
           "wins": 2,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10549,10 +10499,10 @@
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -10561,11 +10511,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-12T20:00:00Z:C9-SR",
+      "id": "98767991299243165:2026-09-12T20:00:00Z:SR-C9",
       "riotEventId": null,
       "matchId": "115565004607949375",
       "startTime": "2026-09-12T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10582,9 +10532,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -10595,11 +10545,11 @@
         },
         {
           "id": null,
-          "name": "Shopify Rebellion",
-          "code": "SR",
-          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -10853,6 +10803,56 @@
           "outcome": null,
           "record": {
             "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991302996019:2026-09-18T15:00:00Z:MKOI-NAVI",
+      "riotEventId": null,
+      "matchId": "115548681803406321",
+      "startTime": "2026-09-18T15:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991302996019",
+        "name": "LEC",
+        "slug": "lec",
+        "officialSlug": "lec",
+        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 3
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Movistar KOI",
+          "code": "MKOI",
+          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Natus Vincere",
+          "code": "NAVI",
+          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
             "losses": 0
           }
         }
