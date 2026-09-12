@@ -5,16 +5,28 @@ on:
     branches: [main]
     paths:
       - 'server/esports-match-community-fallback.js'
+      - 'server/esports-match-community-multigame.js'
+      - 'server/esports-match-gol-fallback.js'
       - 'server/esports-match-community-overlay.js'
       - 'server/esports-match-bootstrap.js'
       - 'scripts/smoke-live-match-community.js'
+      - 'scripts/smoke-live-match-multigame.js'
+      - 'scripts/smoke-live-match-gol.js'
+      - 'scripts/probe-gol-current.js'
+      - 'scripts/probe-oracle-tail.js'
       - '.github/workflows/live-community-smoke.yml'
   pull_request:
     paths:
       - 'server/esports-match-community-fallback.js'
+      - 'server/esports-match-community-multigame.js'
+      - 'server/esports-match-gol-fallback.js'
       - 'server/esports-match-community-overlay.js'
       - 'server/esports-match-bootstrap.js'
       - 'scripts/smoke-live-match-community.js'
+      - 'scripts/smoke-live-match-multigame.js'
+      - 'scripts/smoke-live-match-gol.js'
+      - 'scripts/probe-gol-current.js'
+      - 'scripts/probe-oracle-tail.js'
       - '.github/workflows/live-community-smoke.yml'
   workflow_dispatch:
 
@@ -33,8 +45,21 @@ jobs:
       - name: Syntax check
         run: |
           node --check server/esports-match-community-fallback.js
+          node --check server/esports-match-community-multigame.js
+          node --check server/esports-match-gol-fallback.js
           node --check server/esports-match-community-overlay.js
           node --check server/esports-match-bootstrap.js
           node --check scripts/smoke-live-match-community.js
+          node --check scripts/smoke-live-match-multigame.js
+          node --check scripts/smoke-live-match-gol.js
+          node --check scripts/probe-gol-current.js
+          node --check scripts/probe-oracle-tail.js
       - name: Ban, objective and score regression
-        run: node scripts/smoke-live-match-community.js
+        run: |
+          node scripts/smoke-live-match-community.js
+          node scripts/smoke-live-match-multigame.js
+          node scripts/smoke-live-match-gol.js
+      - name: Current LCK GOL Ban coverage probe
+        run: node scripts/probe-gol-current.js
+      - name: Tiny Oracle tail probe
+        run: node scripts/probe-oracle-tail.js
