@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T21:24:37.513Z",
+  "generatedAt": "2026-09-12T23:17:39.289Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 10,
-    "completed": 207,
-    "total": 219
+    "live": 0,
+    "upcoming": 11,
+    "completed": 208,
+    "total": 220
   },
   "leagues": [
     {
@@ -10515,7 +10515,7 @@
       "riotEventId": null,
       "matchId": "115565004607949375",
       "startTime": "2026-09-12T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10537,10 +10537,10 @@
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10549,10 +10549,10 @@
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -10954,6 +10954,56 @@
           "record": {
             "wins": 1,
             "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-09-19T20:00:00Z:C9-LYON",
+      "riotEventId": null,
+      "matchId": "115565004607949387",
+      "startTime": "2026-09-19T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
           }
         }
       ],
