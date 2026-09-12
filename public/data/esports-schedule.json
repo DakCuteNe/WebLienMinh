@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T13:05:58.997Z",
+  "generatedAt": "2026-09-12T16:17:29.151Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 12,
+    "live": 1,
+    "upcoming": 11,
     "completed": 206,
-    "total": 218
+    "total": 219
   },
   "leagues": [
     {
@@ -9402,7 +9402,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -9440,7 +9440,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9803,7 +9803,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10102,7 +10102,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -10153,7 +10153,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10387,10 +10387,10 @@
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
           "wins": 2,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10399,10 +10399,10 @@
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -10515,7 +10515,7 @@
       "riotEventId": null,
       "matchId": "115548681803406315",
       "startTime": "2026-09-12T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -10549,7 +10549,7 @@
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -10648,6 +10648,56 @@
           "name": "Gen.G Esports",
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-13T09:00:00Z:AL-BLG",
+      "riotEventId": null,
+      "matchId": "117155436343202202",
+      "startTime": "2026-09-13T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Finals",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Anyone's Legend",
+          "code": "AL",
+          "image": "https://static.lolesports.com/teams/1641199582689_.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
