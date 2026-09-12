@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T16:17:29.151Z",
+  "generatedAt": "2026-09-12T18:43:03.244Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,7 +13,7 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 11,
+    "upcoming": 10,
     "completed": 206,
     "total": 219
   },
@@ -10536,7 +10536,7 @@
           "code": "VIT",
           "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -10549,7 +10549,7 @@
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
-          "wins": 1,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
