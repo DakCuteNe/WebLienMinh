@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T23:17:39.289Z",
+  "generatedAt": "2026-09-13T01:23:31.134Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -15,7 +15,7 @@
     "live": 0,
     "upcoming": 11,
     "completed": 208,
-    "total": 220
+    "total": 219
   },
   "leagues": [
     {
@@ -10403,56 +10403,6 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "107213827295848783:2026-09-12T12:00:00Z:SGW-SCBC",
-      "riotEventId": null,
-      "matchId": "116952475624364029",
-      "startTime": "2026-09-12T12:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Groups",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon Warrior",
-          "code": "SGW",
-          "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "TP.HCM SN CyberCore Esports",
-          "code": "SCBC",
-          "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
             "losses": 1
           }
         }
