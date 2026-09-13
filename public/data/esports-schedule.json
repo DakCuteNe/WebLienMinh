@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T12:41:45.001Z",
+  "generatedAt": "2026-09-13T16:57:11.338Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,7 +13,7 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 9,
+    "upcoming": 8,
     "completed": 203,
     "total": 212
   },
@@ -9839,7 +9839,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -10337,10 +10337,10 @@
           "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10349,10 +10349,10 @@
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -10490,7 +10490,7 @@
           "outcome": null,
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10552,7 +10552,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -10640,7 +10640,7 @@
           "outcome": null,
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
