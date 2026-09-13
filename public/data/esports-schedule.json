@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T06:44:27.688Z",
+  "generatedAt": "2026-09-13T12:41:45.001Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 10,
-    "completed": 208,
-    "total": 219
+    "live": 0,
+    "upcoming": 9,
+    "completed": 203,
+    "total": 212
   },
   "leagues": [
     {
@@ -110,356 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-07-30T07:00:00Z:NIP-WBG",
-      "riotEventId": null,
-      "matchId": "116566854547835324",
-      "startTime": "2026-07-30T07:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Shenzhen NINJAS IN PYJAMAS",
-          "code": "NIP",
-          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "WeiboGaming",
-          "code": "WBG",
-          "image": "https://static.lolesports.com/teams/1641202879910_3.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-07-30T08:00:00Z:BFX-DNS",
-      "riotEventId": null,
-      "matchId": "115548147900684657",
-      "startTime": "2026-07-30T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 10",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "BNK FEARX",
-          "code": "BFX",
-          "image": "https://static.lolesports.com/teams/1734691810721_BFXfullcolorfordarkbg.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "DN SOOPers",
-          "code": "DNS",
-          "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 5,
-            "losses": 3
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-07-30T09:00:00Z:EDG-WE",
-      "riotEventId": null,
-      "matchId": "116566854547769608",
-      "startTime": "2026-07-30T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "EDWARD GAMING",
-          "code": "EDG",
-          "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 12
-          }
-        },
-        {
-          "id": null,
-          "name": "Xi'an Team WE",
-          "code": "WE",
-          "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 7,
-            "losses": 7
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-07-30T09:00:00Z:DFM-SHG",
-      "riotEventId": null,
-      "matchId": "115570814727903845",
-      "startTime": "2026-07-30T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Swiss",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "DetonatioN FocusMe",
-          "code": "DFM",
-          "image": "https://static.lolesports.com/teams/1673415140442_dfm.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Fukuoka SoftBank HAWKS gaming",
-          "code": "SHG",
-          "image": "https://static.lolesports.com/teams/1725885083108_SHG_White_Main.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 3
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-07-30T10:00:00Z:HLE-DK",
-      "riotEventId": null,
-      "matchId": "115548147900553453",
-      "startTime": "2026-07-30T10:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 10",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "Dplus KIA",
-          "code": "DK",
-          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-07-30T11:00:00Z:JDG-TT",
-      "riotEventId": null,
-      "matchId": "116566854547769640",
-      "startTime": "2026-07-30T11:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 8,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "THUNDER TALK GAMING",
-          "code": "TT",
-          "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 11
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-07-30T11:30:00Z:GZ-DCG",
-      "riotEventId": null,
-      "matchId": "115570814727903849",
-      "startTime": "2026-07-30T11:30:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Swiss",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Ground Zero Gaming",
-          "code": "GZ",
-          "image": "https://static.lolesports.com/teams/1766395585595_LCP_TEAMLogo_GZ_Full_B.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Relove Deep Cross Gaming",
-          "code": "DCG",
-          "image": "https://static.lolesports.com/teams/1785400397160_LCP_DCG_Full_W1.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 3
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-07-31T07:00:00Z:AL-EDG",
       "riotEventId": null,
@@ -9139,7 +8789,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -9203,7 +8853,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -9303,7 +8953,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -9402,7 +9052,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
@@ -9490,7 +9140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -9502,7 +9152,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
@@ -10090,7 +9740,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -10102,7 +9752,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
@@ -10203,7 +9853,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -10239,7 +9889,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -10340,7 +9990,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -10402,7 +10052,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
@@ -10515,7 +10165,7 @@
       "riotEventId": null,
       "matchId": "117030752644841643",
       "startTime": "2026-09-13T05:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Finals",
       "league": {
@@ -10536,10 +10186,10 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -10550,10 +10200,10 @@
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -10565,7 +10215,7 @@
       "riotEventId": null,
       "matchId": "117155436343202202",
       "startTime": "2026-09-13T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Finals",
       "league": {
@@ -10586,10 +10236,10 @@
           "code": "AL",
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         },
@@ -10599,11 +10249,11 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -10611,7 +10261,7 @@
       "tournamentId": null
     },
     {
-      "id": "107213827295848783:2026-09-13T09:00:00Z:SGW-DINO",
+      "id": "107213827295848783:2026-09-13T09:00:00Z:DINO-SGW",
       "riotEventId": null,
       "matchId": "116952475624364017",
       "startTime": "2026-09-13T09:00:00Z",
@@ -10632,27 +10282,27 @@
       "teams": [
         {
           "id": null,
-          "name": "Saigon Warrior",
-          "code": "SGW",
-          "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
           "name": "Saigon 1TAP DINO",
           "code": "DINO",
           "image": "https://static.lolesports.com/teams/1737108816278_SaigonDino-DINOLogo2025.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
+            "losses": 2
+          }
+        },
+        {
+          "id": null,
+          "name": "Saigon Warrior",
+          "code": "SGW",
+          "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
+          "slug": null,
+          "wins": 2,
+          "outcome": "win",
+          "record": {
+            "wins": 2,
             "losses": 1
           }
         }
@@ -10699,7 +10349,7 @@
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -10853,7 +10503,7 @@
           "outcome": null,
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -11002,7 +10652,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -11053,7 +10703,7 @@
           "outcome": null,
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
