@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-13T07:48:08.979Z",
-  "directoryGeneratedAt": "2026-09-13T07:38:44.073Z",
-  "mediaEnrichedAt": "2026-09-13T07:41:11.115Z",
+  "generatedAt": "2026-09-14T08:15:18.918Z",
+  "directoryGeneratedAt": "2026-09-14T08:05:56.231Z",
+  "mediaEnrichedAt": "2026-09-14T08:08:22.465Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1126,
-      "pct": 65.2
+      "count": 1127,
+      "pct": 65.3
     },
     "realName": {
       "count": 1563,
@@ -32,8 +32,8 @@
       "pct": 0.1
     },
     "social": {
-      "count": 1359,
-      "pct": 78.7
+      "count": 1360,
+      "pct": 78.8
     },
     "teamLogo": {
       "count": 1471,
@@ -835,21 +835,21 @@
     },
     "LAS": {
       "total": 53,
-      "image": 5,
+      "image": 6,
       "realName": 46,
       "country": 46,
       "birthdate": 0,
       "contract": 0,
-      "social": 0,
+      "social": 1,
       "teamLogo": 53,
       "stats": 53,
       "completeCore": 0,
-      "imagePct": 9.4,
+      "imagePct": 11.3,
       "realNamePct": 86.8,
       "countryPct": 86.8,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 0,
+      "socialPct": 1.9,
       "teamLogoPct": 100,
       "statsPct": 100,
       "completeCorePct": 0
@@ -1003,13 +1003,13 @@
     }
   },
   "missingCounts": {
-    "image": 600,
+    "image": 599,
     "realName": 163,
     "country": 162,
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
-    "social": 367,
+    "social": 366,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
@@ -1686,11 +1686,6 @@
       },
       {
         "id": "Hayes",
-        "team": "Gen.G Scholars",
-        "region": "LAS"
-      },
-      {
-        "id": "Hypnos",
         "team": "Gen.G Scholars",
         "region": "LAS"
       },
@@ -31898,11 +31893,6 @@
       },
       {
         "id": "Hayes",
-        "team": "Gen.G Scholars",
-        "region": "LAS"
-      },
-      {
-        "id": "Hypnos",
         "team": "Gen.G Scholars",
         "region": "LAS"
       },
