@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T16:56:09.121Z",
+  "generatedAt": "2026-09-14T20:55:04.631Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 8,
-    "completed": 197,
-    "total": 205
+    "completed": 196,
+    "total": 204
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-07-31T17:15:00Z:MKOI-SHFT",
-      "riotEventId": null,
-      "matchId": "115548681803406215",
-      "startTime": "2026-07-31T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Movistar KOI",
-          "code": "MKOI",
-          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 5
-          }
-        },
-        {
-          "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 8
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-08-01T07:00:00Z:TT-AL",
       "riotEventId": null,
