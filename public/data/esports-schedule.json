@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T10:57:13.091Z",
+  "generatedAt": "2026-09-14T16:56:09.121Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 8,
-    "completed": 199,
-    "total": 207
+    "completed": 197,
+    "total": 205
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "113476371197627891:2026-07-31T11:30:00Z:CFO-GAM",
-      "riotEventId": null,
-      "matchId": "115570814727903841",
-      "startTime": "2026-07-31T11:30:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Swiss",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "GAM Esports",
-          "code": "GAM",
-          "image": "https://static.lolesports.com/teams/1643263093448_GAMyellow.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-07-31T15:00:00Z:TH-VIT",
-      "riotEventId": null,
-      "matchId": "115548681803406115",
-      "startTime": "2026-07-31T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 7
-          }
-        },
-        {
-          "id": null,
-          "name": "Team Vitality",
-          "code": "VIT",
-          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 7,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-07-31T17:15:00Z:MKOI-SHFT",
       "riotEventId": null,
