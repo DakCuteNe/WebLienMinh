@@ -20,6 +20,7 @@ const COPY = {
     draftWaiting: 'Pick sẽ xuất hiện khi feed draft được Riot công bố.', picks: 'PICK', bans: 'BAN', game: 'Ván',
     series: 'Tỉ số BO', kills: 'Mạng', gold: 'Vàng', towers: 'Trụ', dragons: 'Rồng', barons: 'Baron',
     objectives: 'MỤC TIÊU', inhibitors: 'Nhà lính', goldLead: 'Chênh vàng', dragonsTaken: 'Rồng đã ăn', noDragons: 'Chưa ăn rồng',
+    voidGrubs: 'Sâu Hư Không', heralds: 'Sứ Giả', elders: 'Rồng Ngàn Tuổi', atakhans: 'Atakhan', dragonTypesUnknown: 'Chưa có loại Rồng từ feed',
     live: 'ĐANG LIVE', upcoming: 'SẮP DIỄN RA', finished: 'ĐÃ KẾT THÚC', source: 'Live • LoL Esports',
     noFeed: 'Feed chi tiết chưa có cho ván này; tỉ số series vẫn tiếp tục được cập nhật.',
     viewing: 'Đang xem', currentLive: 'đang live', feedAt: 'Feed', syncedAt: 'Đồng bộ', followLive: 'Theo ván đang live'
@@ -30,6 +31,7 @@ const COPY = {
     draftWaiting: 'Picks will appear when Riot publishes the draft feed.', picks: 'PICKS', bans: 'BANS', game: 'Game',
     series: 'Series', kills: 'Kills', gold: 'Gold', towers: 'Towers', dragons: 'Dragons', barons: 'Barons',
     objectives: 'OBJECTIVES', inhibitors: 'Inhibitors', goldLead: 'Gold diff', dragonsTaken: 'Dragons taken', noDragons: 'No dragons yet',
+    voidGrubs: 'Void Grubs', heralds: 'Rift Herald', elders: 'Elder Dragons', atakhans: 'Atakhan', dragonTypesUnknown: 'Dragon types unavailable from feed',
     live: 'LIVE NOW', upcoming: 'UPCOMING', finished: 'FINISHED', source: 'Live • LoL Esports',
     noFeed: 'Detailed feed is not available for this game yet; series score will still keep updating.',
     viewing: 'Viewing', currentLive: 'live now', feedAt: 'Feed', syncedAt: 'Synced', followLive: 'Follow live game'
@@ -54,6 +56,7 @@ const lastPoll = new WeakMap();
 const lang = () => getLanguage() === 'en' ? 'en' : 'vi';
 const c = () => COPY[lang()];
 const locale = () => lang() === 'vi' ? 'vi-VN' : 'en-US';
+const championKey = value => String(value ?? '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
 function stateIsLive(value) {
   const state = String(value || '').toLowerCase();
@@ -69,14 +72,14 @@ function ensureCss() {
   if (!document.querySelector('link[data-live-match-center]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/match-live.css?v=3.2.0';
+    link.href = '/match-live.css?v=3.30.0';
     link.dataset.liveMatchCenter = 'true';
     document.head.appendChild(link);
   }
   if (!document.querySelector('link[data-live-objectives]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/live-objectives.css?v=1.0.0';
+    link.href = '/live-objectives.css?v=1.1.0';
     link.dataset.liveObjectives = 'true';
     document.head.appendChild(link);
   }
@@ -85,7 +88,16 @@ function ensureCss() {
 async function championMap() {
   if (!championPromise) championPromise = fetch('/api/champions', { cache: 'force-cache' })
     .then(response => response.ok ? response.json() : Promise.reject(new Error(`champions ${response.status}`)))
-    .then(body => new Map((body.champions || []).map(champion => [Number(champion.key), champion])))
+    .then(body => {
+      const map = new Map();
+      for (const champion of body.champions || []) {
+        for (const key of [champion?.key, champion?.id, champion?.name]) {
+          const normalized = championKey(key);
+          if (normalized) map.set(normalized, champion);
+        }
+      }
+      return map;
+    })
     .catch(() => new Map());
   return championPromise;
 }
@@ -137,6 +149,7 @@ function officialUrl(slug) {
 function queryFor(card, detail = false) {
   const [leagueId, leagueSlug] = leagueInfo(card);
   const params = new URLSearchParams({
+    eventId: card.dataset.eventId || '', matchId: card.dataset.matchId || '',
     leagueId: leagueId || '', leagueSlug: leagueSlug || '', startTime: card.dataset.start || '',
     teamA: teamCode(card, 'left'), teamB: teamCode(card, 'right'),
     state: card.classList.contains('is-live') ? 'inprogress' : card.classList.contains('is-completed') ? 'completed' : 'unstarted',
@@ -201,52 +214,72 @@ function applySeries(card, payload) {
   }
 }
 
+function displayValue(value) {
+  return value == null ? '—' : String(value);
+}
+
 function statCell(label, value) {
-  return `<div><small>${esc(label)}</small><b>${esc(String(value ?? 0))}</b></div>`;
+  return `<div><small>${esc(label)}</small><b>${esc(displayValue(value))}</b></div>`;
 }
 
 function compactGold(value) {
-  const gold = Number(value || 0);
+  if (value == null) return null;
+  const gold = Number(value);
+  if (!Number.isFinite(gold)) return null;
   return Math.abs(gold) >= 1000 ? `${(gold / 1000).toFixed(1)}k` : String(gold);
 }
 
 function teamStats(stats = {}) {
-  const gold = Number(stats.gold || 0);
   return `<div class="live-stat-row">
-    ${statCell(c().kills, stats.kills)}${statCell(c().gold, compactGold(gold))}
+    ${statCell(c().kills, stats.kills)}${statCell(c().gold, compactGold(stats.gold))}
     ${statCell(c().towers, stats.towers)}${statCell(c().dragons, stats.dragons)}${statCell(c().barons, stats.barons)}
   </div>`;
 }
 
 function dragonBadge(value) {
-  const key = String(value || '').toLowerCase().replace(/[^a-z]/g, '');
+  const key = String(value || '').toLowerCase().replace(/dragon|drake/g, '').replace(/[^a-z]/g, '');
   const dragon = DRAGONS[key] || { icon: '🐲', vi: String(value || '?'), en: String(value || '?') };
   const label = dragon[lang()] || dragon.en;
   return `<span class="live-dragon-badge dragon-${esc(key || 'unknown')}" title="${esc(label)}"><i>${dragon.icon}</i>${esc(label)}</span>`;
 }
 
 function objectivePill(icon, label, value) {
-  return `<div class="live-objective-pill"><span>${icon}</span><div><small>${esc(label)}</small><b>${esc(String(value ?? 0))}</b></div></div>`;
+  return `<div class="live-objective-pill"><span>${icon}</span><div><small>${esc(label)}</small><b>${esc(displayValue(value))}</b></div></div>`;
 }
 
 function objectiveDetails(stats = {}, opponentStats = {}) {
-  const dragonTypes = Array.isArray(stats.dragonTypes) ? stats.dragonTypes : [];
-  const goldDiff = Number(stats.gold || 0) - Number(opponentStats?.gold || 0);
-  const lead = goldDiff === 0 ? '0' : `${goldDiff > 0 ? '+' : '−'}${compactGold(Math.abs(goldDiff))}`;
+  const dragonTypes = Array.isArray(stats.dragonTypes) ? stats.dragonTypes : null;
+  const ownGold = stats.gold == null ? null : Number(stats.gold);
+  const otherGold = opponentStats?.gold == null ? null : Number(opponentStats.gold);
+  const goldKnown = Number.isFinite(ownGold) && Number.isFinite(otherGold);
+  const goldDiff = goldKnown ? ownGold - otherGold : null;
+  const lead = goldDiff == null ? '—' : goldDiff === 0 ? '0' : `${goldDiff > 0 ? '+' : '−'}${compactGold(Math.abs(goldDiff))}`;
+  const dragonCount = stats.dragons ?? (dragonTypes ? dragonTypes.length : null);
+  const dragonList = dragonTypes?.length
+    ? dragonTypes.map(dragonBadge).join('')
+    : dragonCount === 0
+      ? `<span class="live-objective-empty">${esc(c().noDragons)}</span>`
+      : `<span class="live-objective-empty">${esc(c().dragonTypesUnknown)}</span>`;
   return `<div class="live-objective-detail">
     <div class="live-objective-head"><span>${esc(c().objectives)}</span><b class="${goldDiff > 0 ? 'ahead' : goldDiff < 0 ? 'behind' : ''}">${esc(c().goldLead)} ${esc(lead)}</b></div>
     <div class="live-objective-pills">
       ${objectivePill('🗼', c().towers, stats.towers)}
-      ${objectivePill('👑', c().barons, stats.barons)}
       ${objectivePill('◆', c().inhibitors, stats.inhibitors)}
+      ${objectivePill('🐲', c().dragons, dragonCount)}
+      ${objectivePill('🐉', c().elders, stats.elders)}
+      ${objectivePill('🟣', c().voidGrubs, stats.voidGrubs)}
+      ${objectivePill('👁', c().heralds, stats.riftHeralds)}
+      ${objectivePill('👑', c().barons, stats.barons)}
+      ${objectivePill('⚜', c().atakhans, stats.atakhans)}
     </div>
-    <div class="live-dragon-sequence"><small>🐉 ${esc(c().dragonsTaken)} <b>${esc(String(stats.dragons ?? dragonTypes.length ?? 0))}</b></small><div>${dragonTypes.length ? dragonTypes.map(dragonBadge).join('') : `<span class="live-objective-empty">${esc(c().noDragons)}</span>`}</div></div>
+    <div class="live-dragon-sequence"><small>🐉 ${esc(c().dragonsTaken)} <b>${esc(displayValue(dragonCount))}</b></small><div>${dragonList}</div></div>
   </div>`;
 }
 
 function championChip(row, map, pick = true) {
-  const champion = map.get(Number(row?.championId || row));
-  const name = champion?.name || `#${row?.championId || row || '?'}`;
+  const ref = row?.championId ?? row;
+  const champion = map.get(championKey(ref));
+  const name = champion?.name || (ref != null ? String(ref) : '?');
   const player = pick && row?.summonerName ? `<small>${esc(row.summonerName)}</small>` : '';
   return `<div class="live-champion-chip ${pick ? 'is-pick' : 'is-ban'}">
     ${champion?.image ? `<img src="${esc(champion.image)}" alt="${esc(name)}" loading="lazy">` : '<span>?</span>'}
