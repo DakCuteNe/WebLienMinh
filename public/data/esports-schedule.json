@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T11:24:56.642Z",
+  "generatedAt": "2026-09-16T15:31:14.097Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 10,
-    "completed": 183,
-    "total": 193
+    "completed": 182,
+    "total": 192
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-02T15:00:00Z:G2-SK",
-      "riotEventId": null,
-      "matchId": "115548681803406263",
-      "startTime": "2026-08-02T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "SK Gaming",
-          "code": "SK",
-          "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-02T17:15:00Z:MKOI-FNC",
       "riotEventId": null,
