@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T22:10:06.576Z",
+  "generatedAt": "2026-09-16T00:46:05.000Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 8,
-    "completed": 186,
-    "total": 194
+    "completed": 185,
+    "total": 193
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-08-01T23:00:00Z:DSG-FLY",
-      "riotEventId": null,
-      "matchId": "115564797163886783",
-      "startTime": "2026-08-01T23:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 2",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Disguised",
-          "code": "DSG",
-          "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-08-02T07:00:00Z:TT-WE",
       "riotEventId": null,
