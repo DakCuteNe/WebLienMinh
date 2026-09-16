@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-16T13:27:52.379Z",
+  "generatedAt": "2026-09-16T18:09:55.330Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "Fan’s Guide to the LCS Championship",
+      "description": "Esports 2026-09-16T17:00:00.000Z Fan’s Guide to the LCS Championship Everything you need to know about the LCS Championship Driven by Kia",
+      "url": "https://lolesports.com/en-us/news/fans-guide-to-the-lcs-championship",
+      "category": "League News",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-09-16T17:00:00.000Z",
+      "type": "event"
+    },
     {
       "title": "League of Legends x Chi Cha San Chen",
       "description": "Announcements 2026-09-15T17:00:00.000Z League of Legends x Chi Cha San Chen League of Legends music, including HEARTSTEEL, is coming to a Chi Cha near you!",
@@ -67,11 +76,11 @@
     },
     {
       "title": "League of Legends Patch 26.17 Notes",
-      "description": "Game Updates 2026-08-25T18:00:00.000Z League of Legends Patch 26.17 Notes Arenas, Bridges, Summoner’s Rifts new and old… change comes for us all.",
+      "description": "Patch Notes chính thức từ Riot Games.",
       "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-17-notes",
       "category": "Game Updates",
       "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-08-25T18:00:00.000Z",
+      "publishedAt": null,
       "type": "patch"
     },
     {
