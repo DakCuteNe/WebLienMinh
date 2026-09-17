@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T00:28:42.921Z",
+  "generatedAt": "2026-09-17T10:23:39.761Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 10,
-    "completed": 179,
+    "upcoming": 9,
+    "completed": 180,
     "total": 189
   },
   "leagues": [
@@ -9065,7 +9065,7 @@
       "riotEventId": null,
       "matchId": "116957100120526824",
       "startTime": "2026-09-17T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Regional Qualifier",
       "league": {
@@ -9099,7 +9099,7 @@
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
