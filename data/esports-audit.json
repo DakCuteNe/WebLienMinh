@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-16T08:04:07.725Z",
-  "directoryGeneratedAt": "2026-09-16T07:53:47.646Z",
-  "mediaEnrichedAt": "2026-09-16T07:56:25.532Z",
+  "generatedAt": "2026-09-17T08:08:04.177Z",
+  "directoryGeneratedAt": "2026-09-17T07:58:16.433Z",
+  "mediaEnrichedAt": "2026-09-17T08:00:44.938Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1127,
-      "pct": 65.3
+      "count": 1126,
+      "pct": 65.2
     },
     "realName": {
       "count": 1563,
@@ -583,7 +583,7 @@
     },
     "LFL": {
       "total": 102,
-      "image": 68,
+      "image": 67,
       "realName": 101,
       "country": 101,
       "birthdate": 0,
@@ -592,7 +592,7 @@
       "teamLogo": 87,
       "stats": 102,
       "completeCore": 0,
-      "imagePct": 66.7,
+      "imagePct": 65.7,
       "realNamePct": 99,
       "countryPct": 99,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 599,
+    "image": 600,
     "realName": 163,
     "country": 162,
     "birthdate": 1724,
@@ -3706,6 +3706,11 @@
       },
       {
         "id": "Alaric",
+        "team": "Karmine Corp Blue Stars",
+        "region": "LFL"
+      },
+      {
+        "id": "Koala",
         "team": "Karmine Corp Blue Stars",
         "region": "LFL"
       },
