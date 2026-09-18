@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T11:06:47.147Z",
+  "generatedAt": "2026-09-18T14:58:39.042Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
+    "live": 1,
     "upcoming": 8,
     "completed": 179,
-    "total": 187
+    "total": 188
   },
   "leagues": [
     {
@@ -9037,10 +9037,10 @@
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9049,10 +9049,10 @@
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -9065,7 +9065,7 @@
       "riotEventId": null,
       "matchId": "115548681803406321",
       "startTime": "2026-09-18T15:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9148,6 +9148,56 @@
           "name": "Shopify Rebellion",
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991314006698:2026-09-19T09:00:00Z:JDG-IG",
+      "riotEventId": null,
+      "matchId": "116957100120526836",
+      "startTime": "2026-09-19T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Regional Qualifier",
+      "league": {
+        "id": "98767991314006698",
+        "name": "LPL",
+        "slug": "lpl",
+        "officialSlug": "lpl",
+        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 2
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Beijing JDG Esports",
+          "code": "JDG",
+          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Invictus Gaming",
+          "code": "IG",
+          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
