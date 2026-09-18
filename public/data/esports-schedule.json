@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T14:58:39.042Z",
+  "generatedAt": "2026-09-18T18:22:21.490Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -9086,7 +9086,7 @@
           "code": "MKOI",
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -9099,7 +9099,7 @@
           "code": "NAVI",
           "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -9111,7 +9111,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-18T20:00:00Z:SEN-SR",
+      "id": "98767991299243165:2026-09-18T20:00:00Z:SR-SEN",
       "riotEventId": null,
       "matchId": "115565004607949399",
       "startTime": "2026-09-18T20:00:00Z",
@@ -9132,9 +9132,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Sentinels",
-          "code": "SEN",
-          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -9145,9 +9145,9 @@
         },
         {
           "id": null,
-          "name": "Shopify Rebellion",
-          "code": "SR",
-          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "name": "Sentinels",
+          "code": "SEN",
+          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
