@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T19:14:03.479Z",
+  "generatedAt": "2026-09-18T11:06:47.147Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 9,
-    "completed": 178,
+    "upcoming": 8,
+    "completed": 179,
     "total": 187
   },
   "leagues": [
@@ -9015,7 +9015,7 @@
       "riotEventId": null,
       "matchId": "116957100120526830",
       "startTime": "2026-09-18T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Regional Qualifier",
       "league": {
@@ -9036,7 +9036,7 @@
           "code": "WE",
           "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -9049,7 +9049,7 @@
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
