@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T11:07:31.385Z",
+  "generatedAt": "2026-09-18T16:20:25.806Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
     {
@@ -63,15 +63,6 @@
       "category": "League News",
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-09-01T17:00:00.000Z",
-      "type": "news"
-    },
-    {
-      "title": "/dev: The Council",
-      "description": "Dev 2026-08-26T15:00:00.000Z /dev: The Council How you can shape what’s next for League Classic.",
-      "url": "https://www.leagueoflegends.com/en-us/news/dev/dev-the-council",
-      "category": "Dev",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-08-26T15:00:00.000Z",
       "type": "news"
     },
     {
