@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T01:33:16.504Z",
+  "generatedAt": "2026-09-19T11:31:18.278Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 8,
-    "completed": 181,
-    "total": 189
+    "upcoming": 7,
+    "completed": 178,
+    "total": 185
   },
   "leagues": [
     {
@@ -110,206 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991310872058:2026-08-05T08:00:00Z:NS-BRO",
-      "riotEventId": null,
-      "matchId": "115548147900684641",
-      "startTime": "2026-08-05T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 11",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "NONGSHIM RED FORCE",
-          "code": "NS",
-          "image": "https://static.lolesports.com/teams/NSFullonDark.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 5,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "HANJIN BRION",
-          "code": "BRO",
-          "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-05T09:00:00Z:LGD-JDG",
-      "riotEventId": null,
-      "matchId": "116566854547769632",
-      "startTime": "2026-08-05T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "LGD GAMING",
-          "code": "LGD",
-          "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 6,
-            "losses": 8
-          }
-        },
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 8,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-05T10:00:00Z:GEN-HLE",
-      "riotEventId": null,
-      "matchId": "115548147900553445",
-      "startTime": "2026-08-05T10:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 11",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Gen.G Esports",
-          "code": "GEN",
-          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-05T11:00:00Z:TES-EDG",
-      "riotEventId": null,
-      "matchId": "116566854547769588",
-      "startTime": "2026-08-05T11:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 9,
-            "losses": 5
-          }
-        },
-        {
-          "id": null,
-          "name": "EDWARD GAMING",
-          "code": "EDG",
-          "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 12
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-08-06T07:00:00Z:LGD-TT",
       "riotEventId": null,
@@ -9165,7 +8965,7 @@
       "riotEventId": null,
       "matchId": "116957100120526836",
       "startTime": "2026-09-19T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Regional Qualifier",
       "league": {
@@ -9199,7 +8999,7 @@
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -9211,7 +9011,7 @@
       "tournamentId": null
     },
     {
-      "id": "107213827295848783:2026-09-19T09:00:00Z:MVKA-DINO",
+      "id": "107213827295848783:2026-09-19T09:00:00Z:DINO-MVKA",
       "riotEventId": null,
       "matchId": "116952475624364021",
       "startTime": "2026-09-19T09:00:00Z",
@@ -9232,28 +9032,28 @@
       "teams": [
         {
           "id": null,
-          "name": "Saigon MVKE Academy",
-          "code": "MVKA",
-          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
           "name": "Saigon 1TAP DINO",
           "code": "DINO",
           "image": "https://static.lolesports.com/teams/1737108816278_SaigonDino-DINOLogo2025.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
             "losses": 2
+          }
+        },
+        {
+          "id": null,
+          "name": "Saigon MVKE Academy",
+          "code": "MVKA",
+          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 1
           }
         }
       ],
