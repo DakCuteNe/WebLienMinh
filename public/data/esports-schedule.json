@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T17:57:58.613Z",
+  "generatedAt": "2026-09-19T20:33:51.508Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 6,
+    "live": 1,
+    "upcoming": 4,
     "completed": 179,
     "total": 186
   },
@@ -9161,11 +9161,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-19T20:00:00Z:C9-LYON",
+      "id": "98767991299243165:2026-09-19T20:00:00Z:LYON-C9",
       "riotEventId": null,
       "matchId": "115565004607949387",
       "startTime": "2026-09-19T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9182,19 +9182,6 @@
       "teams": [
         {
           "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
           "name": "LYON",
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
@@ -9203,6 +9190,19 @@
           "outcome": null,
           "record": {
             "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
             "losses": 0
           }
         }
