@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T11:31:18.278Z",
+  "generatedAt": "2026-09-19T14:45:24.246Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -8089,7 +8089,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         },
@@ -8103,7 +8103,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -8153,7 +8153,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -8339,7 +8339,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -8353,7 +8353,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -8402,7 +8402,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
@@ -8640,7 +8640,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -8689,7 +8689,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -8702,7 +8702,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
@@ -8802,7 +8802,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         }
@@ -8853,7 +8853,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -8986,11 +8986,11 @@
           "code": "JDG",
           "image": "https://static.lolesports.com/teams/1627457924722_29.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -8999,10 +8999,10 @@
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         }
@@ -9037,10 +9037,10 @@
           "image": "https://static.lolesports.com/teams/1737108816278_SaigonDino-DINOLogo2025.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -9049,10 +9049,10 @@
           "code": "MVKA",
           "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -9086,11 +9086,11 @@
           "code": "9G",
           "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -9099,10 +9099,10 @@
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
@@ -9239,7 +9239,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -9290,7 +9290,7 @@
           "outcome": null,
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -9303,7 +9303,7 @@
           "outcome": null,
           "record": {
             "wins": 0,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
