@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T20:33:51.508Z",
+  "generatedAt": "2026-09-19T22:28:32.937Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -15,7 +15,7 @@
     "live": 1,
     "upcoming": 4,
     "completed": 179,
-    "total": 186
+    "total": 185
   },
   "leagues": [
     {
@@ -9011,56 +9011,6 @@
       "tournamentId": null
     },
     {
-      "id": "107213827295848783:2026-09-19T09:00:00Z:DINO-MVKA",
-      "riotEventId": null,
-      "matchId": "116952475624364021",
-      "startTime": "2026-09-19T09:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Groups",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon 1TAP DINO",
-          "code": "DINO",
-          "image": "https://static.lolesports.com/teams/1737108816278_SaigonDino-DINOLogo2025.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Saigon MVKE Academy",
-          "code": "MVKA",
-          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "107213827295848783:2026-09-19T12:00:00Z:9G-SCBC",
       "riotEventId": null,
       "matchId": "116952475624364025",
@@ -9186,7 +9136,7 @@
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
@@ -9199,7 +9149,7 @@
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
