@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T23:33:23.254Z",
+  "generatedAt": "2026-09-19T01:33:16.504Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 8,
-    "completed": 180,
+    "completed": 181,
     "total": 189
   },
   "leagues": [
@@ -8689,7 +8689,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         },
@@ -8953,7 +8953,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -9115,7 +9115,7 @@
       "riotEventId": null,
       "matchId": "115565004607949399",
       "startTime": "2026-09-18T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9136,10 +9136,10 @@
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         },
@@ -9150,10 +9150,10 @@
           "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
           "slug": null,
           "wins": 2,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
