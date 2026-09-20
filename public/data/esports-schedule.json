@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T22:28:32.937Z",
+  "generatedAt": "2026-09-20T00:21:27.092Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 4,
-    "completed": 179,
-    "total": 185
+    "completed": 180,
+    "total": 184
   },
   "leagues": [
     {
@@ -8502,7 +8502,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         }
@@ -9011,56 +9011,6 @@
       "tournamentId": null
     },
     {
-      "id": "107213827295848783:2026-09-19T12:00:00Z:9G-SCBC",
-      "riotEventId": null,
-      "matchId": "116952475624364025",
-      "startTime": "2026-09-19T12:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Groups",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon 9Gaming Esports",
-          "code": "9G",
-          "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "TP.HCM SN CyberCore Esports",
-          "code": "SCBC",
-          "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
       "id": "98767991302996019:2026-09-19T15:00:00Z:KC-MKOI",
       "riotEventId": null,
       "matchId": "115548681803406327",
@@ -9115,7 +9065,7 @@
       "riotEventId": null,
       "matchId": "115565004607949387",
       "startTime": "2026-09-19T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -9137,10 +9087,10 @@
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -9149,10 +9099,10 @@
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         }
