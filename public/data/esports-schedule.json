@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T17:39:05.972Z",
+  "generatedAt": "2026-09-20T20:44:46.459Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 2,
-    "completed": 174,
+    "upcoming": 0,
+    "completed": 175,
     "total": 178
   },
   "leagues": [
@@ -7189,7 +7189,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -7552,7 +7552,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
@@ -8153,7 +8153,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -8590,7 +8590,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -8753,7 +8753,7 @@
           "outcome": "win",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -8915,7 +8915,7 @@
       "riotEventId": null,
       "matchId": "115548681803406333",
       "startTime": "2026-09-20T15:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Finals",
       "league": {
@@ -8936,10 +8936,10 @@
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -8950,10 +8950,10 @@
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 3,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -8961,11 +8961,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-09-20T20:00:00Z:FLY-TLAW",
+      "id": "98767991299243165:2026-09-20T20:00:00Z:TLAW-FLY",
       "riotEventId": null,
       "matchId": "115565004607949393",
       "startTime": "2026-09-20T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -8982,19 +8982,6 @@
       "teams": [
         {
           "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
           "name": "Team Liquid Alienware",
           "code": "TLAW",
           "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
@@ -9003,6 +8990,19 @@
           "outcome": null,
           "record": {
             "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "FlyQuest",
+          "code": "FLY",
+          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
             "losses": 0
           }
         }
