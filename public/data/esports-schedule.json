@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T23:11:27.626Z",
+  "generatedAt": "2026-09-21T01:36:25.417Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -15,7 +15,7 @@
     "live": 0,
     "upcoming": 1,
     "completed": 176,
-    "total": 178
+    "total": 177
   },
   "leagues": [
     {
@@ -8804,56 +8804,6 @@
           "record": {
             "wins": 2,
             "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "107213827295848783:2026-09-20T12:00:00Z:9G-DINO",
-      "riotEventId": null,
-      "matchId": "116952475624364013",
-      "startTime": "2026-09-20T12:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Groups",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon 9Gaming Esports",
-          "code": "9G",
-          "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Saigon 1TAP DINO",
-          "code": "DINO",
-          "image": "https://static.lolesports.com/teams/1737108816278_SaigonDino-DINOLogo2025.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 4
           }
         }
       ],
