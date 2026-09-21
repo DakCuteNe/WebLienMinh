@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T14:31:16.848Z",
+  "generatedAt": "2026-09-21T19:43:06.730Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 174,
-    "total": 177
+    "completed": 172,
+    "total": 175
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-07T15:00:00Z:SHFT-GX",
-      "riotEventId": null,
-      "matchId": "115548681803406207",
-      "startTime": "2026-08-07T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 8
-          }
-        },
-        {
-          "id": null,
-          "name": "GIANTX",
-          "code": "GX",
-          "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-07T17:15:00Z:TH-FNC",
-      "riotEventId": null,
-      "matchId": "115548681803406135",
-      "startTime": "2026-08-07T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 7
-          }
-        },
-        {
-          "id": null,
-          "name": "Fnatic",
-          "code": "FNC",
-          "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-08-08T07:00:00Z:WBG-LNG",
       "riotEventId": null,
