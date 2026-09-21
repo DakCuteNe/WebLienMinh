@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T01:36:25.417Z",
+  "generatedAt": "2026-09-21T07:10:08.096Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 176,
-    "total": 177
+    "completed": 175,
+    "total": 176
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-08-07T07:00:00Z:EDG-JDG",
-      "riotEventId": null,
-      "matchId": "116566854547769636",
-      "startTime": "2026-08-07T07:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "EDWARD GAMING",
-          "code": "EDG",
-          "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 12
-          }
-        },
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 8,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991310872058:2026-08-07T08:00:00Z:GEN-KT",
       "riotEventId": null,
