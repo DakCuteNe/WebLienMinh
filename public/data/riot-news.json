@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-09-22T16:52:04.552Z",
+  "generatedAt": "2026-09-22T21:14:07.212Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "WORLDS 2026 VENUE EVENT POLICIES",
+      "description": "Esports 2026-09-22T18:00:00.000Z WORLDS 2026 VENUE EVENT POLICIES Learn More",
+      "url": "https://lolesports.com/en-us/news/worlds-2026-venue-event-policies",
+      "category": "League News",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-09-22T18:00:00.000Z",
+      "type": "event"
+    },
+    {
+      "title": "League of Legends Patch 26.19 Notes",
+      "description": "Game Updates 2026-09-22T18:00:00.000Z League of Legends Patch 26.19 Notes Worlds is right around the corner, more “new” champs join Classic, and Arena’s got fresh Augments!",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-19-notes",
+      "category": "Game Updates",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-09-22T18:00:00.000Z",
+      "type": "patch"
+    },
     {
       "title": "Fan’s Guide to the LCS Championship",
       "description": "Esports 2026-09-16T17:00:00.000Z Fan’s Guide to the LCS Championship Everything you need to know about the LCS Championship Driven by Kia",
@@ -37,15 +55,6 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-09-08T17:00:00.000Z",
       "type": "event"
-    },
-    {
-      "title": "TL;DW: Team Voice, Classic & More Dev Update",
-      "description": "Dev 2026-09-08T15:00:00.000Z TL;DW: Team Voice, Classic & More Dev Update A short rundown of changes from today’s Dev Update.",
-      "url": "https://www.leagueoflegends.com/en-us/news/dev/tldw-team-voice-classic-more-dev-update",
-      "category": "Dev",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-09-08T15:00:00.000Z",
-      "type": "news"
     },
     {
       "title": "League of Legends Patch 26.17 Notes",

@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-09-22T16:52:04.551Z",
+  "generatedAt": "2026-09-22T21:14:07.212Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
+    {
+      "patch": "26.19",
+      "title": "Patch 26.19 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-19-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/42ec56c9308464c0c64034d6bcf691fdb14ad377-1920x1149.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-09-22T18:00:00.000Z",
+      "description": "Worlds is right around the corner, more “new” champs join Classic, and Arena’s got fresh Augments!"
+    },
     {
       "patch": "26.17",
       "title": "League of Legends Patch 26.17 Notes",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/13375a6633f09dee4e4397083ca37fc294592203-1920x1133.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "Tons of fun and fried chicken to be had!"
-    },
-    {
-      "patch": "26.6",
-      "title": "League of Legends Patch 26.6 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-6-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/e77a2205583ecc1e4c17856c64c3c1f2fcec070d-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "It’s time for First Stand and Shyvana’s update!"
     }
   ]
 }
