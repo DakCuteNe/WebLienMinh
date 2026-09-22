@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T13:22:00.318Z",
+  "generatedAt": "2026-09-22T17:44:42.291Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 166,
-    "total": 169
+    "completed": 164,
+    "total": 167
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-08T15:00:00Z:NAVI-SK",
-      "riotEventId": null,
-      "matchId": "115548681803406159",
-      "startTime": "2026-08-08T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Natus Vincere",
-          "code": "NAVI",
-          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "SK Gaming",
-          "code": "SK",
-          "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-08T17:15:00Z:GX-MKOI",
-      "riotEventId": null,
-      "matchId": "115548681803406235",
-      "startTime": "2026-08-08T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "GIANTX",
-          "code": "GX",
-          "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "Movistar KOI",
-          "code": "MKOI",
-          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 4,
-            "losses": 5
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-08-08T20:00:00Z:DSG-C9",
       "riotEventId": null,
