@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T17:44:42.291Z",
+  "generatedAt": "2026-09-22T21:13:50.228Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 164,
-    "total": 167
+    "completed": 163,
+    "total": 166
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-08-08T20:00:00Z:DSG-C9",
-      "riotEventId": null,
-      "matchId": "115564797163886743",
-      "startTime": "2026-08-08T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Disguised",
-          "code": "DSG",
-          "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-08-08T23:00:00Z:SR-SEN",
       "riotEventId": null,
