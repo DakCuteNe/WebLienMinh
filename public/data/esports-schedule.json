@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T23:47:07.874Z",
+  "generatedAt": "2026-09-23T04:38:42.198Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 3,
+    "upcoming": 4,
     "completed": 162,
-    "total": 165
+    "total": 166
   },
   "leagues": [
     {
@@ -8304,6 +8304,56 @@
           "record": {
             "wins": 0,
             "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-09-25T20:00:00Z:SR-FLY",
+      "riotEventId": null,
+      "matchId": "115565004607949411",
+      "startTime": "2026-09-25T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "FlyQuest",
+          "code": "FLY",
+          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 1
           }
         }
       ],
