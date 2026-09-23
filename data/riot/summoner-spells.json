@@ -1,6 +1,6 @@
 {
   "type": "summoner",
-  "version": "16.18.1",
+  "version": "16.19.1",
   "data": {
     "SummonerBarrier": {
       "id": "SummonerBarrier",
@@ -2418,7 +2418,7 @@
       "id": "SummonerSnowURFSnowball_Mark",
       "name": "Đánh Dấu",
       "description": "Ném một quả bóng tuyết theo một đường thẳng vào đối phương. Nếu nó trúng một kẻ địch, chúng bị đánh dấu, cho tầm nhìn chuẩn, và bạn có thể tức tốc bay đến mục tiêu bị đánh dấu.",
-      "tooltip": "Ném 1 quả cầu tuyết đi rất xa, gây {{ tooltipdamagetotal }} sát thương chuẩn lên đơn vị địch đầu tiên trúng phải và cho <span class=\"coloree91d7\">Tầm Nhìn Chuẩn</span> lên mục tiêu. Nếu trúng kẻ địch, kỹ năng này có thể được tái kích hoạt trong vòng {{ e3 }} giây để Lướt đến chỗ mục tiêu trúng đòn, gây thêm {{ tooltipdamagetotal }} sát thương chuẩn. Lướt tới mục tiêu sẽ giảm thời gian hồi chiêu của Đánh Dấu đi {{ e4 }}%.<br /><br /><span class=\"colorFFFF00\">Cầu tuyết Đánh Dấu không bị chặn bởi khiên phép hoặc các hiệu ứng chặn tia đạn.</span>",
+      "tooltip": "Ném 1 quả cầu tuyết đi rất xa, gây {{ tooltipdamagetotal }} sát thương chuẩn lên đơn vị địch đầu tiên trúng phải và cho <span class=\"coloree91d7\">tầm nhìn chuẩn</span> lên mục tiêu. Nếu trúng kẻ địch, kỹ năng này có thể được dùng lại trong vòng {{ e3 }} giây để Lướt đến chỗ mục tiêu bị đánh dấu, gây thêm {{ tooltipdamagetotal }} sát thương chuẩn. Lướt sẽ giảm hồi chiêu Đánh Dấu đi {{ e4 }}%.<br /><br /><span class=\"colorFFFF00\">Cầu tuyết không bị chặn bởi khiên phép hoặc các kỹ năng cản đường đạn.</span>",
       "maxrank": 1,
       "cooldown": [
         80
@@ -2502,7 +2502,7 @@
       "id": "SummonerSnowball",
       "name": "Đánh Dấu",
       "description": "Ném một quả bóng tuyết theo một đường thẳng vào đối phương. Nếu nó trúng một kẻ địch, chúng bị đánh dấu, cho tầm nhìn chuẩn, và bạn có thể tức tốc bay đến mục tiêu bị đánh dấu.",
-      "tooltip": "Ném 1 quả cầu tuyết đi rất xa, gây {{ tooltipdamagetotal }} sát thương chuẩn lên đơn vị địch đầu tiên trúng phải và cho <span class=\"coloree91d7\">Tầm Nhìn Chuẩn</span> lên mục tiêu. Nếu trúng kẻ địch, kỹ năng này có thể được tái kích hoạt trong vòng {{ e3 }} giây để Lướt đến chỗ mục tiêu trúng đòn, gây thêm {{ tooltipdamagetotal }} sát thương chuẩn. Lướt tới mục tiêu sẽ giảm thời gian hồi chiêu của Đánh Dấu đi {{ e4 }}%.<br /><br /><span class=\"colorFFFF00\">Cầu tuyết Đánh Dấu không bị chặn bởi khiên phép hoặc các hiệu ứng chặn tia đạn.</span>",
+      "tooltip": "Ném 1 quả cầu tuyết đi rất xa, gây {{ tooltipdamagetotal }} sát thương chuẩn lên đơn vị địch đầu tiên trúng phải và cho <span class=\"coloree91d7\">tầm nhìn chuẩn</span> lên mục tiêu. Nếu trúng kẻ địch, kỹ năng này có thể được dùng lại trong vòng {{ e3 }} giây để Lướt đến chỗ mục tiêu bị đánh dấu, gây thêm {{ tooltipdamagetotal }} sát thương chuẩn. Lướt sẽ giảm hồi chiêu Đánh Dấu đi {{ e4 }}%.<br /><br /><span class=\"colorFFFF00\">Cầu tuyết không bị chặn bởi khiên phép hoặc các kỹ năng cản đường đạn.</span>",
       "maxrank": 1,
       "cooldown": [
         80

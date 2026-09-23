@@ -1,6 +1,6 @@
 {
   "type": "item",
-  "version": "16.18.1",
+  "version": "16.19.1",
   "basic": {
     "name": "",
     "rune": {
@@ -3921,7 +3921,7 @@
     },
     "2052": {
       "name": "Bánh Quy Poro",
-      "description": "<mainText><stats></stats><br><br><active>Kích Hoạt - Tiêu Thụ:</active> Thiết đãi chú Poro bên cạnh một bữa ăn tuyệt hảo, khiến nó lớn hơn.<br><br><flavorText>Sự kết hợp thơm ngon gồm thịt gà Avarosa và các thảo dược thiên nhiên Freljord - được hái mỗi ngày và bảo quản lạnh ngay - chứa đầy dưỡng chất thiết yếu giúp Poro của bạn luôn vui vẻ và yên bình.<br><br>Toàn bộ số tiền thu được sẽ được quyên góp để bảo tồn môi trường sống cho Poro Đốm đang có nguy cơ tuyệt chủng.</flavorText></mainText>",
+      "description": "<mainText><stats></stats><br><br><active>Kích Hoạt - Tiêu Thụ:</active> Thiết đãi chú Poro bên cạnh một bữa ăn tuyệt hảo, khiến nó lớn hơn.<br><br><flavorText>Sự hòa quyện đậm vị giữa gà Avarosa và thảo mộc Freljord này - được hái mỗi ngày và bảo quản lạnh ngay - chứa đầy dưỡng chất thiết yếu giúp Poro của bạn luôn vui vẻ và bình tĩnh.<br><br>Toàn bộ số tiền thu được sẽ được quyên góp để bảo tồn môi trường sống cho Poro Đốm đang có nguy cơ tuyệt chủng.</flavorText></mainText>",
       "colloq": ";",
       "plaintext": "",
       "stacks": 99,
@@ -12083,16 +12083,14 @@
         "30": false,
         "453": true
       },
-      "stats": {
-        "FlatHPPoolMod": 30
-      },
+      "stats": {},
       "effect": {
         "Effect1Amount": "3"
       }
     },
     "3866": {
       "name": "La Bàn Cổ Ngữ",
-      "description": "<mainText><stats><attention>100</attention> Máu<br><attention>50%</attention> Hồi Máu Cơ Bản<br><attention>50%</attention> Hồi Năng Lượng Cơ Bản<br><attention>5</attention> Vàng mỗi 10 giây</stats><br><br><passive>Nhiệm Vụ Hỗ Trợ</passive><br>Kiếm <keywordMajor>0</keywordMajor> vàng từ trang bị này để chuyển hóa thành <rarityGeneric>Kho Báu Cửu Giới</rarityGeneric>. <br><br><passive>Chia Tiền</passive> (0 giây, tối đa 0 tích trữ)<br>Khi ở gần một tướng đồng minh, gây sát thương lên tướng địch hoặc tiêu diệt lính sẽ cho vàng.<active>Kích Hoạt</active> (3 tích trữ)<br>Đặt một Mắt Xanh <keyword>Vô Hình</keyword> cho tầm nhìn xung quanh.</mainText>",
+      "description": "<mainText><stats><attention>60</attention> Máu<br><attention>75%</attention> Hồi Máu Cơ Bản<br><attention>50%</attention> Hồi Năng Lượng Cơ Bản<br><attention>5</attention> Vàng mỗi 10 giây</stats><br><br><passive>Nhiệm Vụ Hỗ Trợ</passive><br>Kiếm <keywordMajor>0</keywordMajor> vàng từ trang bị này để chuyển hóa thành <rarityGeneric>Kho Báu Cửu Giới</rarityGeneric>. <br><br><passive>Chia Tiền</passive> (0 giây, tối đa 0 tích trữ)<br>Khi ở gần một tướng đồng minh, gây sát thương lên tướng địch hoặc tiêu diệt lính sẽ cho vàng.<active>Kích Hoạt</active> (3 tích trữ)<br>Đặt một Mắt Xanh <keyword>Vô Hình</keyword> cho tầm nhìn xung quanh.</mainText>",
       "colloq": "",
       "plaintext": "",
       "specialRecipe": 3865,
@@ -12127,7 +12125,7 @@
         "453": true
       },
       "stats": {
-        "FlatHPPoolMod": 100
+        "FlatHPPoolMod": 60
       },
       "effect": {
         "Effect1Amount": "5"
@@ -15735,7 +15733,7 @@
         "full": "8001.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 0,
         "w": 48,
         "h": 48
@@ -15777,7 +15775,7 @@
         "full": "8010.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 0,
         "w": 48,
         "h": 48
@@ -15820,7 +15818,7 @@
         "full": "8020.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 0,
         "w": 48,
         "h": 48
@@ -15860,8 +15858,8 @@
         "full": "9168.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 0,
+        "x": 0,
+        "y": 48,
         "w": 48,
         "h": 48
       },
@@ -15890,8 +15888,8 @@
         "full": "9171.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 0,
+        "x": 48,
+        "y": 48,
         "w": 48,
         "h": 48
       },
@@ -15920,7 +15918,7 @@
         "full": "9172.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 48,
         "w": 48,
         "h": 48
@@ -15950,7 +15948,7 @@
         "full": "9173.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 48,
         "w": 48,
         "h": 48
@@ -15980,7 +15978,7 @@
         "full": "9174.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 48,
         "w": 48,
         "h": 48
@@ -16010,7 +16008,7 @@
         "full": "9175.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 48,
         "w": 48,
         "h": 48
@@ -16040,7 +16038,7 @@
         "full": "9176.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 48,
         "w": 48,
         "h": 48
@@ -16070,7 +16068,7 @@
         "full": "9177.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 48,
         "w": 48,
         "h": 48
@@ -16100,7 +16098,7 @@
         "full": "9178.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 48,
         "w": 48,
         "h": 48
@@ -16130,7 +16128,7 @@
         "full": "9179.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 48,
         "w": 48,
         "h": 48
@@ -16160,8 +16158,8 @@
         "full": "9180.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 48,
+        "x": 0,
+        "y": 96,
         "w": 48,
         "h": 48
       },
@@ -16190,8 +16188,8 @@
         "full": "9181.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 48,
+        "x": 48,
+        "y": 96,
         "w": 48,
         "h": 48
       },
@@ -16220,7 +16218,7 @@
         "full": "9183.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16250,7 +16248,7 @@
         "full": "9184.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16280,7 +16278,7 @@
         "full": "9185.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16310,7 +16308,7 @@
         "full": "9187.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16340,7 +16338,7 @@
         "full": "9188.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16370,7 +16368,7 @@
         "full": "9189.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16400,7 +16398,7 @@
         "full": "9190.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16430,7 +16428,7 @@
         "full": "9192.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 96,
         "w": 48,
         "h": 48
@@ -16460,8 +16458,8 @@
         "full": "9193.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 96,
+        "x": 0,
+        "y": 144,
         "w": 48,
         "h": 48
       },
@@ -16491,8 +16489,8 @@
         "full": "9271.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 96,
+        "x": 48,
+        "y": 144,
         "w": 48,
         "h": 48
       },
@@ -16522,7 +16520,7 @@
         "full": "9272.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16553,7 +16551,7 @@
         "full": "9273.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16584,7 +16582,7 @@
         "full": "9274.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16615,7 +16613,7 @@
         "full": "9275.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16646,7 +16644,7 @@
         "full": "9276.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16677,7 +16675,7 @@
         "full": "9277.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16708,7 +16706,7 @@
         "full": "9278.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16739,7 +16737,7 @@
         "full": "9279.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 144,
         "w": 48,
         "h": 48
@@ -16770,8 +16768,8 @@
         "full": "9280.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 144,
+        "x": 0,
+        "y": 192,
         "w": 48,
         "h": 48
       },
@@ -16801,8 +16799,8 @@
         "full": "9281.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 144,
+        "x": 48,
+        "y": 192,
         "w": 48,
         "h": 48
       },
@@ -16832,7 +16830,7 @@
         "full": "9283.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 192,
         "w": 48,
         "h": 48
@@ -16863,7 +16861,7 @@
         "full": "9284.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 192,
         "w": 48,
         "h": 48
@@ -16894,7 +16892,7 @@
         "full": "9285.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 192,
         "w": 48,
         "h": 48
@@ -16925,7 +16923,7 @@
         "full": "9287.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 192,
         "w": 48,
         "h": 48
@@ -16956,7 +16954,7 @@
         "full": "9288.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 192,
         "w": 48,
         "h": 48
@@ -16987,7 +16985,7 @@
         "full": "9289.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 192,
         "w": 48,
         "h": 48
@@ -17018,7 +17016,7 @@
         "full": "9290.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 192,
         "w": 48,
         "h": 48
@@ -17049,7 +17047,7 @@
         "full": "9292.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 192,
         "w": 48,
         "h": 48
@@ -17080,8 +17078,8 @@
         "full": "9293.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 192,
+        "x": 0,
+        "y": 240,
         "w": 48,
         "h": 48
       },
@@ -17110,8 +17108,8 @@
         "full": "9300.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 192,
+        "x": 48,
+        "y": 240,
         "w": 48,
         "h": 48
       },
@@ -17140,7 +17138,7 @@
         "full": "9301.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17170,7 +17168,7 @@
         "full": "9302.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17200,7 +17198,7 @@
         "full": "9303.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17230,7 +17228,7 @@
         "full": "9304.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17260,7 +17258,7 @@
         "full": "9305.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17290,7 +17288,7 @@
         "full": "9306.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17320,7 +17318,7 @@
         "full": "9307.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17350,7 +17348,7 @@
         "full": "9308.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 240,
         "w": 48,
         "h": 48
@@ -17381,8 +17379,8 @@
         "full": "9400.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 240,
+        "x": 0,
+        "y": 288,
         "w": 48,
         "h": 48
       },
@@ -17412,8 +17410,8 @@
         "full": "9401.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 240,
+        "x": 48,
+        "y": 288,
         "w": 48,
         "h": 48
       },
@@ -17443,7 +17441,7 @@
         "full": "9402.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 288,
         "w": 48,
         "h": 48
@@ -17474,7 +17472,7 @@
         "full": "9403.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 288,
         "w": 48,
         "h": 48
@@ -17505,7 +17503,7 @@
         "full": "9404.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 288,
         "w": 48,
         "h": 48
@@ -17536,7 +17534,7 @@
         "full": "9405.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 288,
         "w": 48,
         "h": 48
@@ -17567,7 +17565,7 @@
         "full": "9406.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 288,
         "w": 48,
         "h": 48
@@ -17598,7 +17596,7 @@
         "full": "9407.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 288,
         "w": 48,
         "h": 48
@@ -17629,7 +17627,7 @@
         "full": "9408.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 288,
         "w": 48,
         "h": 48
@@ -18228,7 +18226,7 @@
     },
     "220013": {
       "name": "Bánh Quy Poro",
-      "description": "<mainText><stats></stats><br><br><active>Kích Hoạt - Tiêu Thụ:</active> Thiết đãi chú Poro bên cạnh một bữa ăn tuyệt hảo, khiến nó lớn hơn.<br><br><flavorText>Sự kết hợp thơm ngon gồm thịt gà Avarosa và các thảo dược thiên nhiên Freljord - nay được hoàn thiện với điểm nhấn từ nghệ thuật đường tinh luyện Demacia - chứa những dưỡng chất thiết yếu giúp Poro của bạn luôn rạng rỡ ngời ngời.<br><br>Toàn bộ số tiền thu được sẽ được quyên góp cho Dàn Hợp Xướng Thiếu Niên Cloudfield. Hãy chung tay giúp một đứa trẻ Demacia mua được một cây etwahl ngay hôm nay!</flavorText></mainText>",
+      "description": "<mainText><stats></stats><br><br><active>Kích Hoạt - Tiêu Thụ:</active> Thiết đãi chú Poro bên cạnh một bữa ăn tuyệt hảo, khiến nó lớn hơn.<br><br><flavorText>Sự hòa quyện đậm vị giữa gà Avarosa và thảo mộc Freljord này - nay được hoàn thiện với điểm nhấn từ nghệ thuật đường tinh luyện Demacia - chứa đầy dưỡng chất thiết yếu giúp Poro của bạn luôn rạng rỡ ngời ngời.<br><br>Toàn bộ số tiền thu được sẽ được quyên góp cho Dàn Hợp Xướng Thiếu Niên Cloudfield. Hãy chung tay giúp một đứa trẻ Demacia mua được một cây etwahl ngay hôm nay!</flavorText></mainText>",
       "colloq": "",
       "plaintext": "",
       "stacks": 2,
@@ -28798,6 +28796,7 @@
       "colloq": "",
       "plaintext": "",
       "into": [
+        "773162",
         "773046",
         "773031"
       ],
@@ -29270,6 +29269,7 @@
       "plaintext": "",
       "into": [
         "773114",
+        "773162",
         "773153",
         "773046",
         "773131",
@@ -29597,6 +29597,7 @@
       "colloq": "",
       "plaintext": "",
       "into": [
+        "773161",
         "773140",
         "773064",
         "773026",
@@ -34477,6 +34478,91 @@
         "PercentLifeStealMod": 0.15
       }
     },
+    "773161": {
+      "name": "Nguyệt Kiếm",
+      "description": "<mainText><stats><attention>50</attention> Sức Mạnh Phép Thuật<br><attention>50</attention> Giáp<br><attention>50</attention> Kháng Phép</stats><br><br><jadeUnique>Kháng Hiệu Ứng:</jadeUnique> Giảm thời gian hiệu lực của các trạng thái <status>Choáng, Làm Chậm, Khiêu Khích, Sợ Hãi, Câm Lặng, Mù</status> và <status>Bất Động</status> đi <attention>35%</attention>.</mainText>",
+      "colloq": "",
+      "plaintext": "",
+      "from": [
+        "773191",
+        "771057"
+      ],
+      "image": {
+        "full": "773161.png",
+        "sprite": "item7.png",
+        "group": "item",
+        "x": 48,
+        "y": 384,
+        "w": 48,
+        "h": 48
+      },
+      "gold": {
+        "base": 720,
+        "purchasable": true,
+        "total": 2600,
+        "sell": 1820
+      },
+      "tags": [
+        "SpellBlock",
+        "Armor",
+        "SpellDamage",
+        "Tenacity"
+      ],
+      "maps": {
+        "11": false,
+        "12": false,
+        "22": false,
+        "30": false,
+        "453": true
+      },
+      "stats": {
+        "FlatSpellBlockMod": 50,
+        "FlatMagicDamageMod": 50,
+        "FlatArmorMod": 50
+      },
+      "depth": 3
+    },
+    "773162": {
+      "name": "Áo Choàng và Dao Găm",
+      "description": "<mainText><stats><attention>20%</attention> Tốc Độ Đánh<br><attention>20%</attention> Tỉ Lệ Chí Mạng</stats><br><br><jadeUnique>Kháng Hiệu Ứng:</jadeUnique> Giảm thời gian hiệu lực của các trạng thái <status>Choáng, Làm Chậm, Khiêu Khích, Sợ Hãi, Câm Lặng, Mù</status> và <status>Bất Động</status> đi <attention>35%</attention>.</mainText>",
+      "colloq": "",
+      "plaintext": "",
+      "from": [
+        "771018",
+        "771042"
+      ],
+      "image": {
+        "full": "773162.png",
+        "sprite": "item7.png",
+        "group": "item",
+        "x": 96,
+        "y": 384,
+        "w": 48,
+        "h": 48
+      },
+      "gold": {
+        "base": 200,
+        "purchasable": true,
+        "total": 1330,
+        "sell": 931
+      },
+      "tags": [
+        "CriticalStrike",
+        "AttackSpeed"
+      ],
+      "maps": {
+        "11": false,
+        "12": false,
+        "22": false,
+        "30": false,
+        "453": true
+      },
+      "stats": {
+        "FlatCritChanceMod": 0.2,
+        "PercentAttackSpeedMod": 0.2
+      },
+      "depth": 2
+    },
     "773165": {
       "name": "Quỷ Thư Morello",
       "description": "<mainText><stats><attention>75</attention> Sức Mạnh Phép Thuật<br><attention>12</attention> Hồi Năng Lượng mỗi 5 giây<br><attention>20%</attention> Giảm Hồi Chiêu</stats><br><br><jadeUnique>Hận Thù Của Morello:</jadeUnique> Gây sát thương phép lên tướng địch còn dưới <scaleHealth>40% Máu</scaleHealth> sẽ áp dụng hiệu ứng <status>Vết Thương Sâu</status> trong 4 giây.<br><br><jadeRules>(<status>Vết Thương Sâu</status> giảm 50% hiệu quả hồi máu và hồi phục nhận vào.)</jadeRules></mainText>",
@@ -34491,7 +34577,7 @@
         "full": "773165.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34532,7 +34618,7 @@
         "full": "773172.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34576,7 +34662,7 @@
         "full": "773173.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34617,7 +34703,7 @@
         "full": "773174.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34660,7 +34746,7 @@
         "full": "773178.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34702,7 +34788,7 @@
         "full": "773190.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34743,13 +34829,14 @@
         "771029"
       ],
       "into": [
+        "773161",
         "773157"
       ],
       "image": {
         "full": "773191.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 384,
         "w": 48,
         "h": 48
@@ -34790,8 +34877,8 @@
         "full": "773206.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 384,
-        "y": 384,
+        "x": 0,
+        "y": 432,
         "w": 48,
         "h": 48
       },
@@ -34833,8 +34920,8 @@
         "full": "773207.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 432,
-        "y": 384,
+        "x": 48,
+        "y": 432,
         "w": 48,
         "h": 48
       },
@@ -34879,7 +34966,7 @@
         "full": "773209.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 432,
         "w": 48,
         "h": 48
@@ -34927,7 +35014,7 @@
         "full": "773211.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 432,
         "w": 48,
         "h": 48
@@ -34969,7 +35056,7 @@
         "full": "773222.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 432,
         "w": 48,
         "h": 48
@@ -35007,7 +35094,7 @@
         "full": "773340.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 432,
         "w": 48,
         "h": 48
@@ -35043,7 +35130,7 @@
         "full": "773348.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 432,
         "w": 48,
         "h": 48
@@ -35085,7 +35172,7 @@
         "full": "773504.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 240,
+        "x": 336,
         "y": 432,
         "w": 48,
         "h": 48
@@ -35117,7 +35204,7 @@
     },
     "773512": {
       "name": "Thông Đạo Zz'rot",
-      "description": "<mainText><stats><attention>50</attention> Giáp<br><attention>50</attention> Kháng Phép<br><attention>5</attention> Hồi Máu mỗi 5 giây</stats><br><br><jadeUnique>Tăng Tốc Địa Hình:</jadeUnique> Nhận thêm <speed>30% Tốc Độ Di Chuyển</speed>, tăng dần trong 2 giây khi ở gần trụ hoặc cổng hư không.<jadeUnique>Kích hoạt</jadeUnique> 150 giây<br>Triệu hồi một cổng tại vị trí chỉ định trong 150 giây (Không thể đặt gần trụ). Cứ mỗi 4 giây, cổng sẽ tạo ra một <keywordMajor>Bọ Hư Không</keywordMajor> bất ổn di chuyển xuống đường gần nhất. <br><br>Sau 4 giây, máu của một <keywordMajor>Bọ Hư Không</keywordMajor> sẽ nhanh chóng giảm về 0. <keywordMajor>Bọ Hư Không</keywordMajor> thứ tư và mỗi <keywordMajor>Bọ Hư Không</keywordMajor> sau đó sẽ gây thêm sát thương bằng 50% chống chịu của bạn.</mainText>",
+      "description": "<mainText><stats><attention>50</attention> Giáp<br><attention>50</attention> Kháng Phép<br><attention>5</attention> Hồi Máu mỗi 5 giây</stats><br><br><jadeUnique>Tăng Tốc Địa Hình:</jadeUnique> Khi ở gần trụ hoặc <keywordMajor>Cổng Hư Không</keywordMajor>, nhận tối đa <speed>30% Tốc Độ Di Chuyển</speed> tăng dần trong vòng 2 giây.<jadeUnique>Kích Hoạt</jadeUnique> 150 giây<br>Triệu hồi một <keywordMajor>Cổng Hư Không</keywordMajor> tại vị trí chỉ định trong 150 giây. Cứ mỗi 4 giây, cổng sẽ tạo ra một <keywordMajor>Bọ Hư Không</keywordMajor> bất ổn di chuyển xuống đường gần nhất.</mainText>",
       "colloq": "",
       "plaintext": "",
       "from": [
@@ -35129,7 +35216,7 @@
         "full": "773512.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 288,
+        "x": 384,
         "y": 432,
         "w": 48,
         "h": 48
@@ -35152,22 +35239,12 @@
         "12": true,
         "22": false,
         "30": false,
-        "453": false
+        "453": true
       },
       "stats": {
         "FlatSpellBlockMod": 50,
         "FlatArmorMod": 50,
         "FlatHPRegenMod": 1
-      },
-      "effect": {
-        "Effect1Amount": "30",
-        "Effect2Amount": "4",
-        "Effect3Amount": "50",
-        "Effect4Amount": "20",
-        "Effect5Amount": "150",
-        "Effect6Amount": "150",
-        "Effect7Amount": "0.5",
-        "Effect8Amount": "0.5"
       },
       "depth": 2
     },
@@ -35183,7 +35260,7 @@
         "full": "773513.png",
         "sprite": "item7.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 432,
         "w": 48,
         "h": 48
@@ -35225,10 +35302,10 @@
       ],
       "image": {
         "full": "773514.png",
-        "sprite": "item7.png",
+        "sprite": "item8.png",
         "group": "item",
-        "x": 384,
-        "y": 432,
+        "x": 0,
+        "y": 0,
         "w": 48,
         "h": 48
       },
@@ -35270,10 +35347,10 @@
       ],
       "image": {
         "full": "773515.png",
-        "sprite": "item7.png",
+        "sprite": "item8.png",
         "group": "item",
-        "x": 432,
-        "y": 432,
+        "x": 48,
+        "y": 0,
         "w": 48,
         "h": 48
       },
@@ -35314,7 +35391,7 @@
         "full": "773516.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 0,
+        "x": 96,
         "y": 0,
         "w": 48,
         "h": 48
@@ -35356,7 +35433,7 @@
         "full": "773517.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 48,
+        "x": 144,
         "y": 0,
         "w": 48,
         "h": 48
@@ -35394,7 +35471,7 @@
         "full": "773518.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 96,
+        "x": 192,
         "y": 0,
         "w": 48,
         "h": 48
@@ -35432,7 +35509,7 @@
         "full": "773519.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 144,
+        "x": 240,
         "y": 0,
         "w": 48,
         "h": 48
@@ -35469,7 +35546,7 @@
         "full": "773521.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 192,
+        "x": 288,
         "y": 0,
         "w": 48,
         "h": 48
@@ -35504,7 +35581,7 @@
         "full": "994403.png",
         "sprite": "item8.png",
         "group": "item",
-        "x": 336,
+        "x": 432,
         "y": 288,
         "w": 48,
         "h": 48
@@ -36509,6 +36586,10 @@
       "MaxGroupOwnable": "1"
     },
     {
+      "id": "3074",
+      "MaxGroupOwnable": "1"
+    },
+    {
       "id": "3075",
       "MaxGroupOwnable": "1"
     },
@@ -36738,6 +36819,10 @@
     },
     {
       "id": "3742",
+      "MaxGroupOwnable": "1"
+    },
+    {
+      "id": "3748",
       "MaxGroupOwnable": "1"
     },
     {
@@ -36974,6 +37059,10 @@
     },
     {
       "id": "6697",
+      "MaxGroupOwnable": "1"
+    },
+    {
+      "id": "6698",
       "MaxGroupOwnable": "1"
     },
     {
