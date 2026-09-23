@@ -1,16 +1,7 @@
 {
-  "generatedAt": "2026-09-23T07:42:03.695Z",
+  "generatedAt": "2026-09-23T13:35:52.431Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
-    {
-      "title": "WORLDS 2026 VENUE EVENT POLICIES",
-      "description": "Esports 2026-09-22T18:00:00.000Z WORLDS 2026 VENUE EVENT POLICIES Learn More",
-      "url": "https://lolesports.com/en-us/news/worlds-2026-venue-event-policies",
-      "category": "League News",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-09-22T18:00:00.000Z",
-      "type": "event"
-    },
     {
       "title": "League of Legends Patch 26.19 Notes",
       "description": "Game Updates 2026-09-22T18:00:00.000Z League of Legends Patch 26.19 Notes Worlds is right around the corner, more “new” champs join Classic, and Arena’s got fresh Augments!",
@@ -19,6 +10,15 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-09-22T18:00:00.000Z",
       "type": "patch"
+    },
+    {
+      "title": "WORLDS 2026 VENUE EVENT POLICIES",
+      "description": "Esports 2026-09-22T18:00:00.000Z WORLDS 2026 VENUE EVENT POLICIES Learn More",
+      "url": "https://lolesports.com/en-us/news/worlds-2026-venue-event-policies",
+      "category": "League News",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-09-22T18:00:00.000Z",
+      "type": "event"
     },
     {
       "title": "Fan’s Guide to the LCS Championship",
