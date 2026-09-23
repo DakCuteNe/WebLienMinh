@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T13:35:52.430Z",
+  "generatedAt": "2026-09-23T18:22:30.006Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
@@ -10,6 +10,14 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/42ec56c9308464c0c64034d6bcf691fdb14ad377-1920x1149.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": "2026-09-22T18:00:00.000Z",
       "description": "Worlds is right around the corner, more “new” champs join Classic, and Arena’s got fresh Augments!"
+    },
+    {
+      "patch": "26.18",
+      "title": "League of Legends Patch 26.18 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-18-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/edec00cb9c1e10eb5adace738fea068ded8361ac-1920x1117.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": null,
+      "description": "Everything is where it belongs: Caps is in the Hall of Legends, Demacians are back in Classic, and ARAM Mayhem augments are on the right champions!"
     },
     {
       "patch": "26.17",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/0925832fd385df3f5e442886d2450e209ffb8846-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "Let’s get groovy with Patch 26.8!"
-    },
-    {
-      "patch": "26.7",
-      "title": "League of Legends Patch 26.7 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-7-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/13375a6633f09dee4e4397083ca37fc294592203-1920x1133.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "Tons of fun and fried chicken to be had!"
     }
   ]
 }
