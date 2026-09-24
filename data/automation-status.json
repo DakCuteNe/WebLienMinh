@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-23T21:34:38.379Z",
+  "checkedAt": "2026-09-24T05:00:48.657Z",
   "health": "degraded",
   "scope": "GLOBAL",
   "patch": "16.19",
@@ -37,7 +37,7 @@
       "SEA": 48
     }
   },
-  "riotStaticMessage": "> rift-meta-vn@3.13.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.19.1 (patch 16.19)\nPhát hiện dữ liệu Riot mới: 16.18.1 -> 16.19.1",
+  "riotStaticMessage": "> rift-meta-vn@3.13.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.19.1 (patch 16.19)\nChưa có version Data Dragon mới. Đang ở 16.19.1.",
   "collectorMessage": "◇ injected env (0) from .env\nGLOBAL HIGH-ELO • patch 16.19 • 16 platforms • 2 seed/platform • 6 match/seed\n=== NA1 • North America ===\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97\n    throw new RiotHttpError(response.status, response.statusText, body);\n          ^\nRiotHttpError: 401 Unauthorized: {\"status\":{\"message\":\"Unknown apikey\",\"status_code\":401}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async getPlatformSeeds (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:120:22)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:181:24 {\n  status: 401\n}\nNode.js v22.23.2",
   "aggregateMessage": "No accepted worldwide dataset. Keeping previous meta.json."
 }
