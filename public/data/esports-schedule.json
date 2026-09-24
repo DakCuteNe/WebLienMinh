@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T11:42:40.785Z",
+  "generatedAt": "2026-09-24T17:04:50.760Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 4,
+    "live": 0,
+    "upcoming": 6,
     "completed": 153,
-    "total": 158
+    "total": 159
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-10T15:00:00Z:SK-VIT",
-      "riotEventId": null,
-      "matchId": "115548681803406187",
-      "startTime": "2026-08-10T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "SK Gaming",
-          "code": "SK",
-          "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Team Vitality",
-          "code": "VIT",
-          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 7,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-10T17:15:00Z:G2-NAVI",
       "riotEventId": null,
@@ -7765,7 +7715,7 @@
       "riotEventId": null,
       "matchId": "116952475624364053",
       "startTime": "2026-09-24T12:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7786,10 +7736,60 @@
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
           "slug": null,
+          "wins": 1,
+          "outcome": "loss",
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Saigon MVKE Academy",
+          "code": "MVKA",
+          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
+          "slug": null,
+          "wins": 2,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "107213827295848783:2026-09-25T09:00:00Z:SGW-MVKA",
+      "riotEventId": null,
+      "matchId": "116952475624364057",
+      "startTime": "2026-09-25T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "107213827295848783",
+        "name": "VCS",
+        "slug": "vcs",
+        "officialSlug": "vcs",
+        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
+        "group": "REGIONAL",
+        "priority": 6
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Saigon Warrior",
+          "code": "SGW",
+          "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
+          "slug": null,
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -7802,7 +7802,7 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -7853,6 +7853,56 @@
           "outcome": null,
           "record": {
             "wins": 1,
+            "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "107213827295848783:2026-09-26T09:00:00Z:9G-SCBC",
+      "riotEventId": null,
+      "matchId": "116952475624364063",
+      "startTime": "2026-09-26T09:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "107213827295848783",
+        "name": "VCS",
+        "slug": "vcs",
+        "officialSlug": "vcs",
+        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
+        "group": "REGIONAL",
+        "priority": 6
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Saigon 9Gaming Esports",
+          "code": "9G",
+          "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "TP.HCM SN CyberCore Esports",
+          "code": "SCBC",
+          "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
             "losses": 1
           }
         }
