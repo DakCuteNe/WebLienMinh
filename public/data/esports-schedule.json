@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T17:04:50.760Z",
+  "generatedAt": "2026-09-24T20:28:05.095Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 6,
-    "completed": 153,
-    "total": 159
+    "completed": 152,
+    "total": 158
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-10T17:15:00Z:G2-NAVI",
-      "riotEventId": null,
-      "matchId": "115548681803406175",
-      "startTime": "2026-08-10T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 3",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Natus Vincere",
-          "code": "NAVI",
-          "image": "https://static.lolesports.com/teams/1752746833620_NAVI_FullColor.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 5,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991310872058:2026-08-12T08:00:00Z:NS-DNS",
       "riotEventId": null,
