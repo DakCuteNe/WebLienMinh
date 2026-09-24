@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T00:51:25.246Z",
+  "generatedAt": "2026-09-24T11:42:40.785Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
+    "live": 1,
     "upcoming": 4,
-    "completed": 152,
-    "total": 156
+    "completed": 153,
+    "total": 158
   },
   "leagues": [
     {
@@ -7715,7 +7715,7 @@
       "riotEventId": null,
       "matchId": "116952475624364049",
       "startTime": "2026-09-24T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7736,10 +7736,10 @@
           "code": "SGW",
           "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -7749,11 +7749,11 @@
           "code": "9G",
           "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -7765,7 +7765,7 @@
       "riotEventId": null,
       "matchId": "116952475624364053",
       "startTime": "2026-09-24T12:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7903,6 +7903,106 @@
           "outcome": null,
           "record": {
             "wins": 2,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-10-05T20:00:00Z:MU-Z5",
+      "riotEventId": null,
+      "matchId": "117322953110545728",
+      "startTime": "2026-10-05T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Regional Qualifier",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Maryville University",
+          "code": "MU",
+          "image": "https://static.lolesports.com/teams/1773762488904_maryvilleesportslogo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Zeu5 Esports",
+          "code": "Z5",
+          "image": "https://static.lolesports.com/teams/1742462885664_FULL_COLOR_FOR_DARK_BG7.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-10-06T20:00:00Z:CPD-FUE",
+      "riotEventId": null,
+      "matchId": "117322971012796382",
+      "startTime": "2026-10-06T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Regional Qualifier",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Cupid Esports",
+          "code": "CPD",
+          "image": "https://static.lolesports.com/teams/1783409729340_logocupid.jpg",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "FUEGO",
+          "code": "FUE",
+          "image": "https://static.lolesports.com/teams/1711010140737_FUEGO-C.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
             "losses": 0
           }
         }
