@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T13:40:42.065Z",
+  "generatedAt": "2026-09-25T21:48:11.985Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 5,
+    "live": 1,
+    "upcoming": 4,
     "completed": 153,
     "total": 158
   },
@@ -7765,7 +7765,7 @@
       "riotEventId": null,
       "matchId": "115565004607949411",
       "startTime": "2026-09-25T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7786,7 +7786,7 @@
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -7799,7 +7799,7 @@
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
