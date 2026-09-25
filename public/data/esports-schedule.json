@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T20:28:05.095Z",
+  "generatedAt": "2026-09-25T13:40:42.065Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 6,
-    "completed": 152,
+    "upcoming": 5,
+    "completed": 153,
     "total": 158
   },
   "leagues": [
@@ -7639,7 +7639,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -7703,7 +7703,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -7715,7 +7715,7 @@
       "riotEventId": null,
       "matchId": "116952475624364057",
       "startTime": "2026-09-25T09:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7736,10 +7736,10 @@
           "code": "SGW",
           "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -7749,11 +7749,11 @@
           "code": "MVKA",
           "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
