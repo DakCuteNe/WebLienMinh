@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T21:48:11.985Z",
+  "generatedAt": "2026-09-26T00:34:50.379Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 4,
-    "completed": 153,
-    "total": 158
+    "live": 0,
+    "upcoming": 5,
+    "completed": 154,
+    "total": 159
   },
   "leagues": [
     {
@@ -6689,7 +6689,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -6940,7 +6940,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -7139,7 +7139,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -7603,7 +7603,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -7765,7 +7765,7 @@
       "riotEventId": null,
       "matchId": "115565004607949411",
       "startTime": "2026-09-25T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7786,10 +7786,10 @@
           "code": "SR",
           "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -7799,11 +7799,11 @@
           "code": "FLY",
           "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -7848,6 +7848,56 @@
           "name": "TP.HCM SN CyberCore Esports",
           "code": "SCBC",
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-09-26T20:00:00Z:SR-LYON",
+      "riotEventId": null,
+      "matchId": "115565004607949417",
+      "startTime": "2026-09-26T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Playoffs",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Shopify Rebellion",
+          "code": "SR",
+          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
