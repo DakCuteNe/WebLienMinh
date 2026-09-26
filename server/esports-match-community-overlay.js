@@ -1,4 +1,5 @@
 import { loadCommunityMatchFallback } from './esports-match-community-fallback.js';
+import { loadGolMatchFallback } from './esports-match-gol-fallback.js';
 
 const winnersByMatch = new Map();
 const text = value => String(value ?? '').trim();
@@ -122,7 +123,7 @@ function applyCommunityLive(body, community) {
       voidGrubs: Boolean(body.live?.dataAvailability?.voidGrubs || voidGrubsAvailable),
       riftHeralds: Boolean(body.live?.dataAvailability?.riftHeralds || heraldsAvailable)
     },
-    secondarySource: community.source || null
+    secondarySource: community.source || body.live?.secondarySource || null
   };
 }
 
@@ -200,6 +201,22 @@ function refreshSeriesState(body) {
   body.gameResult = body.viewGame?.id ? byId.get(text(body.viewGame.id)) || body.gameResult || null : body.gameResult || null;
 }
 
+function liveRows(body) {
+  if (Array.isArray(body?.live?.teams) && body.live.teams.length) return body.live.teams;
+  return [body?.live?.blue, body?.live?.red].filter(Boolean);
+}
+
+function needsBanFallback(body) {
+  const rows = liveRows(body);
+  if (rows.length < 2) return true;
+  return rows.some(row => !Array.isArray(row?.bans) || row.bans.length < 5);
+}
+
+function viewedGameFinished(body) {
+  const game = body?.viewGame || body?.currentGame;
+  return stateIsCompleted(game?.state) || stateIsCompleted(body?.live?.gameState) || stateIsCompleted(body?.state);
+}
+
 export function applyCommunityOverlay(body, community = null) {
   if (!body?.ok) return body;
   observeExistingWinners(body);
@@ -221,7 +238,16 @@ async function enrichResponse(body) {
   const start = Date.parse(body?.startTime || '');
   const shouldQueryCommunity = Number.isFinite(start) && Date.now() >= start - 10 * 60_000;
   const community = shouldQueryCommunity ? await loadCommunityMatchFallback(body).catch(() => null) : null;
-  return applyCommunityOverlay(body, community);
+  applyCommunityOverlay(body, community);
+
+  // Riot's public live/window feed does not consistently carry Ban data, while
+  // Reddit archives can be stale or incomplete. For finished games only, use
+  // Games of Legends as a third source and fill Ban slots that remain missing.
+  if (shouldQueryCommunity && viewedGameFinished(body) && needsBanFallback(body)) {
+    const gol = await loadGolMatchFallback(body).catch(() => null);
+    if (gol) applyCommunityOverlay(body, gol);
+  }
+  return body;
 }
 
 export function installEsportsMatchCommunityOverlay(app) {
@@ -235,4 +261,4 @@ export function installEsportsMatchCommunityOverlay(app) {
   });
 }
 
-export const __communityOverlayTest = { applyCommunityOverlay };
+export const __communityOverlayTest = { applyCommunityOverlay, needsBanFallback, viewedGameFinished };
