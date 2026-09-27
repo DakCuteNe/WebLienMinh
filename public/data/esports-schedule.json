@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T10:42:59.645Z",
+  "generatedAt": "2026-09-27T15:37:43.580Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 3,
     "completed": 147,
-    "total": 151
+    "total": 150
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-08-13T11:00:00Z:BLG-TT",
-      "riotEventId": null,
-      "matchId": "116566854547769680",
-      "startTime": "2026-08-13T11:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "BILIBILI GAMING",
-          "code": "BLG",
-          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 12,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "THUNDER TALK GAMING",
-          "code": "TT",
-          "image": "https://static.lolesports.com/teams/TT-FullonDark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 11
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-08-14T07:00:00Z:EDG-LGD",
       "riotEventId": null,
@@ -7240,7 +7190,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -7252,7 +7202,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -7302,7 +7252,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -7403,7 +7353,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -7465,7 +7415,7 @@
       "riotEventId": null,
       "matchId": "116952475624364069",
       "startTime": "2026-09-27T09:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -7486,10 +7436,10 @@
           "code": "MVKA",
           "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -7500,10 +7450,10 @@
           "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
