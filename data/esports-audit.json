@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-26T08:09:08.820Z",
-  "directoryGeneratedAt": "2026-09-26T07:59:13.332Z",
-  "mediaEnrichedAt": "2026-09-26T08:01:43.757Z",
+  "generatedAt": "2026-09-27T08:41:48.702Z",
+  "directoryGeneratedAt": "2026-09-27T08:32:16.327Z",
+  "mediaEnrichedAt": "2026-09-27T08:34:40.356Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -12,12 +12,12 @@
       "pct": 65.2
     },
     "realName": {
-      "count": 1563,
+      "count": 1564,
       "pct": 90.6
     },
     "country": {
-      "count": 1564,
-      "pct": 90.6
+      "count": 1565,
+      "pct": 90.7
     },
     "birthdate": {
       "count": 2,
@@ -52,7 +52,7 @@
       "pct": 42.2
     },
     "bioEnriched": {
-      "count": 1565,
+      "count": 1566,
       "pct": 90.7
     },
     "completeCore": {
@@ -835,7 +835,7 @@
     },
     "LAS": {
       "total": 53,
-      "image": 6,
+      "image": 5,
       "realName": 46,
       "country": 46,
       "birthdate": 0,
@@ -844,7 +844,7 @@
       "teamLogo": 53,
       "stats": 53,
       "completeCore": 0,
-      "imagePct": 11.3,
+      "imagePct": 9.4,
       "realNamePct": 86.8,
       "countryPct": 86.8,
       "birthdatePct": 0,
@@ -877,18 +877,18 @@
     },
     "VCS": {
       "total": 37,
-      "image": 34,
-      "realName": 35,
-      "country": 35,
+      "image": 35,
+      "realName": 36,
+      "country": 36,
       "birthdate": 0,
       "contract": 0,
       "social": 1,
       "teamLogo": 37,
       "stats": 37,
       "completeCore": 0,
-      "imagePct": 91.9,
-      "realNamePct": 94.6,
-      "countryPct": 94.6,
+      "imagePct": 94.6,
+      "realNamePct": 97.3,
+      "countryPct": 97.3,
       "birthdatePct": 0,
       "contractPct": 0,
       "socialPct": 2.7,
@@ -1004,8 +1004,8 @@
   },
   "missingCounts": {
     "image": 600,
-    "realName": 163,
-    "country": 162,
+    "realName": 162,
+    "country": 161,
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
@@ -1014,7 +1014,7 @@
     "stats": 0,
     "championPool": 0,
     "soloqueueIds": 997,
-    "bioEnriched": 161,
+    "bioEnriched": 160,
     "completeCore": 1724
   },
   "missing": {
@@ -1675,6 +1675,11 @@
         "region": "LAS"
       },
       {
+        "id": "CARFE",
+        "team": "Dplus Kia Academy",
+        "region": "LAS"
+      },
+      {
         "id": "Despair",
         "team": "Dplus Kia Academy",
         "region": "LAS"
@@ -1953,11 +1958,6 @@
         "id": "Archer",
         "team": "Rising Gaming",
         "region": "LJL"
-      },
-      {
-        "id": "Umi",
-        "team": "9Gaming Esports",
-        "region": "VCS"
       },
       {
         "id": "MU Scary Jerry",
@@ -4137,11 +4137,6 @@
         "region": "AL"
       },
       {
-        "id": "Umi",
-        "team": "9Gaming Esports",
-        "region": "VCS"
-      },
-      {
         "id": "MU Scary Jerry",
         "team": "Maryville University",
         "region": "NACL"
@@ -4942,11 +4937,6 @@
         "id": "1M Darky2",
         "team": "One More Esports",
         "region": "AL"
-      },
-      {
-        "id": "Umi",
-        "team": "9Gaming Esports",
-        "region": "VCS"
       },
       {
         "id": "MU Scary Jerry",
@@ -39718,11 +39708,6 @@
         "id": "1M Darky2",
         "team": "One More Esports",
         "region": "AL"
-      },
-      {
-        "id": "Umi",
-        "team": "9Gaming Esports",
-        "region": "VCS"
       },
       {
         "id": "MU Scary Jerry",
