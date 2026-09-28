@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-27T08:41:48.702Z",
-  "directoryGeneratedAt": "2026-09-27T08:32:16.327Z",
-  "mediaEnrichedAt": "2026-09-27T08:34:40.356Z",
+  "generatedAt": "2026-09-28T09:06:16.700Z",
+  "directoryGeneratedAt": "2026-09-28T08:56:33.160Z",
+  "mediaEnrichedAt": "2026-09-28T08:59:01.355Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -32,8 +32,8 @@
       "pct": 0.1
     },
     "social": {
-      "count": 1360,
-      "pct": 78.8
+      "count": 1361,
+      "pct": 78.9
     },
     "teamLogo": {
       "count": 1471,
@@ -546,7 +546,7 @@
       "country": 51,
       "birthdate": 0,
       "contract": 0,
-      "social": 26,
+      "social": 27,
       "teamLogo": 47,
       "stats": 52,
       "completeCore": 0,
@@ -555,7 +555,7 @@
       "countryPct": 98.1,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 50,
+      "socialPct": 51.9,
       "teamLogoPct": 90.4,
       "statsPct": 100,
       "completeCorePct": 0
@@ -1009,7 +1009,7 @@
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
-    "social": 366,
+    "social": 365,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
@@ -31684,11 +31684,6 @@
       {
         "id": "Tempester",
         "team": "HANJIN BRION Challengers",
-        "region": "LCKC"
-      },
-      {
-        "id": "Cloud",
-        "team": "T1 Esports Academy",
         "region": "LCKC"
       },
       {
