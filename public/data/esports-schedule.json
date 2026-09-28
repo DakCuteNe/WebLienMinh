@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T01:35:23.868Z",
+  "generatedAt": "2026-09-28T07:37:18.179Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 148,
-    "total": 151
+    "completed": 147,
+    "total": 150
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-08-14T07:00:00Z:EDG-LGD",
-      "riotEventId": null,
-      "matchId": "116566854547835292",
-      "startTime": "2026-08-14T07:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "EDWARD GAMING",
-          "code": "EDG",
-          "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 12
-          }
-        },
-        {
-          "id": null,
-          "name": "LGD GAMING",
-          "code": "LGD",
-          "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 8
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991310872058:2026-08-14T08:00:00Z:DK-T1",
       "riotEventId": null,
