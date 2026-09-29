@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T21:54:03.311Z",
+  "generatedAt": "2026-09-29T08:22:45.229Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 140,
-    "total": 143
+    "completed": 138,
+    "total": 141
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-08-15T07:00:00Z:NIP-LNG",
-      "riotEventId": null,
-      "matchId": "116566854547835340",
-      "startTime": "2026-08-15T07:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Shenzhen NINJAS IN PYJAMAS",
-          "code": "NIP",
-          "image": "https://static.lolesports.com/teams/1673425724696_NIP-Symbol-RGB-NeonYellow1.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "Suzhou LNG Esports",
-          "code": "LNG",
-          "image": "https://static.lolesports.com/teams/1717487697003_LNGlogo.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-15T08:00:00Z:KT-HLE",
-      "riotEventId": null,
-      "matchId": "115548147900619025",
-      "startTime": "2026-08-15T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 12",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "kt Rolster",
-          "code": "KT",
-          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991314006698:2026-08-15T09:00:00Z:AL-TT",
       "riotEventId": null,
