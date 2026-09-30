@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T16:59:11.235Z",
+  "generatedAt": "2026-09-30T21:24:09.967Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 123,
-    "total": 126
+    "completed": 121,
+    "total": 124
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-16T17:15:00Z:FNC-G2",
-      "riotEventId": null,
-      "matchId": "115548681803406283",
-      "startTime": "2026-08-16T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Fnatic",
-          "code": "FNC",
-          "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 6,
-            "losses": 3
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991299243165:2026-08-16T20:00:00Z:C9-FLY",
-      "riotEventId": null,
-      "matchId": "115564797163886747",
-      "startTime": "2026-08-16T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-08-16T23:00:00Z:SEN-LYON",
       "riotEventId": null,
