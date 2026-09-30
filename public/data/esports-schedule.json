@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T23:39:41.975Z",
+  "generatedAt": "2026-09-30T11:20:22.161Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 3,
-    "completed": 130,
-    "total": 133
+    "completed": 124,
+    "total": 127
   },
   "leagues": [
     {
@@ -110,306 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-08-16T07:00:00Z:JDG-LGD",
-      "riotEventId": null,
-      "matchId": "116566854547769744",
-      "startTime": "2026-08-16T07:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 8,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "LGD GAMING",
-          "code": "LGD",
-          "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 6,
-            "losses": 8
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-16T08:00:00Z:GEN-T1",
-      "riotEventId": null,
-      "matchId": "115548147900619033",
-      "startTime": "2026-08-16T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 12",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Gen.G Esports",
-          "code": "GEN",
-          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "T1",
-          "code": "T1",
-          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 5
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-16T09:00:00Z:WBG-IG",
-      "riotEventId": null,
-      "matchId": "116566854547835336",
-      "startTime": "2026-08-16T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "WeiboGaming",
-          "code": "WBG",
-          "image": "https://static.lolesports.com/teams/1641202879910_3.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "Invictus Gaming",
-          "code": "IG",
-          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-08-16T09:00:00Z:TSW-CFO",
-      "riotEventId": null,
-      "matchId": "116769725389404185",
-      "startTime": "2026-08-16T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Play-Ins",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Secret Whales",
-          "code": "TSW",
-          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991310872058:2026-08-16T10:00:00Z:BRO-KRX",
-      "riotEventId": null,
-      "matchId": "115548147900684677",
-      "startTime": "2026-08-16T10:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 12",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "HANJIN BRION",
-          "code": "BRO",
-          "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "KIWOOM DRX",
-          "code": "KRX",
-          "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-16T11:00:00Z:EDG-TES",
-      "riotEventId": null,
-      "matchId": "116566854547769700",
-      "startTime": "2026-08-16T11:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 4",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "EDWARD GAMING",
-          "code": "EDG",
-          "image": "https://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 12
-          }
-        },
-        {
-          "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 9,
-            "losses": 5
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-16T15:00:00Z:NAVI-MKOI",
       "riotEventId": null,
@@ -6661,10 +6361,10 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-10-05T20:00:00Z:MU-Z5",
+      "id": "98767991299243165:2026-10-05T21:00:00Z:MU-Z5",
       "riotEventId": null,
       "matchId": "117322953110545728",
-      "startTime": "2026-10-05T20:00:00Z",
+      "startTime": "2026-10-05T21:00:00Z",
       "state": "unstarted",
       "type": "match",
       "blockName": "Regional Qualifier",
@@ -6711,10 +6411,10 @@
       "tournamentId": null
     },
     {
-      "id": "98767991299243165:2026-10-06T20:00:00Z:CPD-FUE",
+      "id": "98767991299243165:2026-10-06T21:00:00Z:CPD-FUE",
       "riotEventId": null,
       "matchId": "117322971012796382",
-      "startTime": "2026-10-06T20:00:00Z",
+      "startTime": "2026-10-06T21:00:00Z",
       "state": "unstarted",
       "type": "match",
       "blockName": "Regional Qualifier",
