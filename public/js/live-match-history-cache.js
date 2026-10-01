@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'rift:live-match-game-history:v2';
+const STORAGE_KEY = 'rift:live-match-game-history:v3';
 const MAX_GAMES = 72;
 const MAX_AGE_MS = 14 * 24 * 60 * 60_000;
 const PREFETCH_CURRENT_MS = 12_000;
