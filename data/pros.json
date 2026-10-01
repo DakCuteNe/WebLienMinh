@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T10:35:54.339Z",
+  "generatedAt": "2026-10-01T11:02:34.899Z",
   "source": "Leaguepedia detailed P1 analytics + Worldwide Esports Directory P2/basic fallback",
   "sourceType": "community scoreboard + Oracle/identity directory",
   "degraded": false,
@@ -10,7 +10,7 @@
   "directoryFallbackCount": 18,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "P1 stars ưu tiên detailed Leaguepedia scoreboard; P2 dùng directory-first để tiết kiệm Cargo quota. Nếu shared query bị giới hạn 500 rows, hệ thống giữ detailed cache cũ hoặc dùng basic directory stats thay vì làm tuyển thủ biến mất. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
+  "note": "P1 stars ưu tiên detailed Leaguepedia scoreboard; P2 dùng directory-first để tiết kiệm Cargo quota. Nếu shared query bị giới hạn 500 rows, hệ thống giữ detailed cache cũ hoặc dùng basic directory stats thay vì làm tuyển thủ biến mất. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
   "players": [
     {
       "name": "Faker",
@@ -9578,7 +9578,7 @@
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
   ],
-  "reconciledAt": "2026-10-01T09:34:27.979Z",
+  "reconciledAt": "2026-10-01T11:02:35.043Z",
   "reconcileSource": "Worldwide Esports Directory current identity/basic stats",
   "reconcileStats": {
     "detailedPreserved": 18,
