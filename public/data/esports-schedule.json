@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T12:28:47.260Z",
+  "generatedAt": "2026-10-03T22:51:05.632Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 1,
+    "live": 1,
+    "upcoming": 0,
     "completed": 113,
     "total": 114
   },
@@ -5765,7 +5765,7 @@
       "riotEventId": null,
       "matchId": "115565004607949423",
       "startTime": "2026-10-03T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -5786,7 +5786,7 @@
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -5799,7 +5799,7 @@
           "code": "C9",
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
