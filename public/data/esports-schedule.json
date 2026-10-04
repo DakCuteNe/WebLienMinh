@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T22:51:05.632Z",
+  "generatedAt": "2026-10-04T02:32:41.496Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 0,
-    "completed": 113,
-    "total": 114
+    "live": 0,
+    "upcoming": 1,
+    "completed": 114,
+    "total": 115
   },
   "leagues": [
     {
@@ -4453,7 +4453,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -5139,7 +5139,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -5153,7 +5153,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -5652,7 +5652,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -5753,7 +5753,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -5765,7 +5765,7 @@
       "riotEventId": null,
       "matchId": "115565004607949423",
       "startTime": "2026-10-03T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Playoffs",
       "league": {
@@ -5786,10 +5786,10 @@
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -5800,10 +5800,60 @@
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
           "wins": 1,
+          "outcome": "loss",
+          "record": {
+            "wins": 2,
+            "losses": 2
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767991299243165:2026-10-04T20:00:00Z:LYON-TLAW",
+      "riotEventId": null,
+      "matchId": "115565004607949429",
+      "startTime": "2026-10-04T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Finals",
+      "league": {
+        "id": "98767991299243165",
+        "name": "LCS",
+        "slug": "lcs",
+        "officialSlug": "lcs",
+        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
+        "group": "REGIONAL",
+        "priority": 4
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "slug": null,
+          "wins": 0,
           "outcome": null,
           "record": {
             "wins": 2,
             "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Team Liquid Alienware",
+          "code": "TLAW",
+          "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 0
           }
         }
       ],
