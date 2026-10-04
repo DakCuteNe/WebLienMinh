@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-03T08:40:59.777Z",
-  "directoryGeneratedAt": "2026-10-03T08:32:14.877Z",
-  "mediaEnrichedAt": "2026-10-03T08:34:37.799Z",
+  "generatedAt": "2026-10-04T08:53:34.719Z",
+  "directoryGeneratedAt": "2026-10-04T08:44:53.076Z",
+  "mediaEnrichedAt": "2026-10-04T08:47:18.991Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1125,
-      "pct": 65.2
+      "count": 1123,
+      "pct": 65.1
     },
     "realName": {
       "count": 1564,
@@ -398,8 +398,8 @@
     "teamTarget": 57,
     "teamUpdated": 56,
     "teamUpdatedPct": 98.2,
-    "playerTarget": 100,
-    "playerUpdated": 100,
+    "playerTarget": 80,
+    "playerUpdated": 80,
     "playerUpdatedPct": 100,
     "teamUnresolved": 1,
     "playerUnresolved": 0,
@@ -457,7 +457,7 @@
     },
     "LEC": {
       "total": 51,
-      "image": 51,
+      "image": 49,
       "realName": 49,
       "country": 49,
       "birthdate": 0,
@@ -466,7 +466,7 @@
       "teamLogo": 51,
       "stats": 51,
       "completeCore": 0,
-      "imagePct": 100,
+      "imagePct": 96.1,
       "realNamePct": 96.1,
       "countryPct": 96.1,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 601,
+    "image": 603,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -1618,6 +1618,16 @@
         "id": "Scenario",
         "team": "G3V E-sports",
         "region": "LRN"
+      },
+      {
+        "id": "Ice",
+        "team": "Team Heretics",
+        "region": "LEC"
+      },
+      {
+        "id": "Noah",
+        "team": "GiantX",
+        "region": "LEC"
       },
       {
         "id": "FLOW",
