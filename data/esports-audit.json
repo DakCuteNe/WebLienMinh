@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-04T08:53:34.719Z",
-  "directoryGeneratedAt": "2026-10-04T08:44:53.076Z",
-  "mediaEnrichedAt": "2026-10-04T08:47:18.991Z",
+  "generatedAt": "2026-10-05T09:43:54.419Z",
+  "directoryGeneratedAt": "2026-10-05T09:35:07.524Z",
+  "mediaEnrichedAt": "2026-10-05T09:37:37.915Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1123,
+      "count": 1124,
       "pct": 65.1
     },
     "realName": {
@@ -398,8 +398,8 @@
     "teamTarget": 57,
     "teamUpdated": 56,
     "teamUpdatedPct": 98.2,
-    "playerTarget": 80,
-    "playerUpdated": 80,
+    "playerTarget": 75,
+    "playerUpdated": 75,
     "playerUpdatedPct": 100,
     "teamUnresolved": 1,
     "playerUnresolved": 0,
@@ -520,7 +520,7 @@
     },
     "EM": {
       "total": 71,
-      "image": 56,
+      "image": 57,
       "realName": 69,
       "country": 69,
       "birthdate": 0,
@@ -529,7 +529,7 @@
       "teamLogo": 66,
       "stats": 71,
       "completeCore": 0,
-      "imagePct": 78.9,
+      "imagePct": 80.3,
       "realNamePct": 97.2,
       "countryPct": 97.2,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 603,
+    "image": 602,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -1019,11 +1019,6 @@
   },
   "missing": {
     "image": [
-      {
-        "id": "Bwipo",
-        "team": "Witchcraft",
-        "region": "EM"
-      },
       {
         "id": "Cracker",
         "team": "Hanwha Life Esports Challengers",
