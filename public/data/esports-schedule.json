@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T00:50:37.334Z",
+  "generatedAt": "2026-10-05T06:56:41.929Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 0,
+    "upcoming": 1,
     "completed": 110,
-    "total": 110
+    "total": 111
   },
   "leagues": [
     {
@@ -5604,6 +5604,56 @@
           "record": {
             "wins": 2,
             "losses": 2
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "107213827295848783:2026-10-11T10:00:00Z:MVKA-SGW",
+      "riotEventId": null,
+      "matchId": "116952475624364075",
+      "startTime": "2026-10-11T10:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Finals",
+      "league": {
+        "id": "107213827295848783",
+        "name": "VCS",
+        "slug": "vcs",
+        "officialSlug": "vcs",
+        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
+        "group": "REGIONAL",
+        "priority": 6
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Saigon MVKE Academy",
+          "code": "MVKA",
+          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Saigon Warrior",
+          "code": "SGW",
+          "image": "https://static.lolesports.com/teams/1771230875226_logo_SW-removebg-preview.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 0
           }
         }
       ],
