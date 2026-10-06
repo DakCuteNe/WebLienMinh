@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T09:23:14.453Z",
+  "generatedAt": "2026-10-06T16:14:33.235Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 98,
-    "total": 99
+    "completed": 95,
+    "total": 96
   },
   "leagues": [
     {
@@ -110,156 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991310872058:2026-08-22T10:00:00Z:KRX-DNS",
-      "riotEventId": null,
-      "matchId": "115548147900750241",
-      "startTime": "2026-08-22T10:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 13",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "KIWOOM DRX",
-          "code": "KRX",
-          "image": "https://static.lolesports.com/teams/1774247803537_horizontal_EN_Wh.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "DN SOOPers",
-          "code": "DNS",
-          "image": "https://static.lolesports.com/teams/1767340467921_DN_SOOPerslogo_profile.webp",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 3
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-22T11:00:00Z:JDG-TES",
-      "riotEventId": null,
-      "matchId": "116566854547769692",
-      "startTime": "2026-08-22T11:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 5",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 8,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 9,
-            "losses": 5
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-22T15:00:00Z:FNC-SHFT",
-      "riotEventId": null,
-      "matchId": "115548681803406219",
-      "startTime": "2026-08-22T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 5",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Fnatic",
-          "code": "FNC",
-          "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 8
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-22T17:15:00Z:MKOI-SK",
       "riotEventId": null,
