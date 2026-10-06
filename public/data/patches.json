@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-10-06T16:44:26.834Z",
+  "generatedAt": "2026-10-06T22:37:16.835Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
+    {
+      "patch": "26.20",
+      "title": "League of Legends Patch 26.20 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-20-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/9b02404e478143a3313dbd374e938ced7d4f3826-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-10-06T18:00:00.000Z",
+      "description": "Bee woo woop - the Worlds patch is here! Plenty of pro tuning, more champs return to Classic, and HEARTSTEEL are living their lives."
+    },
     {
       "patch": "26.19",
       "title": "Patch 26.19 Notes",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/b2e196d8bf9c21cdc7bdde5c7680249bda2b82de-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "It’s time to hunt demons with Patch 26.9!"
-    },
-    {
-      "patch": "26.8",
-      "title": "League of Legends Patch 26.8 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-8-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/0925832fd385df3f5e442886d2450e209ffb8846-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "Let’s get groovy with Patch 26.8!"
     }
   ]
 }
