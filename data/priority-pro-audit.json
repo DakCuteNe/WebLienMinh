@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T09:43:54.255Z",
+  "generatedAt": "2026-10-06T09:31:27.457Z",
   "regions": [
     "LCK",
     "LPL",
@@ -10,12 +10,12 @@
   ],
   "activeDays": 180,
   "watchCount": 42,
-  "activeWatchCount": 24,
-  "tier1Active": 18,
-  "tier1Ok": 18,
+  "activeWatchCount": 18,
+  "tier1Active": 13,
+  "tier1Ok": 13,
   "tier1FailureCount": 0,
-  "tier2Active": 6,
-  "tier2Ok": 6,
+  "tier2Active": 5,
+  "tier2Ok": 5,
   "tier2PinnedFailureCount": 0,
   "tier2WarningCount": 0,
   "blockingFailureCount": 0,
@@ -36,7 +36,7 @@
       "page": "Faker",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/5a/T1_Faker_2026_LCK_Cup.png/revision/latest?cb=20260122163312",
       "mediaFile": "File:T1 Faker 2026 LCK Cup.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:51.878Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:41.834Z",
       "errors": []
     },
     {
@@ -44,18 +44,9 @@
       "priority": 1,
       "regionHint": "LCK",
       "pinned": false,
-      "status": "ok",
-      "blocking": true,
+      "status": "inactive-or-not-present",
+      "blocking": false,
       "ok": true,
-      "uid": "oe:player:fb6e61b8acb05df17b7e5ad4ae7c800",
-      "actualName": "Jeong Ji-hoon",
-      "team": "Gen.G",
-      "region": "LCK",
-      "role": "MIDDLE",
-      "page": "Chovy",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/b/b3/GEN_Chovy_2026_Split_1.png/revision/latest?cb=20260122171212",
-      "mediaFile": "File:GEN Chovy 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:47.327Z",
       "errors": []
     },
     {
@@ -63,18 +54,9 @@
       "priority": 1,
       "regionHint": "LCK",
       "pinned": false,
-      "status": "ok",
-      "blocking": true,
+      "status": "inactive-or-not-present",
+      "blocking": false,
       "ok": true,
-      "uid": "oe:player:eada4723af6f51cf2391d85b5fde49b",
-      "actualName": "Park Jae-hyuk",
-      "team": "Gen.G",
-      "region": "LCK",
-      "role": "BOTTOM",
-      "page": "Ruler",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e3/GEN_Ruler_2026_Split_1.png/revision/latest?cb=20260122171312",
-      "mediaFile": "File:GEN Ruler 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:30.449Z",
       "errors": []
     },
     {
@@ -82,18 +64,9 @@
       "priority": 1,
       "regionHint": "LCK",
       "pinned": false,
-      "status": "ok",
-      "blocking": true,
+      "status": "inactive-or-not-present",
+      "blocking": false,
       "ok": true,
-      "uid": "oe:player:92544d7a994bd6841cccd9f6e42e3de",
-      "actualName": "Kim Geon-bu",
-      "team": "Gen.G",
-      "region": "LCK",
-      "role": "JUNGLE",
-      "page": "Canyon",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/55/GEN_Canyon_2026_Split_1.png/revision/latest?cb=20260122171322",
-      "mediaFile": "File:GEN Canyon 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:42.693Z",
       "errors": []
     },
     {
@@ -112,7 +85,7 @@
       "page": "Keria",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/da/T1_Keria_2026_LCK_Cup.png/revision/latest?cb=20260122163329",
       "mediaFile": "File:T1 Keria 2026 LCK Cup.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:11.108Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:55.518Z",
       "errors": []
     },
     {
@@ -131,7 +104,7 @@
       "page": "Zeus",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/cf/HLE_Zeus_2026_Split_1.png/revision/latest?cb=20260122172844",
       "mediaFile": "File:HLE Zeus 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:53.938Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:27.151Z",
       "errors": []
     },
     {
@@ -150,7 +123,7 @@
       "page": "Oner",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d2/T1_Oner_2026_LCK_Cup.png/revision/latest?cb=20260122163304",
       "mediaFile": "File:T1 Oner 2026 LCK Cup.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:25.721Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:04.505Z",
       "errors": []
     },
     {
@@ -169,7 +142,7 @@
       "page": "Gumayusi",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/0/0e/HLE_Gumayusi_2026_Split_1.png/revision/latest?cb=20260122172840",
       "mediaFile": "File:HLE Gumayusi 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:56.471Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:46.440Z",
       "errors": []
     },
     {
@@ -198,7 +171,7 @@
       "page": "Bdd",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/d8/KT_Bdd_2026_Split_1.png/revision/latest?cb=20260124034525",
       "mediaFile": "File:KT Bdd 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:33.328Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:32.772Z",
       "errors": []
     },
     {
@@ -217,7 +190,7 @@
       "page": "Teddy",
       "image": "https://www.kukinews.com/data/kuk/image/2026/03/19/kuk20260319000058.800x.9.jpg",
       "mediaFile": "File:BRO Teddy 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:39.939Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:13.520Z",
       "errors": []
     },
     {
@@ -236,7 +209,7 @@
       "page": "Kanavi",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/14/HLE_Kanavi_2026_Split_1.png/revision/latest?cb=20260122172841",
       "mediaFile": "File:HLE Kanavi 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:06.314Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:51.057Z",
       "errors": []
     },
     {
@@ -255,7 +228,7 @@
       "page": "Scout",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8c/NS_Scout_2026_Split_1.png/revision/latest?cb=20260124035655",
       "mediaFile": "File:NS Scout 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:35.165Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:09.120Z",
       "errors": []
     },
     {
@@ -274,7 +247,7 @@
       "page": "Doran (Choi Hyeon-jun)",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/d/de/T1_Doran_2026_LCK_Cup.png/revision/latest?cb=20260122163256",
       "mediaFile": "File:T1 Doran 2026 LCK Cup.png",
-      "mediaRefreshedAt": "2026-10-05T09:38:46.320Z",
+      "mediaRefreshedAt": "2026-10-06T09:26:56.172Z",
       "errors": []
     },
     {
@@ -303,7 +276,7 @@
       "page": "Delight",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/7b/HLE_Delight_2026_Split_1.png/revision/latest?cb=20260122172846",
       "mediaFile": "File:HLE Delight 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:38:21.265Z",
+      "mediaRefreshedAt": "2026-10-06T09:26:32.068Z",
       "errors": []
     },
     {
@@ -322,7 +295,7 @@
       "page": "Peyz",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/T1_Peyz_2026_LCK_Cup.png/revision/latest?cb=20260122163320",
       "mediaFile": "File:T1 Peyz 2026 LCK Cup.png",
-      "mediaRefreshedAt": "2026-10-05T09:38:46.321Z",
+      "mediaRefreshedAt": "2026-10-06T09:26:56.174Z",
       "errors": []
     },
     {
@@ -341,7 +314,7 @@
       "page": "Knight (Zhuo Ding)",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/ec/BLG_Knight_2026_Split_1.png/revision/latest?cb=20260327160422",
       "mediaFile": "File:BLG Knight 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:15.897Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:00.087Z",
       "errors": []
     },
     {
@@ -360,7 +333,7 @@
       "page": "Bin (Chen Ze-Bin)",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/18/BLG_Bin_2026_Split_1.png/revision/latest?cb=20260327160417",
       "mediaFile": "File:BLG Bin 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:38.048Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:37.280Z",
       "errors": []
     },
     {
@@ -379,7 +352,7 @@
       "page": "Viper (Park Do-hyeon)",
       "image": "https://static.lag.vn/upload/news/26/07/02/55367866303_a5670fb727_k_ZHTZ.jpg?encoder=wic&subsampling=444&w=800",
       "mediaFile": "File:BLG Viper 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:44.470Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:18.232Z",
       "errors": []
     },
     {
@@ -387,18 +360,9 @@
       "priority": 1,
       "regionHint": "LPL",
       "pinned": false,
-      "status": "ok",
-      "blocking": true,
+      "status": "inactive-or-not-present",
+      "blocking": false,
       "ok": true,
-      "uid": "oe:player:c54e1090ef1faa736b12493051c4855",
-      "actualName": "Yu Wen-Bo",
-      "team": "Top Esports",
-      "region": "LPL",
-      "role": "BOTTOM",
-      "page": "JackeyLove",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/1f/TES_JackeyLove_2026_Split_1.png/revision/latest?cb=20260325171016",
-      "mediaFile": "File:TES JackeyLove 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:01.436Z",
       "errors": []
     },
     {
@@ -427,7 +391,7 @@
       "page": "Xiaohu",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/b/b0/WBG_Xiaohu_2026_Split_1.png/revision/latest?cb=20260328182611",
       "mediaFile": "File:WBG Xiaohu 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:49.219Z",
+      "mediaRefreshedAt": "2026-10-06T09:31:22.755Z",
       "errors": []
     },
     {
@@ -435,18 +399,9 @@
       "priority": 1,
       "regionHint": "LPL",
       "pinned": false,
-      "status": "ok",
-      "blocking": true,
+      "status": "inactive-or-not-present",
+      "blocking": false,
       "ok": true,
-      "uid": "oe:player:bda7cc061d7a1576f1dcad33dd505cd",
-      "actualName": "Tian Ye",
-      "team": "Invictus Gaming",
-      "region": "LPL",
-      "role": "UTILITY",
-      "page": "Meiko",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/c/c1/IG_Meiko_2026_Split_1.png/revision/latest?cb=20260327160909",
-      "mediaFile": "File:IG Meiko 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:43:20.890Z",
       "errors": []
     },
     {
@@ -465,7 +420,7 @@
       "page": "Elk",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/5d/WBG_Elk_2026_Split_1.png/revision/latest?cb=20260328182558",
       "mediaFile": "File:WBG Elk 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:42:00.878Z",
+      "mediaRefreshedAt": "2026-10-06T09:30:00.856Z",
       "errors": []
     },
     {
@@ -484,7 +439,7 @@
       "page": "ON",
       "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/BLG_ON_2026_Split_1.png/revision/latest?cb=20260327160426",
       "mediaFile": "File:BLG ON 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:40:59.662Z",
+      "mediaRefreshedAt": "2026-10-06T09:29:04.385Z",
       "errors": []
     },
     {
@@ -502,18 +457,9 @@
       "priority": 2,
       "regionHint": "LPL",
       "pinned": false,
-      "status": "ok",
+      "status": "inactive-or-not-present",
       "blocking": false,
       "ok": true,
-      "uid": "oe:player:6e7908512cb309a43388bb464a312a2",
-      "actualName": "Lin Jian",
-      "team": "Top Esports",
-      "region": "LPL",
-      "role": "MIDDLE",
-      "page": "Creme",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/4/49/TES_Creme_2026_Split_1.png/revision/latest?cb=20260328182016",
-      "mediaFile": "File:TES Creme 2026 Split 1.png",
-      "mediaRefreshedAt": "2026-10-05T09:41:49.454Z",
       "errors": []
     },
     {
