@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-06T09:31:27.626Z",
-  "directoryGeneratedAt": "2026-10-06T09:23:32.376Z",
-  "mediaEnrichedAt": "2026-10-06T09:25:54.018Z",
+  "generatedAt": "2026-10-07T09:20:17.837Z",
+  "directoryGeneratedAt": "2026-10-07T09:12:46.810Z",
+  "mediaEnrichedAt": "2026-10-07T09:15:22.805Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1124,
-      "pct": 65.1
+      "count": 1125,
+      "pct": 65.2
     },
     "realName": {
       "count": 1564,
@@ -32,7 +32,7 @@
       "pct": 0.1
     },
     "social": {
-      "count": 1361,
+      "count": 1362,
       "pct": 78.9
     },
     "teamLogo": {
@@ -298,7 +298,7 @@
       "actualPage": "Scout",
       "actualRealName": "Lee Ye-chan",
       "actualTeam": "Nongshim RedForce",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/8/8c/NS_Scout_2026_Split_1.png/revision/latest?cb=20260124035655",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/5/58/SKT_Scout_2016_Spring.png/revision/latest/scale-to-width-down/520?cb=20170802120937",
       "ok": true,
       "errors": []
     },
@@ -324,7 +324,7 @@
       "actualPage": "Peyz",
       "actualRealName": "Kim Su-hwan",
       "actualTeam": "T1",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/T1_Peyz_2026_LCK_Cup.png/revision/latest?cb=20260122163320",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/9/97/GEN.C_Peyz_2022_Split_1.png/revision/latest/scale-to-width-down/447?cb=20221208160541",
       "ok": true,
       "errors": []
     },
@@ -350,7 +350,7 @@
       "actualPage": "ON",
       "actualRealName": "Luo Wen-Jun",
       "actualTeam": "Bilibili Gaming",
-      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/BLG_ON_2026_Split_1.png/revision/latest?cb=20260327160426",
+      "image": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/3/33/SNS_owo_2019_Split_2.png/revision/latest/scale-to-width-down/520?cb=20190619153845",
       "ok": true,
       "errors": []
     },
@@ -398,8 +398,8 @@
     "teamTarget": 57,
     "teamUpdated": 56,
     "teamUpdatedPct": 98.2,
-    "playerTarget": 60,
-    "playerUpdated": 60,
+    "playerTarget": 10,
+    "playerUpdated": 10,
     "playerUpdatedPct": 100,
     "teamUnresolved": 1,
     "playerUnresolved": 0,
@@ -835,21 +835,21 @@
     },
     "LAS": {
       "total": 53,
-      "image": 5,
+      "image": 6,
       "realName": 46,
       "country": 46,
       "birthdate": 0,
       "contract": 0,
-      "social": 1,
+      "social": 2,
       "teamLogo": 53,
       "stats": 53,
       "completeCore": 0,
-      "imagePct": 9.4,
+      "imagePct": 11.3,
       "realNamePct": 86.8,
       "countryPct": 86.8,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 1.9,
+      "socialPct": 3.8,
       "teamLogoPct": 100,
       "statsPct": 100,
       "completeCorePct": 0
@@ -1003,13 +1003,13 @@
     }
   },
   "missingCounts": {
-    "image": 602,
+    "image": 601,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
-    "social": 365,
+    "social": 364,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
@@ -1707,11 +1707,6 @@
       {
         "id": "Lancelot",
         "team": "Gen.G Scholars",
-        "region": "LAS"
-      },
-      {
-        "id": "Solid",
-        "team": "Dplus Kia Academy",
         "region": "LAS"
       },
       {
@@ -31908,11 +31903,6 @@
       },
       {
         "id": "Nevid",
-        "team": "Dplus Kia Academy",
-        "region": "LAS"
-      },
-      {
-        "id": "Solid",
         "team": "Dplus Kia Academy",
         "region": "LAS"
       },
