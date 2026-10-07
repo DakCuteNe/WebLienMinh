@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T14:44:03.011Z",
+  "generatedAt": "2026-10-07T20:34:37.100Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 86,
-    "total": 87
+    "completed": 83,
+    "total": 84
   },
   "leagues": [
     {
@@ -110,156 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-23T15:00:00Z:GX-TH",
-      "riotEventId": null,
-      "matchId": "115548681803406123",
-      "startTime": "2026-08-23T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 5",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "GIANTX",
-          "code": "GX",
-          "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 5,
-            "losses": 4
-          }
-        },
-        {
-          "id": null,
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 7
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-23T17:15:00Z:SHFT-KC",
-      "riotEventId": null,
-      "matchId": "115548681803406223",
-      "startTime": "2026-08-23T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 5",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 8
-          }
-        },
-        {
-          "id": null,
-          "name": "Karmine Corp",
-          "code": "KC",
-          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 9,
-            "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991299243165:2026-08-23T20:00:00Z:SEN-DSG",
-      "riotEventId": null,
-      "matchId": "115564797163821183",
-      "startTime": "2026-08-23T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 5",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Sentinels",
-          "code": "SEN",
-          "image": "https://static.lolesports.com/teams/1767769784669_Sentinels_2020_Icon.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 3
-          }
-        },
-        {
-          "id": null,
-          "name": "Disguised",
-          "code": "DSG",
-          "image": "https://static.lolesports.com/teams/1731496922454_Disguised-Wordmark-Yellow-Main.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-08-23T23:00:00Z:DIG-FLY",
       "riotEventId": null,
