@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T20:34:37.100Z",
+  "generatedAt": "2026-10-08T00:23:47.687Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 83,
-    "total": 84
+    "completed": 82,
+    "total": 83
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-08-23T23:00:00Z:DIG-FLY",
-      "riotEventId": null,
-      "matchId": "115564797163886767",
-      "startTime": "2026-08-23T23:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 5",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Dignitas",
-          "code": "DIG",
-          "image": "https://static.lolesports.com/teams/DIG-FullonDark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 7
-          }
-        },
-        {
-          "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 4
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-24T15:00:00Z:FNC-NAVI",
       "riotEventId": null,
