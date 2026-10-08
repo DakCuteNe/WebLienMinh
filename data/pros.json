@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-10-07T11:11:34.678Z",
-  "source": "Hybrid: preserved Leaguepedia detailed analytics + Worldwide Esports Directory fallback",
-  "sourceType": "degraded hybrid; community scoreboard + Oracle/identity directory",
-  "degraded": true,
-  "sourceError": "Leaguepedia Cargo: You've exceeded your rate limit. Please wait some time and try again.",
-  "preservedDetailedAt": "2026-10-06T11:22:30.491Z",
-  "preservedDetailedCount": 18,
-  "directoryFallbackCount": 21,
-  "unresolvedCount": 3,
+  "generatedAt": "2026-10-08T11:29:29.587Z",
+  "source": "Leaguepedia detailed P1 analytics + Worldwide Esports Directory P2/basic fallback",
+  "sourceType": "community scoreboard + Oracle/identity directory",
+  "degraded": false,
   "watchCount": 42,
   "detailedPriorityCount": 22,
+  "detailedCount": 18,
+  "preservedDetailedCount": 4,
+  "directoryFallbackCount": 18,
   "rangeDays": 120,
   "perPlayerGames": 30,
-  "note": "Leaguepedia Cargo đang giới hạn truy cập. WebLienMinh giữ detailed analytics tốt trước đó và tự bổ sung các tuyển thủ ưu tiên còn thiếu bằng basic stats/current identity từ Worldwide Esports Directory. Không ghi dữ liệu rỗng và không đoán ambiguous identity. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
+  "note": "P1 stars ưu tiên detailed Leaguepedia scoreboard; P2 dùng directory-first để tiết kiệm Cargo quota. Nếu shared query bị giới hạn 500 rows, hệ thống giữ detailed cache cũ hoặc dùng basic directory stats thay vì làm tuyển thủ biến mất. Reconcile: chỉ giữ cache có detailed match data; basic/fallback luôn được refresh lại theo canonical Worldwide Directory hiện tại.",
   "players": [
     {
       "name": "Faker",
@@ -455,8 +453,7 @@
           "secondaryTree": "Precision"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Chovy",
@@ -895,8 +892,7 @@
           "secondaryTree": "Resolve"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Ruler",
@@ -1346,8 +1342,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Canyon",
@@ -1776,8 +1771,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Keria",
@@ -2204,8 +2198,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Zeus",
@@ -2651,8 +2644,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Oner",
@@ -3080,8 +3072,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Gumayusi",
@@ -3526,8 +3517,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "ShowMaker",
@@ -3965,8 +3955,7 @@
           "secondaryTree": "Sorcery"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Bdd",
@@ -4409,8 +4398,7 @@
           "secondaryTree": "Resolve"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Teddy",
@@ -4857,8 +4845,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Kanavi",
@@ -5287,8 +5274,7 @@
           "secondaryTree": "Domination"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Scout",
@@ -5719,8 +5705,7 @@
           "secondaryTree": "Resolve"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Doran",
@@ -6574,8 +6559,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "JackeyLove",
@@ -7027,8 +7011,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Tarzan",
@@ -7534,8 +7517,7 @@
           "secondaryTree": "Resolve"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Meiko",
@@ -7972,8 +7954,7 @@
           "secondaryTree": "Inspiration"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "Elk",
@@ -8715,8 +8696,7 @@
           "secondaryTree": "Sorcery"
         }
       ],
-      "fallback": false,
-      "detailedPreservedFrom": "2026-10-06T11:22:30.491Z"
+      "fallback": false
     },
     {
       "name": "BrokenBlade",
@@ -9603,7 +9583,7 @@
       "note": "Basic performance/current identity từ Worldwide Esports Directory; detailed build/rune/spell sẽ được bổ sung khi Leaguepedia Cargo hoạt động lại."
     }
   ],
-  "reconciledAt": "2026-10-08T09:33:17.659Z",
+  "reconciledAt": "2026-10-08T11:29:29.729Z",
   "reconcileSource": "Worldwide Esports Directory current identity/basic stats",
   "reconcileStats": {
     "detailedPreserved": 18,
