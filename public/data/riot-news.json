@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T00:18:17.660Z",
+  "generatedAt": "2026-10-09T08:56:19.421Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
     {
@@ -19,24 +19,6 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-10-06T18:00:00.000Z",
       "type": "patch"
-    },
-    {
-      "title": "Worlds 2026 Primer",
-      "description": "Esports 2026-10-05T15:00:00.000Z Worlds 2026 Primer Everything You Need To Know About Worlds!",
-      "url": "https://lolesports.com/en-us/news/worlds-2026-primer",
-      "category": "League News",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-10-05T15:00:00.000Z",
-      "type": "event"
-    },
-    {
-      "title": "Worlds Anthem Presented by True Damage",
-      "description": "Esports 2026-09-29T16:00:00.000Z Worlds Anthem Presented by True Damage This year’s anthem and music video celebrate Faker & T1’s historic legacy",
-      "url": "https://lolesports.com/en-us/news/worlds-anthem-presented-by-true-damage",
-      "category": "League News",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-09-29T16:00:00.000Z",
-      "type": "news"
     },
     {
       "title": "League of Legends Patch 26.19 Notes",
