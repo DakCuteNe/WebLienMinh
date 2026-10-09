@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-08T09:32:59.077Z",
-  "directoryGeneratedAt": "2026-10-08T09:26:06.308Z",
-  "mediaEnrichedAt": "2026-10-08T09:28:37.185Z",
+  "generatedAt": "2026-10-09T09:42:28.328Z",
+  "directoryGeneratedAt": "2026-10-09T09:35:58.104Z",
+  "mediaEnrichedAt": "2026-10-09T09:38:19.670Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1125,
+      "count": 1126,
       "pct": 65.2
     },
     "realName": {
@@ -709,7 +709,7 @@
     },
     "CD": {
       "total": 72,
-      "image": 64,
+      "image": 65,
       "realName": 70,
       "country": 70,
       "birthdate": 0,
@@ -718,7 +718,7 @@
       "teamLogo": 49,
       "stats": 72,
       "completeCore": 0,
-      "imagePct": 88.9,
+      "imagePct": 90.3,
       "realNamePct": 97.2,
       "countryPct": 97.2,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 601,
+    "image": 600,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -2368,11 +2368,6 @@
         "id": "9G Dara67",
         "team": "9Gaming Esports",
         "region": "VCS"
-      },
-      {
-        "id": "Ryuu",
-        "team": "STAINED",
-        "region": "CD"
       },
       {
         "id": "STD Kerpp",
