@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:52:58.461Z",
+  "generatedAt": "2026-10-10T12:23:48.986Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 80,
-    "total": 81
+    "completed": 79,
+    "total": 80
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991310872058:2026-08-26T08:00:00Z:BRO-KT",
-      "riotEventId": null,
-      "matchId": "117030752644841571",
-      "startTime": "2026-08-26T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Play-Ins",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "HANJIN BRION",
-          "code": "BRO",
-          "image": "https://static.lolesports.com/teams/1716454325887_Nowyprojekt.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "kt Rolster",
-          "code": "KT",
-          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991310872058:2026-08-27T08:00:00Z:BFX-NS",
       "riotEventId": null,
