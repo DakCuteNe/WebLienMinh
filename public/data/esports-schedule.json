@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T12:23:48.986Z",
+  "generatedAt": "2026-10-11T00:12:37.759Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,9 +13,9 @@
   },
   "summary": {
     "live": 0,
-    "upcoming": 1,
+    "upcoming": 3,
     "completed": 79,
-    "total": 80
+    "total": 82
   },
   "leagues": [
     {
@@ -4103,6 +4103,106 @@
           "outcome": null,
           "record": {
             "wins": 2,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-15T18:00:00Z:FUR-MVK",
+      "riotEventId": null,
+      "matchId": "115660588583040710",
+      "startTime": "2026-10-15T18:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Play-Ins",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "FURIA",
+          "code": "FUR",
+          "image": "https://static.lolesports.com/teams/FURIA---black.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-15T23:00:00Z:C9-KC",
+      "riotEventId": null,
+      "matchId": "115660588583171786",
+      "startTime": "2026-10-15T23:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Play-Ins",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
             "losses": 0
           }
         }
