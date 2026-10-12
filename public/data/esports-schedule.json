@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T09:05:40.261Z",
+  "generatedAt": "2026-10-12T18:59:03.617Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 2,
-    "completed": 76,
-    "total": 78
+    "completed": 74,
+    "total": 76
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-28T15:00:00Z:TH-SHFT",
-      "riotEventId": null,
-      "matchId": "115548681803406119",
-      "startTime": "2026-08-28T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 6",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 7
-          }
-        },
-        {
-          "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 8
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-28T17:15:00Z:FNC-VIT",
-      "riotEventId": null,
-      "matchId": "115548681803406195",
-      "startTime": "2026-08-28T17:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 6",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Fnatic",
-          "code": "FNC",
-          "image": "https://static.lolesports.com/teams/1631819669150_fnc-2021-worlds.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        },
-        {
-          "id": null,
-          "name": "Team Vitality",
-          "code": "VIT",
-          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 7,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991310872058:2026-08-29T08:00:00Z:BFX-T1",
       "riotEventId": null,
@@ -3911,60 +3811,10 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-15T18:00:00Z:FUR-MVK",
-      "riotEventId": null,
-      "matchId": "115660588583040710",
-      "startTime": "2026-10-15T18:00:00Z",
-      "state": "unstarted",
-      "type": "match",
-      "blockName": "Play-Ins",
-      "league": {
-        "id": "98767975604431411",
-        "name": "Worlds",
-        "slug": "worlds",
-        "officialSlug": "worlds",
-        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
-        "group": "INTERNATIONAL",
-        "priority": 9
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "FURIA",
-          "code": "FUR",
-          "image": "https://static.lolesports.com/teams/FURIA---black.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "MVK Esports",
-          "code": "MVK",
-          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767975604431411:2026-10-15T23:00:00Z:C9-KC",
+      "id": "98767975604431411:2026-10-15T18:00:00Z:C9-KC",
       "riotEventId": null,
       "matchId": "115660588583171786",
-      "startTime": "2026-10-15T23:00:00Z",
+      "startTime": "2026-10-15T18:00:00Z",
       "state": "unstarted",
       "type": "match",
       "blockName": "Play-Ins",
@@ -3998,6 +3848,56 @@
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-15T23:00:00Z:FUR-MVK",
+      "riotEventId": null,
+      "matchId": "115660588583040710",
+      "startTime": "2026-10-15T23:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Play-Ins",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "FURIA",
+          "code": "FUR",
+          "image": "https://static.lolesports.com/teams/FURIA---black.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
