@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-12T09:49:59.431Z",
-  "directoryGeneratedAt": "2026-10-12T09:43:14.500Z",
-  "mediaEnrichedAt": "2026-10-12T09:45:40.672Z",
+  "generatedAt": "2026-10-13T09:49:53.400Z",
+  "directoryGeneratedAt": "2026-10-13T09:43:19.909Z",
+  "mediaEnrichedAt": "2026-10-13T09:45:40.437Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1126,
-      "pct": 65.2
+      "count": 1127,
+      "pct": 65.3
     },
     "realName": {
       "count": 1564,
@@ -520,7 +520,7 @@
     },
     "EM": {
       "total": 71,
-      "image": 57,
+      "image": 58,
       "realName": 69,
       "country": 69,
       "birthdate": 0,
@@ -529,7 +529,7 @@
       "teamLogo": 66,
       "stats": 71,
       "completeCore": 0,
-      "imagePct": 80.3,
+      "imagePct": 81.7,
       "realNamePct": 97.2,
       "countryPct": 97.2,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 600,
+    "image": 599,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -2132,11 +2132,6 @@
       {
         "id": "Warner",
         "team": "BAAM Esports",
-        "region": "EM"
-      },
-      {
-        "id": "ShizuOo",
-        "team": "3BL Esports",
         "region": "EM"
       },
       {
