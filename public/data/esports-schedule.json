@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T08:23:47.419Z",
+  "generatedAt": "2026-10-13T16:23:59.811Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 2,
-    "completed": 72,
-    "total": 74
+    "completed": 70,
+    "total": 72
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-08-29T09:00:00Z:TES-LGD",
-      "riotEventId": null,
-      "matchId": "117155436343202136",
-      "startTime": "2026-08-29T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "LGD GAMING",
-          "code": "LGD",
-          "image": "https://static.lolesports.com/teams/LGD-FullonDark-1.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-29T15:00:00Z:KC-SK",
-      "riotEventId": null,
-      "matchId": "115548681803406259",
-      "startTime": "2026-08-29T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 6",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Karmine Corp",
-          "code": "KC",
-          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 9,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "SK Gaming",
-          "code": "SK",
-          "image": "https://static.lolesports.com/teams/1643979272144_SK_Monochrome.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 6
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-29T17:15:00Z:GX-NAVI",
       "riotEventId": null,
