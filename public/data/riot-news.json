@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-14T13:38:50.840Z",
+  "generatedAt": "2026-10-14T18:32:26.967Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "/dev: League Classic",
+      "description": "Dev 2026-10-14T17:00:00.000Z /dev: League Classic What’s changing with League Classic",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/dev-league-classic",
+      "category": "Dev",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-10-14T17:00:00.000Z",
+      "type": "news"
+    },
     {
       "title": "League of Legends Patch 26.20 Notes",
       "description": "Patch Notes chính thức từ Riot Games.",
