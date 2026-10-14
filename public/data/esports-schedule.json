@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T10:33:46.824Z",
+  "generatedAt": "2026-10-14T15:27:17.067Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 2,
-    "completed": 64,
-    "total": 66
+    "completed": 62,
+    "total": 64
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-08-30T12:00:00Z:VIT-SHFT",
-      "riotEventId": null,
-      "matchId": "115548681803406179",
-      "startTime": "2026-08-30T12:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 6",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Vitality",
-          "code": "VIT",
-          "image": "https://static.lolesports.com/teams/1675865863968_Vitality_FullColor.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 7,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Shifters",
-          "code": "SHFT",
-          "image": "https://static.lolesports.com/teams/1765897071435_600px-Shifters_allmode.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 8
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991302996019:2026-08-30T14:15:00Z:TH-MKOI",
-      "riotEventId": null,
-      "matchId": "115548681803406131",
-      "startTime": "2026-08-30T14:15:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Week 6",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Heretics",
-          "code": "TH",
-          "image": "https://static.lolesports.com/teams/1672933861879_Heretics-Full-Color.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 7
-          }
-        },
-        {
-          "id": null,
-          "name": "Movistar KOI",
-          "code": "MKOI",
-          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 4,
-            "losses": 5
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-30T16:30:00Z:GX-FNC",
       "riotEventId": null,
