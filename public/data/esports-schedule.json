@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T00:35:15.723Z",
+  "generatedAt": "2026-10-14T10:33:46.824Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 2,
-    "completed": 67,
-    "total": 69
+    "completed": 64,
+    "total": 66
   },
   "leagues": [
     {
@@ -110,156 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991310872058:2026-08-30T08:00:00Z:KT-DK",
-      "riotEventId": null,
-      "matchId": "117030752644841595",
-      "startTime": "2026-08-30T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991310872058",
-        "name": "LCK",
-        "slug": "lck",
-        "officialSlug": "lck",
-        "image": "https://static.lolesports.com/leagues/lck-color-on-black.png",
-        "group": "REGIONAL",
-        "priority": 1
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "kt Rolster",
-          "code": "KT",
-          "image": "https://static.lolesports.com/teams/kt_darkbackground.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Dplus KIA",
-          "code": "DK",
-          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "113476371197627891:2026-08-30T08:00:00Z:TSW-CFO",
-      "riotEventId": null,
-      "matchId": "116769742220520955",
-      "startTime": "2026-08-30T08:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Finals",
-      "league": {
-        "id": "113476371197627891",
-        "name": "LCP",
-        "slug": "lcp",
-        "officialSlug": "lcp",
-        "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png",
-        "group": "REGIONAL",
-        "priority": 5
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Secret Whales",
-          "code": "TSW",
-          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "98767991314006698:2026-08-30T09:00:00Z:JDG-WE",
-      "riotEventId": null,
-      "matchId": "117155436343202142",
-      "startTime": "2026-08-30T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Beijing JDG Esports",
-          "code": "JDG",
-          "image": "https://static.lolesports.com/teams/1627457924722_29.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Xi'an Team WE",
-          "code": "WE",
-          "image": "https://static.lolesports.com/teams/1634763008788_220px-Team_WE_logo.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991302996019:2026-08-30T12:00:00Z:VIT-SHFT",
       "riotEventId": null,
