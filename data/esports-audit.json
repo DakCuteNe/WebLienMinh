@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-13T09:49:53.400Z",
-  "directoryGeneratedAt": "2026-10-13T09:43:19.909Z",
-  "mediaEnrichedAt": "2026-10-13T09:45:40.437Z",
+  "generatedAt": "2026-10-14T08:06:52.864Z",
+  "directoryGeneratedAt": "2026-10-14T07:59:40.461Z",
+  "mediaEnrichedAt": "2026-10-14T08:02:16.621Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1127,
-      "pct": 65.3
+      "count": 1128,
+      "pct": 65.4
     },
     "realName": {
       "count": 1564,
@@ -793,7 +793,7 @@
     },
     "LRN": {
       "total": 67,
-      "image": 50,
+      "image": 51,
       "realName": 58,
       "country": 58,
       "birthdate": 0,
@@ -802,7 +802,7 @@
       "teamLogo": 46,
       "stats": 67,
       "completeCore": 0,
-      "imagePct": 74.6,
+      "imagePct": 76.1,
       "realNamePct": 86.6,
       "countryPct": 86.6,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 599,
+    "image": 598,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -2317,11 +2317,6 @@
       {
         "id": "Z5 Blind Walke",
         "team": "Zeu5 Esports",
-        "region": "LRN"
-      },
-      {
-        "id": "Naerbedo",
-        "team": "NCG Esports",
         "region": "LRN"
       },
       {
