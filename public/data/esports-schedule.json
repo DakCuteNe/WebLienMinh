@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T21:17:35.157Z",
+  "generatedAt": "2026-10-15T23:49:05.257Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 1,
-    "completed": 59,
+    "upcoming": 0,
+    "completed": 60,
     "total": 61
   },
   "leagues": [
@@ -3065,7 +3065,7 @@
       "riotEventId": null,
       "matchId": "115660588583171786",
       "startTime": "2026-10-15T18:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -3086,10 +3086,10 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -3100,10 +3100,10 @@
           "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
           "slug": null,
           "wins": 2,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -3111,11 +3111,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-15T23:00:00Z:FUR-MVK",
+      "id": "98767975604431411:2026-10-15T23:00:00Z:MVK-FUR",
       "riotEventId": null,
       "matchId": "115660588583040710",
       "startTime": "2026-10-15T23:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -3132,9 +3132,9 @@
       "teams": [
         {
           "id": null,
-          "name": "FURIA",
-          "code": "FUR",
-          "image": "https://static.lolesports.com/teams/FURIA---black.png",
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -3145,9 +3145,9 @@
         },
         {
           "id": null,
-          "name": "MVK Esports",
-          "code": "MVK",
-          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
+          "name": "FURIA",
+          "code": "FUR",
+          "image": "https://static.lolesports.com/teams/FURIA---black.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
