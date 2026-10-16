@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T23:49:05.257Z",
+  "generatedAt": "2026-10-16T04:23:08.665Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 0,
-    "completed": 60,
-    "total": 61
+    "live": 0,
+    "upcoming": 2,
+    "completed": 61,
+    "total": 63
   },
   "leagues": [
     {
@@ -3115,7 +3115,7 @@
       "riotEventId": null,
       "matchId": "115660588583040710",
       "startTime": "2026-10-15T23:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -3136,11 +3136,111 @@
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
+          "wins": 3,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "FURIA",
+          "code": "FUR",
+          "image": "https://static.lolesports.com/teams/FURIA---black.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": "loss",
+          "record": {
+            "wins": 0,
+            "losses": 1
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-16T18:00:00Z:KC-MVK",
+      "riotEventId": null,
+      "matchId": "115660588583171790",
+      "startTime": "2026-10-16T18:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Play-Ins",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "MVK Esports",
+          "code": "MVK",
+          "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-16T23:00:00Z:C9-FUR",
+      "riotEventId": null,
+      "matchId": "115660588583171794",
+      "startTime": "2026-10-16T23:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Play-Ins",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Cloud9 Kia",
+          "code": "C9",
+          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
+          "slug": null,
           "wins": 0,
           "outcome": null,
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -3153,7 +3253,7 @@
           "outcome": null,
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
