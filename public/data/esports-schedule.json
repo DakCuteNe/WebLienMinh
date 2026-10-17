@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T09:15:14.564Z",
+  "generatedAt": "2026-10-17T19:17:59.262Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 1,
+    "live": 1,
+    "upcoming": 0,
     "completed": 61,
     "total": 62
   },
@@ -3165,7 +3165,7 @@
       "riotEventId": null,
       "matchId": "115660588583171798",
       "startTime": "2026-10-17T18:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -3186,7 +3186,7 @@
           "code": "MVK",
           "image": "https://static.lolesports.com/teams/1767089709161_White_Logo.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
