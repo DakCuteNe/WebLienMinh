@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T09:02:34.567Z",
+  "generatedAt": "2026-10-18T19:23:43.150Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 1,
+    "live": 1,
+    "upcoming": 0,
     "completed": 60,
     "total": 61
   },
@@ -3115,7 +3115,7 @@
       "riotEventId": null,
       "matchId": "116299649498303884",
       "startTime": "2026-10-18T18:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Play-Ins",
       "league": {
@@ -3136,7 +3136,7 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
