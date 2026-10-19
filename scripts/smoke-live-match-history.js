@@ -60,11 +60,11 @@ const metadataWindow = {
     blueTeamMetadata: {
       esportsTeamId: 'team-b',
       participantMetadata: [
-        { participantId: 1, summonerName: 'TopB', championId: '266', role: 'top' },
-        { participantId: 2, summonerName: 'JungleB', championId: '64', role: 'jungle' },
-        { participantId: 3, summonerName: 'MidB', championId: '103', role: 'mid' },
-        { participantId: 4, summonerName: 'AdcB', championId: '22', role: 'bottom' },
-        { participantId: 5, summonerName: 'SupportB', championId: '412', role: 'support' }
+        { participantId: 1, summonerName: 'TopB', championId: 'Olaf', role: 'top' },
+        { participantId: 2, summonerName: 'JungleB', championId: 'LeeSin', role: 'jungle' },
+        { participantId: 3, summonerName: 'MidB', championId: 'Annie', role: 'mid' },
+        { participantId: 4, summonerName: 'AdcB', championId: 'Yunara', role: 'bottom' },
+        { participantId: 5, summonerName: 'SupportB', championId: 'Nautilus', role: 'support' }
       ],
       bans: [238, 517, 150, 555, 84]
     },
@@ -104,6 +104,8 @@ const aligned = alignLiveTeams(normalized, sidedGame, teams);
 
 assert.equal(normalized.gameId, 'game-2');
 assert.equal(normalized.blue.picks.length, 5);
+assert.equal(normalized.blue.picks[0].championId, 'Olaf', 'Riot string champion ids must survive normalization');
+assert.equal(normalized.blue.picks[1].championId, 'LeeSin', 'Data Dragon ids such as LeeSin must not be dropped');
 assert.equal(normalized.red.picks.length, 5);
 assert.equal(normalized.blue.bans.length, 5);
 assert.equal(normalized.red.bans.length, 5);
