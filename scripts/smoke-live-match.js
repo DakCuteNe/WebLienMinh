@@ -10,6 +10,8 @@ const hasTwoTeams = event => Array.isArray(event?.teams)
 
 function paramsFor(event, detail = false, viewGameId = '') {
   const params = new URLSearchParams({
+    eventId: String(event.riotEventId || ''),
+    matchId: String(event.matchId || ''),
     leagueId: String(event.league?.id || ''),
     leagueSlug: String(event.league?.slug || ''),
     startTime: String(event.startTime || ''),
@@ -38,6 +40,9 @@ function assertResolved(body, event) {
   if (!body.resolved) throw new Error(`LoL Esports event did not resolve: ${event.id}`);
   if (!Array.isArray(body.teams) || body.teams.length < 2) throw new Error('Resolved match has no team score data.');
   if (!body.matchId) throw new Error('Resolved match has no Riot matchId.');
+  if (event?.matchId && String(body.matchId) !== String(event.matchId)) {
+    throw new Error(`Exact schedule matchId ${event.matchId} resolved to ${body.matchId}.`);
+  }
   if (!Array.isArray(body.games) || body.games.length < 1) throw new Error('Resolved match has no BO game list.');
   if (!body.officialUrl || !new URL(body.officialUrl).pathname.includes('/schedule')) throw new Error(`Invalid official match URL: ${body.officialUrl}`);
   if (body.watchUrl) {
@@ -69,7 +74,8 @@ function objectivesReady(live) {
     && Array.isArray(stats.dragonTypes)
     && Number.isFinite(Number(stats.inhibitors))
     && Number.isFinite(Number(stats.towers))
-    && Number.isFinite(Number(stats.barons)));
+    && Number.isFinite(Number(stats.barons))
+    && Number.isFinite(Number(stats.elders)));
 }
 
 // Basic resolver smoke: choose a recent/upcoming real event, never a TBD placeholder.
@@ -92,7 +98,7 @@ assertResolved(body, event);
 
 console.log(JSON.stringify({
   smoke: 'ok',
-  requested: { league: event.league?.name, startTime: event.startTime, teams: event.teams?.map(team => team.code) },
+  requested: { eventId: event.riotEventId, matchId: event.matchId, league: event.league?.name, startTime: event.startTime, teams: event.teams?.map(team => team.code) },
   resolved: { matchId: body.matchId, state: body.state, bestOf: body.bestOf, games: body.games.length },
   score: body.teams.map(team => ({ code: team.code, wins: team.wins }))
 }, null, 2));
@@ -107,7 +113,7 @@ const recentLck = (schedule.events || [])
   .sort((a, b) => Math.abs(now - new Date(a.startTime).getTime()) - Math.abs(now - new Date(b.startTime).getTime()));
 const exactReported = recentLck.find(row => {
   const codes = (row.teams || []).map(team => String(team.code || '').toUpperCase());
-  return codes.includes('KRX') && codes.includes('NS');
+  return codes.includes('KRX') && (codes.includes('NS') || codes.includes('DNS'));
 });
 const playedFallback = recentLck.find(row => row.state === 'completed' || (row.teams || []).some(team => Number(team?.wins || 0) > 0));
 const regressionEvent = exactReported || playedFallback || null;
@@ -131,7 +137,7 @@ if (regressionEvent) {
     if (detail.live?.gameId !== game.id) throw new Error(`Game ${game.number} returned no exact-game live/history snapshot.`);
     if (pickCount(detail.live) < 10) throw new Error(`Game ${game.number} did not recover all 10 Riot picks.`);
     if (statsSignal(detail.live) <= 0) throw new Error(`Game ${game.number} recovered picks but no real team stats.`);
-    if (!objectivesReady(detail.live)) throw new Error(`Game ${game.number} did not enrich Riot objective details.`);
+    if (!objectivesReady(detail.live)) throw new Error(`Game ${game.number} did not enrich Riot objective details including Elder count.`);
 
     const expectedIds = new Set((series.teams || []).map(team => String(team.id || '')).filter(Boolean));
     const alignedIds = new Set((detail.live.teams || []).map(team => String(team.teamId || '')).filter(Boolean));
