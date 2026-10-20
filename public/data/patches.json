@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-10-20T16:55:09.611Z",
+  "generatedAt": "2026-10-20T21:33:11.796Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
+    {
+      "patch": "26.21",
+      "title": "League of Legends Patch 26.21 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-21-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/6d3f4fed564252b2e0145b179108675508cf5f19-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-10-20T18:00:00.000Z",
+      "description": "True Damage has arrived with style! Plus tons to look forward to across SR, Mayhem, Classic, and Arena."
+    },
     {
       "patch": "26.20",
       "title": "League of Legends Patch 26.20 Notes",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/6ee41cd6a039966520450f721c40c0012a8c870f-2048x1208.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "The season of demons continues with Patch 26.10!"
-    },
-    {
-      "patch": "26.9",
-      "title": "League of Legends Patch 26.9 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-9-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/b2e196d8bf9c21cdc7bdde5c7680249bda2b82de-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "It’s time to hunt demons with Patch 26.9!"
     }
   ]
 }

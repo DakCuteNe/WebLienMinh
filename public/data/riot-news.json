@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-10-20T16:55:09.612Z",
+  "generatedAt": "2026-10-20T21:33:11.797Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "League of Legends Patch 26.21 Notes",
+      "description": "Game Updates 2026-10-20T18:00:00.000Z League of Legends Patch 26.21 Notes True Damage has arrived with style! Plus tons to look forward to across SR, Mayhem, Classic, and Arena.",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-21-notes",
+      "category": "Game Updates",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-10-20T18:00:00.000Z",
+      "type": "patch"
+    },
+    {
+      "title": "/dev: Mel Midscope",
+      "description": "Dev 2026-10-20T17:00:00.000Z /dev: Mel Midscope We’re updating Mel, and here’s the how and why.",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/dev-mel-midscope",
+      "category": "Dev",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-10-20T17:00:00.000Z",
+      "type": "news"
+    },
     {
       "title": "/dev: League Classic",
       "description": "Dev 2026-10-14T17:00:00.000Z /dev: League Classic What’s changing with League Classic.",
