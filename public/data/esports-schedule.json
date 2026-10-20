@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T12:06:14.338Z",
+  "generatedAt": "2026-10-20T16:59:28.873Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 8,
-    "completed": 55,
-    "total": 63
+    "completed": 54,
+    "total": 62
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991302996019:2026-09-05T15:00:00Z:KC-GX",
-      "riotEventId": null,
-      "matchId": "115548681803406291",
-      "startTime": "2026-09-05T15:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991302996019",
-        "name": "LEC",
-        "slug": "lec",
-        "officialSlug": "lec",
-        "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 3
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Karmine Corp",
-          "code": "KC",
-          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "GIANTX",
-          "code": "GX",
-          "image": "https://static.lolesports.com/teams/1765897105091_GIANTX-logotype-white.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 0,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-09-05T20:00:00Z:C9-SEN",
       "riotEventId": null,
