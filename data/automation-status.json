@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-10-20T21:42:28.345Z",
+  "checkedAt": "2026-10-21T04:58:39.347Z",
   "health": "degraded",
   "scope": "GLOBAL",
-  "patch": "16.20",
-  "dataDragonVersion": "16.20.1",
+  "patch": "16.21",
+  "dataDragonVersion": "16.21.1",
   "riotSecretConfigured": true,
   "riotStaticExitCode": 0,
   "collectorExitCode": 1,
@@ -37,7 +37,7 @@
       "SEA": 48
     }
   },
-  "riotStaticMessage": "> rift-meta-vn@3.13.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.20.1 (patch 16.20)\nChưa có version Data Dragon mới. Đang ở 16.20.1.",
-  "collectorMessage": "◇ injected env (0) from .env\nGLOBAL HIGH-ELO • patch 16.20 • 16 platforms • 2 seed/platform • 6 match/seed\n=== NA1 • North America ===\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97\n    throw new RiotHttpError(response.status, response.statusText, body);\n          ^\nRiotHttpError: 401 Unauthorized: {\"status\":{\"message\":\"Unknown apikey\",\"status_code\":401}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async getPlatformSeeds (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:120:22)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:181:24 {\n  status: 401\n}\nNode.js v22.23.3",
+  "riotStaticMessage": "> rift-meta-vn@3.13.0 update:riot\n> node scripts/update-riot-data.js\nData Dragon mới nhất: 16.21.1 (patch 16.21)\nPhát hiện dữ liệu Riot mới: 16.20.1 -> 16.21.1",
+  "collectorMessage": "◇ injected env (0) from .env\nGLOBAL HIGH-ELO • patch 16.21 • 16 platforms • 2 seed/platform • 6 match/seed\n=== NA1 • North America ===\nfile:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97\n    throw new RiotHttpError(response.status, response.statusText, body);\n          ^\nRiotHttpError: 401 Unauthorized: {\"status\":{\"message\":\"Unknown apikey\",\"status_code\":401}}\n    at riot (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:97:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async getPlatformSeeds (file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:120:22)\n    at async file:///home/runner/work/WebLienMinh/WebLienMinh/scripts/collect-high-elo.js:181:24 {\n  status: 401\n}\nNode.js v22.23.3",
   "aggregateMessage": "No accepted worldwide dataset. Keeping previous meta.json."
 }
