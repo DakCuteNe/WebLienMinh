@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T23:14:12.491Z",
+  "generatedAt": "2026-10-22T04:34:57.924Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
     {
@@ -10,24 +10,6 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-10-20T18:00:00.000Z",
       "type": "patch"
-    },
-    {
-      "title": "/dev: Mel Midscope",
-      "description": "Dev 2026-10-20T17:00:00.000Z /dev: Mel Midscope We’re updating Mel, and here’s the how and why.",
-      "url": "https://www.leagueoflegends.com/en-us/news/dev/dev-mel-midscope",
-      "category": "Dev",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-10-20T17:00:00.000Z",
-      "type": "news"
-    },
-    {
-      "title": "/dev: League Classic",
-      "description": "Dev 2026-10-14T17:00:00.000Z /dev: League Classic What’s changing with League Classic.",
-      "url": "https://www.leagueoflegends.com/en-us/news/dev/dev-league-classic",
-      "category": "Dev",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-10-14T17:00:00.000Z",
-      "type": "news"
     },
     {
       "title": "League of Legends Patch 26.20 Notes",
