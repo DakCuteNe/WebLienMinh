@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-21T08:05:34.091Z",
-  "directoryGeneratedAt": "2026-10-21T07:58:39.735Z",
-  "mediaEnrichedAt": "2026-10-21T08:01:08.713Z",
+  "generatedAt": "2026-10-22T08:02:46.214Z",
+  "directoryGeneratedAt": "2026-10-22T07:55:44.549Z",
+  "mediaEnrichedAt": "2026-10-22T07:58:14.758Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1128,
-      "pct": 65.4
+      "count": 1127,
+      "pct": 65.3
     },
     "realName": {
       "count": 1564,
@@ -562,7 +562,7 @@
     },
     "NACL": {
       "total": 54,
-      "image": 33,
+      "image": 32,
       "realName": 51,
       "country": 52,
       "birthdate": 0,
@@ -571,7 +571,7 @@
       "teamLogo": 54,
       "stats": 54,
       "completeCore": 0,
-      "imagePct": 61.1,
+      "imagePct": 59.3,
       "realNamePct": 94.4,
       "countryPct": 96.3,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 598,
+    "image": 599,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -1047,6 +1047,11 @@
       {
         "id": "Music",
         "team": "Supernova",
+        "region": "NACL"
+      },
+      {
+        "id": "Protos",
+        "team": "Apex Mission Impossible",
         "region": "NACL"
       },
       {
