@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T17:51:12.485Z",
+  "generatedAt": "2026-10-23T21:20:14.120Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 7,
-    "completed": 44,
+    "upcoming": 3,
+    "completed": 48,
     "total": 52
   },
   "leagues": [
@@ -2315,7 +2315,7 @@
       "riotEventId": null,
       "matchId": "115660540726095005",
       "startTime": "2026-10-23T17:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2337,10 +2337,10 @@
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2349,10 +2349,10 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         }
@@ -2361,11 +2361,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-23T18:00:00Z:HLE-TES",
+      "id": "98767975604431411:2026-10-23T18:00:00Z:TES-HLE",
       "riotEventId": null,
       "matchId": "115660540726095013",
       "startTime": "2026-10-23T18:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2380,19 +2380,6 @@
       "bestOf": 1,
       "strategyType": "bestOf",
       "teams": [
-        {
-          "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
-          }
-        },
         {
           "id": null,
           "name": "TOP ESPORTS",
@@ -2400,9 +2387,22 @@
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
             "losses": 0
           }
         }
@@ -2411,11 +2411,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-23T19:00:00Z:BLG-MKOI",
+      "id": "98767975604431411:2026-10-23T19:00:00Z:MKOI-BLG",
       "riotEventId": null,
       "matchId": "115660540726095019",
       "startTime": "2026-10-23T19:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2430,6 +2430,19 @@
       "bestOf": 1,
       "strategyType": "bestOf",
       "teams": [
+        {
+          "id": null,
+          "name": "Movistar KOI",
+          "code": "MKOI",
+          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
         {
           "id": null,
           "name": "BILIBILI GAMING",
@@ -2437,23 +2450,10 @@
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "Movistar KOI",
-          "code": "MKOI",
-          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -2461,11 +2461,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-23T20:00:00Z:AL-KC",
+      "id": "98767975604431411:2026-10-23T20:00:00Z:KC-AL",
       "riotEventId": null,
       "matchId": "115660540726095009",
       "startTime": "2026-10-23T20:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2480,6 +2480,19 @@
       "bestOf": 1,
       "strategyType": "bestOf",
       "teams": [
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
         {
           "id": null,
           "name": "Anyone's Legend",
@@ -2487,23 +2500,10 @@
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "Karmine Corp",
-          "code": "KC",
-          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -2511,11 +2511,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-23T21:00:00Z:G2-DK",
+      "id": "98767975604431411:2026-10-23T21:00:00Z:DK-G2",
       "riotEventId": null,
       "matchId": "115660540726095011",
       "startTime": "2026-10-23T21:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2532,9 +2532,9 @@
       "teams": [
         {
           "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "name": "Dplus KIA",
+          "code": "DK",
+          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -2545,9 +2545,9 @@
         },
         {
           "id": null,
-          "name": "Dplus KIA",
-          "code": "DK",
-          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
