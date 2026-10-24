@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T04:28:11.991Z",
+  "generatedAt": "2026-10-24T19:26:55.418Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 8,
-    "completed": 52,
+    "live": 1,
+    "upcoming": 5,
+    "completed": 54,
     "total": 60
   },
   "leagues": [
@@ -2389,7 +2389,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         },
@@ -2439,7 +2439,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -2503,7 +2503,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2603,7 +2603,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -2711,11 +2711,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-24T17:00:00Z:AL-TES",
+      "id": "98767975604431411:2026-10-24T17:00:00Z:TES-AL",
       "riotEventId": null,
       "matchId": "115660540726095029",
       "startTime": "2026-10-24T17:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2730,6 +2730,19 @@
       "bestOf": 1,
       "strategyType": "bestOf",
       "teams": [
+        {
+          "id": null,
+          "name": "TOP ESPORTS",
+          "code": "TES",
+          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": "win",
+          "record": {
+            "wins": 1,
+            "losses": 1
+          }
+        },
         {
           "id": null,
           "name": "Anyone's Legend",
@@ -2737,23 +2750,10 @@
           "image": "https://static.lolesports.com/teams/1641199582689_.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2761,11 +2761,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-24T18:00:00Z:CFO-MKOI",
+      "id": "98767975604431411:2026-10-24T18:00:00Z:MKOI-CFO",
       "riotEventId": null,
       "matchId": "115660540726095021",
       "startTime": "2026-10-24T18:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2780,6 +2780,19 @@
       "bestOf": 1,
       "strategyType": "bestOf",
       "teams": [
+        {
+          "id": null,
+          "name": "Movistar KOI",
+          "code": "MKOI",
+          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": "win",
+          "record": {
+            "wins": 2,
+            "losses": 0
+          }
+        },
         {
           "id": null,
           "name": "CTBC Flying Oyster",
@@ -2787,23 +2800,10 @@
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "Movistar KOI",
-          "code": "MKOI",
-          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -2811,11 +2811,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-24T19:00:00Z:G2-LOS",
+      "id": "98767975604431411:2026-10-24T19:00:00Z:LOS-G2",
       "riotEventId": null,
       "matchId": "115660540726095031",
       "startTime": "2026-10-24T19:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2832,9 +2832,9 @@
       "teams": [
         {
           "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "name": "LOS",
+          "code": "LOS",
+          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -2845,9 +2845,9 @@
         },
         {
           "id": null,
-          "name": "LOS",
-          "code": "LOS",
-          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
