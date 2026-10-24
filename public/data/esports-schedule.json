@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T19:26:55.418Z",
+  "generatedAt": "2026-10-24T21:51:09.982Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 5,
-    "completed": 54,
+    "upcoming": 3,
+    "completed": 56,
     "total": 60
   },
   "leagues": [
@@ -2490,7 +2490,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2552,7 +2552,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         }
@@ -2640,7 +2640,7 @@
           "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -2689,7 +2689,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 0
           }
         },
@@ -2815,7 +2815,7 @@
       "riotEventId": null,
       "matchId": "115660540726095031",
       "startTime": "2026-10-24T19:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2837,10 +2837,10 @@
           "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -2849,10 +2849,10 @@
           "code": "G2",
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 1
           }
         }
@@ -2861,11 +2861,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-24T20:00:00Z:LYON-KC",
+      "id": "98767975604431411:2026-10-24T20:00:00Z:KC-LYON",
       "riotEventId": null,
       "matchId": "115660540726095023",
       "startTime": "2026-10-24T20:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2882,27 +2882,27 @@
       "teams": [
         {
           "id": null,
-          "name": "LYON",
-          "code": "LYON",
-          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": null,
-          "record": {
-            "wins": 1,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
           "name": "Karmine Corp",
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
+            "losses": 1
+          }
+        },
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "slug": null,
+          "wins": 1,
+          "outcome": "win",
+          "record": {
+            "wins": 2,
             "losses": 0
           }
         }
@@ -2915,7 +2915,7 @@
       "riotEventId": null,
       "matchId": "115660540726095033",
       "startTime": "2026-10-24T21:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
