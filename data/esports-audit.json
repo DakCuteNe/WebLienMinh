@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-23T08:01:17.500Z",
-  "directoryGeneratedAt": "2026-10-23T07:54:39.450Z",
-  "mediaEnrichedAt": "2026-10-23T07:57:04.198Z",
+  "generatedAt": "2026-10-24T07:41:44.842Z",
+  "directoryGeneratedAt": "2026-10-24T07:35:01.898Z",
+  "mediaEnrichedAt": "2026-10-24T07:37:26.812Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1127,
-      "pct": 65.3
+      "count": 1128,
+      "pct": 65.4
     },
     "realName": {
       "count": 1564,
@@ -709,7 +709,7 @@
     },
     "CD": {
       "total": 72,
-      "image": 65,
+      "image": 66,
       "realName": 70,
       "country": 70,
       "birthdate": 0,
@@ -718,7 +718,7 @@
       "teamLogo": 49,
       "stats": 72,
       "completeCore": 0,
-      "imagePct": 90.3,
+      "imagePct": 91.7,
       "realNamePct": 97.2,
       "countryPct": 97.2,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 599,
+    "image": 598,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -2377,11 +2377,6 @@
       {
         "id": "patouu",
         "team": "Prodigy Invokers",
-        "region": "CD"
-      },
-      {
-        "id": "Humi",
-        "team": "SabOOr T1",
         "region": "CD"
       },
       {
