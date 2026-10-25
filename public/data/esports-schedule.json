@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T10:06:20.120Z",
+  "generatedAt": "2026-10-25T17:49:45.564Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 8,
+    "live": 1,
+    "upcoming": 7,
     "completed": 60,
     "total": 68
   },
@@ -3111,11 +3111,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-25T17:00:00Z:HLE-IG",
+      "id": "98767975604431411:2026-10-25T17:00:00Z:IG-HLE",
       "riotEventId": null,
       "matchId": "115660540726095045",
       "startTime": "2026-10-25T17:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3132,9 +3132,9 @@
       "teams": [
         {
           "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "name": "Invictus Gaming",
+          "code": "IG",
+          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -3145,9 +3145,9 @@
         },
         {
           "id": null,
-          "name": "Invictus Gaming",
-          "code": "IG",
-          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
