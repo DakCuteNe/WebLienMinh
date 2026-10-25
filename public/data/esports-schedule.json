@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T05:14:30.780Z",
+  "generatedAt": "2026-10-25T10:06:20.120Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -3161,7 +3161,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-25T18:00:00Z:TES-G2",
+      "id": "98767975604431411:2026-10-25T18:00:00Z:G2-TES",
       "riotEventId": null,
       "matchId": "115660540726095047",
       "startTime": "2026-10-25T18:00:00Z",
@@ -3182,9 +3182,9 @@
       "teams": [
         {
           "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -3195,9 +3195,9 @@
         },
         {
           "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "name": "TOP ESPORTS",
+          "code": "TES",
+          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
