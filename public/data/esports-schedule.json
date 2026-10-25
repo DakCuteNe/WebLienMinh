@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:45:21.205Z",
+  "generatedAt": "2026-10-25T23:11:18.692Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -3261,7 +3261,7 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-25T22:00:00Z:GEN-LYON",
+      "id": "98767975604431411:2026-10-25T22:00:00Z:LYON-GEN",
       "riotEventId": null,
       "matchId": "115660540726095041",
       "startTime": "2026-10-25T22:00:00Z",
@@ -3282,11 +3282,11 @@
       "teams": [
         {
           "id": null,
-          "name": "Gen.G Esports",
-          "code": "GEN",
-          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
@@ -3295,11 +3295,11 @@
         },
         {
           "id": null,
-          "name": "LYON",
-          "code": "LYON",
-          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "name": "Gen.G Esports",
+          "code": "GEN",
+          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
