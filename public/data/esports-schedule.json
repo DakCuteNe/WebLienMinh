@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T17:49:45.564Z",
+  "generatedAt": "2026-10-25T20:45:21.205Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 7,
-    "completed": 60,
+    "upcoming": 4,
+    "completed": 63,
     "total": 68
   },
   "leagues": [
@@ -2339,7 +2339,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -2389,7 +2389,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -2403,7 +2403,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2440,7 +2440,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2539,7 +2539,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -2553,7 +2553,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2739,7 +2739,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -2790,7 +2790,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2853,7 +2853,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2952,7 +2952,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -2990,7 +2990,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -3039,7 +3039,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -3115,7 +3115,7 @@
       "riotEventId": null,
       "matchId": "115660540726095045",
       "startTime": "2026-10-25T17:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3136,10 +3136,10 @@
           "code": "IG",
           "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -3150,10 +3150,10 @@
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -3161,11 +3161,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-25T18:00:00Z:G2-TES",
+      "id": "98767975604431411:2026-10-25T18:00:00Z:TES-G2",
       "riotEventId": null,
       "matchId": "115660540726095047",
       "startTime": "2026-10-25T18:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3182,28 +3182,28 @@
       "teams": [
         {
           "id": null,
-          "name": "G2 Esports",
-          "code": "G2",
-          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
+          "name": "TOP ESPORTS",
+          "code": "TES",
+          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
         {
           "id": null,
-          "name": "TOP ESPORTS",
-          "code": "TES",
-          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+          "name": "G2 Esports",
+          "code": "G2",
+          "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -3215,7 +3215,7 @@
       "riotEventId": null,
       "matchId": "115660540726095037",
       "startTime": "2026-10-25T19:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3237,10 +3237,10 @@
           "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -3249,10 +3249,10 @@
           "code": "DK",
           "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
@@ -3265,7 +3265,7 @@
       "riotEventId": null,
       "matchId": "115660540726095041",
       "startTime": "2026-10-25T22:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
