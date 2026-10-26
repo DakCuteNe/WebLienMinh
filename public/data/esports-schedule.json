@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T15:07:36.385Z",
+  "generatedAt": "2026-10-26T20:43:42.958Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 4,
-    "completed": 61,
+    "live": 1,
+    "upcoming": 1,
+    "completed": 63,
     "total": 65
   },
   "leagues": [
@@ -2302,7 +2302,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -2340,7 +2340,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -2453,7 +2453,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2502,7 +2502,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -2653,7 +2653,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2740,7 +2740,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -2902,7 +2902,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -2952,7 +2952,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         }
@@ -3161,11 +3161,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-26T17:00:00Z:CFO-T1",
+      "id": "98767975604431411:2026-10-26T17:00:00Z:T1-CFO",
       "riotEventId": null,
       "matchId": "115660540726095049",
       "startTime": "2026-10-26T17:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3182,28 +3182,28 @@
       "teams": [
         {
           "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "name": "T1",
+          "code": "T1",
+          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
         {
           "id": null,
-          "name": "T1",
-          "code": "T1",
-          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -3215,7 +3215,7 @@
       "riotEventId": null,
       "matchId": "115660540726095051",
       "startTime": "2026-10-26T18:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3236,10 +3236,10 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 1
           }
         },
@@ -3250,10 +3250,10 @@
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -3261,11 +3261,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-26T19:00:00Z:LOS-TSW",
+      "id": "98767975604431411:2026-10-26T19:00:00Z:TSW-LOS",
       "riotEventId": null,
       "matchId": "115660540726095053",
       "startTime": "2026-10-26T19:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3282,9 +3282,9 @@
       "teams": [
         {
           "id": null,
-          "name": "LOS",
-          "code": "LOS",
-          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
+          "name": "Team Secret Whales",
+          "code": "TSW",
+          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -3295,11 +3295,11 @@
         },
         {
           "id": null,
-          "name": "Team Secret Whales",
-          "code": "TSW",
-          "image": "https://static.lolesports.com/teams/1774598000328_White_EyeText_600p.png",
+          "name": "LOS",
+          "code": "LOS",
+          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 0,
