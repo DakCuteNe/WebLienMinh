@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T23:11:18.692Z",
+  "generatedAt": "2026-10-26T01:38:56.859Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 4,
-    "completed": 63,
+    "completed": 64,
     "total": 68
   },
   "leagues": [
@@ -2352,7 +2352,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
@@ -2690,7 +2690,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2903,7 +2903,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -3002,7 +3002,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
@@ -3265,7 +3265,7 @@
       "riotEventId": null,
       "matchId": "115660540726095041",
       "startTime": "2026-10-25T22:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3287,10 +3287,10 @@
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -3299,10 +3299,10 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
