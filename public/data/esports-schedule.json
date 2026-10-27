@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T05:32:31.778Z",
+  "generatedAt": "2026-10-27T10:55:36.867Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 6,
-    "completed": 64,
-    "total": 70
+    "completed": 62,
+    "total": 68
   },
   "leagues": [
     {
@@ -110,106 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991314006698:2026-09-12T09:00:00Z:IG-AL",
-      "riotEventId": null,
-      "matchId": "117155436343202196",
-      "startTime": "2026-09-12T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991314006698",
-        "name": "LPL",
-        "slug": "lpl",
-        "officialSlug": "lpl",
-        "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 2
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Invictus Gaming",
-          "code": "IG",
-          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "loss",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "Anyone's Legend",
-          "code": "AL",
-          "image": "https://static.lolesports.com/teams/1641199582689_.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
-    {
-      "id": "107213827295848783:2026-09-12T09:00:00Z:MVKA-9G",
-      "riotEventId": null,
-      "matchId": "116952475624364041",
-      "startTime": "2026-09-12T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Groups",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 3,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon MVKE Academy",
-          "code": "MVKA",
-          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
-          "slug": null,
-          "wins": 2,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Saigon 9Gaming Esports",
-          "code": "9G",
-          "image": "https://static.lolesports.com/teams/1771230747972_9Gaming_Ngang_Vng_en.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "107213827295848783:2026-09-12T12:00:00Z:SGW-SCBC",
       "riotEventId": null,
