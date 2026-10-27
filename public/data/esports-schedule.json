@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T16:30:20.341Z",
+  "generatedAt": "2026-10-27T20:55:55.414Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 6,
-    "completed": 60,
-    "total": 66
+    "completed": 59,
+    "total": 65
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-09-12T20:00:00Z:SR-C9",
-      "riotEventId": null,
-      "matchId": "115565004607949375",
-      "startTime": "2026-09-12T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Shopify Rebellion",
-          "code": "SR",
-          "image": "https://static.lolesports.com/teams/1701424227458_Teams204_Shopify_1632869404072.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        },
-        {
-          "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991310872058:2026-09-13T05:00:00Z:GEN-HLE",
       "riotEventId": null,
