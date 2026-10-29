@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T02:48:40.729Z",
+  "generatedAt": "2026-10-29T21:44:50.461Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 4,
+    "live": 1,
+    "upcoming": 3,
     "completed": 56,
     "total": 60
   },
@@ -2911,11 +2911,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-29T20:00:00Z:CFO-KC",
+      "id": "98767975604431411:2026-10-29T20:00:00Z:KC-CFO",
       "riotEventId": null,
       "matchId": "115660540726095073",
       "startTime": "2026-10-29T20:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2932,11 +2932,11 @@
       "teams": [
         {
           "id": null,
-          "name": "CTBC Flying Oyster",
-          "code": "CFO",
-          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 1,
@@ -2945,9 +2945,9 @@
         },
         {
           "id": null,
-          "name": "Karmine Corp",
-          "code": "KC",
-          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "name": "CTBC Flying Oyster",
+          "code": "CFO",
+          "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
