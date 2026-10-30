@@ -216,7 +216,9 @@ public static class RK58SongBankDeepRepair
         // Never mutate the serialized m_Script. Verify Unity's actual
         // AddComponent binding on a disposable GameObject first.
         GameObject probe = new GameObject("__RK58_ScriptProbe");
-        probe.hideFlags = HideFlags.HideAndDontSave;
+        // Use ordinary scene-object serialization for the probe. HideAndDontSave
+        // can yield a different MonoScript context from a saved Scene object.
+        probe.SetActive(false);
         bool ok = false;
         try
         {
