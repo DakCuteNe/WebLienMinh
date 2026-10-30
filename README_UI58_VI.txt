@@ -1,37 +1,47 @@
-RHYTHM KITCHEN UI58 — HOTFIX SONGBANK (2026-10-30)
-=================================================
-Trieu chung:
-GameObject (named 'RK58_SongBank') references runtime script in scene file. Fixing!
+RHYTHM KITCHEN UI58 — SONG BANK SCRIPT REFERENCE FIX
+======================================================
+HOTFIX 2026-10-30
 
-Nguyen nhan:
-Scene cu van luu m_Script tham chieu MonoScript truoc khi tach RK58Runtime.cs.
-MIDI importer cu quet theo component type. Khi MonoBehaviour hu, no khong tim
-thay va tao them mot GameObject RK58_SongBank, khien canh bao con mai.
+VAN DE:
+[RK58 SongBank] Unable to attach the expected RK58SongBank.cs.
+... RK58SongBankDeepRepair.cs:140
 
-SUA TRONG GOI:
-- RK58SongBankDeepRepair.cs: menu chu dong sua 1 object, tu dong bo
-  missing-script, tao lai component RK58SongBank tu dung file RK58SongBank.cs.
-- Thu hoi song list + AudioSource neu Unity van giai ma duoc.
-- Giu nguyen GameObject va children (khong xoa Scene UI).
-- Chi xoa duplicate RK58_SongBank khi duplicate khong co con va
-  khong co component khac.
-- Sua MIDI importer: tim object theo ten va repair, KHONG tao them
-  RK58_SongBank moi khi object cu dang bi loi.
-- Import MIDI 0 bai khong xoa nhac da import truoc.
-- Menu 00 cung dung helper repair, khong rebuild SongBank khoe neu khong can.
+NGUYEN NHAN:
+Ban cu xoa component truoc, Undo.AddComponent<RK58SongBank> sau,
+roi so sanh MonoScript.FromMonoBehaviour(rebuilt) voi MonoScript asset.
+Neu hai reference khong trung, ban cu bao loi va bo do, co nguy co
+mat song list chua Save.
 
-CAI DAT:
-1. Backup file 04_Gameplay.unity trong Assets/_Project/Scenes.
-2. Thoat Play Mode, giai nen ZIP vao goc project (noi co Assets/).
-3. Ghi de file .cs UI58; GIU NGUYEN .meta co san.
-4. Cho Unity compile xong, mo 04_Gameplay.
-5. Chay: Tools > Rhythm Kitchen > UI58 - Timer + 2 Fingers
-   > 04 - Deep Repair RK58 SongBank (Save Scene).
-6. Script tu dong Save Scene.
-7. Dong Scene, mo lai; check Console.
-8. Neu SongBank songs = 0: chay 03 - Import Full + MIDI Pairs.
-9. Neu con canh bao, tim "RK58_SongBank" trong scene khac/prefab,
-   va kiem tra duplicate class RK58SongBank.cs hoac GUID .meta.
+FIX:
+- Khong con dung so sanh MonoScript.FromMonoBehaviour don le lam ket luan.
+- Kiem tra m_Script trong SerializedObject cua component tren GameObject.
+- Neu khac file RK58SongBank.cs, thu bind lai reference bang SerializedProperty.
+- Chi xoa legacy RK58Runtime va missing-script sau khi component duoc verify.
+- Giu AudioSource + song list con co the doc duoc.
+- Khong tao SongBank moi neu GameObject cua ban da co.
+- Tao ban sao luu Scene truoc khi can thiep.
 
-Chua the Play-test Unity trong moi truong nay. Nhan dinh ma nguon
-duoc verify tren GitHub. MIDI note data chua tu dong gan vao NoteSpawner.
+INSTALL:
+1. BACKUP Unity project neu can.
+2. Giai nen ZIP co Assets vao PROJECT ROOT (noi co Packages).
+   GHI DE file .cs UI58, GIU NGUYEN file .meta hien co.
+3. Thoat Play, cho Unity compile xong, mo 04_Gameplay.
+4. Tools > Rhythm Kitchen > UI58 - Timer + 2 Fingers
+   > 04 - Deep Repair RK58 SongBank (Save Scene)
+5. Ban sao scene nam o PROJECT ROOT / RK58SceneBackups/.
+6. Dong Scene, mo lai, kiem tra Console.
+7. Neu songs=0, run 03 - Import Full + MIDI Pairs.
+8. Neu canh bao con, gui Console log moi tu patch nay bao gom:
+   "[RK58 SongBank] Incorrect serialized m_Script: ..."
+   "[RK58 SongBank] m_Script rebind not accepted..."
+   (can kiem tra GUID trong .meta, duplicate script, prefab/scene khac).
+
+KHONG:
+- Khong xoa RK58Runtime.cs shim.
+- Khong tu y xoa GUID .meta.
+- Khong sua NoteController, scoring, gameplay.
+- Import Full/MIDI hien van tao JSON, chua auto connect NoteSpawner.
+
+STATUS:
+Static source checks + GitHub file readback: OK.
+Unity Editor Play-test: chua thuc hien trong moi truong nay.
