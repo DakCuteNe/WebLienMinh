@@ -9,15 +9,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Repairs the serialized m_Script GUID of RK58SongBank safely.
-/// An older patch failed at MonoScript.FromMonoBehaviour(newComponent) != expected,
-/// after deleting old components. This patch never deletes data before validation.
+/// Repairs RK58_SongBank references WITHOUT writing to a live MonoBehaviour.m_Script.
+/// An m_Script write can immediately invalidate the Unity component wrapper,
+/// causing "SerializedObject: Object at index 0 is null".
 /// </summary>
 public static class RK58SongBankDeepRepair
 {
-    private const string MENU = "Tools/Rhythm Kitchen/UI58 - Timer + 2 Fingers/";
-    private const string SCRIPT_PATH = "Assets/_Project/Scripts/Rhythm/RK58SongBank.cs";
-    private const string NAME = "RK58_SongBank";
+    const string MENU = "Tools/Rhythm Kitchen/UI58 - Timer + 2 Fingers/";
+    const string SCRIPT_PATH = "Assets/_Project/Scripts/Rhythm/RK58SongBank.cs";
+    const string LEGACY_PATH = "Assets/_Project/Scripts/Rhythm/RK58Runtime.cs";
+    const string BANK_NAME = "RK58_SongBank";
 
     [MenuItem(MENU + "04 - Deep Repair RK58 SongBank (Save Scene)")]
     public static void Run()
@@ -27,164 +28,148 @@ public static class RK58SongBankDeepRepair
             EditorUtility.DisplayDialog("RK58 SongBank", "Exit Play Mode first.", "OK");
             return;
         }
-
         Scene scene = SceneManager.GetActiveScene();
         if (!scene.IsValid() || !scene.isLoaded || string.IsNullOrEmpty(scene.path))
         {
             EditorUtility.DisplayDialog("RK58 SongBank",
-                "Open and save 04_Gameplay.unity first.", "OK");
+                "Open 04_Gameplay.unity first.", "OK");
             return;
         }
 
-        // Preserve the current scene (including unsaved changes) before repair.
-        // The backup goes OUTSIDE Assets so Unity does not import a duplicate scene.
-        if (!EditorSceneManager.SaveScene(scene))
+        // Probe BEFORE doing anything destructive. No component is modified in-place.
+        MonoScript expected = ResolveScript();
+        if (!expected || !ProbeRuntimeBinding(expected))
         {
-            Debug.LogError("[RK58 SongBank] Could not save scene before making a backup.");
-            return;
-        }
-        try
-        {
-            string root = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
-            string backupFolder = Path.Combine(root, "RK58SceneBackups");
-            Directory.CreateDirectory(backupFolder);
-            string backup = Path.Combine(backupFolder,
-                Path.GetFileNameWithoutExtension(scene.path) + "_" +
-                DateTime.Now.ToString("yyyyMMdd_HHmmss_fff") + ".unity");
-            File.Copy(Path.GetFullPath(scene.path), backup, false);
-            Debug.Log("[RK58 SongBank] Backup saved: " + backup);
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("[RK58 SongBank] Backup failed; repair cancelled: " + ex.Message);
+            DiagnoseScriptAssets(expected);
+            EditorUtility.DisplayDialog("RK58 SongBank",
+                "Repair NOT applied. The new RK58SongBank component did not " +
+                "resolve to RK58SongBank.cs in a test GameObject.\n" +
+                "Check Console and duplicated .cs/.meta files. " +
+                "No SongBank or scene references were removed.", "OK");
             return;
         }
 
-        RK58SongBank bank = EnsureSingleBank(scene, true);
+        if (!BackupScene(scene)) return;
+
+        RK58SongBank bank = EnsureSingleBank(scene, false);
         if (!bank)
         {
-            EditorUtility.DisplayDialog("RK58 SongBank",
-                "Cannot verify the script link; scene was NOT saved after repair." +
-                "\nSee Console details. A backup is in RK58SceneBackups.",
-                "OK");
+            Debug.LogError("[RK58 SongBank] Repair did not complete. " +
+                "Use Edit > Undo if anything changed; backup was saved.");
             return;
         }
 
         EditorSceneManager.MarkSceneDirty(scene);
         bool saved = EditorSceneManager.SaveScene(scene);
-        Debug.Log("[RK58 SongBank] DONE. Scene saved=" + saved +
-            ", songs=" + (bank.songs != null ? bank.songs.Count : 0) +
-            ", binding=" + DescribeBinding(bank));
-
+        Debug.Log("[RK58 SongBank] Repair completed: saved=" + saved +
+            "; songs=" + (bank.songs != null ? bank.songs.Count : 0) +
+            "; script=" + GetScriptPath(bank));
         EditorUtility.DisplayDialog("RK58 SongBank",
-            "Script repaired and scene saved: " + saved +
-            "\nSongs retained: " + (bank.songs != null ? bank.songs.Count : 0) +
-            "\nBackup: RK58SceneBackups/" +
-            "\n\nClose and reopen 04_Gameplay to check Console.",
-            "OK");
+            "Repair: " + (saved ? "Saved" : "Save failed") +
+            "\nSongs: " + (bank.songs != null ? bank.songs.Count : 0) +
+            "\n\nA copy is in RK58SceneBackups beside Assets.\n" +
+            "Close/reopen the Scene and inspect Console.", "OK");
+    }
+
+    [MenuItem(MENU + "05 - Diagnose RK58 Script Bindings")]
+    public static void Diagnose()
+    {
+        MonoScript expected = ResolveScript();
+        DiagnoseScriptAssets(expected);
+        if (expected) ProbeRuntimeBinding(expected);
+
+        Scene scene = SceneManager.GetActiveScene();
+        if (!scene.IsValid() || !scene.isLoaded) return;
+        foreach (GameObject go in FindBanks(scene))
+        {
+            Debug.Log("[RK58 Diagnose] GameObject=" + HierarchyPath(go.transform) +
+                "; components=" + go.GetComponents<Component>().Length +
+                "; missing=" + GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(go));
+            foreach (RK58SongBank b in go.GetComponents<RK58SongBank>())
+                if (b) Debug.Log("[RK58 Diagnose] BANK " + GetScriptPath(b) +
+                    " songs=" + (b.songs != null ? b.songs.Count : 0), b);
+            foreach (RK58Runtime b in go.GetComponents<RK58Runtime>())
+                if (b) Debug.Log("[RK58 Diagnose] LEGACY " + GetScriptPath(b), b);
+        }
     }
 
     /// <summary>
-    /// Idempotent. Used by the importer and reference-repair menu.
-    /// Never destroys an existing SongBank until the replacement is verified.
+    /// Called by MIDI importer. Returns null without mutation if Unity cannot
+    /// create a properly serialized RK58SongBank component.
     /// </summary>
     public static RK58SongBank EnsureSingleBank(Scene scene, bool forceRebind = false)
     {
-        MonoScript expected = AssetDatabase.LoadAssetAtPath<MonoScript>(SCRIPT_PATH);
-        if (!expected || expected.GetClass() != typeof(RK58SongBank))
+        MonoScript expected = ResolveScript();
+        if (!expected || !ProbeRuntimeBinding(expected))
         {
-            Debug.LogError("[RK58 SongBank] Script asset doesn't resolve to RK58SongBank. " +
-                "Expected path=" + SCRIPT_PATH + ", class=" +
-                (expected && expected.GetClass() != null
-                    ? expected.GetClass().FullName : "(null)") +
-                ". Check compile errors and duplicate scripts.");
+            DiagnoseScriptAssets(expected);
             return null;
         }
 
-        List<GameObject> objects = FindObjects(scene);
-        // Prefer the object with song data, then one with an existing bank.
+        List<GameObject> objects = FindBanks(scene);
         GameObject canonical = objects
             .OrderByDescending(BestSongCount)
-            .ThenByDescending(o => o.GetComponent<RK58SongBank>() ? 1 : 0)
+            .ThenByDescending(go => go.GetComponent<RK58SongBank>() ? 1 : 0)
             .FirstOrDefault();
 
-        AudioSource savedAudio = null;
+        AudioSource audio = null;
         List<RK58SongEntry> savedSongs = new List<RK58SongEntry>();
         foreach (GameObject go in objects)
         {
             RK58SongBank bank = go.GetComponent<RK58SongBank>();
             if (bank)
             {
-                if (!savedAudio && bank.conductorAudio) savedAudio = bank.conductorAudio;
+                if (!audio && bank.conductorAudio) audio = bank.conductorAudio;
                 if (bank.songs != null && bank.songs.Count > savedSongs.Count)
                     savedSongs = new List<RK58SongEntry>(bank.songs);
             }
-
             RK58Runtime legacy = go.GetComponent<RK58Runtime>();
             if (legacy)
             {
-                if (!savedAudio && legacy.conductorAudio)
-                    savedAudio = legacy.conductorAudio;
+                if (!audio && legacy.conductorAudio) audio = legacy.conductorAudio;
                 if (legacy.songs != null && legacy.songs.Count > savedSongs.Count)
                     savedSongs = new List<RK58SongEntry>(legacy.songs);
             }
         }
 
-        bool created = false;
         if (!canonical)
         {
-            canonical = new GameObject(NAME);
+            canonical = new GameObject(BANK_NAME);
             SceneManager.MoveGameObjectToScene(canonical, scene);
             Undo.RegisterCreatedObjectUndo(canonical, "RK58 Create SongBank");
-            created = true;
         }
 
         RK58SongBank existing = canonical.GetComponent<RK58SongBank>();
-        bool added = false;
-        if (!existing)
+        bool verifiedExisting = existing && IsSerializedToExpected(existing, expected);
+        bool needsReplacement = !verifiedExisting;
+
+        if (needsReplacement)
         {
+            // The throwaway probe has ALREADY demonstrated that AddComponent works.
+            // Remove the bad component only now, and let Unity create m_Script normally.
+            if (existing)
+                Undo.DestroyObjectImmediate(existing);
             existing = Undo.AddComponent<RK58SongBank>(canonical);
-            added = true;
-        }
-        if (!existing)
-        {
-            Debug.LogError("[RK58 SongBank] AddComponent<RK58SongBank> returned null.");
-            return null;
+
+            if (!existing || !IsSerializedToExpected(existing, expected))
+            {
+                Debug.LogError("[RK58 SongBank] A test GameObject verified correctly " +
+                    "but adding the component to the actual object did not. " +
+                    "Use Edit > Undo to reverse the last operation. " +
+                    "Do not save the scene; use your backup.");
+                return null;
+            }
         }
 
-        // Check the serialized script reference, NOT only MonoScript.FromMonoBehaviour.
-        // Rebind the m_Script property to the actual .cs asset if the GUID differs.
-        if (!EnsureSerializedScript(existing, expected))
-        {
-            Debug.LogError("[RK58 SongBank] The component is a RK58SongBank but its " +
-                "serialized script asset still differs. " + DescribeBinding(existing) +
-                "\nExpected GUID=" + AssetDatabase.AssetPathToGUID(SCRIPT_PATH) +
-                ". Check RK58SongBank.cs.meta and duplicate assembly definitions.");
-            if (added) Undo.DestroyObjectImmediate(existing);
-            // The legacy components and song list are deliberately untouched.
-            return null;
-        }
-
-        // A verified component now exists. Preserve nonempty songs even if the
-        // current import found 0 matching MIDI/audio pairs.
-        Undo.RecordObject(existing, "RK58 Restore SongBank Data");
-        if (!existing.conductorAudio && savedAudio)
-            existing.conductorAudio = savedAudio;
-        if ((existing.songs == null || existing.songs.Count == 0 ||
-             savedSongs.Count > existing.songs.Count) &&
-            savedSongs.Count > 0)
-            existing.songs = savedSongs;
-        else if (existing.songs == null)
-            existing.songs = new List<RK58SongEntry>();
+        Undo.RecordObject(existing, "RK58 Restore SongBank Fields");
+        if (!existing.conductorAudio && audio) existing.conductorAudio = audio;
+        if (existing.songs == null || savedSongs.Count > existing.songs.Count)
+            existing.songs = new List<RK58SongEntry>(savedSongs);
         EditorUtility.SetDirty(existing);
 
-        // Only NOW remove the old incompatible component on this one GameObject.
+        // Safe cleanup AFTER successful binding. Do not touch unrelated components.
         foreach (RK58Runtime old in canonical.GetComponents<RK58Runtime>())
             if (old) Undo.DestroyObjectImmediate(old);
-
-        // Missing MonoBehaviour placeholders can be removed. A Unity MonoScript
-        // serialized as a Component is a distinct issue; it may require deleting
-        // the precise invalid component through Inspector or YAML after backup.
         int missing = GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(canonical);
         if (missing > 0)
         {
@@ -192,134 +177,185 @@ public static class RK58SongBankDeepRepair
             GameObjectUtility.RemoveMonoBehavioursWithMissingScript(canonical);
         }
 
-        foreach (GameObject duplicate in objects)
-        {
-            if (duplicate == canonical || !duplicate) continue;
-            if (!IsDisposableDuplicate(duplicate))
-            {
-                Debug.LogWarning("[RK58 SongBank] Left a nonempty duplicate for manual " +
-                    "review: " + HierarchyPath(duplicate.transform));
-                continue;
-            }
-            Undo.DestroyObjectImmediate(duplicate);
-        }
+        // Do not delete duplicate GameObjects automatically. They might carry
+        // unrecognized serialized song data or references from other systems.
+        if (objects.Count > 1)
+            Debug.LogWarning("[RK58 SongBank] Found " + objects.Count +
+                " named SongBank objects. Kept all for manual review.");
 
         EditorSceneManager.MarkSceneDirty(scene);
-        Debug.Log("[RK58 SongBank] Verified " + HierarchyPath(canonical.transform) +
-            "; restored " + savedSongs.Count + " songs; created=" + created +
-            "; binding=" + DescribeBinding(existing));
+        Debug.Log("[RK58 SongBank] Verified component on " +
+            HierarchyPath(canonical.transform) + " ; songs=" +
+            (existing.songs != null ? existing.songs.Count : 0) +
+            " ; m_Script=" + GetScriptPath(existing));
+
         return existing;
     }
 
-    private static bool EnsureSerializedScript(RK58SongBank instance, MonoScript expected)
+    static MonoScript ResolveScript()
     {
-        if (!instance || !expected || expected.GetClass() != typeof(RK58SongBank))
-            return false;
-        SerializedObject so = new SerializedObject(instance);
-        SerializedProperty prop = so.FindProperty("m_Script");
-        if (prop == null || prop.propertyType != SerializedPropertyType.ObjectReference)
+        MonoScript expected = AssetDatabase.LoadAssetAtPath<MonoScript>(SCRIPT_PATH);
+        if (!expected)
         {
-            Debug.LogError("[RK58 SongBank] m_Script property is unavailable.");
-            return false;
+            Debug.LogError("[RK58 SongBank] Missing MonoScript asset: " + SCRIPT_PATH);
+            return null;
         }
-
-        if (prop.objectReferenceValue != expected)
+        Type resolved = expected.GetClass();
+        if (resolved != typeof(RK58SongBank))
         {
-            Debug.LogWarning("[RK58 SongBank] Incorrect serialized m_Script: " +
-                ScriptPath(prop.objectReferenceValue as MonoScript) +
-                ". Rebinding to " + SCRIPT_PATH);
-
-            Undo.RecordObject(instance, "RK58 Rebind MonoScript Asset");
-            so.Update();
-            prop = so.FindProperty("m_Script");
-            prop.objectReferenceValue = expected;
-            so.ApplyModifiedProperties();
+            Debug.LogError("[RK58 SongBank] Script class mismatch. Path=" + SCRIPT_PATH +
+                "; GetClass=" + (resolved != null ? resolved.AssemblyQualifiedName : "(null)") +
+                "; expected=" + typeof(RK58SongBank).AssemblyQualifiedName);
+            return null;
         }
-
-        SerializedObject after = new SerializedObject(instance);
-        SerializedProperty check = after.FindProperty("m_Script");
-        bool matches = check != null && check.objectReferenceValue == expected;
-        if (!matches)
-        {
-            Debug.LogError("[RK58 SongBank] m_Script rebind not accepted. Current=" +
-                (check != null
-                    ? ScriptPath(check.objectReferenceValue as MonoScript)
-                    : "(missing property)"));
-            return false;
-        }
-
-        // Older editor builds can return a runtime MonoScript from
-        // FromMonoBehaviour even while the serialized m_Script is correct.
-        // That result alone must not trigger deletion of the component.
-        MonoScript from = MonoScript.FromMonoBehaviour(instance);
-        if (from != expected)
-            Debug.LogWarning("[RK58 SongBank] FromMonoBehaviour returned " +
-                ScriptPath(from) + " but serialized m_Script is now correct.");
-        return true;
+        return expected;
     }
 
-    private static string DescribeBinding(RK58SongBank bank)
+    static bool ProbeRuntimeBinding(MonoScript expected)
     {
-        if (!bank) return "(component null)";
-        SerializedObject so = new SerializedObject(bank);
-        SerializedProperty m = so.FindProperty("m_Script");
-        MonoScript serialized = m != null ? m.objectReferenceValue as MonoScript : null;
-        MonoScript resolved = MonoScript.FromMonoBehaviour(bank);
-        return "m_Script=" + ScriptPath(serialized) +
-            " | FromMonoBehaviour=" + ScriptPath(resolved) +
-            " | type=" + bank.GetType().FullName;
+        // Never mutate the serialized m_Script. Verify Unity's actual
+        // AddComponent binding on a disposable GameObject first.
+        GameObject probe = new GameObject("__RK58_ScriptProbe");
+        probe.hideFlags = HideFlags.HideAndDontSave;
+        bool ok = false;
+        try
+        {
+            RK58SongBank test = probe.AddComponent<RK58SongBank>();
+            ok = test && IsSerializedToExpected(test, expected);
+            if (!ok)
+                Debug.LogError("[RK58 SongBank] PROBE FAILED. " +
+                    "Unity cannot serialize a fresh RK58SongBank component to " +
+                    SCRIPT_PATH + ". Refusing destructive repair.");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("[RK58 SongBank] Probe exception: " + ex);
+        }
+        finally
+        {
+            UnityEngine.Object.DestroyImmediate(probe);
+        }
+        return ok;
     }
 
-    private static string ScriptPath(MonoScript script)
+    static bool IsSerializedToExpected(RK58SongBank component, MonoScript expected)
     {
-        if (!script) return "(null/runtime)";
+        if (!component || !expected) return false;
+        try
+        {
+            SerializedObject so = new SerializedObject(component);
+            SerializedProperty prop = so.FindProperty("m_Script");
+            MonoScript actual = prop != null
+                ? prop.objectReferenceValue as MonoScript : null;
+            bool ok = actual == expected;
+            if (!ok)
+                Debug.LogWarning("[RK58 SongBank] Binding mismatch: actual=" +
+                    ScriptDetails(actual) + " expected=" + ScriptDetails(expected));
+            return ok;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("[RK58 SongBank] SerializedObject unavailable: " + ex.Message);
+            return false;
+        }
+    }
+
+    static string GetScriptPath(RK58SongBank component)
+    {
+        if (!component) return "(null)";
+        try
+        {
+            SerializedObject so = new SerializedObject(component);
+            SerializedProperty prop = so.FindProperty("m_Script");
+            MonoScript actual = prop != null
+                ? prop.objectReferenceValue as MonoScript : null;
+            return ScriptDetails(actual);
+        }
+        catch (Exception ex) { return "(not readable: " + ex.Message + ")"; }
+    }
+
+    static string GetScriptPath(RK58Runtime component)
+    {
+        if (!component) return "(null)";
+        MonoScript script = MonoScript.FromMonoBehaviour(component);
+        return ScriptDetails(script);
+    }
+
+    static string ScriptDetails(MonoScript script)
+    {
+        if (!script) return "(null)";
         string path = AssetDatabase.GetAssetPath(script);
-        return !string.IsNullOrEmpty(path) ? path :
-            "(runtime MonoScript " + script.name + ")";
+        string guid = string.IsNullOrEmpty(path) ? "" : AssetDatabase.AssetPathToGUID(path);
+        return "name=" + script.name +
+            ", path=" + (string.IsNullOrEmpty(path) ? "(runtime)" : path) +
+            ", guid=" + guid +
+            ", type=" + (script.GetClass() != null ?
+                script.GetClass().AssemblyQualifiedName : "(null)");
     }
 
-    private static List<GameObject> FindObjects(Scene scene)
+    static void DiagnoseScriptAssets(MonoScript expected)
     {
-        List<GameObject> all = new List<GameObject>();
+        Debug.Log("[RK58 Diagnose] Expected asset: " + ScriptDetails(expected));
+        Debug.Log("[RK58 Diagnose] Runtime class: " +
+            typeof(RK58SongBank).AssemblyQualifiedName);
+        Debug.Log("[RK58 Diagnose] Legacy GUID: " +
+            AssetDatabase.AssetPathToGUID(LEGACY_PATH));
+        foreach (string guid in AssetDatabase.FindAssets("RK58SongBank t:MonoScript"))
+        {
+            string p = AssetDatabase.GUIDToAssetPath(guid);
+            MonoScript s = AssetDatabase.LoadAssetAtPath<MonoScript>(p);
+            Debug.Log("[RK58 Diagnose] Candidate " + p + " -> " + ScriptDetails(s));
+        }
+    }
+
+    static bool BackupScene(Scene scene)
+    {
+        try
+        {
+            if (!EditorSceneManager.SaveScene(scene))
+                throw new IOException("Could not save scene");
+            string project = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
+            string backupFolder = Path.Combine(project, "RK58SceneBackups");
+            Directory.CreateDirectory(backupFolder);
+            string copy = Path.Combine(backupFolder,
+                Path.GetFileNameWithoutExtension(scene.path) + "_" +
+                DateTime.Now.ToString("yyyyMMdd_HHmmss_fff") + ".unity");
+            File.Copy(Path.GetFullPath(scene.path), copy, false);
+            Debug.Log("[RK58 SongBank] Backup saved: " + copy);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("[RK58 SongBank] Backup failed. Nothing repaired: " + ex);
+            return false;
+        }
+    }
+
+    static List<GameObject> FindBanks(Scene scene)
+    {
+        List<GameObject> list = new List<GameObject>();
         foreach (GameObject root in scene.GetRootGameObjects())
             foreach (Transform t in root.GetComponentsInChildren<Transform>(true))
-                if (t.name == NAME)
-                    all.Add(t.gameObject);
-        return all;
+                if (t.name == BANK_NAME) list.Add(t.gameObject);
+        return list;
     }
 
-    private static int BestSongCount(GameObject go)
+    static int BestSongCount(GameObject go)
     {
-        int n = 0;
+        int count = 0;
         RK58SongBank bank = go.GetComponent<RK58SongBank>();
-        if (bank && bank.songs != null) n = bank.songs.Count;
         RK58Runtime legacy = go.GetComponent<RK58Runtime>();
+        if (bank && bank.songs != null) count = bank.songs.Count;
         if (legacy && legacy.songs != null)
-            n = Mathf.Max(n, legacy.songs.Count);
-        return n;
+            count = Mathf.Max(count, legacy.songs.Count);
+        return count;
     }
 
-    private static bool IsDisposableDuplicate(GameObject go)
+    static string HierarchyPath(Transform t)
     {
-        if (!go || go.transform.childCount > 0) return false;
-        foreach (Component c in go.GetComponents<Component>())
-        {
-            if (c == null) return false; // unknown script: don't delete blind
-            if (!(c is Transform || c is RK58SongBank || c is RK58Runtime))
-                return false;
-        }
-        return true;
-    }
-
-    private static string HierarchyPath(Transform t)
-    {
-        string path = t.name;
-        while (t.parent)
-        {
-            t = t.parent;
-            path = t.name + "/" + path;
-        }
-        return path;
+        string s = t.name;
+        while (t.parent) { t = t.parent; s = t.name + "/" + s; }
+        return s;
     }
 }
 #endif
