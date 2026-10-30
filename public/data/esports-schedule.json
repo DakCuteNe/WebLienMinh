@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T21:44:50.461Z",
+  "generatedAt": "2026-10-30T01:54:04.423Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 3,
-    "completed": 56,
+    "live": 0,
+    "upcoming": 2,
+    "completed": 58,
     "total": 60
   },
   "leagues": [
@@ -1689,7 +1689,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         },
@@ -1753,7 +1753,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -1789,7 +1789,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
@@ -1903,7 +1903,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2039,7 +2039,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         },
@@ -2103,7 +2103,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2189,7 +2189,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
@@ -2403,7 +2403,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         }
       ],
@@ -2489,7 +2489,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         },
@@ -2653,7 +2653,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2690,7 +2690,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -2702,7 +2702,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         }
@@ -2915,7 +2915,7 @@
       "riotEventId": null,
       "matchId": "115660540726095073",
       "startTime": "2026-10-29T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2936,10 +2936,10 @@
           "code": "KC",
           "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
@@ -2950,10 +2950,10 @@
           "image": "https://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2965,7 +2965,7 @@
       "riotEventId": null,
       "matchId": "115660540726095069",
       "startTime": "2026-10-29T23:00:00Z",
-      "state": "unstarted",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -2986,11 +2986,11 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 1
+            "losses": 2
           }
         },
         {
@@ -2999,10 +2999,10 @@
           "code": "TES",
           "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 1
           }
         }
