@@ -1,34 +1,24 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-// Serialized MIDI data types only. Scene MonoBehaviours live in their own
-// matching-name files so Unity can serialize m_Script links reliably.
-
-[Serializable]
-public sealed class RK58MidiNote
+// Legacy scene GUID recovery. The old UI58 attached this file's MonoScript
+// to TimerPlate / RK58_Multitouch / RK58_SongBank even though the file name
+// did not match the original MonoBehaviour type.
+// Keep this filename + matching class until ALL old scenes are migrated.
+// This shim performs no gameplay work and is removed by the Repair menu.
+[AddComponentMenu("")]
+[DisallowMultipleComponent]
+public sealed class RK58Runtime : MonoBehaviour
 {
-    public float time;
-    public float duration;
-    public int pitch;
-    public int velocity;
-    public int channel;
-    public int track;
-}
+    [HideInInspector] public TMP_Text sourceTMP;
+    [HideInInspector] public Text sourceLegacy;
+    [HideInInspector] public TextMeshProUGUI display;
+    [HideInInspector] public Image fill;
+    [HideInInspector] public float fullSeconds = 60f;
 
-[Serializable]
-public sealed class RK58MidiChart
-{
-    public string midiName;
-    public int ticksPerQuarter;
-    public List<RK58MidiNote> notes = new List<RK58MidiNote>();
+    [HideInInspector] public AudioSource conductorAudio;
+    [HideInInspector] public List<RK58SongEntry> songs =
+        new List<RK58SongEntry>();
 }
-
-[Serializable]
-public sealed class RK58SongEntry
-{
-    public string name;
-    public AudioClip fullAudio;
-    public TextAsset midiChartJson;
-}
-

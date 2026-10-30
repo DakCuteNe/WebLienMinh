@@ -172,7 +172,7 @@ public static class RK58SceneFixEditor
         timerText.fontSizeMin = 14;
         timerText.fontSizeMax = Mathf.Clamp(h * .49f, 20f, 32f);
         timerText.fontStyle = FontStyles.Bold;
-        timerText.enableWordWrapping = false;
+        timerText.textWrappingMode = TextWrappingModes.NoWrap;
         timerText.overflowMode = TextOverflowModes.Truncate;
         timerText.raycastTarget = false;
         Place(timerText.rectTransform,

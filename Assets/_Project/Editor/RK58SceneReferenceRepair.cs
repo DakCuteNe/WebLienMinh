@@ -6,12 +6,12 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
-/// Repairs RK58 scene objects created by the old UI58 package, where multiple
-/// MonoBehaviour types were declared in RK58Runtime.cs. The file/class mismatch
-/// could leave "references runtime script in scene file. Fixing!" warnings.
-/// Only objects named RK58_Multitouch and RK58_SongBank are replaced.
+/// Converts old UI58 scene MonoScript references to matching-file components.
+/// Leaves the rest of the Scene, gameplay callbacks and timing logic untouched.
 /// </summary>
 public static class RK58SceneReferenceRepair
 {
@@ -22,32 +22,33 @@ public static class RK58SceneReferenceRepair
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode)
         {
-            EditorUtility.DisplayDialog("UI58", "Thoat Play Mode truoc khi Repair.", "OK");
+            EditorUtility.DisplayDialog("RK58 Repair",
+                "Thoat Play Mode truoc khi Repair.", "OK");
             return;
         }
-
         Scene scene = SceneManager.GetActiveScene();
         if (!scene.IsValid() || !scene.isLoaded)
         {
-            Debug.LogError("[RK58 Repair] Open 04_Gameplay scene first.");
+            Debug.LogError("[RK58 Repair] Open 04_Gameplay first.");
             return;
         }
 
+        bool timer = RepairTimer(scene);
         bool multi = RebuildMultitouch(scene);
         bool bank = RebuildBank(scene);
+
         EditorSceneManager.MarkSceneDirty(scene);
+        Debug.Log("[RK58 Repair] TimerPlate=" + timer +
+            ", RK58_Multitouch=" + multi + ", RK58_SongBank=" + bank +
+            ". Save scene then close/reopen to validate.");
 
-        Debug.Log("[RK58 Repair] Rebuilt RK58_Multitouch = " + multi +
-            "; RK58_SongBank = " + bank +
-            ". Save scene, then reopen it to verify the warnings are gone.");
-
-        EditorUtility.DisplayDialog("RK58 Scene References",
-            "Da thay component UI58 cu bang script dung file:\n" +
-            "- RK58_Multitouch: " + (multi ? "OK" : "FAILED") +
-            "\n- RK58_SongBank: " + (bank ? "OK" : "FAILED") +
-            "\n\nChay 01 - Fix Timer + Enable Two Fingers de lam moi timer." +
-            "\nNeu SongBank khong co bai, chay 03 - Import Full + MIDI Pairs." +
-            "\nCtrl+S, dong Scene va mo lai de kiem tra.",
+        EditorUtility.DisplayDialog("RK58 Scene Repair",
+            "TimerPlate: " + (timer ? "OK" : "Khong tim thay") +
+            "\nMultitouch: " + (multi ? "OK" : "FAILED") +
+            "\nSongBank: " + (bank ? "OK" : "FAILED") +
+            "\n\nNhan Ctrl+S, dong Scene va mo lai." +
+            "\nNeu timer chua duoc gan, chay 01 - Fix Timer." +
+            "\nNeu song list trong, chay 03 - Import Full + MIDI Pairs.",
             "OK");
     }
 
@@ -56,47 +57,108 @@ public static class RK58SceneReferenceRepair
         foreach (GameObject root in scene.GetRootGameObjects())
         {
             foreach (Transform tr in root.GetComponentsInChildren<Transform>(true))
-            {
-                if (tr.name == name)
-                    return tr.gameObject;
-            }
+                if (tr.name == name) return tr.gameObject;
         }
         return null;
     }
 
-    private static GameObject ReplaceObject(Scene scene, string name)
+    private static void CleanMissingOn(GameObject target)
+    {
+        if (!target) return;
+        int count = GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(target);
+        if (count > 0)
+        {
+            Debug.LogWarning("[RK58 Repair] Removing " + count +
+                " missing script(s) from " + target.name +
+                ". Make sure you backed up the scene first.");
+            Undo.RegisterFullObjectHierarchyUndo(target, "RK58 Clean Missing Script");
+            GameObjectUtility.RemoveMonoBehavioursWithMissingScript(target);
+        }
+    }
+
+    private static bool RepairTimer(Scene scene)
+    {
+        GameObject plate = FindNamed(scene, "TimerPlate");
+        if (!plate) return false;
+
+        RK58Runtime legacy = plate.GetComponent<RK58Runtime>();
+        RK58TimerView view = plate.GetComponent<RK58TimerView>();
+
+        if (!view) view = Undo.AddComponent<RK58TimerView>(plate);
+
+        Undo.RecordObject(view, "RK58 Restore Timer View");
+        if (legacy)
+        {
+            if (!view.sourceTMP) view.sourceTMP = legacy.sourceTMP;
+            if (!view.sourceLegacy) view.sourceLegacy = legacy.sourceLegacy;
+            if (!view.display) view.display = legacy.display;
+            if (!view.fill) view.fill = legacy.fill;
+            if (legacy.fullSeconds > 0f)
+                view.fullSeconds = legacy.fullSeconds;
+        }
+
+        TMP_Text[] texts = plate.GetComponentsInChildren<TMP_Text>(true);
+        if (!view.display)
+            view.display = texts.OfType<TextMeshProUGUI>()
+                .FirstOrDefault(t => t.name == "RK58_TimeText");
+        if (!view.sourceTMP)
+            view.sourceTMP = texts.FirstOrDefault(t =>
+                t != view.display && !t.name.StartsWith("RK58_") &&
+                LooksLikeTime(t.text));
+        if (!view.sourceLegacy)
+            view.sourceLegacy = plate.GetComponentsInChildren<Text>(true)
+                .FirstOrDefault(t => LooksLikeTime(t.text));
+        if (!view.fill)
+            view.fill = plate.GetComponentsInChildren<Image>(true)
+                .FirstOrDefault(i => i.name == "RK58_MintFill");
+
+        EditorUtility.SetDirty(view);
+        if (legacy) Undo.DestroyObjectImmediate(legacy);
+        CleanMissingOn(plate);
+        if (!view.display || !view.fill || (!view.sourceTMP && !view.sourceLegacy))
+            Debug.LogWarning("[RK58 Repair] TimerPlate was migrated, but one or " +
+                "more visual links are missing. Run 01 - Fix Timer + Enable Two Fingers.");
+        return true;
+    }
+
+    private static bool LooksLikeTime(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value)) return false;
+        string[] s = value.Trim().Split(':');
+        int m, sec;
+        return s.Length == 2 && int.TryParse(s[0], out m) &&
+            int.TryParse(s[1], out sec) && m >= 0 && sec >= 0 && sec <= 59;
+    }
+
+    private static GameObject ReplaceUtility(Scene scene, string name)
     {
         GameObject old = FindNamed(scene, name);
         Transform parent = old ? old.transform.parent : null;
         int sibling = old ? old.transform.GetSiblingIndex() : -1;
 
-        // Explicitly recreate ONLY the two UI58-generated utility objects.
-        // Some Unity versions do not count a stale MonoScript as a missing
-        // MonoBehaviour, so removing "Missing Script" may not fix this warning.
-        GameObject replacement = new GameObject(name);
+        GameObject obj = new GameObject(name);
         if (old)
         {
-            replacement.transform.SetParent(parent, false);
-            replacement.transform.SetSiblingIndex(sibling);
-            replacement.SetActive(old.activeSelf);
-            replacement.layer = old.layer;
-            replacement.tag = old.tag;
-            replacement.transform.localPosition = old.transform.localPosition;
-            replacement.transform.localRotation = old.transform.localRotation;
-            replacement.transform.localScale = old.transform.localScale;
+            obj.transform.SetParent(parent, false);
+            obj.transform.SetSiblingIndex(sibling);
+            obj.SetActive(old.activeSelf);
+            obj.layer = old.layer;
+            obj.tag = old.tag;
+            obj.transform.localPosition = old.transform.localPosition;
+            obj.transform.localRotation = old.transform.localRotation;
+            obj.transform.localScale = old.transform.localScale;
         }
-
-        Undo.RegisterCreatedObjectUndo(replacement, "RK58 Repair " + name);
+        Undo.RegisterCreatedObjectUndo(obj, "RK58 Create " + name);
         if (old) Undo.DestroyObjectImmediate(old);
-        return replacement;
+        return obj;
     }
 
     private static bool RebuildMultitouch(Scene scene)
     {
-        GameObject replacement = ReplaceObject(scene, "RK58_Multitouch");
-        if (!replacement) return false;
-        Undo.AddComponent<RK58EnableMultitouch>(replacement);
-        return replacement.GetComponent<RK58EnableMultitouch>() != null;
+        GameObject go = ReplaceUtility(scene, "RK58_Multitouch");
+        if (!go) return false;
+        Undo.AddComponent<RK58EnableMultitouch>(go);
+        return go.GetComponent<RK58EnableMultitouch>() != null;
     }
 
     private static bool RebuildBank(Scene scene)
@@ -107,28 +169,29 @@ public static class RK58SceneReferenceRepair
 
         if (old)
         {
-            RK58SongBank previous = old.GetComponent<RK58SongBank>();
-            if (previous)
+            RK58SongBank bank = old.GetComponent<RK58SongBank>();
+            if (bank)
             {
-                conductor = previous.conductorAudio;
-                if (previous.songs != null)
-                    songs = new List<RK58SongEntry>(previous.songs);
+                conductor = bank.conductorAudio;
+                if (bank.songs != null)
+                    songs = new List<RK58SongEntry>(bank.songs);
+            }
+            RK58Runtime legacy = old.GetComponent<RK58Runtime>();
+            if (legacy)
+            {
+                if (!conductor) conductor = legacy.conductorAudio;
+                if ((songs == null || songs.Count == 0) && legacy.songs != null)
+                    songs = new List<RK58SongEntry>(legacy.songs);
             }
         }
 
-        GameObject replacement = ReplaceObject(scene, "RK58_SongBank");
-        if (!replacement) return false;
-
-        RK58SongBank bank = Undo.AddComponent<RK58SongBank>(replacement);
-        if (!bank) return false;
-        bank.conductorAudio = conductor;
-        if (songs != null)
-            bank.songs = songs;
-        else
-            Debug.LogWarning("[RK58 Repair] Old SongBank data was not readable. " +
-                "Run 03 - Import Full + MIDI Pairs to restore song links.");
-
-        EditorUtility.SetDirty(bank);
+        GameObject obj = ReplaceUtility(scene, "RK58_SongBank");
+        RK58SongBank fresh = Undo.AddComponent<RK58SongBank>(obj);
+        fresh.conductorAudio = conductor;
+        if (songs != null) fresh.songs = songs;
+        else Debug.LogWarning("[RK58 Repair] SongBank data unavailable. " +
+                "Run 03 - Import Full + MIDI Pairs.");
+        EditorUtility.SetDirty(fresh);
         return true;
     }
 }
