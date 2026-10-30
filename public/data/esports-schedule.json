@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T20:06:07.740Z",
+  "generatedAt": "2026-10-30T23:43:13.909Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 1,
-    "completed": 58,
+    "upcoming": 0,
+    "completed": 59,
     "total": 60
   },
   "leagues": [
@@ -1890,7 +1890,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -1939,7 +1939,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
@@ -2139,7 +2139,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
@@ -2390,7 +2390,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -2752,7 +2752,7 @@
           "wins": 2,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         }
@@ -2803,7 +2803,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -3011,11 +3011,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-30T20:00:00Z:TLAW-LOS",
+      "id": "98767975604431411:2026-10-30T20:00:00Z:LOS-TLAW",
       "riotEventId": null,
       "matchId": "115660540726095077",
       "startTime": "2026-10-30T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3032,28 +3032,28 @@
       "teams": [
         {
           "id": null,
-          "name": "Team Liquid Alienware",
-          "code": "TLAW",
-          "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
+          "name": "LOS",
+          "code": "LOS",
+          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
         {
           "id": null,
-          "name": "LOS",
-          "code": "LOS",
-          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
+          "name": "Team Liquid Alienware",
+          "code": "TLAW",
+          "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 1,
+          "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -3065,7 +3065,7 @@
       "riotEventId": null,
       "matchId": "115660540726095081",
       "startTime": "2026-10-30T23:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
