@@ -1,35 +1,37 @@
-RHYTHM KITCHEN UI58 — HOTFIX 2026-10-30
-=======================================
-SUA:
-- warning TMP_Text.enableWordWrapping obsolete (use textWrappingMode).
-- 'RK58MidiNote' is missing ExtensionOfNativeClass.
-- GameObject TimerPlate references runtime script in scene file. Fixing!
-- Old RK58_Multitouch / RK58_SongBank legacy script references.
+RHYTHM KITCHEN UI58 — HOTFIX SONGBANK (2026-10-30)
+=================================================
+Trieu chung:
+GameObject (named 'RK58_SongBank') references runtime script in scene file. Fixing!
 
-NGUYEN NHAN:
-RK58Runtime.cs co GUID da duoc gan vao Scene. Sau khi tach file,
-no chi chua RK58MidiNote (Serializable data, NOT MonoBehaviour).
-Unity co gang su dung class data do de deserialise component cu.
-Hotfix phuc hoi lop RK58Runtime : MonoBehaviour voi TEN TRUNG FILE,
-chuyen MIDI data sang RK58MidiModels.cs, de Unity co the doc
-tham chieu cu truoc khi Editor migrate sang MonoBehaviour dung.
+Nguyen nhan:
+Scene cu van luu m_Script tham chieu MonoScript truoc khi tach RK58Runtime.cs.
+MIDI importer cu quet theo component type. Khi MonoBehaviour hu, no khong tim
+thay va tao them mot GameObject RK58_SongBank, khien canh bao con mai.
+
+SUA TRONG GOI:
+- RK58SongBankDeepRepair.cs: menu chu dong sua 1 object, tu dong bo
+  missing-script, tao lai component RK58SongBank tu dung file RK58SongBank.cs.
+- Thu hoi song list + AudioSource neu Unity van giai ma duoc.
+- Giu nguyen GameObject va children (khong xoa Scene UI).
+- Chi xoa duplicate RK58_SongBank khi duplicate khong co con va
+  khong co component khac.
+- Sua MIDI importer: tim object theo ten va repair, KHONG tao them
+  RK58_SongBank moi khi object cu dang bi loi.
+- Import MIDI 0 bai khong xoa nhac da import truoc.
+- Menu 00 cung dung helper repair, khong rebuild SongBank khoe neu khong can.
 
 CAI DAT:
-1. Sao luu Scene 04_Gameplay.unity.
-2. Thoat Play Mode. Giai nen ZIP vao project (ngang Assets, Packages).
-3. GHI DE RK58Runtime.cs va RK58SceneReferenceRepair.cs.
-4. DA SOAT: khong de hai phien ban file RK58Runtime.cs (copy) trong Assets.
-5. Mo Unity, de script recompile hoan tat.
-6. Mo Scene 04_Gameplay.
-7. Tools > Rhythm Kitchen > UI58 - Timer + 2 Fingers
-   > 00 - Repair UI58 Scene References
-8. Nhung ten duoc sua: TimerPlate, RK58_Multitouch, RK58_SongBank.
-9. Neu timer khong hien thi chuan, chay menu 01 - Fix Timer + Enable Two Fingers.
-10. Neu SongBank khong co bai, chay menu 03 - Import Full + MIDI Pairs.
-11. Ctrl+S; dong Scene, mo lai; kiem tra Console va Play.
+1. Backup file 04_Gameplay.unity trong Assets/_Project/Scenes.
+2. Thoat Play Mode, giai nen ZIP vao goc project (noi co Assets/).
+3. Ghi de file .cs UI58; GIU NGUYEN .meta co san.
+4. Cho Unity compile xong, mo 04_Gameplay.
+5. Chay: Tools > Rhythm Kitchen > UI58 - Timer + 2 Fingers
+   > 04 - Deep Repair RK58 SongBank (Save Scene).
+6. Script tu dong Save Scene.
+7. Dong Scene, mo lai; check Console.
+8. Neu SongBank songs = 0: chay 03 - Import Full + MIDI Pairs.
+9. Neu con canh bao, tim "RK58_SongBank" trong scene khac/prefab,
+   va kiem tra duplicate class RK58SongBank.cs hoac GUID .meta.
 
-LUU Y:
-- KHONG xoa RK58Runtime.cs: day la GUID compatibility shim.
-- Khong sua scoring/NoteController. Khong gia lap event cham.
-- MIDI importer van chi tao JSON; chua noi NoteSpawner.
-- Chua co Unity 6 Play Mode verification. 
+Chua the Play-test Unity trong moi truong nay. Nhan dinh ma nguon
+duoc verify tren GitHub. MIDI note data chua tu dong gan vao NoteSpawner.

@@ -35,7 +35,7 @@ public static class RK58SceneReferenceRepair
 
         bool timer = RepairTimer(scene);
         bool multi = RebuildMultitouch(scene);
-        bool bank = RebuildBank(scene);
+        bool bank = RK58SongBankDeepRepair.EnsureSingleBank(scene) != null;
 
         EditorSceneManager.MarkSceneDirty(scene);
         Debug.Log("[RK58 Repair] TimerPlate=" + timer +

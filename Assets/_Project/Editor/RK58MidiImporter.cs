@@ -86,16 +86,22 @@ public static class RK58MidiImporter
             }
         }
 
-        RK58SongBank bank = InScene<RK58SongBank>().FirstOrDefault();
+        // Never create another RK58_SongBank when an old object has a stale
+        // MonoScript reference. Repair/reuse it by its GameObject name.
+        RK58SongBank bank = RK58SongBankDeepRepair.EnsureSingleBank(
+            SceneManager.GetActiveScene());
         if (!bank)
         {
-            GameObject go = new GameObject("RK58_SongBank");
-            Undo.RegisterCreatedObjectUndo(go, "RK58 Create SongBank");
-            bank = Undo.AddComponent<RK58SongBank>(go);
+            Debug.LogError("[RK58] SongBank could not be repaired. Import cancelled.");
+            return 0;
         }
 
         Undo.RecordObject(bank, "RK58 Import Full + MIDI Pairs");
-        bank.songs = songs;
+        if (songs.Count > 0)
+            bank.songs = songs;
+        else
+            Debug.LogWarning("[RK58] No matching Full + MIDI pairs were found. " +
+                "Existing SongBank entries were retained.");
 
         if (!bank.conductorAudio)
         {
