@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T23:43:13.909Z",
+  "generatedAt": "2026-10-31T05:28:15.787Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 0,
-    "completed": 59,
-    "total": 60
+    "live": 0,
+    "upcoming": 3,
+    "completed": 60,
+    "total": 63
   },
   "leagues": [
     {
@@ -1702,7 +1702,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         }
@@ -1853,7 +1853,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2153,7 +2153,7 @@
           "outcome": "win",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2289,7 +2289,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         },
@@ -2452,7 +2452,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 1,
+            "wins": 2,
             "losses": 2
           }
         }
@@ -2503,7 +2503,7 @@
           "outcome": "loss",
           "record": {
             "wins": 1,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -3065,7 +3065,7 @@
       "riotEventId": null,
       "matchId": "115660540726095081",
       "startTime": "2026-10-30T23:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3087,12 +3087,149 @@
           "image": "https://static.lolesports.com/teams/G2-FullonDark.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 1,
+            "losses": 3
+          }
+        },
+        {
+          "id": null,
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "slug": null,
+          "wins": 2,
+          "outcome": "win",
+          "record": {
+            "wins": 2,
+            "losses": 2
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-31T17:00:00Z:MKOI-KC",
+      "riotEventId": null,
+      "matchId": "115660540726095085",
+      "startTime": "2026-10-31T17:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Swiss",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 3,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Movistar KOI",
+          "code": "MKOI",
+          "image": "https://static.lolesports.com/teams/1734012609283_MKOI_FullColor_Blue.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
             "losses": 2
           }
         },
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 2
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-31T20:00:00Z:LOS-LYON",
+      "riotEventId": null,
+      "matchId": "115660540726095089",
+      "startTime": "2026-10-31T20:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Swiss",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 3,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "LOS",
+          "code": "LOS",
+          "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 2
+          }
+        },
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
+            "losses": 2
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-10-31T23:00:00Z:HLE-BLG",
+      "riotEventId": null,
+      "matchId": "115660540726095093",
+      "startTime": "2026-10-31T23:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Swiss",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 3,
+      "strategyType": "bestOf",
+      "teams": [
         {
           "id": null,
           "name": "Hanwha Life Esports",
@@ -3102,7 +3239,20 @@
           "wins": 0,
           "outcome": null,
           "record": {
-            "wins": 1,
+            "wins": 2,
+            "losses": 2
+          }
+        },
+        {
+          "id": null,
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 2,
             "losses": 2
           }
         }
