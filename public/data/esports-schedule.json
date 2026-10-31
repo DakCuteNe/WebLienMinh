@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T20:16:13.974Z",
+  "generatedAt": "2026-10-31T23:40:40.812Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -13,8 +13,8 @@
   },
   "summary": {
     "live": 1,
-    "upcoming": 1,
-    "completed": 61,
+    "upcoming": 0,
+    "completed": 62,
     "total": 63
   },
   "leagues": [
@@ -1940,7 +1940,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -1989,7 +1989,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -2140,7 +2140,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -2202,7 +2202,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         }
@@ -2589,7 +2589,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -2753,7 +2753,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2889,7 +2889,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -3040,7 +3040,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -3165,7 +3165,7 @@
       "riotEventId": null,
       "matchId": "115660540726095089",
       "startTime": "2026-10-31T20:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3186,10 +3186,10 @@
           "code": "LYON",
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -3200,10 +3200,10 @@
           "image": "https://static.lolesports.com/teams/1784013312149_LOS-OLaranja.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -3211,11 +3211,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-10-31T23:00:00Z:HLE-BLG",
+      "id": "98767975604431411:2026-10-31T23:00:00Z:BLG-HLE",
       "riotEventId": null,
       "matchId": "115660540726095093",
       "startTime": "2026-10-31T23:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3232,11 +3232,11 @@
       "teams": [
         {
           "id": null,
-          "name": "Hanwha Life Esports",
-          "code": "HLE",
-          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
+          "wins": 1,
           "outcome": null,
           "record": {
             "wins": 2,
@@ -3245,9 +3245,9 @@
         },
         {
           "id": null,
-          "name": "BILIBILI GAMING",
-          "code": "BLG",
-          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+          "name": "Hanwha Life Esports",
+          "code": "HLE",
+          "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
