@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T23:40:40.812Z",
+  "generatedAt": "2026-11-01T05:53:35.045Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 0,
-    "completed": 62,
-    "total": 63
+    "live": 0,
+    "upcoming": 4,
+    "completed": 63,
+    "total": 67
   },
   "leagues": [
     {
@@ -1703,7 +1703,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -1752,7 +1752,7 @@
           "wins": 0,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         }
@@ -2290,7 +2290,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         },
         {
@@ -2402,7 +2402,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         }
@@ -2453,7 +2453,7 @@
           "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -2689,7 +2689,7 @@
           "wins": 1,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -2989,7 +2989,7 @@
           "wins": 1,
           "outcome": "loss",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -3103,7 +3103,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
           }
         }
       ],
@@ -3215,7 +3215,7 @@
       "riotEventId": null,
       "matchId": "115660540726095093",
       "startTime": "2026-10-31T23:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Swiss",
       "league": {
@@ -3236,10 +3236,10 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 1,
-          "outcome": null,
+          "wins": 2,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 2
           }
         },
@@ -3250,10 +3250,210 @@
           "image": "https://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 2
+            "losses": 3
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-11-03T22:00:00Z:TES-IG",
+      "riotEventId": null,
+      "matchId": "115660540726095109",
+      "startTime": "2026-11-03T22:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Quarterfinals",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "TOP ESPORTS",
+          "code": "TES",
+          "image": "https://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Invictus Gaming",
+          "code": "IG",
+          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-11-04T22:00:00Z:GEN-LYON",
+      "riotEventId": null,
+      "matchId": "115660540726095115",
+      "startTime": "2026-11-04T22:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Quarterfinals",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Gen.G Esports",
+          "code": "GEN",
+          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "LYON",
+          "code": "LYON",
+          "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-11-05T22:00:00Z:DK-BLG",
+      "riotEventId": null,
+      "matchId": "115660540726095097",
+      "startTime": "2026-11-05T22:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Quarterfinals",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Dplus KIA",
+          "code": "DK",
+          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-11-06T22:00:00Z:T1-KC",
+      "riotEventId": null,
+      "matchId": "115660540726095103",
+      "startTime": "2026-11-06T22:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Quarterfinals",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "T1",
+          "code": "T1",
+          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Karmine Corp",
+          "code": "KC",
+          "image": "https://static.lolesports.com/teams/1704714951336_KC.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 0,
+            "losses": 0
           }
         }
       ],
