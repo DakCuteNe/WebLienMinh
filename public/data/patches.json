@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-11-03T16:09:06.732Z",
+  "generatedAt": "2026-11-03T21:44:30.993Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
+    {
+      "patch": "26.22",
+      "title": "League of Legends Patch 26.22 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-22-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/718b573bd914c3a8a334a89f70ff405eee9a6748-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-11-03T19:00:00.000Z",
+      "description": "Patch 26.22 is at the top of the charts. K/DA is starting fires, Mel got a midscope, and plenty of changes are in for SR, Mayhem, and Classic."
+    },
     {
       "patch": "26.21",
       "title": "League of Legends Patch 26.21 Notes",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/03c35b80144c74c46810f192631b19faa7e83037-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "*slaps patch notes* This bad boy can fit so much spaghetti."
-    },
-    {
-      "patch": "26.10",
-      "title": "League of Legends Patch 26.10 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-10-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/6ee41cd6a039966520450f721c40c0012a8c870f-2048x1208.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "The season of demons continues with Patch 26.10!"
     }
   ]
 }
