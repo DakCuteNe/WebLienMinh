@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T07:20:12.920Z",
+  "generatedAt": "2026-11-05T21:56:43.194Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 3,
+    "live": 1,
+    "upcoming": 2,
     "completed": 52,
     "total": 55
   },
@@ -2715,7 +2715,7 @@
       "riotEventId": null,
       "matchId": "115660540726095097",
       "startTime": "2026-11-05T22:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Quarterfinals",
       "league": {
