@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T00:19:45.366Z",
+  "generatedAt": "2026-11-05T07:20:12.920Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
-    "upcoming": 2,
-    "completed": 51,
-    "total": 54
+    "live": 0,
+    "upcoming": 3,
+    "completed": 52,
+    "total": 55
   },
   "leagues": [
     {
@@ -2665,7 +2665,7 @@
       "riotEventId": null,
       "matchId": "115660540726095115",
       "startTime": "2026-11-04T22:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Quarterfinals",
       "league": {
@@ -2686,10 +2686,10 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 2,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
@@ -2700,10 +2700,10 @@
           "image": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
@@ -2803,6 +2803,56 @@
           "outcome": null,
           "record": {
             "wins": 0,
+            "losses": 0
+          }
+        }
+      ],
+      "vodsAvailable": false,
+      "tournamentId": null
+    },
+    {
+      "id": "98767975604431411:2026-11-07T22:00:00Z:GEN-IG",
+      "riotEventId": null,
+      "matchId": "115660540726095127",
+      "startTime": "2026-11-07T22:00:00Z",
+      "state": "unstarted",
+      "type": "match",
+      "blockName": "Semifinals",
+      "league": {
+        "id": "98767975604431411",
+        "name": "Worlds",
+        "slug": "worlds",
+        "officialSlug": "worlds",
+        "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png",
+        "group": "INTERNATIONAL",
+        "priority": 9
+      },
+      "bestOf": 5,
+      "strategyType": "bestOf",
+      "teams": [
+        {
+          "id": null,
+          "name": "Gen.G Esports",
+          "code": "GEN",
+          "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
+            "losses": 0
+          }
+        },
+        {
+          "id": null,
+          "name": "Invictus Gaming",
+          "code": "IG",
+          "image": "https://static.lolesports.com/teams/1634762917340_300px-Invictus_Gaming_logo.png",
+          "slug": null,
+          "wins": 0,
+          "outcome": null,
+          "record": {
+            "wins": 1,
             "losses": 0
           }
         }
