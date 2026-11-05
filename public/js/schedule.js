@@ -161,7 +161,7 @@ function matchCard(event, favorite) {
   const live = isLive(event);
   const fav = teamMatchesFavorite(left, favorite) || teamMatchesFavorite(right, favorite);
   const state = live ? c().live : completed ? c().finished : relativeTime(event.startTime);
-  return `<article class="schedule-match ${live ? 'is-live' : ''} ${completed ? 'is-completed' : ''} ${fav ? 'is-favorite' : ''}" data-start="${esc(event.startTime || '')}">
+  return `<article class="schedule-match ${live ? 'is-live' : ''} ${completed ? 'is-completed' : ''} ${fav ? 'is-favorite' : ''}" data-start="${esc(event.startTime || '')}" data-event-id="${esc(event.riotEventId || '')}" data-match-id="${esc(event.matchId || '')}">
     <div class="schedule-match-top">
       <div class="schedule-league">${event.league?.image ? `<img src="${esc(event.league.image)}" alt="">` : ''}<b>${esc(event.league?.name || '')}</b><span>${esc(event.blockName || '')}</span></div>
       <div class="schedule-match-state ${live ? 'live' : ''}">${live ? '<i></i>' : ''}${esc(state)}</div>

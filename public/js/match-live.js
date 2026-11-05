@@ -82,10 +82,25 @@ function ensureCss() {
   }
 }
 
+function championAlias(value) {
+  return String(value ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
 async function championMap() {
   if (!championPromise) championPromise = fetch('/api/champions', { cache: 'force-cache' })
     .then(response => response.ok ? response.json() : Promise.reject(new Error(`champions ${response.status}`)))
-    .then(body => new Map((body.champions || []).map(champion => [Number(champion.key), champion])))
+    .then(body => {
+      const map = new Map();
+      for (const champion of body.champions || []) {
+        const numeric = Number(champion?.key || 0);
+        if (numeric > 0) map.set(String(numeric), champion);
+        for (const alias of [champion?.id, champion?.name]) {
+          const key = championAlias(alias);
+          if (key) map.set(key, champion);
+        }
+      }
+      return map;
+    })
     .catch(() => new Map());
   return championPromise;
 }
@@ -142,6 +157,8 @@ function queryFor(card, detail = false) {
     state: card.classList.contains('is-live') ? 'inprogress' : card.classList.contains('is-completed') ? 'completed' : 'unstarted',
     locale: locale(), detail: detail ? '1' : '0'
   });
+  if (card.dataset.eventId) params.set('eventId', card.dataset.eventId);
+  if (card.dataset.matchId) params.set('matchId', card.dataset.matchId);
   if (detail && card._livePinnedGameId) params.set('viewGameId', card._livePinnedGameId);
   return params;
 }
@@ -245,8 +262,10 @@ function objectiveDetails(stats = {}, opponentStats = {}) {
 }
 
 function championChip(row, map, pick = true) {
-  const champion = map.get(Number(row?.championId || row));
-  const name = champion?.name || `#${row?.championId || row || '?'}`;
+  const ref = row?.championId ?? row;
+  const raw = String(ref ?? '').trim();
+  const champion = map.get(/^\d+$/.test(raw) ? String(Number(raw)) : championAlias(raw)) || null;
+  const name = champion?.name || raw || '?';
   const player = pick && row?.summonerName ? `<small>${esc(row.summonerName)}</small>` : '';
   return `<div class="live-champion-chip ${pick ? 'is-pick' : 'is-ban'}">
     ${champion?.image ? `<img src="${esc(champion.image)}" alt="${esc(name)}" loading="lazy">` : '<span>?</span>'}
