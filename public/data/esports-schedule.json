@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T18:51:15.963Z",
+  "generatedAt": "2026-11-05T00:19:45.366Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,10 +12,10 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 3,
-    "completed": 52,
-    "total": 55
+    "live": 1,
+    "upcoming": 2,
+    "completed": 51,
+    "total": 54
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-09-20T20:00:00Z:TLAW-FLY",
-      "riotEventId": null,
-      "matchId": "115565004607949393",
-      "startTime": "2026-09-20T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Liquid Alienware",
-          "code": "TLAW",
-          "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "FlyQuest",
-          "code": "FLY",
-          "image": "https://static.lolesports.com/teams/flyquest-new-on-dark.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "107213827295848783:2026-09-24T09:00:00Z:SGW-9G",
       "riotEventId": null,
@@ -2715,7 +2665,7 @@
       "riotEventId": null,
       "matchId": "115660540726095115",
       "startTime": "2026-11-04T22:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Quarterfinals",
       "league": {
@@ -2736,7 +2686,7 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 0,
