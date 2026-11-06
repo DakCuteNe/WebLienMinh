@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T21:56:43.194Z",
+  "generatedAt": "2026-11-06T02:20:01.308Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 2,
-    "completed": 52,
+    "completed": 53,
     "total": 55
   },
   "leagues": [
@@ -2711,11 +2711,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-11-05T22:00:00Z:DK-BLG",
+      "id": "98767975604431411:2026-11-05T22:00:00Z:BLG-DK",
       "riotEventId": null,
       "matchId": "115660540726095097",
       "startTime": "2026-11-05T22:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Quarterfinals",
       "league": {
@@ -2732,28 +2732,28 @@
       "teams": [
         {
           "id": null,
-          "name": "Dplus KIA",
-          "code": "DK",
-          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 0,
+            "wins": 1,
             "losses": 0
           }
         },
         {
           "id": null,
-          "name": "BILIBILI GAMING",
-          "code": "BLG",
-          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+          "name": "Dplus KIA",
+          "code": "DK",
+          "image": "https://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
           "slug": null,
           "wins": 0,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 0,
-            "losses": 0
+            "losses": 1
           }
         }
       ],
