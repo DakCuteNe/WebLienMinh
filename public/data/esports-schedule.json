@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T02:19:57.912Z",
+  "generatedAt": "2026-11-07T23:55:25.499Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 2,
+    "live": 1,
+    "upcoming": 1,
     "completed": 54,
     "total": 56
   },
@@ -2815,7 +2815,7 @@
       "riotEventId": null,
       "matchId": "115660540726095127",
       "startTime": "2026-11-07T22:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Semifinals",
       "league": {
@@ -2836,7 +2836,7 @@
           "code": "GEN",
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
-          "wins": 0,
+          "wins": 2,
           "outcome": null,
           "record": {
             "wins": 1,
