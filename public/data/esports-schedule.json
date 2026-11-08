@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T13:15:00.882Z",
+  "generatedAt": "2026-11-08T22:26:37.608Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,8 +12,8 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 0,
-    "upcoming": 1,
+    "live": 1,
+    "upcoming": 0,
     "completed": 53,
     "total": 54
   },
@@ -2761,11 +2761,11 @@
       "tournamentId": null
     },
     {
-      "id": "98767975604431411:2026-11-08T22:00:00Z:T1-BLG",
+      "id": "98767975604431411:2026-11-08T22:00:00Z:BLG-T1",
       "riotEventId": null,
       "matchId": "115660540726095121",
       "startTime": "2026-11-08T22:00:00Z",
-      "state": "unstarted",
+      "state": "inprogress",
       "type": "match",
       "blockName": "Semifinals",
       "league": {
@@ -2782,9 +2782,9 @@
       "teams": [
         {
           "id": null,
-          "name": "T1",
-          "code": "T1",
-          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
+          "name": "BILIBILI GAMING",
+          "code": "BLG",
+          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
@@ -2795,9 +2795,9 @@
         },
         {
           "id": null,
-          "name": "BILIBILI GAMING",
-          "code": "BLG",
-          "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
+          "name": "T1",
+          "code": "T1",
+          "image": "https://static.lolesports.com/teams/1726801573959_539px-T1_2019_full_allmode.png",
           "slug": null,
           "wins": 0,
           "outcome": null,
