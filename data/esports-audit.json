@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-31T08:57:05.828Z",
-  "directoryGeneratedAt": "2026-10-31T08:50:24.566Z",
-  "mediaEnrichedAt": "2026-10-31T08:52:49.361Z",
+  "generatedAt": "2026-11-08T09:33:26.549Z",
+  "directoryGeneratedAt": "2026-11-08T09:26:41.753Z",
+  "mediaEnrichedAt": "2026-11-08T09:29:09.390Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1128,
+      "count": 1129,
       "pct": 65.4
     },
     "realName": {
@@ -562,7 +562,7 @@
     },
     "NACL": {
       "total": 54,
-      "image": 32,
+      "image": 33,
       "realName": 51,
       "country": 52,
       "birthdate": 0,
@@ -571,7 +571,7 @@
       "teamLogo": 54,
       "stats": 54,
       "completeCore": 0,
-      "imagePct": 59.3,
+      "imagePct": 61.1,
       "realNamePct": 94.4,
       "countryPct": 96.3,
       "birthdatePct": 0,
@@ -835,7 +835,7 @@
     },
     "LAS": {
       "total": 53,
-      "image": 6,
+      "image": 7,
       "realName": 46,
       "country": 46,
       "birthdate": 0,
@@ -844,7 +844,7 @@
       "teamLogo": 53,
       "stats": 53,
       "completeCore": 0,
-      "imagePct": 11.3,
+      "imagePct": 13.2,
       "realNamePct": 86.8,
       "countryPct": 86.8,
       "birthdatePct": 0,
@@ -898,7 +898,7 @@
     },
     "LJL": {
       "total": 120,
-      "image": 53,
+      "image": 52,
       "realName": 85,
       "country": 85,
       "birthdate": 0,
@@ -907,7 +907,7 @@
       "teamLogo": 99,
       "stats": 120,
       "completeCore": 0,
-      "imagePct": 44.2,
+      "imagePct": 43.3,
       "realNamePct": 70.8,
       "countryPct": 70.8,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 598,
+    "image": 597,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -1047,11 +1047,6 @@
       {
         "id": "Music",
         "team": "Supernova",
-        "region": "NACL"
-      },
-      {
-        "id": "Protos",
-        "team": "Apex Mission Impossible",
         "region": "NACL"
       },
       {
@@ -1685,11 +1680,6 @@
         "region": "LAS"
       },
       {
-        "id": "CARFE",
-        "team": "Dplus Kia Academy",
-        "region": "LAS"
-      },
-      {
         "id": "Despair",
         "team": "Dplus Kia Academy",
         "region": "LAS"
@@ -2062,6 +2052,11 @@
       {
         "id": "Sh1vq",
         "team": "NOVEX",
+        "region": "LJL"
+      },
+      {
+        "id": "Eria",
+        "team": "New Meta",
         "region": "LJL"
       },
       {
