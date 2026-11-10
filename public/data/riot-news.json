@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-10T12:31:51.637Z",
+  "generatedAt": "2026-11-10T20:46:56.958Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "Worlds 2026 Opening Ceremony Presented by Mastercard",
+      "description": "Esports 2026-11-10T13:00:00.000Z Worlds 2026 Opening Ceremony Presented by Mastercard Music, visuals, and energy set the stage for the 2026 League of Legends World Championship Finals",
+      "url": "https://lolesports.com/en-us/news/worlds-2026-opening-ceremony-presented-by-mastercard",
+      "category": "League News",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-11-10T13:00:00.000Z",
+      "type": "event"
+    },
     {
       "title": "League of Legends Patch 26.22 Notes",
       "description": "Game Updates 2026-11-03T19:00:00.000Z League of Legends Patch 26.22 Notes Patch 26.22 is at the top of the charts. K/DA is starting fires, Mel got a midscope, and plenty of changes are in for SR, Mayhem, and Classic.",
@@ -19,15 +28,6 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-11-02T13:00:00.000Z",
       "type": "event"
-    },
-    {
-      "title": "New Merch Celebrates Return Of Our Virtual Artists!",
-      "description": "Merch 2026-10-26T16:00:00.000Z New Merch Celebrates Return Of Our Virtual Artists! Fan-first products capturing spirit of K/DA, True Damage and HEARTSTEEL now available for pre-order",
-      "url": "https://www.leagueoflegends.com/en-us/news/merch/new-merch-celebrates-return-of-our-virtual-artists",
-      "category": "League News",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-10-26T16:00:00.000Z",
-      "type": "news"
     },
     {
       "title": "League of Legends Patch 26.21 Notes",
