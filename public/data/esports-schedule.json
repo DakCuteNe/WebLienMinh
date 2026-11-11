@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T15:35:30.478Z",
+  "generatedAt": "2026-11-11T22:15:31.410Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 49,
-    "total": 50
+    "completed": 48,
+    "total": 49
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "98767991299243165:2026-09-27T20:00:00Z:TLAW-C9",
-      "riotEventId": null,
-      "matchId": "115565004607949405",
-      "startTime": "2026-09-27T20:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "98767991299243165",
-        "name": "LCS",
-        "slug": "lcs",
-        "officialSlug": "lcs",
-        "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png",
-        "group": "REGIONAL",
-        "priority": 4
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Team Liquid Alienware",
-          "code": "TLAW",
-          "image": "https://static.lolesports.com/teams/1769357207762_TLAlienware_Minimal_Bug-White.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 0
-          }
-        },
-        {
-          "id": null,
-          "name": "Cloud9 Kia",
-          "code": "C9",
-          "image": "https://static.lolesports.com/teams/1736924120254_C9Kia_IconBlue_Transparent_2000x2000.png",
-          "slug": null,
-          "wins": 1,
-          "outcome": "loss",
-          "record": {
-            "wins": 2,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-10-03T20:00:00Z:LYON-C9",
       "riotEventId": null,
