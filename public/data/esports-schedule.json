@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T00:36:37.251Z",
+  "generatedAt": "2026-11-11T15:35:30.478Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -14,8 +14,8 @@
   "summary": {
     "live": 0,
     "upcoming": 1,
-    "completed": 50,
-    "total": 51
+    "completed": 49,
+    "total": 50
   },
   "leagues": [
     {
@@ -110,56 +110,6 @@
     }
   ],
   "events": [
-    {
-      "id": "107213827295848783:2026-09-27T09:00:00Z:MVKA-SCBC",
-      "riotEventId": null,
-      "matchId": "116952475624364069",
-      "startTime": "2026-09-27T09:00:00Z",
-      "state": "completed",
-      "type": "match",
-      "blockName": "Playoffs",
-      "league": {
-        "id": "107213827295848783",
-        "name": "VCS",
-        "slug": "vcs",
-        "officialSlug": "vcs",
-        "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png",
-        "group": "REGIONAL",
-        "priority": 6
-      },
-      "bestOf": 5,
-      "strategyType": "bestOf",
-      "teams": [
-        {
-          "id": null,
-          "name": "Saigon MVKE Academy",
-          "code": "MVKA",
-          "image": "https://static.lolesports.com/teams/1771230115237_Orange_Black_Logo.png",
-          "slug": null,
-          "wins": 3,
-          "outcome": "win",
-          "record": {
-            "wins": 3,
-            "losses": 1
-          }
-        },
-        {
-          "id": null,
-          "name": "TP.HCM SN CyberCore Esports",
-          "code": "SCBC",
-          "image": "https://static.lolesports.com/teams/1739952109504_image11.png",
-          "slug": null,
-          "wins": 0,
-          "outcome": "loss",
-          "record": {
-            "wins": 1,
-            "losses": 2
-          }
-        }
-      ],
-      "vodsAvailable": false,
-      "tournamentId": null
-    },
     {
       "id": "98767991299243165:2026-09-27T20:00:00Z:TLAW-C9",
       "riotEventId": null,
