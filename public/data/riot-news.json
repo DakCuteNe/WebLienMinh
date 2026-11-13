@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-13T17:40:19.683Z",
+  "generatedAt": "2026-11-13T23:28:42.902Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "LoL Esports 2027 and Beyond",
+      "description": "Esports 2026-11-13T23:00:00.000Z LoL Esports 2027 and Beyond Learn the latest details on what’s ahead of LoL Esports",
+      "url": "https://lolesports.com/en-us/news/lol-esports-2027-and-beyond",
+      "category": "League News",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-11-13T23:00:00.000Z",
+      "type": "news"
+    },
     {
       "title": "Build with Official League of Legends Esports Data",
       "description": "Esports 2026-11-12T19:00:00.000Z Build with Official League of Legends Esports Data Riot Games Open Access powered by GRID is live November 14, giving the community access to Worlds Final data",
@@ -37,15 +46,6 @@
       "image": "https://www.leagueoflegends.com/",
       "publishedAt": "2026-11-03T19:00:00.000Z",
       "type": "patch"
-    },
-    {
-      "title": "Your Guide to Worlds 2026 Fan Fest",
-      "description": "Esports 2026-11-02T13:00:00.000Z Your Guide to Worlds 2026 Fan Fest Worlds 2026 Fan Fest heads to Pier 36 in Lower Manhattan November 12-14",
-      "url": "https://lolesports.com/en-us/news/your-guide-to-worlds-2026-fan-fest",
-      "category": "League News",
-      "image": "https://www.leagueoflegends.com/",
-      "publishedAt": "2026-11-02T13:00:00.000Z",
-      "type": "event"
     },
     {
       "title": "League of Legends Patch 26.21 Notes",
