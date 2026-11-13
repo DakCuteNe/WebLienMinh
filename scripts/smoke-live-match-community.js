@@ -90,3 +90,5 @@ assert.equal(body.live.teams.find(row => row.teamId === 'kt').stats.riftHeralds,
 assert.equal(body.live.dataAvailability.bans, true);
 
 console.log('Community ban/objective/live-score regression passed.');
+
+await import('./probe-leaguepedia.js');
