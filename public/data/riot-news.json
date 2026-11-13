@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-12T18:12:30.041Z",
+  "generatedAt": "2026-11-13T01:01:17.662Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "Build with Official League of Legends Esports Data",
+      "description": "Esports 2026-11-12T19:00:00.000Z Build with Official League of Legends Esports Data Riot Games Open Access powered by GRID is live November 14, giving the community access to Worlds Final data",
+      "url": "https://lolesports.com/en-us/news/build-with-official-league-of-legends-esports-data",
+      "category": "League News",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-11-12T19:00:00.000Z",
+      "type": "news"
+    },
     {
       "title": "Worlds 2026 Artist Alley: From Fan Art to Fan Fest",
       "description": "Esports 2026-11-11T17:00:00.000Z Worlds 2026 Artist Alley: From Fan Art to Fan Fest Meet the 20 artists at Artist Alley presented by Mastercard.",
