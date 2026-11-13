@@ -2,7 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const FILE = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(FILE);
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'public', 'data', 'esports-schedule.json');
 const API = 'https://esports-api.lolesports.com/persisted/gw';
@@ -42,7 +43,7 @@ async function riotGet(endpoint, params = {}) {
   const response = await fetch(`${API}/${endpoint}?${query}`, {
     headers: {
       'x-api-key': PUBLIC_API_KEY,
-      'User-Agent': 'WebLienMinh/3.20 schedule-cache'
+      'User-Agent': 'WebLienMinh/3.30 schedule-cache'
     }
   });
   if (!response.ok) throw new Error(`${endpoint} HTTP ${response.status}`);
@@ -93,16 +94,27 @@ function normalizeTeam(team = {}) {
   };
 }
 
+export function reconcileScheduleState(rawState, teams = [], bestOf = 0) {
+  const state = String(rawState || 'unstarted').toLowerCase();
+  if (state === 'completed') return 'completed';
+  const count = Number(bestOf || 0) || 0;
+  const needed = count > 0 ? Math.floor(count / 2) + 1 : Number.POSITIVE_INFINITY;
+  const clinched = teams.some(team => Number(team?.wins || 0) >= needed);
+  const outcomeWinner = teams.some(team => String(team?.outcome || '').toLowerCase() === 'win');
+  return clinched || outcomeWinner ? 'completed' : state;
+}
+
 function normalizeEvent(event, league) {
   const match = event?.match || {};
   const strategy = match?.strategy || {};
   const teams = (match?.teams || []).slice(0, 2).map(normalizeTeam);
+  const bestOf = Number(strategy?.count || match?.bestOf || 0) || null;
   return {
     id: eventId(event, league.id),
     riotEventId: event?.id ? String(event.id) : null,
     matchId: match?.id ? String(match.id) : null,
     startTime: event?.startTime || null,
-    state: String(event?.state || 'unstarted').toLowerCase(),
+    state: reconcileScheduleState(event?.state, teams, bestOf),
     type: event?.type || 'match',
     blockName: event?.blockName || null,
     league: {
@@ -114,7 +126,7 @@ function normalizeEvent(event, league) {
       group: league.group,
       priority: league.priority
     },
-    bestOf: Number(strategy?.count || match?.bestOf || 0) || null,
+    bestOf,
     strategyType: strategy?.type || null,
     teams,
     vodsAvailable: Boolean(event?.vods?.length),
@@ -134,6 +146,12 @@ function usableMatchEvent(event) {
 
 function lowerType(value) {
   return String(value || '').trim().toLowerCase();
+}
+
+export function eventStableKey(event) {
+  if (event?.riotEventId) return `event:${event.riotEventId}`;
+  if (event?.matchId) return `match:${event.matchId}`;
+  return `cache:${event?.id || ''}`;
 }
 
 async function fetchLeagueSchedule(league) {
@@ -156,7 +174,7 @@ async function fetchLeagueSchedule(league) {
   }
 
   const unique = new Map();
-  for (const event of all) unique.set(event.id, event);
+  for (const event of all) unique.set(eventStableKey(event), event);
   return [...unique.values()].sort((a, b) => String(a.startTime).localeCompare(String(b.startTime)));
 }
 
@@ -164,13 +182,24 @@ function previousEventsFor(previous, leagueId) {
   return (previous?.events || []).filter(event => String(event?.league?.id || '') === String(leagueId) && usableMatchEvent(event));
 }
 
-function keepEvent(event, now = Date.now()) {
+export function keepEvent(event, now = Date.now()) {
   if (!usableMatchEvent(event)) return false;
   if (!event.startTime) return event.state !== 'completed';
   const time = new Date(event.startTime).getTime();
   if (!Number.isFinite(time)) return false;
   if (event.state !== 'completed' && time < now - 12 * 60 * 60_000) return false;
   return time >= now - KEEP_RESULTS_DAYS * DAY && time <= now + KEEP_FUTURE_DAYS * DAY;
+}
+
+export function mergeLeagueEvents(fresh = [], previous = [], now = Date.now()) {
+  const merged = new Map();
+  // Preserve only prior completed history. Upcoming/live rows must come from the
+  // successful fresh Riot response so stale schedule entries cannot linger.
+  for (const event of previous) {
+    if (event?.state === 'completed' && keepEvent(event, now)) merged.set(eventStableKey(event), event);
+  }
+  for (const event of fresh) merged.set(eventStableKey(event), event);
+  return [...merged.values()];
 }
 
 function summarize(events) {
@@ -205,9 +234,12 @@ async function main() {
   for (const league of leagues) {
     try {
       const rows = await fetchLeagueSchedule(league);
-      events.push(...rows);
+      const previousRows = previousEventsFor(previous, league.id);
+      const mergedRows = mergeLeagueEvents(rows, previousRows);
+      events.push(...mergedRows);
       refreshed += 1;
-      console.log(`${league.name}: ${rows.length} events`);
+      const preserved = Math.max(0, mergedRows.length - rows.length);
+      console.log(`${league.name}: ${rows.length} fresh events; preserved ${preserved} completed history`);
     } catch (error) {
       const fallback = previousEventsFor(previous, league.id);
       events.push(...fallback);
@@ -223,7 +255,7 @@ async function main() {
   }
 
   const now = Date.now();
-  const deduped = [...new Map(events.map(event => [event.id, event])).values()]
+  const deduped = [...new Map(events.map(event => [eventStableKey(event), event])).values()]
     .filter(event => keepEvent(event, now))
     .sort((a, b) => String(a.startTime).localeCompare(String(b.startTime)) || Number(a.league.priority || 99) - Number(b.league.priority || 99));
 
@@ -255,7 +287,10 @@ async function main() {
   console.log(`Schedule written: ${deduped.length} events across ${leagues.length} leagues; refreshed=${refreshed}`);
 }
 
-main().catch(error => {
-  console.error(error);
-  process.exitCode = 1;
-});
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === FILE;
+if (isMain) {
+  main().catch(error => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
