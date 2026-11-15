@@ -1,0 +1,51 @@
+name: Diagnose live Ban Pick payload
+
+on:
+  push:
+    branches: [fix/live-draft-rendering]
+    paths: ['.github/workflows/diagnose-live-ban-pick.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/live-draft-rendering
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Start server
+        run: |
+          npm start > /tmp/server.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:3000/api/status >/dev/null && exit 0; sleep 1; done
+          cat /tmp/server.log
+          exit 1
+      - name: Inspect T1 KT and recent LCK drafts
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          const schedule=JSON.parse(await fs.readFile('public/data/esports-schedule.json','utf8'));
+          const rows=(schedule.events||[]).filter(e=>e.league?.slug==='lck'&&Array.isArray(e.teams)&&e.teams.length===2);
+          const key=e=>(e.teams||[]).map(t=>String(t.code||t.name||'').toUpperCase());
+          const t1kt=rows.filter(e=>{const c=key(e);return c.includes('T1')&&c.includes('KT');}).sort((a,b)=>new Date(b.startTime)-new Date(a.startTime))[0];
+          const fallback=rows.filter(e=>e.state==='completed').sort((a,b)=>new Date(b.startTime)-new Date(a.startTime))[0];
+          const event=t1kt||fallback;
+          if(!event) throw new Error('No completed LCK event');
+          const params=new URLSearchParams({leagueId:event.league.id||'',leagueSlug:event.league.slug||'',startTime:event.startTime||'',teamA:event.teams[0].code||event.teams[0].name||'',teamB:event.teams[1].code||event.teams[1].name||'',state:event.state||'completed',locale:'vi-VN',detail:'0'});
+          if(event.riotEventId) params.set('eventId',event.riotEventId);
+          if(event.matchId) params.set('matchId',event.matchId);
+          const base=await fetch('http://127.0.0.1:3000/api/esports/match-live?'+params).then(r=>r.json());
+          console.log('EVENT',JSON.stringify({teams:key(event),start:event.startTime,cacheMatchId:event.matchId,resolvedMatchId:base.matchId,state:base.state,games:base.games?.map(g=>({id:g.id,number:g.number,state:g.state}))},null,2));
+          for(const game of (base.games||[]).filter(g=>g.id&&String(g.state).toLowerCase()!=='unneeded')){
+            const q=new URLSearchParams(params);q.set('detail','1');q.set('viewGameId',game.id);
+            const body=await fetch('http://127.0.0.1:3000/api/esports/match-live?'+q).then(r=>r.json());
+            const teams=body.live?.teams||[];
+            console.log('GAME',game.number,JSON.stringify({gameId:body.live?.gameId,source:body.live?.secondarySource,availability:body.live?.dataAvailability,rows:teams.map(t=>({teamId:t.teamId,side:t.side,picks:(t.picks||[]).map(x=>x.championId),bans:t.bans||[]}))},null,2));
+          }
+          NODE

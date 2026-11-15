@@ -282,11 +282,20 @@ function windowHasData(body, gameId) {
   return Boolean(body.frames?.length || body.gameMetadata);
 }
 
+function championRef(value) {
+  if (typeof value === 'number' && value > 0) return value;
+  const raw = text(value);
+  if (!raw) return null;
+  if (/^\d+$/.test(raw) && Number(raw) > 0) return Number(raw);
+  return raw;
+}
+
 function championIds(value, out = []) {
   if (value == null) return out;
-  if (typeof value === 'number' && value > 0) out.push(value);
-  else if (typeof value === 'string' && /^\d+$/.test(value) && Number(value) > 0) out.push(Number(value));
-  else if (Array.isArray(value)) for (const item of value) championIds(item, out);
+  if (typeof value === 'number' || typeof value === 'string') {
+    const ref = championRef(value);
+    if (ref != null) out.push(ref);
+  } else if (Array.isArray(value)) for (const item of value) championIds(item, out);
   else if (typeof value === 'object') {
     if (value.championId != null) championIds(value.championId, out);
     else for (const item of Object.values(value)) championIds(item, out);
@@ -303,7 +312,7 @@ function bansFromTeam(meta = {}) {
 function picksFromTeam(meta = {}) {
   return (meta.participantMetadata || meta.participants || []).map((player, index) => ({
     participantId: Number(player.participantId || index + 1) || index + 1,
-    championId: Number(player.championId || 0) || null,
+    championId: championRef(player.championId),
     playerId: text(player.esportsPlayerId || player.playerId) || null,
     summonerName: player.summonerName || player.name || null,
     role: player.role || null,
@@ -319,8 +328,8 @@ function collectBanEntries(value, path = '', out = []) {
   }
   if (typeof value !== 'object') return out;
   if (/ban/i.test(path) && value.championId != null) {
-    const championId = Number(value.championId || 0);
-    if (championId > 0) {
+    const championId = championRef(value.championId);
+    if (championId != null) {
       out.push({
         championId,
         teamId: text(value.esportsTeamId || value.teamId) || null,
@@ -483,7 +492,8 @@ async function fetchLiveWindow(game, fallbackStart) {
   return mergeLiveWindows(metadataWindow, latest);
 }
 
-function liveTeamStats(team = {}) {
+function liveTeamStats(team) {
+  if (!team || typeof team !== 'object') return null;
   return {
     kills: Number(team.totalKills ?? team.kills ?? 0) || 0,
     gold: Number(team.totalGold ?? team.gold ?? 0) || 0,
@@ -499,7 +509,7 @@ export function normalizeWindow(windowData, game = null) {
   if (returnedId && game?.id && returnedId !== text(game.id)) return null;
   const metadata = windowData.gameMetadata || {};
   const frames = windowData.frames || [];
-  const frame = frames.at(-1) || {};
+  const frame = [...frames].reverse().find(row => row?.blueTeam && row?.redTeam) || frames.at(-1) || {};
   const blueMeta = metadata.blueTeamMetadata || {};
   const redMeta = metadata.redTeamMetadata || {};
   return {

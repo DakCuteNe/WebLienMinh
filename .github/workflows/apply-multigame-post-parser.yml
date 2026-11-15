@@ -1,0 +1,151 @@
+name: Apply multi-game post-match draft parser
+
+on:
+  push:
+    branches: [fix/live-draft-rendering]
+    paths: ['.github/workflows/apply-multigame-post-parser.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/live-draft-rendering
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Patch multi-game parser
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('server/esports-match-community-fallback.js')
+          s = path.read_text(encoding='utf-8')
+          start = s.index('export function parseCommunityPost(')
+          end = s.index('\nfunction mergeCommunityGame', start)
+          replacement = r'''function gameSectionsFromPost(post) {
+  const lines = text(post?.selftext).split(/\r?\n/);
+  const markers = [];
+  for (let index = 0; index < lines.length; index += 1) {
+    const clean = stripMarkdown(lines[index]);
+    const match = clean.match(/^(?:GAME|MATCH)\s*(\d+)\s*(?::|DISCUSSION|\b)/i);
+    const number = Number(match?.[1] || 0);
+    if (number > 0) markers.push({ number, index });
+  }
+  if (markers.length) {
+    return markers.map((marker, position) => ({
+      number: marker.number,
+      lines: lines.slice(marker.index, markers[position + 1]?.index ?? lines.length)
+    }));
+  }
+  const number = gameNumberFromPost(post);
+  return number ? [{ number, lines }] : [];
+}
+
+function winnerFromSection(lines = [], teams = [], number = 0) {
+  const body = lines.join('\n');
+  const explicit = body.match(/\*\*\s*Winner:\s*([^*\n]+)\*\*/i);
+  const winner = explicit ? resolveTeam(explicit[1], teams) : null;
+  return winner?.id && number > 0 ? text(winner.id) : null;
+}
+
+function parseGameSection(section, teams = [], championIndex = []) {
+  const number = Number(section?.number || 0);
+  const lines = section?.lines || [];
+  if (!number || !lines.length) return null;
+  const game = { number, teams: [], winnerTeamId: winnerFromSection(lines, teams, number) };
+  const headerIndex = lines.findIndex(line => /\|.*Bans?\s*1.*\|.*Bans?\s*2/i.test(line));
+  if (headerIndex < 0) return game;
+  const header = splitMarkdownRow(lines[headerIndex]);
+  const columns = objectiveColumns(header);
+  for (let index = headerIndex + 1; index < lines.length; index += 1) {
+    const cells = splitMarkdownRow(lines[index]);
+    if (!cells.length) {
+      if (game.teams.length) break;
+      continue;
+    }
+    if (isSeparatorRow(cells)) continue;
+    const team = resolveTeam(cells[0], teams);
+    if (!team?.id) {
+      if (game.teams.length >= 2) break;
+      continue;
+    }
+    const bans = [
+      ...(columns.ban1 >= 0 ? parseChampionCell(cells[columns.ban1], championIndex) : []),
+      ...(columns.ban2 >= 0 ? parseChampionCell(cells[columns.ban2], championIndex) : [])
+    ].filter((row, pos, all) => all.findIndex(other => other.championId === row.championId) === pos).slice(0, 5);
+    game.teams.push({
+      teamId: text(team.id),
+      bans: bans.map(row => row.championId),
+      banNames: bans.map(row => row.championName),
+      stats: partialStatsFromRow(cells, columns)
+    });
+    if (game.teams.length >= 2) break;
+  }
+  return game;
+}
+
+export function parseCommunityPost(post, teams = [], championIndex = []) {
+  if (!postHasTeams(post, teams)) return null;
+  const games = gameSectionsFromPost(post)
+    .map(section => parseGameSection(section, teams, championIndex))
+    .filter(Boolean);
+  const winners = winnerFromText(post, teams, null);
+  for (const game of games) {
+    if (game.winnerTeamId && !winners.some(row => row.number === game.number)) {
+      winners.push({ number: game.number, winnerTeamId: game.winnerTeamId });
+    }
+  }
+  return {
+    postId: text(post?.id) || null,
+    createdUtc: Number(post?.created_utc || 0) || 0,
+    score: scoreFromPost(post, teams),
+    game: games[0] || null,
+    games,
+    winners
+  };
+}
+'''
+          s = s[:start] + replacement + s[end:]
+          old = """    if (row.game?.number) games.set(row.game.number, mergeCommunityGame(games.get(row.game.number), row.game));\n    for (const result of row.winners || []) if (result.number && result.winnerTeamId) winners.set(result.number, result.winnerTeamId);\n"""
+          new = """    for (const game of row.games || (row.game ? [row.game] : [])) {\n      if (game?.number) games.set(game.number, mergeCommunityGame(games.get(game.number), game));\n    }\n    for (const result of row.winners || []) if (result.number && result.winnerTeamId) winners.set(result.number, result.winnerTeamId);\n"""
+          if old not in s:
+              raise SystemExit('parseCommunityPosts merge anchor missing')
+          s = s.replace(old, new, 1)
+          path.write_text(s, encoding='utf-8')
+
+          # Regression: final post contains all three MATCH sections, and Game 3
+          # has no standalone discussion post. Parser must still recover its bans.
+          test = Path('scripts/smoke-live-match-community.js')
+          t = test.read_text(encoding='utf-8')
+          old_final = """    id: 'final', created_utc: 300, title: 'KT Rolster vs. T1 / Post-Match Discussion',\n    selftext: `T1 2-1 KT\\n\\nKT Rolster wins game 1\\n\\nT1 wins game 2\\n\\nT1 wins game 3`\n"""
+          new_final = """    id: 'final', created_utc: 300, title: 'KT Rolster vs. T1 / Post-Match Discussion',\n    selftext: `T1 2-1 KT\\n\\n###MATCH 1: T1 vs. KT\\n**Winner: KT Rolster** in 36m\\n| |Bans 1|Bans 2|G|K|T|D/B|\\n|-|:-|:-|:-:|:-:|:-:|:-:|\\n|**T1**|Cassiopeia Orianna Vi|Nautilus Karma||||[O](#mt-ocean)^1|\\n|**KT**|Bard Lucian Lee Sin|Anivia Syndra||||[H](#mt-herald)^2|\\n\\n###MATCH 2: KT vs. T1\\n**Winner: T1** in 32m\\n| |Bans 1|Bans 2|G|K|T|D/B|\\n|-|:-|:-|:-:|:-:|:-:|:-:|\\n|**KT**|Bard Lucian Cassiopeia|Caitlyn Xayah||||[H](#mt-herald)^3|\\n|**T1**|Poppy Karma Orianna|Pantheon Sylas||||[B](#mt-barons)^6|\\n\\n###MATCH 3: T1 vs. KT\\n**Winner: T1** in 34m\\n| |Bans 1|Bans 2|G|K|T|D/B|\\n|-|:-|:-|:-:|:-:|:-:|:-:|\\n|**T1**|Cassiopeia Orianna Vi|Pantheon Sylas||||[H](#mt-herald)^3 [B](#mt-barons)^7|\\n|**KT**|Bard Lucian Lee Sin|Caitlyn Xayah||||[O](#mt-ocean)^2|`\n"""
+          if old_final not in t:
+              raise SystemExit('final post test anchor missing')
+          t = t.replace(old_final, new_final, 1)
+          anchor = "assert.equal(parsed.games[2].winnerTeamId, 't1');"
+          replacement_assert = """assert.equal(parsed.games[2].winnerTeamId, 't1');\nassert.deepEqual(parsed.games[2].teams.find(row => row.teamId === 't1').bans, [69, 61, 254, 80, 517], 'multi-game final post must recover Game 3 T1 bans');\nassert.deepEqual(parsed.games[2].teams.find(row => row.teamId === 'kt').bans, [432, 236, 64, 51, 498], 'multi-game final post must recover Game 3 KT bans');\nassert.equal(parsed.games[2].teams.find(row => row.teamId === 't1').stats.riftHeralds, 1, 'multi-game final post must recover Game 3 Herald');\n"""
+          if anchor not in t:
+              raise SystemExit('game3 assertion anchor missing')
+          t = t.replace(anchor, replacement_assert, 1)
+          test.write_text(t, encoding='utf-8')
+
+          Path('.github/workflows/apply-multigame-post-parser.yml').unlink()
+          PY
+      - name: Validate parser
+        run: |
+          node --check server/esports-match-community-fallback.js
+          node --check scripts/smoke-live-match-community.js
+          node scripts/smoke-live-match-community.js
+      - name: Commit parser fix
+        run: |
+          git config user.name 'WebLienMinh Bot'
+          git config user.email 'weblienminh-bot@users.noreply.github.com'
+          git add -A
+          git commit -m 'Parse every game in post-match draft tables'
+          git push origin HEAD:fix/live-draft-rendering
