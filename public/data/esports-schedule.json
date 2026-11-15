@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T21:24:13.250Z",
+  "generatedAt": "2026-11-15T01:16:47.454Z",
   "source": {
     "name": "LoL Esports",
     "url": "https://lolesports.com/en-US/schedule",
@@ -12,9 +12,9 @@
     "preservedPreviousData": false
   },
   "summary": {
-    "live": 1,
+    "live": 0,
     "upcoming": 0,
-    "completed": 48,
+    "completed": 49,
     "total": 49
   },
   "leagues": [
@@ -2290,7 +2290,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2339,7 +2339,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -2440,7 +2440,7 @@
           "outcome": "win",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2489,7 +2489,7 @@
           "wins": 3,
           "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         },
@@ -2515,7 +2515,7 @@
       "riotEventId": null,
       "matchId": "115660540726095133",
       "startTime": "2026-11-14T19:00:00Z",
-      "state": "inprogress",
+      "state": "completed",
       "type": "match",
       "blockName": "Finals",
       "league": {
@@ -2537,10 +2537,10 @@
           "image": "https://static.lolesports.com/teams/1773829250929_GENGLOGO_GOLD.png",
           "slug": null,
           "wins": 1,
-          "outcome": null,
+          "outcome": "loss",
           "record": {
             "wins": 2,
-            "losses": 0
+            "losses": 1
           }
         },
         {
@@ -2549,10 +2549,10 @@
           "code": "BLG",
           "image": "https://static.lolesports.com/teams/1682322954525_Bilibili_Gaming_logo_20211.png",
           "slug": null,
-          "wins": 0,
-          "outcome": null,
+          "wins": 3,
+          "outcome": "win",
           "record": {
-            "wins": 2,
+            "wins": 3,
             "losses": 0
           }
         }
