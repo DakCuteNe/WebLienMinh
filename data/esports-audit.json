@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-15T09:59:24.114Z",
-  "directoryGeneratedAt": "2026-11-15T09:52:29.822Z",
-  "mediaEnrichedAt": "2026-11-15T09:54:58.701Z",
+  "generatedAt": "2026-11-16T10:15:24.521Z",
+  "directoryGeneratedAt": "2026-11-16T10:08:37.204Z",
+  "mediaEnrichedAt": "2026-11-16T10:11:05.383Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1129,
-      "pct": 65.4
+      "count": 1130,
+      "pct": 65.5
     },
     "realName": {
       "count": 1564,
@@ -646,7 +646,7 @@
     },
     "PRM": {
       "total": 64,
-      "image": 53,
+      "image": 54,
       "realName": 55,
       "country": 55,
       "birthdate": 0,
@@ -655,7 +655,7 @@
       "teamLogo": 64,
       "stats": 64,
       "completeCore": 0,
-      "imagePct": 82.8,
+      "imagePct": 84.4,
       "realNamePct": 85.9,
       "countryPct": 85.9,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 597,
+    "image": 596,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -1361,11 +1361,6 @@
       },
       {
         "id": "Rin",
-        "team": "G2 NORD",
-        "region": "PRM"
-      },
-      {
-        "id": "Toasty",
         "team": "G2 NORD",
         "region": "PRM"
       },
