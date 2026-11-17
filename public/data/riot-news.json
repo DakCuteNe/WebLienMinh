@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-17T15:54:29.388Z",
+  "generatedAt": "2026-11-17T23:28:32.952Z",
   "source": "Riot Games / League of Legends official News",
   "articles": [
+    {
+      "title": "League of Legends Patch 26.23 Notes",
+      "description": "Game Updates 2026-11-17T19:00:00.000Z League of Legends Patch 26.23 Notes Winter map returns, balance updates galore, and a little musical Mayhem.",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-23-notes",
+      "category": "Game Updates",
+      "image": "https://www.leagueoflegends.com/",
+      "publishedAt": "2026-11-17T19:00:00.000Z",
+      "type": "patch"
+    },
     {
       "title": "TL;DW: Season 1 2027 Dev Update",
       "description": "Dev 2026-11-16T16:00:00.000Z TL;DW: Season 1 2027 Dev Update A short rundown of changes from today’s Dev Update.",

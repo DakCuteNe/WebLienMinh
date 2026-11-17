@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-11-17T15:54:29.387Z",
+  "generatedAt": "2026-11-17T23:28:32.951Z",
   "source": "Riot Games / League of Legends official News",
   "warning": null,
   "patches": [
+    {
+      "patch": "26.23",
+      "title": "League of Legends Patch 26.23 Notes",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-23-notes",
+      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/606e9cb110e8ebce8d310a3d2d7159ff56cf14ef-1920x1092.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
+      "publishedAt": "2026-11-17T19:00:00.000Z",
+      "description": "Winter map returns, balance updates galore, and a little musical Mayhem."
+    },
     {
       "patch": "26.22",
       "title": "League of Legends Patch 26.22 Notes",
@@ -90,14 +98,6 @@
       "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/223b07f058934ef6f9dae54475aa0045cf39e866-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
       "publishedAt": null,
       "description": "A spicy start to Season 2 Act 2"
-    },
-    {
-      "patch": "26.11",
-      "title": "League of Legends Patch 26.11 Notes",
-      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-11-notes",
-      "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/03c35b80144c74c46810f192631b19faa7e83037-1920x1080.jpg?accountingTag=LoL?w=1200&h=630&fm=webp&fit=crop&crop=center",
-      "publishedAt": null,
-      "description": "*slaps patch notes* This bad boy can fit so much spaghetti."
     }
   ]
 }
