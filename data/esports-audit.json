@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-17T11:11:57.200Z",
-  "directoryGeneratedAt": "2026-11-17T11:05:16.727Z",
-  "mediaEnrichedAt": "2026-11-17T11:07:45.113Z",
+  "generatedAt": "2026-11-18T10:46:58.761Z",
+  "directoryGeneratedAt": "2026-11-18T10:40:27.954Z",
+  "mediaEnrichedAt": "2026-11-18T10:42:51.090Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1130,
-      "pct": 65.5
+      "count": 1129,
+      "pct": 65.4
     },
     "realName": {
       "count": 1564,
@@ -415,7 +415,7 @@
   "byRegion": {
     "LCK": {
       "total": 52,
-      "image": 52,
+      "image": 51,
       "realName": 52,
       "country": 52,
       "birthdate": 1,
@@ -424,7 +424,7 @@
       "teamLogo": 52,
       "stats": 52,
       "completeCore": 1,
-      "imagePct": 100,
+      "imagePct": 98.1,
       "realNamePct": 100,
       "countryPct": 100,
       "birthdatePct": 1.9,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 596,
+    "image": 597,
     "realName": 162,
     "country": 161,
     "birthdate": 1724,
@@ -1019,6 +1019,11 @@
   },
   "missing": {
     "image": [
+      {
+        "id": "Zeus",
+        "team": "Hanwha Life Esports",
+        "region": "LCK"
+      },
       {
         "id": "Cracker",
         "team": "Hanwha Life Esports Challengers",
