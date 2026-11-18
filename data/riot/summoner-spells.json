@@ -1,6 +1,6 @@
 {
   "type": "summoner",
-  "version": "16.22.1",
+  "version": "16.23.1",
   "data": {
     "SummonerBarrier": {
       "id": "SummonerBarrier",
@@ -2158,7 +2158,7 @@
       "id": "SummonerRevive_Jade",
       "name": "Hồi Sinh",
       "description": "Ngay lập tức hồi sinh tướng của bạn tại căn cứ và tăng Tốc Độ Di Chuyển trong thời gian ngắn. Thấu Hiểu Triệu Hồi Sư: Hồi sinh sẽ tạm thời tăng 220 - 560 Máu.",
-      "tooltip": "Hồi sinh ngay lập tức tướng của bạn tại Bệ Đá Cổ của đội và nhận <speed>+{{ spell.summonerrevive_jade:bonusmovespeed*100 }}%</speed> Tốc Độ Di Chuyển, giảm dần trong 12 giây.<br /><br />",
+      "tooltip": "Nhấn [{{ hotkey }}] để sử dụng 4 Kỉ Vật %i:arcadeCoin% và hồi sinh ngay tại Bệ Đá Cổ của đội bạn. Nhận <speed>+{{ bonusmovespeed*100 }}%</speed> Tốc Độ Di Chuyển giảm dần trong {{ movespeedbuffduration }} giây.",
       "maxrank": 1,
       "cooldown": [
         510
