@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-18T10:46:58.761Z",
-  "directoryGeneratedAt": "2026-11-18T10:40:27.954Z",
-  "mediaEnrichedAt": "2026-11-18T10:42:51.090Z",
+  "generatedAt": "2026-11-21T10:16:37.177Z",
+  "directoryGeneratedAt": "2026-11-21T10:09:55.127Z",
+  "mediaEnrichedAt": "2026-11-21T10:12:25.192Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
@@ -12,11 +12,11 @@
       "pct": 65.4
     },
     "realName": {
-      "count": 1564,
-      "pct": 90.6
+      "count": 1565,
+      "pct": 90.7
     },
     "country": {
-      "count": 1565,
+      "count": 1566,
       "pct": 90.7
     },
     "birthdate": {
@@ -32,8 +32,8 @@
       "pct": 0.1
     },
     "social": {
-      "count": 1362,
-      "pct": 78.9
+      "count": 1363,
+      "pct": 79
     },
     "teamLogo": {
       "count": 1471,
@@ -52,8 +52,8 @@
       "pct": 42.2
     },
     "bioEnriched": {
-      "count": 1566,
-      "pct": 90.7
+      "count": 1567,
+      "pct": 90.8
     },
     "completeCore": {
       "count": 2,
@@ -415,7 +415,7 @@
   "byRegion": {
     "LCK": {
       "total": 52,
-      "image": 51,
+      "image": 52,
       "realName": 52,
       "country": 52,
       "birthdate": 1,
@@ -424,7 +424,7 @@
       "teamLogo": 52,
       "stats": 52,
       "completeCore": 1,
-      "imagePct": 98.1,
+      "imagePct": 100,
       "realNamePct": 100,
       "countryPct": 100,
       "birthdatePct": 1.9,
@@ -458,20 +458,20 @@
     "LEC": {
       "total": 51,
       "image": 49,
-      "realName": 49,
-      "country": 49,
+      "realName": 50,
+      "country": 50,
       "birthdate": 0,
       "contract": 0,
-      "social": 49,
+      "social": 50,
       "teamLogo": 51,
       "stats": 51,
       "completeCore": 0,
       "imagePct": 96.1,
-      "realNamePct": 96.1,
-      "countryPct": 96.1,
+      "realNamePct": 98,
+      "countryPct": 98,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 96.1,
+      "socialPct": 98,
       "teamLogoPct": 100,
       "statsPct": 100,
       "completeCorePct": 0
@@ -546,7 +546,7 @@
       "country": 51,
       "birthdate": 0,
       "contract": 0,
-      "social": 27,
+      "social": 28,
       "teamLogo": 47,
       "stats": 52,
       "completeCore": 0,
@@ -555,7 +555,7 @@
       "countryPct": 98.1,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 51.9,
+      "socialPct": 53.8,
       "teamLogoPct": 90.4,
       "statsPct": 100,
       "completeCorePct": 0
@@ -751,21 +751,21 @@
     },
     "HLL": {
       "total": 67,
-      "image": 38,
+      "image": 37,
       "realName": 62,
       "country": 62,
       "birthdate": 0,
       "contract": 0,
-      "social": 61,
+      "social": 60,
       "teamLogo": 67,
       "stats": 67,
       "completeCore": 0,
-      "imagePct": 56.7,
+      "imagePct": 55.2,
       "realNamePct": 92.5,
       "countryPct": 92.5,
       "birthdatePct": 0,
       "contractPct": 0,
-      "socialPct": 91,
+      "socialPct": 89.6,
       "teamLogoPct": 100,
       "statsPct": 100,
       "completeCorePct": 0
@@ -1004,26 +1004,21 @@
   },
   "missingCounts": {
     "image": 597,
-    "realName": 162,
-    "country": 161,
+    "realName": 161,
+    "country": 160,
     "birthdate": 1724,
     "age": 1724,
     "contract": 1724,
-    "social": 364,
+    "social": 363,
     "teamLogo": 255,
     "stats": 0,
     "championPool": 0,
     "soloqueueIds": 997,
-    "bioEnriched": 160,
+    "bioEnriched": 159,
     "completeCore": 1724
   },
   "missing": {
     "image": [
-      {
-        "id": "Zeus",
-        "team": "Hanwha Life Esports",
-        "region": "LCK"
-      },
       {
         "id": "Cracker",
         "team": "Hanwha Life Esports Challengers",
@@ -3125,6 +3120,11 @@
         "region": "HLL"
       },
       {
+        "id": "K1ng",
+        "team": "The ParadOx",
+        "region": "HLL"
+      },
+      {
         "id": "Atat",
         "team": "Dark Passage",
         "region": "TCL"
@@ -4067,11 +4067,6 @@
         "region": "HLL"
       },
       {
-        "id": "Ice",
-        "team": "Team Heretics",
-        "region": "LEC"
-      },
-      {
         "id": "Noah",
         "team": "GiantX",
         "region": "LEC"
@@ -4867,11 +4862,6 @@
         "id": "Ace",
         "team": "Gamespace Mediterranean College Esports",
         "region": "HLL"
-      },
-      {
-        "id": "Ice",
-        "team": "Team Heretics",
-        "region": "LEC"
       },
       {
         "id": "Noah",
@@ -31672,11 +31662,6 @@
         "region": "LCKC"
       },
       {
-        "id": "Guti",
-        "team": "T1 Esports Academy",
-        "region": "LCKC"
-      },
-      {
         "id": "Haetae",
         "team": "T1 Esports Academy",
         "region": "LCKC"
@@ -31750,11 +31735,6 @@
         "id": "Ace",
         "team": "Gamespace Mediterranean College Esports",
         "region": "HLL"
-      },
-      {
-        "id": "Ice",
-        "team": "Team Heretics",
-        "region": "LEC"
       },
       {
         "id": "Noah",
@@ -32790,6 +32770,11 @@
         "id": "WGE Zuka",
         "team": "Way Gaming Esports",
         "region": "LPLOL"
+      },
+      {
+        "id": "K1ng",
+        "team": "The ParadOx",
+        "region": "HLL"
       },
       {
         "id": "ALMO K1ckbait",
@@ -35988,11 +35973,6 @@
         "region": "LEC"
       },
       {
-        "id": "Ice",
-        "team": "Team Heretics",
-        "region": "LEC"
-      },
-      {
         "id": "ISMA",
         "team": "GiantX",
         "region": "LEC"
@@ -38383,6 +38363,11 @@
         "region": "HLL"
       },
       {
+        "id": "K1ng",
+        "team": "The ParadOx",
+        "region": "HLL"
+      },
+      {
         "id": "Paparotis",
         "team": "The ParadOx",
         "region": "HLL"
@@ -39628,11 +39613,6 @@
         "id": "Ace",
         "team": "Gamespace Mediterranean College Esports",
         "region": "HLL"
-      },
-      {
-        "id": "Ice",
-        "team": "Team Heretics",
-        "region": "LEC"
       },
       {
         "id": "Noah",
