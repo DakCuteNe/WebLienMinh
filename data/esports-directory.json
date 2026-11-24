@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-23T11:13:20.041Z",
+  "generatedAt": "2026-11-24T12:54:30.276Z",
   "source": "Oracle's Elixir professional match data",
   "sourceType": "mirror of Oracle's Elixir dataset",
   "licenseNote": "Game statistics are property of Riot Games; directory rows are derived from Oracle's Elixir match data.",
   "coverage": "Tuyển thủ xuất hiện trong dataset Oracle's Elixir • 1726 tuyển thủ • 300 đội.",
-  "sourceSnapshot": "mirror-20261123",
+  "sourceSnapshot": "mirror-20261124",
   "sourceUrl": "https://raw.githubusercontent.com/twodotone/finalLOL/main/data/csv/2026_LoL_esports_match_data_from_OraclesElixir.csv",
   "sourceMode": "oracle-mirror",
   "playerCount": 1726,
@@ -1186,7 +1186,7 @@
       "preferredLogoAsOf": "2026-01-02",
       "currentMediaFile": "File:BNK FEARXlogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:15:47.457Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:03.402Z"
     },
     {
       "id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
@@ -1204,7 +1204,7 @@
       "preferredLogoAsOf": "2025-12-22",
       "currentMediaFile": "File:DN SOOPerslogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
     },
     {
       "id": "oe:team:ef69efa6acebe94107f0cf1ba716806",
@@ -1222,7 +1222,7 @@
       "preferredLogoAsOf": "2023-05-12",
       "currentMediaFile": "File:Dplus Kialogo square.png",
       "currentMediaScore": 170,
-      "currentMediaRefreshedAt": "2026-11-23T11:15:56.098Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:12.697Z"
     },
     {
       "id": "oe:team:50f58982d91a36557ec8aec52ab014f",
@@ -1240,7 +1240,7 @@
       "preferredLogoAsOf": "2026-01-14",
       "currentMediaFile": "File:Gen.Glogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:00.531Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:17.270Z"
     },
     {
       "id": "oe:team:b77b3f6068e20a2b3edc0ecd3dc70d4",
@@ -1258,7 +1258,7 @@
       "preferredLogoAsOf": "2026-03-09",
       "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
     },
     {
       "id": "oe:team:3a1d18f46bcb3716ebcfcf4ef068934",
@@ -1276,7 +1276,7 @@
       "preferredLogoAsOf": "2026-01-19",
       "currentMediaFile": "File:Hanwha Life Esportslogo profile.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:09.552Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:26.542Z"
     },
     {
       "id": "oe:team:1d0389df0c5eea93b04122ba167c010",
@@ -1294,7 +1294,7 @@
       "preferredLogoAsOf": "2026-03-27",
       "currentMediaFile": "File:Kiwoom DRXlogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:13.968Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:31.105Z"
     },
     {
       "id": "oe:team:d723992568441c6bafa2658129eade7",
@@ -1312,7 +1312,7 @@
       "preferredLogoAsOf": "2026-01-23",
       "currentMediaFile": "File:KT Rolsterlogo profile.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:18.467Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:35.820Z"
     },
     {
       "id": "oe:team:5cd2cd09ec94296f605dd13a2924d6c",
@@ -1330,7 +1330,7 @@
       "preferredLogoAsOf": "2026-01-14",
       "currentMediaFile": "File:Nongshim RedForcelogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:22.829Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:40.657Z"
     },
     {
       "id": "oe:team:ce499dea30cfce118f4fe85da0227e8",
@@ -1348,7 +1348,7 @@
       "preferredLogoAsOf": "2023-05-12",
       "currentMediaFile": "File:T1logo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:27.314Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:45.164Z"
     },
     {
       "id": "oe:team:20edec57649c30e1ed81e4b42634ac1",
@@ -1486,7 +1486,7 @@
       "preferredLogoAsOf": "2022-10-14",
       "currentMediaFile": "File:CTBC Flying Oysterlogo square.png",
       "currentMediaScore": 190,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:31.653Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:49.826Z"
     },
     {
       "id": "oe:team:7e56e9367c023df96cc8257ff4e16c0",
@@ -1504,7 +1504,7 @@
       "preferredLogoAsOf": "2026-01-21",
       "currentMediaFile": "File:Deep Cross Gaminglogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:36.090Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:54.418Z"
     },
     {
       "id": "oe:team:e435aa3ecb82a89e60544f5f5857a81",
@@ -1522,7 +1522,7 @@
       "preferredLogoAsOf": "2025-12-25",
       "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
     },
     {
       "id": "oe:team:d8ca3fc1f0827ec76369af7b70d43e3",
@@ -1540,7 +1540,7 @@
       "preferredLogoAsOf": "2025-12-25",
       "currentMediaFile": "File:Fukuoka SoftBank HAWKS gaminglogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:46.738Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:03.757Z"
     },
     {
       "id": "oe:team:9cae7677cd0dbcc1cd86653870b73c2",
@@ -1558,7 +1558,7 @@
       "preferredLogoAsOf": "2021-08-08",
       "currentMediaFile": "File:GAM Esportslogo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:51.199Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:08.650Z"
     },
     {
       "id": "oe:team:788115a84f68bc65fa6d3a4e0f67a3e",
@@ -1576,7 +1576,7 @@
       "preferredLogoAsOf": "2026-01-28",
       "currentMediaFile": "File:Ground Zero Gaminglogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:16:55.692Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:13.302Z"
     },
     {
       "id": "oe:team:bc3824b0bbb8139d16109178faa4822",
@@ -1594,7 +1594,7 @@
       "preferredLogoAsOf": "2026-01-14",
       "currentMediaFile": "File:MVK Esportslogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
     },
     {
       "id": "oe:team:740de582f50775c516c77ed7b923fd5",
@@ -1612,7 +1612,7 @@
       "preferredLogoAsOf": "2026-04-05",
       "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
     },
     {
       "id": "oe:team:fc8e90107dabb9a35c490b0d86adea0",
@@ -1630,7 +1630,7 @@
       "preferredLogoAsOf": "2023-04-26",
       "currentMediaFile": "File:Cloud9logo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:08.878Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:27.662Z"
     },
     {
       "id": "oe:team:0dbb780176ecad18f17292d1f5653af",
@@ -1648,7 +1648,7 @@
       "preferredLogoAsOf": "2026-01-21",
       "currentMediaFile": "File:Dignitaslogo profile.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:13.461Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:32.195Z"
     },
     {
       "id": "oe:team:289284911fb6f41c0ccaecc3a0c2891",
@@ -1666,8 +1666,8 @@
       "preferredLogoAsOf": "2026-08-19",
       "currentMediaFile": "File:Disguisedlogo profile.png",
       "currentMediaScore": 135,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:17.572Z",
-      "logoOverrideAppliedAt": "2026-11-23T11:19:56.062Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:36.472Z",
+      "logoOverrideAppliedAt": "2026-11-24T13:01:24.505Z"
     },
     {
       "id": "oe:team:2e66da41dc460dd378e3bcc57042d31",
@@ -1685,7 +1685,7 @@
       "preferredLogoAsOf": "2026-01-10",
       "currentMediaFile": "File:FlyQuestlogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:21.921Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:41.038Z"
     },
     {
       "id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
@@ -1701,7 +1701,7 @@
       "preferredLogo": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
       "preferredLogoSource": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
       "preferredLogoAsOf": "2026-08-19",
-      "logoOverrideAppliedAt": "2026-11-23T11:19:56.063Z"
+      "logoOverrideAppliedAt": "2026-11-24T13:01:24.506Z"
     },
     {
       "id": "oe:team:f90422f1cbcb24bc2a855202582ec29",
@@ -1719,7 +1719,7 @@
       "preferredLogoAsOf": "2025-12-29",
       "currentMediaFile": "File:Sentinelslogo std.png",
       "currentMediaScore": 160,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:30.737Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:49.999Z"
     },
     {
       "id": "oe:team:b360f1d729b0a8e0f29a5243c4200fa",
@@ -1727,17 +1727,17 @@
       "short": null,
       "region": "LCS",
       "location": null,
-      "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
+      "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
       "sourcePage": "https://lol.fandom.com/wiki/Shopify_Rebellion",
       "website": null,
       "socials": {},
       "profilePageTitle": "Shopify Rebellion",
-      "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
-      "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_std.png",
+      "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
+      "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_square.png",
       "preferredLogoAsOf": "2025-12-29",
-      "currentMediaFile": "File:Shopify Rebellionlogo std.png",
-      "currentMediaScore": 180,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:35.019Z"
+      "currentMediaFile": "File:Shopify Rebellionlogo square.png",
+      "currentMediaScore": 195,
+      "currentMediaRefreshedAt": "2026-11-24T12:58:54.771Z"
     },
     {
       "id": "oe:team:8eb884e168f28402ce685bedebb5250",
@@ -1755,7 +1755,7 @@
       "preferredLogoAsOf": "2025-12-29",
       "currentMediaFile": "File:Team Liquidlogo square.png",
       "currentMediaScore": 175,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:39.334Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:58:59.599Z"
     },
     {
       "id": "oe:team:78f183fa5a7d8ecb22b9ad272c3abd7",
@@ -1773,7 +1773,7 @@
       "preferredLogoAsOf": "2026-01-12",
       "currentMediaFile": "File:Fnaticlogo profile.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:43.753Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:04.356Z"
     },
     {
       "id": "oe:team:7d6673d3a9d00363c6bebc1a630da6e",
@@ -1791,7 +1791,7 @@
       "preferredLogoAsOf": "2021-08-10",
       "currentMediaFile": "File:G2 Esportslogo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:48.069Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:09.185Z"
     },
     {
       "id": "oe:team:6cd05f0ac20bfb965a59dc8bcc4f184",
@@ -1809,8 +1809,8 @@
       "preferredLogoAsOf": "2026-08-19",
       "currentMediaFile": "File:GIANTXlogo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:52.449Z",
-      "logoOverrideAppliedAt": "2026-11-23T11:19:56.064Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:13.704Z",
+      "logoOverrideAppliedAt": "2026-11-24T13:01:24.510Z"
     },
     {
       "id": "oe:team:f3aa9bbd924ce3af42ac53f8326bc7c",
@@ -1828,7 +1828,7 @@
       "preferredLogoAsOf": "2026-01-10",
       "currentMediaFile": "File:Karmine Corplogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:17:56.759Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:18.357Z"
     },
     {
       "id": "oe:team:2d096df29ab7e32950c86e0d72fc986",
@@ -1846,7 +1846,7 @@
       "preferredLogoAsOf": "2025-12-24",
       "currentMediaFile": "File:Los Ratoneslogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:01.150Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:22.880Z"
     },
     {
       "id": "oe:team:4acc40654379b4da680be1bd3129dfa",
@@ -1864,7 +1864,7 @@
       "preferredLogoAsOf": "2024-05-28",
       "currentMediaFile": "File:Movistar KOIlogo square.png",
       "currentMediaScore": 180,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:05.626Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:27.492Z"
     },
     {
       "id": "oe:team:d2ba9f92d85cff67d60aaad88e61048",
@@ -1882,7 +1882,7 @@
       "preferredLogoAsOf": "2025-05-19",
       "currentMediaFile": "File:Natus Vincerelogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:10.035Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:32.196Z"
     },
     {
       "id": "oe:team:a2065488a11a2c0a2403a7b347eec61",
@@ -1900,7 +1900,7 @@
       "preferredLogoAsOf": "2026-01-14",
       "currentMediaFile": "File:Shifterslogo profile.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:14.176Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:36.426Z"
     },
     {
       "id": "oe:team:75760dca486d4682426196b76bd1a54",
@@ -1918,7 +1918,7 @@
       "preferredLogoAsOf": "2022-11-29",
       "currentMediaFile": "File:SK Gaminglogo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:18.604Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:41.124Z"
     },
     {
       "id": "oe:team:1285e1c04d54de96502f12da4d49458",
@@ -1936,7 +1936,7 @@
       "preferredLogoAsOf": "2025-12-30",
       "currentMediaFile": "File:Team Hereticslogo square.png",
       "currentMediaScore": 175,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:22.954Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:45.783Z"
     },
     {
       "id": "oe:team:e8d8ae992fe72acb7adc7bfcee31dbb",
@@ -1954,7 +1954,7 @@
       "preferredLogoAsOf": "2023-02-24",
       "currentMediaFile": "File:Team Vitalitylogo square.png",
       "currentMediaScore": 150,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:27.243Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:50.444Z"
     },
     {
       "id": "oe:team:2d1b8a518ba70fe8352fb0fdd8aec1a",
@@ -2752,7 +2752,7 @@
       "preferredLogoAsOf": "2026-03-13",
       "currentMediaFile": "File:Anyone's Legendlogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:31.624Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:55.049Z"
     },
     {
       "id": "oe:team:d356a144644879dabb5f34cd99c886d",
@@ -2770,8 +2770,8 @@
       "preferredLogoAsOf": "2025-12-20",
       "currentMediaFile": "File:Bilibili Gaminglogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:35.932Z",
-      "logoOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+      "currentMediaRefreshedAt": "2026-11-24T12:59:59.748Z",
+      "logoOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
     },
     {
       "id": "oe:team:056c3140a119e44a03d462e2c832f27",
@@ -2789,7 +2789,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:EDward Gaminglogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:40.344Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:04.630Z"
     },
     {
       "id": "oe:team:53a258f289c26d94431c0496a54e151",
@@ -2807,7 +2807,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:Invictus Gaminglogo profile.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
     },
     {
       "id": "oe:team:b42d0f31f2727621b963042276817c4",
@@ -2825,7 +2825,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:JD Gaminglogo profile.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:49.148Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:14.064Z"
     },
     {
       "id": "oe:team:5f401785b6b78326f9a46b3c6b206ed",
@@ -2843,7 +2843,7 @@
       "preferredLogoAsOf": "2026-01-11",
       "currentMediaFile": "File:LGD logo.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:53.645Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:18.938Z"
     },
     {
       "id": "oe:team:a9145b7711873f53e610fbba0493484",
@@ -2861,7 +2861,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:LNG Esportslogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:18:58.195Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:23.640Z"
     },
     {
       "id": "oe:team:48d7941ccbd5b89aca46c57b0c2f8fb",
@@ -2879,7 +2879,7 @@
       "preferredLogoAsOf": "2024-03-19",
       "currentMediaFile": "File:Ninjas in Pyjamaslogo profile.png",
       "currentMediaScore": 185,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:02.424Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:28.148Z"
     },
     {
       "id": "oe:team:f4c4528c6981e104a11ea7548630c23",
@@ -2897,7 +2897,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:Oh My Godlogo square.png",
       "currentMediaScore": 235,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
     },
     {
       "id": "oe:team:62c1cd9465dc63824593ee5046f5aa8",
@@ -2915,7 +2915,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:Team WElogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
     },
     {
       "id": "oe:team:df80f468a3f9a722df056fe9104f052",
@@ -2933,7 +2933,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:ThunderTalk Gaminglogo profile.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:15.982Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:42.326Z"
     },
     {
       "id": "oe:team:fcec508e780bbd1ad493852640f5b36",
@@ -2951,7 +2951,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:Top Esportslogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
     },
     {
       "id": "oe:team:8d09428f093dfbf3c488bce350af0b1",
@@ -2969,7 +2969,7 @@
       "preferredLogoAsOf": "2026-01-09",
       "currentMediaFile": "File:Ultra Primelogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:24.939Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:51.455Z"
     },
     {
       "id": "oe:team:606c6ac695907af3823ee6405c58ff1",
@@ -2987,7 +2987,7 @@
       "preferredLogoAsOf": "2026-01-22",
       "currentMediaFile": "File:Weibo Gaminglogo profile.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:29.557Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:00:56.081Z"
     },
     {
       "id": "caes-de-agua",
@@ -3989,7 +3989,7 @@
       "preferredLogoAsOf": "2025-12-23",
       "currentMediaFile": "File:9Gaminglogo profile.png",
       "currentMediaScore": 175,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
     },
     {
       "id": "oe:team:311b75248911cd31fe0c9cc0ba40215",
@@ -4007,7 +4007,7 @@
       "preferredLogoAsOf": "2026-01-14",
       "currentMediaFile": "File:MVK Esportslogo square.png",
       "currentMediaScore": 195,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:38.255Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:01:05.366Z"
     },
     {
       "id": "oe:team:8f0f0815d83d438e9a4f6df7b0c2d7c",
@@ -4025,7 +4025,7 @@
       "preferredLogoAsOf": "2026-02-21",
       "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
     },
     {
       "id": "oe:team:b5e47225b5e13f4d8fc673c8ade41fb",
@@ -4043,7 +4043,7 @@
       "preferredLogoAsOf": "2026-01-17",
       "currentMediaFile": "File:Saigon Dinologo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
     },
     {
       "id": "oe:team:ae60cc9a2621d479d88fb39258c8e44",
@@ -4061,7 +4061,7 @@
       "preferredLogoAsOf": "2026-02-25",
       "currentMediaFile": "File:Saigon Warriorslogo square.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
     },
     {
       "id": "oe:team:4d7210b1c06aa728a46dc1aa2544830",
@@ -4079,7 +4079,7 @@
       "preferredLogoAsOf": "2026-01-05",
       "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
       "currentMediaScore": 215,
-      "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+      "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
     }
   ],
   "players": [
@@ -4116,7 +4116,7 @@
         "preferredLogoAsOf": "2026-01-19",
         "currentMediaFile": "File:Hanwha Life Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:09.552Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:26.542Z"
       },
       "currentTeams": [
         "Hanwha Life Esports"
@@ -4213,7 +4213,7 @@
       "bioSource": "Leaguepedia player infobox",
       "profileOverrideSource": "https://lol.fandom.com/wiki/Delight",
       "profileOverrideAsOf": "2026-08-19",
-      "profileOverrideAppliedAt": "2026-11-23T11:19:56.060Z"
+      "profileOverrideAppliedAt": "2026-11-24T13:01:24.500Z"
     },
     {
       "uid": "oe:player:c7319736816efe935787b4381c6f321",
@@ -4248,7 +4248,7 @@
         "preferredLogoAsOf": "2026-01-19",
         "currentMediaFile": "File:Hanwha Life Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:09.552Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:26.542Z"
       },
       "currentTeams": [
         "Hanwha Life Esports"
@@ -4377,7 +4377,7 @@
         "preferredLogoAsOf": "2026-01-19",
         "currentMediaFile": "File:Hanwha Life Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:09.552Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:26.542Z"
       },
       "currentTeams": [
         "Hanwha Life Esports"
@@ -4474,7 +4474,7 @@
       "bioSource": "Leaguepedia player infobox",
       "profileOverrideSource": "https://lol.fandom.com/wiki/Kanavi",
       "profileOverrideAsOf": "2026-08-19",
-      "profileOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+      "profileOverrideAppliedAt": "2026-11-24T13:01:24.501Z"
     },
     {
       "uid": "oe:player:98dd15c330fb5abb4508347265a7f76",
@@ -4509,7 +4509,7 @@
         "preferredLogoAsOf": "2026-01-19",
         "currentMediaFile": "File:Hanwha Life Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:09.552Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:26.542Z"
       },
       "currentTeams": [
         "Hanwha Life Esports"
@@ -4638,7 +4638,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:T1logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:27.314Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:45.164Z"
       },
       "currentTeams": [
         "T1"
@@ -4767,7 +4767,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:T1logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:27.314Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:45.164Z"
       },
       "currentTeams": [
         "T1"
@@ -4896,7 +4896,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:T1logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:27.314Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:45.164Z"
       },
       "currentTeams": [
         "T1"
@@ -5025,7 +5025,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:T1logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:27.314Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:45.164Z"
       },
       "currentTeams": [
         "T1"
@@ -5154,7 +5154,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:T1logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:27.314Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:45.164Z"
       },
       "currentTeams": [
         "T1"
@@ -5251,7 +5251,7 @@
       "bioSource": "Leaguepedia player infobox",
       "profileOverrideSource": "https://lol.fandom.com/wiki/Peyz",
       "profileOverrideAsOf": "2026-08-19",
-      "profileOverrideAppliedAt": "2026-11-23T11:19:56.060Z"
+      "profileOverrideAppliedAt": "2026-11-24T13:01:24.501Z"
     },
     {
       "uid": "oe:player:fb66ef5885b4be9323905b821dc3a42",
@@ -5286,8 +5286,8 @@
         "preferredLogoAsOf": "2025-12-20",
         "currentMediaFile": "File:Bilibili Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:35.932Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:59.748Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -5416,8 +5416,8 @@
         "preferredLogoAsOf": "2025-12-20",
         "currentMediaFile": "File:Bilibili Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:35.932Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:59.748Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -5546,8 +5546,8 @@
         "preferredLogoAsOf": "2025-12-20",
         "currentMediaFile": "File:Bilibili Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:35.932Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:59.748Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -5676,8 +5676,8 @@
         "preferredLogoAsOf": "2025-12-20",
         "currentMediaFile": "File:Bilibili Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:35.932Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:59.748Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -5777,7 +5777,7 @@
       "preferredImageAsOf": "2026-07-02",
       "profileOverrideSource": "https://lag.vn/tin/esports/msi-2026-blg-viper-mong-cho-doi-dau-t1-va-hle-gui-loi-chao-den-nguoi-ham-mo-viet-nam.html",
       "profileOverrideAsOf": "2026-07-02",
-      "profileOverrideAppliedAt": "2026-11-23T11:19:56.059Z"
+      "profileOverrideAppliedAt": "2026-11-24T13:01:24.499Z"
     },
     {
       "uid": "oe:player:30361653a485a9609fb2d3aa073282c",
@@ -5812,7 +5812,7 @@
         "preferredLogoAsOf": "2026-01-23",
         "currentMediaFile": "File:KT Rolsterlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:18.467Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:35.820Z"
       },
       "currentTeams": [
         "KT Rolster"
@@ -5941,7 +5941,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Nongshim RedForcelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:22.829Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:40.657Z"
       },
       "currentTeams": [
         "Nongshim RedForce"
@@ -6038,7 +6038,7 @@
       "bioSource": "Leaguepedia player infobox",
       "profileOverrideSource": "https://lol.fandom.com/wiki/Scout",
       "profileOverrideAsOf": "2026-08-19",
-      "profileOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+      "profileOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
     },
     {
       "uid": "oe:player:a58a0d41103cdc5b58cbb547eeaca2d",
@@ -6073,7 +6073,7 @@
         "preferredLogoAsOf": "2026-01-22",
         "currentMediaFile": "File:Weibo Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:29.557Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:56.081Z"
       },
       "currentTeams": [
         "Weibo Gaming"
@@ -6202,7 +6202,7 @@
         "preferredLogoAsOf": "2026-01-22",
         "currentMediaFile": "File:Weibo Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:29.557Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:56.081Z"
       },
       "currentTeams": [
         "Weibo Gaming"
@@ -6331,7 +6331,7 @@
         "preferredLogoAsOf": "2026-03-09",
         "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
       },
       "currentTeams": [
         "HANJIN BRION"
@@ -6431,7 +6431,7 @@
       "preferredImageAsOf": "2026-03-20",
       "profileOverrideSource": "https://www.kukinews.com/article/view/kuk202603190049",
       "profileOverrideAsOf": "2026-03-20",
-      "profileOverrideAppliedAt": "2026-11-23T11:19:56.060Z"
+      "profileOverrideAppliedAt": "2026-11-24T13:01:24.500Z"
     },
     {
       "uid": "oe:player:6e7908512cb309a43388bb464a312a2",
@@ -6466,7 +6466,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -6595,7 +6595,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -6700,7 +6700,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -6805,7 +6805,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Gen.Glogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:00.531Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:17.270Z"
       },
       "currentTeams": [
         "Gen.G"
@@ -6934,7 +6934,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Gen.Glogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:00.531Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:17.270Z"
       },
       "currentTeams": [
         "Gen.G"
@@ -7063,7 +7063,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Gen.Glogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:00.531Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:17.270Z"
       },
       "currentTeams": [
         "Gen.G"
@@ -7192,7 +7192,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:Dplus Kialogo square.png",
         "currentMediaScore": 170,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:56.098Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:12.697Z"
       },
       "currentTeams": [
         "Dplus Kia"
@@ -7321,7 +7321,7 @@
         "preferredLogoAsOf": "2023-02-24",
         "currentMediaFile": "File:Team Vitalitylogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:27.243Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:50.444Z"
       },
       "currentTeams": [
         "Team Vitality"
@@ -7450,7 +7450,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Team Liquidlogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:39.334Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:59.599Z"
       },
       "currentTeams": [
         "Team Liquid"
@@ -7579,7 +7579,7 @@
         "preferredLogoAsOf": "2021-08-10",
         "currentMediaFile": "File:G2 Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:48.069Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:09.185Z"
       },
       "currentTeams": [
         "G2 Esports"
@@ -7708,7 +7708,7 @@
         "preferredLogoAsOf": "2021-08-10",
         "currentMediaFile": "File:G2 Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:48.069Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:09.185Z"
       },
       "currentTeams": [
         "G2 Esports"
@@ -7837,7 +7837,7 @@
         "preferredLogoAsOf": "2021-08-10",
         "currentMediaFile": "File:G2 Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:48.069Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:09.185Z"
       },
       "currentTeams": [
         "G2 Esports"
@@ -7966,7 +7966,7 @@
         "preferredLogoAsOf": "2026-01-12",
         "currentMediaFile": "File:Fnaticlogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:43.753Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:04.356Z"
       },
       "currentTeams": [
         "Fnatic"
@@ -8095,7 +8095,7 @@
         "preferredLogoAsOf": "2026-01-12",
         "currentMediaFile": "File:Fnaticlogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:43.753Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:04.356Z"
       },
       "currentTeams": [
         "Fnatic"
@@ -8224,7 +8224,7 @@
         "preferredLogoAsOf": "2022-11-29",
         "currentMediaFile": "File:SK Gaminglogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:18.604Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:41.124Z"
       },
       "currentTeams": [
         "SK Gaming"
@@ -8353,7 +8353,7 @@
         "preferredLogoAsOf": "2026-03-13",
         "currentMediaFile": "File:Anyone's Legendlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:31.624Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:55.049Z"
       },
       "currentTeams": [
         "Anyone's Legend"
@@ -8482,7 +8482,7 @@
         "preferredLogoAsOf": "2021-08-08",
         "currentMediaFile": "File:GAM Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:51.199Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:08.650Z"
       },
       "currentTeams": [
         "GAM Esports"
@@ -8611,7 +8611,7 @@
         "preferredLogoAsOf": "2021-08-08",
         "currentMediaFile": "File:GAM Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:51.199Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:08.650Z"
       },
       "currentTeams": [
         "GAM Esports"
@@ -8738,7 +8738,7 @@
         "preferredLogo": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
         "preferredLogoSource": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
         "preferredLogoAsOf": "2026-08-19",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.063Z"
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.506Z"
       },
       "currentTeams": [
         "LYON"
@@ -8984,7 +8984,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:LNG Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:58.195Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:23.640Z"
       },
       "currentTeams": [
         "LNG Esports"
@@ -9113,7 +9113,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports"
@@ -9242,7 +9242,7 @@
         "preferredLogoAsOf": "2026-01-02",
         "currentMediaFile": "File:BNK FEARXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:47.457Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:03.402Z"
       },
       "currentTeams": [
         "BNK FEARX"
@@ -9371,7 +9371,7 @@
         "preferredLogoAsOf": "2026-01-02",
         "currentMediaFile": "File:BNK FEARXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:47.457Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:03.402Z"
       },
       "currentTeams": [
         "BNK FEARX"
@@ -9500,7 +9500,7 @@
         "preferredLogoAsOf": "2026-01-02",
         "currentMediaFile": "File:BNK FEARXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:47.457Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:03.402Z"
       },
       "currentTeams": [
         "BNK FEARX"
@@ -9629,7 +9629,7 @@
         "preferredLogoAsOf": "2026-01-02",
         "currentMediaFile": "File:BNK FEARXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:47.457Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:03.402Z"
       },
       "currentTeams": [
         "BNK FEARX"
@@ -9758,7 +9758,7 @@
         "preferredLogoAsOf": "2026-01-02",
         "currentMediaFile": "File:BNK FEARXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:47.457Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:03.402Z"
       },
       "currentTeams": [
         "BNK FEARX"
@@ -9887,7 +9887,7 @@
         "preferredLogoAsOf": "2026-01-19",
         "currentMediaFile": "File:Hanwha Life Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:09.552Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:26.542Z"
       },
       "currentTeams": [
         "Hanwha Life Esports"
@@ -10016,7 +10016,7 @@
         "preferredLogoAsOf": "2025-12-22",
         "currentMediaFile": "File:DN SOOPerslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
       },
       "currentTeams": [
         "DN SOOPers"
@@ -10145,7 +10145,7 @@
         "preferredLogoAsOf": "2025-12-22",
         "currentMediaFile": "File:DN SOOPerslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
       },
       "currentTeams": [
         "DN SOOPers"
@@ -10274,7 +10274,7 @@
         "preferredLogoAsOf": "2025-12-22",
         "currentMediaFile": "File:DN SOOPerslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
       },
       "currentTeams": [
         "DN SOOPers"
@@ -10403,7 +10403,7 @@
         "preferredLogoAsOf": "2025-12-22",
         "currentMediaFile": "File:DN SOOPerslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
       },
       "currentTeams": [
         "DN SOOPers"
@@ -10532,7 +10532,7 @@
         "preferredLogoAsOf": "2025-12-22",
         "currentMediaFile": "File:DN SOOPerslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
       },
       "currentTeams": [
         "DN SOOPers"
@@ -38239,7 +38239,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Team WElogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
       },
       "currentTeams": [
         "Team WE"
@@ -38368,7 +38368,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Team WElogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
       },
       "currentTeams": [
         "Team WE"
@@ -38497,7 +38497,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Team WElogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
       },
       "currentTeams": [
         "Weibo Gaming",
@@ -38628,7 +38628,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Team WElogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
       },
       "currentTeams": [
         "Team WE"
@@ -38757,7 +38757,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Team WElogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
       },
       "currentTeams": [
         "Team WE"
@@ -38886,8 +38886,8 @@
         "preferredLogoAsOf": "2025-12-20",
         "currentMediaFile": "File:Bilibili Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:35.932Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.061Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:59.748Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.502Z"
       },
       "currentTeams": [
         "Bilibili Gaming"
@@ -39016,7 +39016,7 @@
         "preferredLogoAsOf": "2026-01-23",
         "currentMediaFile": "File:KT Rolsterlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:18.467Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:35.820Z"
       },
       "currentTeams": [
         "KT Rolster"
@@ -39145,7 +39145,7 @@
         "preferredLogoAsOf": "2026-01-23",
         "currentMediaFile": "File:KT Rolsterlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:18.467Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:35.820Z"
       },
       "currentTeams": [
         "KT Rolster"
@@ -39274,7 +39274,7 @@
         "preferredLogoAsOf": "2026-01-23",
         "currentMediaFile": "File:KT Rolsterlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:18.467Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:35.820Z"
       },
       "currentTeams": [
         "KT Rolster Challengers",
@@ -39404,7 +39404,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Nongshim RedForcelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:22.829Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:40.657Z"
       },
       "currentTeams": [
         "Nongshim RedForce"
@@ -39533,7 +39533,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Nongshim RedForcelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:22.829Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:40.657Z"
       },
       "currentTeams": [
         "Nongshim RedForce"
@@ -39662,7 +39662,7 @@
         "preferredLogoAsOf": "2026-01-23",
         "currentMediaFile": "File:KT Rolsterlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:18.467Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:35.820Z"
       },
       "currentTeams": [
         "KT Rolster"
@@ -39791,7 +39791,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Nongshim RedForcelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:22.829Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:40.657Z"
       },
       "currentTeams": [
         "Nongshim RedForce"
@@ -39920,7 +39920,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Nongshim RedForcelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:22.829Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:40.657Z"
       },
       "currentTeams": [
         "Nongshim RedForce"
@@ -40049,7 +40049,7 @@
         "preferredLogoAsOf": "2024-03-19",
         "currentMediaFile": "File:Ninjas in Pyjamaslogo profile.png",
         "currentMediaScore": 185,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:02.424Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:28.148Z"
       },
       "currentTeams": [
         "Ninjas in Pyjamas"
@@ -40178,7 +40178,7 @@
         "preferredLogoAsOf": "2024-03-19",
         "currentMediaFile": "File:Ninjas in Pyjamaslogo profile.png",
         "currentMediaScore": 185,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:02.424Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:28.148Z"
       },
       "currentTeams": [
         "Ninjas in Pyjamas"
@@ -40307,7 +40307,7 @@
         "preferredLogoAsOf": "2024-03-19",
         "currentMediaFile": "File:Ninjas in Pyjamaslogo profile.png",
         "currentMediaScore": 185,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:02.424Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:28.148Z"
       },
       "currentTeams": [
         "Ninjas in Pyjamas"
@@ -40436,7 +40436,7 @@
         "preferredLogoAsOf": "2026-01-22",
         "currentMediaFile": "File:Weibo Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:29.557Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:56.081Z"
       },
       "currentTeams": [
         "Weibo Gaming"
@@ -40541,7 +40541,7 @@
         "preferredLogoAsOf": "2024-03-19",
         "currentMediaFile": "File:Ninjas in Pyjamaslogo profile.png",
         "currentMediaScore": 185,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:02.424Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:28.148Z"
       },
       "currentTeams": [
         "Ninjas in Pyjamas"
@@ -40670,7 +40670,7 @@
         "preferredLogoAsOf": "2026-01-22",
         "currentMediaFile": "File:Weibo Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:29.557Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:56.081Z"
       },
       "currentTeams": [
         "Weibo Gaming"
@@ -40799,7 +40799,7 @@
         "preferredLogoAsOf": "2024-03-19",
         "currentMediaFile": "File:Ninjas in Pyjamaslogo profile.png",
         "currentMediaScore": 185,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:02.424Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:28.148Z"
       },
       "currentTeams": [
         "Ninjas in Pyjamas"
@@ -40928,7 +40928,7 @@
         "preferredLogoAsOf": "2026-01-22",
         "currentMediaFile": "File:Weibo Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:29.557Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:56.081Z"
       },
       "currentTeams": [
         "Weibo Gaming"
@@ -41057,7 +41057,7 @@
         "preferredLogoAsOf": "2026-03-27",
         "currentMediaFile": "File:Kiwoom DRXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:13.968Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:31.105Z"
       },
       "currentTeams": [
         "Kiwoom DRX"
@@ -41186,7 +41186,7 @@
         "preferredLogoAsOf": "2026-03-09",
         "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
       },
       "currentTeams": [
         "HANJIN BRION"
@@ -41315,7 +41315,7 @@
         "preferredLogoAsOf": "2026-03-09",
         "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
       },
       "currentTeams": [
         "HANJIN BRION"
@@ -41444,7 +41444,7 @@
         "preferredLogoAsOf": "2026-03-27",
         "currentMediaFile": "File:Kiwoom DRXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:13.968Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:31.105Z"
       },
       "currentTeams": [
         "Kiwoom DRX Challengers",
@@ -41574,7 +41574,7 @@
         "preferredLogoAsOf": "2026-03-09",
         "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
       },
       "currentTeams": [
         "Bulldog Esports",
@@ -41704,7 +41704,7 @@
         "preferredLogoAsOf": "2026-03-09",
         "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
       },
       "currentTeams": [
         "HANJIN BRION"
@@ -41833,7 +41833,7 @@
         "preferredLogoAsOf": "2026-03-27",
         "currentMediaFile": "File:Kiwoom DRXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:13.968Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:31.105Z"
       },
       "currentTeams": [
         "Kiwoom DRX"
@@ -41962,7 +41962,7 @@
         "preferredLogoAsOf": "2026-03-27",
         "currentMediaFile": "File:Kiwoom DRXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:13.968Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:31.105Z"
       },
       "currentTeams": [
         "Kiwoom DRX"
@@ -42091,7 +42091,7 @@
         "preferredLogoAsOf": "2026-03-27",
         "currentMediaFile": "File:Kiwoom DRXlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:13.968Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:31.105Z"
       },
       "currentTeams": [
         "Kiwoom DRX"
@@ -60309,7 +60309,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -60438,7 +60438,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -60549,7 +60549,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -60660,7 +60660,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -60765,7 +60765,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Top Esports",
@@ -60895,7 +60895,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -61000,7 +61000,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -61129,7 +61129,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Gen.Glogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:00.531Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:17.270Z"
       },
       "currentTeams": [
         "Gen.G"
@@ -61258,7 +61258,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Gen.Glogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:00.531Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:17.270Z"
       },
       "currentTeams": [
         "Gen.G"
@@ -61387,7 +61387,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:Dplus Kialogo square.png",
         "currentMediaScore": 170,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:56.098Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:12.697Z"
       },
       "currentTeams": [
         "Dplus Kia"
@@ -61516,7 +61516,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:Dplus Kialogo square.png",
         "currentMediaScore": 170,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:56.098Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:12.697Z"
       },
       "currentTeams": [
         "Dplus Kia"
@@ -61645,7 +61645,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:Dplus Kialogo square.png",
         "currentMediaScore": 170,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:56.098Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:12.697Z"
       },
       "currentTeams": [
         "Dplus Kia"
@@ -61774,7 +61774,7 @@
         "preferredLogoAsOf": "2023-05-12",
         "currentMediaFile": "File:Dplus Kialogo square.png",
         "currentMediaScore": 170,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:56.098Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:12.697Z"
       },
       "currentTeams": [
         "Dplus Kia"
@@ -77807,7 +77807,7 @@
         "preferredLogoAsOf": "2024-05-28",
         "currentMediaFile": "File:Movistar KOIlogo square.png",
         "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:05.626Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:27.492Z"
       },
       "currentTeams": [
         "Movistar KOI"
@@ -77936,7 +77936,7 @@
         "preferredLogoAsOf": "2023-02-24",
         "currentMediaFile": "File:Team Vitalitylogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:27.243Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:50.444Z"
       },
       "currentTeams": [
         "Team Vitality"
@@ -78065,7 +78065,7 @@
         "preferredLogoAsOf": "2024-05-28",
         "currentMediaFile": "File:Movistar KOIlogo square.png",
         "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:05.626Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:27.492Z"
       },
       "currentTeams": [
         "Movistar KOI"
@@ -78194,7 +78194,7 @@
         "preferredLogoAsOf": "2023-02-24",
         "currentMediaFile": "File:Team Vitalitylogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:27.243Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:50.444Z"
       },
       "currentTeams": [
         "Team Vitality"
@@ -78323,7 +78323,7 @@
         "preferredLogoAsOf": "2024-05-28",
         "currentMediaFile": "File:Movistar KOIlogo square.png",
         "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:05.626Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:27.492Z"
       },
       "currentTeams": [
         "Movistar KOI"
@@ -78452,7 +78452,7 @@
         "preferredLogoAsOf": "2023-02-24",
         "currentMediaFile": "File:Team Vitalitylogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:27.243Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:50.444Z"
       },
       "currentTeams": [
         "Team Vitality"
@@ -78581,7 +78581,7 @@
         "preferredLogoAsOf": "2024-05-28",
         "currentMediaFile": "File:Movistar KOIlogo square.png",
         "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:05.626Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:27.492Z"
       },
       "currentTeams": [
         "Movistar KOI"
@@ -78710,7 +78710,7 @@
         "preferredLogoAsOf": "2023-02-24",
         "currentMediaFile": "File:Team Vitalitylogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:27.243Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:50.444Z"
       },
       "currentTeams": [
         "Team Vitality"
@@ -78839,7 +78839,7 @@
         "preferredLogoAsOf": "2024-05-28",
         "currentMediaFile": "File:Movistar KOIlogo square.png",
         "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:05.626Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:27.492Z"
       },
       "currentTeams": [
         "Movistar KOI"
@@ -78968,7 +78968,7 @@
         "preferredLogoAsOf": "2025-12-30",
         "currentMediaFile": "File:Team Hereticslogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:22.954Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:45.783Z"
       },
       "currentTeams": [
         "Team Heretics"
@@ -79097,8 +79097,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:GIANTXlogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:52.449Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.064Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:13.704Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.510Z"
       },
       "currentTeams": [
         "GiantX"
@@ -79227,8 +79227,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:GIANTXlogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:52.449Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.064Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:13.704Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.510Z"
       },
       "currentTeams": [
         "GiantX"
@@ -79357,8 +79357,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:GIANTXlogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:52.449Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.064Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:13.704Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.510Z"
       },
       "currentTeams": [
         "GiantX"
@@ -79487,8 +79487,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:GIANTXlogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:52.449Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.064Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:13.704Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.510Z"
       },
       "currentTeams": [
         "GiantX"
@@ -79617,8 +79617,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:GIANTXlogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:52.449Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.064Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:13.704Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.510Z"
       },
       "currentTeams": [
         "GiantX"
@@ -79739,7 +79739,7 @@
         "preferredLogoAsOf": "2025-12-30",
         "currentMediaFile": "File:Team Hereticslogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:22.954Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:45.783Z"
       },
       "currentTeams": [
         "Team Heretics"
@@ -79868,7 +79868,7 @@
         "preferredLogoAsOf": "2025-12-30",
         "currentMediaFile": "File:Team Hereticslogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:22.954Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:45.783Z"
       },
       "currentTeams": [
         "Team Heretics"
@@ -79997,7 +79997,7 @@
         "preferredLogoAsOf": "2025-12-30",
         "currentMediaFile": "File:Team Hereticslogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:22.954Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:45.783Z"
       },
       "currentTeams": [
         "Team Heretics"
@@ -80120,7 +80120,7 @@
         "preferredLogoAsOf": "2025-12-30",
         "currentMediaFile": "File:Team Hereticslogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:22.954Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:45.783Z"
       },
       "currentTeams": [
         "Misa Esports",
@@ -80364,17 +80364,17 @@
         "short": null,
         "region": "LCS",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
         "sourcePage": "https://lol.fandom.com/wiki/Shopify_Rebellion",
         "website": null,
         "socials": {},
         "profilePageTitle": "Shopify Rebellion",
-        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
-        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_std.png",
+        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
+        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_square.png",
         "preferredLogoAsOf": "2025-12-29",
-        "currentMediaFile": "File:Shopify Rebellionlogo std.png",
-        "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:35.019Z"
+        "currentMediaFile": "File:Shopify Rebellionlogo square.png",
+        "currentMediaScore": 195,
+        "currentMediaRefreshedAt": "2026-11-24T12:58:54.771Z"
       },
       "currentTeams": [
         "Shopify Rebellion"
@@ -80475,17 +80475,17 @@
         "short": null,
         "region": "LCS",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
         "sourcePage": "https://lol.fandom.com/wiki/Shopify_Rebellion",
         "website": null,
         "socials": {},
         "profilePageTitle": "Shopify Rebellion",
-        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
-        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_std.png",
+        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
+        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_square.png",
         "preferredLogoAsOf": "2025-12-29",
-        "currentMediaFile": "File:Shopify Rebellionlogo std.png",
-        "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:35.019Z"
+        "currentMediaFile": "File:Shopify Rebellionlogo square.png",
+        "currentMediaScore": 195,
+        "currentMediaRefreshedAt": "2026-11-24T12:58:54.771Z"
       },
       "currentTeams": [
         "Shopify Rebellion"
@@ -80592,17 +80592,17 @@
         "short": null,
         "region": "LCS",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
         "sourcePage": "https://lol.fandom.com/wiki/Shopify_Rebellion",
         "website": null,
         "socials": {},
         "profilePageTitle": "Shopify Rebellion",
-        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
-        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_std.png",
+        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
+        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_square.png",
         "preferredLogoAsOf": "2025-12-29",
-        "currentMediaFile": "File:Shopify Rebellionlogo std.png",
-        "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:35.019Z"
+        "currentMediaFile": "File:Shopify Rebellionlogo square.png",
+        "currentMediaScore": 195,
+        "currentMediaRefreshedAt": "2026-11-24T12:58:54.771Z"
       },
       "currentTeams": [
         "Shopify Rebellion"
@@ -80719,7 +80719,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Dignitaslogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:13.461Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:32.195Z"
       },
       "currentTeams": [
         "Dignitas"
@@ -80836,7 +80836,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Dignitaslogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:13.461Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:32.195Z"
       },
       "currentTeams": [
         "Dignitas"
@@ -80937,17 +80937,17 @@
         "short": null,
         "region": "LCS",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
         "sourcePage": "https://lol.fandom.com/wiki/Shopify_Rebellion",
         "website": null,
         "socials": {},
         "profilePageTitle": "Shopify Rebellion",
-        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
-        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_std.png",
+        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
+        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_square.png",
         "preferredLogoAsOf": "2025-12-29",
-        "currentMediaFile": "File:Shopify Rebellionlogo std.png",
-        "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:35.019Z"
+        "currentMediaFile": "File:Shopify Rebellionlogo square.png",
+        "currentMediaScore": 195,
+        "currentMediaRefreshedAt": "2026-11-24T12:58:54.771Z"
       },
       "currentTeams": [
         "Shopify Rebellion"
@@ -81058,7 +81058,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Dignitaslogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:13.461Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:32.195Z"
       },
       "currentTeams": [
         "Dignitas"
@@ -81175,7 +81175,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Dignitaslogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:13.461Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:32.195Z"
       },
       "currentTeams": [
         "Dignitas"
@@ -81292,7 +81292,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Dignitaslogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:13.461Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:32.195Z"
       },
       "currentTeams": [
         "Dignitas"
@@ -81405,17 +81405,17 @@
         "short": null,
         "region": "LCS",
         "location": null,
-        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
+        "logo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
         "sourcePage": "https://lol.fandom.com/wiki/Shopify_Rebellion",
         "website": null,
         "socials": {},
         "profilePageTitle": "Shopify Rebellion",
-        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/1/17/Shopify_Rebellionlogo_std.png/revision/latest?cb=20251229054431",
-        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_std.png",
+        "preferredLogo": "https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e9/Shopify_Rebellionlogo_square.png/revision/latest/scale-to-width-down/900?cb=20251229054054",
+        "preferredLogoSource": "https://lol.fandom.com/wiki/File:Shopify_Rebellionlogo_square.png",
         "preferredLogoAsOf": "2025-12-29",
-        "currentMediaFile": "File:Shopify Rebellionlogo std.png",
-        "currentMediaScore": 180,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:35.019Z"
+        "currentMediaFile": "File:Shopify Rebellionlogo square.png",
+        "currentMediaScore": 195,
+        "currentMediaRefreshedAt": "2026-11-24T12:58:54.771Z"
       },
       "currentTeams": [
         "Shopify Rebellion"
@@ -81532,7 +81532,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:FlyQuestlogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:21.921Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:41.038Z"
       },
       "currentTeams": [
         "FlyQuest"
@@ -81661,7 +81661,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:FlyQuestlogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:21.921Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:41.038Z"
       },
       "currentTeams": [
         "FlyQuest"
@@ -81784,7 +81784,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:FlyQuestlogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:21.921Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:41.038Z"
       },
       "currentTeams": [
         "FlyQuest"
@@ -81913,7 +81913,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Team Liquidlogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:39.334Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:59.599Z"
       },
       "currentTeams": [
         "Team Liquid"
@@ -82042,7 +82042,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:FlyQuestlogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:21.921Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:41.038Z"
       },
       "currentTeams": [
         "FlyQuest"
@@ -82171,7 +82171,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Team Liquidlogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:39.334Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:59.599Z"
       },
       "currentTeams": [
         "Team Liquid"
@@ -82294,7 +82294,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:FlyQuestlogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:21.921Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:41.038Z"
       },
       "currentTeams": [
         "FlyQuest"
@@ -82423,7 +82423,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Team Liquidlogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:39.334Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:59.599Z"
       },
       "currentTeams": [
         "Team Liquid"
@@ -82552,7 +82552,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Team Liquidlogo square.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:39.334Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:59.599Z"
       },
       "currentTeams": [
         "Team Liquid"
@@ -83888,7 +83888,7 @@
         "preferredLogoAsOf": "2026-01-12",
         "currentMediaFile": "File:Fnaticlogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:43.753Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:04.356Z"
       },
       "currentTeams": [
         "Fnatic"
@@ -84017,7 +84017,7 @@
         "preferredLogoAsOf": "2021-08-10",
         "currentMediaFile": "File:G2 Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:48.069Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:09.185Z"
       },
       "currentTeams": [
         "G2 Esports"
@@ -84146,7 +84146,7 @@
         "preferredLogoAsOf": "2026-01-12",
         "currentMediaFile": "File:Fnaticlogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:43.753Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:04.356Z"
       },
       "currentTeams": [
         "Fnatic"
@@ -84275,7 +84275,7 @@
         "preferredLogoAsOf": "2021-08-10",
         "currentMediaFile": "File:G2 Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:48.069Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:09.185Z"
       },
       "currentTeams": [
         "G2 Esports"
@@ -84404,7 +84404,7 @@
         "preferredLogoAsOf": "2026-01-12",
         "currentMediaFile": "File:Fnaticlogo profile.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:43.753Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:04.356Z"
       },
       "currentTeams": [
         "Fnatic"
@@ -85733,7 +85733,7 @@
         "preferredLogoAsOf": "2022-11-29",
         "currentMediaFile": "File:SK Gaminglogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:18.604Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:41.124Z"
       },
       "currentTeams": [
         "SK Gaming"
@@ -85862,7 +85862,7 @@
         "preferredLogoAsOf": "2022-11-29",
         "currentMediaFile": "File:SK Gaminglogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:18.604Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:41.124Z"
       },
       "currentTeams": [
         "SK Gaming"
@@ -85991,7 +85991,7 @@
         "preferredLogoAsOf": "2022-11-29",
         "currentMediaFile": "File:SK Gaminglogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:18.604Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:41.124Z"
       },
       "currentTeams": [
         "SK Gaming"
@@ -86120,7 +86120,7 @@
         "preferredLogoAsOf": "2022-11-29",
         "currentMediaFile": "File:SK Gaminglogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:18.604Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:41.124Z"
       },
       "currentTeams": [
         "SK Gaming"
@@ -86249,7 +86249,7 @@
         "preferredLogoAsOf": "2026-03-13",
         "currentMediaFile": "File:Anyone's Legendlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:31.624Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:55.049Z"
       },
       "currentTeams": [
         "Anyone's Legend"
@@ -86378,7 +86378,7 @@
         "preferredLogoAsOf": "2026-03-13",
         "currentMediaFile": "File:Anyone's Legendlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:31.624Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:55.049Z"
       },
       "currentTeams": [
         "Anyone's Legend"
@@ -86507,7 +86507,7 @@
         "preferredLogoAsOf": "2026-03-13",
         "currentMediaFile": "File:Anyone's Legendlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:31.624Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:55.049Z"
       },
       "currentTeams": [
         "Anyone's Legend"
@@ -86636,7 +86636,7 @@
         "preferredLogoAsOf": "2026-03-13",
         "currentMediaFile": "File:Anyone's Legendlogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:31.624Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:55.049Z"
       },
       "currentTeams": [
         "Anyone's Legend"
@@ -86765,7 +86765,7 @@
         "preferredLogoAsOf": "2021-08-08",
         "currentMediaFile": "File:GAM Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:51.199Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:08.650Z"
       },
       "currentTeams": [
         "GAM Esports"
@@ -86894,7 +86894,7 @@
         "preferredLogoAsOf": "2026-04-05",
         "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
       },
       "currentTeams": [
         "Team Secret Whales"
@@ -87023,7 +87023,7 @@
         "preferredLogoAsOf": "2026-04-05",
         "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
       },
       "currentTeams": [
         "Team Secret Whales"
@@ -87152,7 +87152,7 @@
         "preferredLogoAsOf": "2021-08-08",
         "currentMediaFile": "File:GAM Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:51.199Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:08.650Z"
       },
       "currentTeams": [
         "GAM Esports"
@@ -87281,7 +87281,7 @@
         "preferredLogoAsOf": "2026-04-05",
         "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
       },
       "currentTeams": [
         "Team Secret Whales"
@@ -87410,7 +87410,7 @@
         "preferredLogoAsOf": "2026-04-05",
         "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
       },
       "currentTeams": [
         "Team Secret Whales"
@@ -87539,7 +87539,7 @@
         "preferredLogoAsOf": "2026-04-05",
         "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
       },
       "currentTeams": [
         "Team Secret Whales"
@@ -87668,7 +87668,7 @@
         "preferredLogoAsOf": "2021-08-08",
         "currentMediaFile": "File:GAM Esportslogo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:51.199Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:08.650Z"
       },
       "currentTeams": [
         "GAM Esports"
@@ -87797,7 +87797,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:JD Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:49.148Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:14.064Z"
       },
       "currentTeams": [
         "JD Gaming"
@@ -87926,7 +87926,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:JD Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:49.148Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:14.064Z"
       },
       "currentTeams": [
         "JD Gaming"
@@ -88055,7 +88055,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:JD Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:49.148Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:14.064Z"
       },
       "currentTeams": [
         "JD Gaming"
@@ -88184,7 +88184,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:JD Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:49.148Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:14.064Z"
       },
       "currentTeams": [
         "JD Gaming"
@@ -88313,7 +88313,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:JD Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:49.148Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:14.064Z"
       },
       "currentTeams": [
         "JD Gaming"
@@ -88442,7 +88442,7 @@
         "preferredLogoAsOf": "2022-10-14",
         "currentMediaFile": "File:CTBC Flying Oysterlogo square.png",
         "currentMediaScore": 190,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:31.653Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:49.826Z"
       },
       "currentTeams": [
         "CTBC Flying Oyster"
@@ -88571,7 +88571,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:Fukuoka SoftBank HAWKS gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:46.738Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:03.757Z"
       },
       "currentTeams": [
         "Fukuoka SoftBank HAWKS gaming"
@@ -88700,7 +88700,7 @@
         "preferredLogoAsOf": "2022-10-14",
         "currentMediaFile": "File:CTBC Flying Oysterlogo square.png",
         "currentMediaScore": 190,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:31.653Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:49.826Z"
       },
       "currentTeams": [
         "CTBC Flying Oyster"
@@ -88829,7 +88829,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:Fukuoka SoftBank HAWKS gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:46.738Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:03.757Z"
       },
       "currentTeams": [
         "Fukuoka SoftBank HAWKS gaming"
@@ -88958,7 +88958,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:Fukuoka SoftBank HAWKS gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:46.738Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:03.757Z"
       },
       "currentTeams": [
         "Fukuoka SoftBank HAWKS gaming"
@@ -89087,7 +89087,7 @@
         "preferredLogoAsOf": "2022-10-14",
         "currentMediaFile": "File:CTBC Flying Oysterlogo square.png",
         "currentMediaScore": 190,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:31.653Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:49.826Z"
       },
       "currentTeams": [
         "CTBC Flying Oyster"
@@ -89216,7 +89216,7 @@
         "preferredLogoAsOf": "2022-10-14",
         "currentMediaFile": "File:CTBC Flying Oysterlogo square.png",
         "currentMediaScore": 190,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:31.653Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:49.826Z"
       },
       "currentTeams": [
         "CTBC Flying Oyster"
@@ -89346,7 +89346,7 @@
         "preferredLogoAsOf": "2022-10-14",
         "currentMediaFile": "File:CTBC Flying Oysterlogo square.png",
         "currentMediaScore": 190,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:31.653Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:49.826Z"
       },
       "currentTeams": [
         "CTBC Flying Oyster"
@@ -89475,7 +89475,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:Fukuoka SoftBank HAWKS gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:46.738Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:03.757Z"
       },
       "currentTeams": [
         "Fukuoka SoftBank HAWKS gaming"
@@ -89604,7 +89604,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:Fukuoka SoftBank HAWKS gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:46.738Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:03.757Z"
       },
       "currentTeams": [
         "Fukuoka SoftBank HAWKS gaming"
@@ -94557,8 +94557,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:Disguisedlogo profile.png",
         "currentMediaScore": 135,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:17.572Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.062Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:36.472Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.505Z"
       },
       "currentTeams": [
         "Disguised"
@@ -94687,8 +94687,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:Disguisedlogo profile.png",
         "currentMediaScore": 135,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:17.572Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.062Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:36.472Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.505Z"
       },
       "currentTeams": [
         "Disguised"
@@ -94817,7 +94817,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Sentinelslogo std.png",
         "currentMediaScore": 160,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:30.737Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:49.999Z"
       },
       "currentTeams": [
         "Sentinels"
@@ -94946,7 +94946,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Sentinelslogo std.png",
         "currentMediaScore": 160,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:30.737Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:49.999Z"
       },
       "currentTeams": [
         "Sentinels"
@@ -95075,7 +95075,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Sentinelslogo std.png",
         "currentMediaScore": 160,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:30.737Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:49.999Z"
       },
       "currentTeams": [
         "Sentinels"
@@ -95204,7 +95204,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Sentinelslogo std.png",
         "currentMediaScore": 160,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:30.737Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:49.999Z"
       },
       "currentTeams": [
         "Sentinels"
@@ -95333,8 +95333,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:Disguisedlogo profile.png",
         "currentMediaScore": 135,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:17.572Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.062Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:36.472Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.505Z"
       },
       "currentTeams": [
         "Disguised"
@@ -95463,8 +95463,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:Disguisedlogo profile.png",
         "currentMediaScore": 135,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:17.572Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.062Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:36.472Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.505Z"
       },
       "currentTeams": [
         "Disguised"
@@ -95593,7 +95593,7 @@
         "preferredLogoAsOf": "2025-12-29",
         "currentMediaFile": "File:Sentinelslogo std.png",
         "currentMediaScore": 160,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:30.737Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:49.999Z"
       },
       "currentTeams": [
         "Sentinels"
@@ -95722,8 +95722,8 @@
         "preferredLogoAsOf": "2026-08-19",
         "currentMediaFile": "File:Disguisedlogo profile.png",
         "currentMediaScore": 135,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:17.572Z",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.062Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:36.472Z",
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.505Z"
       },
       "currentTeams": [
         "Disguised"
@@ -95852,7 +95852,7 @@
         "preferredLogoAsOf": "2023-04-26",
         "currentMediaFile": "File:Cloud9logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:08.878Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:27.662Z"
       },
       "currentTeams": [
         "Cloud9"
@@ -95979,7 +95979,7 @@
         "preferredLogo": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
         "preferredLogoSource": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
         "preferredLogoAsOf": "2026-08-19",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.063Z"
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.506Z"
       },
       "currentTeams": [
         "LYON"
@@ -96108,7 +96108,7 @@
         "preferredLogoAsOf": "2023-04-26",
         "currentMediaFile": "File:Cloud9logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:08.878Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:27.662Z"
       },
       "currentTeams": [
         "Cloud9"
@@ -96235,7 +96235,7 @@
         "preferredLogo": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
         "preferredLogoSource": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
         "preferredLogoAsOf": "2026-08-19",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.063Z"
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.506Z"
       },
       "currentTeams": [
         "LYON"
@@ -96362,7 +96362,7 @@
         "preferredLogo": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
         "preferredLogoSource": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
         "preferredLogoAsOf": "2026-08-19",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.063Z"
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.506Z"
       },
       "currentTeams": [
         "LYON"
@@ -96489,7 +96489,7 @@
         "preferredLogo": "https://static.lolesports.com/teams/1743717443673_isotypelyon-03.png",
         "preferredLogoSource": "https://lolesports.com/en-US/season/115547545029543948/handbook/115547545030002701/league/98767991299243165",
         "preferredLogoAsOf": "2026-08-19",
-        "logoOverrideAppliedAt": "2026-11-23T11:19:56.063Z"
+        "logoOverrideAppliedAt": "2026-11-24T13:01:24.506Z"
       },
       "currentTeams": [
         "LYON"
@@ -96618,7 +96618,7 @@
         "preferredLogoAsOf": "2023-04-26",
         "currentMediaFile": "File:Cloud9logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:08.878Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:27.662Z"
       },
       "currentTeams": [
         "Cloud9"
@@ -96747,7 +96747,7 @@
         "preferredLogoAsOf": "2023-04-26",
         "currentMediaFile": "File:Cloud9logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:08.878Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:27.662Z"
       },
       "currentTeams": [
         "Cloud9"
@@ -96876,7 +96876,7 @@
         "preferredLogoAsOf": "2023-04-26",
         "currentMediaFile": "File:Cloud9logo square.png",
         "currentMediaScore": 150,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:08.878Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:27.662Z"
       },
       "currentTeams": [
         "Cloud9"
@@ -99298,7 +99298,7 @@
         "preferredLogoAsOf": "2025-05-19",
         "currentMediaFile": "File:Natus Vincerelogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:10.035Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:32.196Z"
       },
       "currentTeams": [
         "Natus Vincere"
@@ -99427,7 +99427,7 @@
         "preferredLogoAsOf": "2025-05-19",
         "currentMediaFile": "File:Natus Vincerelogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:10.035Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:32.196Z"
       },
       "currentTeams": [
         "Natus Vincere"
@@ -99556,7 +99556,7 @@
         "preferredLogoAsOf": "2025-05-19",
         "currentMediaFile": "File:Natus Vincerelogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:10.035Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:32.196Z"
       },
       "currentTeams": [
         "Natus Vincere"
@@ -99685,7 +99685,7 @@
         "preferredLogoAsOf": "2025-05-19",
         "currentMediaFile": "File:Natus Vincerelogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:10.035Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:32.196Z"
       },
       "currentTeams": [
         "Natus Vincere"
@@ -99814,7 +99814,7 @@
         "preferredLogoAsOf": "2025-05-19",
         "currentMediaFile": "File:Natus Vincerelogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:10.035Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:32.196Z"
       },
       "currentTeams": [
         "Natus Vincere"
@@ -99943,7 +99943,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports Academy",
@@ -100073,7 +100073,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Deep Cross Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:36.090Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:54.418Z"
       },
       "currentTeams": [
         "Deep Cross Gaming"
@@ -100202,7 +100202,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Deep Cross Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:36.090Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:54.418Z"
       },
       "currentTeams": [
         "Deep Cross Gaming"
@@ -100331,7 +100331,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports"
@@ -100460,7 +100460,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports Academy",
@@ -100590,7 +100590,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Deep Cross Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:36.090Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:54.418Z"
       },
       "currentTeams": [
         "Deep Cross Gaming"
@@ -100719,7 +100719,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Deep Cross Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:36.090Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:54.418Z"
       },
       "currentTeams": [
         "Deep Cross Gaming"
@@ -100848,7 +100848,7 @@
         "preferredLogoAsOf": "2026-01-21",
         "currentMediaFile": "File:Deep Cross Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:36.090Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:54.418Z"
       },
       "currentTeams": [
         "Deep Cross Gaming"
@@ -100977,7 +100977,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports Academy",
@@ -101107,7 +101107,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports Academy",
@@ -101238,7 +101238,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Shifterslogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:14.176Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:36.426Z"
       },
       "currentTeams": [
         "Shifters"
@@ -101361,7 +101361,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Shifterslogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:14.176Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:36.426Z"
       },
       "currentTeams": [
         "Shifters"
@@ -101484,7 +101484,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Shifterslogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:14.176Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:36.426Z"
       },
       "currentTeams": [
         "Shifters"
@@ -101613,7 +101613,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Shifterslogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:14.176Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:36.426Z"
       },
       "currentTeams": [
         "Shifters"
@@ -101742,7 +101742,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:Shifterslogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:14.176Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:36.426Z"
       },
       "currentTeams": [
         "Shifters"
@@ -101871,7 +101871,7 @@
         "preferredLogoAsOf": "2026-01-28",
         "currentMediaFile": "File:Ground Zero Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:55.692Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:13.302Z"
       },
       "currentTeams": [
         "Ground Zero Gaming"
@@ -102000,7 +102000,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "DetonatioN FocusMe"
@@ -102129,7 +102129,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "HANJIN BRION Challengers",
@@ -102221,7 +102221,7 @@
         "preferredLogoAsOf": "2026-01-28",
         "currentMediaFile": "File:Ground Zero Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:55.692Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:13.302Z"
       },
       "currentTeams": [
         "Ground Zero Gaming"
@@ -102350,7 +102350,7 @@
         "preferredLogoAsOf": "2026-01-28",
         "currentMediaFile": "File:Ground Zero Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:55.692Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:13.302Z"
       },
       "currentTeams": [
         "Ground Zero Gaming"
@@ -102480,7 +102480,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "DetonatioN FocusMe"
@@ -102609,7 +102609,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "DetonatioN FocusMe"
@@ -102720,7 +102720,7 @@
         "preferredLogoAsOf": "2026-01-28",
         "currentMediaFile": "File:Ground Zero Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:55.692Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:13.302Z"
       },
       "currentTeams": [
         "Ground Zero Gaming"
@@ -102849,7 +102849,7 @@
         "preferredLogoAsOf": "2026-01-28",
         "currentMediaFile": "File:Ground Zero Gaminglogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:55.692Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:13.302Z"
       },
       "currentTeams": [
         "Ground Zero Gaming"
@@ -102978,7 +102978,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "DetonatioN FocusMe"
@@ -109852,7 +109852,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -109981,7 +109981,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -110110,7 +110110,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -110239,7 +110239,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:38.255Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:05.366Z"
       },
       "currentTeams": [
         "MVK Esports Academy"
@@ -110368,7 +110368,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -110491,7 +110491,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -110620,7 +110620,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -111949,7 +111949,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:38.255Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:05.366Z"
       },
       "currentTeams": [
         "MVK Esports Academy"
@@ -112066,7 +112066,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:Karmine Corplogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:56.759Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:18.357Z"
       },
       "currentTeams": [
         "Karmine Corp"
@@ -112195,7 +112195,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:Karmine Corplogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:56.759Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:18.357Z"
       },
       "currentTeams": [
         "Karmine Corp"
@@ -112324,7 +112324,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:Karmine Corplogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:56.759Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:18.357Z"
       },
       "currentTeams": [
         "Karmine Corp"
@@ -112453,7 +112453,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:Karmine Corplogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:56.759Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:18.357Z"
       },
       "currentTeams": [
         "Karmine Corp"
@@ -112582,7 +112582,7 @@
         "preferredLogoAsOf": "2026-01-10",
         "currentMediaFile": "File:Karmine Corplogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:56.759Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:18.357Z"
       },
       "currentTeams": [
         "Karmine Corp"
@@ -112711,7 +112711,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -112840,7 +112840,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -112969,7 +112969,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -113092,7 +113092,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -113221,7 +113221,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -113350,7 +113350,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -114673,7 +114673,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -114802,7 +114802,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -114931,7 +114931,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -115060,7 +115060,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -115189,7 +115189,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -115306,7 +115306,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -115593,7 +115593,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:38.255Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:05.366Z"
       },
       "currentTeams": [
         "MVK Esports Academy"
@@ -115698,7 +115698,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:38.255Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:05.366Z"
       },
       "currentTeams": [
         "MVK Esports",
@@ -115828,7 +115828,7 @@
         "preferredLogoAsOf": "2026-02-25",
         "currentMediaFile": "File:Saigon Warriorslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:51.397Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:19.507Z"
       },
       "currentTeams": [
         "Saigon Warriors"
@@ -120567,7 +120567,7 @@
         "preferredLogoAsOf": "2026-01-05",
         "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
       },
       "currentTeams": [
         "SN CyberCore Esports"
@@ -120684,7 +120684,7 @@
         "preferredLogoAsOf": "2026-01-05",
         "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
       },
       "currentTeams": [
         "SN CyberCore Esports"
@@ -120789,7 +120789,7 @@
         "preferredLogoAsOf": "2026-01-05",
         "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
       },
       "currentTeams": [
         "SN CyberCore Esports"
@@ -120906,7 +120906,7 @@
         "preferredLogoAsOf": "2026-01-05",
         "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
       },
       "currentTeams": [
         "SN CyberCore Esports"
@@ -121035,7 +121035,7 @@
         "preferredLogoAsOf": "2026-01-05",
         "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
       },
       "currentTeams": [
         "SN CyberCore Esports"
@@ -123181,7 +123181,7 @@
         "preferredLogoAsOf": "2026-01-17",
         "currentMediaFile": "File:Saigon Dinologo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:46.990Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:14.910Z"
       },
       "currentTeams": [
         "Saigon Dino"
@@ -123901,7 +123901,7 @@
         "preferredLogoAsOf": "2026-02-21",
         "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
       },
       "currentTeams": [
         "Ngựa Hí Esports"
@@ -124030,7 +124030,7 @@
         "preferredLogoAsOf": "2026-02-21",
         "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
       },
       "currentTeams": [
         "Ngựa Hí Esports"
@@ -124159,7 +124159,7 @@
         "preferredLogoAsOf": "2026-02-21",
         "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
       },
       "currentTeams": [
         "Ngựa Hí Esports"
@@ -124264,7 +124264,7 @@
         "preferredLogoAsOf": "2026-02-21",
         "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
       },
       "currentTeams": [
         "Ngựa Hí Esports"
@@ -124393,7 +124393,7 @@
         "preferredLogoAsOf": "2026-02-21",
         "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
       },
       "currentTeams": [
         "Ngựa Hí Esports"
@@ -131332,7 +131332,7 @@
         "preferredLogoAsOf": "2026-02-21",
         "currentMediaFile": "File:Ngựa Hí Esportslogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:42.690Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:10.250Z"
       },
       "currentTeams": [
         "Ngựa Hí Esports"
@@ -137880,7 +137880,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -138009,7 +138009,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -138138,7 +138138,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -138267,7 +138267,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Invictus Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:44.795Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:09.552Z"
       },
       "currentTeams": [
         "Invictus Gaming"
@@ -141555,7 +141555,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -141684,7 +141684,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Top Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:20.511Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:46.797Z"
       },
       "currentTeams": [
         "Top Esports"
@@ -142059,7 +142059,7 @@
         "preferredLogoAsOf": "2026-01-05",
         "currentMediaFile": "File:SN CyberCore Esportslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:55.855Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:24.276Z"
       },
       "currentTeams": [
         "SN CyberCore Esports"
@@ -142164,7 +142164,7 @@
         "preferredLogoAsOf": "2025-12-23",
         "currentMediaFile": "File:9Gaminglogo profile.png",
         "currentMediaScore": 175,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:33.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:01:00.639Z"
       },
       "currentTeams": [
         "9Gaming Esports"
@@ -142746,7 +142746,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Team WElogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:11.385Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:37.434Z"
       },
       "currentTeams": [
         "Team WE"
@@ -170043,7 +170043,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:LNG Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:58.195Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:23.640Z"
       },
       "currentTeams": [
         "LNG Esports"
@@ -170172,7 +170172,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:LNG Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:58.195Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:23.640Z"
       },
       "currentTeams": [
         "LNG Esports"
@@ -170301,7 +170301,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:LNG Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:58.195Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:23.640Z"
       },
       "currentTeams": [
         "LNG Esports"
@@ -170430,7 +170430,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:LNG Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:58.195Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:23.640Z"
       },
       "currentTeams": [
         "LNG Esports"
@@ -170559,7 +170559,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Oh My Godlogo square.png",
         "currentMediaScore": 235,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
       },
       "currentTeams": [
         "Oh My God"
@@ -170688,7 +170688,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Oh My Godlogo square.png",
         "currentMediaScore": 235,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
       },
       "currentTeams": [
         "Oh My God"
@@ -170817,7 +170817,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Oh My Godlogo square.png",
         "currentMediaScore": 235,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
       },
       "currentTeams": [
         "Oh My God"
@@ -170946,7 +170946,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Oh My Godlogo square.png",
         "currentMediaScore": 235,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
       },
       "currentTeams": [
         "Oh My God"
@@ -171075,7 +171075,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Oh My Godlogo square.png",
         "currentMediaScore": 235,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
       },
       "currentTeams": [
         "Oh My God"
@@ -172455,7 +172455,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:EDward Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:40.344Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:04.630Z"
       },
       "currentTeams": [
         "EDward Gaming"
@@ -172584,7 +172584,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:EDward Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:40.344Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:04.630Z"
       },
       "currentTeams": [
         "EDward Gaming"
@@ -172713,7 +172713,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:EDward Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:40.344Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:04.630Z"
       },
       "currentTeams": [
         "EDward Gaming"
@@ -172842,7 +172842,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:EDward Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:40.344Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:04.630Z"
       },
       "currentTeams": [
         "EDward Gaming"
@@ -172971,7 +172971,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:EDward Gaminglogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:40.344Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:04.630Z"
       },
       "currentTeams": [
         "EDward Gaming"
@@ -173100,7 +173100,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:ThunderTalk Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:15.982Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:42.326Z"
       },
       "currentTeams": [
         "ThunderTalk Gaming"
@@ -173229,7 +173229,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:ThunderTalk Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:15.982Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:42.326Z"
       },
       "currentTeams": [
         "ThunderTalk Gaming"
@@ -173352,7 +173352,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:ThunderTalk Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:15.982Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:42.326Z"
       },
       "currentTeams": [
         "ThunderTalk Gaming"
@@ -173481,7 +173481,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:ThunderTalk Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:15.982Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:42.326Z"
       },
       "currentTeams": [
         "ThunderTalk Gaming"
@@ -173610,7 +173610,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:ThunderTalk Gaminglogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:15.982Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:42.326Z"
       },
       "currentTeams": [
         "ThunderTalk Gaming"
@@ -174415,7 +174415,7 @@
         "preferredLogoAsOf": "2025-12-24",
         "currentMediaFile": "File:Los Ratoneslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:01.150Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:59:22.880Z"
       },
       "currentTeams": [
         "Los Ratones"
@@ -174538,7 +174538,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports"
@@ -174667,7 +174667,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports"
@@ -174796,7 +174796,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports"
@@ -174925,7 +174925,7 @@
         "preferredLogoAsOf": "2026-01-14",
         "currentMediaFile": "File:MVK Esportslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:00.007Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:18.105Z"
       },
       "currentTeams": [
         "MVK Esports"
@@ -179922,7 +179922,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "DetonatioN FocusMe"
@@ -182512,7 +182512,7 @@
         "preferredLogoAsOf": "2026-03-09",
         "currentMediaFile": "File:HANJIN BRIONlogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:05.129Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:21.885Z"
       },
       "currentTeams": [
         "HANJIN BRION"
@@ -186855,7 +186855,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Ultra Primelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:24.939Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:51.455Z"
       },
       "currentTeams": [
         "Ultra Prime"
@@ -186984,7 +186984,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Ultra Primelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:24.939Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:51.455Z"
       },
       "currentTeams": [
         "Ultra Prime"
@@ -187113,7 +187113,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Ultra Primelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:24.939Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:51.455Z"
       },
       "currentTeams": [
         "Ultra Prime"
@@ -187230,7 +187230,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Ultra Primelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:24.939Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:51.455Z"
       },
       "currentTeams": [
         "Ultra Prime"
@@ -187359,7 +187359,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Ultra Primelogo square.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:24.939Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:51.455Z"
       },
       "currentTeams": [
         "Ultra Prime"
@@ -188272,7 +188272,7 @@
         "preferredLogoAsOf": "2026-01-11",
         "currentMediaFile": "File:LGD logo.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:53.645Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:18.938Z"
       },
       "currentTeams": [
         "LGD Gaming"
@@ -188401,7 +188401,7 @@
         "preferredLogoAsOf": "2026-01-11",
         "currentMediaFile": "File:LGD logo.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:53.645Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:18.938Z"
       },
       "currentTeams": [
         "LGD Gaming"
@@ -188530,7 +188530,7 @@
         "preferredLogoAsOf": "2026-01-11",
         "currentMediaFile": "File:LGD logo.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:53.645Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:18.938Z"
       },
       "currentTeams": [
         "LGD Gaming"
@@ -188659,7 +188659,7 @@
         "preferredLogoAsOf": "2026-01-11",
         "currentMediaFile": "File:LGD logo.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:53.645Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:18.938Z"
       },
       "currentTeams": [
         "LGD Gaming"
@@ -188788,7 +188788,7 @@
         "preferredLogoAsOf": "2026-01-11",
         "currentMediaFile": "File:LGD logo.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:18:53.645Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:18.938Z"
       },
       "currentTeams": [
         "LGD Gaming"
@@ -191778,7 +191778,7 @@
         "preferredLogoAsOf": "2026-04-05",
         "currentMediaFile": "File:Team Secret Whaleslogo profile.png",
         "currentMediaScore": 215,
-        "currentMediaRefreshedAt": "2026-11-23T11:17:04.441Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:58:22.892Z"
       },
       "currentTeams": [
         "Team Secret Whales"
@@ -195192,7 +195192,7 @@
         "preferredLogoAsOf": "2025-12-22",
         "currentMediaFile": "File:DN SOOPerslogo square.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:15:51.842Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:07.997Z"
       },
       "currentTeams": [
         "DN SOOPers"
@@ -195606,7 +195606,7 @@
         "preferredLogoAsOf": "2026-01-09",
         "currentMediaFile": "File:Oh My Godlogo square.png",
         "currentMediaScore": 235,
-        "currentMediaRefreshedAt": "2026-11-23T11:19:06.862Z"
+        "currentMediaRefreshedAt": "2026-11-24T13:00:32.840Z"
       },
       "currentTeams": [
         "Oh My God"
@@ -197192,7 +197192,7 @@
         "preferredLogoAsOf": "2025-12-25",
         "currentMediaFile": "File:DetonatioN FocusMelogo profile.png",
         "currentMediaScore": 195,
-        "currentMediaRefreshedAt": "2026-11-23T11:16:42.230Z"
+        "currentMediaRefreshedAt": "2026-11-24T12:57:59.066Z"
       },
       "currentTeams": [
         "DetonatioN FocusMe"
@@ -197737,7 +197737,7 @@
       "bioSource": "Leaguepedia player infobox"
     }
   ],
-  "identityEnrichedAt": "2026-11-23T11:13:24.442335Z",
+  "identityEnrichedAt": "2026-11-24T12:54:34.863459Z",
   "identitySource": "GPTilt League of Legends Esports Directory (Leaguepedia-derived, CC BY-SA 3.0)",
   "identitySourceUrl": "https://huggingface.co/datasets/gptilt/lol-esports-entities",
   "identityStatus": {
@@ -197970,7 +197970,7 @@
       }
     ]
   },
-  "mediaEnrichedAt": "2026-11-23T11:15:42.800Z",
+  "mediaEnrichedAt": "2026-11-24T12:56:58.299Z",
   "mediaSource": "Leaguepedia / League of Legends Esports Wiki current infobox + MediaWiki images",
   "mediaStatus": {
     "players": {
@@ -197989,9 +197989,9 @@
     },
     "partial": false
   },
-  "mediaSanitizedAt": "2026-11-23T11:15:42.882Z",
+  "mediaSanitizedAt": "2026-11-24T12:56:58.390Z",
   "majorMediaRefresh": {
-    "generatedAt": "2026-11-23T11:19:55.856Z",
+    "generatedAt": "2026-11-24T13:01:24.279Z",
     "source": "Leaguepedia/Fandom current file repository and current team/player pages",
     "strategy": "strict-team-identity + batched-player-page-prefetch + shared-team-media-pool",
     "currentYear": 2026,
@@ -198178,8 +198178,8 @@
         "type": "team",
         "name": "Shopify Rebellion",
         "region": "LCS",
-        "file": "File:Shopify Rebellionlogo std.png",
-        "score": 180
+        "file": "File:Shopify Rebellionlogo square.png",
+        "score": 195
       },
       {
         "type": "team",
@@ -198408,7 +198408,7 @@
     ]
   },
   "priorityProRefresh": {
-    "generatedAt": "2026-11-23T11:19:55.964Z",
+    "generatedAt": "2026-11-24T13:01:24.400Z",
     "source": "Leaguepedia/Fandom targeted current-media search for curated major-region stars",
     "currentYear": 2026,
     "activeDays": 180,
@@ -198630,10 +198630,10 @@
       }
     ]
   },
-  "profileOverridesAppliedAt": "2026-11-23T11:19:56.066Z",
+  "profileOverridesAppliedAt": "2026-11-24T13:01:24.511Z",
   "profileOverrideCount": 6,
   "teamLogoOverrideCount": 4,
-  "profileAuditAt": "2026-11-23T11:19:56.248Z",
+  "profileAuditAt": "2026-11-24T13:01:24.738Z",
   "profileCoverage": {
     "image": {
       "count": 1129,
