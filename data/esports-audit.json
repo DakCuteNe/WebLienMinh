@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-25T11:47:32.196Z",
-  "directoryGeneratedAt": "2026-11-25T11:40:52.598Z",
-  "mediaEnrichedAt": "2026-11-25T11:43:16.294Z",
+  "generatedAt": "2026-11-26T11:34:01.227Z",
+  "directoryGeneratedAt": "2026-11-26T11:27:35.009Z",
+  "mediaEnrichedAt": "2026-11-26T11:29:54.804Z",
   "totalPlayers": 1726,
   "totalTeams": 300,
   "totalRegions": 28,
   "totalCountries": 94,
   "coverage": {
     "image": {
-      "count": 1129,
-      "pct": 65.4
+      "count": 1130,
+      "pct": 65.5
     },
     "realName": {
       "count": 1565,
@@ -730,7 +730,7 @@
     },
     "RL": {
       "total": 57,
-      "image": 35,
+      "image": 36,
       "realName": 55,
       "country": 56,
       "birthdate": 0,
@@ -739,7 +739,7 @@
       "teamLogo": 40,
       "stats": 57,
       "completeCore": 0,
-      "imagePct": 61.4,
+      "imagePct": 63.2,
       "realNamePct": 96.5,
       "countryPct": 98.2,
       "birthdatePct": 0,
@@ -1003,7 +1003,7 @@
     }
   },
   "missingCounts": {
-    "image": 597,
+    "image": 596,
     "realName": 161,
     "country": 160,
     "birthdate": 1724,
@@ -1462,11 +1462,6 @@
       {
         "id": "Blesia",
         "team": "LODIS",
-        "region": "RL"
-      },
-      {
-        "id": "frajgo",
-        "team": "Bomba Team",
         "region": "RL"
       },
       {
